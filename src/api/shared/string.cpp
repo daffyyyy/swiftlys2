@@ -289,30 +289,36 @@ std::vector<std::string> TokenizeCommand(std::string cmd)
 
     bool single_quote = false;
     bool double_quote = false;
+    bool token_had_quotes = false;
 
     for (const char& c : cmd)
     {
         if ((c == '"' || c == -30) && !single_quote) {
             double_quote = !double_quote;
+            token_had_quotes = true;
             continue;
         }
         else if (c == '\'' && !double_quote) {
             single_quote = !single_quote;
+            token_had_quotes = true;
             continue;
         }
 
         if (c < 0) continue;
 
         if (std::isspace(c) && !single_quote && !double_quote) {
-            tokens.push_back(tmp_token);
-            tmp_token.clear();
+            if (!tmp_token.empty() || token_had_quotes) {
+                tokens.push_back(tmp_token);
+                tmp_token.clear();
+                token_had_quotes = false;
+            }
         }
         else {
             tmp_token += c;
         }
     }
 
-    if (!tmp_token.empty())
+    if (!tmp_token.empty() || token_had_quotes)
         tokens.push_back(tmp_token);
 
     return tokens;
