@@ -14,7 +14,4 @@ public partial interface CNavSpaceInfo : CPointEntity, ISchemaClass<CNavSpaceInf
     static int ISchemaClass<CNavSpaceInfo>.Size => 1192;
     static string? ISchemaClass<CNavSpaceInfo>.ClassName => "info_nav_space";
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CPointServerCommandImpl : CPointEntityImpl, CPointServerC
 {
     public CPointServerCommandImpl(nint handle) : base(handle) { }
 
-
-
-
 }

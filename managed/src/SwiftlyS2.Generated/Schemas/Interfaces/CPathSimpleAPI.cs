@@ -14,7 +14,4 @@ public partial interface CPathSimpleAPI : ISchemaClass<CPathSimpleAPI>
     static int ISchemaClass<CPathSimpleAPI>.Size => 8;
     static string? ISchemaClass<CPathSimpleAPI>.ClassName => null;
 
-
-
-
 }

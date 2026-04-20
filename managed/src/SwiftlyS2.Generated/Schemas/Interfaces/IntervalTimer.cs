@@ -19,6 +19,5 @@ public partial interface IntervalTimer : ISchemaClass<IntervalTimer>
 
     public ref uint WorldGroupId { get; }
 
-    public void TimestampUpdated();
-    public void WorldGroupIdUpdated();
+
 }

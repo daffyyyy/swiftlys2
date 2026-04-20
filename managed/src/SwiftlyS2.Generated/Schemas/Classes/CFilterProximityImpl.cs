@@ -18,12 +18,13 @@ internal partial class CFilterProximityImpl : CBaseFilterImpl, CFilterProximity
 
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xE1C36A555ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
-
 
 }

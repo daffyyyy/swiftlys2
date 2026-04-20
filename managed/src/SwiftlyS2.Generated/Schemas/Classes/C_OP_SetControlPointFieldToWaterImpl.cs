@@ -18,28 +18,33 @@ internal partial class C_OP_SetControlPointFieldToWaterImpl : CParticleFunctionP
 
     private static nint? _SourceCPOffset;
 
-    public ref int SourceCP {
-        get {
+    public ref int SourceCP
+    {
+        get
+        {
             _SourceCPOffset = _SourceCPOffset ?? Schema.GetOffset(0x77BA8CA24C01E3B7);
             return ref _Handle.AsRef<int>(_SourceCPOffset!.Value);
         }
     }
     private static nint? _DestCPOffset;
 
-    public ref int DestCP {
-        get {
+    public ref int DestCP
+    {
+        get
+        {
             _DestCPOffset = _DestCPOffset ?? Schema.GetOffset(0x77BA8CA2E27355DA);
             return ref _Handle.AsRef<int>(_DestCPOffset!.Value);
         }
     }
     private static nint? _CPFieldOffset;
 
-    public ref int CPField {
-        get {
+    public ref int CPField
+    {
+        get
+        {
             _CPFieldOffset = _CPFieldOffset ?? Schema.GetOffset(0x77BA8CA250B79876);
             return ref _Handle.AsRef<int>(_CPFieldOffset!.Value);
         }
     }
-
 
 }

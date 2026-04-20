@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CItemKevlar : CItem, ISchemaClass<CItemKevlar>
 {
     static CItemKevlar ISchemaClass<CItemKevlar>.From(nint handle) => new CItemKevlarImpl(handle);
-    static int ISchemaClass<CItemKevlar>.Size => 2752;
+    static int ISchemaClass<CItemKevlar>.Size => 2528;
     static string? ISchemaClass<CItemKevlar>.ClassName => "item_kevlar";
-
-
-
 
 }

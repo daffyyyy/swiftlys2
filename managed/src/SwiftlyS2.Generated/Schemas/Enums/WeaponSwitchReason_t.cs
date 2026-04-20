@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum WeaponSwitchReason_t : uint
 {
- eDrawn = 0,
-
- eEquipped = 1,
-
- eUserInitiatedSwitchToLast = 2,
-
- eUserInitiatedUIKeyPress = 3,
-
- eUserInitiatedSwitchHands = 4,
+    eDrawn = 0,
+    eEquipped = 1,
+    eUserInitiatedSwitchToLast = 2,
+    eUserInitiatedUIKeyPress = 3,
+    eUserInitiatedSwitchHands = 4,
 }

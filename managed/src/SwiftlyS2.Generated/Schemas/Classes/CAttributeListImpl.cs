@@ -18,16 +18,20 @@ internal partial class CAttributeListImpl : SchemaClass, CAttributeList
 
     private static nint? _AttributesOffset;
 
-    public ref CUtlVector<CEconItemAttribute> Attributes {
-        get {
+    public ref CUtlVector<CEconItemAttribute> Attributes
+    {
+        get
+        {
             _AttributesOffset = _AttributesOffset ?? Schema.GetOffset(0x1028A18A7E139C14);
             return ref _Handle.AsRef<CUtlVector<CEconItemAttribute>>(_AttributesOffset!.Value);
         }
     }
     private static nint? _ManagerOffset;
 
-    public CAttributeManager? Manager {
-        get {
+    public CAttributeManager? Manager
+    {
+        get
+        {
             _ManagerOffset = _ManagerOffset ?? Schema.GetOffset(0x1028A18AB9A09BE6);
             var ptr = _Handle.Read<nint>(_ManagerOffset!.Value);
             return ptr.IsValidPtr() ? new CAttributeManagerImpl(ptr) : null;

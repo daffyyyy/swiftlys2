@@ -16,7 +16,4 @@ internal partial class CFuncPropRespawnZoneImpl : CBaseEntityImpl, CFuncPropResp
 {
     public CFuncPropRespawnZoneImpl(nint handle) : base(handle) { }
 
-
-
-
 }

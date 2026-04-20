@@ -18,12 +18,13 @@ internal partial class CPhysTorqueImpl : CPhysForceImpl, CPhysTorque
 
     private static nint? _AxisOffset;
 
-    public ref Vector Axis {
-        get {
+    public ref Vector Axis
+    {
+        get
+        {
             _AxisOffset = _AxisOffset ?? Schema.GetOffset(0x6EADFD042B06DE94);
             return ref _Handle.AsRef<Vector>(_AxisOffset!.Value);
         }
     }
-
 
 }

@@ -18,52 +18,63 @@ internal partial class CNmTargetImpl : SchemaClass, CNmTarget
 
     private static nint? _TransformOffset;
 
-    public ref CTransform Transform {
-        get {
+    public ref CTransform Transform
+    {
+        get
+        {
             _TransformOffset = _TransformOffset ?? Schema.GetOffset(0xA3F5A45E3A9A393B);
             return ref _Handle.AsRef<CTransform>(_TransformOffset!.Value);
         }
     }
     private static nint? _BoneIDOffset;
 
-    public ref CGlobalSymbol BoneID {
-        get {
+    public ref CGlobalSymbol BoneID
+    {
+        get
+        {
             _BoneIDOffset = _BoneIDOffset ?? Schema.GetOffset(0xA3F5A45E88DFA0E2);
             return ref _Handle.AsRef<CGlobalSymbol>(_BoneIDOffset!.Value);
         }
     }
     private static nint? _IsBoneTargetOffset;
 
-    public ref bool IsBoneTarget {
-        get {
+    public ref bool IsBoneTarget
+    {
+        get
+        {
             _IsBoneTargetOffset = _IsBoneTargetOffset ?? Schema.GetOffset(0xA3F5A45E3C414BA2);
             return ref _Handle.AsRef<bool>(_IsBoneTargetOffset!.Value);
         }
     }
     private static nint? _IsUsingBoneSpaceOffsetsOffset;
 
-    public ref bool IsUsingBoneSpaceOffsets {
-        get {
+    public ref bool IsUsingBoneSpaceOffsets
+    {
+        get
+        {
             _IsUsingBoneSpaceOffsetsOffset = _IsUsingBoneSpaceOffsetsOffset ?? Schema.GetOffset(0xA3F5A45EA6050C83);
             return ref _Handle.AsRef<bool>(_IsUsingBoneSpaceOffsetsOffset!.Value);
         }
     }
     private static nint? _HasOffsetsOffset;
 
-    public ref bool HasOffsets {
-        get {
+    public ref bool HasOffsets
+    {
+        get
+        {
             _HasOffsetsOffset = _HasOffsetsOffset ?? Schema.GetOffset(0xA3F5A45ED8AA05D9);
             return ref _Handle.AsRef<bool>(_HasOffsetsOffset!.Value);
         }
     }
     private static nint? _IsSetOffset;
 
-    public ref bool IsSet {
-        get {
+    public ref bool IsSet
+    {
+        get
+        {
             _IsSetOffset = _IsSetOffset ?? Schema.GetOffset(0xA3F5A45E4307E3B3);
             return ref _Handle.AsRef<bool>(_IsSetOffset!.Value);
         }
     }
-
 
 }

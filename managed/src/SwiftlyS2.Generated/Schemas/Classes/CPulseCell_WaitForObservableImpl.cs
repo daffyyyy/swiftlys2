@@ -18,20 +18,23 @@ internal partial class CPulseCell_WaitForObservableImpl : CPulseCell_BaseYieldin
 
     private static nint? _ConditionOffset;
 
-    public PulseObservableBoolExpression_t Condition {
-        get {
+    public PulseObservableBoolExpression_t Condition
+    {
+        get
+        {
             _ConditionOffset = _ConditionOffset ?? Schema.GetOffset(0xE6EB02CD5F2A883E);
             return new PulseObservableBoolExpression_tImpl(_Handle + _ConditionOffset!.Value);
         }
     }
     private static nint? _OnTrueOffset;
 
-    public CPulse_ResumePoint OnTrue {
-        get {
+    public CPulse_ResumePoint OnTrue
+    {
+        get
+        {
             _OnTrueOffset = _OnTrueOffset ?? Schema.GetOffset(0xE6EB02CD6EAE5D88);
             return new CPulse_ResumePointImpl(_Handle + _OnTrueOffset!.Value);
         }
     }
-
 
 }

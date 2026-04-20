@@ -18,48 +18,60 @@ internal partial class sky3dparams_tImpl : SchemaClass, sky3dparams_t
 
     private static nint? _ScaleOffset;
 
-    public ref short Scale {
-        get {
+    public ref short Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x49687CC482971C71);
             return ref _Handle.AsRef<short>(_ScaleOffset!.Value);
         }
     }
     private static nint? _OriginOffset;
 
-    public ref Vector Origin {
-        get {
+    public ref Vector Origin
+    {
+        get
+        {
             _OriginOffset = _OriginOffset ?? Schema.GetOffset(0x49687CC4D97F9A4F);
             return ref _Handle.AsRef<Vector>(_OriginOffset!.Value);
         }
     }
     private static nint? _Clip3DSkyBoxNearToWorldFarOffset;
 
-    public ref bool Clip3DSkyBoxNearToWorldFar {
-        get {
+    public ref bool Clip3DSkyBoxNearToWorldFar
+    {
+        get
+        {
             _Clip3DSkyBoxNearToWorldFarOffset = _Clip3DSkyBoxNearToWorldFarOffset ?? Schema.GetOffset(0x49687CC482943804);
             return ref _Handle.AsRef<bool>(_Clip3DSkyBoxNearToWorldFarOffset!.Value);
         }
     }
     private static nint? _Clip3DSkyBoxNearToWorldFarOffsetOffset;
 
-    public ref float Clip3DSkyBoxNearToWorldFarOffset {
-        get {
+    public ref float Clip3DSkyBoxNearToWorldFarOffset
+    {
+        get
+        {
             _Clip3DSkyBoxNearToWorldFarOffsetOffset = _Clip3DSkyBoxNearToWorldFarOffsetOffset ?? Schema.GetOffset(0x49687CC49D6E9441);
             return ref _Handle.AsRef<float>(_Clip3DSkyBoxNearToWorldFarOffsetOffset!.Value);
         }
     }
     private static nint? _FogOffset;
 
-    public fogparams_t Fog {
-        get {
+    public fogparams_t Fog
+    {
+        get
+        {
             _FogOffset = _FogOffset ?? Schema.GetOffset(0x49687CC4A1F3723F);
             return new fogparams_tImpl(_Handle + _FogOffset!.Value);
         }
     }
     private static nint? _WorldGroupIDOffset;
 
-    public ref uint WorldGroupID {
-        get {
+    public ref uint WorldGroupID
+    {
+        get
+        {
             _WorldGroupIDOffset = _WorldGroupIDOffset ?? Schema.GetOffset(0x49687CC49414E3F3);
             return ref _Handle.AsRef<uint>(_WorldGroupIDOffset!.Value);
         }

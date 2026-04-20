@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum RenderMeshSlotType_t : byte
 {
- RENDERMESH_SLOT_INVALID = byte.MaxValue,
-
- RENDERMESH_SLOT_PER_VERTEX = 0,
-
- RENDERMESH_SLOT_PER_INSTANCE = 1,
+    RENDERMESH_SLOT_INVALID = byte.MaxValue,
+    RENDERMESH_SLOT_PER_VERTEX = 0,
+    RENDERMESH_SLOT_PER_INSTANCE = 1,
 }

@@ -18,12 +18,13 @@ internal partial class CTriggerRemoveImpl : CBaseTriggerImpl, CTriggerRemove
 
     private static nint? _OnRemoveOffset;
 
-    public ref CEntityIOOutput OnRemove {
-        get {
+    public ref CEntityIOOutput OnRemove
+    {
+        get
+        {
             _OnRemoveOffset = _OnRemoveOffset ?? Schema.GetOffset(0x97A9D4D67DC268F8);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnRemoveOffset!.Value);
         }
     }
-
 
 }

@@ -15,6 +15,8 @@ public partial interface CNmMaterialAttributeEvent : CNmEvent, ISchemaClass<CNmM
     static string? ISchemaClass<CNmMaterialAttributeEvent>.ClassName => null;
 
 
+    public ref CNmEventTargetEntity_t Target { get; }
+
     public string AttributeName { get; set; }
 
     public ref CUtlStringToken AttributeNameToken { get; }

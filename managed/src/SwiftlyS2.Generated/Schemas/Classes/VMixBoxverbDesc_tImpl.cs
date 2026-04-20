@@ -18,140 +18,173 @@ internal partial class VMixBoxverbDesc_tImpl : SchemaClass, VMixBoxverbDesc_t
 
     private static nint? _SizeMaxOffset;
 
-    public ref float SizeMax {
-        get {
+    public ref float SizeMax
+    {
+        get
+        {
             _SizeMaxOffset = _SizeMaxOffset ?? Schema.GetOffset(0x70C7542DB9D7F5B8);
             return ref _Handle.AsRef<float>(_SizeMaxOffset!.Value);
         }
     }
     private static nint? _SizeMinOffset;
 
-    public ref float SizeMin {
-        get {
+    public ref float SizeMin
+    {
+        get
+        {
             _SizeMinOffset = _SizeMinOffset ?? Schema.GetOffset(0x70C7542DAFEB6DB2);
             return ref _Handle.AsRef<float>(_SizeMinOffset!.Value);
         }
     }
     private static nint? _ComplexityOffset;
 
-    public ref float Complexity {
-        get {
+    public ref float Complexity
+    {
+        get
+        {
             _ComplexityOffset = _ComplexityOffset ?? Schema.GetOffset(0x70C7542DF222266B);
             return ref _Handle.AsRef<float>(_ComplexityOffset!.Value);
         }
     }
     private static nint? _DiffusionOffset;
 
-    public ref float Diffusion {
-        get {
+    public ref float Diffusion
+    {
+        get
+        {
             _DiffusionOffset = _DiffusionOffset ?? Schema.GetOffset(0x70C7542DCDBE8936);
             return ref _Handle.AsRef<float>(_DiffusionOffset!.Value);
         }
     }
     private static nint? _ModDepthOffset;
 
-    public ref float ModDepth {
-        get {
+    public ref float ModDepth
+    {
+        get
+        {
             _ModDepthOffset = _ModDepthOffset ?? Schema.GetOffset(0x70C7542DF59E0B82);
             return ref _Handle.AsRef<float>(_ModDepthOffset!.Value);
         }
     }
     private static nint? _ModRateOffset;
 
-    public ref float ModRate {
-        get {
+    public ref float ModRate
+    {
+        get
+        {
             _ModRateOffset = _ModRateOffset ?? Schema.GetOffset(0x70C7542D0EA039FF);
             return ref _Handle.AsRef<float>(_ModRateOffset!.Value);
         }
     }
     private static nint? _ParallelOffset;
 
-    public ref bool Parallel {
-        get {
+    public ref bool Parallel
+    {
+        get
+        {
             _ParallelOffset = _ParallelOffset ?? Schema.GetOffset(0x70C7542D8971ED92);
             return ref _Handle.AsRef<bool>(_ParallelOffset!.Value);
         }
     }
     private static nint? _FilterTypeOffset;
 
-    public VMixFilterDesc_t FilterType {
-        get {
+    public VMixFilterDesc_t FilterType
+    {
+        get
+        {
             _FilterTypeOffset = _FilterTypeOffset ?? Schema.GetOffset(0x70C7542D7E582F6F);
             return new VMixFilterDesc_tImpl(_Handle + _FilterTypeOffset!.Value);
         }
     }
     private static nint? _WidthOffset;
 
-    public ref float Width {
-        get {
+    public ref float Width
+    {
+        get
+        {
             _WidthOffset = _WidthOffset ?? Schema.GetOffset(0x70C7542DB91935E1);
             return ref _Handle.AsRef<float>(_WidthOffset!.Value);
         }
     }
     private static nint? _HeightOffset;
 
-    public ref float Height {
-        get {
+    public ref float Height
+    {
+        get
+        {
             _HeightOffset = _HeightOffset ?? Schema.GetOffset(0x70C7542DEADD7FB0);
             return ref _Handle.AsRef<float>(_HeightOffset!.Value);
         }
     }
     private static nint? _DepthOffset;
 
-    public ref float Depth {
-        get {
+    public ref float Depth
+    {
+        get
+        {
             _DepthOffset = _DepthOffset ?? Schema.GetOffset(0x70C7542DD3AD54E8);
             return ref _Handle.AsRef<float>(_DepthOffset!.Value);
         }
     }
     private static nint? _FeedbackScaleOffset;
 
-    public ref float FeedbackScale {
-        get {
+    public ref float FeedbackScale
+    {
+        get
+        {
             _FeedbackScaleOffset = _FeedbackScaleOffset ?? Schema.GetOffset(0x70C7542D2CE35D6E);
             return ref _Handle.AsRef<float>(_FeedbackScaleOffset!.Value);
         }
     }
     private static nint? _FeedbackWidthOffset;
 
-    public ref float FeedbackWidth {
-        get {
+    public ref float FeedbackWidth
+    {
+        get
+        {
             _FeedbackWidthOffset = _FeedbackWidthOffset ?? Schema.GetOffset(0x70C7542D50275950);
             return ref _Handle.AsRef<float>(_FeedbackWidthOffset!.Value);
         }
     }
     private static nint? _FeedbackHeightOffset;
 
-    public ref float FeedbackHeight {
-        get {
+    public ref float FeedbackHeight
+    {
+        get
+        {
             _FeedbackHeightOffset = _FeedbackHeightOffset ?? Schema.GetOffset(0x70C7542DFB780A47);
             return ref _Handle.AsRef<float>(_FeedbackHeightOffset!.Value);
         }
     }
     private static nint? _FeedbackDepthOffset;
 
-    public ref float FeedbackDepth {
-        get {
+    public ref float FeedbackDepth
+    {
+        get
+        {
             _FeedbackDepthOffset = _FeedbackDepthOffset ?? Schema.GetOffset(0x70C7542DB71B2D09);
             return ref _Handle.AsRef<float>(_FeedbackDepthOffset!.Value);
         }
     }
     private static nint? _OutputGainOffset;
 
-    public ref float OutputGain {
-        get {
+    public ref float OutputGain
+    {
+        get
+        {
             _OutputGainOffset = _OutputGainOffset ?? Schema.GetOffset(0x70C7542D73DB9445);
             return ref _Handle.AsRef<float>(_OutputGainOffset!.Value);
         }
     }
     private static nint? _TapsOffset;
 
-    public ref float Taps {
-        get {
+    public ref float Taps
+    {
+        get
+        {
             _TapsOffset = _TapsOffset ?? Schema.GetOffset(0x70C7542D5C502CB9);
             return ref _Handle.AsRef<float>(_TapsOffset!.Value);
         }
     }
-
 
 }

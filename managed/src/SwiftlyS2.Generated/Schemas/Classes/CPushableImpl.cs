@@ -16,7 +16,4 @@ internal partial class CPushableImpl : CBreakableImpl, CPushable
 {
     public CPushableImpl(nint handle) : base(handle) { }
 
-
-
-
 }

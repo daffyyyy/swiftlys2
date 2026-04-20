@@ -12,7 +12,7 @@ public partial interface CPathWithDynamicNodes : CPathSimple, ISchemaClass<CPath
 {
     static CPathWithDynamicNodes ISchemaClass<CPathWithDynamicNodes>.From(nint handle) => new CPathWithDynamicNodesImpl(handle);
     static int ISchemaClass<CPathWithDynamicNodes>.Size => 1520;
-    static string? ISchemaClass<CPathWithDynamicNodes>.ClassName => null;
+    static string? ISchemaClass<CPathWithDynamicNodes>.ClassName => "path_with_dynamic_nodes";
 
 
     public ref CUtlVector<CHandle<CPathNode>> PathNodes { get; }

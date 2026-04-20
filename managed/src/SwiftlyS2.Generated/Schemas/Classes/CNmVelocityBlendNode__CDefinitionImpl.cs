@@ -16,7 +16,4 @@ internal partial class CNmVelocityBlendNode__CDefinitionImpl : CNmParameterizedB
 {
     public CNmVelocityBlendNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

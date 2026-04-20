@@ -18,20 +18,23 @@ internal partial class CMovementStatsPropertyImpl : SchemaClass, CMovementStatsP
 
     private static nint? _UseCounterOffset;
 
-    public ref int UseCounter {
-        get {
+    public ref int UseCounter
+    {
+        get
+        {
             _UseCounterOffset = _UseCounterOffset ?? Schema.GetOffset(0xDE38DFFB6294198C);
             return ref _Handle.AsRef<int>(_UseCounterOffset!.Value);
         }
     }
     private static nint? _EmaMovementDirectionOffset;
 
-    public CVectorExponentialMovingAverage EmaMovementDirection {
-        get {
+    public CVectorExponentialMovingAverage EmaMovementDirection
+    {
+        get
+        {
             _EmaMovementDirectionOffset = _EmaMovementDirectionOffset ?? Schema.GetOffset(0xDE38DFFB3878FC8C);
             return new CVectorExponentialMovingAverageImpl(_Handle + _EmaMovementDirectionOffset!.Value);
         }
     }
-
 
 }

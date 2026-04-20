@@ -18,20 +18,23 @@ internal partial class CPulseCell_Outflow_TestRandomYesNoImpl : CPulseCell_BaseF
 
     private static nint? _YesOffset;
 
-    public CPulse_OutflowConnection Yes {
-        get {
+    public CPulse_OutflowConnection Yes
+    {
+        get
+        {
             _YesOffset = _YesOffset ?? Schema.GetOffset(0x9EA5F31EDA358F10);
             return new CPulse_OutflowConnectionImpl(_Handle + _YesOffset!.Value);
         }
     }
     private static nint? _NoOffset;
 
-    public CPulse_OutflowConnection No {
-        get {
+    public CPulse_OutflowConnection No
+    {
+        get
+        {
             _NoOffset = _NoOffset ?? Schema.GetOffset(0x9EA5F31EE004A07A);
             return new CPulse_OutflowConnectionImpl(_Handle + _NoOffset!.Value);
         }
     }
-
 
 }

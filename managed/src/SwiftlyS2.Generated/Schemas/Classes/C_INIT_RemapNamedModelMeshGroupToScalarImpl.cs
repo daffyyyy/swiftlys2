@@ -16,7 +16,4 @@ internal partial class C_INIT_RemapNamedModelMeshGroupToScalarImpl : C_INIT_Rema
 {
     public C_INIT_RemapNamedModelMeshGroupToScalarImpl(nint handle) : base(handle) { }
 
-
-
-
 }

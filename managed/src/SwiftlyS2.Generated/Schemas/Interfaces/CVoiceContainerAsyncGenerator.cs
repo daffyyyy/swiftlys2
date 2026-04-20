@@ -14,7 +14,4 @@ public partial interface CVoiceContainerAsyncGenerator : CVoiceContainerGenerato
     static int ISchemaClass<CVoiceContainerAsyncGenerator>.Size => 184;
     static string? ISchemaClass<CVoiceContainerAsyncGenerator>.ClassName => null;
 
-
-
-
 }

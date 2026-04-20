@@ -18,20 +18,23 @@ internal partial class C_OP_RemapDensityGradientToVectorAttributeImpl : CParticl
 
     private static nint? _RadiusScaleOffset;
 
-    public ref float RadiusScale {
-        get {
+    public ref float RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0xB9D06F88A7A20159);
             return ref _Handle.AsRef<float>(_RadiusScaleOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xB9D06F88E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
-
 
 }

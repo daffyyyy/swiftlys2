@@ -18,20 +18,23 @@ internal partial class CProductQuantizerImpl : SchemaClass, CProductQuantizer
 
     private static nint? _SubQuantizersOffset;
 
-    public ref CUtlVector<CVectorQuantizer> SubQuantizers {
-        get {
+    public ref CUtlVector<CVectorQuantizer> SubQuantizers
+    {
+        get
+        {
             _SubQuantizersOffset = _SubQuantizersOffset ?? Schema.GetOffset(0x5B1A8128593CF0B5);
             return ref _Handle.AsRef<CUtlVector<CVectorQuantizer>>(_SubQuantizersOffset!.Value);
         }
     }
     private static nint? _DimensionsOffset;
 
-    public ref int Dimensions {
-        get {
+    public ref int Dimensions
+    {
+        get
+        {
             _DimensionsOffset = _DimensionsOffset ?? Schema.GetOffset(0x5B1A81282D8795AC);
             return ref _Handle.AsRef<int>(_DimensionsOffset!.Value);
         }
     }
-
 
 }

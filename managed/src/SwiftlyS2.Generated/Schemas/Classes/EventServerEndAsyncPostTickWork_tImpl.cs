@@ -16,7 +16,4 @@ internal partial class EventServerEndAsyncPostTickWork_tImpl : SchemaClass, Even
 {
     public EventServerEndAsyncPostTickWork_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CCSGO_WingmanIntroTerroristPosition : CCSGO_WingmanIntr
     static int ISchemaClass<CCSGO_WingmanIntroTerroristPosition>.Size => 3264;
     static string? ISchemaClass<CCSGO_WingmanIntroTerroristPosition>.ClassName => "wingman_intro_terrorist";
 
-
-
-
 }

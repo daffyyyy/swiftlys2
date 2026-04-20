@@ -18,13 +18,16 @@ internal partial class EntitySpottedState_tImpl : SchemaClass, EntitySpottedStat
 
     private static nint? _SpottedOffset;
 
-    public ref bool Spotted {
-        get {
+    public ref bool Spotted
+    {
+        get
+        {
             _SpottedOffset = _SpottedOffset ?? Schema.GetOffset(0x6E33B0176DE4F1CA);
             return ref _Handle.AsRef<bool>(_SpottedOffset!.Value);
         }
     }
-    public ISchemaFixedArray<uint> SpottedByMask {
+    public ISchemaFixedArray<uint> SpottedByMask
+    {
         get => new SchemaFixedArray<uint>(_Handle, 0x6E33B0170BD77207, 2, 4, 4);
     }
 

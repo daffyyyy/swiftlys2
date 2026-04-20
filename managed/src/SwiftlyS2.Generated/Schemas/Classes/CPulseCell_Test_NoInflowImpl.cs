@@ -16,7 +16,4 @@ internal partial class CPulseCell_Test_NoInflowImpl : CPulseCell_BaseFlowImpl, C
 {
     public CPulseCell_Test_NoInflowImpl(nint handle) : base(handle) { }
 
-
-
-
 }

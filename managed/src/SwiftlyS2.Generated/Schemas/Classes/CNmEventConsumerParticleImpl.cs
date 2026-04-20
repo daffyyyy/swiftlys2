@@ -16,7 +16,4 @@ internal partial class CNmEventConsumerParticleImpl : CNmEventConsumerImpl, CNmE
 {
     public CNmEventConsumerParticleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

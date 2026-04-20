@@ -18,36 +18,43 @@ internal partial class FeWorldCollisionParams_tImpl : SchemaClass, FeWorldCollis
 
     private static nint? _WorldFrictionOffset;
 
-    public ref float WorldFriction {
-        get {
+    public ref float WorldFriction
+    {
+        get
+        {
             _WorldFrictionOffset = _WorldFrictionOffset ?? Schema.GetOffset(0x85D16E65E1266C23);
             return ref _Handle.AsRef<float>(_WorldFrictionOffset!.Value);
         }
     }
     private static nint? _GroundFrictionOffset;
 
-    public ref float GroundFriction {
-        get {
+    public ref float GroundFriction
+    {
+        get
+        {
             _GroundFrictionOffset = _GroundFrictionOffset ?? Schema.GetOffset(0x85D16E652D394B72);
             return ref _Handle.AsRef<float>(_GroundFrictionOffset!.Value);
         }
     }
     private static nint? _ListBeginOffset;
 
-    public ref ushort ListBegin {
-        get {
+    public ref ushort ListBegin
+    {
+        get
+        {
             _ListBeginOffset = _ListBeginOffset ?? Schema.GetOffset(0x85D16E650BA98846);
             return ref _Handle.AsRef<ushort>(_ListBeginOffset!.Value);
         }
     }
     private static nint? _ListEndOffset;
 
-    public ref ushort ListEnd {
-        get {
+    public ref ushort ListEnd
+    {
+        get
+        {
             _ListEndOffset = _ListEndOffset ?? Schema.GetOffset(0x85D16E658683DD62);
             return ref _Handle.AsRef<ushort>(_ListEndOffset!.Value);
         }
     }
-
 
 }

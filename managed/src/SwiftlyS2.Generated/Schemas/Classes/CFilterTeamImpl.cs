@@ -18,12 +18,13 @@ internal partial class CFilterTeamImpl : CBaseFilterImpl, CFilterTeam
 
     private static nint? _FilterTeamOffset;
 
-    public ref int FilterTeam {
-        get {
+    public ref int FilterTeam
+    {
+        get
+        {
             _FilterTeamOffset = _FilterTeamOffset ?? Schema.GetOffset(0x46DA651D4D36160F);
             return ref _Handle.AsRef<int>(_FilterTeamOffset!.Value);
         }
     }
-
 
 }

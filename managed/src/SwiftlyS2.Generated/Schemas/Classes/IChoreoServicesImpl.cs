@@ -16,7 +16,4 @@ internal partial class IChoreoServicesImpl : SchemaClass, IChoreoServices
 {
     public IChoreoServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

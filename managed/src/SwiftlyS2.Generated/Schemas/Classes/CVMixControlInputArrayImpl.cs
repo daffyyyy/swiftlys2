@@ -18,12 +18,13 @@ internal partial class CVMixControlInputArrayImpl : CVMixInputBaseImpl, CVMixCon
 
     private static nint? _ArrayIndexOffset;
 
-    public ref int ArrayIndex {
-        get {
+    public ref int ArrayIndex
+    {
+        get
+        {
             _ArrayIndexOffset = _ArrayIndexOffset ?? Schema.GetOffset(0x98172F962BE796CE);
             return ref _Handle.AsRef<int>(_ArrayIndexOffset!.Value);
         }
     }
-
 
 }

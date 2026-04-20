@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum C4LightEffect_t : uint
 {
- eLightEffectNone = 0,
-
- eLightEffectDropped = 1,
-
- eLightEffectThirdPersonHeld = 2,
+    eLightEffectNone = 0,
+    eLightEffectDropped = 1,
+    eLightEffectThirdPersonHeld = 2,
 }

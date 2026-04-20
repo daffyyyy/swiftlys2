@@ -18,20 +18,23 @@ internal partial class LookAtBone_tImpl : SchemaClass, LookAtBone_t
 
     private static nint? _IndexOffset;
 
-    public ref int Index {
-        get {
+    public ref int Index
+    {
+        get
+        {
             _IndexOffset = _IndexOffset ?? Schema.GetOffset(0x25E8B58A491963CB);
             return ref _Handle.AsRef<int>(_IndexOffset!.Value);
         }
     }
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0x25E8B58A07D0CD59);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
-
 
 }

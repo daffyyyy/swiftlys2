@@ -14,7 +14,4 @@ public partial interface CHandleDummy : CBaseEntity, ISchemaClass<CHandleDummy>
     static int ISchemaClass<CHandleDummy>.Size => 1192;
     static string? ISchemaClass<CHandleDummy>.ClassName => "handle_dummy";
 
-
-
-
 }

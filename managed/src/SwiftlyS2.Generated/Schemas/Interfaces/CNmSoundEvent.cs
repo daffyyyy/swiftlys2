@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSoundEvent : CNmEvent, ISchemaClass<CNmSoundEvent>
 {
     static CNmSoundEvent ISchemaClass<CNmSoundEvent>.From(nint handle) => new CNmSoundEventImpl(handle);
-    static int ISchemaClass<CNmSoundEvent>.Size => 80;
+    static int ISchemaClass<CNmSoundEvent>.Size => 72;
     static string? ISchemaClass<CNmSoundEvent>.ClassName => null;
 
 

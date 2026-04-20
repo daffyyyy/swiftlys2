@@ -18,20 +18,23 @@ internal partial class C_OP_SetControlPointFromObjectScaleImpl : CParticleFuncti
 
     private static nint? _CPInputOffset;
 
-    public ref int CPInput {
-        get {
+    public ref int CPInput
+    {
+        get
+        {
             _CPInputOffset = _CPInputOffset ?? Schema.GetOffset(0xB0DB8599FB805736);
             return ref _Handle.AsRef<int>(_CPInputOffset!.Value);
         }
     }
     private static nint? _CPOutputOffset;
 
-    public ref int CPOutput {
-        get {
+    public ref int CPOutput
+    {
+        get
+        {
             _CPOutputOffset = _CPOutputOffset ?? Schema.GetOffset(0xB0DB85992077C953);
             return ref _Handle.AsRef<int>(_CPOutputOffset!.Value);
         }
     }
-
 
 }

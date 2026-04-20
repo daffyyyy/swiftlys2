@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeIMaterial2 : ISchemaClass<InfoForRes
     static int ISchemaClass<InfoForResourceTypeIMaterial2>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeIMaterial2>.ClassName => null;
 
-
-
-
 }

@@ -18,56 +18,68 @@ internal partial class CFootstepLandedAnimTagImpl : CAnimTagBaseImpl, CFootstepL
 
     private static nint? _FootstepTypeOffset;
 
-    public ref FootstepLandedFootSoundType_t FootstepType {
-        get {
+    public ref FootstepLandedFootSoundType_t FootstepType
+    {
+        get
+        {
             _FootstepTypeOffset = _FootstepTypeOffset ?? Schema.GetOffset(0xD5058C6793F974DB);
             return ref _Handle.AsRef<FootstepLandedFootSoundType_t>(_FootstepTypeOffset!.Value);
         }
     }
     private static nint? _OverrideSoundNameOffset;
 
-    public string OverrideSoundName {
-        get {
+    public string OverrideSoundName
+    {
+        get
+        {
             _OverrideSoundNameOffset = _OverrideSoundNameOffset ?? Schema.GetOffset(0xD5058C67FEE552B7);
             return Schema.GetCUtlString(_Handle.Read<nint>(_OverrideSoundNameOffset!.Value));
         }
-        set {
+        set
+        {
             _OverrideSoundNameOffset = _OverrideSoundNameOffset ?? Schema.GetOffset(0xD5058C67FEE552B7);
             Schema.SetCUtlString(_Handle, _OverrideSoundNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DebugAnimSourceStringOffset;
 
-    public string DebugAnimSourceString {
-        get {
+    public string DebugAnimSourceString
+    {
+        get
+        {
             _DebugAnimSourceStringOffset = _DebugAnimSourceStringOffset ?? Schema.GetOffset(0xD5058C676912A1B9);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DebugAnimSourceStringOffset!.Value));
         }
-        set {
+        set
+        {
             _DebugAnimSourceStringOffset = _DebugAnimSourceStringOffset ?? Schema.GetOffset(0xD5058C676912A1B9);
             Schema.SetCUtlString(_Handle, _DebugAnimSourceStringOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _BoneNameOffset;
 
-    public string BoneName {
-        get {
+    public string BoneName
+    {
+        get
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0xD5058C6707D0902C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_BoneNameOffset!.Value));
         }
-        set {
+        set
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0xD5058C6707D0902C);
             Schema.SetCUtlString(_Handle, _BoneNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FootstepJumpPhaseOffset;
 
-    public ref FootstepJumpPhase_t FootstepJumpPhase {
-        get {
+    public ref FootstepJumpPhase_t FootstepJumpPhase
+    {
+        get
+        {
             _FootstepJumpPhaseOffset = _FootstepJumpPhaseOffset ?? Schema.GetOffset(0xD5058C67F3E99D9A);
             return ref _Handle.AsRef<FootstepJumpPhase_t>(_FootstepJumpPhaseOffset!.Value);
         }
     }
-
 
 }

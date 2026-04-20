@@ -18,28 +18,33 @@ internal partial class ClutterTile_tImpl : SchemaClass, ClutterTile_t
 
     private static nint? _FirstInstanceOffset;
 
-    public ref uint FirstInstance {
-        get {
+    public ref uint FirstInstance
+    {
+        get
+        {
             _FirstInstanceOffset = _FirstInstanceOffset ?? Schema.GetOffset(0xAC4066F19AF07072);
             return ref _Handle.AsRef<uint>(_FirstInstanceOffset!.Value);
         }
     }
     private static nint? _LastInstanceOffset;
 
-    public ref uint LastInstance {
-        get {
+    public ref uint LastInstance
+    {
+        get
+        {
             _LastInstanceOffset = _LastInstanceOffset ?? Schema.GetOffset(0xAC4066F10D99AC92);
             return ref _Handle.AsRef<uint>(_LastInstanceOffset!.Value);
         }
     }
     private static nint? _BoundsWsOffset;
 
-    public AABB_t BoundsWs {
-        get {
+    public AABB_t BoundsWs
+    {
+        get
+        {
             _BoundsWsOffset = _BoundsWsOffset ?? Schema.GetOffset(0xAC4066F1BE54855A);
             return new AABB_tImpl(_Handle + _BoundsWsOffset!.Value);
         }
     }
-
 
 }

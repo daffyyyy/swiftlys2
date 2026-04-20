@@ -21,7 +21,5 @@ public partial interface EngineCountdownTimer : ISchemaClass<EngineCountdownTime
 
     public ref float Timescale { get; }
 
-    public void DurationUpdated();
-    public void TimestampUpdated();
-    public void TimescaleUpdated();
+
 }

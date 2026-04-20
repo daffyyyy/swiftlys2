@@ -18,36 +18,43 @@ internal partial class FourQuaternionsImpl : SchemaClass, FourQuaternions
 
     private static nint? _XOffset;
 
-    public ref fltx4 X {
-        get {
+    public ref fltx4 X
+    {
+        get
+        {
             _XOffset = _XOffset ?? Schema.GetOffset(0x438DAD7AFD0C5087);
             return ref _Handle.AsRef<fltx4>(_XOffset!.Value);
         }
     }
     private static nint? _YOffset;
 
-    public ref fltx4 Y {
-        get {
+    public ref fltx4 Y
+    {
+        get
+        {
             _YOffset = _YOffset ?? Schema.GetOffset(0x438DAD7AFC0C4EF4);
             return ref _Handle.AsRef<fltx4>(_YOffset!.Value);
         }
     }
     private static nint? _ZOffset;
 
-    public ref fltx4 Z {
-        get {
+    public ref fltx4 Z
+    {
+        get
+        {
             _ZOffset = _ZOffset ?? Schema.GetOffset(0x438DAD7AFF0C53AD);
             return ref _Handle.AsRef<fltx4>(_ZOffset!.Value);
         }
     }
     private static nint? _WOffset;
 
-    public ref fltx4 W {
-        get {
+    public ref fltx4 W
+    {
+        get
+        {
             _WOffset = _WOffset ?? Schema.GetOffset(0x438DAD7AF20C3F36);
             return ref _Handle.AsRef<fltx4>(_WOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface IAnimationGraphInstance : ISchemaClass<IAnimationGraphI
     static int ISchemaClass<IAnimationGraphInstance>.Size => 24;
     static string? ISchemaClass<IAnimationGraphInstance>.ClassName => null;
 
-
-
-
 }

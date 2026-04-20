@@ -16,7 +16,4 @@ internal partial class CInfoTeleportDestinationImpl : CPointEntityImpl, CInfoTel
 {
     public CInfoTeleportDestinationImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CEnvSoundscapeTriggerable : CEnvSoundscape, ISchemaClas
     static int ISchemaClass<CEnvSoundscapeTriggerable>.Size => 1336;
     static string? ISchemaClass<CEnvSoundscapeTriggerable>.ClassName => "env_soundscape_triggerable";
 
-
-
-
 }

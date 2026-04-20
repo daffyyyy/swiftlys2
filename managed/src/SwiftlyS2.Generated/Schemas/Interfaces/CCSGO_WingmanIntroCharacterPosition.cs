@@ -14,7 +14,4 @@ public partial interface CCSGO_WingmanIntroCharacterPosition : CCSGO_TeamIntroCh
     static int ISchemaClass<CCSGO_WingmanIntroCharacterPosition>.Size => 3264;
     static string? ISchemaClass<CCSGO_WingmanIntroCharacterPosition>.ClassName => null;
 
-
-
-
 }

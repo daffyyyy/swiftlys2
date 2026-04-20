@@ -18,36 +18,33 @@ internal partial class CNmEventImpl : SchemaClass, CNmEvent
 
     private static nint? _StartTimeOffset;
 
-    public NmPercent_t StartTime {
-        get {
+    public NmPercent_t StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0xF987100967FE9DC4);
             return new NmPercent_tImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
     private static nint? _DurationOffset;
 
-    public NmPercent_t Duration {
-        get {
+    public NmPercent_t Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0xF9871009BC5E3BAB);
             return new NmPercent_tImpl(_Handle + _DurationOffset!.Value);
         }
     }
     private static nint? _SyncIDOffset;
 
-    public ref CGlobalSymbol SyncID {
-        get {
+    public ref CGlobalSymbol SyncID
+    {
+        get
+        {
             _SyncIDOffset = _SyncIDOffset ?? Schema.GetOffset(0xF987100915636837);
             return ref _Handle.AsRef<CGlobalSymbol>(_SyncIDOffset!.Value);
         }
     }
-    private static nint? _ClientOnlyOffset;
-
-    public ref bool ClientOnly {
-        get {
-            _ClientOnlyOffset = _ClientOnlyOffset ?? Schema.GetOffset(0xF9871009B39BA128);
-            return ref _Handle.AsRef<bool>(_ClientOnlyOffset!.Value);
-        }
-    }
-
 
 }

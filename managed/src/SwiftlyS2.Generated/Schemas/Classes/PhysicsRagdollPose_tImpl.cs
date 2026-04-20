@@ -18,24 +18,30 @@ internal partial class PhysicsRagdollPose_tImpl : SchemaClass, PhysicsRagdollPos
 
     private static nint? _TransformsOffset;
 
-    public ref CUtlVector<CTransform> Transforms {
-        get {
+    public ref CUtlVector<CTransform> Transforms
+    {
+        get
+        {
             _TransformsOffset = _TransformsOffset ?? Schema.GetOffset(0x54A98BF4852CD38);
             return ref _Handle.AsRef<CUtlVector<CTransform>>(_TransformsOffset!.Value);
         }
     }
     private static nint? _OwnerOffset;
 
-    public ref CHandle<CBaseEntity> Owner {
-        get {
+    public ref CHandle<CBaseEntity> Owner
+    {
+        get
+        {
             _OwnerOffset = _OwnerOffset ?? Schema.GetOffset(0x54A98BFF6D89572);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_OwnerOffset!.Value);
         }
     }
     private static nint? _SetFromDebugHistoryOffset;
 
-    public ref bool SetFromDebugHistory {
-        get {
+    public ref bool SetFromDebugHistory
+    {
+        get
+        {
             _SetFromDebugHistoryOffset = _SetFromDebugHistoryOffset ?? Schema.GetOffset(0x54A98BF136013F6);
             return ref _Handle.AsRef<bool>(_SetFromDebugHistoryOffset!.Value);
         }

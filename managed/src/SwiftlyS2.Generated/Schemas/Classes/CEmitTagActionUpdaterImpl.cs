@@ -18,20 +18,23 @@ internal partial class CEmitTagActionUpdaterImpl : CAnimActionUpdaterImpl, CEmit
 
     private static nint? _TagIndexOffset;
 
-    public ref int TagIndex {
-        get {
+    public ref int TagIndex
+    {
+        get
+        {
             _TagIndexOffset = _TagIndexOffset ?? Schema.GetOffset(0x13C6F616C2026AAD);
             return ref _Handle.AsRef<int>(_TagIndexOffset!.Value);
         }
     }
     private static nint? _IsZeroDurationOffset;
 
-    public ref bool IsZeroDuration {
-        get {
+    public ref bool IsZeroDuration
+    {
+        get
+        {
             _IsZeroDurationOffset = _IsZeroDurationOffset ?? Schema.GetOffset(0x13C6F61604008747);
             return ref _Handle.AsRef<bool>(_IsZeroDurationOffset!.Value);
         }
     }
-
 
 }

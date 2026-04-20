@@ -16,7 +16,4 @@ internal partial class CPulseServerFuncs_SoundsImpl : SchemaClass, CPulseServerF
 {
     public CPulseServerFuncs_SoundsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

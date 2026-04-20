@@ -18,28 +18,33 @@ internal partial class EventSimpleLoopFrameUpdate_tImpl : SchemaClass, EventSimp
 
     private static nint? _LoopStateOffset;
 
-    public EngineLoopState_t LoopState {
-        get {
+    public EngineLoopState_t LoopState
+    {
+        get
+        {
             _LoopStateOffset = _LoopStateOffset ?? Schema.GetOffset(0x2C7358DAF928A2EC);
             return new EngineLoopState_tImpl(_Handle + _LoopStateOffset!.Value);
         }
     }
     private static nint? _RealTimeOffset;
 
-    public ref float RealTime {
-        get {
+    public ref float RealTime
+    {
+        get
+        {
             _RealTimeOffset = _RealTimeOffset ?? Schema.GetOffset(0x2C7358DA1168EC02);
             return ref _Handle.AsRef<float>(_RealTimeOffset!.Value);
         }
     }
     private static nint? _FrameTimeOffset;
 
-    public ref float FrameTime {
-        get {
+    public ref float FrameTime
+    {
+        get
+        {
             _FrameTimeOffset = _FrameTimeOffset ?? Schema.GetOffset(0x2C7358DA659DF875);
             return ref _Handle.AsRef<float>(_FrameTimeOffset!.Value);
         }
     }
-
 
 }

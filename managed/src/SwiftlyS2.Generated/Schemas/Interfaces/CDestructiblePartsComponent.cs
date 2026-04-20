@@ -21,5 +21,7 @@ public partial interface CDestructiblePartsComponent : ISchemaClass<CDestructibl
 
     public ref CHandle<CBaseModelEntity> Owner { get; }
 
+    public CBaseAnimGraphDestructibleParts_GraphController? AnimGraphDestructibleGraphController { get; }
+
     public void OwnerUpdated();
 }

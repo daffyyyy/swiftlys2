@@ -16,7 +16,4 @@ internal partial class CSpinUpdateBaseImpl : CParticleFunctionOperatorImpl, CSpi
 {
     public CSpinUpdateBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

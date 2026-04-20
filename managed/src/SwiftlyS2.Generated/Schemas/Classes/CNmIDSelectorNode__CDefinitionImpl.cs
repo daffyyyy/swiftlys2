@@ -18,28 +18,33 @@ internal partial class CNmIDSelectorNode__CDefinitionImpl : CNmIDValueNode__CDef
 
     private static nint? _ConditionNodeIndicesOffset;
 
-    public SchemaUntypedField ConditionNodeIndices {
-        get {
+    public SchemaUntypedField ConditionNodeIndices
+    {
+        get
+        {
             _ConditionNodeIndicesOffset = _ConditionNodeIndicesOffset ?? Schema.GetOffset(0x23876114A144D0F);
             return new SchemaUntypedField(_Handle + _ConditionNodeIndicesOffset!.Value);
         }
     }
     private static nint? _ValuesOffset;
 
-    public SchemaUntypedField Values {
-        get {
+    public SchemaUntypedField Values
+    {
+        get
+        {
             _ValuesOffset = _ValuesOffset ?? Schema.GetOffset(0x2387611FBEDDADB);
             return new SchemaUntypedField(_Handle + _ValuesOffset!.Value);
         }
     }
     private static nint? _DefaultValueOffset;
 
-    public ref CGlobalSymbol DefaultValue {
-        get {
+    public ref CGlobalSymbol DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x2387611BBE0341F);
             return ref _Handle.AsRef<CGlobalSymbol>(_DefaultValueOffset!.Value);
         }
     }
-
 
 }

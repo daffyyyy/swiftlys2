@@ -14,7 +14,4 @@ public partial interface CBaseTriggerAPI : ISchemaClass<CBaseTriggerAPI>
     static int ISchemaClass<CBaseTriggerAPI>.Size => 8;
     static string? ISchemaClass<CBaseTriggerAPI>.ClassName => null;
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CTestPulseIOAPI : ISchemaClass<CTestPulseIOAPI>
     static int ISchemaClass<CTestPulseIOAPI>.Size => 8;
     static string? ISchemaClass<CTestPulseIOAPI>.ClassName => null;
 
-
-
-
 }

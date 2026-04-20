@@ -18,12 +18,13 @@ internal partial class ExternalAnimGraphHandle_tImpl : SchemaClass, ExternalAnim
 
     private static nint? _ValueOffset;
 
-    public ref uint Value {
-        get {
+    public ref uint Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x680C252CDCB0894A);
             return ref _Handle.AsRef<uint>(_ValueOffset!.Value);
         }
     }
-
 
 }

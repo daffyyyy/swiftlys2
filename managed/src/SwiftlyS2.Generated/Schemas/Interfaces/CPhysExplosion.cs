@@ -33,6 +33,8 @@ public partial interface CPhysExplosion : CPointEntity, ISchemaClass<CPhysExplos
 
     public ref bool AffectInvulnerableEnts { get; }
 
+    public ref bool DisablePushClamp { get; }
+
     public ref CEntityIOOutput OnPushedPlayer { get; }
 
 

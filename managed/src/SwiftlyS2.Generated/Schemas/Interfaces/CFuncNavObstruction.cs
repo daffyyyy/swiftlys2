@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncNavObstruction : CBaseModelEntity, ISchemaClass<CFuncNavObstruction>
 {
     static CFuncNavObstruction ISchemaClass<CFuncNavObstruction>.From(nint handle) => new CFuncNavObstructionImpl(handle);
-    static int ISchemaClass<CFuncNavObstruction>.Size => 1872;
+    static int ISchemaClass<CFuncNavObstruction>.Size => 1928;
     static string? ISchemaClass<CFuncNavObstruction>.ClassName => "func_nav_avoidance_obstacle";
 
 

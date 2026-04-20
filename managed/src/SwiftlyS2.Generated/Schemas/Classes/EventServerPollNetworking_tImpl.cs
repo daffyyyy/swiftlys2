@@ -16,7 +16,4 @@ internal partial class EventServerPollNetworking_tImpl : EventSimulate_tImpl, Ev
 {
     public EventServerPollNetworking_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

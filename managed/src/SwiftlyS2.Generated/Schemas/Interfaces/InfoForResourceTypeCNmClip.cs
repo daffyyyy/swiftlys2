@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCNmClip : ISchemaClass<InfoForResour
     static int ISchemaClass<InfoForResourceTypeCNmClip>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCNmClip>.ClassName => null;
 
-
-
-
 }

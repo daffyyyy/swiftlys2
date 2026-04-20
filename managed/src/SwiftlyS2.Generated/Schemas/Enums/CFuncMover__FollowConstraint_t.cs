@@ -6,7 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CFuncMover__FollowConstraint_t : uint
 {
- FOLLOW_CONSTRAINT_DISTANCE = 0,
-
- FOLLOW_CONSTRAINT_SPRING = 1,
+    FOLLOW_CONSTRAINT_DISTANCE = 0,
+    FOLLOW_CONSTRAINT_SPRING = 1,
+    FOLLOW_CONSTRAINT_RATIO = 2,
 }

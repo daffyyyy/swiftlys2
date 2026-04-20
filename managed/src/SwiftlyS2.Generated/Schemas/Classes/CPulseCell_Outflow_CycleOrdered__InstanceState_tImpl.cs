@@ -18,12 +18,13 @@ internal partial class CPulseCell_Outflow_CycleOrdered__InstanceState_tImpl : Sc
 
     private static nint? _NextIndexOffset;
 
-    public ref int NextIndex {
-        get {
+    public ref int NextIndex
+    {
+        get
+        {
             _NextIndexOffset = _NextIndexOffset ?? Schema.GetOffset(0xB3EBE505EFEC0D98);
             return ref _Handle.AsRef<int>(_NextIndexOffset!.Value);
         }
     }
-
 
 }

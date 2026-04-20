@@ -16,7 +16,4 @@ internal partial class CEnableMotionFixupImpl : CBaseEntityImpl, CEnableMotionFi
 {
     public CEnableMotionFixupImpl(nint handle) : base(handle) { }
 
-
-
-
 }

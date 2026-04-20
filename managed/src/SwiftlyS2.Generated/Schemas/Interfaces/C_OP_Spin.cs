@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_Spin : CGeneralSpin, ISchemaClass<C_OP_Spin>
 {
     static C_OP_Spin ISchemaClass<C_OP_Spin>.From(nint handle) => new C_OP_SpinImpl(handle);
-    static int ISchemaClass<C_OP_Spin>.Size => 488;
+    static int ISchemaClass<C_OP_Spin>.Size => 496;
     static string? ISchemaClass<C_OP_Spin>.ClassName => null;
-
-
-
 
 }

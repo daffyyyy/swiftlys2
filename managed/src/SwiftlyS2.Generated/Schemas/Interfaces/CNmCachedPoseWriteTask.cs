@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmCachedPoseWriteTask : CNmPoseTask, ISchemaClass<CNmCachedPoseWriteTask>
 {
     static CNmCachedPoseWriteTask ISchemaClass<CNmCachedPoseWriteTask>.From(nint handle) => new CNmCachedPoseWriteTaskImpl(handle);
-    static int ISchemaClass<CNmCachedPoseWriteTask>.Size => 96;
+    static int ISchemaClass<CNmCachedPoseWriteTask>.Size => 80;
     static string? ISchemaClass<CNmCachedPoseWriteTask>.ClassName => null;
-
-
-
 
 }

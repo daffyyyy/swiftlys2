@@ -103,9 +103,9 @@ public partial interface CLightComponent : CEntityComponent, ISchemaClass<CLight
 
     public ref int DirectLight { get; }
 
-    public ref int IndirectLight { get; }
+    public ref int BounceLight { get; }
 
-    public ref bool DynamicBounce { get; }
+    public ref float BounceScale { get; }
 
     public ref float FadeMinDist { get; }
 
@@ -200,8 +200,8 @@ public partial interface CLightComponent : CEntityComponent, ISchemaClass<CLight
     public void RenderToCubemapsUpdated();
     public void AllowSSTGenerationUpdated();
     public void DirectLightUpdated();
-    public void IndirectLightUpdated();
-    public void DynamicBounceUpdated();
+    public void BounceLightUpdated();
+    public void BounceScaleUpdated();
     public void FadeMinDistUpdated();
     public void FadeMaxDistUpdated();
     public void ShadowFadeMinDistUpdated();

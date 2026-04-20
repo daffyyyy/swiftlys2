@@ -11,9 +11,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundContainerReference : ISchemaClass<CSoundContainerReference>
 {
     static CSoundContainerReference ISchemaClass<CSoundContainerReference>.From(nint handle) => new CSoundContainerReferenceImpl(handle);
-    static int ISchemaClass<CSoundContainerReference>.Size => 24;
+    static int ISchemaClass<CSoundContainerReference>.Size => 32;
     static string? ISchemaClass<CSoundContainerReference>.ClassName => null;
 
+
+    public string Namespace { get; set; }
 
     public ref bool UseReference { get; }
 

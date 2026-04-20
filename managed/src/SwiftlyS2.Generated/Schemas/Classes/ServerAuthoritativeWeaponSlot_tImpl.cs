@@ -18,24 +18,30 @@ internal partial class ServerAuthoritativeWeaponSlot_tImpl : SchemaClass, Server
 
     private static nint? _ClassOffset;
 
-    public ref ushort Class {
-        get {
+    public ref ushort Class
+    {
+        get
+        {
             _ClassOffset = _ClassOffset ?? Schema.GetOffset(0x8AF3F5CAECD2A54A);
             return ref _Handle.AsRef<ushort>(_ClassOffset!.Value);
         }
     }
     private static nint? _SlotOffset;
 
-    public ref ushort Slot {
-        get {
+    public ref ushort Slot
+    {
+        get
+        {
             _SlotOffset = _SlotOffset ?? Schema.GetOffset(0x8AF3F5CAF5443C5E);
             return ref _Handle.AsRef<ushort>(_SlotOffset!.Value);
         }
     }
     private static nint? _ItemDefIdxOffset;
 
-    public ref ushort ItemDefIdx {
-        get {
+    public ref ushort ItemDefIdx
+    {
+        get
+        {
             _ItemDefIdxOffset = _ItemDefIdxOffset ?? Schema.GetOffset(0x8AF3F5CA7BE26777);
             return ref _Handle.AsRef<ushort>(_ItemDefIdxOffset!.Value);
         }

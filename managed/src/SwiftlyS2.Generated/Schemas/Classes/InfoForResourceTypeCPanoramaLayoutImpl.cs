@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCPanoramaLayoutImpl : SchemaClass, Inf
 {
     public InfoForResourceTypeCPanoramaLayoutImpl(nint handle) : base(handle) { }
 
-
-
-
 }

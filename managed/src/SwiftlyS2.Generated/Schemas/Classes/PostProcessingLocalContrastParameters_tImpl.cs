@@ -18,44 +18,53 @@ internal partial class PostProcessingLocalContrastParameters_tImpl : SchemaClass
 
     private static nint? _LocalContrastStrengthOffset;
 
-    public ref float LocalContrastStrength {
-        get {
+    public ref float LocalContrastStrength
+    {
+        get
+        {
             _LocalContrastStrengthOffset = _LocalContrastStrengthOffset ?? Schema.GetOffset(0x43910BD66A89DF05);
             return ref _Handle.AsRef<float>(_LocalContrastStrengthOffset!.Value);
         }
     }
     private static nint? _LocalContrastEdgeStrengthOffset;
 
-    public ref float LocalContrastEdgeStrength {
-        get {
+    public ref float LocalContrastEdgeStrength
+    {
+        get
+        {
             _LocalContrastEdgeStrengthOffset = _LocalContrastEdgeStrengthOffset ?? Schema.GetOffset(0x43910BD6CC517324);
             return ref _Handle.AsRef<float>(_LocalContrastEdgeStrengthOffset!.Value);
         }
     }
     private static nint? _LocalContrastVignetteStartOffset;
 
-    public ref float LocalContrastVignetteStart {
-        get {
+    public ref float LocalContrastVignetteStart
+    {
+        get
+        {
             _LocalContrastVignetteStartOffset = _LocalContrastVignetteStartOffset ?? Schema.GetOffset(0x43910BD633264BD6);
             return ref _Handle.AsRef<float>(_LocalContrastVignetteStartOffset!.Value);
         }
     }
     private static nint? _LocalContrastVignetteEndOffset;
 
-    public ref float LocalContrastVignetteEnd {
-        get {
+    public ref float LocalContrastVignetteEnd
+    {
+        get
+        {
             _LocalContrastVignetteEndOffset = _LocalContrastVignetteEndOffset ?? Schema.GetOffset(0x43910BD689634873);
             return ref _Handle.AsRef<float>(_LocalContrastVignetteEndOffset!.Value);
         }
     }
     private static nint? _LocalContrastVignetteBlurOffset;
 
-    public ref float LocalContrastVignetteBlur {
-        get {
+    public ref float LocalContrastVignetteBlur
+    {
+        get
+        {
             _LocalContrastVignetteBlurOffset = _LocalContrastVignetteBlurOffset ?? Schema.GetOffset(0x43910BD6D8C40957);
             return ref _Handle.AsRef<float>(_LocalContrastVignetteBlurOffset!.Value);
         }
     }
-
 
 }

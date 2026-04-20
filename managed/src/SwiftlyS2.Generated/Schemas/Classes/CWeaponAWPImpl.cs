@@ -16,7 +16,4 @@ internal partial class CWeaponAWPImpl : CCSWeaponBaseGunImpl, CWeaponAWP
 {
     public CWeaponAWPImpl(nint handle) : base(handle) { }
 
-
-
-
 }

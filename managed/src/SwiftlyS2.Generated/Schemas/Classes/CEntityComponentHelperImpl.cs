@@ -18,16 +18,20 @@ internal partial class CEntityComponentHelperImpl : SchemaClass, CEntityComponen
 
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x714DB384DC74A14C);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _InfoOffset;
 
-    public EntComponentInfo_t? Info {
-        get {
+    public EntComponentInfo_t? Info
+    {
+        get
+        {
             _InfoOffset = _InfoOffset ?? Schema.GetOffset(0x714DB3840F0BFD1B);
             var ptr = _Handle.Read<nint>(_InfoOffset!.Value);
             return ptr.IsValidPtr() ? new EntComponentInfo_tImpl(ptr) : null;
@@ -35,21 +39,24 @@ internal partial class CEntityComponentHelperImpl : SchemaClass, CEntityComponen
     }
     private static nint? _PriorityOffset;
 
-    public ref int Priority {
-        get {
+    public ref int Priority
+    {
+        get
+        {
             _PriorityOffset = _PriorityOffset ?? Schema.GetOffset(0x714DB384E7EFB335);
             return ref _Handle.AsRef<int>(_PriorityOffset!.Value);
         }
     }
     private static nint? _NextOffset;
 
-    public CEntityComponentHelper? Next {
-        get {
+    public CEntityComponentHelper? Next
+    {
+        get
+        {
             _NextOffset = _NextOffset ?? Schema.GetOffset(0x714DB38432B11E0E);
             var ptr = _Handle.Read<nint>(_NextOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityComponentHelperImpl(ptr) : null;
         }
     }
-
 
 }

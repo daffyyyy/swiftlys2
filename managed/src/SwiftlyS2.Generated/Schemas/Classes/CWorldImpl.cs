@@ -16,7 +16,4 @@ internal partial class CWorldImpl : CBaseModelEntityImpl, CWorld
 {
     public CWorldImpl(nint handle) : base(handle) { }
 
-
-
-
 }

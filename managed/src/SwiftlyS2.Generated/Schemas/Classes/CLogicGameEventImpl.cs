@@ -18,16 +18,18 @@ internal partial class CLogicGameEventImpl : CLogicalEntityImpl, CLogicGameEvent
 
     private static nint? _EventNameOffset;
 
-    public string EventName {
-        get {
+    public string EventName
+    {
+        get
+        {
             _EventNameOffset = _EventNameOffset ?? Schema.GetOffset(0xBED9751E78114A54);
             return Schema.GetString(_Handle.Read<nint>(_EventNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EventNameOffset = _EventNameOffset ?? Schema.GetOffset(0xBED9751E78114A54);
             Schema.SetString(_Handle, _EventNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

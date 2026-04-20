@@ -18,36 +18,43 @@ internal partial class OutflowWithRequirements_tImpl : SchemaClass, OutflowWithR
 
     private static nint? _ConnectionOffset;
 
-    public CPulse_OutflowConnection Connection {
-        get {
+    public CPulse_OutflowConnection Connection
+    {
+        get
+        {
             _ConnectionOffset = _ConnectionOffset ?? Schema.GetOffset(0x5BFC4DD4D4CD5F59);
             return new CPulse_OutflowConnectionImpl(_Handle + _ConnectionOffset!.Value);
         }
     }
     private static nint? _DestinationFlowNodeIDOffset;
 
-    public PulseDocNodeID_t DestinationFlowNodeID {
-        get {
+    public PulseDocNodeID_t DestinationFlowNodeID
+    {
+        get
+        {
             _DestinationFlowNodeIDOffset = _DestinationFlowNodeIDOffset ?? Schema.GetOffset(0x5BFC4DD4C986A186);
             return new PulseDocNodeID_tImpl(_Handle + _DestinationFlowNodeIDOffset!.Value);
         }
     }
     private static nint? _RequirementNodeIDsOffset;
 
-    public ref CUtlVector<PulseDocNodeID_t> RequirementNodeIDs {
-        get {
+    public ref CUtlVector<PulseDocNodeID_t> RequirementNodeIDs
+    {
+        get
+        {
             _RequirementNodeIDsOffset = _RequirementNodeIDsOffset ?? Schema.GetOffset(0x5BFC4DD47DAC9EFE);
             return ref _Handle.AsRef<CUtlVector<PulseDocNodeID_t>>(_RequirementNodeIDsOffset!.Value);
         }
     }
     private static nint? _CursorStateBlockIndexOffset;
 
-    public ref CUtlVector<int> CursorStateBlockIndex {
-        get {
+    public ref CUtlVector<int> CursorStateBlockIndex
+    {
+        get
+        {
             _CursorStateBlockIndexOffset = _CursorStateBlockIndexOffset ?? Schema.GetOffset(0x5BFC4DD46CECC07B);
             return ref _Handle.AsRef<CUtlVector<int>>(_CursorStateBlockIndexOffset!.Value);
         }
     }
-
 
 }

@@ -6,5 +6,5 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum navproperties_t : uint
 {
- NAV_IGNORE = 1,
+    NAV_IGNORE = 1,
 }

@@ -18,8 +18,10 @@ internal partial class CAttributeContainerImpl : CAttributeManagerImpl, CAttribu
 
     private static nint? _ItemOffset;
 
-    public CEconItemView Item {
-        get {
+    public CEconItemView Item
+    {
+        get
+        {
             _ItemOffset = _ItemOffset ?? Schema.GetOffset(0x554833CDDCE71866);
             return new CEconItemViewImpl(_Handle + _ItemOffset!.Value);
         }

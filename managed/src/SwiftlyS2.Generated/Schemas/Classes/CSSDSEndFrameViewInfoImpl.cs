@@ -18,24 +18,28 @@ internal partial class CSSDSEndFrameViewInfoImpl : SchemaClass, CSSDSEndFrameVie
 
     private static nint? _ViewIdOffset;
 
-    public ref ulong ViewId {
-        get {
+    public ref ulong ViewId
+    {
+        get
+        {
             _ViewIdOffset = _ViewIdOffset ?? Schema.GetOffset(0xE2792496AE3CB1A1);
             return ref _Handle.AsRef<ulong>(_ViewIdOffset!.Value);
         }
     }
     private static nint? _ViewNameOffset;
 
-    public string ViewName {
-        get {
+    public string ViewName
+    {
+        get
+        {
             _ViewNameOffset = _ViewNameOffset ?? Schema.GetOffset(0xE2792496BA5BBDBB);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ViewNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ViewNameOffset = _ViewNameOffset ?? Schema.GetOffset(0xE2792496BA5BBDBB);
             Schema.SetCUtlString(_Handle, _ViewNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

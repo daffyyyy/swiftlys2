@@ -18,28 +18,33 @@ internal partial class CInfoPlayerStartImpl : CPointEntityImpl, CInfoPlayerStart
 
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0xE0799D713A7C5965);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _IsMasterOffset;
 
-    public ref bool IsMaster {
-        get {
+    public ref bool IsMaster
+    {
+        get
+        {
             _IsMasterOffset = _IsMasterOffset ?? Schema.GetOffset(0xE0799D71DE5719A3);
             return ref _Handle.AsRef<bool>(_IsMasterOffset!.Value);
         }
     }
     private static nint? _PawnSubclassOffset;
 
-    public ref CGlobalSymbol PawnSubclass {
-        get {
+    public ref CGlobalSymbol PawnSubclass
+    {
+        get
+        {
             _PawnSubclassOffset = _PawnSubclassOffset ?? Schema.GetOffset(0xE0799D7190AFB5EF);
             return ref _Handle.AsRef<CGlobalSymbol>(_PawnSubclassOffset!.Value);
         }
     }
-
 
 }

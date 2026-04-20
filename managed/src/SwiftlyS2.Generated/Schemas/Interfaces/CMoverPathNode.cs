@@ -15,19 +15,19 @@ public partial interface CMoverPathNode : CPathNode, ISchemaClass<CMoverPathNode
     static string? ISchemaClass<CMoverPathNode>.ClassName => "path_node_mover";
 
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnStartFromOrInSegment { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnStoppedAtOrInSegment { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnPassThrough { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnPassThroughForward { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnPassThroughReverse { get; }
 
 

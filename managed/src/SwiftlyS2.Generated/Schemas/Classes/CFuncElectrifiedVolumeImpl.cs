@@ -18,52 +18,64 @@ internal partial class CFuncElectrifiedVolumeImpl : CFuncBrushImpl, CFuncElectri
 
     private static nint? _EffectNameOffset;
 
-    public string EffectName {
-        get {
+    public string EffectName
+    {
+        get
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0x51A0E59866CD81EF);
             return Schema.GetString(_Handle.Read<nint>(_EffectNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0x51A0E59866CD81EF);
             Schema.SetString(_Handle, _EffectNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EffectInterpenetrateNameOffset;
 
-    public string EffectInterpenetrateName {
-        get {
+    public string EffectInterpenetrateName
+    {
+        get
+        {
             _EffectInterpenetrateNameOffset = _EffectInterpenetrateNameOffset ?? Schema.GetOffset(0x51A0E5987691FB19);
             return Schema.GetString(_Handle.Read<nint>(_EffectInterpenetrateNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectInterpenetrateNameOffset = _EffectInterpenetrateNameOffset ?? Schema.GetOffset(0x51A0E5987691FB19);
             Schema.SetString(_Handle, _EffectInterpenetrateNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EffectZapNameOffset;
 
-    public string EffectZapName {
-        get {
+    public string EffectZapName
+    {
+        get
+        {
             _EffectZapNameOffset = _EffectZapNameOffset ?? Schema.GetOffset(0x51A0E598BE142B78);
             return Schema.GetString(_Handle.Read<nint>(_EffectZapNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectZapNameOffset = _EffectZapNameOffset ?? Schema.GetOffset(0x51A0E598BE142B78);
             Schema.SetString(_Handle, _EffectZapNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EffectSourceOffset;
 
-    public string EffectSource {
-        get {
+    public string EffectSource
+    {
+        get
+        {
             _EffectSourceOffset = _EffectSourceOffset ?? Schema.GetOffset(0x51A0E598300F4ED9);
             return Schema.GetString(_Handle.Read<nint>(_EffectSourceOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectSourceOffset = _EffectSourceOffset ?? Schema.GetOffset(0x51A0E598300F4ED9);
             Schema.SetString(_Handle, _EffectSourceOffset!.Value, value);
         }
-    } 
+    }
 
     public void EffectNameUpdated() => Schema.Update(_Handle, 0x51A0E59866CD81EF);
 }

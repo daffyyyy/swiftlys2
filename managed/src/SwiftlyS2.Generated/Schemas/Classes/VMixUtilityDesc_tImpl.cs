@@ -18,52 +18,63 @@ internal partial class VMixUtilityDesc_tImpl : SchemaClass, VMixUtilityDesc_t
 
     private static nint? _OpOffset;
 
-    public ref VMixChannelOperation_t Op {
-        get {
+    public ref VMixChannelOperation_t Op
+    {
+        get
+        {
             _OpOffset = _OpOffset ?? Schema.GetOffset(0x9B3640C11384687E);
             return ref _Handle.AsRef<VMixChannelOperation_t>(_OpOffset!.Value);
         }
     }
     private static nint? _InputPanOffset;
 
-    public ref float InputPan {
-        get {
+    public ref float InputPan
+    {
+        get
+        {
             _InputPanOffset = _InputPanOffset ?? Schema.GetOffset(0x9B3640C17E813E04);
             return ref _Handle.AsRef<float>(_InputPanOffset!.Value);
         }
     }
     private static nint? _OutputBalanceOffset;
 
-    public ref float OutputBalance {
-        get {
+    public ref float OutputBalance
+    {
+        get
+        {
             _OutputBalanceOffset = _OutputBalanceOffset ?? Schema.GetOffset(0x9B3640C1730ED266);
             return ref _Handle.AsRef<float>(_OutputBalanceOffset!.Value);
         }
     }
     private static nint? _FldbOutputGainOffset;
 
-    public ref float FldbOutputGain {
-        get {
+    public ref float FldbOutputGain
+    {
+        get
+        {
             _FldbOutputGainOffset = _FldbOutputGainOffset ?? Schema.GetOffset(0x9B3640C167F97C23);
             return ref _Handle.AsRef<float>(_FldbOutputGainOffset!.Value);
         }
     }
     private static nint? _BassMonoOffset;
 
-    public ref bool BassMono {
-        get {
+    public ref bool BassMono
+    {
+        get
+        {
             _BassMonoOffset = _BassMonoOffset ?? Schema.GetOffset(0x9B3640C1C65EDB7D);
             return ref _Handle.AsRef<bool>(_BassMonoOffset!.Value);
         }
     }
     private static nint? _BassFreqOffset;
 
-    public ref float BassFreq {
-        get {
+    public ref float BassFreq
+    {
+        get
+        {
             _BassFreqOffset = _BassFreqOffset ?? Schema.GetOffset(0x9B3640C13E71CC5A);
             return ref _Handle.AsRef<float>(_BassFreqOffset!.Value);
         }
     }
-
 
 }

@@ -18,52 +18,63 @@ internal partial class CBoneConstraintPoseSpaceMorphImpl : CBoneConstraintBaseIm
 
     private static nint? _BoneNameOffset;
 
-    public string BoneName {
-        get {
+    public string BoneName
+    {
+        get
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0x6ECAD65A7559AC1F);
             return Schema.GetCUtlString(_Handle.Read<nint>(_BoneNameOffset!.Value));
         }
-        set {
+        set
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0x6ECAD65A7559AC1F);
             Schema.SetCUtlString(_Handle, _BoneNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AttachmentNameOffset;
 
-    public string AttachmentName {
-        get {
+    public string AttachmentName
+    {
+        get
+        {
             _AttachmentNameOffset = _AttachmentNameOffset ?? Schema.GetOffset(0x6ECAD65A7B86DB7C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_AttachmentNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AttachmentNameOffset = _AttachmentNameOffset ?? Schema.GetOffset(0x6ECAD65A7B86DB7C);
             Schema.SetCUtlString(_Handle, _AttachmentNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OutputMorphOffset;
 
-    public ref CUtlVector<CUtlString> OutputMorph {
-        get {
+    public ref CUtlVector<CUtlString> OutputMorph
+    {
+        get
+        {
             _OutputMorphOffset = _OutputMorphOffset ?? Schema.GetOffset(0x6ECAD65ADC9A8262);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_OutputMorphOffset!.Value);
         }
     }
     private static nint? _InputListOffset;
 
-    public ref CUtlVector<CBoneConstraintPoseSpaceMorph__Input_t> InputList {
-        get {
+    public ref CUtlVector<CBoneConstraintPoseSpaceMorph__Input_t> InputList
+    {
+        get
+        {
             _InputListOffset = _InputListOffset ?? Schema.GetOffset(0x6ECAD65A15EB8D83);
             return ref _Handle.AsRef<CUtlVector<CBoneConstraintPoseSpaceMorph__Input_t>>(_InputListOffset!.Value);
         }
     }
     private static nint? _ClampOffset;
 
-    public ref bool Clamp {
-        get {
+    public ref bool Clamp
+    {
+        get
+        {
             _ClampOffset = _ClampOffset ?? Schema.GetOffset(0x6ECAD65A84C7929C);
             return ref _Handle.AsRef<bool>(_ClampOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CWeaponXM1014Impl : CCSWeaponBaseShotgunImpl, CWeaponXM10
 {
     public CWeaponXM1014Impl(nint handle) : base(handle) { }
 
-
-
-
 }

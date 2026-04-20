@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCSequenceGroupDataImpl : SchemaClass, 
 {
     public InfoForResourceTypeCSequenceGroupDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

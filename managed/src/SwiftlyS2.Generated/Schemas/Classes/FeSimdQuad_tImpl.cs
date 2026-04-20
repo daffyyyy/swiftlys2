@@ -18,26 +18,31 @@ internal partial class FeSimdQuad_tImpl : SchemaClass, FeSimdQuad_t
 
     private static nint? _NodeOffset;
 
-    public SchemaUntypedField Node {
-        get {
+    public SchemaUntypedField Node
+    {
+        get
+        {
             _NodeOffset = _NodeOffset ?? Schema.GetOffset(0xB82B061DCD6694B9);
             return new SchemaUntypedField(_Handle + _NodeOffset!.Value);
         }
     }
     private static nint? _F4SlackOffset;
 
-    public ref fltx4 F4Slack {
-        get {
+    public ref fltx4 F4Slack
+    {
+        get
+        {
             _F4SlackOffset = _F4SlackOffset ?? Schema.GetOffset(0xB82B061DBBFE3561);
             return ref _Handle.AsRef<fltx4>(_F4SlackOffset!.Value);
         }
     }
-    public ISchemaFixedArray<FourVectors> Shape {
+    public ISchemaFixedArray<FourVectors> Shape
+    {
         get => new SchemaFixedArray<FourVectors>(_Handle, 0xB82B061DE159551A, 4, 48, 16);
     }
-    public ISchemaFixedArray<fltx4> F4Weights {
+    public ISchemaFixedArray<fltx4> F4Weights
+    {
         get => new SchemaFixedArray<fltx4>(_Handle, 0xB82B061DDCFBCC00, 4, 16, 16);
     }
-
 
 }

@@ -18,20 +18,23 @@ internal partial class CPulseCell_WaitForCursorsWithTagBaseImpl : CPulseCell_Bas
 
     private static nint? _CursorsAllowedToWaitOffset;
 
-    public ref int CursorsAllowedToWait {
-        get {
+    public ref int CursorsAllowedToWait
+    {
+        get
+        {
             _CursorsAllowedToWaitOffset = _CursorsAllowedToWaitOffset ?? Schema.GetOffset(0xA8108DB0236617EC);
             return ref _Handle.AsRef<int>(_CursorsAllowedToWaitOffset!.Value);
         }
     }
     private static nint? _WaitCompleteOffset;
 
-    public CPulse_ResumePoint WaitComplete {
-        get {
+    public CPulse_ResumePoint WaitComplete
+    {
+        get
+        {
             _WaitCompleteOffset = _WaitCompleteOffset ?? Schema.GetOffset(0xA8108DB02C41AD97);
             return new CPulse_ResumePointImpl(_Handle + _WaitCompleteOffset!.Value);
         }
     }
-
 
 }

@@ -18,44 +18,53 @@ internal partial class C_OP_ExternalGameImpulseForceImpl : CParticleFunctionForc
 
     private static nint? _ForceScaleOffset;
 
-    public CPerParticleFloatInput ForceScale {
-        get {
+    public CPerParticleFloatInput ForceScale
+    {
+        get
+        {
             _ForceScaleOffset = _ForceScaleOffset ?? Schema.GetOffset(0x9579EDD64817F390);
             return new CPerParticleFloatInputImpl(_Handle + _ForceScaleOffset!.Value);
         }
     }
     private static nint? _RopesOffset;
 
-    public ref bool Ropes {
-        get {
+    public ref bool Ropes
+    {
+        get
+        {
             _RopesOffset = _RopesOffset ?? Schema.GetOffset(0x9579EDD63A651EDA);
             return ref _Handle.AsRef<bool>(_RopesOffset!.Value);
         }
     }
     private static nint? _RopesZOnlyOffset;
 
-    public ref bool RopesZOnly {
-        get {
+    public ref bool RopesZOnly
+    {
+        get
+        {
             _RopesZOnlyOffset = _RopesZOnlyOffset ?? Schema.GetOffset(0x9579EDD686709BB2);
             return ref _Handle.AsRef<bool>(_RopesZOnlyOffset!.Value);
         }
     }
     private static nint? _ExplosionsOffset;
 
-    public ref bool Explosions {
-        get {
+    public ref bool Explosions
+    {
+        get
+        {
             _ExplosionsOffset = _ExplosionsOffset ?? Schema.GetOffset(0x9579EDD64CD39BC9);
             return ref _Handle.AsRef<bool>(_ExplosionsOffset!.Value);
         }
     }
     private static nint? _ParticlesOffset;
 
-    public ref bool Particles {
-        get {
+    public ref bool Particles
+    {
+        get
+        {
             _ParticlesOffset = _ParticlesOffset ?? Schema.GetOffset(0x9579EDD6B287A104);
             return ref _Handle.AsRef<bool>(_ParticlesOffset!.Value);
         }
     }
-
 
 }

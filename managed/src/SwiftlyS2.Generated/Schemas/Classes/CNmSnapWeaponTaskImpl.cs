@@ -16,7 +16,4 @@ internal partial class CNmSnapWeaponTaskImpl : CNmPoseTaskImpl, CNmSnapWeaponTas
 {
     public CNmSnapWeaponTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

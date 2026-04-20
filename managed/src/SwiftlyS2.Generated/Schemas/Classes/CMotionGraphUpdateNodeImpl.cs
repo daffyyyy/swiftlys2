@@ -18,12 +18,13 @@ internal partial class CMotionGraphUpdateNodeImpl : CLeafUpdateNodeImpl, CMotion
 
     private static nint? _MotionGraphOffset;
 
-    public SchemaUntypedField MotionGraph {
-        get {
+    public SchemaUntypedField MotionGraph
+    {
+        get
+        {
             _MotionGraphOffset = _MotionGraphOffset ?? Schema.GetOffset(0x69396A054F70C737);
             return new SchemaUntypedField(_Handle + _MotionGraphOffset!.Value);
         }
     }
-
 
 }

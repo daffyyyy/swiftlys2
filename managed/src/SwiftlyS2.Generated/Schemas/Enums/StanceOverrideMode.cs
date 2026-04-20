@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum StanceOverrideMode : uint
 {
- Sequence = 0,
-
- Node = 1,
+    Sequence = 0,
+    Node = 1,
 }

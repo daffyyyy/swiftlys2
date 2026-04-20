@@ -18,44 +18,53 @@ internal partial class CMotionGraphGroupImpl : SchemaClass, CMotionGraphGroup
 
     private static nint? _SearchDBOffset;
 
-    public CMotionSearchDB SearchDB {
-        get {
+    public CMotionSearchDB SearchDB
+    {
+        get
+        {
             _SearchDBOffset = _SearchDBOffset ?? Schema.GetOffset(0x34D64AAF5662226F);
             return new CMotionSearchDBImpl(_Handle + _SearchDBOffset!.Value);
         }
     }
     private static nint? _MotionGraphsOffset;
 
-    public ref CUtlVector<SchemaUntypedField> MotionGraphs {
-        get {
+    public ref CUtlVector<SchemaUntypedField> MotionGraphs
+    {
+        get
+        {
             _MotionGraphsOffset = _MotionGraphsOffset ?? Schema.GetOffset(0x34D64AAFE9CB46D2);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_MotionGraphsOffset!.Value);
         }
     }
     private static nint? _MotionGraphConfigsOffset;
 
-    public ref CUtlVector<CMotionGraphConfig> MotionGraphConfigs {
-        get {
+    public ref CUtlVector<CMotionGraphConfig> MotionGraphConfigs
+    {
+        get
+        {
             _MotionGraphConfigsOffset = _MotionGraphConfigsOffset ?? Schema.GetOffset(0x34D64AAF8D9A544C);
             return ref _Handle.AsRef<CUtlVector<CMotionGraphConfig>>(_MotionGraphConfigsOffset!.Value);
         }
     }
     private static nint? _SampleToConfigOffset;
 
-    public ref CUtlVector<int> SampleToConfig {
-        get {
+    public ref CUtlVector<int> SampleToConfig
+    {
+        get
+        {
             _SampleToConfigOffset = _SampleToConfigOffset ?? Schema.GetOffset(0x34D64AAF85EC9B7C);
             return ref _Handle.AsRef<CUtlVector<int>>(_SampleToConfigOffset!.Value);
         }
     }
     private static nint? _IsActiveScriptOffset;
 
-    public AnimScriptHandle IsActiveScript {
-        get {
+    public AnimScriptHandle IsActiveScript
+    {
+        get
+        {
             _IsActiveScriptOffset = _IsActiveScriptOffset ?? Schema.GetOffset(0x34D64AAFF2DBEC2A);
             return new AnimScriptHandleImpl(_Handle + _IsActiveScriptOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CCSGO_TeamSelectCharacterPositionImpl : CCSGO_TeamPreview
 {
     public CCSGO_TeamSelectCharacterPositionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,28 +18,33 @@ internal partial class C_INIT_VelocityFromNormalImpl : CParticleFunctionInitiali
 
     private static nint? _SpeedMinOffset;
 
-    public ref float SpeedMin {
-        get {
+    public ref float SpeedMin
+    {
+        get
+        {
             _SpeedMinOffset = _SpeedMinOffset ?? Schema.GetOffset(0x33D27066B989E1F8);
             return ref _Handle.AsRef<float>(_SpeedMinOffset!.Value);
         }
     }
     private static nint? _SpeedMaxOffset;
 
-    public ref float SpeedMax {
-        get {
+    public ref float SpeedMax
+    {
+        get
+        {
             _SpeedMaxOffset = _SpeedMaxOffset ?? Schema.GetOffset(0x33D27066CF9D8C52);
             return ref _Handle.AsRef<float>(_SpeedMaxOffset!.Value);
         }
     }
     private static nint? _IgnoreDtOffset;
 
-    public ref bool IgnoreDt {
-        get {
+    public ref bool IgnoreDt
+    {
+        get
+        {
             _IgnoreDtOffset = _IgnoreDtOffset ?? Schema.GetOffset(0x33D27066330C0603);
             return ref _Handle.AsRef<bool>(_IgnoreDtOffset!.Value);
         }
     }
-
 
 }

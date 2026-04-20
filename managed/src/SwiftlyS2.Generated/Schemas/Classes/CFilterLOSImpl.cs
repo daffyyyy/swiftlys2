@@ -16,7 +16,4 @@ internal partial class CFilterLOSImpl : CBaseFilterImpl, CFilterLOS
 {
     public CFilterLOSImpl(nint handle) : base(handle) { }
 
-
-
-
 }

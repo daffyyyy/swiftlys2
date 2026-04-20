@@ -18,32 +18,38 @@ internal partial class ConstantInfo_tImpl : SchemaClass, ConstantInfo_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xF4BEF78E4D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xF4BEF78E4D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NameTokenOffset;
 
-    public ref CUtlStringToken NameToken {
-        get {
+    public ref CUtlStringToken NameToken
+    {
+        get
+        {
             _NameTokenOffset = _NameTokenOffset ?? Schema.GetOffset(0xF4BEF78E9293FEF3);
             return ref _Handle.AsRef<CUtlStringToken>(_NameTokenOffset!.Value);
         }
     }
     private static nint? _ValueOffset;
 
-    public ref float Value {
-        get {
+    public ref float Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xF4BEF78E8DFCB984);
             return ref _Handle.AsRef<float>(_ValueOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface CSoundInfoHeader : ISchemaClass<CSoundInfoHeader>
     static int ISchemaClass<CSoundInfoHeader>.Size => 1;
     static string? ISchemaClass<CSoundInfoHeader>.ClassName => null;
 
-
-
-
 }

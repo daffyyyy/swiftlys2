@@ -18,12 +18,13 @@ internal partial class C_INIT_RemapQAnglesToRotationImpl : CParticleFunctionInit
 
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0xD24C8C15B3FDC289);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCPanoramaDynamicImagesImpl : SchemaCla
 {
     public InfoForResourceTypeCPanoramaDynamicImagesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

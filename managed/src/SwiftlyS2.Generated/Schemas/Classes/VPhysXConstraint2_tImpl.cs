@@ -18,36 +18,43 @@ internal partial class VPhysXConstraint2_tImpl : SchemaClass, VPhysXConstraint2_
 
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x6FB758FDCE6E9C28);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _ParentOffset;
 
-    public ref ushort Parent {
-        get {
+    public ref ushort Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0x6FB758FD0AABB9D1);
             return ref _Handle.AsRef<ushort>(_ParentOffset!.Value);
         }
     }
     private static nint? _ChildOffset;
 
-    public ref ushort Child {
-        get {
+    public ref ushort Child
+    {
+        get
+        {
             _ChildOffset = _ChildOffset ?? Schema.GetOffset(0x6FB758FDFE653481);
             return ref _Handle.AsRef<ushort>(_ChildOffset!.Value);
         }
     }
     private static nint? _ParamsOffset;
 
-    public VPhysXConstraintParams_t Params {
-        get {
+    public VPhysXConstraintParams_t Params
+    {
+        get
+        {
             _ParamsOffset = _ParamsOffset ?? Schema.GetOffset(0x6FB758FD640EA8F3);
             return new VPhysXConstraintParams_tImpl(_Handle + _ParamsOffset!.Value);
         }
     }
-
 
 }

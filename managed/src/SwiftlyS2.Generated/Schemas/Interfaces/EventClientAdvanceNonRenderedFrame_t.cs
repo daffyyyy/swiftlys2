@@ -14,7 +14,4 @@ public partial interface EventClientAdvanceNonRenderedFrame_t : ISchemaClass<Eve
     static int ISchemaClass<EventClientAdvanceNonRenderedFrame_t>.Size => 1;
     static string? ISchemaClass<EventClientAdvanceNonRenderedFrame_t>.ClassName => null;
 
-
-
-
 }

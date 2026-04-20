@@ -16,7 +16,4 @@ internal partial class CNmIsInactiveBranchConditionNode__CDefinitionImpl : CNmBo
 {
     public CNmIsInactiveBranchConditionNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

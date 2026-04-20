@@ -18,68 +18,83 @@ internal partial class CVMixCommandImpl : SchemaClass, CVMixCommand
 
     private static nint? _CommandOffset;
 
-    public ref VMixGraphCommandID_t Command {
-        get {
+    public ref VMixGraphCommandID_t Command
+    {
+        get
+        {
             _CommandOffset = _CommandOffset ?? Schema.GetOffset(0x649AD283F33296FE);
             return ref _Handle.AsRef<VMixGraphCommandID_t>(_CommandOffset!.Value);
         }
     }
     private static nint? _ParameterNameHashOffset;
 
-    public ref uint ParameterNameHash {
-        get {
+    public ref uint ParameterNameHash
+    {
+        get
+        {
             _ParameterNameHashOffset = _ParameterNameHashOffset ?? Schema.GetOffset(0x649AD28324A4107F);
             return ref _Handle.AsRef<uint>(_ParameterNameHashOffset!.Value);
         }
     }
     private static nint? _OutputSubmixOffset;
 
-    public ref int OutputSubmix {
-        get {
+    public ref int OutputSubmix
+    {
+        get
+        {
             _OutputSubmixOffset = _OutputSubmixOffset ?? Schema.GetOffset(0x649AD283822DD794);
             return ref _Handle.AsRef<int>(_OutputSubmixOffset!.Value);
         }
     }
     private static nint? _InputSubmix0Offset;
 
-    public ref int InputSubmix0 {
-        get {
+    public ref int InputSubmix0
+    {
+        get
+        {
             _InputSubmix0Offset = _InputSubmix0Offset ?? Schema.GetOffset(0x649AD2831FEEE711);
             return ref _Handle.AsRef<int>(_InputSubmix0Offset!.Value);
         }
     }
     private static nint? _InputSubmix1Offset;
 
-    public ref int InputSubmix1 {
-        get {
+    public ref int InputSubmix1
+    {
+        get
+        {
             _InputSubmix1Offset = _InputSubmix1Offset ?? Schema.GetOffset(0x649AD2831EEEE57E);
             return ref _Handle.AsRef<int>(_InputSubmix1Offset!.Value);
         }
     }
     private static nint? _ProcessorOffset;
 
-    public ref int Processor {
-        get {
+    public ref int Processor
+    {
+        get
+        {
             _ProcessorOffset = _ProcessorOffset ?? Schema.GetOffset(0x649AD28312BAA203);
             return ref _Handle.AsRef<int>(_ProcessorOffset!.Value);
         }
     }
     private static nint? _InputValue0Offset;
 
-    public ref int InputValue0 {
-        get {
+    public ref int InputValue0
+    {
+        get
+        {
             _InputValue0Offset = _InputValue0Offset ?? Schema.GetOffset(0x649AD283754B10E4);
             return ref _Handle.AsRef<int>(_InputValue0Offset!.Value);
         }
     }
     private static nint? _InputValue1Offset;
 
-    public ref int InputValue1 {
-        get {
+    public ref int InputValue1
+    {
+        get
+        {
             _InputValue1Offset = _InputValue1Offset ?? Schema.GetOffset(0x649AD283764B1277);
             return ref _Handle.AsRef<int>(_InputValue1Offset!.Value);
         }
     }
-
 
 }

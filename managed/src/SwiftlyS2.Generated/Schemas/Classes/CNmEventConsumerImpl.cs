@@ -16,7 +16,4 @@ internal partial class CNmEventConsumerImpl : SchemaClass, CNmEventConsumer
 {
     public CNmEventConsumerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

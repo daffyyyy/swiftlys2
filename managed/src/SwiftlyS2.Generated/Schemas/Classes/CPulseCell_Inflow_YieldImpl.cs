@@ -18,12 +18,13 @@ internal partial class CPulseCell_Inflow_YieldImpl : CPulseCell_BaseYieldingInfl
 
     private static nint? _UnyieldResumeOffset;
 
-    public CPulse_ResumePoint UnyieldResume {
-        get {
+    public CPulse_ResumePoint UnyieldResume
+    {
+        get
+        {
             _UnyieldResumeOffset = _UnyieldResumeOffset ?? Schema.GetOffset(0x1A4BFE3D504DFCDC);
             return new CPulse_ResumePointImpl(_Handle + _UnyieldResumeOffset!.Value);
         }
     }
-
 
 }

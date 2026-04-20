@@ -18,44 +18,53 @@ internal partial class CAI_ChangeHintGroupImpl : CBaseEntityImpl, CAI_ChangeHint
 
     private static nint? _SearchTypeOffset;
 
-    public ref int SearchType {
-        get {
+    public ref int SearchType
+    {
+        get
+        {
             _SearchTypeOffset = _SearchTypeOffset ?? Schema.GetOffset(0xE2F9617B09088830);
             return ref _Handle.AsRef<int>(_SearchTypeOffset!.Value);
         }
     }
     private static nint? _StrSearchNameOffset;
 
-    public string StrSearchName {
-        get {
+    public string StrSearchName
+    {
+        get
+        {
             _StrSearchNameOffset = _StrSearchNameOffset ?? Schema.GetOffset(0xE2F9617B8A77B967);
             return Schema.GetString(_Handle.Read<nint>(_StrSearchNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StrSearchNameOffset = _StrSearchNameOffset ?? Schema.GetOffset(0xE2F9617B8A77B967);
             Schema.SetString(_Handle, _StrSearchNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _StrNewHintGroupOffset;
 
-    public string StrNewHintGroup {
-        get {
+    public string StrNewHintGroup
+    {
+        get
+        {
             _StrNewHintGroupOffset = _StrNewHintGroupOffset ?? Schema.GetOffset(0xE2F9617BD4585F62);
             return Schema.GetString(_Handle.Read<nint>(_StrNewHintGroupOffset!.Value));
         }
-        set {
+        set
+        {
             _StrNewHintGroupOffset = _StrNewHintGroupOffset ?? Schema.GetOffset(0xE2F9617BD4585F62);
             Schema.SetString(_Handle, _StrNewHintGroupOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xE2F9617B5ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
-
 
 }

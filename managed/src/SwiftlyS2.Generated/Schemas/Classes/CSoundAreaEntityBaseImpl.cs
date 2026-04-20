@@ -18,28 +18,35 @@ internal partial class CSoundAreaEntityBaseImpl : CBaseEntityImpl, CSoundAreaEnt
 
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0x15C90E163A7C5965);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _SoundAreaTypeOffset;
 
-    public string SoundAreaType {
-        get {
+    public string SoundAreaType
+    {
+        get
+        {
             _SoundAreaTypeOffset = _SoundAreaTypeOffset ?? Schema.GetOffset(0x15C90E16227612E5);
             return Schema.GetString(_Handle.Read<nint>(_SoundAreaTypeOffset!.Value));
         }
-        set {
+        set
+        {
             _SoundAreaTypeOffset = _SoundAreaTypeOffset ?? Schema.GetOffset(0x15C90E16227612E5);
             Schema.SetString(_Handle, _SoundAreaTypeOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _PosOffset;
 
-    public ref Vector Pos {
-        get {
+    public ref Vector Pos
+    {
+        get
+        {
             _PosOffset = _PosOffset ?? Schema.GetOffset(0x15C90E16DE9CFC5D);
             return ref _Handle.AsRef<Vector>(_PosOffset!.Value);
         }

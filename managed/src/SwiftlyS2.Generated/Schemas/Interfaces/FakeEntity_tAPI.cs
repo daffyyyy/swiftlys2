@@ -14,7 +14,4 @@ public partial interface FakeEntity_tAPI : ISchemaClass<FakeEntity_tAPI>
     static int ISchemaClass<FakeEntity_tAPI>.Size => 8;
     static string? ISchemaClass<FakeEntity_tAPI>.ClassName => null;
 
-
-
-
 }

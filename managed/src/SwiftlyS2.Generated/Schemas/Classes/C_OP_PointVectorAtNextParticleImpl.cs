@@ -18,20 +18,23 @@ internal partial class C_OP_PointVectorAtNextParticleImpl : CParticleFunctionOpe
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xC209094CE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _InterpolationOffset;
 
-    public CPerParticleFloatInput Interpolation {
-        get {
+    public CPerParticleFloatInput Interpolation
+    {
+        get
+        {
             _InterpolationOffset = _InterpolationOffset ?? Schema.GetOffset(0xC209094CCF55B987);
             return new CPerParticleFloatInputImpl(_Handle + _InterpolationOffset!.Value);
         }
     }
-
 
 }

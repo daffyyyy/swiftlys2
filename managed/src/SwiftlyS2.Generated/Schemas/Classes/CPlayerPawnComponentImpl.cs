@@ -18,12 +18,13 @@ internal partial class CPlayerPawnComponentImpl : SchemaClass, CPlayerPawnCompon
 
     private static nint? ___m_pChainEntityOffset;
 
-    public ref CNetworkVarChainer __m_pChainEntity {
-        get {
+    public ref CNetworkVarChainer __m_pChainEntity
+    {
+        get
+        {
             ___m_pChainEntityOffset = ___m_pChainEntityOffset ?? Schema.GetOffset(0x8B6AC9BCF63F0E7D);
             return ref _Handle.AsRef<CNetworkVarChainer>(___m_pChainEntityOffset!.Value);
         }
     }
-
 
 }

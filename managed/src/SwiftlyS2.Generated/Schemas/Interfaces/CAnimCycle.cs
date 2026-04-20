@@ -14,7 +14,4 @@ public partial interface CAnimCycle : CCycleBase, ISchemaClass<CAnimCycle>
     static int ISchemaClass<CAnimCycle>.Size => 4;
     static string? ISchemaClass<CAnimCycle>.ClassName => null;
 
-
-
-
 }

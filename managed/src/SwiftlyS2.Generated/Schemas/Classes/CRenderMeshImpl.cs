@@ -18,61 +18,74 @@ internal partial class CRenderMeshImpl : SchemaClass, CRenderMesh
 
     private static nint? _SceneObjectsOffset;
 
-    public SchemaUntypedField SceneObjects {
-        get {
+    public SchemaUntypedField SceneObjects
+    {
+        get
+        {
             _SceneObjectsOffset = _SceneObjectsOffset ?? Schema.GetOffset(0x8593C3BF332235A1);
             return new SchemaUntypedField(_Handle + _SceneObjectsOffset!.Value);
         }
     }
     private static nint? _ConstraintsOffset;
 
-    public ref CUtlLeanVector<PointerTo<CBaseConstraint>, int> Constraints {
-        get {
+    public ref CUtlLeanVector<PointerTo<CBaseConstraint>, int> Constraints
+    {
+        get
+        {
             _ConstraintsOffset = _ConstraintsOffset ?? Schema.GetOffset(0x8593C3BF251CBAAB);
             return ref _Handle.AsRef<CUtlLeanVector<PointerTo<CBaseConstraint>, int>>(_ConstraintsOffset!.Value);
         }
     }
     private static nint? _SkeletonOffset;
 
-    public CRenderSkeleton Skeleton {
-        get {
+    public CRenderSkeleton Skeleton
+    {
+        get
+        {
             _SkeletonOffset = _SkeletonOffset ?? Schema.GetOffset(0x8593C3BFE77F030E);
             return new CRenderSkeletonImpl(_Handle + _SkeletonOffset!.Value);
         }
     }
     private static nint? _UseUV2ForChartingOffset;
 
-    public ref bool UseUV2ForCharting {
-        get {
+    public ref bool UseUV2ForCharting
+    {
+        get
+        {
             _UseUV2ForChartingOffset = _UseUV2ForChartingOffset ?? Schema.GetOffset(0x8593C3BFFE2DF46A);
             return ref _Handle.AsRef<bool>(_UseUV2ForChartingOffset!.Value);
         }
     }
     private static nint? _EmbeddedMapMeshOffset;
 
-    public ref bool EmbeddedMapMesh {
-        get {
+    public ref bool EmbeddedMapMesh
+    {
+        get
+        {
             _EmbeddedMapMeshOffset = _EmbeddedMapMeshOffset ?? Schema.GetOffset(0x8593C3BF6E866052);
             return ref _Handle.AsRef<bool>(_EmbeddedMapMeshOffset!.Value);
         }
     }
     private static nint? _MeshDeformParamsOffset;
 
-    public DynamicMeshDeformParams_t MeshDeformParams {
-        get {
+    public DynamicMeshDeformParams_t MeshDeformParams
+    {
+        get
+        {
             _MeshDeformParamsOffset = _MeshDeformParamsOffset ?? Schema.GetOffset(0x8593C3BF061DBB9B);
             return new DynamicMeshDeformParams_tImpl(_Handle + _MeshDeformParamsOffset!.Value);
         }
     }
     private static nint? _GroomDataOffset;
 
-    public CRenderGroom? GroomData {
-        get {
+    public CRenderGroom? GroomData
+    {
+        get
+        {
             _GroomDataOffset = _GroomDataOffset ?? Schema.GetOffset(0x8593C3BFCFCDEA93);
             var ptr = _Handle.Read<nint>(_GroomDataOffset!.Value);
             return ptr.IsValidPtr() ? new CRenderGroomImpl(ptr) : null;
         }
     }
-
 
 }

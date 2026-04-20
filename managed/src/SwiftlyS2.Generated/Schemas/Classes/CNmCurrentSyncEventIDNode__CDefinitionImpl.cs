@@ -18,12 +18,13 @@ internal partial class CNmCurrentSyncEventIDNode__CDefinitionImpl : CNmIDValueNo
 
     private static nint? _SourceStateNodeIdxOffset;
 
-    public ref short SourceStateNodeIdx {
-        get {
+    public ref short SourceStateNodeIdx
+    {
+        get
+        {
             _SourceStateNodeIdxOffset = _SourceStateNodeIdxOffset ?? Schema.GetOffset(0x792E5F1463F0228C);
             return ref _Handle.AsRef<short>(_SourceStateNodeIdxOffset!.Value);
         }
     }
-
 
 }

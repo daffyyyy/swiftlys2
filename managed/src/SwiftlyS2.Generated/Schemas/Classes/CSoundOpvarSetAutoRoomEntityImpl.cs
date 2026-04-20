@@ -18,44 +18,53 @@ internal partial class CSoundOpvarSetAutoRoomEntityImpl : CSoundOpvarSetPointEnt
 
     private static nint? _TraceResultsOffset;
 
-    public ref CUtlVector<SoundOpvarTraceResult_t> TraceResults {
-        get {
+    public ref CUtlVector<SoundOpvarTraceResult_t> TraceResults
+    {
+        get
+        {
             _TraceResultsOffset = _TraceResultsOffset ?? Schema.GetOffset(0x13ABD76E24ADC8DC);
             return ref _Handle.AsRef<CUtlVector<SoundOpvarTraceResult_t>>(_TraceResultsOffset!.Value);
         }
     }
     private static nint? _DoorwayPairsOffset;
 
-    public ref CUtlVector<AutoRoomDoorwayPairs_t> DoorwayPairs {
-        get {
+    public ref CUtlVector<AutoRoomDoorwayPairs_t> DoorwayPairs
+    {
+        get
+        {
             _DoorwayPairsOffset = _DoorwayPairsOffset ?? Schema.GetOffset(0x13ABD76EFAD6453D);
             return ref _Handle.AsRef<CUtlVector<AutoRoomDoorwayPairs_t>>(_DoorwayPairsOffset!.Value);
         }
     }
     private static nint? _SizeOffset;
 
-    public ref float Size {
-        get {
+    public ref float Size
+    {
+        get
+        {
             _SizeOffset = _SizeOffset ?? Schema.GetOffset(0x13ABD76E4CF0EBC6);
             return ref _Handle.AsRef<float>(_SizeOffset!.Value);
         }
     }
     private static nint? _HeightToleranceOffset;
 
-    public ref float HeightTolerance {
-        get {
+    public ref float HeightTolerance
+    {
+        get
+        {
             _HeightToleranceOffset = _HeightToleranceOffset ?? Schema.GetOffset(0x13ABD76EB388225F);
             return ref _Handle.AsRef<float>(_HeightToleranceOffset!.Value);
         }
     }
     private static nint? _SizeSqrOffset;
 
-    public ref float SizeSqr {
-        get {
+    public ref float SizeSqr
+    {
+        get
+        {
             _SizeSqrOffset = _SizeSqrOffset ?? Schema.GetOffset(0x13ABD76E063EF878);
             return ref _Handle.AsRef<float>(_SizeSqrOffset!.Value);
         }
     }
-
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_MovementServices : CPlayerPawnComponent, ISchemaClass<CPlayer_MovementServices>
 {
     static CPlayer_MovementServices ISchemaClass<CPlayer_MovementServices>.From(nint handle) => new CPlayer_MovementServicesImpl(handle);
-    static int ISchemaClass<CPlayer_MovementServices>.Size => 576;
+    static int ISchemaClass<CPlayer_MovementServices>.Size => 600;
     static string? ISchemaClass<CPlayer_MovementServices>.ClassName => null;
 
 
@@ -30,6 +30,12 @@ public partial interface CPlayer_MovementServices : CPlayerPawnComponent, ISchem
     public ref uint LastCommandNumberProcessed { get; }
 
     public ref ulong ToggleButtonDownMask { get; }
+
+    public ref float CmdForwardMove { get; }
+
+    public ref float CmdLeftMove { get; }
+
+    public ref float CmdUpMove { get; }
 
     public ref float Maxspeed { get; }
 

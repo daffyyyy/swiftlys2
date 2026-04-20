@@ -16,7 +16,4 @@ internal partial class CPlayer_FlashlightServicesImpl : CPlayerPawnComponentImpl
 {
     public CPlayer_FlashlightServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_PlayVCD : CPulseCell_Outflow_PlaySceneBase, ISchemaClass<CPulseCell_Outflow_PlayVCD>
 {
     static CPulseCell_Outflow_PlayVCD ISchemaClass<CPulseCell_Outflow_PlayVCD>.From(nint handle) => new CPulseCell_Outflow_PlayVCDImpl(handle);
-    static int ISchemaClass<CPulseCell_Outflow_PlayVCD>.Size => 392;
+    static int ISchemaClass<CPulseCell_Outflow_PlayVCD>.Size => 416;
     static string? ISchemaClass<CPulseCell_Outflow_PlayVCD>.ClassName => null;
 
 
@@ -20,6 +20,8 @@ public partial interface CPulseCell_Outflow_PlayVCD : CPulseCell_Outflow_PlaySce
     public CPulse_OutflowConnection OnPaused { get; }
 
     public CPulse_OutflowConnection OnResumed { get; }
+
+    public ref CUtlVector<CPulseCell_Outflow_PlayVCD__VCDRequirementInfo_t> OutRequirements { get; }
 
 
 }

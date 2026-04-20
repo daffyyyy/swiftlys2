@@ -18,40 +18,48 @@ internal partial class CVMixAutomaticControlInputImpl : SchemaClass, CVMixAutoma
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x4A833C224D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x4A833C224D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ControlInputIndexOffset;
 
-    public ref int ControlInputIndex {
-        get {
+    public ref int ControlInputIndex
+    {
+        get
+        {
             _ControlInputIndexOffset = _ControlInputIndexOffset ?? Schema.GetOffset(0x4A833C222C0B74D2);
             return ref _Handle.AsRef<int>(_ControlInputIndexOffset!.Value);
         }
     }
     private static nint? _IsTrackSendOffset;
 
-    public ref bool IsTrackSend {
-        get {
+    public ref bool IsTrackSend
+    {
+        get
+        {
             _IsTrackSendOffset = _IsTrackSendOffset ?? Schema.GetOffset(0x4A833C22D8D20892);
             return ref _Handle.AsRef<bool>(_IsTrackSendOffset!.Value);
         }
     }
     private static nint? _IsStackVarOffset;
 
-    public ref bool IsStackVar {
-        get {
+    public ref bool IsStackVar
+    {
+        get
+        {
             _IsStackVarOffset = _IsStackVarOffset ?? Schema.GetOffset(0x4A833C22EFDAF394);
             return ref _Handle.AsRef<bool>(_IsStackVarOffset!.Value);
         }
     }
-
 
 }

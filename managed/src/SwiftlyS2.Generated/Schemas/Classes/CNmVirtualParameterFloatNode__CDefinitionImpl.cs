@@ -18,12 +18,13 @@ internal partial class CNmVirtualParameterFloatNode__CDefinitionImpl : CNmFloatV
 
     private static nint? _ChildNodeIdxOffset;
 
-    public ref short ChildNodeIdx {
-        get {
+    public ref short ChildNodeIdx
+    {
+        get
+        {
             _ChildNodeIdxOffset = _ChildNodeIdxOffset ?? Schema.GetOffset(0x29E3EB575C29A73C);
             return ref _Handle.AsRef<short>(_ChildNodeIdxOffset!.Value);
         }
     }
-
 
 }

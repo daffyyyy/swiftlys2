@@ -18,68 +18,83 @@ internal partial class FeAntiTunnelProbe_tImpl : SchemaClass, FeAntiTunnelProbe_
 
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0xBC54CE0BCFFC66CB);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0xBC54CE0BB8D52E48);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _ProbeNodeOffset;
 
-    public ref ushort ProbeNode {
-        get {
+    public ref ushort ProbeNode
+    {
+        get
+        {
             _ProbeNodeOffset = _ProbeNodeOffset ?? Schema.GetOffset(0xBC54CE0B5F3CB12D);
             return ref _Handle.AsRef<ushort>(_ProbeNodeOffset!.Value);
         }
     }
     private static nint? _CountOffset;
 
-    public ref ushort Count {
-        get {
+    public ref ushort Count
+    {
+        get
+        {
             _CountOffset = _CountOffset ?? Schema.GetOffset(0xBC54CE0B67983E28);
             return ref _Handle.AsRef<ushort>(_CountOffset!.Value);
         }
     }
     private static nint? _BeginOffset;
 
-    public ref uint Begin {
-        get {
+    public ref uint Begin
+    {
+        get
+        {
             _BeginOffset = _BeginOffset ?? Schema.GetOffset(0xBC54CE0BC630D75A);
             return ref _Handle.AsRef<uint>(_BeginOffset!.Value);
         }
     }
     private static nint? _ActivationDistanceOffset;
 
-    public ref float ActivationDistance {
-        get {
+    public ref float ActivationDistance
+    {
+        get
+        {
             _ActivationDistanceOffset = _ActivationDistanceOffset ?? Schema.GetOffset(0xBC54CE0BEAB1A998);
             return ref _Handle.AsRef<float>(_ActivationDistanceOffset!.Value);
         }
     }
     private static nint? _CurvatureRadiusOffset;
 
-    public ref float CurvatureRadius {
-        get {
+    public ref float CurvatureRadius
+    {
+        get
+        {
             _CurvatureRadiusOffset = _CurvatureRadiusOffset ?? Schema.GetOffset(0xBC54CE0BADAE92BE);
             return ref _Handle.AsRef<float>(_CurvatureRadiusOffset!.Value);
         }
     }
     private static nint? _BiasOffset;
 
-    public ref float Bias {
-        get {
+    public ref float Bias
+    {
+        get
+        {
             _BiasOffset = _BiasOffset ?? Schema.GetOffset(0xBC54CE0B30667CD6);
             return ref _Handle.AsRef<float>(_BiasOffset!.Value);
         }
     }
-
 
 }

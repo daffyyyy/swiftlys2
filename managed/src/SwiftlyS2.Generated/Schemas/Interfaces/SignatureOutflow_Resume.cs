@@ -14,7 +14,4 @@ public partial interface SignatureOutflow_Resume : CPulse_ResumePoint, ISchemaCl
     static int ISchemaClass<SignatureOutflow_Resume>.Size => 72;
     static string? ISchemaClass<SignatureOutflow_Resume>.ClassName => null;
 
-
-
-
 }

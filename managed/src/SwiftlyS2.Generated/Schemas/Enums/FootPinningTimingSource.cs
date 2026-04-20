@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum FootPinningTimingSource : uint
 {
- FootMotion = 0,
-
- Tag = 1,
-
- Parameter = 2,
+    FootMotion = 0,
+    Tag = 1,
+    Parameter = 2,
 }

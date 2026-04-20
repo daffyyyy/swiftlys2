@@ -16,7 +16,4 @@ internal partial class CNmPoseTaskImpl : SchemaClass, CNmPoseTask
 {
     public CNmPoseTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

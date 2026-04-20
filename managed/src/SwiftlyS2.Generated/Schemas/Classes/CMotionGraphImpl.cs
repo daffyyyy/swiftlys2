@@ -18,60 +18,73 @@ internal partial class CMotionGraphImpl : SchemaClass, CMotionGraph
 
     private static nint? _ParamSpansOffset;
 
-    public CParamSpanUpdater ParamSpans {
-        get {
+    public CParamSpanUpdater ParamSpans
+    {
+        get
+        {
             _ParamSpansOffset = _ParamSpansOffset ?? Schema.GetOffset(0xA24822FCDAC91553);
             return new CParamSpanUpdaterImpl(_Handle + _ParamSpansOffset!.Value);
         }
     }
     private static nint? _TagsOffset;
 
-    public ref CUtlVector<TagSpan_t> Tags {
-        get {
+    public ref CUtlVector<TagSpan_t> Tags
+    {
+        get
+        {
             _TagsOffset = _TagsOffset ?? Schema.GetOffset(0xA24822FCB46C8540);
             return ref _Handle.AsRef<CUtlVector<TagSpan_t>>(_TagsOffset!.Value);
         }
     }
     private static nint? _RootNodeOffset;
 
-    public SchemaUntypedField RootNode {
-        get {
+    public SchemaUntypedField RootNode
+    {
+        get
+        {
             _RootNodeOffset = _RootNodeOffset ?? Schema.GetOffset(0xA24822FC8BB07023);
             return new SchemaUntypedField(_Handle + _RootNodeOffset!.Value);
         }
     }
     private static nint? _ParameterCountOffset;
 
-    public ref int ParameterCount {
-        get {
+    public ref int ParameterCount
+    {
+        get
+        {
             _ParameterCountOffset = _ParameterCountOffset ?? Schema.GetOffset(0xA24822FC3B0EE24B);
             return ref _Handle.AsRef<int>(_ParameterCountOffset!.Value);
         }
     }
     private static nint? _ConfigStartIndexOffset;
 
-    public ref int ConfigStartIndex {
-        get {
+    public ref int ConfigStartIndex
+    {
+        get
+        {
             _ConfigStartIndexOffset = _ConfigStartIndexOffset ?? Schema.GetOffset(0xA24822FCEB4B0D77);
             return ref _Handle.AsRef<int>(_ConfigStartIndexOffset!.Value);
         }
     }
     private static nint? _ConfigCountOffset;
 
-    public ref int ConfigCount {
-        get {
+    public ref int ConfigCount
+    {
+        get
+        {
             _ConfigCountOffset = _ConfigCountOffset ?? Schema.GetOffset(0xA24822FC16549AD2);
             return ref _Handle.AsRef<int>(_ConfigCountOffset!.Value);
         }
     }
     private static nint? _LoopOffset;
 
-    public ref bool Loop {
-        get {
+    public ref bool Loop
+    {
+        get
+        {
             _LoopOffset = _LoopOffset ?? Schema.GetOffset(0xA24822FCC668A4CB);
             return ref _Handle.AsRef<bool>(_LoopOffset!.Value);
         }
     }
-
 
 }

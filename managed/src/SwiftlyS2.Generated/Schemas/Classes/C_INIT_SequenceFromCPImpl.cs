@@ -18,36 +18,43 @@ internal partial class C_INIT_SequenceFromCPImpl : CParticleFunctionInitializerI
 
     private static nint? _KillUnusedOffset;
 
-    public ref bool KillUnused {
-        get {
+    public ref bool KillUnused
+    {
+        get
+        {
             _KillUnusedOffset = _KillUnusedOffset ?? Schema.GetOffset(0xC62FB07C81506527);
             return ref _Handle.AsRef<bool>(_KillUnusedOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public ref bool RadiusScale {
-        get {
+    public ref bool RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0xC62FB07CBBCB728B);
             return ref _Handle.AsRef<bool>(_RadiusScaleOffset!.Value);
         }
     }
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0xC62FB07CEB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0xC62FB07CBD25CC2A);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
-
 
 }

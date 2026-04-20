@@ -16,7 +16,4 @@ internal partial class CTonemapController2Alias_env_tonemap_controller2Impl : CT
 {
     public CTonemapController2Alias_env_tonemap_controller2Impl(nint handle) : base(handle) { }
 
-
-
-
 }

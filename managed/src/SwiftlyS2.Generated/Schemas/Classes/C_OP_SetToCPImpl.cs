@@ -18,28 +18,33 @@ internal partial class C_OP_SetToCPImpl : CParticleFunctionOperatorImpl, C_OP_Se
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xF80ACA353F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0xF80ACA35BD25CC2A);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
     private static nint? _OffsetLocalOffset;
 
-    public ref bool OffsetLocal {
-        get {
+    public ref bool OffsetLocal
+    {
+        get
+        {
             _OffsetLocalOffset = _OffsetLocalOffset ?? Schema.GetOffset(0xF80ACA35F07D31C1);
             return ref _Handle.AsRef<bool>(_OffsetLocalOffset!.Value);
         }
     }
-
 
 }

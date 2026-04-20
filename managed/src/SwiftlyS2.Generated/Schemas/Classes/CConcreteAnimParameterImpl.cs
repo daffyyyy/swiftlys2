@@ -18,52 +18,63 @@ internal partial class CConcreteAnimParameterImpl : CAnimParameterBaseImpl, CCon
 
     private static nint? _PreviewButtonOffset;
 
-    public ref AnimParamButton_t PreviewButton {
-        get {
+    public ref AnimParamButton_t PreviewButton
+    {
+        get
+        {
             _PreviewButtonOffset = _PreviewButtonOffset ?? Schema.GetOffset(0xFB67B7E37D0352C7);
             return ref _Handle.AsRef<AnimParamButton_t>(_PreviewButtonOffset!.Value);
         }
     }
     private static nint? _NetworkSettingOffset;
 
-    public ref AnimParamNetworkSetting NetworkSetting {
-        get {
+    public ref AnimParamNetworkSetting NetworkSetting
+    {
+        get
+        {
             _NetworkSettingOffset = _NetworkSettingOffset ?? Schema.GetOffset(0xFB67B7E3EEBF9DD2);
             return ref _Handle.AsRef<AnimParamNetworkSetting>(_NetworkSettingOffset!.Value);
         }
     }
     private static nint? _UseMostRecentValueOffset;
 
-    public ref bool UseMostRecentValue {
-        get {
+    public ref bool UseMostRecentValue
+    {
+        get
+        {
             _UseMostRecentValueOffset = _UseMostRecentValueOffset ?? Schema.GetOffset(0xFB67B7E37693B669);
             return ref _Handle.AsRef<bool>(_UseMostRecentValueOffset!.Value);
         }
     }
     private static nint? _AutoResetOffset;
 
-    public ref bool AutoReset {
-        get {
+    public ref bool AutoReset
+    {
+        get
+        {
             _AutoResetOffset = _AutoResetOffset ?? Schema.GetOffset(0xFB67B7E3EBC32499);
             return ref _Handle.AsRef<bool>(_AutoResetOffset!.Value);
         }
     }
     private static nint? _GameWritableOffset;
 
-    public ref bool GameWritable {
-        get {
+    public ref bool GameWritable
+    {
+        get
+        {
             _GameWritableOffset = _GameWritableOffset ?? Schema.GetOffset(0xFB67B7E3FB2CA7F7);
             return ref _Handle.AsRef<bool>(_GameWritableOffset!.Value);
         }
     }
     private static nint? _GraphWritableOffset;
 
-    public ref bool GraphWritable {
-        get {
+    public ref bool GraphWritable
+    {
+        get
+        {
             _GraphWritableOffset = _GraphWritableOffset ?? Schema.GetOffset(0xFB67B7E30633E7B7);
             return ref _Handle.AsRef<bool>(_GraphWritableOffset!.Value);
         }
     }
-
 
 }

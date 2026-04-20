@@ -18,28 +18,33 @@ internal partial class C_OP_LerpEndCapVectorImpl : CParticleFunctionOperatorImpl
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x4847E160E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _OutputOffset;
 
-    public ref Vector Output {
-        get {
+    public ref Vector Output
+    {
+        get
+        {
             _OutputOffset = _OutputOffset ?? Schema.GetOffset(0x4847E16008B7FF64);
             return ref _Handle.AsRef<Vector>(_OutputOffset!.Value);
         }
     }
     private static nint? _LerpTimeOffset;
 
-    public ref float LerpTime {
-        get {
+    public ref float LerpTime
+    {
+        get
+        {
             _LerpTimeOffset = _LerpTimeOffset ?? Schema.GetOffset(0x4847E16054FD987F);
             return ref _Handle.AsRef<float>(_LerpTimeOffset!.Value);
         }
     }
-
 
 }

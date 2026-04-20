@@ -18,16 +18,18 @@ internal partial class CMapSharedEnvironmentImpl : CLogicalEntityImpl, CMapShare
 
     private static nint? _TargetMapNameOffset;
 
-    public string TargetMapName {
-        get {
+    public string TargetMapName
+    {
+        get
+        {
             _TargetMapNameOffset = _TargetMapNameOffset ?? Schema.GetOffset(0xDA50C2DE129742FD);
             return Schema.GetString(_Handle.Read<nint>(_TargetMapNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TargetMapNameOffset = _TargetMapNameOffset ?? Schema.GetOffset(0xDA50C2DE129742FD);
             Schema.SetString(_Handle, _TargetMapNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

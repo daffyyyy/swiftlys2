@@ -16,7 +16,4 @@ internal partial class CNmOverlayBlendTaskImpl : CNmBlendTaskBaseImpl, CNmOverla
 {
     public CNmOverlayBlendTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

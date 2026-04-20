@@ -21,7 +21,7 @@ public partial interface CLogicEventListener : CLogicalEntity, ISchemaClass<CLog
 
     public ref int Team { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnEventFired { get; }
 
 

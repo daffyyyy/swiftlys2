@@ -16,7 +16,4 @@ internal partial class CVoiceContainerDefaultImpl : CVoiceContainerBaseImpl, CVo
 {
     public CVoiceContainerDefaultImpl(nint handle) : base(handle) { }
 
-
-
-
 }

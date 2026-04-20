@@ -18,16 +18,18 @@ internal partial class CEnvHudHintImpl : CPointEntityImpl, CEnvHudHint
 
     private static nint? _MessageOffset;
 
-    public string Message {
-        get {
+    public string Message
+    {
+        get
+        {
             _MessageOffset = _MessageOffset ?? Schema.GetOffset(0xD3D49C23CC5243DC);
             return Schema.GetString(_Handle.Read<nint>(_MessageOffset!.Value));
         }
-        set {
+        set
+        {
             _MessageOffset = _MessageOffset ?? Schema.GetOffset(0xD3D49C23CC5243DC);
             Schema.SetString(_Handle, _MessageOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

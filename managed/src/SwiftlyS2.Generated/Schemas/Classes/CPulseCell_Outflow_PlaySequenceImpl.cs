@@ -18,16 +18,18 @@ internal partial class CPulseCell_Outflow_PlaySequenceImpl : CPulseCell_Outflow_
 
     private static nint? _ParamSequenceNameOffset;
 
-    public string ParamSequenceName {
-        get {
+    public string ParamSequenceName
+    {
+        get
+        {
             _ParamSequenceNameOffset = _ParamSequenceNameOffset ?? Schema.GetOffset(0x9E1D42661D9365E0);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ParamSequenceNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ParamSequenceNameOffset = _ParamSequenceNameOffset ?? Schema.GetOffset(0x9E1D42661D9365E0);
             Schema.SetCUtlString(_Handle, _ParamSequenceNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

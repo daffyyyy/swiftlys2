@@ -18,12 +18,13 @@ internal partial class MaterialParamInt_tImpl : MaterialParam_tImpl, MaterialPar
 
     private static nint? _ValueOffset;
 
-    public ref int Value {
-        get {
+    public ref int Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xD2910839077D337E);
             return ref _Handle.AsRef<int>(_ValueOffset!.Value);
         }
     }
-
 
 }

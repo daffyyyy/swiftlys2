@@ -18,12 +18,13 @@ internal partial class C_OP_EndCapTimedDecayImpl : CParticleFunctionOperatorImpl
 
     private static nint? _DecayTimeOffset;
 
-    public ref float DecayTime {
-        get {
+    public ref float DecayTime
+    {
+        get
+        {
             _DecayTimeOffset = _DecayTimeOffset ?? Schema.GetOffset(0x2866C865E94A0656);
             return ref _Handle.AsRef<float>(_DecayTimeOffset!.Value);
         }
     }
-
 
 }

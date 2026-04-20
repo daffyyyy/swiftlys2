@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum RTProxyInstanceFlags_t : byte
 {
- RTPROXY_INSTANCE_FLAG_NONE = 0,
-
- RTPROXY_INSTANCE_UNIQUE_MESH = 1,
+    RTPROXY_INSTANCE_FLAG_NONE = 0,
+    RTPROXY_INSTANCE_UNIQUE_MESH = 1,
 }

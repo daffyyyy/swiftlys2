@@ -18,52 +18,63 @@ internal partial class C_OP_OscillateVectorSimpleImpl : CParticleFunctionOperato
 
     private static nint? _RateOffset;
 
-    public ref Vector Rate {
-        get {
+    public ref Vector Rate
+    {
+        get
+        {
             _RateOffset = _RateOffset ?? Schema.GetOffset(0xB4CA468EC3280E7);
             return ref _Handle.AsRef<Vector>(_RateOffset!.Value);
         }
     }
     private static nint? _FrequencyOffset;
 
-    public ref Vector Frequency {
-        get {
+    public ref Vector Frequency
+    {
+        get
+        {
             _FrequencyOffset = _FrequencyOffset ?? Schema.GetOffset(0xB4CA468BCCAA981);
             return ref _Handle.AsRef<Vector>(_FrequencyOffset!.Value);
         }
     }
     private static nint? _FieldOffset;
 
-    public ParticleAttributeIndex_t Field {
-        get {
+    public ParticleAttributeIndex_t Field
+    {
+        get
+        {
             _FieldOffset = _FieldOffset ?? Schema.GetOffset(0xB4CA468C257B93B);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOffset!.Value);
         }
     }
     private static nint? _OscMultOffset;
 
-    public ref float OscMult {
-        get {
+    public ref float OscMult
+    {
+        get
+        {
             _OscMultOffset = _OscMultOffset ?? Schema.GetOffset(0xB4CA46816278E94);
             return ref _Handle.AsRef<float>(_OscMultOffset!.Value);
         }
     }
     private static nint? _OscAddOffset;
 
-    public ref float OscAdd {
-        get {
+    public ref float OscAdd
+    {
+        get
+        {
             _OscAddOffset = _OscAddOffset ?? Schema.GetOffset(0xB4CA4687B38A63D);
             return ref _Handle.AsRef<float>(_OscAddOffset!.Value);
         }
     }
     private static nint? _OffsetOffset;
 
-    public ref bool Offset {
-        get {
+    public ref bool Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0xB4CA46817412B2A);
             return ref _Handle.AsRef<bool>(_OffsetOffset!.Value);
         }
     }
-
 
 }

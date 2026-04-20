@@ -14,7 +14,4 @@ public partial interface CNmBoolValueNode__CDefinition : CNmValueNode__CDefiniti
     static int ISchemaClass<CNmBoolValueNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmBoolValueNode__CDefinition>.ClassName => null;
 
-
-
-
 }

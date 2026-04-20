@@ -18,40 +18,50 @@ internal partial class CEconItemAttributeImpl : SchemaClass, CEconItemAttribute
 
     private static nint? _AttributeDefinitionIndexOffset;
 
-    public ref ushort AttributeDefinitionIndex {
-        get {
+    public ref ushort AttributeDefinitionIndex
+    {
+        get
+        {
             _AttributeDefinitionIndexOffset = _AttributeDefinitionIndexOffset ?? Schema.GetOffset(0xBB0F80FC8DAFCD73);
             return ref _Handle.AsRef<ushort>(_AttributeDefinitionIndexOffset!.Value);
         }
     }
     private static nint? _ValueOffset;
 
-    public ref float Value {
-        get {
+    public ref float Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xBB0F80FC8DFCB984);
             return ref _Handle.AsRef<float>(_ValueOffset!.Value);
         }
     }
     private static nint? _InitialValueOffset;
 
-    public ref float InitialValue {
-        get {
+    public ref float InitialValue
+    {
+        get
+        {
             _InitialValueOffset = _InitialValueOffset ?? Schema.GetOffset(0xBB0F80FCE2DBFFF2);
             return ref _Handle.AsRef<float>(_InitialValueOffset!.Value);
         }
     }
     private static nint? _RefundableCurrencyOffset;
 
-    public ref int RefundableCurrency {
-        get {
+    public ref int RefundableCurrency
+    {
+        get
+        {
             _RefundableCurrencyOffset = _RefundableCurrencyOffset ?? Schema.GetOffset(0xBB0F80FC1021E694);
             return ref _Handle.AsRef<int>(_RefundableCurrencyOffset!.Value);
         }
     }
     private static nint? _SetBonusOffset;
 
-    public ref bool SetBonus {
-        get {
+    public ref bool SetBonus
+    {
+        get
+        {
             _SetBonusOffset = _SetBonusOffset ?? Schema.GetOffset(0xBB0F80FCA5E9EA96);
             return ref _Handle.AsRef<bool>(_SetBonusOffset!.Value);
         }

@@ -18,12 +18,13 @@ internal partial class CHitboxComponentImpl : CEntityComponentImpl, CHitboxCompo
 
     private static nint? _BoundsExpandRadiusOffset;
 
-    public ref float BoundsExpandRadius {
-        get {
+    public ref float BoundsExpandRadius
+    {
+        get
+        {
             _BoundsExpandRadiusOffset = _BoundsExpandRadiusOffset ?? Schema.GetOffset(0x8148DEC366FA148C);
             return ref _Handle.AsRef<float>(_BoundsExpandRadiusOffset!.Value);
         }
     }
-
 
 }

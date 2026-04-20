@@ -18,28 +18,33 @@ internal partial class CPulse_ChunkImpl : SchemaClass, CPulse_Chunk
 
     private static nint? _InstructionsOffset;
 
-    public ref CUtlLeanVector<PGDInstruction_t, int> Instructions {
-        get {
+    public ref CUtlLeanVector<PGDInstruction_t, int> Instructions
+    {
+        get
+        {
             _InstructionsOffset = _InstructionsOffset ?? Schema.GetOffset(0x816932094D358BC4);
             return ref _Handle.AsRef<CUtlLeanVector<PGDInstruction_t, int>>(_InstructionsOffset!.Value);
         }
     }
     private static nint? _RegistersOffset;
 
-    public ref CUtlLeanVector<CPulse_RegisterInfo, int> Registers {
-        get {
+    public ref CUtlLeanVector<CPulse_RegisterInfo, int> Registers
+    {
+        get
+        {
             _RegistersOffset = _RegistersOffset ?? Schema.GetOffset(0x81693209BB828A49);
             return ref _Handle.AsRef<CUtlLeanVector<CPulse_RegisterInfo, int>>(_RegistersOffset!.Value);
         }
     }
     private static nint? _InstructionDebugInfosOffset;
 
-    public ref CUtlLeanVector<CPulse_InstructionDebug, int> InstructionDebugInfos {
-        get {
+    public ref CUtlLeanVector<CPulse_InstructionDebug, int> InstructionDebugInfos
+    {
+        get
+        {
             _InstructionDebugInfosOffset = _InstructionDebugInfosOffset ?? Schema.GetOffset(0x816932095788D5D7);
             return ref _Handle.AsRef<CUtlLeanVector<CPulse_InstructionDebug, int>>(_InstructionDebugInfosOffset!.Value);
         }
     }
-
 
 }

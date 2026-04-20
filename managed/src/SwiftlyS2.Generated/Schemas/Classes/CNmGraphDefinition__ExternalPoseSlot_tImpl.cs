@@ -18,20 +18,23 @@ internal partial class CNmGraphDefinition__ExternalPoseSlot_tImpl : SchemaClass,
 
     private static nint? _NodeIdxOffset;
 
-    public ref short NodeIdx {
-        get {
+    public ref short NodeIdx
+    {
+        get
+        {
             _NodeIdxOffset = _NodeIdxOffset ?? Schema.GetOffset(0xBF645B81124AB5CC);
             return ref _Handle.AsRef<short>(_NodeIdxOffset!.Value);
         }
     }
     private static nint? _SlotIDOffset;
 
-    public ref CGlobalSymbol SlotID {
-        get {
+    public ref CGlobalSymbol SlotID
+    {
+        get
+        {
             _SlotIDOffset = _SlotIDOffset ?? Schema.GetOffset(0xBF645B81EA2BB724);
             return ref _Handle.AsRef<CGlobalSymbol>(_SlotIDOffset!.Value);
         }
     }
-
 
 }

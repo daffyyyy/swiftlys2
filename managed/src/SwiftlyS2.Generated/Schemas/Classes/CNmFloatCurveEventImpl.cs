@@ -18,20 +18,23 @@ internal partial class CNmFloatCurveEventImpl : CNmEventImpl, CNmFloatCurveEvent
 
     private static nint? _IDOffset;
 
-    public ref CGlobalSymbol ID {
-        get {
+    public ref CGlobalSymbol ID
+    {
+        get
+        {
             _IDOffset = _IDOffset ?? Schema.GetOffset(0x79BEBEA95066900);
             return ref _Handle.AsRef<CGlobalSymbol>(_IDOffset!.Value);
         }
     }
     private static nint? _CurveOffset;
 
-    public SchemaUntypedField Curve {
-        get {
+    public SchemaUntypedField Curve
+    {
+        get
+        {
             _CurveOffset = _CurveOffset ?? Schema.GetOffset(0x79BEBEABFFA0B34);
             return new SchemaUntypedField(_Handle + _CurveOffset!.Value);
         }
     }
-
 
 }

@@ -18,44 +18,53 @@ internal partial class CTriggerBrushImpl : CBaseModelEntityImpl, CTriggerBrush
 
     private static nint? _OnStartTouchOffset;
 
-    public ref CEntityIOOutput OnStartTouch {
-        get {
+    public ref CEntityIOOutput OnStartTouch
+    {
+        get
+        {
             _OnStartTouchOffset = _OnStartTouchOffset ?? Schema.GetOffset(0xD9D3DFB2B4E38193);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnStartTouchOffset!.Value);
         }
     }
     private static nint? _OnEndTouchOffset;
 
-    public ref CEntityIOOutput OnEndTouch {
-        get {
+    public ref CEntityIOOutput OnEndTouch
+    {
+        get
+        {
             _OnEndTouchOffset = _OnEndTouchOffset ?? Schema.GetOffset(0xD9D3DFB25D181B48);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnEndTouchOffset!.Value);
         }
     }
     private static nint? _OnUseOffset;
 
-    public ref CEntityIOOutput OnUse {
-        get {
+    public ref CEntityIOOutput OnUse
+    {
+        get
+        {
             _OnUseOffset = _OnUseOffset ?? Schema.GetOffset(0xD9D3DFB2C3D50673);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnUseOffset!.Value);
         }
     }
     private static nint? _InputFilterOffset;
 
-    public ref int InputFilter {
-        get {
+    public ref int InputFilter
+    {
+        get
+        {
             _InputFilterOffset = _InputFilterOffset ?? Schema.GetOffset(0xD9D3DFB2D5B46E3A);
             return ref _Handle.AsRef<int>(_InputFilterOffset!.Value);
         }
     }
     private static nint? _DontMessageParentOffset;
 
-    public ref int DontMessageParent {
-        get {
+    public ref int DontMessageParent
+    {
+        get
+        {
             _DontMessageParentOffset = _DontMessageParentOffset ?? Schema.GetOffset(0xD9D3DFB2EE2AF166);
             return ref _Handle.AsRef<int>(_DontMessageParentOffset!.Value);
         }
     }
-
 
 }

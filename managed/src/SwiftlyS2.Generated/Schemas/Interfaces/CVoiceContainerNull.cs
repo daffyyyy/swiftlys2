@@ -14,7 +14,4 @@ public partial interface CVoiceContainerNull : CVoiceContainerGenerator, ISchema
     static int ISchemaClass<CVoiceContainerNull>.Size => 168;
     static string? ISchemaClass<CVoiceContainerNull>.ClassName => null;
 
-
-
-
 }

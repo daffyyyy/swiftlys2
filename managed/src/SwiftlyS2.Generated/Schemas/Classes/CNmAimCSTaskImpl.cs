@@ -16,7 +16,4 @@ internal partial class CNmAimCSTaskImpl : CNmPoseTaskImpl, CNmAimCSTask
 {
     public CNmAimCSTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

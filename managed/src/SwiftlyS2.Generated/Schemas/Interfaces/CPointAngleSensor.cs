@@ -35,10 +35,10 @@ public partial interface CPointAngleSensor : CPointEntity, ISchemaClass<CPointAn
 
     public ref CEntityIOOutput OnNotFacingLookat { get; }
 
-    // CEntityOutputTemplate< Vector, Vector >
+    // CEntityOutputTemplate< Vector >
     public SchemaUntypedField TargetDir { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField FacingPercentage { get; }
 
 

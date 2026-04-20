@@ -18,12 +18,13 @@ internal partial class EventServerEndSimulate_tImpl : SchemaClass, EventServerEn
 
     private static nint? _LastTickOffset;
 
-    public ref bool LastTick {
-        get {
+    public ref bool LastTick
+    {
+        get
+        {
             _LastTickOffset = _LastTickOffset ?? Schema.GetOffset(0xDDD446A81704CC30);
             return ref _Handle.AsRef<bool>(_LastTickOffset!.Value);
         }
     }
-
 
 }

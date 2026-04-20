@@ -18,28 +18,33 @@ internal partial class CMarkupVolumeTagged_NavGameImpl : CMarkupVolumeWithRefImp
 
     private static nint? _ScopesOffset;
 
-    public ref NavScopeFlags_t Scopes {
-        get {
+    public ref NavScopeFlags_t Scopes
+    {
+        get
+        {
             _ScopesOffset = _ScopesOffset ?? Schema.GetOffset(0xFB4AC8A49E6C8A44);
             return ref _Handle.AsRef<NavScopeFlags_t>(_ScopesOffset!.Value);
         }
     }
     private static nint? _FloodFillAttributeOffset;
 
-    public ref bool FloodFillAttribute {
-        get {
+    public ref bool FloodFillAttribute
+    {
+        get
+        {
             _FloodFillAttributeOffset = _FloodFillAttributeOffset ?? Schema.GetOffset(0xFB4AC8A4ECF24446);
             return ref _Handle.AsRef<bool>(_FloodFillAttributeOffset!.Value);
         }
     }
     private static nint? _SplitNavSpaceOffset;
 
-    public ref bool SplitNavSpace {
-        get {
+    public ref bool SplitNavSpace
+    {
+        get
+        {
             _SplitNavSpaceOffset = _SplitNavSpaceOffset ?? Schema.GetOffset(0xFB4AC8A438B16FC2);
             return ref _Handle.AsRef<bool>(_SplitNavSpaceOffset!.Value);
         }
     }
-
 
 }

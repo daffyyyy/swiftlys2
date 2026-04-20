@@ -14,7 +14,4 @@ public partial interface CPulseCursorFuncs : ISchemaClass<CPulseCursorFuncs>
     static int ISchemaClass<CPulseCursorFuncs>.Size => 1;
     static string? ISchemaClass<CPulseCursorFuncs>.ClassName => null;
 
-
-
-
 }

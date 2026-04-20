@@ -15,6 +15,9 @@ public partial interface thinkfunc_t : ISchemaClass<thinkfunc_t>
     static string? ISchemaClass<thinkfunc_t>.ClassName => null;
 
 
+    // BASEPTR
+    public SchemaUntypedField Think { get; }
+
     public ref HSCRIPTHandler Fn { get; }
 
     public ref CUtlStringToken Context { get; }

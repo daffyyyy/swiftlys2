@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCSurfaceGraph : ISchemaClass<InfoFor
     static int ISchemaClass<InfoForResourceTypeCSurfaceGraph>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCSurfaceGraph>.ClassName => null;
 
-
-
-
 }

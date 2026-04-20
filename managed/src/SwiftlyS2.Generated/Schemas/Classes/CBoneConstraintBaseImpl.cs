@@ -16,7 +16,4 @@ internal partial class CBoneConstraintBaseImpl : SchemaClass, CBoneConstraintBas
 {
     public CBoneConstraintBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

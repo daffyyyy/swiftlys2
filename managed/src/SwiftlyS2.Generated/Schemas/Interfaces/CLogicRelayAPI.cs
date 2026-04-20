@@ -14,7 +14,4 @@ public partial interface CLogicRelayAPI : ISchemaClass<CLogicRelayAPI>
     static int ISchemaClass<CLogicRelayAPI>.Size => 8;
     static string? ISchemaClass<CLogicRelayAPI>.ClassName => null;
 
-
-
-
 }

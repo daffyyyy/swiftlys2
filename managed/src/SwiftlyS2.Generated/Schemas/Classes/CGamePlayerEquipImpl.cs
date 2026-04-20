@@ -16,7 +16,4 @@ internal partial class CGamePlayerEquipImpl : CRulePointEntityImpl, CGamePlayerE
 {
     public CGamePlayerEquipImpl(nint handle) : base(handle) { }
 
-
-
-
 }

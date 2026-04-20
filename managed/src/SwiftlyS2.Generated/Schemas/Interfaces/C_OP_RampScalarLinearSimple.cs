@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RampScalarLinearSimple : CParticleFunctionOperator, ISchemaClass<C_OP_RampScalarLinearSimple>
 {
     static C_OP_RampScalarLinearSimple ISchemaClass<C_OP_RampScalarLinearSimple>.From(nint handle) => new C_OP_RampScalarLinearSimpleImpl(handle);
-    static int ISchemaClass<C_OP_RampScalarLinearSimple>.Size => 528;
+    static int ISchemaClass<C_OP_RampScalarLinearSimple>.Size => 544;
     static string? ISchemaClass<C_OP_RampScalarLinearSimple>.ClassName => null;
 
 

@@ -16,7 +16,4 @@ internal partial class CCSObserver_ObserverServicesImpl : CPlayer_ObserverServic
 {
     public CCSObserver_ObserverServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

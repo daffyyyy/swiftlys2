@@ -18,68 +18,85 @@ internal partial class CCSGO_TeamPreviewCharacterPositionImpl : CBaseEntityImpl,
 
     private static nint? _VariantOffset;
 
-    public ref int Variant {
-        get {
+    public ref int Variant
+    {
+        get
+        {
             _VariantOffset = _VariantOffset ?? Schema.GetOffset(0x58B5CA36B2DB2B42);
             return ref _Handle.AsRef<int>(_VariantOffset!.Value);
         }
     }
     private static nint? _RandomOffset;
 
-    public ref int Random {
-        get {
+    public ref int Random
+    {
+        get
+        {
             _RandomOffset = _RandomOffset ?? Schema.GetOffset(0x58B5CA36850EF8CE);
             return ref _Handle.AsRef<int>(_RandomOffset!.Value);
         }
     }
     private static nint? _OrdinalOffset;
 
-    public ref int Ordinal {
-        get {
+    public ref int Ordinal
+    {
+        get
+        {
             _OrdinalOffset = _OrdinalOffset ?? Schema.GetOffset(0x58B5CA364ABADF96);
             return ref _Handle.AsRef<int>(_OrdinalOffset!.Value);
         }
     }
     private static nint? _WeaponNameOffset;
 
-    public string WeaponName {
-        get {
+    public string WeaponName
+    {
+        get
+        {
             _WeaponNameOffset = _WeaponNameOffset ?? Schema.GetOffset(0x58B5CA3652FE8889);
             return Schema.GetCUtlString(_Handle.Read<nint>(_WeaponNameOffset!.Value));
         }
-        set {
+        set
+        {
             _WeaponNameOffset = _WeaponNameOffset ?? Schema.GetOffset(0x58B5CA3652FE8889);
             Schema.SetCUtlString(_Handle, _WeaponNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _XuidOffset;
 
-    public ref ulong Xuid {
-        get {
+    public ref ulong Xuid
+    {
+        get
+        {
             _XuidOffset = _XuidOffset ?? Schema.GetOffset(0x58B5CA36C61EB42B);
             return ref _Handle.AsRef<ulong>(_XuidOffset!.Value);
         }
     }
     private static nint? _AgentItemOffset;
 
-    public CEconItemView AgentItem {
-        get {
+    public CEconItemView AgentItem
+    {
+        get
+        {
             _AgentItemOffset = _AgentItemOffset ?? Schema.GetOffset(0x58B5CA366B625605);
             return new CEconItemViewImpl(_Handle + _AgentItemOffset!.Value);
         }
     }
     private static nint? _GlovesItemOffset;
 
-    public CEconItemView GlovesItem {
-        get {
+    public CEconItemView GlovesItem
+    {
+        get
+        {
             _GlovesItemOffset = _GlovesItemOffset ?? Schema.GetOffset(0x58B5CA3692931DD0);
             return new CEconItemViewImpl(_Handle + _GlovesItemOffset!.Value);
         }
     }
     private static nint? _WeaponItemOffset;
 
-    public CEconItemView WeaponItem {
-        get {
+    public CEconItemView WeaponItem
+    {
+        get
+        {
             _WeaponItemOffset = _WeaponItemOffset ?? Schema.GetOffset(0x58B5CA3689437C5A);
             return new CEconItemViewImpl(_Handle + _WeaponItemOffset!.Value);
         }

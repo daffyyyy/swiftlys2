@@ -18,20 +18,23 @@ internal partial class CNavVolumeSphereImpl : CNavVolumeImpl, CNavVolumeSphere
 
     private static nint? _CenterOffset;
 
-    public ref Vector Center {
-        get {
+    public ref Vector Center
+    {
+        get
+        {
             _CenterOffset = _CenterOffset ?? Schema.GetOffset(0x8FB5B6B8C82A5908);
             return ref _Handle.AsRef<Vector>(_CenterOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x8FB5B6B85ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
-
 
 }

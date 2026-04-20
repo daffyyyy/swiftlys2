@@ -16,7 +16,4 @@ internal partial class CPointBroadcastClientCommandImpl : CPointEntityImpl, CPoi
 {
     public CPointBroadcastClientCommandImpl(nint handle) : base(handle) { }
 
-
-
-
 }

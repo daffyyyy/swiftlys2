@@ -18,28 +18,33 @@ internal partial class CVMixAudioMeterImpl : SchemaClass, CVMixAudioMeter
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xE65785754D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xE65785754D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DisplayNameOffset;
 
-    public string DisplayName {
-        get {
+    public string DisplayName
+    {
+        get
+        {
             _DisplayNameOffset = _DisplayNameOffset ?? Schema.GetOffset(0xE65785752C04AE36);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DisplayNameOffset!.Value));
         }
-        set {
+        set
+        {
             _DisplayNameOffset = _DisplayNameOffset ?? Schema.GetOffset(0xE65785752C04AE36);
             Schema.SetCUtlString(_Handle, _DisplayNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

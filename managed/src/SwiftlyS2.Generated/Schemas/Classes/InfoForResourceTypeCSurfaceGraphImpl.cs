@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCSurfaceGraphImpl : SchemaClass, InfoF
 {
     public InfoForResourceTypeCSurfaceGraphImpl(nint handle) : base(handle) { }
 
-
-
-
 }

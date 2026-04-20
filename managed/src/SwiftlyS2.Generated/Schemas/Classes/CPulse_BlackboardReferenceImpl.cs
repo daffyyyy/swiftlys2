@@ -18,36 +18,43 @@ internal partial class CPulse_BlackboardReferenceImpl : SchemaClass, CPulse_Blac
 
     private static nint? _BlackboardResourceOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIPulseGraphDef> BlackboardResource {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIPulseGraphDef> BlackboardResource
+    {
+        get
+        {
             _BlackboardResourceOffset = _BlackboardResourceOffset ?? Schema.GetOffset(0xEF83970A45E704DE);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIPulseGraphDef>>(_BlackboardResourceOffset!.Value);
         }
     }
     private static nint? _BlackboardResource1Offset;
 
-    public SchemaUntypedField BlackboardResource1 {
-        get {
+    public SchemaUntypedField BlackboardResource1
+    {
+        get
+        {
             _BlackboardResource1Offset = _BlackboardResource1Offset ?? Schema.GetOffset(0xEF83970A83127470);
             return new SchemaUntypedField(_Handle + _BlackboardResource1Offset!.Value);
         }
     }
     private static nint? _NodeIDOffset;
 
-    public PulseDocNodeID_t NodeID {
-        get {
+    public PulseDocNodeID_t NodeID
+    {
+        get
+        {
             _NodeIDOffset = _NodeIDOffset ?? Schema.GetOffset(0xEF83970A0FD6755C);
             return new PulseDocNodeID_tImpl(_Handle + _NodeIDOffset!.Value);
         }
     }
     private static nint? _NodeNameOffset;
 
-    public ref CGlobalSymbol NodeName {
-        get {
+    public ref CGlobalSymbol NodeName
+    {
+        get
+        {
             _NodeNameOffset = _NodeNameOffset ?? Schema.GetOffset(0xEF83970A3FB4DAAE);
             return ref _Handle.AsRef<CGlobalSymbol>(_NodeNameOffset!.Value);
         }
     }
-
 
 }

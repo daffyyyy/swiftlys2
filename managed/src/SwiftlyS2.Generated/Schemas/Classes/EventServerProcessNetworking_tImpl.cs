@@ -16,7 +16,4 @@ internal partial class EventServerProcessNetworking_tImpl : EventSimulate_tImpl,
 {
     public EventServerProcessNetworking_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

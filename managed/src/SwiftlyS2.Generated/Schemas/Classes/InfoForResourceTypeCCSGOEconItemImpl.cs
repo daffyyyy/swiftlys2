@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCCSGOEconItemImpl : SchemaClass, InfoF
 {
     public InfoForResourceTypeCCSGOEconItemImpl(nint handle) : base(handle) { }
 
-
-
-
 }

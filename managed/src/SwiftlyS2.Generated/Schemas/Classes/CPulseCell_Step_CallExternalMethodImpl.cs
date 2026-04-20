@@ -18,44 +18,53 @@ internal partial class CPulseCell_Step_CallExternalMethodImpl : CPulseCell_BaseY
 
     private static nint? _MethodNameOffset;
 
-    public SchemaUntypedField MethodName {
-        get {
+    public SchemaUntypedField MethodName
+    {
+        get
+        {
             _MethodNameOffset = _MethodNameOffset ?? Schema.GetOffset(0x6A5B3EF57D863B13);
             return new SchemaUntypedField(_Handle + _MethodNameOffset!.Value);
         }
     }
-    private static nint? _GameBlackboardOffset;
+    private static nint? _BlackboardIndexOffset;
 
-    public SchemaUntypedField GameBlackboard {
-        get {
-            _GameBlackboardOffset = _GameBlackboardOffset ?? Schema.GetOffset(0x6A5B3EF536FB1236);
-            return new SchemaUntypedField(_Handle + _GameBlackboardOffset!.Value);
+    public PulseRuntimeBlackboardReferenceIndex_t BlackboardIndex
+    {
+        get
+        {
+            _BlackboardIndexOffset = _BlackboardIndexOffset ?? Schema.GetOffset(0x6A5B3EF5C76B0A2C);
+            return new PulseRuntimeBlackboardReferenceIndex_tImpl(_Handle + _BlackboardIndexOffset!.Value);
         }
     }
     private static nint? _ExpectedArgsOffset;
 
-    public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> ExpectedArgs {
-        get {
+    public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> ExpectedArgs
+    {
+        get
+        {
             _ExpectedArgsOffset = _ExpectedArgsOffset ?? Schema.GetOffset(0x6A5B3EF594EB10E8);
             return ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg, int>>(_ExpectedArgsOffset!.Value);
         }
     }
     private static nint? _AsyncCallModeOffset;
 
-    public ref PulseMethodCallMode_t AsyncCallMode {
-        get {
+    public ref PulseMethodCallMode_t AsyncCallMode
+    {
+        get
+        {
             _AsyncCallModeOffset = _AsyncCallModeOffset ?? Schema.GetOffset(0x6A5B3EF535F27204);
             return ref _Handle.AsRef<PulseMethodCallMode_t>(_AsyncCallModeOffset!.Value);
         }
     }
     private static nint? _OnFinishedOffset;
 
-    public CPulse_ResumePoint OnFinished {
-        get {
+    public CPulse_ResumePoint OnFinished
+    {
+        get
+        {
             _OnFinishedOffset = _OnFinishedOffset ?? Schema.GetOffset(0x6A5B3EF58D903E5E);
             return new CPulse_ResumePointImpl(_Handle + _OnFinishedOffset!.Value);
         }
     }
-
 
 }

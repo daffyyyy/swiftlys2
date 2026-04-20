@@ -16,7 +16,4 @@ internal partial class CHEGrenadeImpl : CBaseCSGrenadeImpl, CHEGrenade
 {
     public CHEGrenadeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

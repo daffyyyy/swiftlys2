@@ -16,7 +16,4 @@ internal partial class CInfoSpawnGroupLandmarkImpl : CPointEntityImpl, CInfoSpaw
 {
     public CInfoSpawnGroupLandmarkImpl(nint handle) : base(handle) { }
 
-
-
-
 }

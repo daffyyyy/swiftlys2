@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum DetailCombo_t : uint
 {
- DETAIL_COMBO_OFF = 0,
-
- DETAIL_COMBO_ADD = 1,
-
- DETAIL_COMBO_ADD_SELF_ILLUM = 2,
-
- DETAIL_COMBO_MOD2X = 3,
+    DETAIL_COMBO_OFF = 0,
+    DETAIL_COMBO_ADD = 1,
+    DETAIL_COMBO_ADD_SELF_ILLUM = 2,
+    DETAIL_COMBO_MOD2X = 3,
 }

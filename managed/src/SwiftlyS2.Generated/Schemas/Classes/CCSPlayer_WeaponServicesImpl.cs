@@ -18,120 +18,150 @@ internal partial class CCSPlayer_WeaponServicesImpl : CPlayer_WeaponServicesImpl
 
     private static nint? _NextAttackOffset;
 
-    public GameTime_t NextAttack {
-        get {
+    public GameTime_t NextAttack
+    {
+        get
+        {
             _NextAttackOffset = _NextAttackOffset ?? Schema.GetOffset(0x13067CB23DFDCDEA);
             return new GameTime_tImpl(_Handle + _NextAttackOffset!.Value);
         }
     }
     private static nint? _IsLookingAtWeaponOffset;
 
-    public ref bool IsLookingAtWeapon {
-        get {
+    public ref bool IsLookingAtWeapon
+    {
+        get
+        {
             _IsLookingAtWeaponOffset = _IsLookingAtWeaponOffset ?? Schema.GetOffset(0x13067CB223393CBF);
             return ref _Handle.AsRef<bool>(_IsLookingAtWeaponOffset!.Value);
         }
     }
     private static nint? _IsHoldingLookAtWeaponOffset;
 
-    public ref bool IsHoldingLookAtWeapon {
-        get {
+    public ref bool IsHoldingLookAtWeapon
+    {
+        get
+        {
             _IsHoldingLookAtWeaponOffset = _IsHoldingLookAtWeaponOffset ?? Schema.GetOffset(0x13067CB2AF0F7486);
             return ref _Handle.AsRef<bool>(_IsHoldingLookAtWeaponOffset!.Value);
         }
     }
     private static nint? _SavedWeaponOffset;
 
-    public ref CHandle<CBasePlayerWeapon> SavedWeapon {
-        get {
+    public ref CHandle<CBasePlayerWeapon> SavedWeapon
+    {
+        get
+        {
             _SavedWeaponOffset = _SavedWeaponOffset ?? Schema.GetOffset(0x13067CB248BC7512);
             return ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(_SavedWeaponOffset!.Value);
         }
     }
     private static nint? _TimeToMeleeOffset;
 
-    public ref int TimeToMelee {
-        get {
+    public ref int TimeToMelee
+    {
+        get
+        {
             _TimeToMeleeOffset = _TimeToMeleeOffset ?? Schema.GetOffset(0x13067CB2B21B94A7);
             return ref _Handle.AsRef<int>(_TimeToMeleeOffset!.Value);
         }
     }
     private static nint? _TimeToSecondaryOffset;
 
-    public ref int TimeToSecondary {
-        get {
+    public ref int TimeToSecondary
+    {
+        get
+        {
             _TimeToSecondaryOffset = _TimeToSecondaryOffset ?? Schema.GetOffset(0x13067CB2CA0FD845);
             return ref _Handle.AsRef<int>(_TimeToSecondaryOffset!.Value);
         }
     }
     private static nint? _TimeToPrimaryOffset;
 
-    public ref int TimeToPrimary {
-        get {
+    public ref int TimeToPrimary
+    {
+        get
+        {
             _TimeToPrimaryOffset = _TimeToPrimaryOffset ?? Schema.GetOffset(0x13067CB2B1AFDA45);
             return ref _Handle.AsRef<int>(_TimeToPrimaryOffset!.Value);
         }
     }
     private static nint? _TimeToSniperRifleOffset;
 
-    public ref int TimeToSniperRifle {
-        get {
+    public ref int TimeToSniperRifle
+    {
+        get
+        {
             _TimeToSniperRifleOffset = _TimeToSniperRifleOffset ?? Schema.GetOffset(0x13067CB2A9FF6B8C);
             return ref _Handle.AsRef<int>(_TimeToSniperRifleOffset!.Value);
         }
     }
     private static nint? _IsBeingGivenItemOffset;
 
-    public ref bool IsBeingGivenItem {
-        get {
+    public ref bool IsBeingGivenItem
+    {
+        get
+        {
             _IsBeingGivenItemOffset = _IsBeingGivenItemOffset ?? Schema.GetOffset(0x13067CB2D16DF82E);
             return ref _Handle.AsRef<bool>(_IsBeingGivenItemOffset!.Value);
         }
     }
     private static nint? _IsPickingUpItemWithUseOffset;
 
-    public ref bool IsPickingUpItemWithUse {
-        get {
+    public ref bool IsPickingUpItemWithUse
+    {
+        get
+        {
             _IsPickingUpItemWithUseOffset = _IsPickingUpItemWithUseOffset ?? Schema.GetOffset(0x13067CB2833CCD8D);
             return ref _Handle.AsRef<bool>(_IsPickingUpItemWithUseOffset!.Value);
         }
     }
     private static nint? _PickedUpWeaponOffset;
 
-    public ref bool PickedUpWeapon {
-        get {
+    public ref bool PickedUpWeapon
+    {
+        get
+        {
             _PickedUpWeaponOffset = _PickedUpWeaponOffset ?? Schema.GetOffset(0x13067CB21EEE10C0);
             return ref _Handle.AsRef<bool>(_PickedUpWeaponOffset!.Value);
         }
     }
     private static nint? _DisableAutoDeployOffset;
 
-    public ref bool DisableAutoDeploy {
-        get {
+    public ref bool DisableAutoDeploy
+    {
+        get
+        {
             _DisableAutoDeployOffset = _DisableAutoDeployOffset ?? Schema.GetOffset(0x13067CB2B208C90B);
             return ref _Handle.AsRef<bool>(_DisableAutoDeployOffset!.Value);
         }
     }
     private static nint? _IsPickingUpGroundWeaponOffset;
 
-    public ref bool IsPickingUpGroundWeapon {
-        get {
+    public ref bool IsPickingUpGroundWeapon
+    {
+        get
+        {
             _IsPickingUpGroundWeaponOffset = _IsPickingUpGroundWeaponOffset ?? Schema.GetOffset(0x13067CB2CA423D76);
             return ref _Handle.AsRef<bool>(_IsPickingUpGroundWeaponOffset!.Value);
         }
     }
     private static nint? _NetworkAnimTimingOffset;
 
-    public ref CUtlVector<byte> NetworkAnimTiming {
-        get {
+    public ref CUtlVector<byte> NetworkAnimTiming
+    {
+        get
+        {
             _NetworkAnimTimingOffset = _NetworkAnimTimingOffset ?? Schema.GetOffset(0x13067CB253AFB9FA);
             return ref _Handle.AsRef<CUtlVector<byte>>(_NetworkAnimTimingOffset!.Value);
         }
     }
     private static nint? _BlockInspectUntilNextGraphUpdateOffset;
 
-    public ref bool BlockInspectUntilNextGraphUpdate {
-        get {
+    public ref bool BlockInspectUntilNextGraphUpdate
+    {
+        get
+        {
             _BlockInspectUntilNextGraphUpdateOffset = _BlockInspectUntilNextGraphUpdateOffset ?? Schema.GetOffset(0x13067CB2029ABB28);
             return ref _Handle.AsRef<bool>(_BlockInspectUntilNextGraphUpdateOffset!.Value);
         }

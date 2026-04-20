@@ -16,7 +16,4 @@ internal partial class CHostageCarriablePropImpl : CBaseAnimGraphImpl, CHostageC
 {
     public CHostageCarriablePropImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,28 +18,33 @@ internal partial class CParticleFunctionRendererImpl : CParticleFunctionImpl, CP
 
     private static nint? _VisibilityInputsOffset;
 
-    public CParticleVisibilityInputs VisibilityInputs {
-        get {
+    public CParticleVisibilityInputs VisibilityInputs
+    {
+        get
+        {
             _VisibilityInputsOffset = _VisibilityInputsOffset ?? Schema.GetOffset(0xAE332DA3CF8264F8);
             return new CParticleVisibilityInputsImpl(_Handle + _VisibilityInputsOffset!.Value);
         }
     }
     private static nint? _CannotBeRefractedOffset;
 
-    public ref bool CannotBeRefracted {
-        get {
+    public ref bool CannotBeRefracted
+    {
+        get
+        {
             _CannotBeRefractedOffset = _CannotBeRefractedOffset ?? Schema.GetOffset(0xAE332DA3CC78C4FB);
             return ref _Handle.AsRef<bool>(_CannotBeRefractedOffset!.Value);
         }
     }
     private static nint? _SkipRenderingOnMobileOffset;
 
-    public ref bool SkipRenderingOnMobile {
-        get {
+    public ref bool SkipRenderingOnMobile
+    {
+        get
+        {
             _SkipRenderingOnMobileOffset = _SkipRenderingOnMobileOffset ?? Schema.GetOffset(0xAE332DA33F34EA75);
             return ref _Handle.AsRef<bool>(_SkipRenderingOnMobileOffset!.Value);
         }
     }
-
 
 }

@@ -18,48 +18,58 @@ internal partial class C_INIT_ModelCullImpl : CParticleFunctionInitializerImpl, 
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xE9ECCC6B3F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _BoundBoxOffset;
 
-    public ref bool BoundBox {
-        get {
+    public ref bool BoundBox
+    {
+        get
+        {
             _BoundBoxOffset = _BoundBoxOffset ?? Schema.GetOffset(0xE9ECCC6BAB65CDDC);
             return ref _Handle.AsRef<bool>(_BoundBoxOffset!.Value);
         }
     }
     private static nint? _CullOutsideOffset;
 
-    public ref bool CullOutside {
-        get {
+    public ref bool CullOutside
+    {
+        get
+        {
             _CullOutsideOffset = _CullOutsideOffset ?? Schema.GetOffset(0xE9ECCC6BA6EF9E04);
             return ref _Handle.AsRef<bool>(_CullOutsideOffset!.Value);
         }
     }
     private static nint? _UseBonesOffset;
 
-    public ref bool UseBones {
-        get {
+    public ref bool UseBones
+    {
+        get
+        {
             _UseBonesOffset = _UseBonesOffset ?? Schema.GetOffset(0xE9ECCC6B10D1938B);
             return ref _Handle.AsRef<bool>(_UseBonesOffset!.Value);
         }
     }
     private static nint? _HitboxSetNameOffset;
 
-    public string HitboxSetName {
-        get {
+    public string HitboxSetName
+    {
+        get
+        {
             _HitboxSetNameOffset = _HitboxSetNameOffset ?? Schema.GetOffset(0xE9ECCC6B6A21BB0E);
             return Schema.GetString(_Handle + _HitboxSetNameOffset!.Value);
         }
-        set {
+        set
+        {
             _HitboxSetNameOffset = _HitboxSetNameOffset ?? Schema.GetOffset(0xE9ECCC6B6A21BB0E);
             Schema.SetFixedString(_Handle, _HitboxSetNameOffset!.Value, value, 128);
         }
-    } 
-
+    }
 
 }

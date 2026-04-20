@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCTextureBase : ISchemaClass<InfoForR
     static int ISchemaClass<InfoForResourceTypeCTextureBase>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCTextureBase>.ClassName => null;
 
-
-
-
 }

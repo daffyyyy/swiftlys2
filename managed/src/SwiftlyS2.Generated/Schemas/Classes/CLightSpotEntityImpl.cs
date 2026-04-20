@@ -16,7 +16,4 @@ internal partial class CLightSpotEntityImpl : CLightEntityImpl, CLightSpotEntity
 {
     public CLightSpotEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

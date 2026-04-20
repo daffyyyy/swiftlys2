@@ -18,20 +18,23 @@ internal partial class CAnimParamHandleImpl : SchemaClass, CAnimParamHandle
 
     private static nint? _TypeOffset;
 
-    public ref AnimParamType_t Type {
-        get {
+    public ref AnimParamType_t Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x7B9461E0F04B4ED);
             return ref _Handle.AsRef<AnimParamType_t>(_TypeOffset!.Value);
         }
     }
     private static nint? _IndexOffset;
 
-    public ref byte Index {
-        get {
+    public ref byte Index
+    {
+        get
+        {
             _IndexOffset = _IndexOffset ?? Schema.GetOffset(0x7B9461E491963CB);
             return ref _Handle.AsRef<byte>(_IndexOffset!.Value);
         }
     }
-
 
 }

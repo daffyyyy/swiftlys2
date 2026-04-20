@@ -18,28 +18,33 @@ internal partial class C_OP_ClampVectorImpl : CParticleFunctionOperatorImpl, C_O
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x5977BF1BE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public CPerParticleVecInput OutputMin {
-        get {
+    public CPerParticleVecInput OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0x5977BF1B2EFED678);
             return new CPerParticleVecInputImpl(_Handle + _OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public CPerParticleVecInput OutputMax {
-        get {
+    public CPerParticleVecInput OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0x5977BF1B451280D2);
             return new CPerParticleVecInputImpl(_Handle + _OutputMaxOffset!.Value);
         }
     }
-
 
 }

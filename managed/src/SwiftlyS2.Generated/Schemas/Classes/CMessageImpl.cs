@@ -18,60 +18,73 @@ internal partial class CMessageImpl : CPointEntityImpl, CMessage
 
     private static nint? _MessageOffset;
 
-    public string Message {
-        get {
+    public string Message
+    {
+        get
+        {
             _MessageOffset = _MessageOffset ?? Schema.GetOffset(0xCCCF499CC5243DC);
             return Schema.GetString(_Handle.Read<nint>(_MessageOffset!.Value));
         }
-        set {
+        set
+        {
             _MessageOffset = _MessageOffset ?? Schema.GetOffset(0xCCCF499CC5243DC);
             Schema.SetString(_Handle, _MessageOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _MessageVolumeOffset;
 
-    public ref float MessageVolume {
-        get {
+    public ref float MessageVolume
+    {
+        get
+        {
             _MessageVolumeOffset = _MessageVolumeOffset ?? Schema.GetOffset(0xCCCF499C87F24D6);
             return ref _Handle.AsRef<float>(_MessageVolumeOffset!.Value);
         }
     }
     private static nint? _MessageAttenuationOffset;
 
-    public ref int MessageAttenuation {
-        get {
+    public ref int MessageAttenuation
+    {
+        get
+        {
             _MessageAttenuationOffset = _MessageAttenuationOffset ?? Schema.GetOffset(0xCCCF4998F72B2B4);
             return ref _Handle.AsRef<int>(_MessageAttenuationOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xCCCF4997C5B0533);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _NoiseOffset;
 
-    public string Noise {
-        get {
+    public string Noise
+    {
+        get
+        {
             _NoiseOffset = _NoiseOffset ?? Schema.GetOffset(0xCCCF4991F22B8CC);
             return Schema.GetString(_Handle.Read<nint>(_NoiseOffset!.Value));
         }
-        set {
+        set
+        {
             _NoiseOffset = _NoiseOffset ?? Schema.GetOffset(0xCCCF4991F22B8CC);
             Schema.SetString(_Handle, _NoiseOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OnShowMessageOffset;
 
-    public ref CEntityIOOutput OnShowMessage {
-        get {
+    public ref CEntityIOOutput OnShowMessage
+    {
+        get
+        {
             _OnShowMessageOffset = _OnShowMessageOffset ?? Schema.GetOffset(0xCCCF499D586D920);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnShowMessageOffset!.Value);
         }
     }
-
 
 }

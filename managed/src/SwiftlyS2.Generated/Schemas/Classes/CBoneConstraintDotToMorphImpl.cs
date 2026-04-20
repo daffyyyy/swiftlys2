@@ -18,43 +18,52 @@ internal partial class CBoneConstraintDotToMorphImpl : CBoneConstraintBaseImpl, 
 
     private static nint? _BoneNameOffset;
 
-    public string BoneName {
-        get {
+    public string BoneName
+    {
+        get
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0x75939F077559AC1F);
             return Schema.GetCUtlString(_Handle.Read<nint>(_BoneNameOffset!.Value));
         }
-        set {
+        set
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0x75939F077559AC1F);
             Schema.SetCUtlString(_Handle, _BoneNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TargetBoneNameOffset;
 
-    public string TargetBoneName {
-        get {
+    public string TargetBoneName
+    {
+        get
+        {
             _TargetBoneNameOffset = _TargetBoneNameOffset ?? Schema.GetOffset(0x75939F07CBA1BE4A);
             return Schema.GetCUtlString(_Handle.Read<nint>(_TargetBoneNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TargetBoneNameOffset = _TargetBoneNameOffset ?? Schema.GetOffset(0x75939F07CBA1BE4A);
             Schema.SetCUtlString(_Handle, _TargetBoneNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _MorphChannelNameOffset;
 
-    public string MorphChannelName {
-        get {
+    public string MorphChannelName
+    {
+        get
+        {
             _MorphChannelNameOffset = _MorphChannelNameOffset ?? Schema.GetOffset(0x75939F0777272AE4);
             return Schema.GetCUtlString(_Handle.Read<nint>(_MorphChannelNameOffset!.Value));
         }
-        set {
+        set
+        {
             _MorphChannelNameOffset = _MorphChannelNameOffset ?? Schema.GetOffset(0x75939F0777272AE4);
             Schema.SetCUtlString(_Handle, _MorphChannelNameOffset!.Value, value);
         }
-    } 
-    public ISchemaFixedArray<float> Remap {
+    }
+    public ISchemaFixedArray<float> Remap
+    {
         get => new SchemaFixedArray<float>(_Handle, 0x75939F07BE3DB1A0, 4, 4, 4);
     }
-
 
 }

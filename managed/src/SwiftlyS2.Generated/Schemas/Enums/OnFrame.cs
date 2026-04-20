@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum OnFrame : byte
 {
- ONFRAME_UNKNOWN = 0,
-
- ONFRAME_TRUE = 1,
-
- ONFRAME_FALSE = 2,
+    ONFRAME_UNKNOWN = 0,
+    ONFRAME_TRUE = 1,
+    ONFRAME_FALSE = 2,
 }

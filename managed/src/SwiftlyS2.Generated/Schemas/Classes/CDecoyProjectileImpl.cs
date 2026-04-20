@@ -18,32 +18,40 @@ internal partial class CDecoyProjectileImpl : CBaseCSGrenadeProjectileImpl, CDec
 
     private static nint? _DecoyShotTickOffset;
 
-    public ref int DecoyShotTick {
-        get {
+    public ref int DecoyShotTick
+    {
+        get
+        {
             _DecoyShotTickOffset = _DecoyShotTickOffset ?? Schema.GetOffset(0x69629121C4EFED0A);
             return ref _Handle.AsRef<int>(_DecoyShotTickOffset!.Value);
         }
     }
     private static nint? _ShotsRemainingOffset;
 
-    public ref int ShotsRemaining {
-        get {
+    public ref int ShotsRemaining
+    {
+        get
+        {
             _ShotsRemainingOffset = _ShotsRemainingOffset ?? Schema.GetOffset(0x6962912188CAE2A2);
             return ref _Handle.AsRef<int>(_ShotsRemainingOffset!.Value);
         }
     }
     private static nint? _ExpireTimeOffset;
 
-    public GameTime_t ExpireTime {
-        get {
+    public GameTime_t ExpireTime
+    {
+        get
+        {
             _ExpireTimeOffset = _ExpireTimeOffset ?? Schema.GetOffset(0x696291216D61853F);
             return new GameTime_tImpl(_Handle + _ExpireTimeOffset!.Value);
         }
     }
     private static nint? _DecoyWeaponDefIndexOffset;
 
-    public ref ushort DecoyWeaponDefIndex {
-        get {
+    public ref ushort DecoyWeaponDefIndex
+    {
+        get
+        {
             _DecoyWeaponDefIndexOffset = _DecoyWeaponDefIndexOffset ?? Schema.GetOffset(0x69629121A9377E6A);
             return ref _Handle.AsRef<ushort>(_DecoyWeaponDefIndexOffset!.Value);
         }

@@ -18,12 +18,13 @@ internal partial class CVoiceContainerStaticAdditiveSynthImpl : CVoiceContainerA
 
     private static nint? _TonesOffset;
 
-    public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CTone> Tones {
-        get {
+    public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CTone> Tones
+    {
+        get
+        {
             _TonesOffset = _TonesOffset ?? Schema.GetOffset(0xE9663E55BAE6D716);
             return ref _Handle.AsRef<CUtlVector<CVoiceContainerStaticAdditiveSynth__CTone>>(_TonesOffset!.Value);
         }
     }
-
 
 }

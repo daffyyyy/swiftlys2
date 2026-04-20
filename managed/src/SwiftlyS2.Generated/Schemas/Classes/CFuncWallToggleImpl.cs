@@ -16,7 +16,4 @@ internal partial class CFuncWallToggleImpl : CFuncWallImpl, CFuncWallToggle
 {
     public CFuncWallToggleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CCSObserver_UseServicesImpl : CPlayer_UseServicesImpl, CC
 {
     public CCSObserver_UseServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

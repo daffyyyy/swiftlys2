@@ -18,48 +18,58 @@ internal partial class CSoundEventConeEntityImpl : CSoundEventEntityImpl, CSound
 
     private static nint? _EmitterAngleOffset;
 
-    public ref float EmitterAngle {
-        get {
+    public ref float EmitterAngle
+    {
+        get
+        {
             _EmitterAngleOffset = _EmitterAngleOffset ?? Schema.GetOffset(0x41DBEBEF9BAACEC6);
             return ref _Handle.AsRef<float>(_EmitterAngleOffset!.Value);
         }
     }
     private static nint? _SweetSpotAngleOffset;
 
-    public ref float SweetSpotAngle {
-        get {
+    public ref float SweetSpotAngle
+    {
+        get
+        {
             _SweetSpotAngleOffset = _SweetSpotAngleOffset ?? Schema.GetOffset(0x41DBEBEFA6F5A5D0);
             return ref _Handle.AsRef<float>(_SweetSpotAngleOffset!.Value);
         }
     }
     private static nint? _AttenMinOffset;
 
-    public ref float AttenMin {
-        get {
+    public ref float AttenMin
+    {
+        get
+        {
             _AttenMinOffset = _AttenMinOffset ?? Schema.GetOffset(0x41DBEBEF68F19CC3);
             return ref _Handle.AsRef<float>(_AttenMinOffset!.Value);
         }
     }
     private static nint? _AttenMaxOffset;
 
-    public ref float AttenMax {
-        get {
+    public ref float AttenMax
+    {
+        get
+        {
             _AttenMaxOffset = _AttenMaxOffset ?? Schema.GetOffset(0x41DBEBEF5F06A7BD);
             return ref _Handle.AsRef<float>(_AttenMaxOffset!.Value);
         }
     }
     private static nint? _ParameterNameOffset;
 
-    public string ParameterName {
-        get {
+    public string ParameterName
+    {
+        get
+        {
             _ParameterNameOffset = _ParameterNameOffset ?? Schema.GetOffset(0x41DBEBEF73250A0B);
             return Schema.GetString(_Handle.Read<nint>(_ParameterNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ParameterNameOffset = _ParameterNameOffset ?? Schema.GetOffset(0x41DBEBEF73250A0B);
             Schema.SetString(_Handle, _ParameterNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

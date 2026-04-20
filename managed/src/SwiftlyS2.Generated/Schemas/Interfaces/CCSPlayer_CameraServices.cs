@@ -14,7 +14,4 @@ public partial interface CCSPlayer_CameraServices : CCSPlayerBase_CameraServices
     static int ISchemaClass<CCSPlayer_CameraServices>.Size => 432;
     static string? ISchemaClass<CCSPlayer_CameraServices>.ClassName => null;
 
-
-
-
 }

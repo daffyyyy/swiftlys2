@@ -18,36 +18,43 @@ internal partial class CNmStateMachineNode__TransitionDefinition_tImpl : SchemaC
 
     private static nint? _TargetStateIdxOffset;
 
-    public ref short TargetStateIdx {
-        get {
+    public ref short TargetStateIdx
+    {
+        get
+        {
             _TargetStateIdxOffset = _TargetStateIdxOffset ?? Schema.GetOffset(0x9404D2C4E5C0218C);
             return ref _Handle.AsRef<short>(_TargetStateIdxOffset!.Value);
         }
     }
     private static nint? _ConditionNodeIdxOffset;
 
-    public ref short ConditionNodeIdx {
-        get {
+    public ref short ConditionNodeIdx
+    {
+        get
+        {
             _ConditionNodeIdxOffset = _ConditionNodeIdxOffset ?? Schema.GetOffset(0x9404D2C4773FE641);
             return ref _Handle.AsRef<short>(_ConditionNodeIdxOffset!.Value);
         }
     }
     private static nint? _TransitionNodeIdxOffset;
 
-    public ref short TransitionNodeIdx {
-        get {
+    public ref short TransitionNodeIdx
+    {
+        get
+        {
             _TransitionNodeIdxOffset = _TransitionNodeIdxOffset ?? Schema.GetOffset(0x9404D2C40D5CDE45);
             return ref _Handle.AsRef<short>(_TransitionNodeIdxOffset!.Value);
         }
     }
     private static nint? _CanBeForcedOffset;
 
-    public ref bool CanBeForced {
-        get {
+    public ref bool CanBeForced
+    {
+        get
+        {
             _CanBeForcedOffset = _CanBeForcedOffset ?? Schema.GetOffset(0x9404D2C4B6EB0555);
             return ref _Handle.AsRef<bool>(_CanBeForcedOffset!.Value);
         }
     }
-
 
 }

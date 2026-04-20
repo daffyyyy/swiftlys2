@@ -18,28 +18,33 @@ internal partial class CLogicAutosaveImpl : CLogicalEntityImpl, CLogicAutosave
 
     private static nint? _ForceNewLevelUnitOffset;
 
-    public ref bool ForceNewLevelUnit {
-        get {
+    public ref bool ForceNewLevelUnit
+    {
+        get
+        {
             _ForceNewLevelUnitOffset = _ForceNewLevelUnitOffset ?? Schema.GetOffset(0xE30CCBF21473BFDE);
             return ref _Handle.AsRef<bool>(_ForceNewLevelUnitOffset!.Value);
         }
     }
     private static nint? _MinHitPointsOffset;
 
-    public ref int MinHitPoints {
-        get {
+    public ref int MinHitPoints
+    {
+        get
+        {
             _MinHitPointsOffset = _MinHitPointsOffset ?? Schema.GetOffset(0xE30CCBF22C7E0C57);
             return ref _Handle.AsRef<int>(_MinHitPointsOffset!.Value);
         }
     }
     private static nint? _MinHitPointsToCommitOffset;
 
-    public ref int MinHitPointsToCommit {
-        get {
+    public ref int MinHitPointsToCommit
+    {
+        get
+        {
             _MinHitPointsToCommitOffset = _MinHitPointsToCommitOffset ?? Schema.GetOffset(0xE30CCBF23AAC1C7F);
             return ref _Handle.AsRef<int>(_MinHitPointsToCommitOffset!.Value);
         }
     }
-
 
 }

@@ -18,68 +18,83 @@ internal partial class RnBlendVertex_tImpl : SchemaClass, RnBlendVertex_t
 
     private static nint? _Weight0Offset;
 
-    public ref ushort Weight0 {
-        get {
+    public ref ushort Weight0
+    {
+        get
+        {
             _Weight0Offset = _Weight0Offset ?? Schema.GetOffset(0xE168A4F195C99E6F);
             return ref _Handle.AsRef<ushort>(_Weight0Offset!.Value);
         }
     }
     private static nint? _Index0Offset;
 
-    public ref ushort Index0 {
-        get {
+    public ref ushort Index0
+    {
+        get
+        {
             _Index0Offset = _Index0Offset ?? Schema.GetOffset(0xE168A4F1CD32A2F5);
             return ref _Handle.AsRef<ushort>(_Index0Offset!.Value);
         }
     }
     private static nint? _Weight1Offset;
 
-    public ref ushort Weight1 {
-        get {
+    public ref ushort Weight1
+    {
+        get
+        {
             _Weight1Offset = _Weight1Offset ?? Schema.GetOffset(0xE168A4F194C99CDC);
             return ref _Handle.AsRef<ushort>(_Weight1Offset!.Value);
         }
     }
     private static nint? _Index1Offset;
 
-    public ref ushort Index1 {
-        get {
+    public ref ushort Index1
+    {
+        get
+        {
             _Index1Offset = _Index1Offset ?? Schema.GetOffset(0xE168A4F1CC32A162);
             return ref _Handle.AsRef<ushort>(_Index1Offset!.Value);
         }
     }
     private static nint? _Weight2Offset;
 
-    public ref ushort Weight2 {
-        get {
+    public ref ushort Weight2
+    {
+        get
+        {
             _Weight2Offset = _Weight2Offset ?? Schema.GetOffset(0xE168A4F197C9A195);
             return ref _Handle.AsRef<ushort>(_Weight2Offset!.Value);
         }
     }
     private static nint? _Index2Offset;
 
-    public ref ushort Index2 {
-        get {
+    public ref ushort Index2
+    {
+        get
+        {
             _Index2Offset = _Index2Offset ?? Schema.GetOffset(0xE168A4F1CB329FCF);
             return ref _Handle.AsRef<ushort>(_Index2Offset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref ushort Flags {
-        get {
+    public ref ushort Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0xE168A4F1CE6E9C28);
             return ref _Handle.AsRef<ushort>(_FlagsOffset!.Value);
         }
     }
     private static nint? _TargetIndexOffset;
 
-    public ref ushort TargetIndex {
-        get {
+    public ref ushort TargetIndex
+    {
+        get
+        {
             _TargetIndexOffset = _TargetIndexOffset ?? Schema.GetOffset(0xE168A4F1F1A91080);
             return ref _Handle.AsRef<ushort>(_TargetIndexOffset!.Value);
         }
     }
-
 
 }

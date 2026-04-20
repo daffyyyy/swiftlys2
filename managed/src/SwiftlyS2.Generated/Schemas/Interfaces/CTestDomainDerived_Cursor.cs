@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTestDomainDerived_Cursor : CPulseExecCursor, ISchemaClass<CTestDomainDerived_Cursor>
 {
     static CTestDomainDerived_Cursor ISchemaClass<CTestDomainDerived_Cursor>.From(nint handle) => new CTestDomainDerived_CursorImpl(handle);
-    static int ISchemaClass<CTestDomainDerived_Cursor>.Size => 216;
+    static int ISchemaClass<CTestDomainDerived_Cursor>.Size => 224;
     static string? ISchemaClass<CTestDomainDerived_Cursor>.ClassName => null;
 
 

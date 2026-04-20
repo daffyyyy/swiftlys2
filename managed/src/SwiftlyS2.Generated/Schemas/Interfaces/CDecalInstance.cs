@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDecalInstance : ISchemaClass<CDecalInstance>
 {
     static CDecalInstance ISchemaClass<CDecalInstance>.From(nint handle) => new CDecalInstanceImpl(handle);
-    static int ISchemaClass<CDecalInstance>.Size => 176;
+    static int ISchemaClass<CDecalInstance>.Size => 192;
     static string? ISchemaClass<CDecalInstance>.ClassName => null;
 
 
@@ -28,6 +28,8 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance>
     public ref int TriangleIndex { get; }
 
     public ref Vector PositionLS { get; }
+
+    public ref Vector PositionOS { get; }
 
     public ref Vector NormalLS { get; }
 
@@ -64,10 +66,6 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance>
     public ref bool IsAdjacent { get; }
 
     public ref bool DoDecalLightmapping { get; }
-
-    public ref DecalRtEncoding_t DecalRtEncoding { get; }
-
-    public ref bool ProjectToBackfaces { get; }
 
 
 }

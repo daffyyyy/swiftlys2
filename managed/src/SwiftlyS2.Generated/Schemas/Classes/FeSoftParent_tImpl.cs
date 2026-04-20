@@ -18,20 +18,23 @@ internal partial class FeSoftParent_tImpl : SchemaClass, FeSoftParent_t
 
     private static nint? _ParentOffset;
 
-    public ref int Parent {
-        get {
+    public ref int Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0x2404393716640171);
             return ref _Handle.AsRef<int>(_ParentOffset!.Value);
         }
     }
     private static nint? _AlphaOffset;
 
-    public ref float Alpha {
-        get {
+    public ref float Alpha
+    {
+        get
+        {
             _AlphaOffset = _AlphaOffset ?? Schema.GetOffset(0x24043937684C8871);
             return ref _Handle.AsRef<float>(_AlphaOffset!.Value);
         }
     }
-
 
 }

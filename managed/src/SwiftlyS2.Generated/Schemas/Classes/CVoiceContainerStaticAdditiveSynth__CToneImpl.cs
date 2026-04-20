@@ -18,28 +18,33 @@ internal partial class CVoiceContainerStaticAdditiveSynth__CToneImpl : SchemaCla
 
     private static nint? _HarmonicsOffset;
 
-    public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic> Harmonics {
-        get {
+    public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic> Harmonics
+    {
+        get
+        {
             _HarmonicsOffset = _HarmonicsOffset ?? Schema.GetOffset(0x1501082A3A08CDBF);
             return ref _Handle.AsRef<CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic>>(_HarmonicsOffset!.Value);
         }
     }
     private static nint? _CurveOffset;
 
-    public SchemaUntypedField Curve {
-        get {
+    public SchemaUntypedField Curve
+    {
+        get
+        {
             _CurveOffset = _CurveOffset ?? Schema.GetOffset(0x1501082ABFFA0B34);
             return new SchemaUntypedField(_Handle + _CurveOffset!.Value);
         }
     }
     private static nint? _SyncInstancesOffset;
 
-    public ref bool SyncInstances {
-        get {
+    public ref bool SyncInstances
+    {
+        get
+        {
             _SyncInstancesOffset = _SyncInstancesOffset ?? Schema.GetOffset(0x1501082A21EE9902);
             return ref _Handle.AsRef<bool>(_SyncInstancesOffset!.Value);
         }
     }
-
 
 }

@@ -18,44 +18,53 @@ internal partial class CPhysicsPropRespawnableImpl : CPhysicsPropImpl, CPhysicsP
 
     private static nint? _OriginalSpawnOriginOffset;
 
-    public ref Vector OriginalSpawnOrigin {
-        get {
+    public ref Vector OriginalSpawnOrigin
+    {
+        get
+        {
             _OriginalSpawnOriginOffset = _OriginalSpawnOriginOffset ?? Schema.GetOffset(0x6C5980BAB6F410AF);
             return ref _Handle.AsRef<Vector>(_OriginalSpawnOriginOffset!.Value);
         }
     }
     private static nint? _OriginalSpawnAnglesOffset;
 
-    public ref QAngle OriginalSpawnAngles {
-        get {
+    public ref QAngle OriginalSpawnAngles
+    {
+        get
+        {
             _OriginalSpawnAnglesOffset = _OriginalSpawnAnglesOffset ?? Schema.GetOffset(0x6C5980BAF7A16BD1);
             return ref _Handle.AsRef<QAngle>(_OriginalSpawnAnglesOffset!.Value);
         }
     }
     private static nint? _OriginalMinsOffset;
 
-    public ref Vector OriginalMins {
-        get {
+    public ref Vector OriginalMins
+    {
+        get
+        {
             _OriginalMinsOffset = _OriginalMinsOffset ?? Schema.GetOffset(0x6C5980BAFBA3B1D3);
             return ref _Handle.AsRef<Vector>(_OriginalMinsOffset!.Value);
         }
     }
     private static nint? _OriginalMaxsOffset;
 
-    public ref Vector OriginalMaxs {
-        get {
+    public ref Vector OriginalMaxs
+    {
+        get
+        {
             _OriginalMaxsOffset = _OriginalMaxsOffset ?? Schema.GetOffset(0x6C5980BAA4FDD991);
             return ref _Handle.AsRef<Vector>(_OriginalMaxsOffset!.Value);
         }
     }
     private static nint? _RespawnDurationOffset;
 
-    public ref float RespawnDuration {
-        get {
+    public ref float RespawnDuration
+    {
+        get
+        {
             _RespawnDurationOffset = _RespawnDurationOffset ?? Schema.GetOffset(0x6C5980BA476C78ED);
             return ref _Handle.AsRef<float>(_RespawnDurationOffset!.Value);
         }
     }
-
 
 }

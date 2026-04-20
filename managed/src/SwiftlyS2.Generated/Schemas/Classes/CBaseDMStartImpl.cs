@@ -18,16 +18,18 @@ internal partial class CBaseDMStartImpl : CPointEntityImpl, CBaseDMStart
 
     private static nint? _MasterOffset;
 
-    public string Master {
-        get {
+    public string Master
+    {
+        get
+        {
             _MasterOffset = _MasterOffset ?? Schema.GetOffset(0x4182FA98392E77B3);
             return Schema.GetString(_Handle.Read<nint>(_MasterOffset!.Value));
         }
-        set {
+        set
+        {
             _MasterOffset = _MasterOffset ?? Schema.GetOffset(0x4182FA98392E77B3);
             Schema.SetString(_Handle, _MasterOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

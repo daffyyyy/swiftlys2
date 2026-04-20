@@ -18,28 +18,34 @@ internal partial class CFootstepControlImpl : CBaseTriggerImpl, CFootstepControl
 
     private static nint? _SourceOffset;
 
-    public string Source {
-        get {
+    public string Source
+    {
+        get
+        {
             _SourceOffset = _SourceOffset ?? Schema.GetOffset(0x85B34315D0835C78);
             return Schema.GetString(_Handle.Read<nint>(_SourceOffset!.Value));
         }
-        set {
+        set
+        {
             _SourceOffset = _SourceOffset ?? Schema.GetOffset(0x85B34315D0835C78);
             Schema.SetString(_Handle, _SourceOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DestinationOffset;
 
-    public string Destination {
-        get {
+    public string Destination
+    {
+        get
+        {
             _DestinationOffset = _DestinationOffset ?? Schema.GetOffset(0x85B343156E5C12DF);
             return Schema.GetString(_Handle.Read<nint>(_DestinationOffset!.Value));
         }
-        set {
+        set
+        {
             _DestinationOffset = _DestinationOffset ?? Schema.GetOffset(0x85B343156E5C12DF);
             Schema.SetString(_Handle, _DestinationOffset!.Value, value);
         }
-    } 
+    }
 
     public void SourceUpdated() => Schema.Update(_Handle, 0x85B34315D0835C78);
     public void DestinationUpdated() => Schema.Update(_Handle, 0x85B343156E5C12DF);

@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum StepPhase : uint
 {
- StepPhase_OnGround = 0,
-
- StepPhase_InAir = 1,
+    StepPhase_OnGround = 0,
+    StepPhase_InAir = 1,
 }

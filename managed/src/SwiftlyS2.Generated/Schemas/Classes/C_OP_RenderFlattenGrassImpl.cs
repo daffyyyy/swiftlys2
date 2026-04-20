@@ -18,28 +18,33 @@ internal partial class C_OP_RenderFlattenGrassImpl : CParticleFunctionRendererIm
 
     private static nint? _FlattenStrengthOffset;
 
-    public ref float FlattenStrength {
-        get {
+    public ref float FlattenStrength
+    {
+        get
+        {
             _FlattenStrengthOffset = _FlattenStrengthOffset ?? Schema.GetOffset(0x81877FD959D69362);
             return ref _Handle.AsRef<float>(_FlattenStrengthOffset!.Value);
         }
     }
     private static nint? _StrengthFieldOverrideOffset;
 
-    public ParticleAttributeIndex_t StrengthFieldOverride {
-        get {
+    public ParticleAttributeIndex_t StrengthFieldOverride
+    {
+        get
+        {
             _StrengthFieldOverrideOffset = _StrengthFieldOverrideOffset ?? Schema.GetOffset(0x81877FD91996F4F8);
             return new ParticleAttributeIndex_tImpl(_Handle + _StrengthFieldOverrideOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public ref float RadiusScale {
-        get {
+    public ref float RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0x81877FD9A7A20159);
             return ref _Handle.AsRef<float>(_RadiusScaleOffset!.Value);
         }
     }
-
 
 }

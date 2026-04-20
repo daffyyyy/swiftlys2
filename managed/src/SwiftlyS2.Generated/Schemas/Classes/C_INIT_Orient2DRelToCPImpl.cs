@@ -18,28 +18,33 @@ internal partial class C_INIT_Orient2DRelToCPImpl : CParticleFunctionInitializer
 
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x4B55AD02EB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x4B55AD02E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _RotOffsetOffset;
 
-    public ref float RotOffset {
-        get {
+    public ref float RotOffset
+    {
+        get
+        {
             _RotOffsetOffset = _RotOffsetOffset ?? Schema.GetOffset(0x4B55AD02D1EA9CDF);
             return ref _Handle.AsRef<float>(_RotOffsetOffset!.Value);
         }
     }
-
 
 }

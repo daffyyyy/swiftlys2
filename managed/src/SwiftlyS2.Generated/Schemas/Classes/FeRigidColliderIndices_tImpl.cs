@@ -18,44 +18,53 @@ internal partial class FeRigidColliderIndices_tImpl : SchemaClass, FeRigidCollid
 
     private static nint? _TaperedCapsuleRigidIndexOffset;
 
-    public ref ushort TaperedCapsuleRigidIndex {
-        get {
+    public ref ushort TaperedCapsuleRigidIndex
+    {
+        get
+        {
             _TaperedCapsuleRigidIndexOffset = _TaperedCapsuleRigidIndexOffset ?? Schema.GetOffset(0x3411B17B4168EBCE);
             return ref _Handle.AsRef<ushort>(_TaperedCapsuleRigidIndexOffset!.Value);
         }
     }
     private static nint? _SphereRigidIndexOffset;
 
-    public ref ushort SphereRigidIndex {
-        get {
+    public ref ushort SphereRigidIndex
+    {
+        get
+        {
             _SphereRigidIndexOffset = _SphereRigidIndexOffset ?? Schema.GetOffset(0x3411B17B3AA961B5);
             return ref _Handle.AsRef<ushort>(_SphereRigidIndexOffset!.Value);
         }
     }
     private static nint? _BoxRigidIndexOffset;
 
-    public ref ushort BoxRigidIndex {
-        get {
+    public ref ushort BoxRigidIndex
+    {
+        get
+        {
             _BoxRigidIndexOffset = _BoxRigidIndexOffset ?? Schema.GetOffset(0x3411B17B46589173);
             return ref _Handle.AsRef<ushort>(_BoxRigidIndexOffset!.Value);
         }
     }
     private static nint? _SDFRigidIndexOffset;
 
-    public ref ushort SDFRigidIndex {
-        get {
+    public ref ushort SDFRigidIndex
+    {
+        get
+        {
             _SDFRigidIndexOffset = _SDFRigidIndexOffset ?? Schema.GetOffset(0x3411B17BCE5B5E19);
             return ref _Handle.AsRef<ushort>(_SDFRigidIndexOffset!.Value);
         }
     }
     private static nint? _CollisionPlaneIndexOffset;
 
-    public ref ushort CollisionPlaneIndex {
-        get {
+    public ref ushort CollisionPlaneIndex
+    {
+        get
+        {
             _CollisionPlaneIndexOffset = _CollisionPlaneIndexOffset ?? Schema.GetOffset(0x3411B17B7638A2B9);
             return ref _Handle.AsRef<ushort>(_CollisionPlaneIndexOffset!.Value);
         }
     }
-
 
 }

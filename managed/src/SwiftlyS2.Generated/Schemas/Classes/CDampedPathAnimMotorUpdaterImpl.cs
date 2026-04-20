@@ -18,60 +18,73 @@ internal partial class CDampedPathAnimMotorUpdaterImpl : CPathAnimMotorUpdaterBa
 
     private static nint? _AnticipationTimeOffset;
 
-    public ref float AnticipationTime {
-        get {
+    public ref float AnticipationTime
+    {
+        get
+        {
             _AnticipationTimeOffset = _AnticipationTimeOffset ?? Schema.GetOffset(0x1519DE4D43C5CA9B);
             return ref _Handle.AsRef<float>(_AnticipationTimeOffset!.Value);
         }
     }
     private static nint? _MinSpeedScaleOffset;
 
-    public ref float MinSpeedScale {
-        get {
+    public ref float MinSpeedScale
+    {
+        get
+        {
             _MinSpeedScaleOffset = _MinSpeedScaleOffset ?? Schema.GetOffset(0x1519DE4DED3B5DEE);
             return ref _Handle.AsRef<float>(_MinSpeedScaleOffset!.Value);
         }
     }
     private static nint? _AnticipationPosParamOffset;
 
-    public CAnimParamHandle AnticipationPosParam {
-        get {
+    public CAnimParamHandle AnticipationPosParam
+    {
+        get
+        {
             _AnticipationPosParamOffset = _AnticipationPosParamOffset ?? Schema.GetOffset(0x1519DE4D86389829);
             return new CAnimParamHandleImpl(_Handle + _AnticipationPosParamOffset!.Value);
         }
     }
     private static nint? _AnticipationHeadingParamOffset;
 
-    public CAnimParamHandle AnticipationHeadingParam {
-        get {
+    public CAnimParamHandle AnticipationHeadingParam
+    {
+        get
+        {
             _AnticipationHeadingParamOffset = _AnticipationHeadingParamOffset ?? Schema.GetOffset(0x1519DE4D095DAB6D);
             return new CAnimParamHandleImpl(_Handle + _AnticipationHeadingParamOffset!.Value);
         }
     }
     private static nint? _SpringConstantOffset;
 
-    public ref float SpringConstant {
-        get {
+    public ref float SpringConstant
+    {
+        get
+        {
             _SpringConstantOffset = _SpringConstantOffset ?? Schema.GetOffset(0x1519DE4DCE2260BE);
             return ref _Handle.AsRef<float>(_SpringConstantOffset!.Value);
         }
     }
     private static nint? _MinSpringTensionOffset;
 
-    public ref float MinSpringTension {
-        get {
+    public ref float MinSpringTension
+    {
+        get
+        {
             _MinSpringTensionOffset = _MinSpringTensionOffset ?? Schema.GetOffset(0x1519DE4DEEE56032);
             return ref _Handle.AsRef<float>(_MinSpringTensionOffset!.Value);
         }
     }
     private static nint? _MaxSpringTensionOffset;
 
-    public ref float MaxSpringTension {
-        get {
+    public ref float MaxSpringTension
+    {
+        get
+        {
             _MaxSpringTensionOffset = _MaxSpringTensionOffset ?? Schema.GetOffset(0x1519DE4DD4910BE4);
             return ref _Handle.AsRef<float>(_MaxSpringTensionOffset!.Value);
         }
     }
-
 
 }

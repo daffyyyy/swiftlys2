@@ -16,7 +16,4 @@ internal partial class EventModInitialized_tImpl : SchemaClass, EventModInitiali
 {
     public EventModInitialized_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

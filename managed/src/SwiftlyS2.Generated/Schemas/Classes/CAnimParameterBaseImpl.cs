@@ -18,72 +18,88 @@ internal partial class CAnimParameterBaseImpl : SchemaClass, CAnimParameterBase
 
     private static nint? _NameOffset;
 
-    public ref CGlobalSymbol Name {
-        get {
+    public ref CGlobalSymbol Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x9E097C8F4D8F5786);
             return ref _Handle.AsRef<CGlobalSymbol>(_NameOffset!.Value);
         }
     }
     private static nint? _CommentOffset;
 
-    public string Comment {
-        get {
+    public string Comment
+    {
+        get
+        {
             _CommentOffset = _CommentOffset ?? Schema.GetOffset(0x9E097C8F88A0B4DF);
             return Schema.GetCUtlString(_Handle.Read<nint>(_CommentOffset!.Value));
         }
-        set {
+        set
+        {
             _CommentOffset = _CommentOffset ?? Schema.GetOffset(0x9E097C8F88A0B4DF);
             Schema.SetCUtlString(_Handle, _CommentOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _GroupOffset;
 
-    public string Group {
-        get {
+    public string Group
+    {
+        get
+        {
             _GroupOffset = _GroupOffset ?? Schema.GetOffset(0x9E097C8F9FC645AC);
             return Schema.GetCUtlString(_Handle.Read<nint>(_GroupOffset!.Value));
         }
-        set {
+        set
+        {
             _GroupOffset = _GroupOffset ?? Schema.GetOffset(0x9E097C8F9FC645AC);
             Schema.SetCUtlString(_Handle, _GroupOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _IdOffset;
 
-    public AnimParamID Id {
-        get {
+    public AnimParamID Id
+    {
+        get
+        {
             _IdOffset = _IdOffset ?? Schema.GetOffset(0x9E097C8FB4B6E980);
             return new AnimParamIDImpl(_Handle + _IdOffset!.Value);
         }
     }
     private static nint? _ComponentNameOffset;
 
-    public string ComponentName {
-        get {
+    public string ComponentName
+    {
+        get
+        {
             _ComponentNameOffset = _ComponentNameOffset ?? Schema.GetOffset(0x9E097C8F7CAC3EA3);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ComponentNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ComponentNameOffset = _ComponentNameOffset ?? Schema.GetOffset(0x9E097C8F7CAC3EA3);
             Schema.SetCUtlString(_Handle, _ComponentNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NetworkingRequestedOffset;
 
-    public ref bool NetworkingRequested {
-        get {
+    public ref bool NetworkingRequested
+    {
+        get
+        {
             _NetworkingRequestedOffset = _NetworkingRequestedOffset ?? Schema.GetOffset(0x9E097C8FE57548D5);
             return ref _Handle.AsRef<bool>(_NetworkingRequestedOffset!.Value);
         }
     }
     private static nint? _IsReferencedOffset;
 
-    public ref bool IsReferenced {
-        get {
+    public ref bool IsReferenced
+    {
+        get
+        {
             _IsReferencedOffset = _IsReferencedOffset ?? Schema.GetOffset(0x9E097C8FCEABFB2A);
             return ref _Handle.AsRef<bool>(_IsReferencedOffset!.Value);
         }
     }
-
 
 }

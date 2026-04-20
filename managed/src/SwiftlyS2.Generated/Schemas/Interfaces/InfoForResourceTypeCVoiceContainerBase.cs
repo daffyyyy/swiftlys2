@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCVoiceContainerBase : ISchemaClass<I
     static int ISchemaClass<InfoForResourceTypeCVoiceContainerBase>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCVoiceContainerBase>.ClassName => null;
 
-
-
-
 }

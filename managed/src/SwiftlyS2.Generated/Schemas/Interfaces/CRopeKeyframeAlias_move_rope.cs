@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRopeKeyframeAlias_move_rope : CRopeKeyframe, ISchemaClass<CRopeKeyframeAlias_move_rope>
 {
     static CRopeKeyframeAlias_move_rope ISchemaClass<CRopeKeyframeAlias_move_rope>.From(nint handle) => new CRopeKeyframeAlias_move_ropeImpl(handle);
-    static int ISchemaClass<CRopeKeyframeAlias_move_rope>.Size => 1928;
+    static int ISchemaClass<CRopeKeyframeAlias_move_rope>.Size => 1984;
     static string? ISchemaClass<CRopeKeyframeAlias_move_rope>.ClassName => null;
-
-
-
 
 }

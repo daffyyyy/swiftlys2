@@ -16,7 +16,4 @@ internal partial class CCSGameModeRules_NoopImpl : CCSGameModeRulesImpl, CCSGame
 {
     public CCSGameModeRules_NoopImpl(nint handle) : base(handle) { }
 
-
-
-
 }

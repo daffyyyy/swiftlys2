@@ -16,7 +16,4 @@ internal partial class CSimpleStopwatchImpl : CStopwatchBaseImpl, CSimpleStopwat
 {
     public CSimpleStopwatchImpl(nint handle) : base(handle) { }
 
-
-
-
 }

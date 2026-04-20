@@ -18,29 +18,34 @@ internal partial class CHintMessageQueueImpl : SchemaClass, CHintMessageQueue
 
     private static nint? _TmMessageEndOffset;
 
-    public ref float TmMessageEnd {
-        get {
+    public ref float TmMessageEnd
+    {
+        get
+        {
             _TmMessageEndOffset = _TmMessageEndOffset ?? Schema.GetOffset(0xBE13489745AC0F6);
             return ref _Handle.AsRef<float>(_TmMessageEndOffset!.Value);
         }
     }
     private static nint? _MessagesOffset;
 
-    public ref CUtlVector<PointerTo<CHintMessage>> Messages {
-        get {
+    public ref CUtlVector<PointerTo<CHintMessage>> Messages
+    {
+        get
+        {
             _MessagesOffset = _MessagesOffset ?? Schema.GetOffset(0xBE134896139CC55);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CHintMessage>>>(_MessagesOffset!.Value);
         }
     }
     private static nint? _PlayerControllerOffset;
 
-    public CBasePlayerController? PlayerController {
-        get {
+    public CBasePlayerController? PlayerController
+    {
+        get
+        {
             _PlayerControllerOffset = _PlayerControllerOffset ?? Schema.GetOffset(0xBE13489DCE6762E);
             var ptr = _Handle.Read<nint>(_PlayerControllerOffset!.Value);
             return ptr.IsValidPtr() ? new CBasePlayerControllerImpl(ptr) : null;
         }
     }
-
 
 }

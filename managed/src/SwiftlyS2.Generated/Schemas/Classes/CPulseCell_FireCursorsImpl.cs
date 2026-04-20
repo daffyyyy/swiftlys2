@@ -18,36 +18,43 @@ internal partial class CPulseCell_FireCursorsImpl : CPulseCell_BaseYieldingInflo
 
     private static nint? _OutflowsOffset;
 
-    public ref CUtlVector<CPulse_OutflowConnection> Outflows {
-        get {
+    public ref CUtlVector<CPulse_OutflowConnection> Outflows
+    {
+        get
+        {
             _OutflowsOffset = _OutflowsOffset ?? Schema.GetOffset(0x9BFA034F8F0AFDF8);
             return ref _Handle.AsRef<CUtlVector<CPulse_OutflowConnection>>(_OutflowsOffset!.Value);
         }
     }
     private static nint? _WaitForChildOutflowsOffset;
 
-    public ref bool WaitForChildOutflows {
-        get {
+    public ref bool WaitForChildOutflows
+    {
+        get
+        {
             _WaitForChildOutflowsOffset = _WaitForChildOutflowsOffset ?? Schema.GetOffset(0x9BFA034F3F8E29C6);
             return ref _Handle.AsRef<bool>(_WaitForChildOutflowsOffset!.Value);
         }
     }
     private static nint? _OnFinishedOffset;
 
-    public CPulse_ResumePoint OnFinished {
-        get {
+    public CPulse_ResumePoint OnFinished
+    {
+        get
+        {
             _OnFinishedOffset = _OnFinishedOffset ?? Schema.GetOffset(0x9BFA034F8D903E5E);
             return new CPulse_ResumePointImpl(_Handle + _OnFinishedOffset!.Value);
         }
     }
     private static nint? _OnCanceledOffset;
 
-    public CPulse_ResumePoint OnCanceled {
-        get {
+    public CPulse_ResumePoint OnCanceled
+    {
+        get
+        {
             _OnCanceledOffset = _OnCanceledOffset ?? Schema.GetOffset(0x9BFA034FF02162DB);
             return new CPulse_ResumePointImpl(_Handle + _OnCanceledOffset!.Value);
         }
     }
-
 
 }

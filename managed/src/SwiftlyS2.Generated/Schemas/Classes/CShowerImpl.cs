@@ -16,7 +16,4 @@ internal partial class CShowerImpl : CModelPointEntityImpl, CShower
 {
     public CShowerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

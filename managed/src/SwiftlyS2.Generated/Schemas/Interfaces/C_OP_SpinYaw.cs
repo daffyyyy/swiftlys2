@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SpinYaw : CGeneralSpin, ISchemaClass<C_OP_SpinYaw>
 {
     static C_OP_SpinYaw ISchemaClass<C_OP_SpinYaw>.From(nint handle) => new C_OP_SpinYawImpl(handle);
-    static int ISchemaClass<C_OP_SpinYaw>.Size => 488;
+    static int ISchemaClass<C_OP_SpinYaw>.Size => 496;
     static string? ISchemaClass<C_OP_SpinYaw>.ClassName => null;
-
-
-
 
 }

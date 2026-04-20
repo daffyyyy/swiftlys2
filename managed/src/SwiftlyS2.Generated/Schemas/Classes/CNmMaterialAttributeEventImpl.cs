@@ -16,58 +16,80 @@ internal partial class CNmMaterialAttributeEventImpl : CNmEventImpl, CNmMaterial
 {
     public CNmMaterialAttributeEventImpl(nint handle) : base(handle) { }
 
+    private static nint? _TargetOffset;
+
+    public ref CNmEventTargetEntity_t Target
+    {
+        get
+        {
+            _TargetOffset = _TargetOffset ?? Schema.GetOffset(0xFC131DAFA08A9E8);
+            return ref _Handle.AsRef<CNmEventTargetEntity_t>(_TargetOffset!.Value);
+        }
+    }
     private static nint? _AttributeNameOffset;
 
-    public string AttributeName {
-        get {
+    public string AttributeName
+    {
+        get
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0xFC131DA9168F02C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_AttributeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0xFC131DA9168F02C);
             Schema.SetCUtlString(_Handle, _AttributeNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AttributeNameTokenOffset;
 
-    public ref CUtlStringToken AttributeNameToken {
-        get {
+    public ref CUtlStringToken AttributeNameToken
+    {
+        get
+        {
             _AttributeNameTokenOffset = _AttributeNameTokenOffset ?? Schema.GetOffset(0xFC131DA4C1F86C9);
             return ref _Handle.AsRef<CUtlStringToken>(_AttributeNameTokenOffset!.Value);
         }
     }
     private static nint? _XOffset;
 
-    public SchemaUntypedField X {
-        get {
+    public SchemaUntypedField X
+    {
+        get
+        {
             _XOffset = _XOffset ?? Schema.GetOffset(0xFC131DADBC57BA7);
             return new SchemaUntypedField(_Handle + _XOffset!.Value);
         }
     }
     private static nint? _YOffset;
 
-    public SchemaUntypedField Y {
-        get {
+    public SchemaUntypedField Y
+    {
+        get
+        {
             _YOffset = _YOffset ?? Schema.GetOffset(0xFC131DADAC57A14);
             return new SchemaUntypedField(_Handle + _YOffset!.Value);
         }
     }
     private static nint? _ZOffset;
 
-    public SchemaUntypedField Z {
-        get {
+    public SchemaUntypedField Z
+    {
+        get
+        {
             _ZOffset = _ZOffset ?? Schema.GetOffset(0xFC131DADDC57ECD);
             return new SchemaUntypedField(_Handle + _ZOffset!.Value);
         }
     }
     private static nint? _WOffset;
 
-    public SchemaUntypedField W {
-        get {
+    public SchemaUntypedField W
+    {
+        get
+        {
             _WOffset = _WOffset ?? Schema.GetOffset(0xFC131DAD0C56A56);
             return new SchemaUntypedField(_Handle + _WOffset!.Value);
         }
     }
-
 
 }

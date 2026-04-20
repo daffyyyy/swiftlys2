@@ -18,8 +18,10 @@ internal partial class CLightEntityImpl : CBaseModelEntityImpl, CLightEntity
 
     private static nint? _CLightComponentOffset;
 
-    public CLightComponent? CLightComponent {
-        get {
+    public CLightComponent? CLightComponent
+    {
+        get
+        {
             _CLightComponentOffset = _CLightComponentOffset ?? Schema.GetOffset(0xA3C95F05104F0185);
             var ptr = _Handle.Read<nint>(_CLightComponentOffset!.Value);
             return ptr.IsValidPtr() ? new CLightComponentImpl(ptr) : null;

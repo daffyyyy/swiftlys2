@@ -16,7 +16,4 @@ internal partial class CTriggerBombResetImpl : CBaseTriggerImpl, CTriggerBombRes
 {
     public CTriggerBombResetImpl(nint handle) : base(handle) { }
 
-
-
-
 }

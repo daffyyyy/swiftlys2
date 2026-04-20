@@ -18,60 +18,73 @@ internal partial class C_OP_SetVectorAttributeToVectorExpressionImpl : CParticle
 
     private static nint? _ExpressionOffset;
 
-    public ref VectorExpressionType_t Expression {
-        get {
+    public ref VectorExpressionType_t Expression
+    {
+        get
+        {
             _ExpressionOffset = _ExpressionOffset ?? Schema.GetOffset(0xF36D0C4160B2427);
             return ref _Handle.AsRef<VectorExpressionType_t>(_ExpressionOffset!.Value);
         }
     }
     private static nint? _Input1Offset;
 
-    public CPerParticleVecInput Input1 {
-        get {
+    public CPerParticleVecInput Input1
+    {
+        get
+        {
             _Input1Offset = _Input1Offset ?? Schema.GetOffset(0xF36D0C4E17F27DA);
             return new CPerParticleVecInputImpl(_Handle + _Input1Offset!.Value);
         }
     }
     private static nint? _Input2Offset;
 
-    public CPerParticleVecInput Input2 {
-        get {
+    public CPerParticleVecInput Input2
+    {
+        get
+        {
             _Input2Offset = _Input2Offset ?? Schema.GetOffset(0xF36D0C4E07F2647);
             return new CPerParticleVecInputImpl(_Handle + _Input2Offset!.Value);
         }
     }
     private static nint? _LerpOffset;
 
-    public CPerParticleFloatInput Lerp {
-        get {
+    public CPerParticleFloatInput Lerp
+    {
+        get
+        {
             _LerpOffset = _LerpOffset ?? Schema.GetOffset(0xF36D0C4622FAB06);
             return new CPerParticleFloatInputImpl(_Handle + _LerpOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ParticleAttributeIndex_t OutputField {
-        get {
+    public ParticleAttributeIndex_t OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0xF36D0C4324F6F74);
             return new ParticleAttributeIndex_tImpl(_Handle + _OutputFieldOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0xF36D0C4FB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
     private static nint? _NormalizedOutputOffset;
 
-    public ref bool NormalizedOutput {
-        get {
+    public ref bool NormalizedOutput
+    {
+        get
+        {
             _NormalizedOutputOffset = _NormalizedOutputOffset ?? Schema.GetOffset(0xF36D0C40AA98C55);
             return ref _Handle.AsRef<bool>(_NormalizedOutputOffset!.Value);
         }
     }
-
 
 }

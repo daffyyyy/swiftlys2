@@ -14,7 +14,4 @@ public partial interface CNmControlParameterTargetNode__CDefinition : CNmTargetV
     static int ISchemaClass<CNmControlParameterTargetNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmControlParameterTargetNode__CDefinition>.ClassName => null;
 
-
-
-
 }

@@ -11,13 +11,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvLaser : CBeam, ISchemaClass<CEnvLaser>
 {
     static CEnvLaser ISchemaClass<CEnvLaser>.From(nint handle) => new CEnvLaserImpl(handle);
-    static int ISchemaClass<CEnvLaser>.Size => 2040;
+    static int ISchemaClass<CEnvLaser>.Size => 2096;
     static string? ISchemaClass<CEnvLaser>.ClassName => "env_laser";
 
 
     public string LaserTarget { get; set; }
 
-    public CSprite? Sprite { get; }
+    public ref CHandle<CSprite> Sprite { get; }
 
     public string SpriteName { get; set; }
 

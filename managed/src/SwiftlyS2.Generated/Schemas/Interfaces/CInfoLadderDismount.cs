@@ -14,7 +14,4 @@ public partial interface CInfoLadderDismount : CBaseEntity, ISchemaClass<CInfoLa
     static int ISchemaClass<CInfoLadderDismount>.Size => 1192;
     static string? ISchemaClass<CInfoLadderDismount>.ClassName => "info_ladder_dismount";
 
-
-
-
 }

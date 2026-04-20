@@ -16,7 +16,4 @@ internal partial class CWeaponM249Impl : CCSWeaponBaseGunImpl, CWeaponM249
 {
     public CWeaponM249Impl(nint handle) : base(handle) { }
 
-
-
-
 }

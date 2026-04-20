@@ -18,44 +18,53 @@ internal partial class CPulse_InvokeBindingImpl : SchemaClass, CPulse_InvokeBind
 
     private static nint? _RegisterMapOffset;
 
-    public PulseRegisterMap_t RegisterMap {
-        get {
+    public PulseRegisterMap_t RegisterMap
+    {
+        get
+        {
             _RegisterMapOffset = _RegisterMapOffset ?? Schema.GetOffset(0x3632DF0D7BD4CE96);
             return new PulseRegisterMap_tImpl(_Handle + _RegisterMapOffset!.Value);
         }
     }
     private static nint? _FuncNameOffset;
 
-    public SchemaUntypedField FuncName {
-        get {
+    public SchemaUntypedField FuncName
+    {
+        get
+        {
             _FuncNameOffset = _FuncNameOffset ?? Schema.GetOffset(0x3632DF0D1B5BC2A4);
             return new SchemaUntypedField(_Handle + _FuncNameOffset!.Value);
         }
     }
     private static nint? _CellIndexOffset;
 
-    public PulseRuntimeCellIndex_t CellIndex {
-        get {
+    public PulseRuntimeCellIndex_t CellIndex
+    {
+        get
+        {
             _CellIndexOffset = _CellIndexOffset ?? Schema.GetOffset(0x3632DF0DACE41A7F);
             return new PulseRuntimeCellIndex_tImpl(_Handle + _CellIndexOffset!.Value);
         }
     }
     private static nint? _SrcChunkOffset;
 
-    public PulseRuntimeChunkIndex_t SrcChunk {
-        get {
+    public PulseRuntimeChunkIndex_t SrcChunk
+    {
+        get
+        {
             _SrcChunkOffset = _SrcChunkOffset ?? Schema.GetOffset(0x3632DF0D313F814A);
             return new PulseRuntimeChunkIndex_tImpl(_Handle + _SrcChunkOffset!.Value);
         }
     }
     private static nint? _SrcInstructionOffset;
 
-    public ref int SrcInstruction {
-        get {
+    public ref int SrcInstruction
+    {
+        get
+        {
             _SrcInstructionOffset = _SrcInstructionOffset ?? Schema.GetOffset(0x3632DF0D99E09AE7);
             return ref _Handle.AsRef<int>(_SrcInstructionOffset!.Value);
         }
     }
-
 
 }

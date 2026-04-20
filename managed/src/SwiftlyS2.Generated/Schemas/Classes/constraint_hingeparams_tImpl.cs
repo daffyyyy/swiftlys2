@@ -18,36 +18,43 @@ internal partial class constraint_hingeparams_tImpl : SchemaClass, constraint_hi
 
     private static nint? _WorldPositionOffset;
 
-    public ref Vector WorldPosition {
-        get {
+    public ref Vector WorldPosition
+    {
+        get
+        {
             _WorldPositionOffset = _WorldPositionOffset ?? Schema.GetOffset(0x790804C3F16C2360);
             return ref _Handle.AsRef<Vector>(_WorldPositionOffset!.Value);
         }
     }
     private static nint? _WorldAxisDirectionOffset;
 
-    public ref Vector WorldAxisDirection {
-        get {
+    public ref Vector WorldAxisDirection
+    {
+        get
+        {
             _WorldAxisDirectionOffset = _WorldAxisDirectionOffset ?? Schema.GetOffset(0x790804C3637CEB43);
             return ref _Handle.AsRef<Vector>(_WorldAxisDirectionOffset!.Value);
         }
     }
     private static nint? _HingeAxisOffset;
 
-    public constraint_axislimit_t HingeAxis {
-        get {
+    public constraint_axislimit_t HingeAxis
+    {
+        get
+        {
             _HingeAxisOffset = _HingeAxisOffset ?? Schema.GetOffset(0x790804C33BD096FD);
             return new constraint_axislimit_tImpl(_Handle + _HingeAxisOffset!.Value);
         }
     }
     private static nint? _ConstraintOffset;
 
-    public constraint_breakableparams_t Constraint {
-        get {
+    public constraint_breakableparams_t Constraint
+    {
+        get
+        {
             _ConstraintOffset = _ConstraintOffset ?? Schema.GetOffset(0x790804C3B822E25A);
             return new constraint_breakableparams_tImpl(_Handle + _ConstraintOffset!.Value);
         }
     }
-
 
 }

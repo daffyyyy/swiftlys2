@@ -18,20 +18,25 @@ internal partial class CEntityInstanceImpl : SchemaClass, CEntityInstance
 
     private static nint? _PrivateVScriptsOffset;
 
-    public string PrivateVScripts {
-        get {
+    public string PrivateVScripts
+    {
+        get
+        {
             _PrivateVScriptsOffset = _PrivateVScriptsOffset ?? Schema.GetOffset(0xB6DD442EB087F3B2);
             return Schema.GetString(_Handle.Read<nint>(_PrivateVScriptsOffset!.Value));
         }
-        set {
+        set
+        {
             _PrivateVScriptsOffset = _PrivateVScriptsOffset ?? Schema.GetOffset(0xB6DD442EB087F3B2);
             Schema.SetString(_Handle, _PrivateVScriptsOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EntityOffset;
 
-    public CEntityIdentity? Entity {
-        get {
+    public CEntityIdentity? Entity
+    {
+        get
+        {
             _EntityOffset = _EntityOffset ?? Schema.GetOffset(0xB6DD442EA8A45978);
             var ptr = _Handle.Read<nint>(_EntityOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityIdentityImpl(ptr) : null;
@@ -39,8 +44,10 @@ internal partial class CEntityInstanceImpl : SchemaClass, CEntityInstance
     }
     private static nint? _CScriptComponentOffset;
 
-    public CScriptComponent? CScriptComponent {
-        get {
+    public CScriptComponent? CScriptComponent
+    {
+        get
+        {
             _CScriptComponentOffset = _CScriptComponentOffset ?? Schema.GetOffset(0xB6DD442E3F4202B4);
             var ptr = _Handle.Read<nint>(_CScriptComponentOffset!.Value);
             return ptr.IsValidPtr() ? new CScriptComponentImpl(ptr) : null;

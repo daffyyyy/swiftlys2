@@ -14,7 +14,4 @@ public partial interface CPhysHingeAlias_phys_hinge_local : CPhysHinge, ISchemaC
     static int ISchemaClass<CPhysHingeAlias_phys_hinge_local>.Size => 1656;
     static string? ISchemaClass<CPhysHingeAlias_phys_hinge_local>.ClassName => null;
 
-
-
-
 }

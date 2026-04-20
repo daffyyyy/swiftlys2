@@ -18,24 +18,28 @@ internal partial class FeProxyVertexMap_tImpl : SchemaClass, FeProxyVertexMap_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xBBEA9D17CAE8A266);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xBBEA9D17CAE8A266);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0xBBEA9D177B81E7AB);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
-
 
 }

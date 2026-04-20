@@ -16,7 +16,4 @@ internal partial class IEconItemInterfaceImpl : SchemaClass, IEconItemInterface
 {
     public IEconItemInterfaceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

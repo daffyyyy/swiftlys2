@@ -11,13 +11,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleFunction : ISchemaClass<CParticleFunction>
 {
     static CParticleFunction ISchemaClass<CParticleFunction>.From(nint handle) => new CParticleFunctionImpl(handle);
-    static int ISchemaClass<CParticleFunction>.Size => 464;
+    static int ISchemaClass<CParticleFunction>.Size => 472;
     static string? ISchemaClass<CParticleFunction>.ClassName => null;
 
 
     public CParticleCollectionFloatInput OpStrength { get; }
 
     public ref ParticleEndcapMode_t OpEndCapState { get; }
+
+    public ref ParticleToolsState_t ToolsState { get; }
 
     public ref float OpStartFadeInTime { get; }
 

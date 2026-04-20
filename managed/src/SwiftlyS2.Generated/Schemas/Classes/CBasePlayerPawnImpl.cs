@@ -18,8 +18,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
 
     private static nint? _WeaponServicesOffset;
 
-    public CPlayer_WeaponServices? WeaponServices {
-        get {
+    public CPlayer_WeaponServices? WeaponServices
+    {
+        get
+        {
             _WeaponServicesOffset = _WeaponServicesOffset ?? Schema.GetOffset(0xCA2EED0451B23A93);
             var ptr = _Handle.Read<nint>(_WeaponServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_WeaponServicesImpl(ptr) : null;
@@ -27,8 +29,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _ItemServicesOffset;
 
-    public CPlayer_ItemServices? ItemServices {
-        get {
+    public CPlayer_ItemServices? ItemServices
+    {
+        get
+        {
             _ItemServicesOffset = _ItemServicesOffset ?? Schema.GetOffset(0xCA2EED04AABBB9B8);
             var ptr = _Handle.Read<nint>(_ItemServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_ItemServicesImpl(ptr) : null;
@@ -36,8 +40,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _AutoaimServicesOffset;
 
-    public CPlayer_AutoaimServices? AutoaimServices {
-        get {
+    public CPlayer_AutoaimServices? AutoaimServices
+    {
+        get
+        {
             _AutoaimServicesOffset = _AutoaimServicesOffset ?? Schema.GetOffset(0xCA2EED0413209115);
             var ptr = _Handle.Read<nint>(_AutoaimServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_AutoaimServicesImpl(ptr) : null;
@@ -45,8 +51,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _ObserverServicesOffset;
 
-    public CPlayer_ObserverServices? ObserverServices {
-        get {
+    public CPlayer_ObserverServices? ObserverServices
+    {
+        get
+        {
             _ObserverServicesOffset = _ObserverServicesOffset ?? Schema.GetOffset(0xCA2EED044ED1A579);
             var ptr = _Handle.Read<nint>(_ObserverServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_ObserverServicesImpl(ptr) : null;
@@ -54,8 +62,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _WaterServicesOffset;
 
-    public CPlayer_WaterServices? WaterServices {
-        get {
+    public CPlayer_WaterServices? WaterServices
+    {
+        get
+        {
             _WaterServicesOffset = _WaterServicesOffset ?? Schema.GetOffset(0xCA2EED04A5653452);
             var ptr = _Handle.Read<nint>(_WaterServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_WaterServicesImpl(ptr) : null;
@@ -63,8 +73,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _UseServicesOffset;
 
-    public CPlayer_UseServices? UseServices {
-        get {
+    public CPlayer_UseServices? UseServices
+    {
+        get
+        {
             _UseServicesOffset = _UseServicesOffset ?? Schema.GetOffset(0xCA2EED04A87C910A);
             var ptr = _Handle.Read<nint>(_UseServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_UseServicesImpl(ptr) : null;
@@ -72,8 +84,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _FlashlightServicesOffset;
 
-    public CPlayer_FlashlightServices? FlashlightServices {
-        get {
+    public CPlayer_FlashlightServices? FlashlightServices
+    {
+        get
+        {
             _FlashlightServicesOffset = _FlashlightServicesOffset ?? Schema.GetOffset(0xCA2EED046CF76641);
             var ptr = _Handle.Read<nint>(_FlashlightServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_FlashlightServicesImpl(ptr) : null;
@@ -81,8 +95,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _CameraServicesOffset;
 
-    public CPlayer_CameraServices? CameraServices {
-        get {
+    public CPlayer_CameraServices? CameraServices
+    {
+        get
+        {
             _CameraServicesOffset = _CameraServicesOffset ?? Schema.GetOffset(0xCA2EED043B7DFD20);
             var ptr = _Handle.Read<nint>(_CameraServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_CameraServicesImpl(ptr) : null;
@@ -90,8 +106,10 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _MovementServicesOffset;
 
-    public CPlayer_MovementServices? MovementServices {
-        get {
+    public CPlayer_MovementServices? MovementServices
+    {
+        get
+        {
             _MovementServicesOffset = _MovementServicesOffset ?? Schema.GetOffset(0xCA2EED04CF73E28A);
             var ptr = _Handle.Read<nint>(_MovementServicesOffset!.Value);
             return ptr.IsValidPtr() ? new CPlayer_MovementServicesImpl(ptr) : null;
@@ -99,80 +117,100 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _ServerViewAngleChangesOffset;
 
-    public ref CUtlVector<ViewAngleServerChange_t> ServerViewAngleChanges {
-        get {
+    public ref CUtlVector<ViewAngleServerChange_t> ServerViewAngleChanges
+    {
+        get
+        {
             _ServerViewAngleChangesOffset = _ServerViewAngleChangesOffset ?? Schema.GetOffset(0xCA2EED049182F3B7);
             return ref _Handle.AsRef<CUtlVector<ViewAngleServerChange_t>>(_ServerViewAngleChangesOffset!.Value);
         }
     }
     private static nint? _V_angleOffset;
 
-    public ref QAngle V_angle {
-        get {
+    public ref QAngle V_angle
+    {
+        get
+        {
             _V_angleOffset = _V_angleOffset ?? Schema.GetOffset(0xCA2EED0413C45A71);
             return ref _Handle.AsRef<QAngle>(_V_angleOffset!.Value);
         }
     }
     private static nint? _V_anglePreviousOffset;
 
-    public ref QAngle V_anglePrevious {
-        get {
+    public ref QAngle V_anglePrevious
+    {
+        get
+        {
             _V_anglePreviousOffset = _V_anglePreviousOffset ?? Schema.GetOffset(0xCA2EED0406B54DD4);
             return ref _Handle.AsRef<QAngle>(_V_anglePreviousOffset!.Value);
         }
     }
     private static nint? _HideHUDOffset;
 
-    public ref uint HideHUD {
-        get {
+    public ref uint HideHUD
+    {
+        get
+        {
             _HideHUDOffset = _HideHUDOffset ?? Schema.GetOffset(0xCA2EED040627E4A5);
             return ref _Handle.AsRef<uint>(_HideHUDOffset!.Value);
         }
     }
     private static nint? _Skybox3dOffset;
 
-    public sky3dparams_t Skybox3d {
-        get {
+    public sky3dparams_t Skybox3d
+    {
+        get
+        {
             _Skybox3dOffset = _Skybox3dOffset ?? Schema.GetOffset(0xCA2EED0451DA4DBC);
             return new sky3dparams_tImpl(_Handle + _Skybox3dOffset!.Value);
         }
     }
     private static nint? _TimeLastHurtOffset;
 
-    public GameTime_t TimeLastHurt {
-        get {
+    public GameTime_t TimeLastHurt
+    {
+        get
+        {
             _TimeLastHurtOffset = _TimeLastHurtOffset ?? Schema.GetOffset(0xCA2EED048FA4AFB1);
             return new GameTime_tImpl(_Handle + _TimeLastHurtOffset!.Value);
         }
     }
     private static nint? _DeathTimeOffset;
 
-    public GameTime_t DeathTime {
-        get {
+    public GameTime_t DeathTime
+    {
+        get
+        {
             _DeathTimeOffset = _DeathTimeOffset ?? Schema.GetOffset(0xCA2EED0407F7A70A);
             return new GameTime_tImpl(_Handle + _DeathTimeOffset!.Value);
         }
     }
     private static nint? _NextSuicideTimeOffset;
 
-    public GameTime_t NextSuicideTime {
-        get {
+    public GameTime_t NextSuicideTime
+    {
+        get
+        {
             _NextSuicideTimeOffset = _NextSuicideTimeOffset ?? Schema.GetOffset(0xCA2EED04735FDC79);
             return new GameTime_tImpl(_Handle + _NextSuicideTimeOffset!.Value);
         }
     }
     private static nint? _InitHUDOffset;
 
-    public ref bool InitHUD {
-        get {
+    public ref bool InitHUD
+    {
+        get
+        {
             _InitHUDOffset = _InitHUDOffset ?? Schema.GetOffset(0xCA2EED04BA12A114);
             return ref _Handle.AsRef<bool>(_InitHUDOffset!.Value);
         }
     }
     private static nint? _ExpresserOffset;
 
-    public CAI_Expresser? Expresser {
-        get {
+    public CAI_Expresser? Expresser
+    {
+        get
+        {
             _ExpresserOffset = _ExpresserOffset ?? Schema.GetOffset(0xCA2EED04697CAC2A);
             var ptr = _Handle.Read<nint>(_ExpresserOffset!.Value);
             return ptr.IsValidPtr() ? new CAI_ExpresserImpl(ptr) : null;
@@ -180,48 +218,60 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     }
     private static nint? _ControllerOffset;
 
-    public ref CHandle<CBasePlayerController> Controller {
-        get {
+    public ref CHandle<CBasePlayerController> Controller
+    {
+        get
+        {
             _ControllerOffset = _ControllerOffset ?? Schema.GetOffset(0xCA2EED0429882A6B);
             return ref _Handle.AsRef<CHandle<CBasePlayerController>>(_ControllerOffset!.Value);
         }
     }
     private static nint? _DefaultControllerOffset;
 
-    public ref CHandle<CBasePlayerController> DefaultController {
-        get {
+    public ref CHandle<CBasePlayerController> DefaultController
+    {
+        get
+        {
             _DefaultControllerOffset = _DefaultControllerOffset ?? Schema.GetOffset(0xCA2EED04A623A4A8);
             return ref _Handle.AsRef<CHandle<CBasePlayerController>>(_DefaultControllerOffset!.Value);
         }
     }
     private static nint? _HltvReplayDelayOffset;
 
-    public ref float HltvReplayDelay {
-        get {
+    public ref float HltvReplayDelay
+    {
+        get
+        {
             _HltvReplayDelayOffset = _HltvReplayDelayOffset ?? Schema.GetOffset(0xCA2EED043108CD5F);
             return ref _Handle.AsRef<float>(_HltvReplayDelayOffset!.Value);
         }
     }
     private static nint? _HltvReplayEndOffset;
 
-    public ref float HltvReplayEnd {
-        get {
+    public ref float HltvReplayEnd
+    {
+        get
+        {
             _HltvReplayEndOffset = _HltvReplayEndOffset ?? Schema.GetOffset(0xCA2EED0479F16CD5);
             return ref _Handle.AsRef<float>(_HltvReplayEndOffset!.Value);
         }
     }
     private static nint? _HltvReplayEntityOffset;
 
-    public ref uint HltvReplayEntity {
-        get {
+    public ref uint HltvReplayEntity
+    {
+        get
+        {
             _HltvReplayEntityOffset = _HltvReplayEntityOffset ?? Schema.GetOffset(0xCA2EED04ADF32E26);
             return ref _Handle.AsRef<uint>(_HltvReplayEntityOffset!.Value);
         }
     }
     private static nint? _SndOpvarLatchDataOffset;
 
-    public ref CUtlVector<sndopvarlatchdata_t> SndOpvarLatchData {
-        get {
+    public ref CUtlVector<sndopvarlatchdata_t> SndOpvarLatchData
+    {
+        get
+        {
             _SndOpvarLatchDataOffset = _SndOpvarLatchDataOffset ?? Schema.GetOffset(0xCA2EED046B36858E);
             return ref _Handle.AsRef<CUtlVector<sndopvarlatchdata_t>>(_SndOpvarLatchDataOffset!.Value);
         }

@@ -18,12 +18,13 @@ internal partial class PulseSelectorOutflowList_tImpl : SchemaClass, PulseSelect
 
     private static nint? _OutflowsOffset;
 
-    public ref CUtlVector<OutflowWithRequirements_t> Outflows {
-        get {
+    public ref CUtlVector<OutflowWithRequirements_t> Outflows
+    {
+        get
+        {
             _OutflowsOffset = _OutflowsOffset ?? Schema.GetOffset(0x2A880DD28F0AFDF8);
             return ref _Handle.AsRef<CUtlVector<OutflowWithRequirements_t>>(_OutflowsOffset!.Value);
         }
     }
-
 
 }

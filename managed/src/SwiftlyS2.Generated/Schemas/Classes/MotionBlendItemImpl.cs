@@ -18,20 +18,23 @@ internal partial class MotionBlendItemImpl : SchemaClass, MotionBlendItem
 
     private static nint? _ChildOffset;
 
-    public SchemaUntypedField Child {
-        get {
+    public SchemaUntypedField Child
+    {
+        get
+        {
             _ChildOffset = _ChildOffset ?? Schema.GetOffset(0x6AF18B8D4A0B773F);
             return new SchemaUntypedField(_Handle + _ChildOffset!.Value);
         }
     }
     private static nint? _KeyValueOffset;
 
-    public ref float KeyValue {
-        get {
+    public ref float KeyValue
+    {
+        get
+        {
             _KeyValueOffset = _KeyValueOffset ?? Schema.GetOffset(0x6AF18B8D039CE1D7);
             return ref _Handle.AsRef<float>(_KeyValueOffset!.Value);
         }
     }
-
 
 }

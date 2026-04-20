@@ -18,36 +18,43 @@ internal partial class C_OP_TwistAroundAxisImpl : CParticleFunctionForceImpl, C_
 
     private static nint? _ForceAmountOffset;
 
-    public ref float ForceAmount {
-        get {
+    public ref float ForceAmount
+    {
+        get
+        {
             _ForceAmountOffset = _ForceAmountOffset ?? Schema.GetOffset(0xE1FA036870831A84);
             return ref _Handle.AsRef<float>(_ForceAmountOffset!.Value);
         }
     }
     private static nint? _TwistAxisOffset;
 
-    public ref Vector TwistAxis {
-        get {
+    public ref Vector TwistAxis
+    {
+        get
+        {
             _TwistAxisOffset = _TwistAxisOffset ?? Schema.GetOffset(0xE1FA0368BEAAB521);
             return ref _Handle.AsRef<Vector>(_TwistAxisOffset!.Value);
         }
     }
     private static nint? _LocalSpaceOffset;
 
-    public ref bool LocalSpace {
-        get {
+    public ref bool LocalSpace
+    {
+        get
+        {
             _LocalSpaceOffset = _LocalSpaceOffset ?? Schema.GetOffset(0xE1FA036862418E6E);
             return ref _Handle.AsRef<bool>(_LocalSpaceOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xE1FA03683F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
-
 
 }

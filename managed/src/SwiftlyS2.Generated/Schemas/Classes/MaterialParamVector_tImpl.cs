@@ -18,12 +18,13 @@ internal partial class MaterialParamVector_tImpl : MaterialParam_tImpl, Material
 
     private static nint? _ValueOffset;
 
-    public ref Vector4D Value {
-        get {
+    public ref Vector4D Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xC82210956B99AEEA);
             return ref _Handle.AsRef<Vector4D>(_ValueOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CNmExternalPoseNode__CDefinitionImpl : CNmPoseNode__CDefi
 
     private static nint? _ShouldSampleRootMotionOffset;
 
-    public ref bool ShouldSampleRootMotion {
-        get {
+    public ref bool ShouldSampleRootMotion
+    {
+        get
+        {
             _ShouldSampleRootMotionOffset = _ShouldSampleRootMotionOffset ?? Schema.GetOffset(0x608011AB52E61F0A);
             return ref _Handle.AsRef<bool>(_ShouldSampleRootMotionOffset!.Value);
         }
     }
-
 
 }

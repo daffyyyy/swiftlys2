@@ -89,10 +89,10 @@ public partial interface CPointValueRemapper : CBaseEntity, ISchemaClass<CPointV
 
     public string SoundMovingLoop { get; set; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField Position { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField PositionDelta { get; }
 
     public ref CEntityIOOutput OnReachedValueZero { get; }

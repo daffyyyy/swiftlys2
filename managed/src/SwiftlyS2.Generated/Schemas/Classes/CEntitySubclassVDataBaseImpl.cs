@@ -16,7 +16,4 @@ internal partial class CEntitySubclassVDataBaseImpl : SchemaClass, CEntitySubcla
 {
     public CEntitySubclassVDataBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

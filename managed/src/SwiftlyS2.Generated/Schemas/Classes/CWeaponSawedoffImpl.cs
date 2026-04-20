@@ -16,7 +16,4 @@ internal partial class CWeaponSawedoffImpl : CCSWeaponBaseShotgunImpl, CWeaponSa
 {
     public CWeaponSawedoffImpl(nint handle) : base(handle) { }
 
-
-
-
 }

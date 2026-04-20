@@ -18,36 +18,43 @@ internal partial class VMixFreeverbDesc_tImpl : SchemaClass, VMixFreeverbDesc_t
 
     private static nint? _RoomSizeOffset;
 
-    public ref float RoomSize {
-        get {
+    public ref float RoomSize
+    {
+        get
+        {
             _RoomSizeOffset = _RoomSizeOffset ?? Schema.GetOffset(0xF9EB6BF8DEA95199);
             return ref _Handle.AsRef<float>(_RoomSizeOffset!.Value);
         }
     }
     private static nint? _DampOffset;
 
-    public ref float Damp {
-        get {
+    public ref float Damp
+    {
+        get
+        {
             _DampOffset = _DampOffset ?? Schema.GetOffset(0xF9EB6BF851CA5395);
             return ref _Handle.AsRef<float>(_DampOffset!.Value);
         }
     }
     private static nint? _WidthOffset;
 
-    public ref float Width {
-        get {
+    public ref float Width
+    {
+        get
+        {
             _WidthOffset = _WidthOffset ?? Schema.GetOffset(0xF9EB6BF8B91935E1);
             return ref _Handle.AsRef<float>(_WidthOffset!.Value);
         }
     }
     private static nint? _LateReflectionsOffset;
 
-    public ref float LateReflections {
-        get {
+    public ref float LateReflections
+    {
+        get
+        {
             _LateReflectionsOffset = _LateReflectionsOffset ?? Schema.GetOffset(0xF9EB6BF830A49ADF);
             return ref _Handle.AsRef<float>(_LateReflectionsOffset!.Value);
         }
     }
-
 
 }

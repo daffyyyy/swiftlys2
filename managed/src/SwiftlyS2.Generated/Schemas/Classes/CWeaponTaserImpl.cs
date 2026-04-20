@@ -18,16 +18,20 @@ internal partial class CWeaponTaserImpl : CCSWeaponBaseGunImpl, CWeaponTaser
 
     private static nint? _FireTimeOffset;
 
-    public GameTime_t FireTime {
-        get {
+    public GameTime_t FireTime
+    {
+        get
+        {
             _FireTimeOffset = _FireTimeOffset ?? Schema.GetOffset(0xA91A6CB965DBC00C);
             return new GameTime_tImpl(_Handle + _FireTimeOffset!.Value);
         }
     }
     private static nint? _LastAttackTickOffset;
 
-    public ref int LastAttackTick {
-        get {
+    public ref int LastAttackTick
+    {
+        get
+        {
             _LastAttackTickOffset = _LastAttackTickOffset ?? Schema.GetOffset(0xA91A6CB90BCAAD3C);
             return ref _Handle.AsRef<int>(_LastAttackTickOffset!.Value);
         }

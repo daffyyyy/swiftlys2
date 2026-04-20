@@ -18,52 +18,63 @@ internal partial class C_INIT_CreateWithinBoxImpl : CParticleFunctionInitializer
 
     private static nint? _MinOffset;
 
-    public CPerParticleVecInput Min {
-        get {
+    public CPerParticleVecInput Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x331A2B22B0765F37);
             return new CPerParticleVecInputImpl(_Handle + _MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public CPerParticleVecInput Max {
-        get {
+    public CPerParticleVecInput Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x331A2B22BE89FCF9);
             return new CPerParticleVecInputImpl(_Handle + _MaxOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x331A2B223F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _LocalSpaceOffset;
 
-    public ref bool LocalSpace {
-        get {
+    public ref bool LocalSpace
+    {
+        get
+        {
             _LocalSpaceOffset = _LocalSpaceOffset ?? Schema.GetOffset(0x331A2B2262418E6E);
             return ref _Handle.AsRef<bool>(_LocalSpaceOffset!.Value);
         }
     }
     private static nint? _RandomnessParametersOffset;
 
-    public CRandomNumberGeneratorParameters RandomnessParameters {
-        get {
+    public CRandomNumberGeneratorParameters RandomnessParameters
+    {
+        get
+        {
             _RandomnessParametersOffset = _RandomnessParametersOffset ?? Schema.GetOffset(0x331A2B227EDF50AD);
             return new CRandomNumberGeneratorParametersImpl(_Handle + _RandomnessParametersOffset!.Value);
         }
     }
     private static nint? _UseNewCodeOffset;
 
-    public ref bool UseNewCode {
-        get {
+    public ref bool UseNewCode
+    {
+        get
+        {
             _UseNewCodeOffset = _UseNewCodeOffset ?? Schema.GetOffset(0x331A2B227C6D1CDF);
             return ref _Handle.AsRef<bool>(_UseNewCodeOffset!.Value);
         }
     }
-
 
 }

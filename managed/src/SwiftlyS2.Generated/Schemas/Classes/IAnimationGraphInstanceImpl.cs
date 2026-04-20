@@ -16,7 +16,4 @@ internal partial class IAnimationGraphInstanceImpl : SchemaClass, IAnimationGrap
 {
     public IAnimationGraphInstanceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

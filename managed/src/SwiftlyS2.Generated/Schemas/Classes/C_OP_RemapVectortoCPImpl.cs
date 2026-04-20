@@ -18,28 +18,33 @@ internal partial class C_OP_RemapVectortoCPImpl : CParticleFunctionOperatorImpl,
 
     private static nint? _OutControlPointNumberOffset;
 
-    public ref int OutControlPointNumber {
-        get {
+    public ref int OutControlPointNumber
+    {
+        get
+        {
             _OutControlPointNumberOffset = _OutControlPointNumberOffset ?? Schema.GetOffset(0xADC661D7D021D73F);
             return ref _Handle.AsRef<int>(_OutControlPointNumberOffset!.Value);
         }
     }
     private static nint? _FieldInputOffset;
 
-    public ParticleAttributeIndex_t FieldInput {
-        get {
+    public ParticleAttributeIndex_t FieldInput
+    {
+        get
+        {
             _FieldInputOffset = _FieldInputOffset ?? Schema.GetOffset(0xADC661D7AE775669);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldInputOffset!.Value);
         }
     }
     private static nint? _ParticleNumberOffset;
 
-    public ref int ParticleNumber {
-        get {
+    public ref int ParticleNumber
+    {
+        get
+        {
             _ParticleNumberOffset = _ParticleNumberOffset ?? Schema.GetOffset(0xADC661D712F26402);
             return ref _Handle.AsRef<int>(_ParticleNumberOffset!.Value);
         }
     }
-
 
 }

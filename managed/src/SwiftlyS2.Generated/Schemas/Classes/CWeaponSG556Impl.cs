@@ -16,7 +16,4 @@ internal partial class CWeaponSG556Impl : CCSWeaponBaseGunImpl, CWeaponSG556
 {
     public CWeaponSG556Impl(nint handle) : base(handle) { }
 
-
-
-
 }

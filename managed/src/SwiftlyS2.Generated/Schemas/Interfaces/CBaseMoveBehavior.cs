@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseMoveBehavior : CPathKeyFrame, ISchemaClass<CBaseMoveBehavior>
 {
     static CBaseMoveBehavior ISchemaClass<CBaseMoveBehavior>.From(nint handle) => new CBaseMoveBehaviorImpl(handle);
-    static int ISchemaClass<CBaseMoveBehavior>.Size => 1344;
+    static int ISchemaClass<CBaseMoveBehavior>.Size => 1312;
     static string? ISchemaClass<CBaseMoveBehavior>.ClassName => "move_keyframed";
 
 
@@ -25,13 +25,13 @@ public partial interface CBaseMoveBehavior : CPathKeyFrame, ISchemaClass<CBaseMo
 
     public ref float AverageSpeedAcrossFrame { get; }
 
-    public CPathKeyFrame? CurrentKeyFrame { get; }
+    public ref CHandle<CPathKeyFrame> CurrentKeyFrame { get; }
 
-    public CPathKeyFrame? TargetKeyFrame { get; }
+    public ref CHandle<CPathKeyFrame> TargetKeyFrame { get; }
 
-    public CPathKeyFrame? PreKeyFrame { get; }
+    public ref CHandle<CPathKeyFrame> PreKeyFrame { get; }
 
-    public CPathKeyFrame? PostKeyFrame { get; }
+    public ref CHandle<CPathKeyFrame> PostKeyFrame { get; }
 
     public ref float TimeIntoFrame { get; }
 

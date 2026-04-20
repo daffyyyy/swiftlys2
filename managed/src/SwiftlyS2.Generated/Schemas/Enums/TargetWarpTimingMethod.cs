@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum TargetWarpTimingMethod : uint
 {
- ReachDestinationOnRootMotionEnd = 0,
-
- ReachDestinationOnWarpTagEnd = 1,
+    ReachDestinationOnRootMotionEnd = 0,
+    ReachDestinationOnWarpTagEnd = 1,
 }

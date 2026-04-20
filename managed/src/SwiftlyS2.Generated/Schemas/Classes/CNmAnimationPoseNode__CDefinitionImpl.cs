@@ -18,44 +18,53 @@ internal partial class CNmAnimationPoseNode__CDefinitionImpl : CNmPoseNode__CDef
 
     private static nint? _PoseTimeValueNodeIdxOffset;
 
-    public ref short PoseTimeValueNodeIdx {
-        get {
+    public ref short PoseTimeValueNodeIdx
+    {
+        get
+        {
             _PoseTimeValueNodeIdxOffset = _PoseTimeValueNodeIdxOffset ?? Schema.GetOffset(0xAEB5DD4EE17A4AC5);
             return ref _Handle.AsRef<short>(_PoseTimeValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _DataSlotIdxOffset;
 
-    public ref short DataSlotIdx {
-        get {
+    public ref short DataSlotIdx
+    {
+        get
+        {
             _DataSlotIdxOffset = _DataSlotIdxOffset ?? Schema.GetOffset(0xAEB5DD4EB1C15B68);
             return ref _Handle.AsRef<short>(_DataSlotIdxOffset!.Value);
         }
     }
     private static nint? _InputTimeRemapRangeOffset;
 
-    public SchemaUntypedField InputTimeRemapRange {
-        get {
+    public SchemaUntypedField InputTimeRemapRange
+    {
+        get
+        {
             _InputTimeRemapRangeOffset = _InputTimeRemapRangeOffset ?? Schema.GetOffset(0xAEB5DD4EE53BDBD4);
             return new SchemaUntypedField(_Handle + _InputTimeRemapRangeOffset!.Value);
         }
     }
     private static nint? _UserSpecifiedTimeOffset;
 
-    public ref float UserSpecifiedTime {
-        get {
+    public ref float UserSpecifiedTime
+    {
+        get
+        {
             _UserSpecifiedTimeOffset = _UserSpecifiedTimeOffset ?? Schema.GetOffset(0xAEB5DD4E0D7319E7);
             return ref _Handle.AsRef<float>(_UserSpecifiedTimeOffset!.Value);
         }
     }
     private static nint? _UseFramesAsInputOffset;
 
-    public ref bool UseFramesAsInput {
-        get {
+    public ref bool UseFramesAsInput
+    {
+        get
+        {
             _UseFramesAsInputOffset = _UseFramesAsInputOffset ?? Schema.GetOffset(0xAEB5DD4EF0C41386);
             return ref _Handle.AsRef<bool>(_UseFramesAsInputOffset!.Value);
         }
     }
-
 
 }

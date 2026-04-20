@@ -16,7 +16,4 @@ internal partial class CDEagleImpl : CCSWeaponBaseGunImpl, CDEagle
 {
     public CDEagleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

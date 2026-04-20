@@ -16,7 +16,4 @@ internal partial class CNmZeroPoseTaskImpl : CNmPoseTaskImpl, CNmZeroPoseTask
 {
     public CNmZeroPoseTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

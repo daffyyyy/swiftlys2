@@ -16,7 +16,4 @@ internal partial class CStaticPoseCacheBuilderImpl : CStaticPoseCacheImpl, CStat
 {
     public CStaticPoseCacheBuilderImpl(nint handle) : base(handle) { }
 
-
-
-
 }

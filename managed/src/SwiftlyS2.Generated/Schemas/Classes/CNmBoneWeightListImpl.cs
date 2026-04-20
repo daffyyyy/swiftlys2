@@ -18,28 +18,33 @@ internal partial class CNmBoneWeightListImpl : SchemaClass, CNmBoneWeightList
 
     private static nint? _SkeletonNameOffset;
 
-    public SchemaUntypedField SkeletonName {
-        get {
+    public SchemaUntypedField SkeletonName
+    {
+        get
+        {
             _SkeletonNameOffset = _SkeletonNameOffset ?? Schema.GetOffset(0xA16307391879D68D);
             return new SchemaUntypedField(_Handle + _SkeletonNameOffset!.Value);
         }
     }
     private static nint? _BoneIDsOffset;
 
-    public ref CUtlVector<CGlobalSymbol> BoneIDs {
-        get {
+    public ref CUtlVector<CGlobalSymbol> BoneIDs
+    {
+        get
+        {
             _BoneIDsOffset = _BoneIDsOffset ?? Schema.GetOffset(0xA16307390909C443);
             return ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(_BoneIDsOffset!.Value);
         }
     }
     private static nint? _WeightsOffset;
 
-    public ref CUtlVector<float> Weights {
-        get {
+    public ref CUtlVector<float> Weights
+    {
+        get
+        {
             _WeightsOffset = _WeightsOffset ?? Schema.GetOffset(0xA163073977B2F91E);
             return ref _Handle.AsRef<CUtlVector<float>>(_WeightsOffset!.Value);
         }
     }
-
 
 }

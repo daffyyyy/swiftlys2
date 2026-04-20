@@ -18,28 +18,33 @@ internal partial class CDampedValueUpdateItemImpl : SchemaClass, CDampedValueUpd
 
     private static nint? _DampingOffset;
 
-    public CAnimInputDamping Damping {
-        get {
+    public CAnimInputDamping Damping
+    {
+        get
+        {
             _DampingOffset = _DampingOffset ?? Schema.GetOffset(0x4B11725415440FB5);
             return new CAnimInputDampingImpl(_Handle + _DampingOffset!.Value);
         }
     }
     private static nint? _ParamInOffset;
 
-    public CAnimParamHandle ParamIn {
-        get {
+    public CAnimParamHandle ParamIn
+    {
+        get
+        {
             _ParamInOffset = _ParamInOffset ?? Schema.GetOffset(0x4B117254ED40E37B);
             return new CAnimParamHandleImpl(_Handle + _ParamInOffset!.Value);
         }
     }
     private static nint? _ParamOutOffset;
 
-    public CAnimParamHandle ParamOut {
-        get {
+    public CAnimParamHandle ParamOut
+    {
+        get
+        {
             _ParamOutOffset = _ParamOutOffset ?? Schema.GetOffset(0x4B117254AA5799A8);
             return new CAnimParamHandleImpl(_Handle + _ParamOutOffset!.Value);
         }
     }
-
 
 }

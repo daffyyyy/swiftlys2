@@ -18,36 +18,43 @@ internal partial class C_INIT_SetRigidAttachmentImpl : CParticleFunctionInitiali
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xF6F728143F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _FieldInputOffset;
 
-    public ParticleAttributeIndex_t FieldInput {
-        get {
+    public ParticleAttributeIndex_t FieldInput
+    {
+        get
+        {
             _FieldInputOffset = _FieldInputOffset ?? Schema.GetOffset(0xF6F72814AE775669);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldInputOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xF6F72814E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _LocalSpaceOffset;
 
-    public ref bool LocalSpace {
-        get {
+    public ref bool LocalSpace
+    {
+        get
+        {
             _LocalSpaceOffset = _LocalSpaceOffset ?? Schema.GetOffset(0xF6F7281462418E6E);
             return ref _Handle.AsRef<bool>(_LocalSpaceOffset!.Value);
         }
     }
-
 
 }

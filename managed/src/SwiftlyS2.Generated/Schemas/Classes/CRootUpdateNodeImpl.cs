@@ -16,7 +16,4 @@ internal partial class CRootUpdateNodeImpl : CUnaryUpdateNodeImpl, CRootUpdateNo
 {
     public CRootUpdateNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

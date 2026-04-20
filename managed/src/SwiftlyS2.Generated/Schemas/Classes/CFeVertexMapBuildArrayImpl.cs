@@ -18,12 +18,13 @@ internal partial class CFeVertexMapBuildArrayImpl : SchemaClass, CFeVertexMapBui
 
     private static nint? _ArrayOffset;
 
-    public ref CUtlVector<PointerTo<FeVertexMapBuild_t>> Array {
-        get {
+    public ref CUtlVector<PointerTo<FeVertexMapBuild_t>> Array
+    {
+        get
+        {
             _ArrayOffset = _ArrayOffset ?? Schema.GetOffset(0x7F8ABE7424AA62A6);
             return ref _Handle.AsRef<CUtlVector<PointerTo<FeVertexMapBuild_t>>>(_ArrayOffset!.Value);
         }
     }
-
 
 }

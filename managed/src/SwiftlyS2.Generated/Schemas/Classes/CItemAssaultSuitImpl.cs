@@ -16,7 +16,4 @@ internal partial class CItemAssaultSuitImpl : CItemImpl, CItemAssaultSuit
 {
     public CItemAssaultSuitImpl(nint handle) : base(handle) { }
 
-
-
-
 }

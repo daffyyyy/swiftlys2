@@ -18,12 +18,13 @@ internal partial class CPhysicsWireImpl : CBaseEntityImpl, CPhysicsWire
 
     private static nint? _DensityOffset;
 
-    public ref int Density {
-        get {
+    public ref int Density
+    {
+        get
+        {
             _DensityOffset = _DensityOffset ?? Schema.GetOffset(0x455AFD76A65E630F);
             return ref _Handle.AsRef<int>(_DensityOffset!.Value);
         }
     }
-
 
 }

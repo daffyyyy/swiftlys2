@@ -16,37 +16,46 @@ internal partial class audioparams_tImpl : SchemaClass, audioparams_t
 {
     public audioparams_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<Vector> LocalSound {
+    public ISchemaFixedArray<Vector> LocalSound
+    {
         get => new SchemaFixedArray<Vector>(_Handle, 0x6D349E3CCE184A47, 8, 12, 4);
     }
     private static nint? _SoundscapeIndexOffset;
 
-    public ref int SoundscapeIndex {
-        get {
+    public ref int SoundscapeIndex
+    {
+        get
+        {
             _SoundscapeIndexOffset = _SoundscapeIndexOffset ?? Schema.GetOffset(0x6D349E3C046FCFEE);
             return ref _Handle.AsRef<int>(_SoundscapeIndexOffset!.Value);
         }
     }
     private static nint? _LocalBitsOffset;
 
-    public ref byte LocalBits {
-        get {
+    public ref byte LocalBits
+    {
+        get
+        {
             _LocalBitsOffset = _LocalBitsOffset ?? Schema.GetOffset(0x6D349E3C1DE85B60);
             return ref _Handle.AsRef<byte>(_LocalBitsOffset!.Value);
         }
     }
     private static nint? _SoundscapeEntityListIndexOffset;
 
-    public ref int SoundscapeEntityListIndex {
-        get {
+    public ref int SoundscapeEntityListIndex
+    {
+        get
+        {
             _SoundscapeEntityListIndexOffset = _SoundscapeEntityListIndexOffset ?? Schema.GetOffset(0x6D349E3CA4E4FB9B);
             return ref _Handle.AsRef<int>(_SoundscapeEntityListIndexOffset!.Value);
         }
     }
     private static nint? _SoundEventHashOffset;
 
-    public ref uint SoundEventHash {
-        get {
+    public ref uint SoundEventHash
+    {
+        get
+        {
             _SoundEventHashOffset = _SoundEventHashOffset ?? Schema.GetOffset(0x6D349E3C335E17CC);
             return ref _Handle.AsRef<uint>(_SoundEventHashOffset!.Value);
         }

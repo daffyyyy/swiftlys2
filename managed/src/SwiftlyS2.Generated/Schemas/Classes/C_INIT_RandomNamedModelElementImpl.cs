@@ -18,52 +18,63 @@ internal partial class C_INIT_RandomNamedModelElementImpl : CParticleFunctionIni
 
     private static nint? _ModelOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCModel> Model {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCModel> Model
+    {
+        get
+        {
             _ModelOffset = _ModelOffset ?? Schema.GetOffset(0xA3E776D5E100C814);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(_ModelOffset!.Value);
         }
     }
     private static nint? _NamesOffset;
 
-    public ref CUtlVector<CUtlString> Names {
-        get {
+    public ref CUtlVector<CUtlString> Names
+    {
+        get
+        {
             _NamesOffset = _NamesOffset ?? Schema.GetOffset(0xA3E776D50DA776AF);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_NamesOffset!.Value);
         }
     }
     private static nint? _ShuffleOffset;
 
-    public ref bool Shuffle {
-        get {
+    public ref bool Shuffle
+    {
+        get
+        {
             _ShuffleOffset = _ShuffleOffset ?? Schema.GetOffset(0xA3E776D528BD2B2E);
             return ref _Handle.AsRef<bool>(_ShuffleOffset!.Value);
         }
     }
     private static nint? _LinearOffset;
 
-    public ref bool Linear {
-        get {
+    public ref bool Linear
+    {
+        get
+        {
             _LinearOffset = _LinearOffset ?? Schema.GetOffset(0xA3E776D5B9313720);
             return ref _Handle.AsRef<bool>(_LinearOffset!.Value);
         }
     }
     private static nint? _ModelFromRendererOffset;
 
-    public ref bool ModelFromRenderer {
-        get {
+    public ref bool ModelFromRenderer
+    {
+        get
+        {
             _ModelFromRendererOffset = _ModelFromRendererOffset ?? Schema.GetOffset(0xA3E776D5AEBA1F25);
             return ref _Handle.AsRef<bool>(_ModelFromRendererOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xA3E776D5E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CNmBlendTaskBaseImpl : CNmPoseTaskImpl, CNmBlendTaskBase
 {
     public CNmBlendTaskBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

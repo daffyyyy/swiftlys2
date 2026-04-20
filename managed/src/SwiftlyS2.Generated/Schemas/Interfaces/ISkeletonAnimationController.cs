@@ -14,7 +14,4 @@ public partial interface ISkeletonAnimationController : ISchemaClass<ISkeletonAn
     static int ISchemaClass<ISkeletonAnimationController>.Size => 8;
     static string? ISchemaClass<ISkeletonAnimationController>.ClassName => null;
 
-
-
-
 }

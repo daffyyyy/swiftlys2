@@ -16,7 +16,4 @@ internal partial class C_OP_EndCapDecayImpl : CParticleFunctionOperatorImpl, C_O
 {
     public C_OP_EndCapDecayImpl(nint handle) : base(handle) { }
 
-
-
-
 }

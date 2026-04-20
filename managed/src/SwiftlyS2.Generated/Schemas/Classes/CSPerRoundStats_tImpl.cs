@@ -18,104 +18,130 @@ internal partial class CSPerRoundStats_tImpl : SchemaClass, CSPerRoundStats_t
 
     private static nint? _KillsOffset;
 
-    public ref int Kills {
-        get {
+    public ref int Kills
+    {
+        get
+        {
             _KillsOffset = _KillsOffset ?? Schema.GetOffset(0xA16B85EA0E456FE5);
             return ref _Handle.AsRef<int>(_KillsOffset!.Value);
         }
     }
     private static nint? _DeathsOffset;
 
-    public ref int Deaths {
-        get {
+    public ref int Deaths
+    {
+        get
+        {
             _DeathsOffset = _DeathsOffset ?? Schema.GetOffset(0xA16B85EAAF18870F);
             return ref _Handle.AsRef<int>(_DeathsOffset!.Value);
         }
     }
     private static nint? _AssistsOffset;
 
-    public ref int Assists {
-        get {
+    public ref int Assists
+    {
+        get
+        {
             _AssistsOffset = _AssistsOffset ?? Schema.GetOffset(0xA16B85EAB792DB50);
             return ref _Handle.AsRef<int>(_AssistsOffset!.Value);
         }
     }
     private static nint? _DamageOffset;
 
-    public ref int Damage {
-        get {
+    public ref int Damage
+    {
+        get
+        {
             _DamageOffset = _DamageOffset ?? Schema.GetOffset(0xA16B85EA0DEE4DB5);
             return ref _Handle.AsRef<int>(_DamageOffset!.Value);
         }
     }
     private static nint? _EquipmentValueOffset;
 
-    public ref int EquipmentValue {
-        get {
+    public ref int EquipmentValue
+    {
+        get
+        {
             _EquipmentValueOffset = _EquipmentValueOffset ?? Schema.GetOffset(0xA16B85EA1B2CADDD);
             return ref _Handle.AsRef<int>(_EquipmentValueOffset!.Value);
         }
     }
     private static nint? _MoneySavedOffset;
 
-    public ref int MoneySaved {
-        get {
+    public ref int MoneySaved
+    {
+        get
+        {
             _MoneySavedOffset = _MoneySavedOffset ?? Schema.GetOffset(0xA16B85EAC85DB77B);
             return ref _Handle.AsRef<int>(_MoneySavedOffset!.Value);
         }
     }
     private static nint? _KillRewardOffset;
 
-    public ref int KillReward {
-        get {
+    public ref int KillReward
+    {
+        get
+        {
             _KillRewardOffset = _KillRewardOffset ?? Schema.GetOffset(0xA16B85EA9C813A23);
             return ref _Handle.AsRef<int>(_KillRewardOffset!.Value);
         }
     }
     private static nint? _LiveTimeOffset;
 
-    public ref int LiveTime {
-        get {
+    public ref int LiveTime
+    {
+        get
+        {
             _LiveTimeOffset = _LiveTimeOffset ?? Schema.GetOffset(0xA16B85EAD956D2F7);
             return ref _Handle.AsRef<int>(_LiveTimeOffset!.Value);
         }
     }
     private static nint? _HeadShotKillsOffset;
 
-    public ref int HeadShotKills {
-        get {
+    public ref int HeadShotKills
+    {
+        get
+        {
             _HeadShotKillsOffset = _HeadShotKillsOffset ?? Schema.GetOffset(0xA16B85EA2C61AFF3);
             return ref _Handle.AsRef<int>(_HeadShotKillsOffset!.Value);
         }
     }
     private static nint? _ObjectiveOffset;
 
-    public ref int Objective {
-        get {
+    public ref int Objective
+    {
+        get
+        {
             _ObjectiveOffset = _ObjectiveOffset ?? Schema.GetOffset(0xA16B85EA14FC52D7);
             return ref _Handle.AsRef<int>(_ObjectiveOffset!.Value);
         }
     }
     private static nint? _CashEarnedOffset;
 
-    public ref int CashEarned {
-        get {
+    public ref int CashEarned
+    {
+        get
+        {
             _CashEarnedOffset = _CashEarnedOffset ?? Schema.GetOffset(0xA16B85EA8BEB3100);
             return ref _Handle.AsRef<int>(_CashEarnedOffset!.Value);
         }
     }
     private static nint? _UtilityDamageOffset;
 
-    public ref int UtilityDamage {
-        get {
+    public ref int UtilityDamage
+    {
+        get
+        {
             _UtilityDamageOffset = _UtilityDamageOffset ?? Schema.GetOffset(0xA16B85EAC91A82E5);
             return ref _Handle.AsRef<int>(_UtilityDamageOffset!.Value);
         }
     }
     private static nint? _EnemiesFlashedOffset;
 
-    public ref int EnemiesFlashed {
-        get {
+    public ref int EnemiesFlashed
+    {
+        get
+        {
             _EnemiesFlashedOffset = _EnemiesFlashedOffset ?? Schema.GetOffset(0xA16B85EA460AB70F);
             return ref _Handle.AsRef<int>(_EnemiesFlashedOffset!.Value);
         }

@@ -18,16 +18,18 @@ internal partial class CFilterNameImpl : CBaseFilterImpl, CFilterName
 
     private static nint? _FilterNameOffset;
 
-    public string FilterName {
-        get {
+    public string FilterName
+    {
+        get
+        {
             _FilterNameOffset = _FilterNameOffset ?? Schema.GetOffset(0xF129410709C86445);
             return Schema.GetString(_Handle.Read<nint>(_FilterNameOffset!.Value));
         }
-        set {
+        set
+        {
             _FilterNameOffset = _FilterNameOffset ?? Schema.GetOffset(0xF129410709C86445);
             Schema.SetString(_Handle, _FilterNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

@@ -18,12 +18,13 @@ internal partial class CPulseCell_WaitForCursorsWithTagBase__CursorState_tImpl :
 
     private static nint? _TagNameOffset;
 
-    public SchemaUntypedField TagName {
-        get {
+    public SchemaUntypedField TagName
+    {
+        get
+        {
             _TagNameOffset = _TagNameOffset ?? Schema.GetOffset(0x71EA6190647DC278);
             return new SchemaUntypedField(_Handle + _TagNameOffset!.Value);
         }
     }
-
 
 }

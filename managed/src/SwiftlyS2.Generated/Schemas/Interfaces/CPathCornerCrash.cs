@@ -14,7 +14,4 @@ public partial interface CPathCornerCrash : CPathCorner, ISchemaClass<CPathCorne
     static int ISchemaClass<CPathCornerCrash>.Size => 1224;
     static string? ISchemaClass<CPathCornerCrash>.ClassName => "path_corner_crash";
 
-
-
-
 }

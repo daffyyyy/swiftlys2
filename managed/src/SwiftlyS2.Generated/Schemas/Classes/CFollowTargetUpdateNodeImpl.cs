@@ -18,28 +18,33 @@ internal partial class CFollowTargetUpdateNodeImpl : CUnaryUpdateNodeImpl, CFoll
 
     private static nint? _OpFixedDataOffset;
 
-    public FollowTargetOpFixedSettings_t OpFixedData {
-        get {
+    public FollowTargetOpFixedSettings_t OpFixedData
+    {
+        get
+        {
             _OpFixedDataOffset = _OpFixedDataOffset ?? Schema.GetOffset(0x2A45E9CB6960AF8C);
             return new FollowTargetOpFixedSettings_tImpl(_Handle + _OpFixedDataOffset!.Value);
         }
     }
     private static nint? _ParameterPositionOffset;
 
-    public CAnimParamHandle ParameterPosition {
-        get {
+    public CAnimParamHandle ParameterPosition
+    {
+        get
+        {
             _ParameterPositionOffset = _ParameterPositionOffset ?? Schema.GetOffset(0x2A45E9CBDA71CD41);
             return new CAnimParamHandleImpl(_Handle + _ParameterPositionOffset!.Value);
         }
     }
     private static nint? _ParameterOrientationOffset;
 
-    public CAnimParamHandle ParameterOrientation {
-        get {
+    public CAnimParamHandle ParameterOrientation
+    {
+        get
+        {
             _ParameterOrientationOffset = _ParameterOrientationOffset ?? Schema.GetOffset(0x2A45E9CB1320E9C8);
             return new CAnimParamHandleImpl(_Handle + _ParameterOrientationOffset!.Value);
         }
     }
-
 
 }

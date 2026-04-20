@@ -18,20 +18,23 @@ internal partial class CPulse_ConstantImpl : SchemaClass, CPulse_Constant
 
     private static nint? _TypeOffset;
 
-    public SchemaUntypedField Type {
-        get {
+    public SchemaUntypedField Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x28B1B9F08ED6D5CD);
             return new SchemaUntypedField(_Handle + _TypeOffset!.Value);
         }
     }
     private static nint? _ValueOffset;
 
-    public SchemaUntypedField Value {
-        get {
+    public SchemaUntypedField Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x28B1B9F0DCB0894A);
             return new SchemaUntypedField(_Handle + _ValueOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class C_OP_SpinYawImpl : CGeneralSpinImpl, C_OP_SpinYaw
 {
     public C_OP_SpinYawImpl(nint handle) : base(handle) { }
 
-
-
-
 }

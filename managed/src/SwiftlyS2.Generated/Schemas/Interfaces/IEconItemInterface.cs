@@ -14,7 +14,4 @@ public partial interface IEconItemInterface : ISchemaClass<IEconItemInterface>
     static int ISchemaClass<IEconItemInterface>.Size => 8;
     static string? ISchemaClass<IEconItemInterface>.ClassName => null;
 
-
-
-
 }

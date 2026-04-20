@@ -16,7 +16,4 @@ internal partial class SignatureOutflow_ResumeImpl : CPulse_ResumePointImpl, Sig
 {
     public SignatureOutflow_ResumeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

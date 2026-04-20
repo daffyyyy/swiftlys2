@@ -18,28 +18,33 @@ internal partial class C_OP_LazyCullCompareFloatImpl : CParticleFunctionOperator
 
     private static nint? _Comparsion1Offset;
 
-    public CPerParticleFloatInput Comparsion1 {
-        get {
+    public CPerParticleFloatInput Comparsion1
+    {
+        get
+        {
             _Comparsion1Offset = _Comparsion1Offset ?? Schema.GetOffset(0x9D0DCAD079865299);
             return new CPerParticleFloatInputImpl(_Handle + _Comparsion1Offset!.Value);
         }
     }
     private static nint? _Comparsion2Offset;
 
-    public CPerParticleFloatInput Comparsion2 {
-        get {
+    public CPerParticleFloatInput Comparsion2
+    {
+        get
+        {
             _Comparsion2Offset = _Comparsion2Offset ?? Schema.GetOffset(0x9D0DCAD076864DE0);
             return new CPerParticleFloatInputImpl(_Handle + _Comparsion2Offset!.Value);
         }
     }
     private static nint? _CullTimeOffset;
 
-    public CPerParticleFloatInput CullTime {
-        get {
+    public CPerParticleFloatInput CullTime
+    {
+        get
+        {
             _CullTimeOffset = _CullTimeOffset ?? Schema.GetOffset(0x9D0DCAD0AE2A76FA);
             return new CPerParticleFloatInputImpl(_Handle + _CullTimeOffset!.Value);
         }
     }
-
 
 }

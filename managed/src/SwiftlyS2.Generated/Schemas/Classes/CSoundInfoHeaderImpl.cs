@@ -16,7 +16,4 @@ internal partial class CSoundInfoHeaderImpl : SchemaClass, CSoundInfoHeader
 {
     public CSoundInfoHeaderImpl(nint handle) : base(handle) { }
 
-
-
-
 }

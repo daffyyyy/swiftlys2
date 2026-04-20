@@ -14,7 +14,4 @@ public partial interface CPulseTestFuncs_LibraryA : ISchemaClass<CPulseTestFuncs
     static int ISchemaClass<CPulseTestFuncs_LibraryA>.Size => 1;
     static string? ISchemaClass<CPulseTestFuncs_LibraryA>.ClassName => null;
 
-
-
-
 }

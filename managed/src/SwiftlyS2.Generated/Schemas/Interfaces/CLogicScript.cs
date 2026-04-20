@@ -14,7 +14,4 @@ public partial interface CLogicScript : CPointEntity, ISchemaClass<CLogicScript>
     static int ISchemaClass<CLogicScript>.Size => 1192;
     static string? ISchemaClass<CLogicScript>.ClassName => "logic_script";
 
-
-
-
 }

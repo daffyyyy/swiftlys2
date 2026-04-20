@@ -18,16 +18,20 @@ internal partial class WeaponPurchaseCount_tImpl : SchemaClass, WeaponPurchaseCo
 
     private static nint? _ItemDefIndexOffset;
 
-    public ref ushort ItemDefIndex {
-        get {
+    public ref ushort ItemDefIndex
+    {
+        get
+        {
             _ItemDefIndexOffset = _ItemDefIndexOffset ?? Schema.GetOffset(0xF7F0C6E61BF10FB7);
             return ref _Handle.AsRef<ushort>(_ItemDefIndexOffset!.Value);
         }
     }
     private static nint? _CountOffset;
 
-    public ref ushort Count {
-        get {
+    public ref ushort Count
+    {
+        get
+        {
             _CountOffset = _CountOffset ?? Schema.GetOffset(0xF7F0C6E67D31AC08);
             return ref _Handle.AsRef<ushort>(_CountOffset!.Value);
         }

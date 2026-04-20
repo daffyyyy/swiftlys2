@@ -14,7 +14,4 @@ public partial interface CNmVectorValueNode__CDefinition : CNmValueNode__CDefini
     static int ISchemaClass<CNmVectorValueNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmVectorValueNode__CDefinition>.ClassName => null;
 
-
-
-
 }

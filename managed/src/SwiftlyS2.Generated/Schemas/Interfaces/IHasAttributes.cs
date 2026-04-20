@@ -14,7 +14,4 @@ public partial interface IHasAttributes : ISchemaClass<IHasAttributes>
     static int ISchemaClass<IHasAttributes>.Size => 8;
     static string? ISchemaClass<IHasAttributes>.ClassName => null;
 
-
-
-
 }

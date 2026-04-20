@@ -18,36 +18,43 @@ internal partial class CConstantForceControllerImpl : SchemaClass, CConstantForc
 
     private static nint? _LinearOffset;
 
-    public ref Vector Linear {
-        get {
+    public ref Vector Linear
+    {
+        get
+        {
             _LinearOffset = _LinearOffset ?? Schema.GetOffset(0x37030A8D6B6D1260);
             return ref _Handle.AsRef<Vector>(_LinearOffset!.Value);
         }
     }
     private static nint? _AngularOffset;
 
-    public SchemaUntypedField Angular {
-        get {
+    public SchemaUntypedField Angular
+    {
+        get
+        {
             _AngularOffset = _AngularOffset ?? Schema.GetOffset(0x37030A8D74E0EB09);
             return new SchemaUntypedField(_Handle + _AngularOffset!.Value);
         }
     }
     private static nint? _LinearSaveOffset;
 
-    public ref Vector LinearSave {
-        get {
+    public ref Vector LinearSave
+    {
+        get
+        {
             _LinearSaveOffset = _LinearSaveOffset ?? Schema.GetOffset(0x37030A8D96B9953D);
             return ref _Handle.AsRef<Vector>(_LinearSaveOffset!.Value);
         }
     }
     private static nint? _AngularSaveOffset;
 
-    public SchemaUntypedField AngularSave {
-        get {
+    public SchemaUntypedField AngularSave
+    {
+        get
+        {
             _AngularSaveOffset = _AngularSaveOffset ?? Schema.GetOffset(0x37030A8D8294323C);
             return new SchemaUntypedField(_Handle + _AngularSaveOffset!.Value);
         }
     }
-
 
 }

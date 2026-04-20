@@ -16,7 +16,4 @@ internal partial class QuestProgressImpl : SchemaClass, QuestProgress
 {
     public QuestProgressImpl(nint handle) : base(handle) { }
 
-
-
-
 }

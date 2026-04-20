@@ -16,7 +16,4 @@ internal partial class CTriggerCallbackImpl : CBaseTriggerImpl, CTriggerCallback
 {
     public CTriggerCallbackImpl(nint handle) : base(handle) { }
 
-
-
-
 }

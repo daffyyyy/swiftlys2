@@ -18,24 +18,30 @@ internal partial class CShatterGlassShardPhysicsImpl : CPhysicsPropImpl, CShatte
 
     private static nint? _DebrisOffset;
 
-    public ref bool Debris {
-        get {
+    public ref bool Debris
+    {
+        get
+        {
             _DebrisOffset = _DebrisOffset ?? Schema.GetOffset(0xC24E779865054BBA);
             return ref _Handle.AsRef<bool>(_DebrisOffset!.Value);
         }
     }
     private static nint? _ParentShardOffset;
 
-    public ref uint ParentShard {
-        get {
+    public ref uint ParentShard
+    {
+        get
+        {
             _ParentShardOffset = _ParentShardOffset ?? Schema.GetOffset(0xC24E7798E3717B41);
             return ref _Handle.AsRef<uint>(_ParentShardOffset!.Value);
         }
     }
     private static nint? _ShardDescOffset;
 
-    public shard_model_desc_t ShardDesc {
-        get {
+    public shard_model_desc_t ShardDesc
+    {
+        get
+        {
             _ShardDescOffset = _ShardDescOffset ?? Schema.GetOffset(0xC24E77982CBF17C6);
             return new shard_model_desc_tImpl(_Handle + _ShardDescOffset!.Value);
         }

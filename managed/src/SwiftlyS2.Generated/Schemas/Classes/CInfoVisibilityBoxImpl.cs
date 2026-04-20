@@ -18,24 +18,30 @@ internal partial class CInfoVisibilityBoxImpl : CBaseEntityImpl, CInfoVisibility
 
     private static nint? _ModeOffset;
 
-    public ref int Mode {
-        get {
+    public ref int Mode
+    {
+        get
+        {
             _ModeOffset = _ModeOffset ?? Schema.GetOffset(0xD226824F137F1E0E);
             return ref _Handle.AsRef<int>(_ModeOffset!.Value);
         }
     }
     private static nint? _BoxSizeOffset;
 
-    public ref Vector BoxSize {
-        get {
+    public ref Vector BoxSize
+    {
+        get
+        {
             _BoxSizeOffset = _BoxSizeOffset ?? Schema.GetOffset(0xD226824FE553E487);
             return ref _Handle.AsRef<Vector>(_BoxSizeOffset!.Value);
         }
     }
     private static nint? _EnabledOffset;
 
-    public ref bool Enabled {
-        get {
+    public ref bool Enabled
+    {
+        get
+        {
             _EnabledOffset = _EnabledOffset ?? Schema.GetOffset(0xD226824F6154EB7E);
             return ref _Handle.AsRef<bool>(_EnabledOffset!.Value);
         }

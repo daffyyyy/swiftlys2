@@ -18,12 +18,13 @@ internal partial class EventClientSceneSystemThreadStateChange_tImpl : SchemaCla
 
     private static nint? _ThreadsActiveOffset;
 
-    public ref bool ThreadsActive {
-        get {
+    public ref bool ThreadsActive
+    {
+        get
+        {
             _ThreadsActiveOffset = _ThreadsActiveOffset ?? Schema.GetOffset(0x28053E1174AC2EF0);
             return ref _Handle.AsRef<bool>(_ThreadsActiveOffset!.Value);
         }
     }
-
 
 }

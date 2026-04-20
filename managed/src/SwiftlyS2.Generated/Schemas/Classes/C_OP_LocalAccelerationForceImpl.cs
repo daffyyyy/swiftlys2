@@ -18,28 +18,33 @@ internal partial class C_OP_LocalAccelerationForceImpl : CParticleFunctionForceI
 
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x3A562A9FEB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _ScaleCPOffset;
 
-    public ref int ScaleCP {
-        get {
+    public ref int ScaleCP
+    {
+        get
+        {
             _ScaleCPOffset = _ScaleCPOffset ?? Schema.GetOffset(0x3A562A9FDE3CC5E6);
             return ref _Handle.AsRef<int>(_ScaleCPOffset!.Value);
         }
     }
     private static nint? _AccelOffset;
 
-    public CParticleCollectionVecInput Accel {
-        get {
+    public CParticleCollectionVecInput Accel
+    {
+        get
+        {
             _AccelOffset = _AccelOffset ?? Schema.GetOffset(0x3A562A9FEA9A0D73);
             return new CParticleCollectionVecInputImpl(_Handle + _AccelOffset!.Value);
         }
     }
-
 
 }

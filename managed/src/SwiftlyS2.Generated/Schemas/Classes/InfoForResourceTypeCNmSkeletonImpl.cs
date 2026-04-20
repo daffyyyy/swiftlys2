@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCNmSkeletonImpl : SchemaClass, InfoFor
 {
     public InfoForResourceTypeCNmSkeletonImpl(nint handle) : base(handle) { }
 
-
-
-
 }

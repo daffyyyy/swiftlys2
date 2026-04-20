@@ -18,52 +18,63 @@ internal partial class C_OP_VelocityMatchingForceImpl : CParticleFunctionOperato
 
     private static nint? _DirScaleOffset;
 
-    public ref float DirScale {
-        get {
+    public ref float DirScale
+    {
+        get
+        {
             _DirScaleOffset = _DirScaleOffset ?? Schema.GetOffset(0x8B7E85343A95212C);
             return ref _Handle.AsRef<float>(_DirScaleOffset!.Value);
         }
     }
     private static nint? _SpdScaleOffset;
 
-    public ref float SpdScale {
-        get {
+    public ref float SpdScale
+    {
+        get
+        {
             _SpdScaleOffset = _SpdScaleOffset ?? Schema.GetOffset(0x8B7E8534B3DC18DA);
             return ref _Handle.AsRef<float>(_SpdScaleOffset!.Value);
         }
     }
     private static nint? _NeighborDistanceOffset;
 
-    public ref float NeighborDistance {
-        get {
+    public ref float NeighborDistance
+    {
+        get
+        {
             _NeighborDistanceOffset = _NeighborDistanceOffset ?? Schema.GetOffset(0x8B7E8534F03C7C66);
             return ref _Handle.AsRef<float>(_NeighborDistanceOffset!.Value);
         }
     }
     private static nint? _FacingStrengthOffset;
 
-    public ref float FacingStrength {
-        get {
+    public ref float FacingStrength
+    {
+        get
+        {
             _FacingStrengthOffset = _FacingStrengthOffset ?? Schema.GetOffset(0x8B7E85340D514274);
             return ref _Handle.AsRef<float>(_FacingStrengthOffset!.Value);
         }
     }
     private static nint? _UseAABBOffset;
 
-    public ref bool UseAABB {
-        get {
+    public ref bool UseAABB
+    {
+        get
+        {
             _UseAABBOffset = _UseAABBOffset ?? Schema.GetOffset(0x8B7E853429AAFF2E);
             return ref _Handle.AsRef<bool>(_UseAABBOffset!.Value);
         }
     }
     private static nint? _CPBroadcastOffset;
 
-    public ref int CPBroadcast {
-        get {
+    public ref int CPBroadcast
+    {
+        get
+        {
             _CPBroadcastOffset = _CPBroadcastOffset ?? Schema.GetOffset(0x8B7E85344C1065B5);
             return ref _Handle.AsRef<int>(_CPBroadcastOffset!.Value);
         }
     }
-
 
 }

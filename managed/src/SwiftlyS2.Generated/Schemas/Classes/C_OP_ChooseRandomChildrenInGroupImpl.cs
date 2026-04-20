@@ -18,20 +18,23 @@ internal partial class C_OP_ChooseRandomChildrenInGroupImpl : CParticleFunctionP
 
     private static nint? _ChildGroupIDOffset;
 
-    public ref int ChildGroupID {
-        get {
+    public ref int ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0xF79CD816E3F3C965);
             return ref _Handle.AsRef<int>(_ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _NumberOfChildrenOffset;
 
-    public CParticleCollectionFloatInput NumberOfChildren {
-        get {
+    public CParticleCollectionFloatInput NumberOfChildren
+    {
+        get
+        {
             _NumberOfChildrenOffset = _NumberOfChildrenOffset ?? Schema.GetOffset(0xF79CD8160275D868);
             return new CParticleCollectionFloatInputImpl(_Handle + _NumberOfChildrenOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class RnMeshDesc_tImpl : RnShapeDesc_tImpl, RnMeshDesc_t
 
     private static nint? _MeshOffset;
 
-    public RnMesh_t Mesh {
-        get {
+    public RnMesh_t Mesh
+    {
+        get
+        {
             _MeshOffset = _MeshOffset ?? Schema.GetOffset(0xB236F002DEAFA33C);
             return new RnMesh_tImpl(_Handle + _MeshOffset!.Value);
         }
     }
-
 
 }

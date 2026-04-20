@@ -18,36 +18,43 @@ internal partial class MaterialOverride_tImpl : BaseSceneObjectOverride_tImpl, M
 
     private static nint? _SubSceneObjectOffset;
 
-    public ref uint SubSceneObject {
-        get {
+    public ref uint SubSceneObject
+    {
+        get
+        {
             _SubSceneObjectOffset = _SubSceneObjectOffset ?? Schema.GetOffset(0xFB7BFECB55C3CCBC);
             return ref _Handle.AsRef<uint>(_SubSceneObjectOffset!.Value);
         }
     }
     private static nint? _DrawCallIndexOffset;
 
-    public ref uint DrawCallIndex {
-        get {
+    public ref uint DrawCallIndex
+    {
+        get
+        {
             _DrawCallIndexOffset = _DrawCallIndexOffset ?? Schema.GetOffset(0xFB7BFECBFA5614D5);
             return ref _Handle.AsRef<uint>(_DrawCallIndexOffset!.Value);
         }
     }
     private static nint? _MaterialOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material
+    {
+        get
+        {
             _MaterialOffset = _MaterialOffset ?? Schema.GetOffset(0xFB7BFECB972B1076);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(_MaterialOffset!.Value);
         }
     }
     private static nint? _LinearTintColorOffset;
 
-    public ref Vector LinearTintColor {
-        get {
+    public ref Vector LinearTintColor
+    {
+        get
+        {
             _LinearTintColorOffset = _LinearTintColorOffset ?? Schema.GetOffset(0xFB7BFECB6901D28C);
             return ref _Handle.AsRef<Vector>(_LinearTintColorOffset!.Value);
         }
     }
-
 
 }

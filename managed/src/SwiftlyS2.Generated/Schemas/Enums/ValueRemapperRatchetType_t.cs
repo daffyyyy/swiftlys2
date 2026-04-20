@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ValueRemapperRatchetType_t : uint
 {
- RatchetType_Absolute = 0,
-
- RatchetType_EachEngage = 1,
+    RatchetType_Absolute = 0,
+    RatchetType_EachEngage = 1,
 }

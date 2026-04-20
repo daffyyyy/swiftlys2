@@ -14,7 +14,4 @@ public partial interface CBindPoseUpdateNode : CLeafUpdateNode, ISchemaClass<CBi
     static int ISchemaClass<CBindPoseUpdateNode>.Size => 96;
     static string? ISchemaClass<CBindPoseUpdateNode>.ClassName => null;
 
-
-
-
 }

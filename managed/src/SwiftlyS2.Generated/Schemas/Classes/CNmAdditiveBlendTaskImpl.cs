@@ -16,7 +16,4 @@ internal partial class CNmAdditiveBlendTaskImpl : CNmBlendTaskBaseImpl, CNmAddit
 {
     public CNmAdditiveBlendTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

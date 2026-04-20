@@ -18,24 +18,28 @@ internal partial class CTriggerVolumeImpl : CBaseModelEntityImpl, CTriggerVolume
 
     private static nint? _FilterNameOffset;
 
-    public string FilterName {
-        get {
+    public string FilterName
+    {
+        get
+        {
             _FilterNameOffset = _FilterNameOffset ?? Schema.GetOffset(0x8A35845409C86445);
             return Schema.GetString(_Handle.Read<nint>(_FilterNameOffset!.Value));
         }
-        set {
+        set
+        {
             _FilterNameOffset = _FilterNameOffset ?? Schema.GetOffset(0x8A35845409C86445);
             Schema.SetString(_Handle, _FilterNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FilterOffset;
 
-    public ref CHandle<CBaseFilter> Filter {
-        get {
+    public ref CHandle<CBaseFilter> Filter
+    {
+        get
+        {
             _FilterOffset = _FilterOffset ?? Schema.GetOffset(0x8A35845445D9E0B1);
             return ref _Handle.AsRef<CHandle<CBaseFilter>>(_FilterOffset!.Value);
         }
     }
-
 
 }

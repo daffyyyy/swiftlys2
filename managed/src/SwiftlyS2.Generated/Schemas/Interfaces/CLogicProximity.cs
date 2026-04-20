@@ -14,7 +14,4 @@ public partial interface CLogicProximity : CPointEntity, ISchemaClass<CLogicProx
     static int ISchemaClass<CLogicProximity>.Size => 1192;
     static string? ISchemaClass<CLogicProximity>.ClassName => "logic_proximity";
 
-
-
-
 }

@@ -18,12 +18,13 @@ internal partial class CVMixFreeverbProcessorDescImpl : CVMixBaseProcessorDescIm
 
     private static nint? _DescOffset;
 
-    public VMixFreeverbDesc_t Desc {
-        get {
+    public VMixFreeverbDesc_t Desc
+    {
+        get
+        {
             _DescOffset = _DescOffset ?? Schema.GetOffset(0x78DEDC8A27917BC0);
             return new VMixFreeverbDesc_tImpl(_Handle + _DescOffset!.Value);
         }
     }
-
 
 }

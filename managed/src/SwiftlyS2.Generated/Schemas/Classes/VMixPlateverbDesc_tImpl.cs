@@ -18,60 +18,73 @@ internal partial class VMixPlateverbDesc_tImpl : SchemaClass, VMixPlateverbDesc_
 
     private static nint? _PrefilterOffset;
 
-    public ref float Prefilter {
-        get {
+    public ref float Prefilter
+    {
+        get
+        {
             _PrefilterOffset = _PrefilterOffset ?? Schema.GetOffset(0xFF651FB0FAF1E06A);
             return ref _Handle.AsRef<float>(_PrefilterOffset!.Value);
         }
     }
     private static nint? _InputDiffusion1Offset;
 
-    public ref float InputDiffusion1 {
-        get {
+    public ref float InputDiffusion1
+    {
+        get
+        {
             _InputDiffusion1Offset = _InputDiffusion1Offset ?? Schema.GetOffset(0xFF651FB039884B67);
             return ref _Handle.AsRef<float>(_InputDiffusion1Offset!.Value);
         }
     }
     private static nint? _InputDiffusion2Offset;
 
-    public ref float InputDiffusion2 {
-        get {
+    public ref float InputDiffusion2
+    {
+        get
+        {
             _InputDiffusion2Offset = _InputDiffusion2Offset ?? Schema.GetOffset(0xFF651FB03A884CFA);
             return ref _Handle.AsRef<float>(_InputDiffusion2Offset!.Value);
         }
     }
     private static nint? _DecayOffset;
 
-    public ref float Decay {
-        get {
+    public ref float Decay
+    {
+        get
+        {
             _DecayOffset = _DecayOffset ?? Schema.GetOffset(0xFF651FB0E24ABC67);
             return ref _Handle.AsRef<float>(_DecayOffset!.Value);
         }
     }
     private static nint? _DampOffset;
 
-    public ref float Damp {
-        get {
+    public ref float Damp
+    {
+        get
+        {
             _DampOffset = _DampOffset ?? Schema.GetOffset(0xFF651FB051CA5395);
             return ref _Handle.AsRef<float>(_DampOffset!.Value);
         }
     }
     private static nint? _FeedbackDiffusion1Offset;
 
-    public ref float FeedbackDiffusion1 {
-        get {
+    public ref float FeedbackDiffusion1
+    {
+        get
+        {
             _FeedbackDiffusion1Offset = _FeedbackDiffusion1Offset ?? Schema.GetOffset(0xFF651FB0A53A60E2);
             return ref _Handle.AsRef<float>(_FeedbackDiffusion1Offset!.Value);
         }
     }
     private static nint? _FeedbackDiffusion2Offset;
 
-    public ref float FeedbackDiffusion2 {
-        get {
+    public ref float FeedbackDiffusion2
+    {
+        get
+        {
             _FeedbackDiffusion2Offset = _FeedbackDiffusion2Offset ?? Schema.GetOffset(0xFF651FB0A43A5F4F);
             return ref _Handle.AsRef<float>(_FeedbackDiffusion2Offset!.Value);
         }
     }
-
 
 }

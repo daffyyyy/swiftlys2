@@ -16,7 +16,4 @@ internal partial class CSmokeGrenadeImpl : CBaseCSGrenadeImpl, CSmokeGrenade
 {
     public CSmokeGrenadeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

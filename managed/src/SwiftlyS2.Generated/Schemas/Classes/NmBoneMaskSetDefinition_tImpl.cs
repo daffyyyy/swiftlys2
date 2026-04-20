@@ -18,28 +18,33 @@ internal partial class NmBoneMaskSetDefinition_tImpl : SchemaClass, NmBoneMaskSe
 
     private static nint? _IDOffset;
 
-    public ref CGlobalSymbol ID {
-        get {
+    public ref CGlobalSymbol ID
+    {
+        get
+        {
             _IDOffset = _IDOffset ?? Schema.GetOffset(0xEA12116095066900);
             return ref _Handle.AsRef<CGlobalSymbol>(_IDOffset!.Value);
         }
     }
     private static nint? _PrimaryWeightListOffset;
 
-    public CNmBoneWeightList PrimaryWeightList {
-        get {
+    public CNmBoneWeightList PrimaryWeightList
+    {
+        get
+        {
             _PrimaryWeightListOffset = _PrimaryWeightListOffset ?? Schema.GetOffset(0xEA1211603AF7FF49);
             return new CNmBoneWeightListImpl(_Handle + _PrimaryWeightListOffset!.Value);
         }
     }
     private static nint? _SecondaryWeightListsOffset;
 
-    public ref CUtlLeanVector<CNmBoneWeightList, int> SecondaryWeightLists {
-        get {
+    public ref CUtlLeanVector<CNmBoneWeightList, int> SecondaryWeightLists
+    {
+        get
+        {
             _SecondaryWeightListsOffset = _SecondaryWeightListsOffset ?? Schema.GetOffset(0xEA12116021DB2776);
             return ref _Handle.AsRef<CUtlLeanVector<CNmBoneWeightList, int>>(_SecondaryWeightListsOffset!.Value);
         }
     }
-
 
 }

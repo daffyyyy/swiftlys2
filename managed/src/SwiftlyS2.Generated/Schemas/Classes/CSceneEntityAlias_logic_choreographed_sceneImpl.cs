@@ -16,7 +16,4 @@ internal partial class CSceneEntityAlias_logic_choreographed_sceneImpl : CSceneE
 {
     public CSceneEntityAlias_logic_choreographed_sceneImpl(nint handle) : base(handle) { }
 
-
-
-
 }

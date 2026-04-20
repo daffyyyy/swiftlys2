@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum FootstepLandedFootSoundType_t : uint
 {
- FOOTSOUND_Left = 0,
-
- FOOTSOUND_Right = 1,
-
- FOOTSOUND_UseOverrideSound = 2,
+    FOOTSOUND_Left = 0,
+    FOOTSOUND_Right = 1,
+    FOOTSOUND_UseOverrideSound = 2,
 }

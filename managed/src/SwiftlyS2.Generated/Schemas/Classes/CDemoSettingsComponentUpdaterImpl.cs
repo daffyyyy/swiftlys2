@@ -18,12 +18,13 @@ internal partial class CDemoSettingsComponentUpdaterImpl : CAnimComponentUpdater
 
     private static nint? _SettingsOffset;
 
-    public CAnimDemoCaptureSettings Settings {
-        get {
+    public CAnimDemoCaptureSettings Settings
+    {
+        get
+        {
             _SettingsOffset = _SettingsOffset ?? Schema.GetOffset(0xD4FC646CB3DE33A8);
             return new CAnimDemoCaptureSettingsImpl(_Handle + _SettingsOffset!.Value);
         }
     }
-
 
 }

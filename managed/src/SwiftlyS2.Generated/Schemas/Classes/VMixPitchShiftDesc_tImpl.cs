@@ -18,36 +18,43 @@ internal partial class VMixPitchShiftDesc_tImpl : SchemaClass, VMixPitchShiftDes
 
     private static nint? _GrainSampleCountOffset;
 
-    public ref int GrainSampleCount {
-        get {
+    public ref int GrainSampleCount
+    {
+        get
+        {
             _GrainSampleCountOffset = _GrainSampleCountOffset ?? Schema.GetOffset(0xE7EEA08D6AA1D059);
             return ref _Handle.AsRef<int>(_GrainSampleCountOffset!.Value);
         }
     }
     private static nint? _PitchShiftOffset;
 
-    public ref float PitchShift {
-        get {
+    public ref float PitchShift
+    {
+        get
+        {
             _PitchShiftOffset = _PitchShiftOffset ?? Schema.GetOffset(0xE7EEA08DD8E35569);
             return ref _Handle.AsRef<float>(_PitchShiftOffset!.Value);
         }
     }
     private static nint? _QualityOffset;
 
-    public ref int Quality {
-        get {
+    public ref int Quality
+    {
+        get
+        {
             _QualityOffset = _QualityOffset ?? Schema.GetOffset(0xE7EEA08D60857B42);
             return ref _Handle.AsRef<int>(_QualityOffset!.Value);
         }
     }
     private static nint? _ProcTypeOffset;
 
-    public ref int ProcType {
-        get {
+    public ref int ProcType
+    {
+        get
+        {
             _ProcTypeOffset = _ProcTypeOffset ?? Schema.GetOffset(0xE7EEA08DB256235D);
             return ref _Handle.AsRef<int>(_ProcTypeOffset!.Value);
         }
     }
-
 
 }

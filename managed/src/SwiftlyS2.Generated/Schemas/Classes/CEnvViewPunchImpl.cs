@@ -18,20 +18,23 @@ internal partial class CEnvViewPunchImpl : CPointEntityImpl, CEnvViewPunch
 
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xB707E1B05ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _ViewPunchOffset;
 
-    public ref QAngle ViewPunch {
-        get {
+    public ref QAngle ViewPunch
+    {
+        get
+        {
             _ViewPunchOffset = _ViewPunchOffset ?? Schema.GetOffset(0xB707E1B0061B7CBA);
             return ref _Handle.AsRef<QAngle>(_ViewPunchOffset!.Value);
         }
     }
-
 
 }

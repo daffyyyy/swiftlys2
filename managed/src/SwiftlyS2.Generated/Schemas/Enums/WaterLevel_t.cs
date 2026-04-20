@@ -6,17 +6,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum WaterLevel_t : byte
 {
- WL_NotInWater = 0,
-
- WL_Feet = 1,
-
- WL_Knees = 2,
-
- WL_Waist = 3,
-
- WL_Chest = 4,
-
- WL_FullyUnderwater = 5,
-
- WL_Count = 6,
+    WL_NotInWater = 0,
+    WL_Feet = 1,
+    WL_Knees = 2,
+    WL_Waist = 3,
+    WL_Chest = 4,
+    WL_FullyUnderwater = 5,
+    WL_Count = 6,
 }

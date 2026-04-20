@@ -16,7 +16,4 @@ internal partial class CWeaponRevolverImpl : CCSWeaponBaseGunImpl, CWeaponRevolv
 {
     public CWeaponRevolverImpl(nint handle) : base(handle) { }
 
-
-
-
 }

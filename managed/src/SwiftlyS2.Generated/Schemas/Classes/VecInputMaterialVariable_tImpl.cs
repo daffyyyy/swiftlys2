@@ -18,24 +18,28 @@ internal partial class VecInputMaterialVariable_tImpl : SchemaClass, VecInputMat
 
     private static nint? _StrVariableOffset;
 
-    public string StrVariable {
-        get {
+    public string StrVariable
+    {
+        get
+        {
             _StrVariableOffset = _StrVariableOffset ?? Schema.GetOffset(0x3A84C75DA52C3390);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrVariableOffset!.Value));
         }
-        set {
+        set
+        {
             _StrVariableOffset = _StrVariableOffset ?? Schema.GetOffset(0x3A84C75DA52C3390);
             Schema.SetCUtlString(_Handle, _StrVariableOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _InputOffset;
 
-    public CParticleCollectionVecInput Input {
-        get {
+    public CParticleCollectionVecInput Input
+    {
+        get
+        {
             _InputOffset = _InputOffset ?? Schema.GetOffset(0x3A84C75D1EA0ED5B);
             return new CParticleCollectionVecInputImpl(_Handle + _InputOffset!.Value);
         }
     }
-
 
 }

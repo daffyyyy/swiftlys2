@@ -14,7 +14,4 @@ public partial interface CPulseCell_Step_DebugLog : CPulseCell_BaseFlow, ISchema
     static int ISchemaClass<CPulseCell_Step_DebugLog>.Size => 72;
     static string? ISchemaClass<CPulseCell_Step_DebugLog>.ClassName => null;
 
-
-
-
 }

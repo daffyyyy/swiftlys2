@@ -15,7 +15,7 @@ public partial interface CLogicLineToEntity : CLogicalEntity, ISchemaClass<CLogi
     static string? ISchemaClass<CLogicLineToEntity>.ClassName => "logic_lineto";
 
 
-    // CEntityOutputTemplate< Vector, Vector >
+    // CEntityOutputTemplate< Vector >
     public SchemaUntypedField Line { get; }
 
     public string SourceName { get; set; }

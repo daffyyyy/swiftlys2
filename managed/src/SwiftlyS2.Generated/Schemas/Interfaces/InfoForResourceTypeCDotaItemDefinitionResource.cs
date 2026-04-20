@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCDotaItemDefinitionResource : ISchem
     static int ISchemaClass<InfoForResourceTypeCDotaItemDefinitionResource>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCDotaItemDefinitionResource>.ClassName => null;
 
-
-
-
 }

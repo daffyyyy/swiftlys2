@@ -18,28 +18,33 @@ internal partial class C_OP_DiffusionImpl : CParticleFunctionOperatorImpl, C_OP_
 
     private static nint? _RadiusScaleOffset;
 
-    public ref float RadiusScale {
-        get {
+    public ref float RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0x2D5ABEF4A7A20159);
             return ref _Handle.AsRef<float>(_RadiusScaleOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x2D5ABEF4E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _VoxelGridResolutionOffset;
 
-    public ref int VoxelGridResolution {
-        get {
+    public ref int VoxelGridResolution
+    {
+        get
+        {
             _VoxelGridResolutionOffset = _VoxelGridResolutionOffset ?? Schema.GetOffset(0x2D5ABEF45AA7D7ED);
             return ref _Handle.AsRef<int>(_VoxelGridResolutionOffset!.Value);
         }
     }
-
 
 }

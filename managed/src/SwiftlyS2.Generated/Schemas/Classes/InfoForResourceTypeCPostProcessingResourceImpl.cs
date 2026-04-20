@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCPostProcessingResourceImpl : SchemaCl
 {
     public InfoForResourceTypeCPostProcessingResourceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

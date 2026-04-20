@@ -18,20 +18,23 @@ internal partial class CPhysSurfacePropertiesVehicleImpl : SchemaClass, CPhysSur
 
     private static nint? _WheelDragOffset;
 
-    public ref float WheelDrag {
-        get {
+    public ref float WheelDrag
+    {
+        get
+        {
             _WheelDragOffset = _WheelDragOffset ?? Schema.GetOffset(0x5B1104DCC04986AE);
             return ref _Handle.AsRef<float>(_WheelDragOffset!.Value);
         }
     }
     private static nint? _WheelFrictionScaleOffset;
 
-    public ref float WheelFrictionScale {
-        get {
+    public ref float WheelFrictionScale
+    {
+        get
+        {
             _WheelFrictionScaleOffset = _WheelFrictionScaleOffset ?? Schema.GetOffset(0x5B1104DC7A6D9A4C);
             return ref _Handle.AsRef<float>(_WheelFrictionScaleOffset!.Value);
         }
     }
-
 
 }

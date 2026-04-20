@@ -18,36 +18,43 @@ internal partial class C_INIT_RandomAlphaImpl : CParticleFunctionInitializerImpl
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x3D7FD5BE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _AlphaMinOffset;
 
-    public ref int AlphaMin {
-        get {
+    public ref int AlphaMin
+    {
+        get
+        {
             _AlphaMinOffset = _AlphaMinOffset ?? Schema.GetOffset(0x3D7FD5BD7670531);
             return ref _Handle.AsRef<int>(_AlphaMinOffset!.Value);
         }
     }
     private static nint? _AlphaMaxOffset;
 
-    public ref int AlphaMax {
-        get {
+    public ref int AlphaMax
+    {
+        get
+        {
             _AlphaMaxOffset = _AlphaMaxOffset ?? Schema.GetOffset(0x3D7FD5BE97AA93F);
             return ref _Handle.AsRef<int>(_AlphaMaxOffset!.Value);
         }
     }
     private static nint? _AlphaRandExponentOffset;
 
-    public ref float AlphaRandExponent {
-        get {
+    public ref float AlphaRandExponent
+    {
+        get
+        {
             _AlphaRandExponentOffset = _AlphaRandExponentOffset ?? Schema.GetOffset(0x3D7FD5BA2C243B5);
             return ref _Handle.AsRef<float>(_AlphaRandExponentOffset!.Value);
         }
     }
-
 
 }

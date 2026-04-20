@@ -16,7 +16,4 @@ internal partial class CNmControlParameterVectorNode__CDefinitionImpl : CNmVecto
 {
     public CNmControlParameterVectorNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

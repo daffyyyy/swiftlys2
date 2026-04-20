@@ -18,28 +18,33 @@ internal partial class CVoiceContainerEnumImpl : CVoiceContainerBaseImpl, CVoice
 
     private static nint? _SoundsToPlayOffset;
 
-    public CSoundContainerReferenceArray SoundsToPlay {
-        get {
+    public CSoundContainerReferenceArray SoundsToPlay
+    {
+        get
+        {
             _SoundsToPlayOffset = _SoundsToPlayOffset ?? Schema.GetOffset(0x7B05DBE2DCB5F70E);
             return new CSoundContainerReferenceArrayImpl(_Handle + _SoundsToPlayOffset!.Value);
         }
     }
     private static nint? _SelectionOffset;
 
-    public ref int Selection {
-        get {
+    public ref int Selection
+    {
+        get
+        {
             _SelectionOffset = _SelectionOffset ?? Schema.GetOffset(0x7B05DBE242040D4A);
             return ref _Handle.AsRef<int>(_SelectionOffset!.Value);
         }
     }
     private static nint? _CrossfadeTimeOffset;
 
-    public ref float CrossfadeTime {
-        get {
+    public ref float CrossfadeTime
+    {
+        get
+        {
             _CrossfadeTimeOffset = _CrossfadeTimeOffset ?? Schema.GetOffset(0x7B05DBE2C5C1DD52);
             return ref _Handle.AsRef<float>(_CrossfadeTimeOffset!.Value);
         }
     }
-
 
 }

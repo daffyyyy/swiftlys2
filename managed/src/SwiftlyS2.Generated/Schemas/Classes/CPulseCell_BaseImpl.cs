@@ -18,12 +18,13 @@ internal partial class CPulseCell_BaseImpl : SchemaClass, CPulseCell_Base
 
     private static nint? _EditorNodeIDOffset;
 
-    public PulseDocNodeID_t EditorNodeID {
-        get {
+    public PulseDocNodeID_t EditorNodeID
+    {
+        get
+        {
             _EditorNodeIDOffset = _EditorNodeIDOffset ?? Schema.GetOffset(0xA1B689158D964CBD);
             return new PulseDocNodeID_tImpl(_Handle + _EditorNodeIDOffset!.Value);
         }
     }
-
 
 }

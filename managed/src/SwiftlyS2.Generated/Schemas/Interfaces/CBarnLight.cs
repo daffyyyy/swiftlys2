@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
 {
     static CBarnLight ISchemaClass<CBarnLight>.From(nint handle) => new CBarnLightImpl(handle);
-    static int ISchemaClass<CBarnLight>.Size => 2592;
+    static int ISchemaClass<CBarnLight>.Size => 2640;
     static string? ISchemaClass<CBarnLight>.ClassName => "light_barn";
 
 
@@ -75,6 +75,8 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
 
     public ref Vector BakeSpecularToCubemapsSize { get; }
 
+    public ref float BakeSpecularToCubemapsScale { get; }
+
     public ref int CastShadows { get; }
 
     public ref int ShadowMapSize { get; }
@@ -89,8 +91,6 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
 
     public ref float BounceScale { get; }
 
-    public ref bool DynamicBounce { get; }
-
     public ref float MinRoughness { get; }
 
     public ref Vector AlternateColor { get; }
@@ -104,8 +104,6 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
     public ref int FogShadows { get; }
 
     public ref float FogScale { get; }
-
-    public ref bool FogMixedShadows { get; }
 
     public ref float FadeSizeStart { get; }
 
@@ -167,6 +165,8 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
 
     public ref bool PvsModifyEntity { get; }
 
+    public ref bool TransmitAlways { get; }
+
     public ref CUtlVector<ushort> VisClusters { get; }
 
     public void EnabledUpdated();
@@ -198,6 +198,7 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
     public void ShearUpdated();
     public void BakeSpecularToCubemapsUpdated();
     public void BakeSpecularToCubemapsSizeUpdated();
+    public void BakeSpecularToCubemapsScaleUpdated();
     public void CastShadowsUpdated();
     public void ShadowMapSizeUpdated();
     public void ShadowPriorityUpdated();
@@ -205,7 +206,6 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
     public void ForceShadowsEnabledUpdated();
     public void BounceLightUpdated();
     public void BounceScaleUpdated();
-    public void DynamicBounceUpdated();
     public void MinRoughnessUpdated();
     public void AlternateColorUpdated();
     public void AlternateColorBrightnessUpdated();
@@ -213,7 +213,6 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
     public void FogStrengthUpdated();
     public void FogShadowsUpdated();
     public void FogScaleUpdated();
-    public void FogMixedShadowsUpdated();
     public void FadeSizeStartUpdated();
     public void FadeSizeEndUpdated();
     public void ShadowFadeSizeStartUpdated();

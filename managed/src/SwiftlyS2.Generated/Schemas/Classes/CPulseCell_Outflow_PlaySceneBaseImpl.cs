@@ -18,28 +18,33 @@ internal partial class CPulseCell_Outflow_PlaySceneBaseImpl : CPulseCell_BaseYie
 
     private static nint? _OnFinishedOffset;
 
-    public CPulse_ResumePoint OnFinished {
-        get {
+    public CPulse_ResumePoint OnFinished
+    {
+        get
+        {
             _OnFinishedOffset = _OnFinishedOffset ?? Schema.GetOffset(0x647C41D08D903E5E);
             return new CPulse_ResumePointImpl(_Handle + _OnFinishedOffset!.Value);
         }
     }
     private static nint? _OnCanceledOffset;
 
-    public CPulse_ResumePoint OnCanceled {
-        get {
+    public CPulse_ResumePoint OnCanceled
+    {
+        get
+        {
             _OnCanceledOffset = _OnCanceledOffset ?? Schema.GetOffset(0x647C41D0F02162DB);
             return new CPulse_ResumePointImpl(_Handle + _OnCanceledOffset!.Value);
         }
     }
     private static nint? _TriggersOffset;
 
-    public ref CUtlVector<CPulse_OutflowConnection> Triggers {
-        get {
+    public ref CUtlVector<CPulse_OutflowConnection> Triggers
+    {
+        get
+        {
             _TriggersOffset = _TriggersOffset ?? Schema.GetOffset(0x647C41D06E7B12D0);
             return ref _Handle.AsRef<CUtlVector<CPulse_OutflowConnection>>(_TriggersOffset!.Value);
         }
     }
-
 
 }

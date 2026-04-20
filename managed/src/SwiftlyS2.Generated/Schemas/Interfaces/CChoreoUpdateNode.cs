@@ -14,7 +14,4 @@ public partial interface CChoreoUpdateNode : CUnaryUpdateNode, ISchemaClass<CCho
     static int ISchemaClass<CChoreoUpdateNode>.Size => 120;
     static string? ISchemaClass<CChoreoUpdateNode>.ClassName => null;
 
-
-
-
 }

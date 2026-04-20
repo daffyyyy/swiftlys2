@@ -16,7 +16,4 @@ internal partial class CBaseTriggerAPIImpl : SchemaClass, CBaseTriggerAPI
 {
     public CBaseTriggerAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,20 +18,23 @@ internal partial class ExtentImpl : SchemaClass, Extent
 
     private static nint? _LoOffset;
 
-    public ref Vector Lo {
-        get {
+    public ref Vector Lo
+    {
+        get
+        {
             _LoOffset = _LoOffset ?? Schema.GetOffset(0x6E8BE8394231C06C);
             return ref _Handle.AsRef<Vector>(_LoOffset!.Value);
         }
     }
     private static nint? _HiOffset;
 
-    public ref Vector Hi {
-        get {
+    public ref Vector Hi
+    {
+        get
+        {
             _HiOffset = _HiOffset ?? Schema.GetOffset(0x6E8BE839683AF69A);
             return ref _Handle.AsRef<Vector>(_HiOffset!.Value);
         }
     }
-
 
 }

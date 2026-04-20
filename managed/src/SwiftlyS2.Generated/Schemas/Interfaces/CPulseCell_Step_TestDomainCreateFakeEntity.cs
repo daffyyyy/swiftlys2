@@ -14,7 +14,4 @@ public partial interface CPulseCell_Step_TestDomainCreateFakeEntity : CPulseCell
     static int ISchemaClass<CPulseCell_Step_TestDomainCreateFakeEntity>.Size => 72;
     static string? ISchemaClass<CPulseCell_Step_TestDomainCreateFakeEntity>.ClassName => null;
 
-
-
-
 }

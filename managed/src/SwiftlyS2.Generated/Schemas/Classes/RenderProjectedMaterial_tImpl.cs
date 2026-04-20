@@ -18,12 +18,13 @@ internal partial class RenderProjectedMaterial_tImpl : SchemaClass, RenderProjec
 
     private static nint? _MaterialOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material
+    {
+        get
+        {
             _MaterialOffset = _MaterialOffset ?? Schema.GetOffset(0x62AF09D5888CE42E);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(_MaterialOffset!.Value);
         }
     }
-
 
 }

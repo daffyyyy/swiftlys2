@@ -18,12 +18,13 @@ internal partial class FuseVariableIndex_tImpl : SchemaClass, FuseVariableIndex_
 
     private static nint? _ValueOffset;
 
-    public ref ushort Value {
-        get {
+    public ref ushort Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xA039B887DCB0894A);
             return ref _Handle.AsRef<ushort>(_ValueOffset!.Value);
         }
     }
-
 
 }

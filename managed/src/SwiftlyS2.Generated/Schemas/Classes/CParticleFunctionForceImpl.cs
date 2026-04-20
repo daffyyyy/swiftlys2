@@ -16,7 +16,4 @@ internal partial class CParticleFunctionForceImpl : CParticleFunctionImpl, CPart
 {
     public CParticleFunctionForceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

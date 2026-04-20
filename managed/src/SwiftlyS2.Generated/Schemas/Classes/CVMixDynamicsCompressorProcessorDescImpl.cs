@@ -18,12 +18,13 @@ internal partial class CVMixDynamicsCompressorProcessorDescImpl : CVMixBaseProce
 
     private static nint? _DescOffset;
 
-    public VMixDynamicsCompressorDesc_t Desc {
-        get {
+    public VMixDynamicsCompressorDesc_t Desc
+    {
+        get
+        {
             _DescOffset = _DescOffset ?? Schema.GetOffset(0x58A8E6D227917BC0);
             return new VMixDynamicsCompressorDesc_tImpl(_Handle + _DescOffset!.Value);
         }
     }
-
 
 }

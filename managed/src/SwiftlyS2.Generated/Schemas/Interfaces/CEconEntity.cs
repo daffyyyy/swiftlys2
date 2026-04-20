@@ -8,10 +8,10 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEconEntity : CBaseFlex, ISchemaClass<CEconEntity>
+public partial interface CEconEntity : CBaseAnimGraph, ISchemaClass<CEconEntity>
 {
     static CEconEntity ISchemaClass<CEconEntity>.From(nint handle) => new CEconEntityImpl(handle);
-    static int ISchemaClass<CEconEntity>.Size => 3552;
+    static int ISchemaClass<CEconEntity>.Size => 3184;
     static string? ISchemaClass<CEconEntity>.ClassName => null;
 
 

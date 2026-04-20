@@ -16,7 +16,4 @@ internal partial class CPulseGraphInstance_TestDomain_FakeEntityOwnerImpl : CBas
 {
     public CPulseGraphInstance_TestDomain_FakeEntityOwnerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

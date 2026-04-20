@@ -18,28 +18,33 @@ internal partial class CNmIDEventPercentageThroughNode__CDefinitionImpl : CNmBoo
 
     private static nint? _SourceStateNodeIdxOffset;
 
-    public ref short SourceStateNodeIdx {
-        get {
+    public ref short SourceStateNodeIdx
+    {
+        get
+        {
             _SourceStateNodeIdxOffset = _SourceStateNodeIdxOffset ?? Schema.GetOffset(0x3912E5963F0228C);
             return ref _Handle.AsRef<short>(_SourceStateNodeIdxOffset!.Value);
         }
     }
     private static nint? _EventConditionRulesOffset;
 
-    public CNmBitFlags EventConditionRules {
-        get {
+    public CNmBitFlags EventConditionRules
+    {
+        get
+        {
             _EventConditionRulesOffset = _EventConditionRulesOffset ?? Schema.GetOffset(0x3912E59A904315F);
             return new CNmBitFlagsImpl(_Handle + _EventConditionRulesOffset!.Value);
         }
     }
     private static nint? _EventIDOffset;
 
-    public ref CGlobalSymbol EventID {
-        get {
+    public ref CGlobalSymbol EventID
+    {
+        get
+        {
             _EventIDOffset = _EventIDOffset ?? Schema.GetOffset(0x3912E599D798A72);
             return ref _Handle.AsRef<CGlobalSymbol>(_EventIDOffset!.Value);
         }
     }
-
 
 }

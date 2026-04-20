@@ -18,20 +18,23 @@ internal partial class CVMixCurveHeaderImpl : SchemaClass, CVMixCurveHeader
 
     private static nint? _ControlPointCountOffset;
 
-    public ref uint ControlPointCount {
-        get {
+    public ref uint ControlPointCount
+    {
+        get
+        {
             _ControlPointCountOffset = _ControlPointCountOffset ?? Schema.GetOffset(0xAE0FC3E09E029D53);
             return ref _Handle.AsRef<uint>(_ControlPointCountOffset!.Value);
         }
     }
     private static nint? _ControlPointStartOffset;
 
-    public ref uint ControlPointStart {
-        get {
+    public ref uint ControlPointStart
+    {
+        get
+        {
             _ControlPointStartOffset = _ControlPointStartOffset ?? Schema.GetOffset(0xAE0FC3E0EB974DA0);
             return ref _Handle.AsRef<uint>(_ControlPointStartOffset!.Value);
         }
     }
-
 
 }

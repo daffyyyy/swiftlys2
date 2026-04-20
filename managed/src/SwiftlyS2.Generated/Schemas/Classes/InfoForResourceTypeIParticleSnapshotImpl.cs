@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeIParticleSnapshotImpl : SchemaClass, I
 {
     public InfoForResourceTypeIParticleSnapshotImpl(nint handle) : base(handle) { }
 
-
-
-
 }

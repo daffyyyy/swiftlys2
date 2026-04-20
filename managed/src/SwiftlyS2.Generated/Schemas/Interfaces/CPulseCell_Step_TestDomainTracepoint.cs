@@ -14,7 +14,4 @@ public partial interface CPulseCell_Step_TestDomainTracepoint : CPulseCell_BaseF
     static int ISchemaClass<CPulseCell_Step_TestDomainTracepoint>.Size => 72;
     static string? ISchemaClass<CPulseCell_Step_TestDomainTracepoint>.ClassName => null;
 
-
-
-
 }

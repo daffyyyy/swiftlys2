@@ -18,12 +18,13 @@ internal partial class AnimTagIDImpl : SchemaClass, AnimTagID
 
     private static nint? _IdOffset;
 
-    public ref uint Id {
-        get {
+    public ref uint Id
+    {
+        get
+        {
             _IdOffset = _IdOffset ?? Schema.GetOffset(0xCEE1E76DB4B6E980);
             return ref _Handle.AsRef<uint>(_IdOffset!.Value);
         }
     }
-
 
 }

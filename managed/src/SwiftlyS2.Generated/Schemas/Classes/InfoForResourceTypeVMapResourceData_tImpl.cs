@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeVMapResourceData_tImpl : SchemaClass, 
 {
     public InfoForResourceTypeVMapResourceData_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CGameRulesProxyImpl : CBaseEntityImpl, CGameRulesProxy
 {
     public CGameRulesProxyImpl(nint handle) : base(handle) { }
 
-
-
-
 }

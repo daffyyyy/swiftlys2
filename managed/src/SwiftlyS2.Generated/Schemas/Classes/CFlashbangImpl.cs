@@ -16,7 +16,4 @@ internal partial class CFlashbangImpl : CBaseCSGrenadeImpl, CFlashbang
 {
     public CFlashbangImpl(nint handle) : base(handle) { }
 
-
-
-
 }

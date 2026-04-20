@@ -18,20 +18,23 @@ internal partial class MoodAnimation_tImpl : SchemaClass, MoodAnimation_t
 
     private static nint? _NameOffset;
 
-    public SchemaUntypedField Name {
-        get {
+    public SchemaUntypedField Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x8982458763D22D49);
             return new SchemaUntypedField(_Handle + _NameOffset!.Value);
         }
     }
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0x898245877B81E7AB);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
-
 
 }

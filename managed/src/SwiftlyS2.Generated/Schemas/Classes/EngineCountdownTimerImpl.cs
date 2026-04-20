@@ -18,30 +18,33 @@ internal partial class EngineCountdownTimerImpl : SchemaClass, EngineCountdownTi
 
     private static nint? _DurationOffset;
 
-    public ref float Duration {
-        get {
+    public ref float Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0x3F0C5A433D9FF5AD);
             return ref _Handle.AsRef<float>(_DurationOffset!.Value);
         }
     }
     private static nint? _TimestampOffset;
 
-    public ref float Timestamp {
-        get {
+    public ref float Timestamp
+    {
+        get
+        {
             _TimestampOffset = _TimestampOffset ?? Schema.GetOffset(0x3F0C5A43B6C56F43);
             return ref _Handle.AsRef<float>(_TimestampOffset!.Value);
         }
     }
     private static nint? _TimescaleOffset;
 
-    public ref float Timescale {
-        get {
+    public ref float Timescale
+    {
+        get
+        {
             _TimescaleOffset = _TimescaleOffset ?? Schema.GetOffset(0x3F0C5A438A240BBE);
             return ref _Handle.AsRef<float>(_TimescaleOffset!.Value);
         }
     }
 
-    public void DurationUpdated() => Schema.Update(_Handle, 0x3F0C5A433D9FF5AD);
-    public void TimestampUpdated() => Schema.Update(_Handle, 0x3F0C5A43B6C56F43);
-    public void TimescaleUpdated() => Schema.Update(_Handle, 0x3F0C5A438A240BBE);
 }

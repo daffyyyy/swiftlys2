@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCTestResourceData : ISchemaClass<Inf
     static int ISchemaClass<InfoForResourceTypeCTestResourceData>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCTestResourceData>.ClassName => null;
 
-
-
-
 }

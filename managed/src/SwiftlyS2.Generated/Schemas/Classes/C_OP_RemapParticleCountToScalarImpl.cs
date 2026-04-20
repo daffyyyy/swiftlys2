@@ -18,60 +18,73 @@ internal partial class C_OP_RemapParticleCountToScalarImpl : CParticleFunctionOp
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x4DE6C52E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public CParticleCollectionFloatInput InputMin {
-        get {
+    public CParticleCollectionFloatInput InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0x4DE6C5285E92181);
             return new CParticleCollectionFloatInputImpl(_Handle + _InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public CParticleCollectionFloatInput InputMax {
-        get {
+    public CParticleCollectionFloatInput InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0x4DE6C5277FE262F);
             return new CParticleCollectionFloatInputImpl(_Handle + _InputMaxOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public CParticleCollectionFloatInput OutputMin {
-        get {
+    public CParticleCollectionFloatInput OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0x4DE6C525F8D7716);
             return new CParticleCollectionFloatInputImpl(_Handle + _OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public CParticleCollectionFloatInput OutputMax {
-        get {
+    public CParticleCollectionFloatInput OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0x4DE6C5251A0E8C4);
             return new CParticleCollectionFloatInputImpl(_Handle + _OutputMaxOffset!.Value);
         }
     }
     private static nint? _ActiveRangeOffset;
 
-    public ref bool ActiveRange {
-        get {
+    public ref bool ActiveRange
+    {
+        get
+        {
             _ActiveRangeOffset = _ActiveRangeOffset ?? Schema.GetOffset(0x4DE6C523FA53B84);
             return ref _Handle.AsRef<bool>(_ActiveRangeOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0x4DE6C52FB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
-
 
 }

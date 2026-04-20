@@ -16,7 +16,4 @@ internal partial class C_OP_RemapNamedModelBodyPartEndCapImpl : C_OP_RemapNamedM
 {
     public C_OP_RemapNamedModelBodyPartEndCapImpl(nint handle) : base(handle) { }
 
-
-
-
 }

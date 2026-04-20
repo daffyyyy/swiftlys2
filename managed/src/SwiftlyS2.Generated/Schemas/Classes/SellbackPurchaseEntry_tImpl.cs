@@ -18,40 +18,50 @@ internal partial class SellbackPurchaseEntry_tImpl : SchemaClass, SellbackPurcha
 
     private static nint? _DefIdxOffset;
 
-    public ref ushort DefIdx {
-        get {
+    public ref ushort DefIdx
+    {
+        get
+        {
             _DefIdxOffset = _DefIdxOffset ?? Schema.GetOffset(0xAC9E0914F02DD274);
             return ref _Handle.AsRef<ushort>(_DefIdxOffset!.Value);
         }
     }
     private static nint? _CostOffset;
 
-    public ref int Cost {
-        get {
+    public ref int Cost
+    {
+        get
+        {
             _CostOffset = _CostOffset ?? Schema.GetOffset(0xAC9E0914919660C4);
             return ref _Handle.AsRef<int>(_CostOffset!.Value);
         }
     }
     private static nint? _PrevArmorOffset;
 
-    public ref int PrevArmor {
-        get {
+    public ref int PrevArmor
+    {
+        get
+        {
             _PrevArmorOffset = _PrevArmorOffset ?? Schema.GetOffset(0xAC9E09143A18A19B);
             return ref _Handle.AsRef<int>(_PrevArmorOffset!.Value);
         }
     }
     private static nint? _PrevHelmetOffset;
 
-    public ref bool PrevHelmet {
-        get {
+    public ref bool PrevHelmet
+    {
+        get
+        {
             _PrevHelmetOffset = _PrevHelmetOffset ?? Schema.GetOffset(0xAC9E0914DA638D65);
             return ref _Handle.AsRef<bool>(_PrevHelmetOffset!.Value);
         }
     }
     private static nint? _ItemOffset;
 
-    public ref CHandle<CEntityInstance> Item {
-        get {
+    public ref CHandle<CEntityInstance> Item
+    {
+        get
+        {
             _ItemOffset = _ItemOffset ?? Schema.GetOffset(0xAC9E091452FF0710);
             return ref _Handle.AsRef<CHandle<CEntityInstance>>(_ItemOffset!.Value);
         }

@@ -18,88 +18,118 @@ internal partial class CPhysExplosionImpl : CPointEntityImpl, CPhysExplosion
 
     private static nint? _ExplodeOnSpawnOffset;
 
-    public ref bool ExplodeOnSpawn {
-        get {
+    public ref bool ExplodeOnSpawn
+    {
+        get
+        {
             _ExplodeOnSpawnOffset = _ExplodeOnSpawnOffset ?? Schema.GetOffset(0xACEBD741D4BEFD5A);
             return ref _Handle.AsRef<bool>(_ExplodeOnSpawnOffset!.Value);
         }
     }
     private static nint? _MagnitudeOffset;
 
-    public ref float Magnitude {
-        get {
+    public ref float Magnitude
+    {
+        get
+        {
             _MagnitudeOffset = _MagnitudeOffset ?? Schema.GetOffset(0xACEBD741ED0A1D8B);
             return ref _Handle.AsRef<float>(_MagnitudeOffset!.Value);
         }
     }
     private static nint? _DamageOffset;
 
-    public ref float Damage {
-        get {
+    public ref float Damage
+    {
+        get
+        {
             _DamageOffset = _DamageOffset ?? Schema.GetOffset(0xACEBD741DC60E53E);
             return ref _Handle.AsRef<float>(_DamageOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xACEBD741A921CA53);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _TargetEntityNameOffset;
 
-    public string TargetEntityName {
-        get {
+    public string TargetEntityName
+    {
+        get
+        {
             _TargetEntityNameOffset = _TargetEntityNameOffset ?? Schema.GetOffset(0xACEBD741F88EC878);
             return Schema.GetString(_Handle.Read<nint>(_TargetEntityNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TargetEntityNameOffset = _TargetEntityNameOffset ?? Schema.GetOffset(0xACEBD741F88EC878);
             Schema.SetString(_Handle, _TargetEntityNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _InnerRadiusOffset;
 
-    public ref float InnerRadius {
-        get {
+    public ref float InnerRadius
+    {
+        get
+        {
             _InnerRadiusOffset = _InnerRadiusOffset ?? Schema.GetOffset(0xACEBD74132121407);
             return ref _Handle.AsRef<float>(_InnerRadiusOffset!.Value);
         }
     }
     private static nint? _PushScaleOffset;
 
-    public ref float PushScale {
-        get {
+    public ref float PushScale
+    {
+        get
+        {
             _PushScaleOffset = _PushScaleOffset ?? Schema.GetOffset(0xACEBD741BC279223);
             return ref _Handle.AsRef<float>(_PushScaleOffset!.Value);
         }
     }
     private static nint? _ConvertToDebrisWhenPossibleOffset;
 
-    public ref bool ConvertToDebrisWhenPossible {
-        get {
+    public ref bool ConvertToDebrisWhenPossible
+    {
+        get
+        {
             _ConvertToDebrisWhenPossibleOffset = _ConvertToDebrisWhenPossibleOffset ?? Schema.GetOffset(0xACEBD7416AD4D155);
             return ref _Handle.AsRef<bool>(_ConvertToDebrisWhenPossibleOffset!.Value);
         }
     }
     private static nint? _AffectInvulnerableEntsOffset;
 
-    public ref bool AffectInvulnerableEnts {
-        get {
+    public ref bool AffectInvulnerableEnts
+    {
+        get
+        {
             _AffectInvulnerableEntsOffset = _AffectInvulnerableEntsOffset ?? Schema.GetOffset(0xACEBD74196CF6FA5);
             return ref _Handle.AsRef<bool>(_AffectInvulnerableEntsOffset!.Value);
         }
     }
+    private static nint? _DisablePushClampOffset;
+
+    public ref bool DisablePushClamp
+    {
+        get
+        {
+            _DisablePushClampOffset = _DisablePushClampOffset ?? Schema.GetOffset(0xACEBD741CD77C0CE);
+            return ref _Handle.AsRef<bool>(_DisablePushClampOffset!.Value);
+        }
+    }
     private static nint? _OnPushedPlayerOffset;
 
-    public ref CEntityIOOutput OnPushedPlayer {
-        get {
+    public ref CEntityIOOutput OnPushedPlayer
+    {
+        get
+        {
             _OnPushedPlayerOffset = _OnPushedPlayerOffset ?? Schema.GetOffset(0xACEBD74165C28180);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnPushedPlayerOffset!.Value);
         }
     }
-
 
 }

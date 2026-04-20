@@ -16,7 +16,4 @@ internal partial class CPulseCell_Step_TestDomainTracepointImpl : CPulseCell_Bas
 {
     public CPulseCell_Step_TestDomainTracepointImpl(nint handle) : base(handle) { }
 
-
-
-
 }

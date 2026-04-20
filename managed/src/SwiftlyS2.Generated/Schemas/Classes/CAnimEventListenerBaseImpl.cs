@@ -16,7 +16,4 @@ internal partial class CAnimEventListenerBaseImpl : SchemaClass, CAnimEventListe
 {
     public CAnimEventListenerBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

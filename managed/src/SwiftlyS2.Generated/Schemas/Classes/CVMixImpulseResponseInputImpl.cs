@@ -16,7 +16,4 @@ internal partial class CVMixImpulseResponseInputImpl : CVMixInputBaseImpl, CVMix
 {
     public CVMixImpulseResponseInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

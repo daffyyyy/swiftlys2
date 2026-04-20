@@ -18,44 +18,53 @@ internal partial class C_INIT_CreateParticleImpulseImpl : CParticleFunctionIniti
 
     private static nint? _InputRadiusOffset;
 
-    public CPerParticleFloatInput InputRadius {
-        get {
+    public CPerParticleFloatInput InputRadius
+    {
+        get
+        {
             _InputRadiusOffset = _InputRadiusOffset ?? Schema.GetOffset(0x1617EF931F5CA2F9);
             return new CPerParticleFloatInputImpl(_Handle + _InputRadiusOffset!.Value);
         }
     }
     private static nint? _InputMagnitudeOffset;
 
-    public CPerParticleFloatInput InputMagnitude {
-        get {
+    public CPerParticleFloatInput InputMagnitude
+    {
+        get
+        {
             _InputMagnitudeOffset = _InputMagnitudeOffset ?? Schema.GetOffset(0x1617EF938E8975B7);
             return new CPerParticleFloatInputImpl(_Handle + _InputMagnitudeOffset!.Value);
         }
     }
     private static nint? _FalloffFunctionOffset;
 
-    public ref ParticleFalloffFunction_t FalloffFunction {
-        get {
+    public ref ParticleFalloffFunction_t FalloffFunction
+    {
+        get
+        {
             _FalloffFunctionOffset = _FalloffFunctionOffset ?? Schema.GetOffset(0x1617EF93A7D5FD7D);
             return ref _Handle.AsRef<ParticleFalloffFunction_t>(_FalloffFunctionOffset!.Value);
         }
     }
     private static nint? _InputFalloffExpOffset;
 
-    public CPerParticleFloatInput InputFalloffExp {
-        get {
+    public CPerParticleFloatInput InputFalloffExp
+    {
+        get
+        {
             _InputFalloffExpOffset = _InputFalloffExpOffset ?? Schema.GetOffset(0x1617EF9356063396);
             return new CPerParticleFloatInputImpl(_Handle + _InputFalloffExpOffset!.Value);
         }
     }
     private static nint? _ImpulseTypeOffset;
 
-    public ref ParticleImpulseType_t ImpulseType {
-        get {
+    public ref ParticleImpulseType_t ImpulseType
+    {
+        get
+        {
             _ImpulseTypeOffset = _ImpulseTypeOffset ?? Schema.GetOffset(0x1617EF9309B21020);
             return ref _Handle.AsRef<ParticleImpulseType_t>(_ImpulseTypeOffset!.Value);
         }
     }
-
 
 }

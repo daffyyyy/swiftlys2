@@ -18,20 +18,23 @@ internal partial class CNmFloatRemapNode__RemapRange_tImpl : SchemaClass, CNmFlo
 
     private static nint? _BeginOffset;
 
-    public ref float Begin {
-        get {
+    public ref float Begin
+    {
+        get
+        {
             _BeginOffset = _BeginOffset ?? Schema.GetOffset(0x35C6A3517504C130);
             return ref _Handle.AsRef<float>(_BeginOffset!.Value);
         }
     }
     private static nint? _EndOffset;
 
-    public ref float End {
-        get {
+    public ref float End
+    {
+        get
+        {
             _EndOffset = _EndOffset ?? Schema.GetOffset(0x35C6A3519616A27C);
             return ref _Handle.AsRef<float>(_EndOffset!.Value);
         }
     }
-
 
 }

@@ -18,40 +18,48 @@ internal partial class CClothSettingsAnimTagImpl : CAnimTagBaseImpl, CClothSetti
 
     private static nint? _StiffnessOffset;
 
-    public ref float Stiffness {
-        get {
+    public ref float Stiffness
+    {
+        get
+        {
             _StiffnessOffset = _StiffnessOffset ?? Schema.GetOffset(0xF6B586864344C684);
             return ref _Handle.AsRef<float>(_StiffnessOffset!.Value);
         }
     }
     private static nint? _EaseInOffset;
 
-    public ref float EaseIn {
-        get {
+    public ref float EaseIn
+    {
+        get
+        {
             _EaseInOffset = _EaseInOffset ?? Schema.GetOffset(0xF6B586864514C026);
             return ref _Handle.AsRef<float>(_EaseInOffset!.Value);
         }
     }
     private static nint? _EaseOutOffset;
 
-    public ref float EaseOut {
-        get {
+    public ref float EaseOut
+    {
+        get
+        {
             _EaseOutOffset = _EaseOutOffset ?? Schema.GetOffset(0xF6B5868646B49C07);
             return ref _Handle.AsRef<float>(_EaseOutOffset!.Value);
         }
     }
     private static nint? _VertexSetOffset;
 
-    public string VertexSet {
-        get {
+    public string VertexSet
+    {
+        get
+        {
             _VertexSetOffset = _VertexSetOffset ?? Schema.GetOffset(0xF6B586863EE1A571);
             return Schema.GetCUtlString(_Handle.Read<nint>(_VertexSetOffset!.Value));
         }
-        set {
+        set
+        {
             _VertexSetOffset = _VertexSetOffset ?? Schema.GetOffset(0xF6B586863EE1A571);
             Schema.SetCUtlString(_Handle, _VertexSetOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

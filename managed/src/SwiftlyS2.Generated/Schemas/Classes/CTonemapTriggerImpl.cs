@@ -18,24 +18,28 @@ internal partial class CTonemapTriggerImpl : CBaseTriggerImpl, CTonemapTrigger
 
     private static nint? _TonemapControllerNameOffset;
 
-    public string TonemapControllerName {
-        get {
+    public string TonemapControllerName
+    {
+        get
+        {
             _TonemapControllerNameOffset = _TonemapControllerNameOffset ?? Schema.GetOffset(0x82562698C641A282);
             return Schema.GetString(_Handle.Read<nint>(_TonemapControllerNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TonemapControllerNameOffset = _TonemapControllerNameOffset ?? Schema.GetOffset(0x82562698C641A282);
             Schema.SetString(_Handle, _TonemapControllerNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TonemapControllerOffset;
 
-    public ref CHandle<CEntityInstance> TonemapController {
-        get {
+    public ref CHandle<CEntityInstance> TonemapController
+    {
+        get
+        {
             _TonemapControllerOffset = _TonemapControllerOffset ?? Schema.GetOffset(0x82562698F5E1A34F);
             return ref _Handle.AsRef<CHandle<CEntityInstance>>(_TonemapControllerOffset!.Value);
         }
     }
-
 
 }

@@ -19,6 +19,8 @@ public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEv
 
     public ref CNmParticleEvent__Type_t Type { get; }
 
+    public ref CNmEventTargetEntity_t Target { get; }
+
     public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
 
     public string Tags { get; set; }

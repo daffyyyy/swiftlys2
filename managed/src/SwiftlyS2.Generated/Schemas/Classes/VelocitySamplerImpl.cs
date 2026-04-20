@@ -18,28 +18,33 @@ internal partial class VelocitySamplerImpl : SchemaClass, VelocitySampler
 
     private static nint? _PrevSampleOffset;
 
-    public ref Vector PrevSample {
-        get {
+    public ref Vector PrevSample
+    {
+        get
+        {
             _PrevSampleOffset = _PrevSampleOffset ?? Schema.GetOffset(0x5547216E1BCE7EF2);
             return ref _Handle.AsRef<Vector>(_PrevSampleOffset!.Value);
         }
     }
     private static nint? _PrevSampleTimeOffset;
 
-    public GameTime_t PrevSampleTime {
-        get {
+    public GameTime_t PrevSampleTime
+    {
+        get
+        {
             _PrevSampleTimeOffset = _PrevSampleTimeOffset ?? Schema.GetOffset(0x5547216E0D491EE7);
             return new GameTime_tImpl(_Handle + _PrevSampleTimeOffset!.Value);
         }
     }
     private static nint? _IdealSampleRateOffset;
 
-    public ref float IdealSampleRate {
-        get {
+    public ref float IdealSampleRate
+    {
+        get
+        {
             _IdealSampleRateOffset = _IdealSampleRateOffset ?? Schema.GetOffset(0x5547216EF1562586);
             return ref _Handle.AsRef<float>(_IdealSampleRateOffset!.Value);
         }
     }
-
 
 }

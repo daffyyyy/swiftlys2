@@ -18,12 +18,13 @@ internal partial class CPulseCell_UnknownImpl : CPulseCell_BaseImpl, CPulseCell_
 
     private static nint? _UnknownKeysOffset;
 
-    public SchemaUntypedField UnknownKeys {
-        get {
+    public SchemaUntypedField UnknownKeys
+    {
+        get
+        {
             _UnknownKeysOffset = _UnknownKeysOffset ?? Schema.GetOffset(0xEA868E8A1EC86FF9);
             return new SchemaUntypedField(_Handle + _UnknownKeysOffset!.Value);
         }
     }
-
 
 }

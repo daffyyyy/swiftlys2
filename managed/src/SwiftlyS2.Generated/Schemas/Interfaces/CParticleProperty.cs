@@ -14,7 +14,4 @@ public partial interface CParticleProperty : ISchemaClass<CParticleProperty>
     static int ISchemaClass<CParticleProperty>.Size => 40;
     static string? ISchemaClass<CParticleProperty>.ClassName => null;
 
-
-
-
 }

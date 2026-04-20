@@ -18,16 +18,19 @@ internal partial class CPointClientUIWorldTextPanelImpl : CPointClientUIWorldPan
 
     private static nint? _MessageTextOffset;
 
-    public string MessageText {
-        get {
+    public string MessageText
+    {
+        get
+        {
             _MessageTextOffset = _MessageTextOffset ?? Schema.GetOffset(0x9F10465EBA6E5D73);
             return Schema.GetString(_Handle + _MessageTextOffset!.Value);
         }
-        set {
+        set
+        {
             _MessageTextOffset = _MessageTextOffset ?? Schema.GetOffset(0x9F10465EBA6E5D73);
             Schema.SetFixedString(_Handle, _MessageTextOffset!.Value, value, 512);
         }
-    } 
+    }
 
     public void MessageTextUpdated() => Schema.Update(_Handle, 0x9F10465EBA6E5D73);
 }

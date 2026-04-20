@@ -18,12 +18,13 @@ internal partial class CNmGraphNode__CDefinitionImpl : SchemaClass, CNmGraphNode
 
     private static nint? _NodeIdxOffset;
 
-    public ref short NodeIdx {
-        get {
+    public ref short NodeIdx
+    {
+        get
+        {
             _NodeIdxOffset = _NodeIdxOffset ?? Schema.GetOffset(0x97FBD3EF124AB5CC);
             return ref _Handle.AsRef<short>(_NodeIdxOffset!.Value);
         }
     }
-
 
 }

@@ -18,16 +18,18 @@ internal partial class MaterialParamString_tImpl : MaterialParam_tImpl, Material
 
     private static nint? _ValueOffset;
 
-    public string Value {
-        get {
+    public string Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xDB5EB0676B99AEEA);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ValueOffset!.Value));
         }
-        set {
+        set
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xDB5EB0676B99AEEA);
             Schema.SetCUtlString(_Handle, _ValueOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

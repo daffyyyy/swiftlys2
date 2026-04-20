@@ -18,16 +18,20 @@ internal partial class CPathWithDynamicNodesImpl : CPathSimpleImpl, CPathWithDyn
 
     private static nint? _PathNodesOffset;
 
-    public ref CUtlVector<CHandle<CPathNode>> PathNodes {
-        get {
+    public ref CUtlVector<CHandle<CPathNode>> PathNodes
+    {
+        get
+        {
             _PathNodesOffset = _PathNodesOffset ?? Schema.GetOffset(0x53A12A6BFD746CE3);
             return ref _Handle.AsRef<CUtlVector<CHandle<CPathNode>>>(_PathNodesOffset!.Value);
         }
     }
     private static nint? _XInitialPathWorldToLocalOffset;
 
-    public ref CTransform XInitialPathWorldToLocal {
-        get {
+    public ref CTransform XInitialPathWorldToLocal
+    {
+        get
+        {
             _XInitialPathWorldToLocalOffset = _XInitialPathWorldToLocalOffset ?? Schema.GetOffset(0x53A12A6BFE5D385E);
             return ref _Handle.AsRef<CTransform>(_XInitialPathWorldToLocalOffset!.Value);
         }

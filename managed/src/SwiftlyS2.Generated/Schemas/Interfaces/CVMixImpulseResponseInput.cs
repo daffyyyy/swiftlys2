@@ -14,7 +14,4 @@ public partial interface CVMixImpulseResponseInput : CVMixInputBase, ISchemaClas
     static int ISchemaClass<CVMixImpulseResponseInput>.Size => 16;
     static string? ISchemaClass<CVMixImpulseResponseInput>.ClassName => null;
 
-
-
-
 }

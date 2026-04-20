@@ -11,9 +11,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, ISchemaClass<CCSPlayer_MovementServices>
 {
     static CCSPlayer_MovementServices ISchemaClass<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
-    static int ISchemaClass<CCSPlayer_MovementServices>.Size => 3688;
+    static int ISchemaClass<CCSPlayer_MovementServices>.Size => 4032;
     static string? ISchemaClass<CCSPlayer_MovementServices>.ClassName => null;
 
+
+    public CCSPlayerAnimationState AnimationState { get; }
 
     public ref Vector LadderNormal { get; }
 
@@ -31,15 +33,13 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
 
     public ref bool Ducking { get; }
 
-    public ref float DuckOffset { get; }
+    public ref float DuckRootOffset { get; }
 
-    public ref uint DuckTimeMsecs { get; }
-
-    public ref uint DuckJumpTimeMsecs { get; }
-
-    public ref uint JumpTimeMsecs { get; }
+    public ref float DuckViewOffset { get; }
 
     public ref float LastDuckTime { get; }
+
+    public ref float BombPlantViewOffset { get; }
 
     public ref Vector2D LastPositionAtFullCrouchSpeed { get; }
 
@@ -75,9 +75,11 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
 
     public ref ulong ButtonDownMaskPrev { get; }
 
-    public ref float OffsetTickCompleteTime { get; }
+    public ref bool UseFrictionStashedSpeed { get; }
 
-    public ref float OffsetTickStashedSpeed { get; }
+    public ref float UseFrictionStashedSpeedUntilFrac { get; }
+
+    public ref float FrictionStashedSpeed { get; }
 
     public ref float Stamina { get; }
 
@@ -109,7 +111,11 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
 
     public ref bool WasSurfing { get; }
 
-    public ref Vector InputRotated { get; }
+    public ref Vector2D WalkWishVel { get; }
+
+    public GameTime_t GtLastTimeOnStaticWorldGround { get; }
+
+    public GameTime_t GtLastTimeInAir { get; }
 
     public void LadderSurfacePropIndexUpdated();
     public void DuckedUpdated();
@@ -118,16 +124,16 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
     public void DuckOverrideUpdated();
     public void DesiresDuckUpdated();
     public void DuckingUpdated();
-    public void DuckOffsetUpdated();
-    public void DuckTimeMsecsUpdated();
-    public void DuckJumpTimeMsecsUpdated();
-    public void JumpTimeMsecsUpdated();
+    public void DuckRootOffsetUpdated();
+    public void DuckViewOffsetUpdated();
     public void LastDuckTimeUpdated();
+    public void BombPlantViewOffsetUpdated();
     public void GameCodeHasMovedPlayerAfterCommandUpdated();
     public void StashGrenadeParameterWhenUpdated();
     public void ButtonDownMaskPrevUpdated();
-    public void OffsetTickCompleteTimeUpdated();
-    public void OffsetTickStashedSpeedUpdated();
+    public void UseFrictionStashedSpeedUpdated();
+    public void UseFrictionStashedSpeedUntilFracUpdated();
+    public void FrictionStashedSpeedUpdated();
     public void StaminaUpdated();
     public void LegacyJumpUpdated();
     public void ModernJumpUpdated();
@@ -136,4 +142,6 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
     public void LastJumpVelocityZUpdated();
     public void JumpApexPendingUpdated();
     public void WasSurfingUpdated();
+    public void GtLastTimeOnStaticWorldGroundUpdated();
+    public void GtLastTimeInAirUpdated();
 }

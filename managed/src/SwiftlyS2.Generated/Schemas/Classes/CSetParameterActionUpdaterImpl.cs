@@ -18,20 +18,23 @@ internal partial class CSetParameterActionUpdaterImpl : CAnimActionUpdaterImpl, 
 
     private static nint? _ParamOffset;
 
-    public CAnimParamHandle Param {
-        get {
+    public CAnimParamHandle Param
+    {
+        get
+        {
             _ParamOffset = _ParamOffset ?? Schema.GetOffset(0x2CC56544679286A4);
             return new CAnimParamHandleImpl(_Handle + _ParamOffset!.Value);
         }
     }
     private static nint? _ValueOffset;
 
-    public SchemaUntypedField Value {
-        get {
+    public SchemaUntypedField Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x2CC565446B99AEEA);
             return new SchemaUntypedField(_Handle + _ValueOffset!.Value);
         }
     }
-
 
 }

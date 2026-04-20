@@ -18,12 +18,13 @@ internal partial class CNmVectorNegateNode__CDefinitionImpl : CNmVectorValueNode
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0xAC99508E95E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
-
 
 }

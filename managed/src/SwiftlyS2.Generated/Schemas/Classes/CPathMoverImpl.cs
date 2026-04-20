@@ -18,32 +18,38 @@ internal partial class CPathMoverImpl : CPathWithDynamicNodesImpl, CPathMover
 
     private static nint? _MoversOffset;
 
-    public ref CUtlVector<CHandle<CFuncMover>> Movers {
-        get {
+    public ref CUtlVector<CHandle<CFuncMover>> Movers
+    {
+        get
+        {
             _MoversOffset = _MoversOffset ?? Schema.GetOffset(0x459CE4C65C9C4C93);
             return ref _Handle.AsRef<CUtlVector<CHandle<CFuncMover>>>(_MoversOffset!.Value);
         }
     }
     private static nint? _MoverSpawnerOffset;
 
-    public ref CHandle<CPathMoverEntitySpawner> MoverSpawner {
-        get {
+    public ref CHandle<CPathMoverEntitySpawner> MoverSpawner
+    {
+        get
+        {
             _MoverSpawnerOffset = _MoverSpawnerOffset ?? Schema.GetOffset(0x459CE4C689A8C6A8);
             return ref _Handle.AsRef<CHandle<CPathMoverEntitySpawner>>(_MoverSpawnerOffset!.Value);
         }
     }
     private static nint? _MoverSpawnerNameOffset;
 
-    public string MoverSpawnerName {
-        get {
+    public string MoverSpawnerName
+    {
+        get
+        {
             _MoverSpawnerNameOffset = _MoverSpawnerNameOffset ?? Schema.GetOffset(0x459CE4C65C6B2861);
             return Schema.GetString(_Handle.Read<nint>(_MoverSpawnerNameOffset!.Value));
         }
-        set {
+        set
+        {
             _MoverSpawnerNameOffset = _MoverSpawnerNameOffset ?? Schema.GetOffset(0x459CE4C65C6B2861);
             Schema.SetString(_Handle, _MoverSpawnerNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

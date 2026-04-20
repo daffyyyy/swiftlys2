@@ -18,20 +18,23 @@ internal partial class CNmClipSelectorNode__CDefinitionImpl : CNmClipReferenceNo
 
     private static nint? _OptionNodeIndicesOffset;
 
-    public SchemaUntypedField OptionNodeIndices {
-        get {
+    public SchemaUntypedField OptionNodeIndices
+    {
+        get
+        {
             _OptionNodeIndicesOffset = _OptionNodeIndicesOffset ?? Schema.GetOffset(0xCF32AC18DA97B15D);
             return new SchemaUntypedField(_Handle + _OptionNodeIndicesOffset!.Value);
         }
     }
     private static nint? _ConditionNodeIndicesOffset;
 
-    public SchemaUntypedField ConditionNodeIndices {
-        get {
+    public SchemaUntypedField ConditionNodeIndices
+    {
+        get
+        {
             _ConditionNodeIndicesOffset = _ConditionNodeIndicesOffset ?? Schema.GetOffset(0xCF32AC184A144D0F);
             return new SchemaUntypedField(_Handle + _ConditionNodeIndicesOffset!.Value);
         }
     }
-
 
 }

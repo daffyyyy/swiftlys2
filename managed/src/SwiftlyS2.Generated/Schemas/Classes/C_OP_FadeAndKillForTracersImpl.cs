@@ -18,52 +18,63 @@ internal partial class C_OP_FadeAndKillForTracersImpl : CParticleFunctionOperato
 
     private static nint? _StartFadeInTimeOffset;
 
-    public ref float StartFadeInTime {
-        get {
+    public ref float StartFadeInTime
+    {
+        get
+        {
             _StartFadeInTimeOffset = _StartFadeInTimeOffset ?? Schema.GetOffset(0x776267EF39639779);
             return ref _Handle.AsRef<float>(_StartFadeInTimeOffset!.Value);
         }
     }
     private static nint? _EndFadeInTimeOffset;
 
-    public ref float EndFadeInTime {
-        get {
+    public ref float EndFadeInTime
+    {
+        get
+        {
             _EndFadeInTimeOffset = _EndFadeInTimeOffset ?? Schema.GetOffset(0x776267EF36A35C84);
             return ref _Handle.AsRef<float>(_EndFadeInTimeOffset!.Value);
         }
     }
     private static nint? _StartFadeOutTimeOffset;
 
-    public ref float StartFadeOutTime {
-        get {
+    public ref float StartFadeOutTime
+    {
+        get
+        {
             _StartFadeOutTimeOffset = _StartFadeOutTimeOffset ?? Schema.GetOffset(0x776267EF6ABCF324);
             return ref _Handle.AsRef<float>(_StartFadeOutTimeOffset!.Value);
         }
     }
     private static nint? _EndFadeOutTimeOffset;
 
-    public ref float EndFadeOutTime {
-        get {
+    public ref float EndFadeOutTime
+    {
+        get
+        {
             _EndFadeOutTimeOffset = _EndFadeOutTimeOffset ?? Schema.GetOffset(0x776267EFFE87D7E7);
             return ref _Handle.AsRef<float>(_EndFadeOutTimeOffset!.Value);
         }
     }
     private static nint? _StartAlphaOffset;
 
-    public ref float StartAlpha {
-        get {
+    public ref float StartAlpha
+    {
+        get
+        {
             _StartAlphaOffset = _StartAlphaOffset ?? Schema.GetOffset(0x776267EF6A7A5D0B);
             return ref _Handle.AsRef<float>(_StartAlphaOffset!.Value);
         }
     }
     private static nint? _EndAlphaOffset;
 
-    public ref float EndAlpha {
-        get {
+    public ref float EndAlpha
+    {
+        get
+        {
             _EndAlphaOffset = _EndAlphaOffset ?? Schema.GetOffset(0x776267EF7A639CC0);
             return ref _Handle.AsRef<float>(_EndAlphaOffset!.Value);
         }
     }
-
 
 }

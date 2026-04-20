@@ -18,8 +18,10 @@ internal partial class CBodyComponentSkeletonInstanceImpl : CBodyComponentImpl, 
 
     private static nint? _SkeletonInstanceOffset;
 
-    public CSkeletonInstance SkeletonInstance {
-        get {
+    public CSkeletonInstance SkeletonInstance
+    {
+        get
+        {
             _SkeletonInstanceOffset = _SkeletonInstanceOffset ?? Schema.GetOffset(0x4581C459228537B9);
             return new CSkeletonInstanceImpl(_Handle + _SkeletonInstanceOffset!.Value);
         }

@@ -18,12 +18,13 @@ internal partial class CStopwatchImpl : CStopwatchBaseImpl, CStopwatch
 
     private static nint? _IntervalOffset;
 
-    public ref float Interval {
-        get {
+    public ref float Interval
+    {
+        get
+        {
             _IntervalOffset = _IntervalOffset ?? Schema.GetOffset(0x40B847F1320F7B8E);
             return ref _Handle.AsRef<float>(_IntervalOffset!.Value);
         }
     }
-
 
 }

@@ -18,28 +18,33 @@ internal partial class PhysShapeMarkup_tImpl : SchemaClass, PhysShapeMarkup_t
 
     private static nint? _BodyInAggregateOffset;
 
-    public ref int BodyInAggregate {
-        get {
+    public ref int BodyInAggregate
+    {
+        get
+        {
             _BodyInAggregateOffset = _BodyInAggregateOffset ?? Schema.GetOffset(0x87CE340954AFE651);
             return ref _Handle.AsRef<int>(_BodyInAggregateOffset!.Value);
         }
     }
     private static nint? _ShapeInBodyOffset;
 
-    public ref int ShapeInBody {
-        get {
+    public ref int ShapeInBody
+    {
+        get
+        {
             _ShapeInBodyOffset = _ShapeInBodyOffset ?? Schema.GetOffset(0x87CE3409C45F6FDD);
             return ref _Handle.AsRef<int>(_ShapeInBodyOffset!.Value);
         }
     }
     private static nint? _HitGroupOffset;
 
-    public ref CGlobalSymbol HitGroup {
-        get {
+    public ref CGlobalSymbol HitGroup
+    {
+        get
+        {
             _HitGroupOffset = _HitGroupOffset ?? Schema.GetOffset(0x87CE3409A13CBDEA);
             return ref _Handle.AsRef<CGlobalSymbol>(_HitGroupOffset!.Value);
         }
     }
-
 
 }

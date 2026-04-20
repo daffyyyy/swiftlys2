@@ -18,28 +18,33 @@ internal partial class CPulseCell_LerpCameraSettingsImpl : CPulseCell_BaseLerpIm
 
     private static nint? _SecondsOffset;
 
-    public ref float Seconds {
-        get {
+    public ref float Seconds
+    {
+        get
+        {
             _SecondsOffset = _SecondsOffset ?? Schema.GetOffset(0xA4A5850773C6938C);
             return ref _Handle.AsRef<float>(_SecondsOffset!.Value);
         }
     }
     private static nint? _StartOffset;
 
-    public PointCameraSettings_t Start {
-        get {
+    public PointCameraSettings_t Start
+    {
+        get
+        {
             _StartOffset = _StartOffset ?? Schema.GetOffset(0xA4A58507FF7CBA5F);
             return new PointCameraSettings_tImpl(_Handle + _StartOffset!.Value);
         }
     }
     private static nint? _EndOffset;
 
-    public PointCameraSettings_t End {
-        get {
+    public PointCameraSettings_t End
+    {
+        get
+        {
             _EndOffset = _EndOffset ?? Schema.GetOffset(0xA4A58507F624CF2A);
             return new PointCameraSettings_tImpl(_Handle + _EndOffset!.Value);
         }
     }
-
 
 }

@@ -18,36 +18,43 @@ internal partial class CMorphBundleDataImpl : SchemaClass, CMorphBundleData
 
     private static nint? _ULeftSrcOffset;
 
-    public ref float ULeftSrc {
-        get {
+    public ref float ULeftSrc
+    {
+        get
+        {
             _ULeftSrcOffset = _ULeftSrcOffset ?? Schema.GetOffset(0x8F3A47DCADC9D147);
             return ref _Handle.AsRef<float>(_ULeftSrcOffset!.Value);
         }
     }
     private static nint? _VTopSrcOffset;
 
-    public ref float VTopSrc {
-        get {
+    public ref float VTopSrc
+    {
+        get
+        {
             _VTopSrcOffset = _VTopSrcOffset ?? Schema.GetOffset(0x8F3A47DCEF710ED0);
             return ref _Handle.AsRef<float>(_VTopSrcOffset!.Value);
         }
     }
     private static nint? _OffsetsOffset;
 
-    public ref CUtlVector<float> Offsets {
-        get {
+    public ref CUtlVector<float> Offsets
+    {
+        get
+        {
             _OffsetsOffset = _OffsetsOffset ?? Schema.GetOffset(0x8F3A47DCD6CBA75B);
             return ref _Handle.AsRef<CUtlVector<float>>(_OffsetsOffset!.Value);
         }
     }
     private static nint? _RangesOffset;
 
-    public ref CUtlVector<float> Ranges {
-        get {
+    public ref CUtlVector<float> Ranges
+    {
+        get
+        {
             _RangesOffset = _RangesOffset ?? Schema.GetOffset(0x8F3A47DC24CF5F13);
             return ref _Handle.AsRef<CUtlVector<float>>(_RangesOffset!.Value);
         }
     }
-
 
 }

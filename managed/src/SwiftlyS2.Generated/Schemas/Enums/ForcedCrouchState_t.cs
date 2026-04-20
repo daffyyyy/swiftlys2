@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ForcedCrouchState_t : uint
 {
- FORCEDCROUCH_NONE = 0,
-
- FORCEDCROUCH_CROUCHED = 1,
-
- FORCEDCROUCH_UNCROUCHED = 2,
+    FORCEDCROUCH_NONE = 0,
+    FORCEDCROUCH_CROUCHED = 1,
+    FORCEDCROUCH_UNCROUCHED = 2,
 }

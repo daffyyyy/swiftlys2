@@ -18,20 +18,23 @@ internal partial class CNmSelectorNode__CDefinitionImpl : CNmPoseNode__CDefiniti
 
     private static nint? _OptionNodeIndicesOffset;
 
-    public SchemaUntypedField OptionNodeIndices {
-        get {
+    public SchemaUntypedField OptionNodeIndices
+    {
+        get
+        {
             _OptionNodeIndicesOffset = _OptionNodeIndicesOffset ?? Schema.GetOffset(0x4E964386DA97B15D);
             return new SchemaUntypedField(_Handle + _OptionNodeIndicesOffset!.Value);
         }
     }
     private static nint? _ConditionNodeIndicesOffset;
 
-    public SchemaUntypedField ConditionNodeIndices {
-        get {
+    public SchemaUntypedField ConditionNodeIndices
+    {
+        get
+        {
             _ConditionNodeIndicesOffset = _ConditionNodeIndicesOffset ?? Schema.GetOffset(0x4E9643864A144D0F);
             return new SchemaUntypedField(_Handle + _ConditionNodeIndicesOffset!.Value);
         }
     }
-
 
 }

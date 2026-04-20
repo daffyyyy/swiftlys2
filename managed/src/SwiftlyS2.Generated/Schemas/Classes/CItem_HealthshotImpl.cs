@@ -16,7 +16,4 @@ internal partial class CItem_HealthshotImpl : CWeaponBaseItemImpl, CItem_Healths
 {
     public CItem_HealthshotImpl(nint handle) : base(handle) { }
 
-
-
-
 }

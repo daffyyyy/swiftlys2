@@ -16,7 +16,4 @@ internal partial class CNmBlendTaskImpl : CNmBlendTaskBaseImpl, CNmBlendTask
 {
     public CNmBlendTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

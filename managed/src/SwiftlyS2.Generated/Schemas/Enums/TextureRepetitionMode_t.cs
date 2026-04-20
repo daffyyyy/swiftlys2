@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum TextureRepetitionMode_t : uint
 {
- TEXTURE_REPETITION_PARTICLE = 0,
-
- TEXTURE_REPETITION_PATH = 1,
+    TEXTURE_REPETITION_PARTICLE = 0,
+    TEXTURE_REPETITION_PATH = 1,
 }

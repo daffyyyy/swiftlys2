@@ -16,7 +16,4 @@ internal partial class EventClientPauseSimulate_tImpl : EventSimulate_tImpl, Eve
 {
     public EventClientPauseSimulate_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -19,40 +19,40 @@ public partial interface CLogicNPCCounter : CBaseEntity, ISchemaClass<CLogicNPCC
 
     public ref CEntityIOOutput OnMaxCountAll { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnFactorAll { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnMinPlayerDistAll { get; }
 
     public ref CEntityIOOutput OnMinCount_1 { get; }
 
     public ref CEntityIOOutput OnMaxCount_1 { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnFactor_1 { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnMinPlayerDist_1 { get; }
 
     public ref CEntityIOOutput OnMinCount_2 { get; }
 
     public ref CEntityIOOutput OnMaxCount_2 { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnFactor_2 { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnMinPlayerDist_2 { get; }
 
     public ref CEntityIOOutput OnMinCount_3 { get; }
 
     public ref CEntityIOOutput OnMaxCount_3 { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnFactor_3 { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnMinPlayerDist_3 { get; }
 
     public ref CHandle<CEntityInstance> Source { get; }

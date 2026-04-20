@@ -14,7 +14,4 @@ public partial interface CVMixStereoDelayProcessorDesc : CVMixBaseProcessorDesc,
     static int ISchemaClass<CVMixStereoDelayProcessorDesc>.Size => 32;
     static string? ISchemaClass<CVMixStereoDelayProcessorDesc>.ClassName => null;
 
-
-
-
 }

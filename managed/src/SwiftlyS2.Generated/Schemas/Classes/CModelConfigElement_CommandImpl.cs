@@ -18,24 +18,28 @@ internal partial class CModelConfigElement_CommandImpl : CModelConfigElementImpl
 
     private static nint? _CommandOffset;
 
-    public string Command {
-        get {
+    public string Command
+    {
+        get
+        {
             _CommandOffset = _CommandOffset ?? Schema.GetOffset(0x89334ED93A5BBC32);
             return Schema.GetCUtlString(_Handle.Read<nint>(_CommandOffset!.Value));
         }
-        set {
+        set
+        {
             _CommandOffset = _CommandOffset ?? Schema.GetOffset(0x89334ED93A5BBC32);
             Schema.SetCUtlString(_Handle, _CommandOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ArgsOffset;
 
-    public SchemaUntypedField Args {
-        get {
+    public SchemaUntypedField Args
+    {
+        get
+        {
             _ArgsOffset = _ArgsOffset ?? Schema.GetOffset(0x89334ED9DAB98BBC);
             return new SchemaUntypedField(_Handle + _ArgsOffset!.Value);
         }
     }
-
 
 }

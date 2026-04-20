@@ -18,20 +18,23 @@ internal partial class NmCompressionSettings_t__QuantizationRange_tImpl : Schema
 
     private static nint? _RangeStartOffset;
 
-    public ref float RangeStart {
-        get {
+    public ref float RangeStart
+    {
+        get
+        {
             _RangeStartOffset = _RangeStartOffset ?? Schema.GetOffset(0xA662A641F7D21E68);
             return ref _Handle.AsRef<float>(_RangeStartOffset!.Value);
         }
     }
     private static nint? _RangeLengthOffset;
 
-    public ref float RangeLength {
-        get {
+    public ref float RangeLength
+    {
+        get
+        {
             _RangeLengthOffset = _RangeLengthOffset ?? Schema.GetOffset(0xA662A6418C3501A8);
             return ref _Handle.AsRef<float>(_RangeLengthOffset!.Value);
         }
     }
-
 
 }

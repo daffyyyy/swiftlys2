@@ -18,68 +18,83 @@ internal partial class VMixAutoFilterDesc_tImpl : SchemaClass, VMixAutoFilterDes
 
     private static nint? _EnvelopeAmountOffset;
 
-    public ref float EnvelopeAmount {
-        get {
+    public ref float EnvelopeAmount
+    {
+        get
+        {
             _EnvelopeAmountOffset = _EnvelopeAmountOffset ?? Schema.GetOffset(0xCE0A02A0EB3F257);
             return ref _Handle.AsRef<float>(_EnvelopeAmountOffset!.Value);
         }
     }
     private static nint? _AttackTimeMSOffset;
 
-    public ref float AttackTimeMS {
-        get {
+    public ref float AttackTimeMS
+    {
+        get
+        {
             _AttackTimeMSOffset = _AttackTimeMSOffset ?? Schema.GetOffset(0xCE0A02AD4A28216);
             return ref _Handle.AsRef<float>(_AttackTimeMSOffset!.Value);
         }
     }
     private static nint? _ReleaseTimeMSOffset;
 
-    public ref float ReleaseTimeMS {
-        get {
+    public ref float ReleaseTimeMS
+    {
+        get
+        {
             _ReleaseTimeMSOffset = _ReleaseTimeMSOffset ?? Schema.GetOffset(0xCE0A02AEBB62791);
             return ref _Handle.AsRef<float>(_ReleaseTimeMSOffset!.Value);
         }
     }
     private static nint? _FilterOffset;
 
-    public VMixFilterDesc_t Filter {
-        get {
+    public VMixFilterDesc_t Filter
+    {
+        get
+        {
             _FilterOffset = _FilterOffset ?? Schema.GetOffset(0xCE0A02A634A7917);
             return new VMixFilterDesc_tImpl(_Handle + _FilterOffset!.Value);
         }
     }
     private static nint? _LFOAmountOffset;
 
-    public ref float LFOAmount {
-        get {
+    public ref float LFOAmount
+    {
+        get
+        {
             _LFOAmountOffset = _LFOAmountOffset ?? Schema.GetOffset(0xCE0A02ACA44783A);
             return ref _Handle.AsRef<float>(_LFOAmountOffset!.Value);
         }
     }
     private static nint? _LFORateOffset;
 
-    public ref float LFORate {
-        get {
+    public ref float LFORate
+    {
+        get
+        {
             _LFORateOffset = _LFORateOffset ?? Schema.GetOffset(0xCE0A02A6E717CE4);
             return ref _Handle.AsRef<float>(_LFORateOffset!.Value);
         }
     }
     private static nint? _PhaseOffset;
 
-    public ref float Phase {
-        get {
+    public ref float Phase
+    {
+        get
+        {
             _PhaseOffset = _PhaseOffset ?? Schema.GetOffset(0xCE0A02A3C22A9CA);
             return ref _Handle.AsRef<float>(_PhaseOffset!.Value);
         }
     }
     private static nint? _LFOShapeOffset;
 
-    public ref VMixLFOShape_t LFOShape {
-        get {
+    public ref VMixLFOShape_t LFOShape
+    {
+        get
+        {
             _LFOShapeOffset = _LFOShapeOffset ?? Schema.GetOffset(0xCE0A02AD7FB3149);
             return ref _Handle.AsRef<VMixLFOShape_t>(_LFOShapeOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class IHasAttributesImpl : SchemaClass, IHasAttributes
 {
     public IHasAttributesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

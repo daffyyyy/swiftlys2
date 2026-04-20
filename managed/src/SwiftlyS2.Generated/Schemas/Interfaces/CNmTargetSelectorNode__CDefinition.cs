@@ -15,7 +15,7 @@ public partial interface CNmTargetSelectorNode__CDefinition : CNmClipReferenceNo
     static string? ISchemaClass<CNmTargetSelectorNode__CDefinition>.ClassName => null;
 
 
-    // CUtlLeanVectorFixedGrowable< int16, 5 >
+    // CUtlLeanVectorFixedGrowable< int16, 8 >
     public SchemaUntypedField OptionNodeIndices { get; }
 
     public ref float OrientationScoreWeight { get; }

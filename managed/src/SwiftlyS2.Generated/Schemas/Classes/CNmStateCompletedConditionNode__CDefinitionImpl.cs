@@ -18,28 +18,33 @@ internal partial class CNmStateCompletedConditionNode__CDefinitionImpl : CNmBool
 
     private static nint? _SourceStateNodeIdxOffset;
 
-    public ref short SourceStateNodeIdx {
-        get {
+    public ref short SourceStateNodeIdx
+    {
+        get
+        {
             _SourceStateNodeIdxOffset = _SourceStateNodeIdxOffset ?? Schema.GetOffset(0x4C5A15CA63F0228C);
             return ref _Handle.AsRef<short>(_SourceStateNodeIdxOffset!.Value);
         }
     }
     private static nint? _TransitionDurationOverrideNodeIdxOffset;
 
-    public ref short TransitionDurationOverrideNodeIdx {
-        get {
+    public ref short TransitionDurationOverrideNodeIdx
+    {
+        get
+        {
             _TransitionDurationOverrideNodeIdxOffset = _TransitionDurationOverrideNodeIdxOffset ?? Schema.GetOffset(0x4C5A15CACD97BBA1);
             return ref _Handle.AsRef<short>(_TransitionDurationOverrideNodeIdxOffset!.Value);
         }
     }
     private static nint? _TransitionDurationSecondsOffset;
 
-    public ref float TransitionDurationSeconds {
-        get {
+    public ref float TransitionDurationSeconds
+    {
+        get
+        {
             _TransitionDurationSecondsOffset = _TransitionDurationSecondsOffset ?? Schema.GetOffset(0x4C5A15CAD5E92B1D);
             return ref _Handle.AsRef<float>(_TransitionDurationSecondsOffset!.Value);
         }
     }
-
 
 }

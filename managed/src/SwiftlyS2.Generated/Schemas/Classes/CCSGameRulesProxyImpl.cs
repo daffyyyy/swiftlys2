@@ -18,8 +18,10 @@ internal partial class CCSGameRulesProxyImpl : CGameRulesProxyImpl, CCSGameRules
 
     private static nint? _GameRulesOffset;
 
-    public CCSGameRules? GameRules {
-        get {
+    public CCSGameRules? GameRules
+    {
+        get
+        {
             _GameRulesOffset = _GameRulesOffset ?? Schema.GetOffset(0x242D3ADB925C1F40);
             var ptr = _Handle.Read<nint>(_GameRulesOffset!.Value);
             return ptr.IsValidPtr() ? new CCSGameRulesImpl(ptr) : null;

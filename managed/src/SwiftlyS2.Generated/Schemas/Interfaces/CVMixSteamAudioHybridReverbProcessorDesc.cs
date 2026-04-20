@@ -14,7 +14,4 @@ public partial interface CVMixSteamAudioHybridReverbProcessorDesc : CVMixBasePro
     static int ISchemaClass<CVMixSteamAudioHybridReverbProcessorDesc>.Size => 32;
     static string? ISchemaClass<CVMixSteamAudioHybridReverbProcessorDesc>.ClassName => null;
 
-
-
-
 }

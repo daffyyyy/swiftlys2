@@ -16,62 +16,65 @@ internal partial class C_INIT_CreateSpiralSphereImpl : CParticleFunctionInitiali
 {
     public C_INIT_CreateSpiralSphereImpl(nint handle) : base(handle) { }
 
-    private static nint? _ControlPointNumberOffset;
+    private static nint? _TransformInputOffset;
 
-    public ref int ControlPointNumber {
-        get {
-            _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x97C2018A3F31A6BD);
-            return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
-        }
-    }
-    private static nint? _OverrideCPOffset;
-
-    public ref int OverrideCP {
-        get {
-            _OverrideCPOffset = _OverrideCPOffset ?? Schema.GetOffset(0x97C2018ADD495162);
-            return ref _Handle.AsRef<int>(_OverrideCPOffset!.Value);
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
+            _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0x97C2018AB3FDC289);
+            return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
     private static nint? _DensityOffset;
 
-    public ref int Density {
-        get {
-            _DensityOffset = _DensityOffset ?? Schema.GetOffset(0x97C2018AA65E630F);
-            return ref _Handle.AsRef<int>(_DensityOffset!.Value);
+    public CPerParticleFloatInput Density
+    {
+        get
+        {
+            _DensityOffset = _DensityOffset ?? Schema.GetOffset(0x97C2018AA7E7CAA1);
+            return new CPerParticleFloatInputImpl(_Handle + _DensityOffset!.Value);
         }
     }
     private static nint? _InitialRadiusOffset;
 
-    public ref float InitialRadius {
-        get {
+    public CPerParticleFloatInput InitialRadius
+    {
+        get
+        {
             _InitialRadiusOffset = _InitialRadiusOffset ?? Schema.GetOffset(0x97C2018A8B8AAB8B);
-            return ref _Handle.AsRef<float>(_InitialRadiusOffset!.Value);
+            return new CPerParticleFloatInputImpl(_Handle + _InitialRadiusOffset!.Value);
         }
     }
     private static nint? _InitialSpeedMinOffset;
 
-    public ref float InitialSpeedMin {
-        get {
+    public CPerParticleFloatInput InitialSpeedMin
+    {
+        get
+        {
             _InitialSpeedMinOffset = _InitialSpeedMinOffset ?? Schema.GetOffset(0x97C2018AE36FD694);
-            return ref _Handle.AsRef<float>(_InitialSpeedMinOffset!.Value);
+            return new CPerParticleFloatInputImpl(_Handle + _InitialSpeedMinOffset!.Value);
         }
     }
     private static nint? _InitialSpeedMaxOffset;
 
-    public ref float InitialSpeedMax {
-        get {
+    public CPerParticleFloatInput InitialSpeedMax
+    {
+        get
+        {
             _InitialSpeedMaxOffset = _InitialSpeedMaxOffset ?? Schema.GetOffset(0x97C2018AD184D4F6);
-            return ref _Handle.AsRef<float>(_InitialSpeedMaxOffset!.Value);
+            return new CPerParticleFloatInputImpl(_Handle + _InitialSpeedMaxOffset!.Value);
         }
     }
     private static nint? _UseParticleCountOffset;
 
-    public ref bool UseParticleCount {
-        get {
+    public ref bool UseParticleCount
+    {
+        get
+        {
             _UseParticleCountOffset = _UseParticleCountOffset ?? Schema.GetOffset(0x97C2018AD4DA0515);
             return ref _Handle.AsRef<bool>(_UseParticleCountOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CNmBoneMaskNode__CDefinitionImpl : CNmBoneMaskValueNode__
 
     private static nint? _BoneMaskIDOffset;
 
-    public ref CGlobalSymbol BoneMaskID {
-        get {
+    public ref CGlobalSymbol BoneMaskID
+    {
+        get
+        {
             _BoneMaskIDOffset = _BoneMaskIDOffset ?? Schema.GetOffset(0xC50CAD4B5F09FD66);
             return ref _Handle.AsRef<CGlobalSymbol>(_BoneMaskIDOffset!.Value);
         }
     }
-
 
 }

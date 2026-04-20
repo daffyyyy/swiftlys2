@@ -18,52 +18,63 @@ internal partial class CAudioMorphDataImpl : SchemaClass, CAudioMorphData
 
     private static nint? _TimesOffset;
 
-    public ref CUtlVector<float> Times {
-        get {
+    public ref CUtlVector<float> Times
+    {
+        get
+        {
             _TimesOffset = _TimesOffset ?? Schema.GetOffset(0xA13726EA86A55CD5);
             return ref _Handle.AsRef<CUtlVector<float>>(_TimesOffset!.Value);
         }
     }
     private static nint? _NameHashCodesOffset;
 
-    public ref CUtlVector<uint> NameHashCodes {
-        get {
+    public ref CUtlVector<uint> NameHashCodes
+    {
+        get
+        {
             _NameHashCodesOffset = _NameHashCodesOffset ?? Schema.GetOffset(0xA13726EAC13918BC);
             return ref _Handle.AsRef<CUtlVector<uint>>(_NameHashCodesOffset!.Value);
         }
     }
     private static nint? _NameStringsOffset;
 
-    public ref CUtlVector<CUtlString> NameStrings {
-        get {
+    public ref CUtlVector<CUtlString> NameStrings
+    {
+        get
+        {
             _NameStringsOffset = _NameStringsOffset ?? Schema.GetOffset(0xA13726EA23776A0C);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_NameStringsOffset!.Value);
         }
     }
     private static nint? _SamplesOffset;
 
-    public ref CUtlVector<CUtlVector<float>> Samples {
-        get {
+    public ref CUtlVector<CUtlVector<float>> Samples
+    {
+        get
+        {
             _SamplesOffset = _SamplesOffset ?? Schema.GetOffset(0xA13726EA364CA9DC);
             return ref _Handle.AsRef<CUtlVector<CUtlVector<float>>>(_SamplesOffset!.Value);
         }
     }
     private static nint? _EaseInOffset;
 
-    public ref float EaseIn {
-        get {
+    public ref float EaseIn
+    {
+        get
+        {
             _EaseInOffset = _EaseInOffset ?? Schema.GetOffset(0xA13726EA4514C026);
             return ref _Handle.AsRef<float>(_EaseInOffset!.Value);
         }
     }
     private static nint? _EaseOutOffset;
 
-    public ref float EaseOut {
-        get {
+    public ref float EaseOut
+    {
+        get
+        {
             _EaseOutOffset = _EaseOutOffset ?? Schema.GetOffset(0xA13726EA46B49C07);
             return ref _Handle.AsRef<float>(_EaseOutOffset!.Value);
         }
     }
-
 
 }

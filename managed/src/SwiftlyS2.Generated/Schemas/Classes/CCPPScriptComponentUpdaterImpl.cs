@@ -18,12 +18,13 @@ internal partial class CCPPScriptComponentUpdaterImpl : CAnimComponentUpdaterImp
 
     private static nint? _ScriptsToRunOffset;
 
-    public ref CUtlVector<CGlobalSymbol> ScriptsToRun {
-        get {
+    public ref CUtlVector<CGlobalSymbol> ScriptsToRun
+    {
+        get
+        {
             _ScriptsToRunOffset = _ScriptsToRunOffset ?? Schema.GetOffset(0x4785DAC8378F3E0F);
             return ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(_ScriptsToRunOffset!.Value);
         }
     }
-
 
 }

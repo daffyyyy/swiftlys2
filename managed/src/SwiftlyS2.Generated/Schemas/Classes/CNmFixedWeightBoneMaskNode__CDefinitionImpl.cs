@@ -18,12 +18,13 @@ internal partial class CNmFixedWeightBoneMaskNode__CDefinitionImpl : CNmBoneMask
 
     private static nint? _BoneWeightOffset;
 
-    public ref float BoneWeight {
-        get {
+    public ref float BoneWeight
+    {
+        get
+        {
             _BoneWeightOffset = _BoneWeightOffset ?? Schema.GetOffset(0x26E0BD7363DE76E9);
             return ref _Handle.AsRef<float>(_BoneWeightOffset!.Value);
         }
     }
-
 
 }

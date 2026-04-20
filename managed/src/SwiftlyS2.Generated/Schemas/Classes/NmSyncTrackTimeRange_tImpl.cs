@@ -18,20 +18,23 @@ internal partial class NmSyncTrackTimeRange_tImpl : SchemaClass, NmSyncTrackTime
 
     private static nint? _StartTimeOffset;
 
-    public NmSyncTrackTime_t StartTime {
-        get {
+    public NmSyncTrackTime_t StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0xAECBDADF6330E7EE);
             return new NmSyncTrackTime_tImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
     private static nint? _EndTimeOffset;
 
-    public NmSyncTrackTime_t EndTime {
-        get {
+    public NmSyncTrackTime_t EndTime
+    {
+        get
+        {
             _EndTimeOffset = _EndTimeOffset ?? Schema.GetOffset(0xAECBDADFEAD1A94B);
             return new NmSyncTrackTime_tImpl(_Handle + _EndTimeOffset!.Value);
         }
     }
-
 
 }

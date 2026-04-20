@@ -14,7 +14,4 @@ public partial interface CPulseCell_BaseState : CPulseCell_BaseYieldingInflow, I
     static int ISchemaClass<CPulseCell_BaseState>.Size => 72;
     static string? ISchemaClass<CPulseCell_BaseState>.ClassName => null;
 
-
-
-
 }

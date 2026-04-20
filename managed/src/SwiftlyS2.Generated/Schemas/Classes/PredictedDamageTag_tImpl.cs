@@ -18,32 +18,40 @@ internal partial class PredictedDamageTag_tImpl : SchemaClass, PredictedDamageTa
 
     private static nint? _TagTickOffset;
 
-    public GameTick_t TagTick {
-        get {
+    public GameTick_t TagTick
+    {
+        get
+        {
             _TagTickOffset = _TagTickOffset ?? Schema.GetOffset(0x43420069BBCAAE16);
             return new GameTick_tImpl(_Handle + _TagTickOffset!.Value);
         }
     }
     private static nint? _FlinchModSmallOffset;
 
-    public ref float FlinchModSmall {
-        get {
+    public ref float FlinchModSmall
+    {
+        get
+        {
             _FlinchModSmallOffset = _FlinchModSmallOffset ?? Schema.GetOffset(0x4342006970E7E18A);
             return ref _Handle.AsRef<float>(_FlinchModSmallOffset!.Value);
         }
     }
     private static nint? _FlinchModLargeOffset;
 
-    public ref float FlinchModLarge {
-        get {
+    public ref float FlinchModLarge
+    {
+        get
+        {
             _FlinchModLargeOffset = _FlinchModLargeOffset ?? Schema.GetOffset(0x43420069E052DA66);
             return ref _Handle.AsRef<float>(_FlinchModLargeOffset!.Value);
         }
     }
     private static nint? _FriendlyFireDamageReductionRatioOffset;
 
-    public ref float FriendlyFireDamageReductionRatio {
-        get {
+    public ref float FriendlyFireDamageReductionRatio
+    {
+        get
+        {
             _FriendlyFireDamageReductionRatioOffset = _FriendlyFireDamageReductionRatioOffset ?? Schema.GetOffset(0x43420069BA6A7F4D);
             return ref _Handle.AsRef<float>(_FriendlyFireDamageReductionRatioOffset!.Value);
         }

@@ -18,12 +18,13 @@ internal partial class RnVertex_tImpl : SchemaClass, RnVertex_t
 
     private static nint? _EdgeOffset;
 
-    public ref byte Edge {
-        get {
+    public ref byte Edge
+    {
+        get
+        {
             _EdgeOffset = _EdgeOffset ?? Schema.GetOffset(0xA2F56A80E2949FC8);
             return ref _Handle.AsRef<byte>(_EdgeOffset!.Value);
         }
     }
-
 
 }

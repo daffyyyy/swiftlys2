@@ -18,12 +18,13 @@ internal partial class PulseRuntimeCellIndex_tImpl : SchemaClass, PulseRuntimeCe
 
     private static nint? _ValueOffset;
 
-    public ref int Value {
-        get {
+    public ref int Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x21F81EE9DCB0894A);
             return ref _Handle.AsRef<int>(_ValueOffset!.Value);
         }
     }
-
 
 }

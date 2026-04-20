@@ -18,16 +18,20 @@ internal partial class CSoundEventOBBEntityImpl : CSoundEventEntityImpl, CSoundE
 
     private static nint? _MinsOffset;
 
-    public ref Vector Mins {
-        get {
+    public ref Vector Mins
+    {
+        get
+        {
             _MinsOffset = _MinsOffset ?? Schema.GetOffset(0x470330BB421BB730);
             return ref _Handle.AsRef<Vector>(_MinsOffset!.Value);
         }
     }
     private static nint? _MaxsOffset;
 
-    public ref Vector Maxs {
-        get {
+    public ref Vector Maxs
+    {
+        get
+        {
             _MaxsOffset = _MaxsOffset ?? Schema.GetOffset(0x470330BBC0C1CE6A);
             return ref _Handle.AsRef<Vector>(_MaxsOffset!.Value);
         }

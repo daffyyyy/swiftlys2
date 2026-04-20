@@ -18,28 +18,33 @@ internal partial class CPathCornerImpl : CPointEntityImpl, CPathCorner
 
     private static nint? _WaitOffset;
 
-    public ref float Wait {
-        get {
+    public ref float Wait
+    {
+        get
+        {
             _WaitOffset = _WaitOffset ?? Schema.GetOffset(0xF74EA45499A062B6);
             return ref _Handle.AsRef<float>(_WaitOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xF74EA4545ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _OnPassOffset;
 
-    public ref CEntityIOOutput OnPass {
-        get {
+    public ref CEntityIOOutput OnPass
+    {
+        get
+        {
             _OnPassOffset = _OnPassOffset ?? Schema.GetOffset(0xF74EA4549B527249);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnPassOffset!.Value);
         }
     }
-
 
 }

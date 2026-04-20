@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCPhysAggregateDataImpl : SchemaClass, 
 {
     public InfoForResourceTypeCPhysAggregateDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

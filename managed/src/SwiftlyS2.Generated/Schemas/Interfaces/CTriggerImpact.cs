@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerImpact : CTriggerMultiple, ISchemaClass<CTriggerImpact>
 {
     static CTriggerImpact ISchemaClass<CTriggerImpact>.From(nint handle) => new CTriggerImpactImpl(handle);
-    static int ISchemaClass<CTriggerImpact>.Size => 2272;
+    static int ISchemaClass<CTriggerImpact>.Size => 2328;
     static string? ISchemaClass<CTriggerImpact>.ClassName => "trigger_impact";
 
 
@@ -21,7 +21,7 @@ public partial interface CTriggerImpact : CTriggerMultiple, ISchemaClass<CTrigge
 
     public ref float Viewkick { get; }
 
-    // CEntityOutputTemplate< Vector, Vector >
+    // CEntityOutputTemplate< Vector >
     public SchemaUntypedField OutputForce { get; }
 
 

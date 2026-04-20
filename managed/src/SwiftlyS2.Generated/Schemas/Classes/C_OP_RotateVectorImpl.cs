@@ -18,60 +18,73 @@ internal partial class C_OP_RotateVectorImpl : CParticleFunctionOperatorImpl, C_
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x43DEF471E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _RotAxisMinOffset;
 
-    public ref Vector RotAxisMin {
-        get {
+    public ref Vector RotAxisMin
+    {
+        get
+        {
             _RotAxisMinOffset = _RotAxisMinOffset ?? Schema.GetOffset(0x43DEF471E51ED175);
             return ref _Handle.AsRef<Vector>(_RotAxisMinOffset!.Value);
         }
     }
     private static nint? _RotAxisMaxOffset;
 
-    public ref Vector RotAxisMax {
-        get {
+    public ref Vector RotAxisMax
+    {
+        get
+        {
             _RotAxisMaxOffset = _RotAxisMaxOffset ?? Schema.GetOffset(0x43DEF471CF32368B);
             return ref _Handle.AsRef<Vector>(_RotAxisMaxOffset!.Value);
         }
     }
     private static nint? _RotRateMinOffset;
 
-    public ref float RotRateMin {
-        get {
+    public ref float RotRateMin
+    {
+        get
+        {
             _RotRateMinOffset = _RotRateMinOffset ?? Schema.GetOffset(0x43DEF4710EE55F62);
             return ref _Handle.AsRef<float>(_RotRateMinOffset!.Value);
         }
     }
     private static nint? _RotRateMaxOffset;
 
-    public ref float RotRateMax {
-        get {
+    public ref float RotRateMax
+    {
+        get
+        {
             _RotRateMaxOffset = _RotRateMaxOffset ?? Schema.GetOffset(0x43DEF471F8D1B508);
             return ref _Handle.AsRef<float>(_RotRateMaxOffset!.Value);
         }
     }
     private static nint? _NormalizeOffset;
 
-    public ref bool Normalize {
-        get {
+    public ref bool Normalize
+    {
+        get
+        {
             _NormalizeOffset = _NormalizeOffset ?? Schema.GetOffset(0x43DEF47148BC424C);
             return ref _Handle.AsRef<bool>(_NormalizeOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public CPerParticleFloatInput Scale {
-        get {
+    public CPerParticleFloatInput Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x43DEF471B731A42F);
             return new CPerParticleFloatInputImpl(_Handle + _ScaleOffset!.Value);
         }
     }
-
 
 }

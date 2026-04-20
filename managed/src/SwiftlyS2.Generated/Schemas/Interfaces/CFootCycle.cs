@@ -14,7 +14,4 @@ public partial interface CFootCycle : CCycleBase, ISchemaClass<CFootCycle>
     static int ISchemaClass<CFootCycle>.Size => 4;
     static string? ISchemaClass<CFootCycle>.ClassName => null;
 
-
-
-
 }

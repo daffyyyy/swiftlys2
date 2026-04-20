@@ -18,68 +18,83 @@ internal partial class CVoiceContainerParameterBlenderImpl : CVoiceContainerBase
 
     private static nint? _FirstSoundOffset;
 
-    public CSoundContainerReference FirstSound {
-        get {
+    public CSoundContainerReference FirstSound
+    {
+        get
+        {
             _FirstSoundOffset = _FirstSoundOffset ?? Schema.GetOffset(0xEC5F1A42666B0138);
             return new CSoundContainerReferenceImpl(_Handle + _FirstSoundOffset!.Value);
         }
     }
     private static nint? _SecondSoundOffset;
 
-    public CSoundContainerReference SecondSound {
-        get {
+    public CSoundContainerReference SecondSound
+    {
+        get
+        {
             _SecondSoundOffset = _SecondSoundOffset ?? Schema.GetOffset(0xEC5F1A42A2BC3E5C);
             return new CSoundContainerReferenceImpl(_Handle + _SecondSoundOffset!.Value);
         }
     }
     private static nint? _EnableOcclusionBlendOffset;
 
-    public ref bool EnableOcclusionBlend {
-        get {
+    public ref bool EnableOcclusionBlend
+    {
+        get
+        {
             _EnableOcclusionBlendOffset = _EnableOcclusionBlendOffset ?? Schema.GetOffset(0xEC5F1A42041C67C2);
             return ref _Handle.AsRef<bool>(_EnableOcclusionBlendOffset!.Value);
         }
     }
     private static nint? _Curve1Offset;
 
-    public SchemaUntypedField Curve1 {
-        get {
+    public SchemaUntypedField Curve1
+    {
+        get
+        {
             _Curve1Offset = _Curve1Offset ?? Schema.GetOffset(0xEC5F1A423B9F58DF);
             return new SchemaUntypedField(_Handle + _Curve1Offset!.Value);
         }
     }
     private static nint? _Curve2Offset;
 
-    public SchemaUntypedField Curve2 {
-        get {
+    public SchemaUntypedField Curve2
+    {
+        get
+        {
             _Curve2Offset = _Curve2Offset ?? Schema.GetOffset(0xEC5F1A423C9F5A72);
             return new SchemaUntypedField(_Handle + _Curve2Offset!.Value);
         }
     }
     private static nint? _EnableDistanceBlendOffset;
 
-    public ref bool EnableDistanceBlend {
-        get {
+    public ref bool EnableDistanceBlend
+    {
+        get
+        {
             _EnableDistanceBlendOffset = _EnableDistanceBlendOffset ?? Schema.GetOffset(0xEC5F1A428EDC5388);
             return ref _Handle.AsRef<bool>(_EnableDistanceBlendOffset!.Value);
         }
     }
     private static nint? _Curve3Offset;
 
-    public SchemaUntypedField Curve3 {
-        get {
+    public SchemaUntypedField Curve3
+    {
+        get
+        {
             _Curve3Offset = _Curve3Offset ?? Schema.GetOffset(0xEC5F1A423D9F5C05);
             return new SchemaUntypedField(_Handle + _Curve3Offset!.Value);
         }
     }
     private static nint? _Curve4Offset;
 
-    public SchemaUntypedField Curve4 {
-        get {
+    public SchemaUntypedField Curve4
+    {
+        get
+        {
             _Curve4Offset = _Curve4Offset ?? Schema.GetOffset(0xEC5F1A42369F5100);
             return new SchemaUntypedField(_Handle + _Curve4Offset!.Value);
         }
     }
-
 
 }

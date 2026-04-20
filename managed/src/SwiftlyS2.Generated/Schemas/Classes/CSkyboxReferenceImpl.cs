@@ -18,20 +18,23 @@ internal partial class CSkyboxReferenceImpl : CBaseEntityImpl, CSkyboxReference
 
     private static nint? _WorldGroupIdOffset;
 
-    public ref uint WorldGroupId {
-        get {
+    public ref uint WorldGroupId
+    {
+        get
+        {
             _WorldGroupIdOffset = _WorldGroupIdOffset ?? Schema.GetOffset(0x98809790BECFAC7);
             return ref _Handle.AsRef<uint>(_WorldGroupIdOffset!.Value);
         }
     }
     private static nint? _SkyCameraOffset;
 
-    public ref CHandle<CSkyCamera> SkyCamera {
-        get {
+    public ref CHandle<CSkyCamera> SkyCamera
+    {
+        get
+        {
             _SkyCameraOffset = _SkyCameraOffset ?? Schema.GetOffset(0x988097906BB5B33);
             return ref _Handle.AsRef<CHandle<CSkyCamera>>(_SkyCameraOffset!.Value);
         }
     }
-
 
 }

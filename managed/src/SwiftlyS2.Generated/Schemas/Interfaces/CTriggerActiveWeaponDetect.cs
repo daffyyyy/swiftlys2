@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerActiveWeaponDetect : CBaseTrigger, ISchemaClass<CTriggerActiveWeaponDetect>
 {
     static CTriggerActiveWeaponDetect ISchemaClass<CTriggerActiveWeaponDetect>.From(nint handle) => new CTriggerActiveWeaponDetectImpl(handle);
-    static int ISchemaClass<CTriggerActiveWeaponDetect>.Size => 2224;
+    static int ISchemaClass<CTriggerActiveWeaponDetect>.Size => 2280;
     static string? ISchemaClass<CTriggerActiveWeaponDetect>.ClassName => "trigger_active_weapon_detect";
 
 

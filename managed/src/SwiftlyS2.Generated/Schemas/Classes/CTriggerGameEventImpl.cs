@@ -18,40 +18,49 @@ internal partial class CTriggerGameEventImpl : CBaseTriggerImpl, CTriggerGameEve
 
     private static nint? _StrStartTouchEventNameOffset;
 
-    public string StrStartTouchEventName {
-        get {
+    public string StrStartTouchEventName
+    {
+        get
+        {
             _StrStartTouchEventNameOffset = _StrStartTouchEventNameOffset ?? Schema.GetOffset(0xF8B194884B1EB67A);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrStartTouchEventNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StrStartTouchEventNameOffset = _StrStartTouchEventNameOffset ?? Schema.GetOffset(0xF8B194884B1EB67A);
             Schema.SetCUtlString(_Handle, _StrStartTouchEventNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _StrEndTouchEventNameOffset;
 
-    public string StrEndTouchEventName {
-        get {
+    public string StrEndTouchEventName
+    {
+        get
+        {
             _StrEndTouchEventNameOffset = _StrEndTouchEventNameOffset ?? Schema.GetOffset(0xF8B194886EDE6893);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrEndTouchEventNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StrEndTouchEventNameOffset = _StrEndTouchEventNameOffset ?? Schema.GetOffset(0xF8B194886EDE6893);
             Schema.SetCUtlString(_Handle, _StrEndTouchEventNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _StrTriggerIDOffset;
 
-    public string StrTriggerID {
-        get {
+    public string StrTriggerID
+    {
+        get
+        {
             _StrTriggerIDOffset = _StrTriggerIDOffset ?? Schema.GetOffset(0xF8B19488EA731D41);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrTriggerIDOffset!.Value));
         }
-        set {
+        set
+        {
             _StrTriggerIDOffset = _StrTriggerIDOffset ?? Schema.GetOffset(0xF8B19488EA731D41);
             Schema.SetCUtlString(_Handle, _StrTriggerIDOffset!.Value, value);
         }
-    } 
+    }
 
     public void StrStartTouchEventNameUpdated() => Schema.Update(_Handle, 0xF8B194884B1EB67A);
     public void StrEndTouchEventNameUpdated() => Schema.Update(_Handle, 0xF8B194886EDE6893);

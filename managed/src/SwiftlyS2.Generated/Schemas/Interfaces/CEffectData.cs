@@ -56,27 +56,5 @@ public partial interface CEffectData : ISchemaClass<CEffectData>
 
     public ref ushort EffectName { get; }
 
-    public ref byte ExplosionType { get; }
 
-    public void OriginUpdated();
-    public void StartUpdated();
-    public void NormalUpdated();
-    public void AnglesUpdated();
-    public void EntityUpdated();
-    public void OtherEntityUpdated();
-    public void ScaleUpdated();
-    public void MagnitudeUpdated();
-    public void RadiusUpdated();
-    public void SurfacePropUpdated();
-    public void EffectIndexUpdated();
-    public void DamageTypeUpdated();
-    public void PenetrateUpdated();
-    public void MaterialUpdated();
-    public void HitBoxUpdated();
-    public void ColorUpdated();
-    public void FlagsUpdated();
-    public void AttachmentIndexUpdated();
-    public void AttachmentNameUpdated();
-    public void EffectNameUpdated();
-    public void ExplosionTypeUpdated();
 }

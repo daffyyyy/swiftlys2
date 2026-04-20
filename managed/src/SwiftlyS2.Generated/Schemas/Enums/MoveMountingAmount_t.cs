@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum MoveMountingAmount_t : uint
 {
- MOVE_MOUNT_NONE = 0,
-
- MOVE_MOUNT_LOW = 1,
-
- MOVE_MOUNT_HIGH = 2,
-
- MOVE_MOUNT_MAXCOUNT = 3,
+    MOVE_MOUNT_NONE = 0,
+    MOVE_MOUNT_LOW = 1,
+    MOVE_MOUNT_HIGH = 2,
+    MOVE_MOUNT_MAXCOUNT = 3,
 }

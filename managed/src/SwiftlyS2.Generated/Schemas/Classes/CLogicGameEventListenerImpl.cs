@@ -18,48 +18,60 @@ internal partial class CLogicGameEventListenerImpl : CLogicalEntityImpl, CLogicG
 
     private static nint? _OnEventFiredOffset;
 
-    public ref CEntityIOOutput OnEventFired {
-        get {
+    public ref CEntityIOOutput OnEventFired
+    {
+        get
+        {
             _OnEventFiredOffset = _OnEventFiredOffset ?? Schema.GetOffset(0xB18EF22E84EA158);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnEventFiredOffset!.Value);
         }
     }
     private static nint? _GameEventNameOffset;
 
-    public string GameEventName {
-        get {
+    public string GameEventName
+    {
+        get
+        {
             _GameEventNameOffset = _GameEventNameOffset ?? Schema.GetOffset(0xB18EF22C6581BAE);
             return Schema.GetString(_Handle.Read<nint>(_GameEventNameOffset!.Value));
         }
-        set {
+        set
+        {
             _GameEventNameOffset = _GameEventNameOffset ?? Schema.GetOffset(0xB18EF22C6581BAE);
             Schema.SetString(_Handle, _GameEventNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _GameEventItemOffset;
 
-    public string GameEventItem {
-        get {
+    public string GameEventItem
+    {
+        get
+        {
             _GameEventItemOffset = _GameEventItemOffset ?? Schema.GetOffset(0xB18EF22ACB669EE);
             return Schema.GetString(_Handle.Read<nint>(_GameEventItemOffset!.Value));
         }
-        set {
+        set
+        {
             _GameEventItemOffset = _GameEventItemOffset ?? Schema.GetOffset(0xB18EF22ACB669EE);
             Schema.SetString(_Handle, _GameEventItemOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EnabledOffset;
 
-    public ref bool Enabled {
-        get {
+    public ref bool Enabled
+    {
+        get
+        {
             _EnabledOffset = _EnabledOffset ?? Schema.GetOffset(0xB18EF226154EB7E);
             return ref _Handle.AsRef<bool>(_EnabledOffset!.Value);
         }
     }
     private static nint? _StartDisabledOffset;
 
-    public ref bool StartDisabled {
-        get {
+    public ref bool StartDisabled
+    {
+        get
+        {
             _StartDisabledOffset = _StartDisabledOffset ?? Schema.GetOffset(0xB18EF2261ED0C4F);
             return ref _Handle.AsRef<bool>(_StartDisabledOffset!.Value);
         }

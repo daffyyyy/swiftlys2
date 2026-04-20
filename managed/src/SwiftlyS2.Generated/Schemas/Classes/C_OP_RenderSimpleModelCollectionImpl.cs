@@ -18,76 +18,93 @@ internal partial class C_OP_RenderSimpleModelCollectionImpl : CParticleFunctionR
 
     private static nint? _CenterOffsetOffset;
 
-    public ref bool CenterOffset {
-        get {
+    public ref bool CenterOffset
+    {
+        get
+        {
             _CenterOffsetOffset = _CenterOffsetOffset ?? Schema.GetOffset(0xFCE69AE8E2C912BF);
             return ref _Handle.AsRef<bool>(_CenterOffsetOffset!.Value);
         }
     }
     private static nint? _ModelOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCModel> Model {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCModel> Model
+    {
+        get
+        {
             _ModelOffset = _ModelOffset ?? Schema.GetOffset(0xFCE69AE8E100C814);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(_ModelOffset!.Value);
         }
     }
     private static nint? _ModelInputOffset;
 
-    public CParticleModelInput ModelInput {
-        get {
+    public CParticleModelInput ModelInput
+    {
+        get
+        {
             _ModelInputOffset = _ModelInputOffset ?? Schema.GetOffset(0xFCE69AE8EB74120E);
             return new CParticleModelInputImpl(_Handle + _ModelInputOffset!.Value);
         }
     }
     private static nint? _SizeCullScaleOffset;
 
-    public CParticleCollectionFloatInput SizeCullScale {
-        get {
+    public CParticleCollectionFloatInput SizeCullScale
+    {
+        get
+        {
             _SizeCullScaleOffset = _SizeCullScaleOffset ?? Schema.GetOffset(0xFCE69AE89AB1415E);
             return new CParticleCollectionFloatInputImpl(_Handle + _SizeCullScaleOffset!.Value);
         }
     }
     private static nint? _DisableShadowsOffset;
 
-    public ref bool DisableShadows {
-        get {
+    public ref bool DisableShadows
+    {
+        get
+        {
             _DisableShadowsOffset = _DisableShadowsOffset ?? Schema.GetOffset(0xFCE69AE8161A1880);
             return ref _Handle.AsRef<bool>(_DisableShadowsOffset!.Value);
         }
     }
     private static nint? _DisableMotionBlurOffset;
 
-    public ref bool DisableMotionBlur {
-        get {
+    public ref bool DisableMotionBlur
+    {
+        get
+        {
             _DisableMotionBlurOffset = _DisableMotionBlurOffset ?? Schema.GetOffset(0xFCE69AE80A3CF924);
             return ref _Handle.AsRef<bool>(_DisableMotionBlurOffset!.Value);
         }
     }
     private static nint? _AcceptsDecalsOffset;
 
-    public ref bool AcceptsDecals {
-        get {
+    public ref bool AcceptsDecals
+    {
+        get
+        {
             _AcceptsDecalsOffset = _AcceptsDecalsOffset ?? Schema.GetOffset(0xFCE69AE83D83AB88);
             return ref _Handle.AsRef<bool>(_AcceptsDecalsOffset!.Value);
         }
     }
     private static nint? _DrawFilterOffset;
 
-    public CPerParticleFloatInput DrawFilter {
-        get {
+    public CPerParticleFloatInput DrawFilter
+    {
+        get
+        {
             _DrawFilterOffset = _DrawFilterOffset ?? Schema.GetOffset(0xFCE69AE8FD854541);
             return new CPerParticleFloatInputImpl(_Handle + _DrawFilterOffset!.Value);
         }
     }
     private static nint? _AngularVelocityFieldOffset;
 
-    public ParticleAttributeIndex_t AngularVelocityField {
-        get {
+    public ParticleAttributeIndex_t AngularVelocityField
+    {
+        get
+        {
             _AngularVelocityFieldOffset = _AngularVelocityFieldOffset ?? Schema.GetOffset(0xFCE69AE81A8493FE);
             return new ParticleAttributeIndex_tImpl(_Handle + _AngularVelocityFieldOffset!.Value);
         }
     }
-
 
 }

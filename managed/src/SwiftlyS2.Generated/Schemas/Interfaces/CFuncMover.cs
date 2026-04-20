@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
 {
     static CFuncMover ISchemaClass<CFuncMover>.From(nint handle) => new CFuncMoverImpl(handle);
-    static int ISchemaClass<CFuncMover>.Size => 2456;
+    static int ISchemaClass<CFuncMover>.Size => 2592;
     static string? ISchemaClass<CFuncMover>.ClassName => "func_mover";
 
 
@@ -24,6 +24,8 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
     public string PathNodeStart { get; set; }
 
     public string PathNodeEnd { get; set; }
+
+    public ref bool IgnoreEndNode { get; }
 
     public ref CFuncMover__Move_t MoveType { get; }
 
@@ -101,13 +103,11 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
 
     public ref float DurationBlendToNewOrientationRan { get; }
 
-    public ref int OriginalOrientationIndex { get; }
-
     public ref bool CreateMovableNavMesh { get; }
 
     public ref bool AllowMovableNavMeshDockingOnEntireEntity { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnNodePassed { get; }
 
     public string OrientationMatchEntityName { get; set; }
@@ -130,9 +130,11 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
 
     public ref CFuncMover__TransitionToPathNodeAction_t TransitionedToPathNodeAction { get; }
 
+    public ref Quaternion TransitionSourceOrientation { get; }
+
     public ref int DelayedTeleportToNode { get; }
 
-    public ref bool IsVerboseLogging { get; }
+    public ref bool IsImGuiLogging { get; }
 
     public ref CHandle<CBaseEntity> FollowEntity { get; }
 
@@ -170,9 +172,13 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
 
     public ref float FollowMoverDistance { get; }
 
+    public ref float FollowMoverRatio { get; }
+
     public ref float FollowMoverCalculatedDistance { get; }
 
     public ref float FollowMoverSpringStrength { get; }
+
+    public ref int FollowMoverConstraintPriority { get; }
 
     public ref bool FollowConstraintsInitialized { get; }
 
@@ -183,6 +189,14 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
     public ref float FollowMoverVelocity { get; }
 
     public GameTick_t TickMovementRan { get; }
+
+    public FuncMoverMovementSummary_t MovementSummary { get; }
+
+    public ref bool StopFromBeginStopTarget { get; }
+
+    public ref bool QueueStop { get; }
+
+    public ref bool QueueStopMoving { get; }
 
 
 }

@@ -18,40 +18,48 @@ internal partial class CMorphConstraintImpl : CBaseConstraintImpl, CMorphConstra
 
     private static nint? _TargetMorphOffset;
 
-    public string TargetMorph {
-        get {
+    public string TargetMorph
+    {
+        get
+        {
             _TargetMorphOffset = _TargetMorphOffset ?? Schema.GetOffset(0xC24859C39FF7D337);
             return Schema.GetCUtlString(_Handle.Read<nint>(_TargetMorphOffset!.Value));
         }
-        set {
+        set
+        {
             _TargetMorphOffset = _TargetMorphOffset ?? Schema.GetOffset(0xC24859C39FF7D337);
             Schema.SetCUtlString(_Handle, _TargetMorphOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _SlaveChannelOffset;
 
-    public ref int SlaveChannel {
-        get {
+    public ref int SlaveChannel
+    {
+        get
+        {
             _SlaveChannelOffset = _SlaveChannelOffset ?? Schema.GetOffset(0xC24859C3A439DE4F);
             return ref _Handle.AsRef<int>(_SlaveChannelOffset!.Value);
         }
     }
     private static nint? _MinOffset;
 
-    public ref float Min {
-        get {
+    public ref float Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0xC24859C33B1A5649);
             return ref _Handle.AsRef<float>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref float Max {
-        get {
+    public ref float Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0xC24859C32D06B887);
             return ref _Handle.AsRef<float>(_MaxOffset!.Value);
         }
     }
-
 
 }

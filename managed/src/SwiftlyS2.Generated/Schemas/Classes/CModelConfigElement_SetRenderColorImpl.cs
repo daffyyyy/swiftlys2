@@ -18,12 +18,13 @@ internal partial class CModelConfigElement_SetRenderColorImpl : CModelConfigElem
 
     private static nint? _ColorOffset;
 
-    public ref Color Color {
-        get {
+    public ref Color Color
+    {
+        get
+        {
             _ColorOffset = _ColorOffset ?? Schema.GetOffset(0x4B560F27D7D017D8);
             return ref _Handle.AsRef<Color>(_ColorOffset!.Value);
         }
     }
-
 
 }

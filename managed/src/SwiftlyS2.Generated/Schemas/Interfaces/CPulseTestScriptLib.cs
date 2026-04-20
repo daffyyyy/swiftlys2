@@ -14,7 +14,4 @@ public partial interface CPulseTestScriptLib : ISchemaClass<CPulseTestScriptLib>
     static int ISchemaClass<CPulseTestScriptLib>.Size => 1;
     static string? ISchemaClass<CPulseTestScriptLib>.ClassName => null;
 
-
-
-
 }

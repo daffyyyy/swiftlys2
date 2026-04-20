@@ -18,32 +18,38 @@ internal partial class CHintMessageImpl : SchemaClass, CHintMessage
 
     private static nint? _HintStringOffset;
 
-    public string HintString {
-        get {
+    public string HintString
+    {
+        get
+        {
             _HintStringOffset = _HintStringOffset ?? Schema.GetOffset(0x7663729E433E2101);
             return Schema.GetString(_Handle.Read<nint>(_HintStringOffset!.Value));
         }
-        set {
+        set
+        {
             _HintStringOffset = _HintStringOffset ?? Schema.GetOffset(0x7663729E433E2101);
             Schema.SetString(_Handle, _HintStringOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ArgsOffset;
 
-    public ref CUtlVector<CString> Args {
-        get {
+    public ref CUtlVector<CString> Args
+    {
+        get
+        {
             _ArgsOffset = _ArgsOffset ?? Schema.GetOffset(0x7663729E5D6040DC);
             return ref _Handle.AsRef<CUtlVector<CString>>(_ArgsOffset!.Value);
         }
     }
     private static nint? _DurationOffset;
 
-    public ref float Duration {
-        get {
+    public ref float Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0x7663729E3D9FF5AD);
             return ref _Handle.AsRef<float>(_DurationOffset!.Value);
         }
     }
-
 
 }

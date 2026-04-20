@@ -18,16 +18,20 @@ internal partial class CHandleTestImpl : CBaseEntityImpl, CHandleTest
 
     private static nint? _HandleOffset;
 
-    public ref CHandle<CBaseEntity> Handle {
-        get {
+    public ref CHandle<CBaseEntity> Handle
+    {
+        get
+        {
             _HandleOffset = _HandleOffset ?? Schema.GetOffset(0xCC5023E89D208453);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_HandleOffset!.Value);
         }
     }
     private static nint? _SendHandleOffset;
 
-    public ref bool SendHandle {
-        get {
+    public ref bool SendHandle
+    {
+        get
+        {
             _SendHandleOffset = _SendHandleOffset ?? Schema.GetOffset(0xCC5023E8EACC8501);
             return ref _Handle.AsRef<bool>(_SendHandleOffset!.Value);
         }

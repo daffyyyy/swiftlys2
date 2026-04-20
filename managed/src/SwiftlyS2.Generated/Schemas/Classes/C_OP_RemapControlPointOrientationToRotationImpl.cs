@@ -18,36 +18,43 @@ internal partial class C_OP_RemapControlPointOrientationToRotationImpl : CPartic
 
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x2CE44E90EB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x2CE44E90E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _OffsetRotOffset;
 
-    public ref float OffsetRot {
-        get {
+    public ref float OffsetRot
+    {
+        get
+        {
             _OffsetRotOffset = _OffsetRotOffset ?? Schema.GetOffset(0x2CE44E90B414F849);
             return ref _Handle.AsRef<float>(_OffsetRotOffset!.Value);
         }
     }
     private static nint? _ComponentOffset;
 
-    public ref int Component {
-        get {
+    public ref int Component
+    {
+        get
+        {
             _ComponentOffset = _ComponentOffset ?? Schema.GetOffset(0x2CE44E90BFD0952C);
             return ref _Handle.AsRef<int>(_ComponentOffset!.Value);
         }
     }
-
 
 }

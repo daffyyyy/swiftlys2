@@ -18,8 +18,10 @@ internal partial class CKnifeImpl : CCSWeaponBaseImpl, CKnife
 
     private static nint? _FirstAttackOffset;
 
-    public ref bool FirstAttack {
-        get {
+    public ref bool FirstAttack
+    {
+        get
+        {
             _FirstAttackOffset = _FirstAttackOffset ?? Schema.GetOffset(0x2551A83B441D83D9);
             return ref _Handle.AsRef<bool>(_FirstAttackOffset!.Value);
         }

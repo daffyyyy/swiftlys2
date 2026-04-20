@@ -18,28 +18,33 @@ internal partial class C_OP_RemapVectorComponentToScalarImpl : CParticleFunction
 
     private static nint? _FieldInputOffset;
 
-    public ParticleAttributeIndex_t FieldInput {
-        get {
+    public ParticleAttributeIndex_t FieldInput
+    {
+        get
+        {
             _FieldInputOffset = _FieldInputOffset ?? Schema.GetOffset(0x39413771AE775669);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldInputOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x39413771E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _ComponentOffset;
 
-    public ref int Component {
-        get {
+    public ref int Component
+    {
+        get
+        {
             _ComponentOffset = _ComponentOffset ?? Schema.GetOffset(0x39413771BFD0952C);
             return ref _Handle.AsRef<int>(_ComponentOffset!.Value);
         }
     }
-
 
 }

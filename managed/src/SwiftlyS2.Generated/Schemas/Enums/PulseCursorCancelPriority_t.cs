@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PulseCursorCancelPriority_t : uint
 {
- None = 0,
-
- CancelOnSucceeded = 1,
-
- SoftCancel = 2,
-
- HardCancel = 3,
+    None = 0,
+    CancelOnSucceeded = 1,
+    SoftCancel = 2,
+    HardCancel = 3,
 }

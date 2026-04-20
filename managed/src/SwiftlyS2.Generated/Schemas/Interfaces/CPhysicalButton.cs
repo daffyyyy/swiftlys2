@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicalButton : CBaseButton, ISchemaClass<CPhysicalButton>
 {
     static CPhysicalButton ISchemaClass<CPhysicalButton>.From(nint handle) => new CPhysicalButtonImpl(handle);
-    static int ISchemaClass<CPhysicalButton>.Size => 2224;
+    static int ISchemaClass<CPhysicalButton>.Size => 2280;
     static string? ISchemaClass<CPhysicalButton>.ClassName => "func_physical_button";
-
-
-
 
 }

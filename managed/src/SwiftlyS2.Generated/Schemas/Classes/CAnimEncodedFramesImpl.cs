@@ -18,44 +18,53 @@ internal partial class CAnimEncodedFramesImpl : SchemaClass, CAnimEncodedFrames
 
     private static nint? _FileNameOffset;
 
-    public ref CBufferString FileName {
-        get {
+    public ref CBufferString FileName
+    {
+        get
+        {
             _FileNameOffset = _FileNameOffset ?? Schema.GetOffset(0x63992F5DC8D68508);
             return ref _Handle.AsRef<CBufferString>(_FileNameOffset!.Value);
         }
     }
     private static nint? _FramesOffset;
 
-    public ref int Frames {
-        get {
+    public ref int Frames
+    {
+        get
+        {
             _FramesOffset = _FramesOffset ?? Schema.GetOffset(0x63992F5DD2101EE3);
             return ref _Handle.AsRef<int>(_FramesOffset!.Value);
         }
     }
     private static nint? _FramesPerBlockOffset;
 
-    public ref int FramesPerBlock {
-        get {
+    public ref int FramesPerBlock
+    {
+        get
+        {
             _FramesPerBlockOffset = _FramesPerBlockOffset ?? Schema.GetOffset(0x63992F5DFFC5A547);
             return ref _Handle.AsRef<int>(_FramesPerBlockOffset!.Value);
         }
     }
     private static nint? _FrameblockArrayOffset;
 
-    public ref CUtlVector<CAnimFrameBlockAnim> FrameblockArray {
-        get {
+    public ref CUtlVector<CAnimFrameBlockAnim> FrameblockArray
+    {
+        get
+        {
             _FrameblockArrayOffset = _FrameblockArrayOffset ?? Schema.GetOffset(0x63992F5D2805E598);
             return ref _Handle.AsRef<CUtlVector<CAnimFrameBlockAnim>>(_FrameblockArrayOffset!.Value);
         }
     }
     private static nint? _UsageDifferencesOffset;
 
-    public CAnimEncodeDifference UsageDifferences {
-        get {
+    public CAnimEncodeDifference UsageDifferences
+    {
+        get
+        {
             _UsageDifferencesOffset = _UsageDifferencesOffset ?? Schema.GetOffset(0x63992F5D27B13638);
             return new CAnimEncodeDifferenceImpl(_Handle + _UsageDifferencesOffset!.Value);
         }
     }
-
 
 }

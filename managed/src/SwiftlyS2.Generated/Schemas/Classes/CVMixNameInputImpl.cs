@@ -18,16 +18,18 @@ internal partial class CVMixNameInputImpl : CVMixInputBaseImpl, CVMixNameInput
 
     private static nint? _DefaultValueOffset;
 
-    public string DefaultValue {
-        get {
+    public string DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x2C2744AFBBE0341F);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DefaultValueOffset!.Value));
         }
-        set {
+        set
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x2C2744AFBBE0341F);
             Schema.SetCUtlString(_Handle, _DefaultValueOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

@@ -18,24 +18,28 @@ internal partial class AnimationSnapshot_tImpl : AnimationSnapshotBase_tImpl, An
 
     private static nint? _EntIndexOffset;
 
-    public ref int EntIndex {
-        get {
+    public ref int EntIndex
+    {
+        get
+        {
             _EntIndexOffset = _EntIndexOffset ?? Schema.GetOffset(0xAC640D3E5558C54A);
             return ref _Handle.AsRef<int>(_EntIndexOffset!.Value);
         }
     }
     private static nint? _ModelNameOffset;
 
-    public string ModelName {
-        get {
+    public string ModelName
+    {
+        get
+        {
             _ModelNameOffset = _ModelNameOffset ?? Schema.GetOffset(0xAC640D3E5D35B6E1);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ModelNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ModelNameOffset = _ModelNameOffset ?? Schema.GetOffset(0xAC640D3E5D35B6E1);
             Schema.SetCUtlString(_Handle, _ModelNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

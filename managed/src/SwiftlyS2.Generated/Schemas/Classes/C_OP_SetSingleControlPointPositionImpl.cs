@@ -18,36 +18,43 @@ internal partial class C_OP_SetSingleControlPointPositionImpl : CParticleFunctio
 
     private static nint? _SetOnceOffset;
 
-    public ref bool SetOnce {
-        get {
+    public ref bool SetOnce
+    {
+        get
+        {
             _SetOnceOffset = _SetOnceOffset ?? Schema.GetOffset(0xFE0B7A4D6B261086);
             return ref _Handle.AsRef<bool>(_SetOnceOffset!.Value);
         }
     }
     private static nint? _CP1Offset;
 
-    public ref int CP1 {
-        get {
+    public ref int CP1
+    {
+        get
+        {
             _CP1Offset = _CP1Offset ?? Schema.GetOffset(0xFE0B7A4DD4B1E579);
             return ref _Handle.AsRef<int>(_CP1Offset!.Value);
         }
     }
     private static nint? _CP1PosOffset;
 
-    public CParticleCollectionVecInput CP1Pos {
-        get {
+    public CParticleCollectionVecInput CP1Pos
+    {
+        get
+        {
             _CP1PosOffset = _CP1PosOffset ?? Schema.GetOffset(0xFE0B7A4D408288D9);
             return new CParticleCollectionVecInputImpl(_Handle + _CP1PosOffset!.Value);
         }
     }
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0xFE0B7A4D3A9ED669);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
-
 
 }

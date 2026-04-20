@@ -14,7 +14,4 @@ public partial interface CAnimEventListener : CAnimEventListenerBase, ISchemaCla
     static int ISchemaClass<CAnimEventListener>.Size => 32;
     static string? ISchemaClass<CAnimEventListener>.ClassName => null;
 
-
-
-
 }

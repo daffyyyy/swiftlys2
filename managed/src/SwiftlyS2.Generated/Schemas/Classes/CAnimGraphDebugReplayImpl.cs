@@ -18,48 +18,58 @@ internal partial class CAnimGraphDebugReplayImpl : SchemaClass, CAnimGraphDebugR
 
     private static nint? _AnimGraphFileNameOffset;
 
-    public string AnimGraphFileName {
-        get {
+    public string AnimGraphFileName
+    {
+        get
+        {
             _AnimGraphFileNameOffset = _AnimGraphFileNameOffset ?? Schema.GetOffset(0x31D5349314D2CC69);
             return Schema.GetCUtlString(_Handle.Read<nint>(_AnimGraphFileNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AnimGraphFileNameOffset = _AnimGraphFileNameOffset ?? Schema.GetOffset(0x31D5349314D2CC69);
             Schema.SetCUtlString(_Handle, _AnimGraphFileNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FrameListOffset;
 
-    public ref CUtlVector<SchemaUntypedField> FrameList {
-        get {
+    public ref CUtlVector<SchemaUntypedField> FrameList
+    {
+        get
+        {
             _FrameListOffset = _FrameListOffset ?? Schema.GetOffset(0x31D5349393EB99F2);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_FrameListOffset!.Value);
         }
     }
     private static nint? _StartIndexOffset;
 
-    public ref int StartIndex {
-        get {
+    public ref int StartIndex
+    {
+        get
+        {
             _StartIndexOffset = _StartIndexOffset ?? Schema.GetOffset(0x31D534939F316D25);
             return ref _Handle.AsRef<int>(_StartIndexOffset!.Value);
         }
     }
     private static nint? _WriteIndexOffset;
 
-    public ref int WriteIndex {
-        get {
+    public ref int WriteIndex
+    {
+        get
+        {
             _WriteIndexOffset = _WriteIndexOffset ?? Schema.GetOffset(0x31D53493161871B8);
             return ref _Handle.AsRef<int>(_WriteIndexOffset!.Value);
         }
     }
     private static nint? _FrameCountOffset;
 
-    public ref int FrameCount {
-        get {
+    public ref int FrameCount
+    {
+        get
+        {
             _FrameCountOffset = _FrameCountOffset ?? Schema.GetOffset(0x31D53493B0C97215);
             return ref _Handle.AsRef<int>(_FrameCountOffset!.Value);
         }
     }
-
 
 }

@@ -25,7 +25,7 @@ public partial interface CLogicCase : CLogicalEntity, ISchemaClass<CLogicCase>
 
     public ISchemaFixedArray<CEntityIOOutput> OnCase { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField OnDefault { get; }
 
 

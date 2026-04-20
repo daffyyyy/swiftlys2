@@ -18,68 +18,83 @@ internal partial class CMorphSetDataImpl : SchemaClass, CMorphSetData
 
     private static nint? _WidthOffset;
 
-    public ref int Width {
-        get {
+    public ref int Width
+    {
+        get
+        {
             _WidthOffset = _WidthOffset ?? Schema.GetOffset(0xE777C2D4119108BB);
             return ref _Handle.AsRef<int>(_WidthOffset!.Value);
         }
     }
     private static nint? _HeightOffset;
 
-    public ref int Height {
-        get {
+    public ref int Height
+    {
+        get
+        {
             _HeightOffset = _HeightOffset ?? Schema.GetOffset(0xE777C2D4CAB61C56);
             return ref _Handle.AsRef<int>(_HeightOffset!.Value);
         }
     }
     private static nint? _BundleTypesOffset;
 
-    public ref CUtlVector<MorphBundleType_t> BundleTypes {
-        get {
+    public ref CUtlVector<MorphBundleType_t> BundleTypes
+    {
+        get
+        {
             _BundleTypesOffset = _BundleTypesOffset ?? Schema.GetOffset(0xE777C2D4B233045A);
             return ref _Handle.AsRef<CUtlVector<MorphBundleType_t>>(_BundleTypesOffset!.Value);
         }
     }
     private static nint? _MorphDatasOffset;
 
-    public ref CUtlVector<CMorphData> MorphDatas {
-        get {
+    public ref CUtlVector<CMorphData> MorphDatas
+    {
+        get
+        {
             _MorphDatasOffset = _MorphDatasOffset ?? Schema.GetOffset(0xE777C2D4C1280FA2);
             return ref _Handle.AsRef<CUtlVector<CMorphData>>(_MorphDatasOffset!.Value);
         }
     }
     private static nint? _TextureAtlasOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureAtlas {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureAtlas
+    {
+        get
+        {
             _TextureAtlasOffset = _TextureAtlasOffset ?? Schema.GetOffset(0xE777C2D4B63CAC4D);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(_TextureAtlasOffset!.Value);
         }
     }
     private static nint? _FlexDescOffset;
 
-    public ref CUtlVector<CFlexDesc> FlexDesc {
-        get {
+    public ref CUtlVector<CFlexDesc> FlexDesc
+    {
+        get
+        {
             _FlexDescOffset = _FlexDescOffset ?? Schema.GetOffset(0xE777C2D4D73F3393);
             return ref _Handle.AsRef<CUtlVector<CFlexDesc>>(_FlexDescOffset!.Value);
         }
     }
     private static nint? _FlexControllersOffset;
 
-    public ref CUtlVector<CFlexController> FlexControllers {
-        get {
+    public ref CUtlVector<CFlexController> FlexControllers
+    {
+        get
+        {
             _FlexControllersOffset = _FlexControllersOffset ?? Schema.GetOffset(0xE777C2D4ABE5EBBB);
             return ref _Handle.AsRef<CUtlVector<CFlexController>>(_FlexControllersOffset!.Value);
         }
     }
     private static nint? _FlexRulesOffset;
 
-    public ref CUtlVector<CFlexRule> FlexRules {
-        get {
+    public ref CUtlVector<CFlexRule> FlexRules
+    {
+        get
+        {
             _FlexRulesOffset = _FlexRulesOffset ?? Schema.GetOffset(0xE777C2D47FE50585);
             return ref _Handle.AsRef<CUtlVector<CFlexRule>>(_FlexRulesOffset!.Value);
         }
     }
-
 
 }

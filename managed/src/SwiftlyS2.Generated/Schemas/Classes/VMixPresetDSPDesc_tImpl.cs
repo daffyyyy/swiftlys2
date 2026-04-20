@@ -18,16 +18,18 @@ internal partial class VMixPresetDSPDesc_tImpl : SchemaClass, VMixPresetDSPDesc_
 
     private static nint? _EffectNameOffset;
 
-    public string EffectName {
-        get {
+    public string EffectName
+    {
+        get
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0xE2659D0B4DF4F5CF);
             return Schema.GetCUtlString(_Handle.Read<nint>(_EffectNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0xE2659D0B4DF4F5CF);
             Schema.SetCUtlString(_Handle, _EffectNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCResourceManifestInternalImpl : Schema
 {
     public InfoForResourceTypeCResourceManifestInternalImpl(nint handle) : base(handle) { }
 
-
-
-
 }

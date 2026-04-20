@@ -18,32 +18,40 @@ internal partial class CSpotlightEndImpl : CBaseModelEntityImpl, CSpotlightEnd
 
     private static nint? _LightScaleOffset;
 
-    public ref float LightScale {
-        get {
+    public ref float LightScale
+    {
+        get
+        {
             _LightScaleOffset = _LightScaleOffset ?? Schema.GetOffset(0x49085AA3E5A1295D);
             return ref _Handle.AsRef<float>(_LightScaleOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x49085AA37C5B0533);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _SpotlightDirOffset;
 
-    public ref Vector SpotlightDir {
-        get {
+    public ref Vector SpotlightDir
+    {
+        get
+        {
             _SpotlightDirOffset = _SpotlightDirOffset ?? Schema.GetOffset(0x49085AA3EE68984A);
             return ref _Handle.AsRef<Vector>(_SpotlightDirOffset!.Value);
         }
     }
     private static nint? _SpotlightOrgOffset;
 
-    public ref Vector SpotlightOrg {
-        get {
+    public ref Vector SpotlightOrg
+    {
+        get
+        {
             _SpotlightOrgOffset = _SpotlightOrgOffset ?? Schema.GetOffset(0x49085AA34C84B367);
             return ref _Handle.AsRef<Vector>(_SpotlightOrgOffset!.Value);
         }

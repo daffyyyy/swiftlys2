@@ -18,36 +18,43 @@ internal partial class C_INIT_CreateFromCPsImpl : CParticleFunctionInitializerIm
 
     private static nint? _IncrementOffset;
 
-    public ref int Increment {
-        get {
+    public ref int Increment
+    {
+        get
+        {
             _IncrementOffset = _IncrementOffset ?? Schema.GetOffset(0x2593FF962359F182);
             return ref _Handle.AsRef<int>(_IncrementOffset!.Value);
         }
     }
     private static nint? _MinCPOffset;
 
-    public ref int MinCP {
-        get {
+    public ref int MinCP
+    {
+        get
+        {
             _MinCPOffset = _MinCPOffset ?? Schema.GetOffset(0x2593FF9663AFBE98);
             return ref _Handle.AsRef<int>(_MinCPOffset!.Value);
         }
     }
     private static nint? _MaxCPOffset;
 
-    public ref int MaxCP {
-        get {
+    public ref int MaxCP
+    {
+        get
+        {
             _MaxCPOffset = _MaxCPOffset ?? Schema.GetOffset(0x2593FF964C307D96);
             return ref _Handle.AsRef<int>(_MaxCPOffset!.Value);
         }
     }
     private static nint? _DynamicCPCountOffset;
 
-    public CParticleCollectionFloatInput DynamicCPCount {
-        get {
+    public CParticleCollectionFloatInput DynamicCPCount
+    {
+        get
+        {
             _DynamicCPCountOffset = _DynamicCPCountOffset ?? Schema.GetOffset(0x2593FF96DF30CE38);
             return new CParticleCollectionFloatInputImpl(_Handle + _DynamicCPCountOffset!.Value);
         }
     }
-
 
 }

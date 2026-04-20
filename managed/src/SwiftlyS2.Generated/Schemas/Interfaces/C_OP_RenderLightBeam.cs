@@ -11,9 +11,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderLightBeam : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderLightBeam>
 {
     static C_OP_RenderLightBeam ISchemaClass<C_OP_RenderLightBeam>.From(nint handle) => new C_OP_RenderLightBeamImpl(handle);
-    static int ISchemaClass<C_OP_RenderLightBeam>.Size => 3752;
+    static int ISchemaClass<C_OP_RenderLightBeam>.Size => 4136;
     static string? ISchemaClass<C_OP_RenderLightBeam>.ClassName => null;
 
+
+    public ref ushort MaxAllowed { get; }
 
     public CParticleCollectionVecInput ColorBlend { get; }
 
@@ -22,6 +24,10 @@ public partial interface C_OP_RenderLightBeam : CParticleFunctionRenderer, ISche
     public CParticleCollectionFloatInput BrightnessLumensPerMeter { get; }
 
     public ref bool CastShadows { get; }
+
+    public ref bool DynamicBounce { get; }
+
+    public CParticleCollectionFloatInput BounceScale { get; }
 
     public CParticleCollectionFloatInput Skirt { get; }
 

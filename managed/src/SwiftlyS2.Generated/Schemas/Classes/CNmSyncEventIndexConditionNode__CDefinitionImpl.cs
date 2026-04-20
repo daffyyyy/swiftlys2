@@ -18,28 +18,33 @@ internal partial class CNmSyncEventIndexConditionNode__CDefinitionImpl : CNmBool
 
     private static nint? _SourceStateNodeIdxOffset;
 
-    public ref short SourceStateNodeIdx {
-        get {
+    public ref short SourceStateNodeIdx
+    {
+        get
+        {
             _SourceStateNodeIdxOffset = _SourceStateNodeIdxOffset ?? Schema.GetOffset(0x343CD5DB63F0228C);
             return ref _Handle.AsRef<short>(_SourceStateNodeIdxOffset!.Value);
         }
     }
     private static nint? _TriggerModeOffset;
 
-    public ref CNmSyncEventIndexConditionNode__TriggerMode_t TriggerMode {
-        get {
+    public ref CNmSyncEventIndexConditionNode__TriggerMode_t TriggerMode
+    {
+        get
+        {
             _TriggerModeOffset = _TriggerModeOffset ?? Schema.GetOffset(0x343CD5DB0431A60C);
             return ref _Handle.AsRef<CNmSyncEventIndexConditionNode__TriggerMode_t>(_TriggerModeOffset!.Value);
         }
     }
     private static nint? _SyncEventIdxOffset;
 
-    public ref int SyncEventIdx {
-        get {
+    public ref int SyncEventIdx
+    {
+        get
+        {
             _SyncEventIdxOffset = _SyncEventIdxOffset ?? Schema.GetOffset(0x343CD5DBC84F66C9);
             return ref _Handle.AsRef<int>(_SyncEventIdxOffset!.Value);
         }
     }
-
 
 }

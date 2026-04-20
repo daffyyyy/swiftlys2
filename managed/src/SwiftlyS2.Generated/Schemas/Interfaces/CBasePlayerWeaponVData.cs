@@ -11,12 +11,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase, ISchemaClass<CBasePlayerWeaponVData>
 {
     static CBasePlayerWeaponVData ISchemaClass<CBasePlayerWeaponVData>.From(nint handle) => new CBasePlayerWeaponVDataImpl(handle);
-    static int ISchemaClass<CBasePlayerWeaponVData>.Size => 1088;
+    static int ISchemaClass<CBasePlayerWeaponVData>.Size => 1312;
     static string? ISchemaClass<CBasePlayerWeaponVData>.ClassName => null;
 
 
     // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
     public SchemaUntypedField WorldModel { get; }
+
+    // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
+    public SchemaUntypedField WorldModelAg2Override { get; }
 
     // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
     public SchemaUntypedField ToolsOnlyOwnerModelName { get; }

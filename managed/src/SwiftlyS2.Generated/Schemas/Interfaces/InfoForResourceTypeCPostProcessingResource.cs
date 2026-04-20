@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCPostProcessingResource : ISchemaCla
     static int ISchemaClass<InfoForResourceTypeCPostProcessingResource>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCPostProcessingResource>.ClassName => null;
 
-
-
-
 }

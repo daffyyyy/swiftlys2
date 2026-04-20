@@ -18,44 +18,53 @@ internal partial class SimpleConstraintSoundProfileImpl : SchemaClass, SimpleCon
 
     private static nint? _KeyPointMinSoundThresholdOffset;
 
-    public ref float KeyPointMinSoundThreshold {
-        get {
+    public ref float KeyPointMinSoundThreshold
+    {
+        get
+        {
             _KeyPointMinSoundThresholdOffset = _KeyPointMinSoundThresholdOffset ?? Schema.GetOffset(0xB768AA94E378B596);
             return ref _Handle.AsRef<float>(_KeyPointMinSoundThresholdOffset!.Value);
         }
     }
     private static nint? _KeyPointMaxSoundThresholdOffset;
 
-    public ref float KeyPointMaxSoundThreshold {
-        get {
+    public ref float KeyPointMaxSoundThreshold
+    {
+        get
+        {
             _KeyPointMaxSoundThresholdOffset = _KeyPointMaxSoundThresholdOffset ?? Schema.GetOffset(0xB768AA944AAE38A8);
             return ref _Handle.AsRef<float>(_KeyPointMaxSoundThresholdOffset!.Value);
         }
     }
     private static nint? _ReversalSoundThresholdSmallOffset;
 
-    public ref float ReversalSoundThresholdSmall {
-        get {
+    public ref float ReversalSoundThresholdSmall
+    {
+        get
+        {
             _ReversalSoundThresholdSmallOffset = _ReversalSoundThresholdSmallOffset ?? Schema.GetOffset(0xB768AA942C3F7268);
             return ref _Handle.AsRef<float>(_ReversalSoundThresholdSmallOffset!.Value);
         }
     }
     private static nint? _ReversalSoundThresholdMediumOffset;
 
-    public ref float ReversalSoundThresholdMedium {
-        get {
+    public ref float ReversalSoundThresholdMedium
+    {
+        get
+        {
             _ReversalSoundThresholdMediumOffset = _ReversalSoundThresholdMediumOffset ?? Schema.GetOffset(0xB768AA943A717C2A);
             return ref _Handle.AsRef<float>(_ReversalSoundThresholdMediumOffset!.Value);
         }
     }
     private static nint? _ReversalSoundThresholdLargeOffset;
 
-    public ref float ReversalSoundThresholdLarge {
-        get {
+    public ref float ReversalSoundThresholdLarge
+    {
+        get
+        {
             _ReversalSoundThresholdLargeOffset = _ReversalSoundThresholdLargeOffset ?? Schema.GetOffset(0xB768AA9410CF5CA0);
             return ref _Handle.AsRef<float>(_ReversalSoundThresholdLargeOffset!.Value);
         }
     }
-
 
 }

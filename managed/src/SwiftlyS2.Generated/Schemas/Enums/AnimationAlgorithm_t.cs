@@ -6,17 +6,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum AnimationAlgorithm_t : byte
 {
- eInvalid = byte.MaxValue,
-
- eNone = 0,
-
- eSequence = 1,
-
- eAnimGraph2 = 2,
-
- eAnimGraph2Secondary = 3,
-
- eAnimGraph1 = 4,
-
- eCount = 5,
+    eInvalid = byte.MaxValue,
+    eNone = 0,
+    eSequence = 1,
+    eAnimGraph2 = 2,
+    eAnimGraph2Secondary = 3,
+    eCount = 4,
 }

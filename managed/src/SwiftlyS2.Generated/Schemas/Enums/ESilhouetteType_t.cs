@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ESilhouetteType_t : uint
 {
- SILHOUETTE_NONE = 0,
-
- SILHOUETTE_LIGHT = 1,
-
- SILHOUETTE_ENVMAP = 2,
-
- SILHOUETTE_LPV = 4,
+    SILHOUETTE_NONE = 0,
+    SILHOUETTE_LIGHT = 1,
+    SILHOUETTE_ENVMAP = 2,
+    SILHOUETTE_LPV = 4,
 }

@@ -18,28 +18,33 @@ internal partial class FeNodeReverseOffset_tImpl : SchemaClass, FeNodeReverseOff
 
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0xA3D68D6AB2913856);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
     private static nint? _BoneCtrlOffset;
 
-    public ref ushort BoneCtrl {
-        get {
+    public ref ushort BoneCtrl
+    {
+        get
+        {
             _BoneCtrlOffset = _BoneCtrlOffset ?? Schema.GetOffset(0xA3D68D6AE9730872);
             return ref _Handle.AsRef<ushort>(_BoneCtrlOffset!.Value);
         }
     }
     private static nint? _TargetNodeOffset;
 
-    public ref ushort TargetNode {
-        get {
+    public ref ushort TargetNode
+    {
+        get
+        {
             _TargetNodeOffset = _TargetNodeOffset ?? Schema.GetOffset(0xA3D68D6A817BD540);
             return ref _Handle.AsRef<ushort>(_TargetNodeOffset!.Value);
         }
     }
-
 
 }

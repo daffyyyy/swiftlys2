@@ -16,7 +16,4 @@ internal partial class CFuncTrackAutoImpl : CFuncTrackChangeImpl, CFuncTrackAuto
 {
     public CFuncTrackAutoImpl(nint handle) : base(handle) { }
 
-
-
-
 }

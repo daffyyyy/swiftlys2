@@ -16,7 +16,4 @@ internal partial class CNullEntityImpl : CBaseEntityImpl, CNullEntity
 {
     public CNullEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

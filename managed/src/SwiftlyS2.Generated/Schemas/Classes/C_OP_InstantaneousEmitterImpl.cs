@@ -18,72 +18,88 @@ internal partial class C_OP_InstantaneousEmitterImpl : CParticleFunctionEmitterI
 
     private static nint? _ParticlesToEmitOffset;
 
-    public CParticleCollectionFloatInput ParticlesToEmit {
-        get {
+    public CParticleCollectionFloatInput ParticlesToEmit
+    {
+        get
+        {
             _ParticlesToEmitOffset = _ParticlesToEmitOffset ?? Schema.GetOffset(0x39132039B1A158C6);
             return new CParticleCollectionFloatInputImpl(_Handle + _ParticlesToEmitOffset!.Value);
         }
     }
     private static nint? _StartTimeOffset;
 
-    public CParticleCollectionFloatInput StartTime {
-        get {
+    public CParticleCollectionFloatInput StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0x3913203967FE9DC4);
             return new CParticleCollectionFloatInputImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
     private static nint? _InitFromKilledParentParticlesOffset;
 
-    public ref float InitFromKilledParentParticles {
-        get {
+    public ref float InitFromKilledParentParticles
+    {
+        get
+        {
             _InitFromKilledParentParticlesOffset = _InitFromKilledParentParticlesOffset ?? Schema.GetOffset(0x39132039269B492F);
             return ref _Handle.AsRef<float>(_InitFromKilledParentParticlesOffset!.Value);
         }
     }
     private static nint? _EventTypeOffset;
 
-    public ref EventTypeSelection_t EventType {
-        get {
+    public ref EventTypeSelection_t EventType
+    {
+        get
+        {
             _EventTypeOffset = _EventTypeOffset ?? Schema.GetOffset(0x39132039E1F9AA93);
             return ref _Handle.AsRef<EventTypeSelection_t>(_EventTypeOffset!.Value);
         }
     }
     private static nint? _ParentParticleScaleOffset;
 
-    public CParticleCollectionFloatInput ParentParticleScale {
-        get {
+    public CParticleCollectionFloatInput ParentParticleScale
+    {
+        get
+        {
             _ParentParticleScaleOffset = _ParentParticleScaleOffset ?? Schema.GetOffset(0x3913203967144ED5);
             return new CParticleCollectionFloatInputImpl(_Handle + _ParentParticleScaleOffset!.Value);
         }
     }
     private static nint? _MaxEmittedPerFrameOffset;
 
-    public ref int MaxEmittedPerFrame {
-        get {
+    public ref int MaxEmittedPerFrame
+    {
+        get
+        {
             _MaxEmittedPerFrameOffset = _MaxEmittedPerFrameOffset ?? Schema.GetOffset(0x3913203970B62EBB);
             return ref _Handle.AsRef<int>(_MaxEmittedPerFrameOffset!.Value);
         }
     }
     private static nint? _SnapshotControlPointOffset;
 
-    public ref int SnapshotControlPoint {
-        get {
+    public ref int SnapshotControlPoint
+    {
+        get
+        {
             _SnapshotControlPointOffset = _SnapshotControlPointOffset ?? Schema.GetOffset(0x39132039192638EC);
             return ref _Handle.AsRef<int>(_SnapshotControlPointOffset!.Value);
         }
     }
     private static nint? _StrSnapshotSubsetOffset;
 
-    public string StrSnapshotSubset {
-        get {
+    public string StrSnapshotSubset
+    {
+        get
+        {
             _StrSnapshotSubsetOffset = _StrSnapshotSubsetOffset ?? Schema.GetOffset(0x39132039BD8A8E5E);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrSnapshotSubsetOffset!.Value));
         }
-        set {
+        set
+        {
             _StrSnapshotSubsetOffset = _StrSnapshotSubsetOffset ?? Schema.GetOffset(0x39132039BD8A8E5E);
             Schema.SetCUtlString(_Handle, _StrSnapshotSubsetOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

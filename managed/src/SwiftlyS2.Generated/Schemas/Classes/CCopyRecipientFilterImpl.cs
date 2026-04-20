@@ -18,28 +18,33 @@ internal partial class CCopyRecipientFilterImpl : SchemaClass, CCopyRecipientFil
 
     private static nint? _FlagsOffset;
 
-    public ref int Flags {
-        get {
+    public ref int Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0xB27F546C36B92FAC);
             return ref _Handle.AsRef<int>(_FlagsOffset!.Value);
         }
     }
     private static nint? _RecipientsOffset;
 
-    public ref CUtlVector<uint> Recipients {
-        get {
+    public ref CUtlVector<uint> Recipients
+    {
+        get
+        {
             _RecipientsOffset = _RecipientsOffset ?? Schema.GetOffset(0xB27F546CDF6522D1);
             return ref _Handle.AsRef<CUtlVector<uint>>(_RecipientsOffset!.Value);
         }
     }
     private static nint? _SlotPlayerExcludedDueToPredictionOffset;
 
-    public ref uint SlotPlayerExcludedDueToPrediction {
-        get {
+    public ref uint SlotPlayerExcludedDueToPrediction
+    {
+        get
+        {
             _SlotPlayerExcludedDueToPredictionOffset = _SlotPlayerExcludedDueToPredictionOffset ?? Schema.GetOffset(0xB27F546CA4F2B69C);
             return ref _Handle.AsRef<uint>(_SlotPlayerExcludedDueToPredictionOffset!.Value);
         }
     }
-
 
 }

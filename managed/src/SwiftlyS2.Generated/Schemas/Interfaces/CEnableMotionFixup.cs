@@ -14,7 +14,4 @@ public partial interface CEnableMotionFixup : CBaseEntity, ISchemaClass<CEnableM
     static int ISchemaClass<CEnableMotionFixup>.Size => 1192;
     static string? ISchemaClass<CEnableMotionFixup>.ClassName => "point_enable_motion_fixup";
 
-
-
-
 }

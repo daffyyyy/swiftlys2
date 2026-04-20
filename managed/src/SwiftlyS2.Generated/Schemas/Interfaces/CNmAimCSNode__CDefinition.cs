@@ -27,11 +27,13 @@ public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefini
 
     public ref short WeaponDropNodeIdx { get; }
 
-    public ref short EnabledNodeIdx { get; }
+    public ref short DisableHandIKNodeIdx { get; }
 
-    public ref float BlendTimeSeconds { get; }
+    public ref short CrouchWeightNodeIdx { get; }
 
-    public ref float ReduceRangeTimeSeconds { get; }
+    public ref float HandIKBlendInTimeSeconds { get; }
+
+    public ref float ActionBlendTimeSeconds { get; }
 
 
 }

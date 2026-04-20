@@ -18,24 +18,28 @@ internal partial class ManifestTestResource_tImpl : SchemaClass, ManifestTestRes
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xFF18C79F4D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xFF18C79F4D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ChildOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeManifestTestResource_t> Child {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeManifestTestResource_t> Child
+    {
+        get
+        {
             _ChildOffset = _ChildOffset ?? Schema.GetOffset(0xFF18C79F2827B07D);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeManifestTestResource_t>>(_ChildOffset!.Value);
         }
     }
-
 
 }

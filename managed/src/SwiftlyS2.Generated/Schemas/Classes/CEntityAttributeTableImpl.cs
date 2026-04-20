@@ -18,20 +18,23 @@ internal partial class CEntityAttributeTableImpl : SchemaClass, CEntityAttribute
 
     private static nint? _AttributesOffset;
 
-    public SchemaUntypedField Attributes {
-        get {
+    public SchemaUntypedField Attributes
+    {
+        get
+        {
             _AttributesOffset = _AttributesOffset ?? Schema.GetOffset(0x5C8260D7E139C14);
             return new SchemaUntypedField(_Handle + _AttributesOffset!.Value);
         }
     }
     private static nint? _NamesOffset;
 
-    public SchemaUntypedField Names {
-        get {
+    public SchemaUntypedField Names
+    {
+        get
+        {
             _NamesOffset = _NamesOffset ?? Schema.GetOffset(0x5C8260D8137270F);
             return new SchemaUntypedField(_Handle + _NamesOffset!.Value);
         }
     }
-
 
 }

@@ -18,91 +18,108 @@ internal partial class CFuncTrackChangeImpl : CFuncPlatRotImpl, CFuncTrackChange
 
     private static nint? _TrackTopOffset;
 
-    public CPathTrack? TrackTop {
-        get {
+    public ref CHandle<CPathTrack> TrackTop
+    {
+        get
+        {
             _TrackTopOffset = _TrackTopOffset ?? Schema.GetOffset(0x25A8A26FF7C2CCBF);
-            var ptr = _Handle.Read<nint>(_TrackTopOffset!.Value);
-            return ptr.IsValidPtr() ? new CPathTrackImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CPathTrack>>(_TrackTopOffset!.Value);
         }
     }
     private static nint? _TrackBottomOffset;
 
-    public CPathTrack? TrackBottom {
-        get {
+    public ref CHandle<CPathTrack> TrackBottom
+    {
+        get
+        {
             _TrackBottomOffset = _TrackBottomOffset ?? Schema.GetOffset(0x25A8A26F37EC7637);
-            var ptr = _Handle.Read<nint>(_TrackBottomOffset!.Value);
-            return ptr.IsValidPtr() ? new CPathTrackImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CPathTrack>>(_TrackBottomOffset!.Value);
         }
     }
     private static nint? _TrainOffset;
 
-    public CFuncTrackTrain? Train {
-        get {
+    public ref CHandle<CFuncTrackTrain> Train
+    {
+        get
+        {
             _TrainOffset = _TrainOffset ?? Schema.GetOffset(0x25A8A26FB8642689);
-            var ptr = _Handle.Read<nint>(_TrainOffset!.Value);
-            return ptr.IsValidPtr() ? new CFuncTrackTrainImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CFuncTrackTrain>>(_TrainOffset!.Value);
         }
     }
     private static nint? _TrackTopNameOffset;
 
-    public string TrackTopName {
-        get {
+    public string TrackTopName
+    {
+        get
+        {
             _TrackTopNameOffset = _TrackTopNameOffset ?? Schema.GetOffset(0x25A8A26FF9BD489C);
             return Schema.GetString(_Handle.Read<nint>(_TrackTopNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TrackTopNameOffset = _TrackTopNameOffset ?? Schema.GetOffset(0x25A8A26FF9BD489C);
             Schema.SetString(_Handle, _TrackTopNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TrackBottomNameOffset;
 
-    public string TrackBottomName {
-        get {
+    public string TrackBottomName
+    {
+        get
+        {
             _TrackBottomNameOffset = _TrackBottomNameOffset ?? Schema.GetOffset(0x25A8A26F7F34C2D4);
             return Schema.GetString(_Handle.Read<nint>(_TrackBottomNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TrackBottomNameOffset = _TrackBottomNameOffset ?? Schema.GetOffset(0x25A8A26F7F34C2D4);
             Schema.SetString(_Handle, _TrackBottomNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TrainNameOffset;
 
-    public string TrainName {
-        get {
+    public string TrainName
+    {
+        get
+        {
             _TrainNameOffset = _TrainNameOffset ?? Schema.GetOffset(0x25A8A26FA3DC4C82);
             return Schema.GetString(_Handle.Read<nint>(_TrainNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TrainNameOffset = _TrainNameOffset ?? Schema.GetOffset(0x25A8A26FA3DC4C82);
             Schema.SetString(_Handle, _TrainNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _CodeOffset;
 
-    public ref TRAIN_CODE Code {
-        get {
+    public ref TRAIN_CODE Code
+    {
+        get
+        {
             _CodeOffset = _CodeOffset ?? Schema.GetOffset(0x25A8A26FB70C9D94);
             return ref _Handle.AsRef<TRAIN_CODE>(_CodeOffset!.Value);
         }
     }
     private static nint? _TargetStateOffset;
 
-    public ref int TargetState {
-        get {
+    public ref int TargetState
+    {
+        get
+        {
             _TargetStateOffset = _TargetStateOffset ?? Schema.GetOffset(0x25A8A26F9EA3444D);
             return ref _Handle.AsRef<int>(_TargetStateOffset!.Value);
         }
     }
     private static nint? _UseOffset;
 
-    public ref int Use {
-        get {
+    public ref int Use
+    {
+        get
+        {
             _UseOffset = _UseOffset ?? Schema.GetOffset(0x25A8A26F45B2B614);
             return ref _Handle.AsRef<int>(_UseOffset!.Value);
         }
     }
-
 
 }

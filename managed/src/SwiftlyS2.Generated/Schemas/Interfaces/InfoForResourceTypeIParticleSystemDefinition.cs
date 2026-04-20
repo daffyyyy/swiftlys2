@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeIParticleSystemDefinition : ISchemaC
     static int ISchemaClass<InfoForResourceTypeIParticleSystemDefinition>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeIParticleSystemDefinition>.ClassName => null;
 
-
-
-
 }

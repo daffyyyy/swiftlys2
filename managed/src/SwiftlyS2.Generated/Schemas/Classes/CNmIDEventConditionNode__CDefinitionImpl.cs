@@ -18,28 +18,33 @@ internal partial class CNmIDEventConditionNode__CDefinitionImpl : CNmBoolValueNo
 
     private static nint? _SourceStateNodeIdxOffset;
 
-    public ref short SourceStateNodeIdx {
-        get {
+    public ref short SourceStateNodeIdx
+    {
+        get
+        {
             _SourceStateNodeIdxOffset = _SourceStateNodeIdxOffset ?? Schema.GetOffset(0xBD2C5F7563F0228C);
             return ref _Handle.AsRef<short>(_SourceStateNodeIdxOffset!.Value);
         }
     }
     private static nint? _EventConditionRulesOffset;
 
-    public CNmBitFlags EventConditionRules {
-        get {
+    public CNmBitFlags EventConditionRules
+    {
+        get
+        {
             _EventConditionRulesOffset = _EventConditionRulesOffset ?? Schema.GetOffset(0xBD2C5F75A904315F);
             return new CNmBitFlagsImpl(_Handle + _EventConditionRulesOffset!.Value);
         }
     }
     private static nint? _EventIDsOffset;
 
-    public SchemaUntypedField EventIDs {
-        get {
+    public SchemaUntypedField EventIDs
+    {
+        get
+        {
             _EventIDsOffset = _EventIDsOffset ?? Schema.GetOffset(0xBD2C5F75E7543F93);
             return new SchemaUntypedField(_Handle + _EventIDsOffset!.Value);
         }
     }
-
 
 }

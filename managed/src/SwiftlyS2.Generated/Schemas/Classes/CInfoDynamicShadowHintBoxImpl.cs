@@ -18,20 +18,23 @@ internal partial class CInfoDynamicShadowHintBoxImpl : CInfoDynamicShadowHintImp
 
     private static nint? _BoxMinsOffset;
 
-    public ref Vector BoxMins {
-        get {
+    public ref Vector BoxMins
+    {
+        get
+        {
             _BoxMinsOffset = _BoxMinsOffset ?? Schema.GetOffset(0xFD9FEBD8201373);
             return ref _Handle.AsRef<Vector>(_BoxMinsOffset!.Value);
         }
     }
     private static nint? _BoxMaxsOffset;
 
-    public ref Vector BoxMaxs {
-        get {
+    public ref Vector BoxMaxs
+    {
+        get
+        {
             _BoxMaxsOffset = _BoxMaxsOffset ?? Schema.GetOffset(0xFD9FEB817A3B31);
             return ref _Handle.AsRef<Vector>(_BoxMaxsOffset!.Value);
         }
     }
-
 
 }

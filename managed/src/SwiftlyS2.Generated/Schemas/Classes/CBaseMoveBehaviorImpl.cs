@@ -18,96 +18,113 @@ internal partial class CBaseMoveBehaviorImpl : CPathKeyFrameImpl, CBaseMoveBehav
 
     private static nint? _PositionInterpolatorOffset;
 
-    public ref int PositionInterpolator {
-        get {
+    public ref int PositionInterpolator
+    {
+        get
+        {
             _PositionInterpolatorOffset = _PositionInterpolatorOffset ?? Schema.GetOffset(0x4C94E06076D631CA);
             return ref _Handle.AsRef<int>(_PositionInterpolatorOffset!.Value);
         }
     }
     private static nint? _RotationInterpolatorOffset;
 
-    public ref int RotationInterpolator {
-        get {
+    public ref int RotationInterpolator
+    {
+        get
+        {
             _RotationInterpolatorOffset = _RotationInterpolatorOffset ?? Schema.GetOffset(0x4C94E060D5ABDED3);
             return ref _Handle.AsRef<int>(_RotationInterpolatorOffset!.Value);
         }
     }
     private static nint? _AnimStartTimeOffset;
 
-    public ref float AnimStartTime {
-        get {
+    public ref float AnimStartTime
+    {
+        get
+        {
             _AnimStartTimeOffset = _AnimStartTimeOffset ?? Schema.GetOffset(0x4C94E060C2FA1CCF);
             return ref _Handle.AsRef<float>(_AnimStartTimeOffset!.Value);
         }
     }
     private static nint? _AnimEndTimeOffset;
 
-    public ref float AnimEndTime {
-        get {
+    public ref float AnimEndTime
+    {
+        get
+        {
             _AnimEndTimeOffset = _AnimEndTimeOffset ?? Schema.GetOffset(0x4C94E06042C3E66A);
             return ref _Handle.AsRef<float>(_AnimEndTimeOffset!.Value);
         }
     }
     private static nint? _AverageSpeedAcrossFrameOffset;
 
-    public ref float AverageSpeedAcrossFrame {
-        get {
+    public ref float AverageSpeedAcrossFrame
+    {
+        get
+        {
             _AverageSpeedAcrossFrameOffset = _AverageSpeedAcrossFrameOffset ?? Schema.GetOffset(0x4C94E0603F4A5B51);
             return ref _Handle.AsRef<float>(_AverageSpeedAcrossFrameOffset!.Value);
         }
     }
     private static nint? _CurrentKeyFrameOffset;
 
-    public CPathKeyFrame? CurrentKeyFrame {
-        get {
+    public ref CHandle<CPathKeyFrame> CurrentKeyFrame
+    {
+        get
+        {
             _CurrentKeyFrameOffset = _CurrentKeyFrameOffset ?? Schema.GetOffset(0x4C94E060AF22FD24);
-            var ptr = _Handle.Read<nint>(_CurrentKeyFrameOffset!.Value);
-            return ptr.IsValidPtr() ? new CPathKeyFrameImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CPathKeyFrame>>(_CurrentKeyFrameOffset!.Value);
         }
     }
     private static nint? _TargetKeyFrameOffset;
 
-    public CPathKeyFrame? TargetKeyFrame {
-        get {
+    public ref CHandle<CPathKeyFrame> TargetKeyFrame
+    {
+        get
+        {
             _TargetKeyFrameOffset = _TargetKeyFrameOffset ?? Schema.GetOffset(0x4C94E0606B9E13EA);
-            var ptr = _Handle.Read<nint>(_TargetKeyFrameOffset!.Value);
-            return ptr.IsValidPtr() ? new CPathKeyFrameImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CPathKeyFrame>>(_TargetKeyFrameOffset!.Value);
         }
     }
     private static nint? _PreKeyFrameOffset;
 
-    public CPathKeyFrame? PreKeyFrame {
-        get {
+    public ref CHandle<CPathKeyFrame> PreKeyFrame
+    {
+        get
+        {
             _PreKeyFrameOffset = _PreKeyFrameOffset ?? Schema.GetOffset(0x4C94E0609753526C);
-            var ptr = _Handle.Read<nint>(_PreKeyFrameOffset!.Value);
-            return ptr.IsValidPtr() ? new CPathKeyFrameImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CPathKeyFrame>>(_PreKeyFrameOffset!.Value);
         }
     }
     private static nint? _PostKeyFrameOffset;
 
-    public CPathKeyFrame? PostKeyFrame {
-        get {
+    public ref CHandle<CPathKeyFrame> PostKeyFrame
+    {
+        get
+        {
             _PostKeyFrameOffset = _PostKeyFrameOffset ?? Schema.GetOffset(0x4C94E06033EC8ED5);
-            var ptr = _Handle.Read<nint>(_PostKeyFrameOffset!.Value);
-            return ptr.IsValidPtr() ? new CPathKeyFrameImpl(ptr) : null;
+            return ref _Handle.AsRef<CHandle<CPathKeyFrame>>(_PostKeyFrameOffset!.Value);
         }
     }
     private static nint? _TimeIntoFrameOffset;
 
-    public ref float TimeIntoFrame {
-        get {
+    public ref float TimeIntoFrame
+    {
+        get
+        {
             _TimeIntoFrameOffset = _TimeIntoFrameOffset ?? Schema.GetOffset(0x4C94E060C6B111CD);
             return ref _Handle.AsRef<float>(_TimeIntoFrameOffset!.Value);
         }
     }
     private static nint? _DirectionOffset;
 
-    public ref int Direction {
-        get {
+    public ref int Direction
+    {
+        get
+        {
             _DirectionOffset = _DirectionOffset ?? Schema.GetOffset(0x4C94E0606BDD23E5);
             return ref _Handle.AsRef<int>(_DirectionOffset!.Value);
         }
     }
-
 
 }

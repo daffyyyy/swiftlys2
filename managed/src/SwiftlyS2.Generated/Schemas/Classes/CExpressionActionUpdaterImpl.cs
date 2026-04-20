@@ -18,28 +18,33 @@ internal partial class CExpressionActionUpdaterImpl : CAnimActionUpdaterImpl, CE
 
     private static nint? _ParamOffset;
 
-    public CAnimParamHandle Param {
-        get {
+    public CAnimParamHandle Param
+    {
+        get
+        {
             _ParamOffset = _ParamOffset ?? Schema.GetOffset(0x3B8502F3679286A4);
             return new CAnimParamHandleImpl(_Handle + _ParamOffset!.Value);
         }
     }
     private static nint? _ParamTypeOffset;
 
-    public ref AnimParamType_t ParamType {
-        get {
+    public ref AnimParamType_t ParamType
+    {
+        get
+        {
             _ParamTypeOffset = _ParamTypeOffset ?? Schema.GetOffset(0x3B8502F3F05DFDD9);
             return ref _Handle.AsRef<AnimParamType_t>(_ParamTypeOffset!.Value);
         }
     }
     private static nint? _ScriptOffset;
 
-    public AnimScriptHandle Script {
-        get {
+    public AnimScriptHandle Script
+    {
+        get
+        {
             _ScriptOffset = _ScriptOffset ?? Schema.GetOffset(0x3B8502F329D70FB0);
             return new AnimScriptHandleImpl(_Handle + _ScriptOffset!.Value);
         }
     }
-
 
 }

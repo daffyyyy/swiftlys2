@@ -16,7 +16,4 @@ internal partial class CParticleCollectionRendererFloatInputImpl : CParticleColl
 {
     public CParticleCollectionRendererFloatInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

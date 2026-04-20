@@ -16,7 +16,4 @@ internal partial class CNmControlParameterTargetNode__CDefinitionImpl : CNmTarge
 {
     public CNmControlParameterTargetNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

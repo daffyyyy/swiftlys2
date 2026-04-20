@@ -18,12 +18,13 @@ internal partial class PulseRuntimeStateOffset_tImpl : SchemaClass, PulseRuntime
 
     private static nint? _ValueOffset;
 
-    public ref ushort Value {
-        get {
+    public ref ushort Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x6DB06DE3DCB0894A);
             return ref _Handle.AsRef<ushort>(_ValueOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CBaseAnimGraphDestructibleParts_GraphControllerImpl : CAn
 {
     public CBaseAnimGraphDestructibleParts_GraphControllerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

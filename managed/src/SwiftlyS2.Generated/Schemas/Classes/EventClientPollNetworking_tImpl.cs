@@ -18,12 +18,13 @@ internal partial class EventClientPollNetworking_tImpl : SchemaClass, EventClien
 
     private static nint? _TickCountOffset;
 
-    public ref int TickCount {
-        get {
+    public ref int TickCount
+    {
+        get
+        {
             _TickCountOffset = _TickCountOffset ?? Schema.GetOffset(0xE9C02F00E25E6B27);
             return ref _Handle.AsRef<int>(_TickCountOffset!.Value);
         }
     }
-
 
 }

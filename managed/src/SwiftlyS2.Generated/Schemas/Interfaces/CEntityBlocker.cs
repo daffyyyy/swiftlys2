@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityBlocker : CBaseModelEntity, ISchemaClass<CEntityBlocker>
 {
     static CEntityBlocker ISchemaClass<CEntityBlocker>.From(nint handle) => new CEntityBlockerImpl(handle);
-    static int ISchemaClass<CEntityBlocker>.Size => 1840;
+    static int ISchemaClass<CEntityBlocker>.Size => 1896;
     static string? ISchemaClass<CEntityBlocker>.ClassName => "entity_blocker";
-
-
-
 
 }

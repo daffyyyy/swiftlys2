@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCCompositeMaterialKit : ISchemaClass
     static int ISchemaClass<InfoForResourceTypeCCompositeMaterialKit>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCCompositeMaterialKit>.ClassName => null;
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCVDataResourceImpl : SchemaClass, Info
 {
     public InfoForResourceTypeCVDataResourceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,28 +18,33 @@ internal partial class CStaticPoseCacheImpl : SchemaClass, CStaticPoseCache
 
     private static nint? _PosesOffset;
 
-    public ref CUtlVector<CCachedPose> Poses {
-        get {
+    public ref CUtlVector<CCachedPose> Poses
+    {
+        get
+        {
             _PosesOffset = _PosesOffset ?? Schema.GetOffset(0x2223EF1DB851C9F5);
             return ref _Handle.AsRef<CUtlVector<CCachedPose>>(_PosesOffset!.Value);
         }
     }
     private static nint? _BoneCountOffset;
 
-    public ref int BoneCount {
-        get {
+    public ref int BoneCount
+    {
+        get
+        {
             _BoneCountOffset = _BoneCountOffset ?? Schema.GetOffset(0x2223EF1D71FE39A2);
             return ref _Handle.AsRef<int>(_BoneCountOffset!.Value);
         }
     }
     private static nint? _MorphCountOffset;
 
-    public ref int MorphCount {
-        get {
+    public ref int MorphCount
+    {
+        get
+        {
             _MorphCountOffset = _MorphCountOffset ?? Schema.GetOffset(0x2223EF1D32C62DD0);
             return ref _Handle.AsRef<int>(_MorphCountOffset!.Value);
         }
     }
-
 
 }

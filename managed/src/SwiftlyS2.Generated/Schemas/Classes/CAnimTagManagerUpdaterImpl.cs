@@ -18,12 +18,13 @@ internal partial class CAnimTagManagerUpdaterImpl : SchemaClass, CAnimTagManager
 
     private static nint? _TagsOffset;
 
-    public ref CUtlVector<SchemaUntypedField> Tags {
-        get {
+    public ref CUtlVector<SchemaUntypedField> Tags
+    {
+        get
+        {
             _TagsOffset = _TagsOffset ?? Schema.GetOffset(0xF09D3FB1B46C8540);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_TagsOffset!.Value);
         }
     }
-
 
 }

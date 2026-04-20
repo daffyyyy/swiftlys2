@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCDOTAPatchNotesListImpl : SchemaClass,
 {
     public InfoForResourceTypeCDOTAPatchNotesListImpl(nint handle) : base(handle) { }
 
-
-
-
 }

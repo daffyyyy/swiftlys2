@@ -18,12 +18,13 @@ internal partial class NmPercent_tImpl : SchemaClass, NmPercent_t
 
     private static nint? _ValueOffset;
 
-    public ref float Value {
-        get {
+    public ref float Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xF12966B68DFCB984);
             return ref _Handle.AsRef<float>(_ValueOffset!.Value);
         }
     }
-
 
 }

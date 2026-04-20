@@ -16,7 +16,4 @@ internal partial class CPulseCell_BaseStateImpl : CPulseCell_BaseYieldingInflowI
 {
     public CPulseCell_BaseStateImpl(nint handle) : base(handle) { }
 
-
-
-
 }

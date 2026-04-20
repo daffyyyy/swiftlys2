@@ -14,7 +14,4 @@ public partial interface CCSMinimapBoundary : CBaseEntity, ISchemaClass<CCSMinim
     static int ISchemaClass<CCSMinimapBoundary>.Size => 1192;
     static string? ISchemaClass<CCSMinimapBoundary>.ClassName => "cs_minimap_boundary";
 
-
-
-
 }

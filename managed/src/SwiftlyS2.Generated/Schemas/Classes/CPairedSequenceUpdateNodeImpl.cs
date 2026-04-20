@@ -18,12 +18,13 @@ internal partial class CPairedSequenceUpdateNodeImpl : CSequenceUpdateNodeBaseIm
 
     private static nint? _PairedSequenceRoleOffset;
 
-    public ref CGlobalSymbol PairedSequenceRole {
-        get {
+    public ref CGlobalSymbol PairedSequenceRole
+    {
+        get
+        {
             _PairedSequenceRoleOffset = _PairedSequenceRoleOffset ?? Schema.GetOffset(0xB2B6F0EB4A4CFB12);
             return ref _Handle.AsRef<CGlobalSymbol>(_PairedSequenceRoleOffset!.Value);
         }
     }
-
 
 }

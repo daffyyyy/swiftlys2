@@ -18,12 +18,13 @@ internal partial class CSymbolAnimParameterImpl : CConcreteAnimParameterImpl, CS
 
     private static nint? _DefaultValueOffset;
 
-    public ref CGlobalSymbol DefaultValue {
-        get {
+    public ref CGlobalSymbol DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0xA3486AA2BBE0341F);
             return ref _Handle.AsRef<CGlobalSymbol>(_DefaultValueOffset!.Value);
         }
     }
-
 
 }

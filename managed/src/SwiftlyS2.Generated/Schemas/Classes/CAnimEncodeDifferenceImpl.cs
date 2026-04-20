@@ -18,60 +18,73 @@ internal partial class CAnimEncodeDifferenceImpl : SchemaClass, CAnimEncodeDiffe
 
     private static nint? _BoneArrayOffset;
 
-    public ref CUtlVector<CAnimBoneDifference> BoneArray {
-        get {
+    public ref CUtlVector<CAnimBoneDifference> BoneArray
+    {
+        get
+        {
             _BoneArrayOffset = _BoneArrayOffset ?? Schema.GetOffset(0x65474B2E80273F0C);
             return ref _Handle.AsRef<CUtlVector<CAnimBoneDifference>>(_BoneArrayOffset!.Value);
         }
     }
     private static nint? _MorphArrayOffset;
 
-    public ref CUtlVector<CAnimMorphDifference> MorphArray {
-        get {
+    public ref CUtlVector<CAnimMorphDifference> MorphArray
+    {
+        get
+        {
             _MorphArrayOffset = _MorphArrayOffset ?? Schema.GetOffset(0x65474B2E8C6827E6);
             return ref _Handle.AsRef<CUtlVector<CAnimMorphDifference>>(_MorphArrayOffset!.Value);
         }
     }
     private static nint? _UserArrayOffset;
 
-    public ref CUtlVector<CAnimUserDifference> UserArray {
-        get {
+    public ref CUtlVector<CAnimUserDifference> UserArray
+    {
+        get
+        {
             _UserArrayOffset = _UserArrayOffset ?? Schema.GetOffset(0x65474B2EFBDB0C13);
             return ref _Handle.AsRef<CUtlVector<CAnimUserDifference>>(_UserArrayOffset!.Value);
         }
     }
     private static nint? _HasRotationBitArrayOffset;
 
-    public ref CUtlVector<byte> HasRotationBitArray {
-        get {
+    public ref CUtlVector<byte> HasRotationBitArray
+    {
+        get
+        {
             _HasRotationBitArrayOffset = _HasRotationBitArrayOffset ?? Schema.GetOffset(0x65474B2E6AD7DEA5);
             return ref _Handle.AsRef<CUtlVector<byte>>(_HasRotationBitArrayOffset!.Value);
         }
     }
     private static nint? _HasMovementBitArrayOffset;
 
-    public ref CUtlVector<byte> HasMovementBitArray {
-        get {
+    public ref CUtlVector<byte> HasMovementBitArray
+    {
+        get
+        {
             _HasMovementBitArrayOffset = _HasMovementBitArrayOffset ?? Schema.GetOffset(0x65474B2EAD247FA6);
             return ref _Handle.AsRef<CUtlVector<byte>>(_HasMovementBitArrayOffset!.Value);
         }
     }
     private static nint? _HasMorphBitArrayOffset;
 
-    public ref CUtlVector<byte> HasMorphBitArray {
-        get {
+    public ref CUtlVector<byte> HasMorphBitArray
+    {
+        get
+        {
             _HasMorphBitArrayOffset = _HasMorphBitArrayOffset ?? Schema.GetOffset(0x65474B2E5F84C5D3);
             return ref _Handle.AsRef<CUtlVector<byte>>(_HasMorphBitArrayOffset!.Value);
         }
     }
     private static nint? _HasUserBitArrayOffset;
 
-    public ref CUtlVector<byte> HasUserBitArray {
-        get {
+    public ref CUtlVector<byte> HasUserBitArray
+    {
+        get
+        {
             _HasUserBitArrayOffset = _HasUserBitArrayOffset ?? Schema.GetOffset(0x65474B2EB41ED7E0);
             return ref _Handle.AsRef<CUtlVector<byte>>(_HasUserBitArrayOffset!.Value);
         }
     }
-
 
 }

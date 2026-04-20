@@ -16,7 +16,4 @@ internal partial class IParticleEffectImpl : SchemaClass, IParticleEffect
 {
     public IParticleEffectImpl(nint handle) : base(handle) { }
 
-
-
-
 }

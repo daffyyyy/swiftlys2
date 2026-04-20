@@ -18,32 +18,40 @@ internal partial class CRagdollManagerImpl : CBaseEntityImpl, CRagdollManager
 
     private static nint? _CurrentMaxRagdollCountOffset;
 
-    public ref byte CurrentMaxRagdollCount {
-        get {
+    public ref byte CurrentMaxRagdollCount
+    {
+        get
+        {
             _CurrentMaxRagdollCountOffset = _CurrentMaxRagdollCountOffset ?? Schema.GetOffset(0x3C67654C8544F4A7);
             return ref _Handle.AsRef<byte>(_CurrentMaxRagdollCountOffset!.Value);
         }
     }
     private static nint? _MaxRagdollCountOffset;
 
-    public ref int MaxRagdollCount {
-        get {
+    public ref int MaxRagdollCount
+    {
+        get
+        {
             _MaxRagdollCountOffset = _MaxRagdollCountOffset ?? Schema.GetOffset(0x3C67654CC3A8C254);
             return ref _Handle.AsRef<int>(_MaxRagdollCountOffset!.Value);
         }
     }
     private static nint? _SaveImportantOffset;
 
-    public ref bool SaveImportant {
-        get {
+    public ref bool SaveImportant
+    {
+        get
+        {
             _SaveImportantOffset = _SaveImportantOffset ?? Schema.GetOffset(0x3C67654CB7710746);
             return ref _Handle.AsRef<bool>(_SaveImportantOffset!.Value);
         }
     }
     private static nint? _CanTakeDamageOffset;
 
-    public ref bool CanTakeDamage {
-        get {
+    public ref bool CanTakeDamage
+    {
+        get
+        {
             _CanTakeDamageOffset = _CanTakeDamageOffset ?? Schema.GetOffset(0x3C67654C64446233);
             return ref _Handle.AsRef<bool>(_CanTakeDamageOffset!.Value);
         }

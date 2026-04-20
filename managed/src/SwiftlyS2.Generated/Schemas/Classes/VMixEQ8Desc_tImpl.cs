@@ -16,9 +16,9 @@ internal partial class VMixEQ8Desc_tImpl : SchemaClass, VMixEQ8Desc_t
 {
     public VMixEQ8Desc_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaClassFixedArray<VMixFilterDesc_t> Stages {
+    public ISchemaClassFixedArray<VMixFilterDesc_t> Stages
+    {
         get => new SchemaClassFixedArray<VMixFilterDesc_t>(_Handle, 0xBF8A6F07B955349A, 8, 16, 4);
     }
-
 
 }

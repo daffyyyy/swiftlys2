@@ -18,12 +18,13 @@ internal partial class C_OP_ShapeMatchingConstraintImpl : CParticleFunctionConst
 
     private static nint? _ShapeRestorationTimeOffset;
 
-    public ref float ShapeRestorationTime {
-        get {
+    public ref float ShapeRestorationTime
+    {
+        get
+        {
             _ShapeRestorationTimeOffset = _ShapeRestorationTimeOffset ?? Schema.GetOffset(0x4FF42FB6A86E05A9);
             return ref _Handle.AsRef<float>(_ShapeRestorationTimeOffset!.Value);
         }
     }
-
 
 }

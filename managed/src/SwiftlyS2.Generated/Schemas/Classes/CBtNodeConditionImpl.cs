@@ -18,12 +18,13 @@ internal partial class CBtNodeConditionImpl : CBtNodeDecoratorImpl, CBtNodeCondi
 
     private static nint? _NegatedOffset;
 
-    public ref bool Negated {
-        get {
+    public ref bool Negated
+    {
+        get
+        {
             _NegatedOffset = _NegatedOffset ?? Schema.GetOffset(0xD9C2E7ED3803BF0D);
             return ref _Handle.AsRef<bool>(_NegatedOffset!.Value);
         }
     }
-
 
 }

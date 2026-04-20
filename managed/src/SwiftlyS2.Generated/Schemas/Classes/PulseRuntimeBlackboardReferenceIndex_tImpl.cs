@@ -18,12 +18,13 @@ internal partial class PulseRuntimeBlackboardReferenceIndex_tImpl : SchemaClass,
 
     private static nint? _ValueOffset;
 
-    public ref short Value {
-        get {
+    public ref short Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xE01C0CE3DCB0894A);
             return ref _Handle.AsRef<short>(_ValueOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class C_OP_WindForceImpl : CParticleFunctionForceImpl, C_OP_Win
 
     private static nint? _ForceOffset;
 
-    public ref Vector Force {
-        get {
+    public ref Vector Force
+    {
+        get
+        {
             _ForceOffset = _ForceOffset ?? Schema.GetOffset(0xBBD251C2E530B0A8);
             return ref _Handle.AsRef<Vector>(_ForceOffset!.Value);
         }
     }
-
 
 }

@@ -18,16 +18,18 @@ internal partial class CRuleEntityImpl : CBaseModelEntityImpl, CRuleEntity
 
     private static nint? _MasterOffset;
 
-    public string Master {
-        get {
+    public string Master
+    {
+        get
+        {
             _MasterOffset = _MasterOffset ?? Schema.GetOffset(0x5C9BFE2FAC57FE5B);
             return Schema.GetString(_Handle.Read<nint>(_MasterOffset!.Value));
         }
-        set {
+        set
+        {
             _MasterOffset = _MasterOffset ?? Schema.GetOffset(0x5C9BFE2FAC57FE5B);
             Schema.SetString(_Handle, _MasterOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

@@ -16,7 +16,4 @@ internal partial class CItemKevlarImpl : CItemImpl, CItemKevlar
 {
     public CItemKevlarImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CNmControlParameterFloatNode__CDefinitionImpl : CNmFloatV
 {
     public CNmControlParameterFloatNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

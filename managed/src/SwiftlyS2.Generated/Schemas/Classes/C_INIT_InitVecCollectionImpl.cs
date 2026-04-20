@@ -18,20 +18,23 @@ internal partial class C_INIT_InitVecCollectionImpl : CParticleFunctionInitializ
 
     private static nint? _InputValueOffset;
 
-    public CParticleCollectionVecInput InputValue {
-        get {
+    public CParticleCollectionVecInput InputValue
+    {
+        get
+        {
             _InputValueOffset = _InputValueOffset ?? Schema.GetOffset(0x2F5AD47234445438);
             return new CParticleCollectionVecInputImpl(_Handle + _InputValueOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ParticleAttributeIndex_t OutputField {
-        get {
+    public ParticleAttributeIndex_t OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0x2F5AD472324F6F74);
             return new ParticleAttributeIndex_tImpl(_Handle + _OutputFieldOffset!.Value);
         }
     }
-
 
 }

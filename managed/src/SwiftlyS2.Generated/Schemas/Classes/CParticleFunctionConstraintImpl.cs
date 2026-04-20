@@ -16,7 +16,4 @@ internal partial class CParticleFunctionConstraintImpl : CParticleFunctionImpl, 
 {
     public CParticleFunctionConstraintImpl(nint handle) : base(handle) { }
 
-
-
-
 }

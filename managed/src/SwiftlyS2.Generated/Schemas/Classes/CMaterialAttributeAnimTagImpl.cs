@@ -18,40 +18,48 @@ internal partial class CMaterialAttributeAnimTagImpl : CAnimTagBaseImpl, CMateri
 
     private static nint? _AttributeNameOffset;
 
-    public string AttributeName {
-        get {
+    public string AttributeName
+    {
+        get
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x509D90A81408864C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_AttributeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x509D90A81408864C);
             Schema.SetCUtlString(_Handle, _AttributeNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AttributeTypeOffset;
 
-    public ref MatterialAttributeTagType_t AttributeType {
-        get {
+    public ref MatterialAttributeTagType_t AttributeType
+    {
+        get
+        {
             _AttributeTypeOffset = _AttributeTypeOffset ?? Schema.GetOffset(0x509D90A84243CC37);
             return ref _Handle.AsRef<MatterialAttributeTagType_t>(_AttributeTypeOffset!.Value);
         }
     }
     private static nint? _ValueOffset;
 
-    public ref float Value {
-        get {
+    public ref float Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x509D90A88DFCB984);
             return ref _Handle.AsRef<float>(_ValueOffset!.Value);
         }
     }
     private static nint? _ColorOffset;
 
-    public ref Color Color {
-        get {
+    public ref Color Color
+    {
+        get
+        {
             _ColorOffset = _ColorOffset ?? Schema.GetOffset(0x509D90A8D7D017D8);
             return ref _Handle.AsRef<Color>(_ColorOffset!.Value);
         }
     }
-
 
 }

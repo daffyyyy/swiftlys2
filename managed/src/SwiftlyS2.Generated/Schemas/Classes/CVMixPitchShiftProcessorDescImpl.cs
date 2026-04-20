@@ -18,12 +18,13 @@ internal partial class CVMixPitchShiftProcessorDescImpl : CVMixBaseProcessorDesc
 
     private static nint? _DescOffset;
 
-    public VMixPitchShiftDesc_t Desc {
-        get {
+    public VMixPitchShiftDesc_t Desc
+    {
+        get
+        {
             _DescOffset = _DescOffset ?? Schema.GetOffset(0x56460FA127917BC0);
             return new VMixPitchShiftDesc_tImpl(_Handle + _DescOffset!.Value);
         }
     }
-
 
 }

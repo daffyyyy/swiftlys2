@@ -14,7 +14,4 @@ public partial interface CEnvCubemapBox : CEnvCubemap, ISchemaClass<CEnvCubemapB
     static int ISchemaClass<CEnvCubemapBox>.Size => 1424;
     static string? ISchemaClass<CEnvCubemapBox>.ClassName => "env_cubemap_box";
 
-
-
-
 }

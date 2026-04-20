@@ -14,7 +14,4 @@ public partial interface CPulseAnimFuncs : ISchemaClass<CPulseAnimFuncs>
     static int ISchemaClass<CPulseAnimFuncs>.Size => 8;
     static string? ISchemaClass<CPulseAnimFuncs>.ClassName => null;
 
-
-
-
 }

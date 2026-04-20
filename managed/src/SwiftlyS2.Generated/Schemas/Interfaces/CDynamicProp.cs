@@ -11,8 +11,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDynamicProp : CBreakableProp, ISchemaClass<CDynamicProp>
 {
     static CDynamicProp ISchemaClass<CDynamicProp>.From(nint handle) => new CDynamicPropImpl(handle);
-    static int ISchemaClass<CDynamicProp>.Size => 3152;
-    static string? ISchemaClass<CDynamicProp>.ClassName => "dynamic_prop";
+    static int ISchemaClass<CDynamicProp>.Size => 2944;
+    static string? ISchemaClass<CDynamicProp>.ClassName => "prop_dynamic";
 
 
     public ref bool CreateNavObstacle { get; }

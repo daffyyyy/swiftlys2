@@ -6,15 +6,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PulseVariableKeysSource_t : uint
 {
- PRIVATE = 0,
-
- CPP = 1,
-
- VMAP = 2,
-
- VMDL = 3,
-
- XML = 4,
-
- COUNT = 5,
+    PRIVATE = 0,
+    CPP = 1,
+    VMAP = 2,
+    VMDL = 3,
+    XML = 4,
+    COUNT = 5,
 }

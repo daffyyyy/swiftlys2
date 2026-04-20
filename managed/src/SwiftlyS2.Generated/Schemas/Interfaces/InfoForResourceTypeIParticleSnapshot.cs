@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeIParticleSnapshot : ISchemaClass<Inf
     static int ISchemaClass<InfoForResourceTypeIParticleSnapshot>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeIParticleSnapshot>.ClassName => null;
 
-
-
-
 }

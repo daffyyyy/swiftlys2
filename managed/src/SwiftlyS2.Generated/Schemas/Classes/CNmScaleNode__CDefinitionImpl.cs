@@ -18,20 +18,23 @@ internal partial class CNmScaleNode__CDefinitionImpl : CNmPassthroughNode__CDefi
 
     private static nint? _MaskNodeIdxOffset;
 
-    public ref short MaskNodeIdx {
-        get {
+    public ref short MaskNodeIdx
+    {
+        get
+        {
             _MaskNodeIdxOffset = _MaskNodeIdxOffset ?? Schema.GetOffset(0x5902F6B1216FA578);
             return ref _Handle.AsRef<short>(_MaskNodeIdxOffset!.Value);
         }
     }
     private static nint? _EnableNodeIdxOffset;
 
-    public ref short EnableNodeIdx {
-        get {
+    public ref short EnableNodeIdx
+    {
+        get
+        {
             _EnableNodeIdxOffset = _EnableNodeIdxOffset ?? Schema.GetOffset(0x5902F6B10C9DD729);
             return ref _Handle.AsRef<short>(_EnableNodeIdxOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeIVectorGraphicImpl : SchemaClass, Info
 {
     public InfoForResourceTypeIVectorGraphicImpl(nint handle) : base(handle) { }
 
-
-
-
 }

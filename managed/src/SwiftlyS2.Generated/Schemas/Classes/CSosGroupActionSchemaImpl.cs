@@ -16,7 +16,4 @@ internal partial class CSosGroupActionSchemaImpl : SchemaClass, CSosGroupActionS
 {
     public CSosGroupActionSchemaImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,44 +18,53 @@ internal partial class C_OP_ConstrainDistanceImpl : CParticleFunctionConstraintI
 
     private static nint? _MinDistanceOffset;
 
-    public CParticleCollectionFloatInput MinDistance {
-        get {
+    public CParticleCollectionFloatInput MinDistance
+    {
+        get
+        {
             _MinDistanceOffset = _MinDistanceOffset ?? Schema.GetOffset(0xDF3E3FA1F016B7AC);
             return new CParticleCollectionFloatInputImpl(_Handle + _MinDistanceOffset!.Value);
         }
     }
     private static nint? _MaxDistanceOffset;
 
-    public CParticleCollectionFloatInput MaxDistance {
-        get {
+    public CParticleCollectionFloatInput MaxDistance
+    {
+        get
+        {
             _MaxDistanceOffset = _MaxDistanceOffset ?? Schema.GetOffset(0xDF3E3FA1844E396A);
             return new CParticleCollectionFloatInputImpl(_Handle + _MaxDistanceOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xDF3E3FA13F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _CenterOffsetOffset;
 
-    public ref Vector CenterOffset {
-        get {
+    public ref Vector CenterOffset
+    {
+        get
+        {
             _CenterOffsetOffset = _CenterOffsetOffset ?? Schema.GetOffset(0xDF3E3FA108F7D41F);
             return ref _Handle.AsRef<Vector>(_CenterOffsetOffset!.Value);
         }
     }
     private static nint? _GlobalCenterOffset;
 
-    public ref bool GlobalCenter {
-        get {
+    public ref bool GlobalCenter
+    {
+        get
+        {
             _GlobalCenterOffset = _GlobalCenterOffset ?? Schema.GetOffset(0xDF3E3FA1196669C3);
             return ref _Handle.AsRef<bool>(_GlobalCenterOffset!.Value);
         }
     }
-
 
 }

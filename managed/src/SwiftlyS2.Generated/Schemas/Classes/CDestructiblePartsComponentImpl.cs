@@ -18,26 +18,43 @@ internal partial class CDestructiblePartsComponentImpl : SchemaClass, CDestructi
 
     private static nint? ___m_pChainEntityOffset;
 
-    public ref CNetworkVarChainer __m_pChainEntity {
-        get {
+    public ref CNetworkVarChainer __m_pChainEntity
+    {
+        get
+        {
             ___m_pChainEntityOffset = ___m_pChainEntityOffset ?? Schema.GetOffset(0xE69A9E51F63F0E7D);
             return ref _Handle.AsRef<CNetworkVarChainer>(___m_pChainEntityOffset!.Value);
         }
     }
     private static nint? _DamageTakenByHitGroupOffset;
 
-    public ref CUtlVector<ushort> DamageTakenByHitGroup {
-        get {
+    public ref CUtlVector<ushort> DamageTakenByHitGroup
+    {
+        get
+        {
             _DamageTakenByHitGroupOffset = _DamageTakenByHitGroupOffset ?? Schema.GetOffset(0xE69A9E51F137427A);
             return ref _Handle.AsRef<CUtlVector<ushort>>(_DamageTakenByHitGroupOffset!.Value);
         }
     }
     private static nint? _OwnerOffset;
 
-    public ref CHandle<CBaseModelEntity> Owner {
-        get {
+    public ref CHandle<CBaseModelEntity> Owner
+    {
+        get
+        {
             _OwnerOffset = _OwnerOffset ?? Schema.GetOffset(0xE69A9E51F6D89572);
             return ref _Handle.AsRef<CHandle<CBaseModelEntity>>(_OwnerOffset!.Value);
+        }
+    }
+    private static nint? _AnimGraphDestructibleGraphControllerOffset;
+
+    public CBaseAnimGraphDestructibleParts_GraphController? AnimGraphDestructibleGraphController
+    {
+        get
+        {
+            _AnimGraphDestructibleGraphControllerOffset = _AnimGraphDestructibleGraphControllerOffset ?? Schema.GetOffset(0xE69A9E5185A33CD0);
+            var ptr = _Handle.Read<nint>(_AnimGraphDestructibleGraphControllerOffset!.Value);
+            return ptr.IsValidPtr() ? new CBaseAnimGraphDestructibleParts_GraphControllerImpl(ptr) : null;
         }
     }
 

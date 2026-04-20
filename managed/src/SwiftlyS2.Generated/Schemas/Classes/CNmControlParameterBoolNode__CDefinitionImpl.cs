@@ -16,7 +16,4 @@ internal partial class CNmControlParameterBoolNode__CDefinitionImpl : CNmBoolVal
 {
     public CNmControlParameterBoolNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,36 +18,43 @@ internal partial class C_OP_HSVShiftToCPImpl : CParticleFunctionPreEmissionImpl,
 
     private static nint? _ColorCPOffset;
 
-    public ref int ColorCP {
-        get {
+    public ref int ColorCP
+    {
+        get
+        {
             _ColorCPOffset = _ColorCPOffset ?? Schema.GetOffset(0xA6FD1F901D3D233F);
             return ref _Handle.AsRef<int>(_ColorCPOffset!.Value);
         }
     }
     private static nint? _ColorGemEnableCPOffset;
 
-    public ref int ColorGemEnableCP {
-        get {
+    public ref int ColorGemEnableCP
+    {
+        get
+        {
             _ColorGemEnableCPOffset = _ColorGemEnableCPOffset ?? Schema.GetOffset(0xA6FD1F907B5C2B7F);
             return ref _Handle.AsRef<int>(_ColorGemEnableCPOffset!.Value);
         }
     }
     private static nint? _OutputCPOffset;
 
-    public ref int OutputCP {
-        get {
+    public ref int OutputCP
+    {
+        get
+        {
             _OutputCPOffset = _OutputCPOffset ?? Schema.GetOffset(0xA6FD1F9050DF5703);
             return ref _Handle.AsRef<int>(_OutputCPOffset!.Value);
         }
     }
     private static nint? _DefaultHSVColorOffset;
 
-    public ref Color DefaultHSVColor {
-        get {
+    public ref Color DefaultHSVColor
+    {
+        get
+        {
             _DefaultHSVColorOffset = _DefaultHSVColorOffset ?? Schema.GetOffset(0xA6FD1F90A7EFB0DE);
             return ref _Handle.AsRef<Color>(_DefaultHSVColorOffset!.Value);
         }
     }
-
 
 }

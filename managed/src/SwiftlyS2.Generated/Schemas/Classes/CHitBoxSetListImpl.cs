@@ -18,12 +18,13 @@ internal partial class CHitBoxSetListImpl : SchemaClass, CHitBoxSetList
 
     private static nint? _HitBoxSetsOffset;
 
-    public ref CUtlVector<CHitBoxSet> HitBoxSets {
-        get {
+    public ref CUtlVector<CHitBoxSet> HitBoxSets
+    {
+        get
+        {
             _HitBoxSetsOffset = _HitBoxSetsOffset ?? Schema.GetOffset(0x2FE1303444ABBA1A);
             return ref _Handle.AsRef<CUtlVector<CHitBoxSet>>(_HitBoxSetsOffset!.Value);
         }
     }
-
 
 }

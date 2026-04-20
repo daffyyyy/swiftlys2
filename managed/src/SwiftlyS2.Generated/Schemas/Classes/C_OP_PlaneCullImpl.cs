@@ -18,36 +18,43 @@ internal partial class C_OP_PlaneCullImpl : CParticleFunctionOperatorImpl, C_OP_
 
     private static nint? _PlaneControlPointOffset;
 
-    public ref int PlaneControlPoint {
-        get {
+    public ref int PlaneControlPoint
+    {
+        get
+        {
             _PlaneControlPointOffset = _PlaneControlPointOffset ?? Schema.GetOffset(0x352AAF45E621E9BC);
             return ref _Handle.AsRef<int>(_PlaneControlPointOffset!.Value);
         }
     }
     private static nint? _PlaneDirectionOffset;
 
-    public CParticleCollectionVecInput PlaneDirection {
-        get {
+    public CParticleCollectionVecInput PlaneDirection
+    {
+        get
+        {
             _PlaneDirectionOffset = _PlaneDirectionOffset ?? Schema.GetOffset(0x352AAF45B00A585A);
             return new CParticleCollectionVecInputImpl(_Handle + _PlaneDirectionOffset!.Value);
         }
     }
     private static nint? _LocalSpaceOffset;
 
-    public ref bool LocalSpace {
-        get {
+    public ref bool LocalSpace
+    {
+        get
+        {
             _LocalSpaceOffset = _LocalSpaceOffset ?? Schema.GetOffset(0x352AAF4562418E6E);
             return ref _Handle.AsRef<bool>(_LocalSpaceOffset!.Value);
         }
     }
     private static nint? _PlaneOffsetOffset;
 
-    public ref float PlaneOffset {
-        get {
+    public ref float PlaneOffset
+    {
+        get
+        {
             _PlaneOffsetOffset = _PlaneOffsetOffset ?? Schema.GetOffset(0x352AAF45D394676C);
             return ref _Handle.AsRef<float>(_PlaneOffsetOffset!.Value);
         }
     }
-
 
 }

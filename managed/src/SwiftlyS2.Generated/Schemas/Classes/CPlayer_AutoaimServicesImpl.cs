@@ -16,7 +16,4 @@ internal partial class CPlayer_AutoaimServicesImpl : CPlayerPawnComponentImpl, C
 {
     public CPlayer_AutoaimServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

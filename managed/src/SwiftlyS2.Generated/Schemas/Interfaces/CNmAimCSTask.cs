@@ -14,7 +14,4 @@ public partial interface CNmAimCSTask : CNmPoseTask, ISchemaClass<CNmAimCSTask>
     static int ISchemaClass<CNmAimCSTask>.Size => 256;
     static string? ISchemaClass<CNmAimCSTask>.ClassName => null;
 
-
-
-
 }

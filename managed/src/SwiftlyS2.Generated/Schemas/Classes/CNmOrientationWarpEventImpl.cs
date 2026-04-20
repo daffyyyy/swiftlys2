@@ -16,7 +16,4 @@ internal partial class CNmOrientationWarpEventImpl : CNmEventImpl, CNmOrientatio
 {
     public CNmOrientationWarpEventImpl(nint handle) : base(handle) { }
 
-
-
-
 }

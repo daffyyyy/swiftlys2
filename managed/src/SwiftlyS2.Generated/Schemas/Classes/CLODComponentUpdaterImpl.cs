@@ -18,12 +18,13 @@ internal partial class CLODComponentUpdaterImpl : CAnimComponentUpdaterImpl, CLO
 
     private static nint? _ServerLODOffset;
 
-    public ref int ServerLOD {
-        get {
+    public ref int ServerLOD
+    {
+        get
+        {
             _ServerLODOffset = _ServerLODOffset ?? Schema.GetOffset(0xDE1020D244E2C75);
             return ref _Handle.AsRef<int>(_ServerLODOffset!.Value);
         }
     }
-
 
 }

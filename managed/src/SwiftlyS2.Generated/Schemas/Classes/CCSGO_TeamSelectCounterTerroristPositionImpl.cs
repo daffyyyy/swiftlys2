@@ -16,7 +16,4 @@ internal partial class CCSGO_TeamSelectCounterTerroristPositionImpl : CCSGO_Team
 {
     public CCSGO_TeamSelectCounterTerroristPositionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

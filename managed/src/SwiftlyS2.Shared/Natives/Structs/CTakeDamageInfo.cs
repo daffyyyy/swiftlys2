@@ -54,7 +54,7 @@ public unsafe struct CTakeDamageInfo
     public ShootingInfo ShootingInfo;
     public void* ScriptInstance;
     public AttackerInfo_t AttackerInfo;
-    public CUtlVector<DestructibleHitGroupToDestroy_t> DestructibleHitGroupsToForceDestroy;
+    public CUtlLeanVector<DestructiblePartDamageRequest_t, int> DestructiblePartDamageRequests;
     public byte InTakeDamageFlow;
 
     private int Unknown;

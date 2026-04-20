@@ -18,12 +18,13 @@ internal partial class RnHullDesc_tImpl : RnShapeDesc_tImpl, RnHullDesc_t
 
     private static nint? _HullOffset;
 
-    public RnHull_t Hull {
-        get {
+    public RnHull_t Hull
+    {
+        get
+        {
             _HullOffset = _HullOffset ?? Schema.GetOffset(0xBB74EDD8AC535D36);
             return new RnHull_tImpl(_Handle + _HullOffset!.Value);
         }
     }
-
 
 }

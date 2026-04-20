@@ -18,12 +18,13 @@ internal partial class CSosGroupActionTimeLimitSchemaImpl : CSosGroupActionSchem
 
     private static nint? _MaxDurationOffset;
 
-    public ref float MaxDuration {
-        get {
+    public ref float MaxDuration
+    {
+        get
+        {
             _MaxDurationOffset = _MaxDurationOffset ?? Schema.GetOffset(0xB90F1DFD39BAF9F3);
             return ref _Handle.AsRef<float>(_MaxDurationOffset!.Value);
         }
     }
-
 
 }

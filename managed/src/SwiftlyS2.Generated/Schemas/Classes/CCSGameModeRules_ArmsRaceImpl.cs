@@ -18,8 +18,10 @@ internal partial class CCSGameModeRules_ArmsRaceImpl : CCSGameModeRulesImpl, CCS
 
     private static nint? _WeaponSequenceOffset;
 
-    public ref CUtlVector<CUtlString> WeaponSequence {
-        get {
+    public ref CUtlVector<CUtlString> WeaponSequence
+    {
+        get
+        {
             _WeaponSequenceOffset = _WeaponSequenceOffset ?? Schema.GetOffset(0xDFFFC2FB1426444C);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_WeaponSequenceOffset!.Value);
         }

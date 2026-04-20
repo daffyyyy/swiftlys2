@@ -18,44 +18,53 @@ internal partial class C_OP_SetParentControlPointsToChildCPImpl : CParticleFunct
 
     private static nint? _ChildGroupIDOffset;
 
-    public ref int ChildGroupID {
-        get {
+    public ref int ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0x9A9F20B7E3F3C965);
             return ref _Handle.AsRef<int>(_ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _ChildControlPointOffset;
 
-    public ref int ChildControlPoint {
-        get {
+    public ref int ChildControlPoint
+    {
+        get
+        {
             _ChildControlPointOffset = _ChildControlPointOffset ?? Schema.GetOffset(0x9A9F20B78DDB3CFC);
             return ref _Handle.AsRef<int>(_ChildControlPointOffset!.Value);
         }
     }
     private static nint? _NumControlPointsOffset;
 
-    public ref int NumControlPoints {
-        get {
+    public ref int NumControlPoints
+    {
+        get
+        {
             _NumControlPointsOffset = _NumControlPointsOffset ?? Schema.GetOffset(0x9A9F20B7551EBC4F);
             return ref _Handle.AsRef<int>(_NumControlPointsOffset!.Value);
         }
     }
     private static nint? _FirstSourcePointOffset;
 
-    public ref int FirstSourcePoint {
-        get {
+    public ref int FirstSourcePoint
+    {
+        get
+        {
             _FirstSourcePointOffset = _FirstSourcePointOffset ?? Schema.GetOffset(0x9A9F20B79D7DC18E);
             return ref _Handle.AsRef<int>(_FirstSourcePointOffset!.Value);
         }
     }
     private static nint? _SetOrientationOffset;
 
-    public ref bool SetOrientation {
-        get {
+    public ref bool SetOrientation
+    {
+        get
+        {
             _SetOrientationOffset = _SetOrientationOffset ?? Schema.GetOffset(0x9A9F20B7E1390E37);
             return ref _Handle.AsRef<bool>(_SetOrientationOffset!.Value);
         }
     }
-
 
 }

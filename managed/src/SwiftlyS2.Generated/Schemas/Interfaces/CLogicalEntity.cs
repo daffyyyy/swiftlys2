@@ -14,7 +14,4 @@ public partial interface CLogicalEntity : CServerOnlyEntity, ISchemaClass<CLogic
     static int ISchemaClass<CLogicalEntity>.Size => 1192;
     static string? ISchemaClass<CLogicalEntity>.ClassName => null;
 
-
-
-
 }

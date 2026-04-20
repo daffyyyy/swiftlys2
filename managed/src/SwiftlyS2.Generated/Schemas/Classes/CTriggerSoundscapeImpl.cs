@@ -18,32 +18,38 @@ internal partial class CTriggerSoundscapeImpl : CBaseTriggerImpl, CTriggerSounds
 
     private static nint? _SoundscapeOffset;
 
-    public ref CHandle<CEnvSoundscapeTriggerable> Soundscape {
-        get {
+    public ref CHandle<CEnvSoundscapeTriggerable> Soundscape
+    {
+        get
+        {
             _SoundscapeOffset = _SoundscapeOffset ?? Schema.GetOffset(0xA8ED7219EF1F0180);
             return ref _Handle.AsRef<CHandle<CEnvSoundscapeTriggerable>>(_SoundscapeOffset!.Value);
         }
     }
     private static nint? _SoundscapeNameOffset;
 
-    public string SoundscapeName {
-        get {
+    public string SoundscapeName
+    {
+        get
+        {
             _SoundscapeNameOffset = _SoundscapeNameOffset ?? Schema.GetOffset(0xA8ED7219BDF7AA81);
             return Schema.GetString(_Handle.Read<nint>(_SoundscapeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _SoundscapeNameOffset = _SoundscapeNameOffset ?? Schema.GetOffset(0xA8ED7219BDF7AA81);
             Schema.SetString(_Handle, _SoundscapeNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _SpectatorsOffset;
 
-    public ref CUtlVector<CHandle<CBasePlayerPawn>> Spectators {
-        get {
+    public ref CUtlVector<CHandle<CBasePlayerPawn>> Spectators
+    {
+        get
+        {
             _SpectatorsOffset = _SpectatorsOffset ?? Schema.GetOffset(0xA8ED7219149EB35B);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBasePlayerPawn>>>(_SpectatorsOffset!.Value);
         }
     }
-
 
 }

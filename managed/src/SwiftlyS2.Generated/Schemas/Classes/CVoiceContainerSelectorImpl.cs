@@ -18,28 +18,33 @@ internal partial class CVoiceContainerSelectorImpl : CVoiceContainerBaseImpl, CV
 
     private static nint? _ModeOffset;
 
-    public ref PlayBackMode_t Mode {
-        get {
+    public ref PlayBackMode_t Mode
+    {
+        get
+        {
             _ModeOffset = _ModeOffset ?? Schema.GetOffset(0xF16C473A90FD5BB2);
             return ref _Handle.AsRef<PlayBackMode_t>(_ModeOffset!.Value);
         }
     }
     private static nint? _SoundsToPlayOffset;
 
-    public CSoundContainerReferenceArray SoundsToPlay {
-        get {
+    public CSoundContainerReferenceArray SoundsToPlay
+    {
+        get
+        {
             _SoundsToPlayOffset = _SoundsToPlayOffset ?? Schema.GetOffset(0xF16C473ADCB5F70E);
             return new CSoundContainerReferenceArrayImpl(_Handle + _SoundsToPlayOffset!.Value);
         }
     }
     private static nint? _ProbabilityWeightsOffset;
 
-    public ref CUtlVector<float> ProbabilityWeights {
-        get {
+    public ref CUtlVector<float> ProbabilityWeights
+    {
+        get
+        {
             _ProbabilityWeightsOffset = _ProbabilityWeightsOffset ?? Schema.GetOffset(0xF16C473A6DABFC99);
             return ref _Handle.AsRef<CUtlVector<float>>(_ProbabilityWeightsOffset!.Value);
         }
     }
-
 
 }

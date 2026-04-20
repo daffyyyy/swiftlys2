@@ -18,68 +18,83 @@ internal partial class C_OP_RenderGpuImplicitImpl : CParticleFunctionRendererImp
 
     private static nint? _UsePerParticleRadiusOffset;
 
-    public ref bool UsePerParticleRadius {
-        get {
+    public ref bool UsePerParticleRadius
+    {
+        get
+        {
             _UsePerParticleRadiusOffset = _UsePerParticleRadiusOffset ?? Schema.GetOffset(0xF780A8E2CB5B403);
             return ref _Handle.AsRef<bool>(_UsePerParticleRadiusOffset!.Value);
         }
     }
     private static nint? _VertexCountKbOffset;
 
-    public ref uint VertexCountKb {
-        get {
+    public ref uint VertexCountKb
+    {
+        get
+        {
             _VertexCountKbOffset = _VertexCountKbOffset ?? Schema.GetOffset(0xF780A8E6064907B);
             return ref _Handle.AsRef<uint>(_VertexCountKbOffset!.Value);
         }
     }
     private static nint? _IndexCountKbOffset;
 
-    public ref uint IndexCountKb {
-        get {
+    public ref uint IndexCountKb
+    {
+        get
+        {
             _IndexCountKbOffset = _IndexCountKbOffset ?? Schema.GetOffset(0xF780A8E6CDECFF7);
             return ref _Handle.AsRef<uint>(_IndexCountKbOffset!.Value);
         }
     }
     private static nint? _GridSizeOffset;
 
-    public CParticleCollectionRendererFloatInput GridSize {
-        get {
+    public CParticleCollectionRendererFloatInput GridSize
+    {
+        get
+        {
             _GridSizeOffset = _GridSizeOffset ?? Schema.GetOffset(0xF780A8E456E2F5C);
             return new CParticleCollectionRendererFloatInputImpl(_Handle + _GridSizeOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public CParticleCollectionRendererFloatInput RadiusScale {
-        get {
+    public CParticleCollectionRendererFloatInput RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0xF780A8E15F78967);
             return new CParticleCollectionRendererFloatInputImpl(_Handle + _RadiusScaleOffset!.Value);
         }
     }
     private static nint? _IsosurfaceThresholdOffset;
 
-    public CParticleCollectionRendererFloatInput IsosurfaceThreshold {
-        get {
+    public CParticleCollectionRendererFloatInput IsosurfaceThreshold
+    {
+        get
+        {
             _IsosurfaceThresholdOffset = _IsosurfaceThresholdOffset ?? Schema.GetOffset(0xF780A8E32E25824);
             return new CParticleCollectionRendererFloatInputImpl(_Handle + _IsosurfaceThresholdOffset!.Value);
         }
     }
     private static nint? _ScaleCPOffset;
 
-    public ref int ScaleCP {
-        get {
+    public ref int ScaleCP
+    {
+        get
+        {
             _ScaleCPOffset = _ScaleCPOffset ?? Schema.GetOffset(0xF780A8EDE3CC5E6);
             return ref _Handle.AsRef<int>(_ScaleCPOffset!.Value);
         }
     }
     private static nint? _MaterialOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material
+    {
+        get
+        {
             _MaterialOffset = _MaterialOffset ?? Schema.GetOffset(0xF780A8E888CE42E);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(_MaterialOffset!.Value);
         }
     }
-
 
 }

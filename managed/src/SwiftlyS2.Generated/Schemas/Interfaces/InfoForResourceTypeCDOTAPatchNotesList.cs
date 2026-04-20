@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCDOTAPatchNotesList : ISchemaClass<I
     static int ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList>.ClassName => null;
 
-
-
-
 }

@@ -18,52 +18,63 @@ internal partial class CPulse_CallInfoImpl : SchemaClass, CPulse_CallInfo
 
     private static nint? _PortNameOffset;
 
-    public SchemaUntypedField PortName {
-        get {
+    public SchemaUntypedField PortName
+    {
+        get
+        {
             _PortNameOffset = _PortNameOffset ?? Schema.GetOffset(0x6ADF88D807237B65);
             return new SchemaUntypedField(_Handle + _PortNameOffset!.Value);
         }
     }
     private static nint? _EditorNodeIDOffset;
 
-    public PulseDocNodeID_t EditorNodeID {
-        get {
+    public PulseDocNodeID_t EditorNodeID
+    {
+        get
+        {
             _EditorNodeIDOffset = _EditorNodeIDOffset ?? Schema.GetOffset(0x6ADF88D88D964CBD);
             return new PulseDocNodeID_tImpl(_Handle + _EditorNodeIDOffset!.Value);
         }
     }
     private static nint? _RegisterMapOffset;
 
-    public PulseRegisterMap_t RegisterMap {
-        get {
+    public PulseRegisterMap_t RegisterMap
+    {
+        get
+        {
             _RegisterMapOffset = _RegisterMapOffset ?? Schema.GetOffset(0x6ADF88D87BD4CE96);
             return new PulseRegisterMap_tImpl(_Handle + _RegisterMapOffset!.Value);
         }
     }
     private static nint? _CallMethodIDOffset;
 
-    public PulseDocNodeID_t CallMethodID {
-        get {
+    public PulseDocNodeID_t CallMethodID
+    {
+        get
+        {
             _CallMethodIDOffset = _CallMethodIDOffset ?? Schema.GetOffset(0x6ADF88D805714471);
             return new PulseDocNodeID_tImpl(_Handle + _CallMethodIDOffset!.Value);
         }
     }
     private static nint? _SrcChunkOffset;
 
-    public PulseRuntimeChunkIndex_t SrcChunk {
-        get {
+    public PulseRuntimeChunkIndex_t SrcChunk
+    {
+        get
+        {
             _SrcChunkOffset = _SrcChunkOffset ?? Schema.GetOffset(0x6ADF88D8313F814A);
             return new PulseRuntimeChunkIndex_tImpl(_Handle + _SrcChunkOffset!.Value);
         }
     }
     private static nint? _SrcInstructionOffset;
 
-    public ref int SrcInstruction {
-        get {
+    public ref int SrcInstruction
+    {
+        get
+        {
             _SrcInstructionOffset = _SrcInstructionOffset ?? Schema.GetOffset(0x6ADF88D899E09AE7);
             return ref _Handle.AsRef<int>(_SrcInstructionOffset!.Value);
         }
     }
-
 
 }

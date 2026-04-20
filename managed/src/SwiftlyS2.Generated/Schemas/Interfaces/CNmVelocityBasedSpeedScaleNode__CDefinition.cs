@@ -14,7 +14,4 @@ public partial interface CNmVelocityBasedSpeedScaleNode__CDefinition : CNmSpeedS
     static int ISchemaClass<CNmVelocityBasedSpeedScaleNode__CDefinition>.Size => 32;
     static string? ISchemaClass<CNmVelocityBasedSpeedScaleNode__CDefinition>.ClassName => null;
 
-
-
-
 }

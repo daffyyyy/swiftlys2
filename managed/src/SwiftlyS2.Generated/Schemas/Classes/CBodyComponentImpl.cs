@@ -18,8 +18,10 @@ internal partial class CBodyComponentImpl : CEntityComponentImpl, CBodyComponent
 
     private static nint? _SceneNodeOffset;
 
-    public CGameSceneNode? SceneNode {
-        get {
+    public CGameSceneNode? SceneNode
+    {
+        get
+        {
             _SceneNodeOffset = _SceneNodeOffset ?? Schema.GetOffset(0x4EF2C865D7D13495);
             var ptr = _Handle.Read<nint>(_SceneNodeOffset!.Value);
             return ptr.IsValidPtr() ? new CGameSceneNodeImpl(ptr) : null;
@@ -27,12 +29,13 @@ internal partial class CBodyComponentImpl : CEntityComponentImpl, CBodyComponent
     }
     private static nint? ___m_pChainEntityOffset;
 
-    public ref CNetworkVarChainer __m_pChainEntity {
-        get {
+    public ref CNetworkVarChainer __m_pChainEntity
+    {
+        get
+        {
             ___m_pChainEntityOffset = ___m_pChainEntityOffset ?? Schema.GetOffset(0x4EF2C865F63F0E7D);
             return ref _Handle.AsRef<CNetworkVarChainer>(___m_pChainEntityOffset!.Value);
         }
     }
-
 
 }

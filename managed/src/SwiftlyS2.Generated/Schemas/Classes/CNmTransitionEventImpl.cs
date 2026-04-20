@@ -18,20 +18,23 @@ internal partial class CNmTransitionEventImpl : CNmEventImpl, CNmTransitionEvent
 
     private static nint? _RuleOffset;
 
-    public ref NmTransitionRule_t Rule {
-        get {
+    public ref NmTransitionRule_t Rule
+    {
+        get
+        {
             _RuleOffset = _RuleOffset ?? Schema.GetOffset(0x11493D8CBA097173);
             return ref _Handle.AsRef<NmTransitionRule_t>(_RuleOffset!.Value);
         }
     }
     private static nint? _IDOffset;
 
-    public ref CGlobalSymbol ID {
-        get {
+    public ref CGlobalSymbol ID
+    {
+        get
+        {
             _IDOffset = _IDOffset ?? Schema.GetOffset(0x11493D8C95066900);
             return ref _Handle.AsRef<CGlobalSymbol>(_IDOffset!.Value);
         }
     }
-
 
 }

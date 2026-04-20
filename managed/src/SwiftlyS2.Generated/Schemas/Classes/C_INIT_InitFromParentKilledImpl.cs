@@ -18,20 +18,23 @@ internal partial class C_INIT_InitFromParentKilledImpl : CParticleFunctionInitia
 
     private static nint? _AttributeToCopyOffset;
 
-    public ParticleAttributeIndex_t AttributeToCopy {
-        get {
+    public ParticleAttributeIndex_t AttributeToCopy
+    {
+        get
+        {
             _AttributeToCopyOffset = _AttributeToCopyOffset ?? Schema.GetOffset(0x4CE3F9811953739B);
             return new ParticleAttributeIndex_tImpl(_Handle + _AttributeToCopyOffset!.Value);
         }
     }
     private static nint? _EventTypeOffset;
 
-    public ref EventTypeSelection_t EventType {
-        get {
+    public ref EventTypeSelection_t EventType
+    {
+        get
+        {
             _EventTypeOffset = _EventTypeOffset ?? Schema.GetOffset(0x4CE3F981E1F9AA93);
             return ref _Handle.AsRef<EventTypeSelection_t>(_EventTypeOffset!.Value);
         }
     }
-
 
 }

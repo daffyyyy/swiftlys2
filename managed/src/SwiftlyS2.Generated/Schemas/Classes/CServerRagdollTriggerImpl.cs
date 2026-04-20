@@ -16,7 +16,4 @@ internal partial class CServerRagdollTriggerImpl : CBaseTriggerImpl, CServerRagd
 {
     public CServerRagdollTriggerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

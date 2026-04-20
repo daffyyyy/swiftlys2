@@ -18,48 +18,58 @@ internal partial class CPulseCell_Inflow_MethodImpl : CPulseCell_Inflow_BaseEntr
 
     private static nint? _MethodNameOffset;
 
-    public SchemaUntypedField MethodName {
-        get {
+    public SchemaUntypedField MethodName
+    {
+        get
+        {
             _MethodNameOffset = _MethodNameOffset ?? Schema.GetOffset(0xFB5926557D863B13);
             return new SchemaUntypedField(_Handle + _MethodNameOffset!.Value);
         }
     }
     private static nint? _DescriptionOffset;
 
-    public string Description {
-        get {
+    public string Description
+    {
+        get
+        {
             _DescriptionOffset = _DescriptionOffset ?? Schema.GetOffset(0xFB592655678744E9);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DescriptionOffset!.Value));
         }
-        set {
+        set
+        {
             _DescriptionOffset = _DescriptionOffset ?? Schema.GetOffset(0xFB592655678744E9);
             Schema.SetCUtlString(_Handle, _DescriptionOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _IsPublicOffset;
 
-    public ref bool IsPublic {
-        get {
+    public ref bool IsPublic
+    {
+        get
+        {
             _IsPublicOffset = _IsPublicOffset ?? Schema.GetOffset(0xFB592655BAE30B50);
             return ref _Handle.AsRef<bool>(_IsPublicOffset!.Value);
         }
     }
     private static nint? _ReturnTypeOffset;
 
-    public SchemaUntypedField ReturnType {
-        get {
+    public SchemaUntypedField ReturnType
+    {
+        get
+        {
             _ReturnTypeOffset = _ReturnTypeOffset ?? Schema.GetOffset(0xFB59265566333D67);
             return new SchemaUntypedField(_Handle + _ReturnTypeOffset!.Value);
         }
     }
     private static nint? _ArgsOffset;
 
-    public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args {
-        get {
+    public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args
+    {
+        get
+        {
             _ArgsOffset = _ArgsOffset ?? Schema.GetOffset(0xFB592655DAB98BBC);
             return ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg, int>>(_ArgsOffset!.Value);
         }
     }
-
 
 }

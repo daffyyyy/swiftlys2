@@ -16,7 +16,4 @@ internal partial class CEmptyEntityInstanceImpl : SchemaClass, CEmptyEntityInsta
 {
     public CEmptyEntityInstanceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

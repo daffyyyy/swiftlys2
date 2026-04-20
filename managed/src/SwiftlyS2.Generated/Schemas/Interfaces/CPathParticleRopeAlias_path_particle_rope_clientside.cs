@@ -14,7 +14,4 @@ public partial interface CPathParticleRopeAlias_path_particle_rope_clientside : 
     static int ISchemaClass<CPathParticleRopeAlias_path_particle_rope_clientside>.Size => 1424;
     static string? ISchemaClass<CPathParticleRopeAlias_path_particle_rope_clientside>.ClassName => null;
 
-
-
-
 }

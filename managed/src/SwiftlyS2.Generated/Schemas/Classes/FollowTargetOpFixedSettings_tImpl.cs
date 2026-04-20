@@ -18,44 +18,53 @@ internal partial class FollowTargetOpFixedSettings_tImpl : SchemaClass, FollowTa
 
     private static nint? _BoneIndexOffset;
 
-    public ref int BoneIndex {
-        get {
+    public ref int BoneIndex
+    {
+        get
+        {
             _BoneIndexOffset = _BoneIndexOffset ?? Schema.GetOffset(0xF6423DF66AFA4155);
             return ref _Handle.AsRef<int>(_BoneIndexOffset!.Value);
         }
     }
     private static nint? _BoneTargetOffset;
 
-    public ref bool BoneTarget {
-        get {
+    public ref bool BoneTarget
+    {
+        get
+        {
             _BoneTargetOffset = _BoneTargetOffset ?? Schema.GetOffset(0xF6423DF60E626FD2);
             return ref _Handle.AsRef<bool>(_BoneTargetOffset!.Value);
         }
     }
     private static nint? _BoneTargetIndexOffset;
 
-    public ref int BoneTargetIndex {
-        get {
+    public ref int BoneTargetIndex
+    {
+        get
+        {
             _BoneTargetIndexOffset = _BoneTargetIndexOffset ?? Schema.GetOffset(0xF6423DF62218DF46);
             return ref _Handle.AsRef<int>(_BoneTargetIndexOffset!.Value);
         }
     }
     private static nint? _WorldCoodinateTargetOffset;
 
-    public ref bool WorldCoodinateTarget {
-        get {
+    public ref bool WorldCoodinateTarget
+    {
+        get
+        {
             _WorldCoodinateTargetOffset = _WorldCoodinateTargetOffset ?? Schema.GetOffset(0xF6423DF60B5B2B16);
             return ref _Handle.AsRef<bool>(_WorldCoodinateTargetOffset!.Value);
         }
     }
     private static nint? _MatchTargetOrientationOffset;
 
-    public ref bool MatchTargetOrientation {
-        get {
+    public ref bool MatchTargetOrientation
+    {
+        get
+        {
             _MatchTargetOrientationOffset = _MatchTargetOrientationOffset ?? Schema.GetOffset(0xF6423DF642E0C3DB);
             return ref _Handle.AsRef<bool>(_MatchTargetOrientationOffset!.Value);
         }
     }
-
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBlend1DNode__CDefinition : CNmParameterizedBlendNode__CDefinition, ISchemaClass<CNmBlend1DNode__CDefinition>
 {
     static CNmBlend1DNode__CDefinition ISchemaClass<CNmBlend1DNode__CDefinition>.From(nint handle) => new CNmBlend1DNode__CDefinitionImpl(handle);
-    static int ISchemaClass<CNmBlend1DNode__CDefinition>.Size => 144;
+    static int ISchemaClass<CNmBlend1DNode__CDefinition>.Size => 128;
     static string? ISchemaClass<CNmBlend1DNode__CDefinition>.ClassName => null;
 
 

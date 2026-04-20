@@ -16,7 +16,4 @@ internal partial class CInfoDataImpl : CServerOnlyEntityImpl, CInfoData
 {
     public CInfoDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

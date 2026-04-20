@@ -16,7 +16,4 @@ internal partial class CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardViewI
 {
     public CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardViewImpl(nint handle) : base(handle) { }
 
-
-
-
 }

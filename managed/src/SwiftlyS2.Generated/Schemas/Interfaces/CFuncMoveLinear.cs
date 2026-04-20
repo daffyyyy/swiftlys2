@@ -11,8 +11,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncMoveLinear : CBaseToggle, ISchemaClass<CFuncMoveLinear>
 {
     static CFuncMoveLinear ISchemaClass<CFuncMoveLinear>.From(nint handle) => new CFuncMoveLinearImpl(handle);
-    static int ISchemaClass<CFuncMoveLinear>.Size => 2104;
-    static string? ISchemaClass<CFuncMoveLinear>.ClassName => "momentary_door";
+    static int ISchemaClass<CFuncMoveLinear>.Size => 2160;
+    static string? ISchemaClass<CFuncMoveLinear>.ClassName => "func_movelinear";
 
 
     public ref MoveLinearAuthoredPos_t AuthoredPosition { get; }

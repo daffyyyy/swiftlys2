@@ -18,12 +18,13 @@ internal partial class CFuncWaterImpl : CBaseModelEntityImpl, CFuncWater
 
     private static nint? _BuoyancyHelperOffset;
 
-    public CBuoyancyHelper BuoyancyHelper {
-        get {
+    public CBuoyancyHelper BuoyancyHelper
+    {
+        get
+        {
             _BuoyancyHelperOffset = _BuoyancyHelperOffset ?? Schema.GetOffset(0x7DCF4A236BAFFEA7);
             return new CBuoyancyHelperImpl(_Handle + _BuoyancyHelperOffset!.Value);
         }
     }
-
 
 }

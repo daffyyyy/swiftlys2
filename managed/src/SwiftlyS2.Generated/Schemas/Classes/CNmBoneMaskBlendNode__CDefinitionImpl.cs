@@ -18,28 +18,33 @@ internal partial class CNmBoneMaskBlendNode__CDefinitionImpl : CNmBoneMaskValueN
 
     private static nint? _SourceMaskNodeIdxOffset;
 
-    public ref short SourceMaskNodeIdx {
-        get {
+    public ref short SourceMaskNodeIdx
+    {
+        get
+        {
             _SourceMaskNodeIdxOffset = _SourceMaskNodeIdxOffset ?? Schema.GetOffset(0x551EA0BCFF243A47);
             return ref _Handle.AsRef<short>(_SourceMaskNodeIdxOffset!.Value);
         }
     }
     private static nint? _TargetMaskNodeIdxOffset;
 
-    public ref short TargetMaskNodeIdx {
-        get {
+    public ref short TargetMaskNodeIdx
+    {
+        get
+        {
             _TargetMaskNodeIdxOffset = _TargetMaskNodeIdxOffset ?? Schema.GetOffset(0x551EA0BC74E90A6F);
             return ref _Handle.AsRef<short>(_TargetMaskNodeIdxOffset!.Value);
         }
     }
     private static nint? _BlendWeightValueNodeIdxOffset;
 
-    public ref short BlendWeightValueNodeIdx {
-        get {
+    public ref short BlendWeightValueNodeIdx
+    {
+        get
+        {
             _BlendWeightValueNodeIdxOffset = _BlendWeightValueNodeIdxOffset ?? Schema.GetOffset(0x551EA0BC2735A990);
             return ref _Handle.AsRef<short>(_BlendWeightValueNodeIdxOffset!.Value);
         }
     }
-
 
 }

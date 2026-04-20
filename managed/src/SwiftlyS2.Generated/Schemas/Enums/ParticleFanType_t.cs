@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ParticleFanType_t : uint
 {
- PARTICLE_FAN_TYPE_FAN = 0,
-
- PARTICLE_FAN_TYPE_ROTOR_WASH = 1,
-
- PARTICLE_FAN_TYPE_RADIAL = 2,
+    PARTICLE_FAN_TYPE_FAN = 0,
+    PARTICLE_FAN_TYPE_ROTOR_WASH = 1,
+    PARTICLE_FAN_TYPE_RADIAL = 2,
 }

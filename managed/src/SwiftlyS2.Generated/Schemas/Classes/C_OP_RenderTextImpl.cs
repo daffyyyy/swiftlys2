@@ -18,24 +18,28 @@ internal partial class C_OP_RenderTextImpl : CParticleFunctionRendererImpl, C_OP
 
     private static nint? _OutlineColorOffset;
 
-    public ref Color OutlineColor {
-        get {
+    public ref Color OutlineColor
+    {
+        get
+        {
             _OutlineColorOffset = _OutlineColorOffset ?? Schema.GetOffset(0x376BB2E675B94BB0);
             return ref _Handle.AsRef<Color>(_OutlineColorOffset!.Value);
         }
     }
     private static nint? _DefaultTextOffset;
 
-    public string DefaultText {
-        get {
+    public string DefaultText
+    {
+        get
+        {
             _DefaultTextOffset = _DefaultTextOffset ?? Schema.GetOffset(0x376BB2E67556AF5D);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DefaultTextOffset!.Value));
         }
-        set {
+        set
+        {
             _DefaultTextOffset = _DefaultTextOffset ?? Schema.GetOffset(0x376BB2E67556AF5D);
             Schema.SetCUtlString(_Handle, _DefaultTextOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

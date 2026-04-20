@@ -18,48 +18,60 @@ internal partial class CCSPlayerController_InGameMoneyServicesImpl : CPlayerCont
 
     private static nint? _ReceivesMoneyNextRoundOffset;
 
-    public ref bool ReceivesMoneyNextRound {
-        get {
+    public ref bool ReceivesMoneyNextRound
+    {
+        get
+        {
             _ReceivesMoneyNextRoundOffset = _ReceivesMoneyNextRoundOffset ?? Schema.GetOffset(0x6C87CBFDB54DB07C);
             return ref _Handle.AsRef<bool>(_ReceivesMoneyNextRoundOffset!.Value);
         }
     }
     private static nint? _MoneyEarnedForNextRoundOffset;
 
-    public ref int MoneyEarnedForNextRound {
-        get {
+    public ref int MoneyEarnedForNextRound
+    {
+        get
+        {
             _MoneyEarnedForNextRoundOffset = _MoneyEarnedForNextRoundOffset ?? Schema.GetOffset(0x6C87CBFDAB17AAC1);
             return ref _Handle.AsRef<int>(_MoneyEarnedForNextRoundOffset!.Value);
         }
     }
     private static nint? _AccountOffset;
 
-    public ref int Account {
-        get {
+    public ref int Account
+    {
+        get
+        {
             _AccountOffset = _AccountOffset ?? Schema.GetOffset(0x6C87CBFDF7F4E98B);
             return ref _Handle.AsRef<int>(_AccountOffset!.Value);
         }
     }
     private static nint? _StartAccountOffset;
 
-    public ref int StartAccount {
-        get {
+    public ref int StartAccount
+    {
+        get
+        {
             _StartAccountOffset = _StartAccountOffset ?? Schema.GetOffset(0x6C87CBFD6433FAB7);
             return ref _Handle.AsRef<int>(_StartAccountOffset!.Value);
         }
     }
     private static nint? _TotalCashSpentOffset;
 
-    public ref int TotalCashSpent {
-        get {
+    public ref int TotalCashSpent
+    {
+        get
+        {
             _TotalCashSpentOffset = _TotalCashSpentOffset ?? Schema.GetOffset(0x6C87CBFDD4977327);
             return ref _Handle.AsRef<int>(_TotalCashSpentOffset!.Value);
         }
     }
     private static nint? _CashSpentThisRoundOffset;
 
-    public ref int CashSpentThisRound {
-        get {
+    public ref int CashSpentThisRound
+    {
+        get
+        {
             _CashSpentThisRoundOffset = _CashSpentThisRoundOffset ?? Schema.GetOffset(0x6C87CBFDFB4284AB);
             return ref _Handle.AsRef<int>(_CashSpentThisRoundOffset!.Value);
         }

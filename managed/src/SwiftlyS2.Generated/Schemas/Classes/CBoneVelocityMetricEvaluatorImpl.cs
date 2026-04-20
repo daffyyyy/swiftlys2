@@ -18,12 +18,13 @@ internal partial class CBoneVelocityMetricEvaluatorImpl : CMotionMetricEvaluator
 
     private static nint? _BoneIndexOffset;
 
-    public ref int BoneIndex {
-        get {
+    public ref int BoneIndex
+    {
+        get
+        {
             _BoneIndexOffset = _BoneIndexOffset ?? Schema.GetOffset(0x90D313709F407B79);
             return ref _Handle.AsRef<int>(_BoneIndexOffset!.Value);
         }
     }
-
 
 }

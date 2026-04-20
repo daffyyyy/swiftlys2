@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCResponseRulesListImpl : SchemaClass, 
 {
     public InfoForResourceTypeCResponseRulesListImpl(nint handle) : base(handle) { }
 
-
-
-
 }

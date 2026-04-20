@@ -18,20 +18,23 @@ internal partial class CNmSyncTrack__EventMarker_tImpl : SchemaClass, CNmSyncTra
 
     private static nint? _StartTimeOffset;
 
-    public NmPercent_t StartTime {
-        get {
+    public NmPercent_t StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0x1BCC69006330E7EE);
             return new NmPercent_tImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
     private static nint? _IDOffset;
 
-    public ref CGlobalSymbol ID {
-        get {
+    public ref CGlobalSymbol ID
+    {
+        get
+        {
             _IDOffset = _IDOffset ?? Schema.GetOffset(0x1BCC690095066900);
             return ref _Handle.AsRef<CGlobalSymbol>(_IDOffset!.Value);
         }
     }
-
 
 }

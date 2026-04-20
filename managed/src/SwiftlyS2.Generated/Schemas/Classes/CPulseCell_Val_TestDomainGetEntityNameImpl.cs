@@ -16,7 +16,4 @@ internal partial class CPulseCell_Val_TestDomainGetEntityNameImpl : CPulseCell_B
 {
     public CPulseCell_Val_TestDomainGetEntityNameImpl(nint handle) : base(handle) { }
 
-
-
-
 }

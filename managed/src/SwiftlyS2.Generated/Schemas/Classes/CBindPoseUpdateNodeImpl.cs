@@ -16,7 +16,4 @@ internal partial class CBindPoseUpdateNodeImpl : CLeafUpdateNodeImpl, CBindPoseU
 {
     public CBindPoseUpdateNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

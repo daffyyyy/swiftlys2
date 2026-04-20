@@ -14,7 +14,4 @@ public partial interface EventModInitialized_t : ISchemaClass<EventModInitialize
     static int ISchemaClass<EventModInitialized_t>.Size => 1;
     static string? ISchemaClass<EventModInitialized_t>.ClassName => null;
 
-
-
-
 }

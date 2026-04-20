@@ -18,12 +18,13 @@ internal partial class CAnimScriptComponentUpdaterImpl : CAnimComponentUpdaterIm
 
     private static nint? _ScriptOffset;
 
-    public AnimScriptHandle Script {
-        get {
+    public AnimScriptHandle Script
+    {
+        get
+        {
             _ScriptOffset = _ScriptOffset ?? Schema.GetOffset(0x2BD2101829D70FB0);
             return new AnimScriptHandleImpl(_Handle + _ScriptOffset!.Value);
         }
     }
-
 
 }

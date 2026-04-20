@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CShower : CModelPointEntity, ISchemaClass<CShower>
 {
     static CShower ISchemaClass<CShower>.From(nint handle) => new CShowerImpl(handle);
-    static int ISchemaClass<CShower>.Size => 1840;
+    static int ISchemaClass<CShower>.Size => 1896;
     static string? ISchemaClass<CShower>.ClassName => "spark_shower";
-
-
-
 
 }

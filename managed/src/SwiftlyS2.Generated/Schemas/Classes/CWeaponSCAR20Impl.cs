@@ -16,7 +16,4 @@ internal partial class CWeaponSCAR20Impl : CCSWeaponBaseGunImpl, CWeaponSCAR20
 {
     public CWeaponSCAR20Impl(nint handle) : base(handle) { }
 
-
-
-
 }

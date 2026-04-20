@@ -18,36 +18,43 @@ internal partial class C_OP_ScreenSpaceRotateTowardTargetImpl : CParticleFunctio
 
     private static nint? _TargetPositionOffset;
 
-    public CPerParticleVecInput TargetPosition {
-        get {
+    public CPerParticleVecInput TargetPosition
+    {
+        get
+        {
             _TargetPositionOffset = _TargetPositionOffset ?? Schema.GetOffset(0xD66164FC554C563B);
             return new CPerParticleVecInputImpl(_Handle + _TargetPositionOffset!.Value);
         }
     }
     private static nint? _OutputRemapOffset;
 
-    public CParticleRemapFloatInput OutputRemap {
-        get {
+    public CParticleRemapFloatInput OutputRemap
+    {
+        get
+        {
             _OutputRemapOffset = _OutputRemapOffset ?? Schema.GetOffset(0xD66164FC1239396F);
             return new CParticleRemapFloatInputImpl(_Handle + _OutputRemapOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0xD66164FCFB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
     private static nint? _ScreenEdgeAlignmentDistanceOffset;
 
-    public CPerParticleFloatInput ScreenEdgeAlignmentDistance {
-        get {
+    public CPerParticleFloatInput ScreenEdgeAlignmentDistance
+    {
+        get
+        {
             _ScreenEdgeAlignmentDistanceOffset = _ScreenEdgeAlignmentDistanceOffset ?? Schema.GetOffset(0xD66164FCDB3D3EAC);
             return new CPerParticleFloatInputImpl(_Handle + _ScreenEdgeAlignmentDistanceOffset!.Value);
         }
     }
-
 
 }

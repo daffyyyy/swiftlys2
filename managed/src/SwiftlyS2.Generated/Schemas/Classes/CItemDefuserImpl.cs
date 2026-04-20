@@ -18,20 +18,23 @@ internal partial class CItemDefuserImpl : CItemImpl, CItemDefuser
 
     private static nint? _EntitySpottedStateOffset;
 
-    public EntitySpottedState_t EntitySpottedState {
-        get {
+    public EntitySpottedState_t EntitySpottedState
+    {
+        get
+        {
             _EntitySpottedStateOffset = _EntitySpottedStateOffset ?? Schema.GetOffset(0xC9362933032B547C);
             return new EntitySpottedState_tImpl(_Handle + _EntitySpottedStateOffset!.Value);
         }
     }
     private static nint? _SpotRulesOffset;
 
-    public ref int SpotRules {
-        get {
+    public ref int SpotRules
+    {
+        get
+        {
             _SpotRulesOffset = _SpotRulesOffset ?? Schema.GetOffset(0xC9362933776CCE44);
             return ref _Handle.AsRef<int>(_SpotRulesOffset!.Value);
         }
     }
-
 
 }

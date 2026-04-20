@@ -18,60 +18,73 @@ internal partial class CLogicCollisionPairImpl : CLogicalEntityImpl, CLogicColli
 
     private static nint? _NameAttach1Offset;
 
-    public string NameAttach1 {
-        get {
+    public string NameAttach1
+    {
+        get
+        {
             _NameAttach1Offset = _NameAttach1Offset ?? Schema.GetOffset(0x9E0FC6AC6776530A);
             return Schema.GetString(_Handle.Read<nint>(_NameAttach1Offset!.Value));
         }
-        set {
+        set
+        {
             _NameAttach1Offset = _NameAttach1Offset ?? Schema.GetOffset(0x9E0FC6AC6776530A);
             Schema.SetString(_Handle, _NameAttach1Offset!.Value, value);
         }
-    } 
+    }
     private static nint? _NameAttach2Offset;
 
-    public string NameAttach2 {
-        get {
+    public string NameAttach2
+    {
+        get
+        {
             _NameAttach2Offset = _NameAttach2Offset ?? Schema.GetOffset(0x9E0FC6AC66765177);
             return Schema.GetString(_Handle.Read<nint>(_NameAttach2Offset!.Value));
         }
-        set {
+        set
+        {
             _NameAttach2Offset = _NameAttach2Offset ?? Schema.GetOffset(0x9E0FC6AC66765177);
             Schema.SetString(_Handle, _NameAttach2Offset!.Value, value);
         }
-    } 
+    }
     private static nint? _IncludeHierarchyOffset;
 
-    public ref bool IncludeHierarchy {
-        get {
+    public ref bool IncludeHierarchy
+    {
+        get
+        {
             _IncludeHierarchyOffset = _IncludeHierarchyOffset ?? Schema.GetOffset(0x9E0FC6ACC064916A);
             return ref _Handle.AsRef<bool>(_IncludeHierarchyOffset!.Value);
         }
     }
     private static nint? _SupportMultipleEntitiesWithSameNameOffset;
 
-    public ref bool SupportMultipleEntitiesWithSameName {
-        get {
+    public ref bool SupportMultipleEntitiesWithSameName
+    {
+        get
+        {
             _SupportMultipleEntitiesWithSameNameOffset = _SupportMultipleEntitiesWithSameNameOffset ?? Schema.GetOffset(0x9E0FC6ACD009870A);
             return ref _Handle.AsRef<bool>(_SupportMultipleEntitiesWithSameNameOffset!.Value);
         }
     }
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0x9E0FC6AC28A745A5);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _SucceededOffset;
 
-    public ref bool Succeeded {
-        get {
+    public ref bool Succeeded
+    {
+        get
+        {
             _SucceededOffset = _SucceededOffset ?? Schema.GetOffset(0x9E0FC6AC48FBF712);
             return ref _Handle.AsRef<bool>(_SucceededOffset!.Value);
         }
     }
-
 
 }

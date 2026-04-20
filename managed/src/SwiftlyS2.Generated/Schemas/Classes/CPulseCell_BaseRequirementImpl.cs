@@ -16,7 +16,4 @@ internal partial class CPulseCell_BaseRequirementImpl : CPulseCell_BaseImpl, CPu
 {
     public CPulseCell_BaseRequirementImpl(nint handle) : base(handle) { }
 
-
-
-
 }

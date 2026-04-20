@@ -18,20 +18,23 @@ internal partial class PackedAABB_tImpl : SchemaClass, PackedAABB_t
 
     private static nint? _PackedMinOffset;
 
-    public ref uint PackedMin {
-        get {
+    public ref uint PackedMin
+    {
+        get
+        {
             _PackedMinOffset = _PackedMinOffset ?? Schema.GetOffset(0x868E43307AC1AEAF);
             return ref _Handle.AsRef<uint>(_PackedMinOffset!.Value);
         }
     }
     private static nint? _PackedMaxOffset;
 
-    public ref uint PackedMax {
-        get {
+    public ref uint PackedMax
+    {
+        get
+        {
             _PackedMaxOffset = _PackedMaxOffset ?? Schema.GetOffset(0x868E433068AE0AA1);
             return ref _Handle.AsRef<uint>(_PackedMaxOffset!.Value);
         }
     }
-
 
 }

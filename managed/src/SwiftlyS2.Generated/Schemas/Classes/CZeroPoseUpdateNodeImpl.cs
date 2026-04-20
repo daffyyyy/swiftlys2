@@ -16,7 +16,4 @@ internal partial class CZeroPoseUpdateNodeImpl : CLeafUpdateNodeImpl, CZeroPoseU
 {
     public CZeroPoseUpdateNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,84 +18,103 @@ internal partial class CTargetSelectorUpdateNodeImpl : CAnimUpdateNodeBaseImpl, 
 
     private static nint? _AngleModeOffset;
 
-    public ref TargetSelectorAngleMode_t AngleMode {
-        get {
+    public ref TargetSelectorAngleMode_t AngleMode
+    {
+        get
+        {
             _AngleModeOffset = _AngleModeOffset ?? Schema.GetOffset(0x37AB6CCBD21DC8BC);
             return ref _Handle.AsRef<TargetSelectorAngleMode_t>(_AngleModeOffset!.Value);
         }
     }
     private static nint? _ChildrenOffset;
 
-    public ref CUtlVector<CAnimUpdateNodeRef> Children {
-        get {
+    public ref CUtlVector<CAnimUpdateNodeRef> Children
+    {
+        get
+        {
             _ChildrenOffset = _ChildrenOffset ?? Schema.GetOffset(0x37AB6CCB7415FA72);
             return ref _Handle.AsRef<CUtlVector<CAnimUpdateNodeRef>>(_ChildrenOffset!.Value);
         }
     }
     private static nint? _TargetPositionOffset;
 
-    public CAnimParamHandle TargetPosition {
-        get {
+    public CAnimParamHandle TargetPosition
+    {
+        get
+        {
             _TargetPositionOffset = _TargetPositionOffset ?? Schema.GetOffset(0x37AB6CCBD1F40125);
             return new CAnimParamHandleImpl(_Handle + _TargetPositionOffset!.Value);
         }
     }
     private static nint? _TargetFacePositionParameterOffset;
 
-    public CAnimParamHandle TargetFacePositionParameter {
-        get {
+    public CAnimParamHandle TargetFacePositionParameter
+    {
+        get
+        {
             _TargetFacePositionParameterOffset = _TargetFacePositionParameterOffset ?? Schema.GetOffset(0x37AB6CCB1102D56F);
             return new CAnimParamHandleImpl(_Handle + _TargetFacePositionParameterOffset!.Value);
         }
     }
     private static nint? _MoveHeadingParameterOffset;
 
-    public CAnimParamHandle MoveHeadingParameter {
-        get {
+    public CAnimParamHandle MoveHeadingParameter
+    {
+        get
+        {
             _MoveHeadingParameterOffset = _MoveHeadingParameterOffset ?? Schema.GetOffset(0x37AB6CCB3A7267CF);
             return new CAnimParamHandleImpl(_Handle + _MoveHeadingParameterOffset!.Value);
         }
     }
     private static nint? _DesiredMoveHeadingParameterOffset;
 
-    public CAnimParamHandle DesiredMoveHeadingParameter {
-        get {
+    public CAnimParamHandle DesiredMoveHeadingParameter
+    {
+        get
+        {
             _DesiredMoveHeadingParameterOffset = _DesiredMoveHeadingParameterOffset ?? Schema.GetOffset(0x37AB6CCBC6298DFB);
             return new CAnimParamHandleImpl(_Handle + _DesiredMoveHeadingParameterOffset!.Value);
         }
     }
     private static nint? _TargetPositionIsWorldSpaceOffset;
 
-    public ref bool TargetPositionIsWorldSpace {
-        get {
+    public ref bool TargetPositionIsWorldSpace
+    {
+        get
+        {
             _TargetPositionIsWorldSpaceOffset = _TargetPositionIsWorldSpaceOffset ?? Schema.GetOffset(0x37AB6CCBABCF9ECD);
             return ref _Handle.AsRef<bool>(_TargetPositionIsWorldSpaceOffset!.Value);
         }
     }
     private static nint? _TargetFacePositionIsWorldSpaceOffset;
 
-    public ref bool TargetFacePositionIsWorldSpace {
-        get {
+    public ref bool TargetFacePositionIsWorldSpace
+    {
+        get
+        {
             _TargetFacePositionIsWorldSpaceOffset = _TargetFacePositionIsWorldSpaceOffset ?? Schema.GetOffset(0x37AB6CCB504B4258);
             return ref _Handle.AsRef<bool>(_TargetFacePositionIsWorldSpaceOffset!.Value);
         }
     }
     private static nint? _EnablePhaseMatchingOffset;
 
-    public ref bool EnablePhaseMatching {
-        get {
+    public ref bool EnablePhaseMatching
+    {
+        get
+        {
             _EnablePhaseMatchingOffset = _EnablePhaseMatchingOffset ?? Schema.GetOffset(0x37AB6CCB6BC1372A);
             return ref _Handle.AsRef<bool>(_EnablePhaseMatchingOffset!.Value);
         }
     }
     private static nint? _PhaseMatchingMaxRootMotionSkipOffset;
 
-    public ref float PhaseMatchingMaxRootMotionSkip {
-        get {
+    public ref float PhaseMatchingMaxRootMotionSkip
+    {
+        get
+        {
             _PhaseMatchingMaxRootMotionSkipOffset = _PhaseMatchingMaxRootMotionSkipOffset ?? Schema.GetOffset(0x37AB6CCB547A4008);
             return ref _Handle.AsRef<float>(_PhaseMatchingMaxRootMotionSkipOffset!.Value);
         }
     }
-
 
 }

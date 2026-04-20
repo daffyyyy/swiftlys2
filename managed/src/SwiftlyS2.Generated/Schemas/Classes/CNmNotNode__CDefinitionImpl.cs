@@ -18,12 +18,13 @@ internal partial class CNmNotNode__CDefinitionImpl : CNmBoolValueNode__CDefiniti
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x844BE2B095E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
-
 
 }

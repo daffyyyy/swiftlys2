@@ -16,7 +16,4 @@ internal partial class CBtNodeImpl : SchemaClass, CBtNode
 {
     public CBtNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

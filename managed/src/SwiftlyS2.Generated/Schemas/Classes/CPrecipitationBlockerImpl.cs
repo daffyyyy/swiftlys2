@@ -16,7 +16,4 @@ internal partial class CPrecipitationBlockerImpl : CBaseModelEntityImpl, CPrecip
 {
     public CPrecipitationBlockerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

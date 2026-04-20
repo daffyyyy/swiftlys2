@@ -18,20 +18,23 @@ internal partial class C_OP_CollideWithSelfImpl : CParticleFunctionConstraintImp
 
     private static nint? _RadiusScaleOffset;
 
-    public CPerParticleFloatInput RadiusScale {
-        get {
+    public CPerParticleFloatInput RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0xEF46C0CBA7A20159);
             return new CPerParticleFloatInputImpl(_Handle + _RadiusScaleOffset!.Value);
         }
     }
     private static nint? _MinimumSpeedOffset;
 
-    public CPerParticleFloatInput MinimumSpeed {
-        get {
+    public CPerParticleFloatInput MinimumSpeed
+    {
+        get
+        {
             _MinimumSpeedOffset = _MinimumSpeedOffset ?? Schema.GetOffset(0xEF46C0CB2F9BEFCC);
             return new CPerParticleFloatInputImpl(_Handle + _MinimumSpeedOffset!.Value);
         }
     }
-
 
 }

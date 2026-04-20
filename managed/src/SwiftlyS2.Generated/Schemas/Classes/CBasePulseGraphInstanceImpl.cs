@@ -16,7 +16,4 @@ internal partial class CBasePulseGraphInstanceImpl : SchemaClass, CBasePulseGrap
 {
     public CBasePulseGraphInstanceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

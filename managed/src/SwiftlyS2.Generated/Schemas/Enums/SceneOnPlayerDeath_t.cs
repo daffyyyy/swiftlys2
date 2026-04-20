@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum SceneOnPlayerDeath_t : uint
 {
- SCENE_ONPLAYERDEATH_DO_NOTHING = 0,
-
- SCENE_ONPLAYERDEATH_CANCEL = 1,
+    SCENE_ONPLAYERDEATH_DO_NOTHING = 0,
+    SCENE_ONPLAYERDEATH_CANCEL = 1,
 }

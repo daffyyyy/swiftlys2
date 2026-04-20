@@ -16,7 +16,4 @@ internal partial class CPulse_ResumePointImpl : CPulse_OutflowConnectionImpl, CP
 {
     public CPulse_ResumePointImpl(nint handle) : base(handle) { }
 
-
-
-
 }

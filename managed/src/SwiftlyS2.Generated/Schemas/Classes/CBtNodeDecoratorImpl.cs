@@ -16,7 +16,4 @@ internal partial class CBtNodeDecoratorImpl : CBtNodeImpl, CBtNodeDecorator
 {
     public CBtNodeDecoratorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

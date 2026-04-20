@@ -18,20 +18,23 @@ internal partial class C_OP_CollideWithParentParticlesImpl : CParticleFunctionCo
 
     private static nint? _ParentRadiusScaleOffset;
 
-    public CPerParticleFloatInput ParentRadiusScale {
-        get {
+    public CPerParticleFloatInput ParentRadiusScale
+    {
+        get
+        {
             _ParentRadiusScaleOffset = _ParentRadiusScaleOffset ?? Schema.GetOffset(0x73030DD0CD77EF69);
             return new CPerParticleFloatInputImpl(_Handle + _ParentRadiusScaleOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public CPerParticleFloatInput RadiusScale {
-        get {
+    public CPerParticleFloatInput RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0x73030DD0A7A20159);
             return new CPerParticleFloatInputImpl(_Handle + _RadiusScaleOffset!.Value);
         }
     }
-
 
 }

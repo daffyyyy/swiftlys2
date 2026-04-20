@@ -18,36 +18,43 @@ internal partial class CAudioSentenceImpl : SchemaClass, CAudioSentence
 
     private static nint? _ShouldVoiceDuckOffset;
 
-    public ref bool ShouldVoiceDuck {
-        get {
+    public ref bool ShouldVoiceDuck
+    {
+        get
+        {
             _ShouldVoiceDuckOffset = _ShouldVoiceDuckOffset ?? Schema.GetOffset(0x25F8D719C546CD15);
             return ref _Handle.AsRef<bool>(_ShouldVoiceDuckOffset!.Value);
         }
     }
     private static nint? _RunTimePhonemesOffset;
 
-    public ref CUtlVector<CAudioPhonemeTag> RunTimePhonemes {
-        get {
+    public ref CUtlVector<CAudioPhonemeTag> RunTimePhonemes
+    {
+        get
+        {
             _RunTimePhonemesOffset = _RunTimePhonemesOffset ?? Schema.GetOffset(0x25F8D719C0434838);
             return ref _Handle.AsRef<CUtlVector<CAudioPhonemeTag>>(_RunTimePhonemesOffset!.Value);
         }
     }
     private static nint? _EmphasisSamplesOffset;
 
-    public ref CUtlVector<CAudioEmphasisSample> EmphasisSamples {
-        get {
+    public ref CUtlVector<CAudioEmphasisSample> EmphasisSamples
+    {
+        get
+        {
             _EmphasisSamplesOffset = _EmphasisSamplesOffset ?? Schema.GetOffset(0x25F8D7194EBE8F82);
             return ref _Handle.AsRef<CUtlVector<CAudioEmphasisSample>>(_EmphasisSamplesOffset!.Value);
         }
     }
     private static nint? _MorphDataOffset;
 
-    public CAudioMorphData MorphData {
-        get {
+    public CAudioMorphData MorphData
+    {
+        get
+        {
             _MorphDataOffset = _MorphDataOffset ?? Schema.GetOffset(0x25F8D719A8207F65);
             return new CAudioMorphDataImpl(_Handle + _MorphDataOffset!.Value);
         }
     }
-
 
 }

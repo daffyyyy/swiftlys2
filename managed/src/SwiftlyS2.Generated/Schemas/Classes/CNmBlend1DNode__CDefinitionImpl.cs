@@ -18,12 +18,13 @@ internal partial class CNmBlend1DNode__CDefinitionImpl : CNmParameterizedBlendNo
 
     private static nint? _ParameterizationOffset;
 
-    public CNmParameterizedBlendNode__Parameterization_t Parameterization {
-        get {
+    public CNmParameterizedBlendNode__Parameterization_t Parameterization
+    {
+        get
+        {
             _ParameterizationOffset = _ParameterizationOffset ?? Schema.GetOffset(0xA5E668CDE173A928);
             return new CNmParameterizedBlendNode__Parameterization_tImpl(_Handle + _ParameterizationOffset!.Value);
         }
     }
-
 
 }

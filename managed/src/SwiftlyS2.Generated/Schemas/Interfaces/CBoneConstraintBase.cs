@@ -14,7 +14,4 @@ public partial interface CBoneConstraintBase : ISchemaClass<CBoneConstraintBase>
     static int ISchemaClass<CBoneConstraintBase>.Size => 32;
     static string? ISchemaClass<CBoneConstraintBase>.ClassName => null;
 
-
-
-
 }

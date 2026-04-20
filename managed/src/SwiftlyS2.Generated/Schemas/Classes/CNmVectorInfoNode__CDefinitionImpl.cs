@@ -18,20 +18,23 @@ internal partial class CNmVectorInfoNode__CDefinitionImpl : CNmFloatValueNode__C
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x80D82BB895E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _DesiredInfoOffset;
 
-    public ref CNmVectorInfoNode__Info_t DesiredInfo {
-        get {
+    public ref CNmVectorInfoNode__Info_t DesiredInfo
+    {
+        get
+        {
             _DesiredInfoOffset = _DesiredInfoOffset ?? Schema.GetOffset(0x80D82BB838B16675);
             return ref _Handle.AsRef<CNmVectorInfoNode__Info_t>(_DesiredInfoOffset!.Value);
         }
     }
-
 
 }

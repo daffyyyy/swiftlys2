@@ -18,28 +18,33 @@ internal partial class FeSimdRodConstraintAnim_tImpl : SchemaClass, FeSimdRodCon
 
     private static nint? _NodeOffset;
 
-    public SchemaUntypedField Node {
-        get {
+    public SchemaUntypedField Node
+    {
+        get
+        {
             _NodeOffset = _NodeOffset ?? Schema.GetOffset(0x22AFF313CD6694B9);
             return new SchemaUntypedField(_Handle + _NodeOffset!.Value);
         }
     }
     private static nint? _F4Weight0Offset;
 
-    public ref fltx4 F4Weight0 {
-        get {
+    public ref fltx4 F4Weight0
+    {
+        get
+        {
             _F4Weight0Offset = _F4Weight0Offset ?? Schema.GetOffset(0x22AFF3131FFC3579);
             return ref _Handle.AsRef<fltx4>(_F4Weight0Offset!.Value);
         }
     }
     private static nint? _F4RelaxationFactorOffset;
 
-    public ref fltx4 F4RelaxationFactor {
-        get {
+    public ref fltx4 F4RelaxationFactor
+    {
+        get
+        {
             _F4RelaxationFactorOffset = _F4RelaxationFactorOffset ?? Schema.GetOffset(0x22AFF313DF311F87);
             return ref _Handle.AsRef<fltx4>(_F4RelaxationFactorOffset!.Value);
         }
     }
-
 
 }

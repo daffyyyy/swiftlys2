@@ -18,36 +18,43 @@ internal partial class CSoundEnvelopeImpl : SchemaClass, CSoundEnvelope
 
     private static nint? _CurrentOffset;
 
-    public ref float Current {
-        get {
+    public ref float Current
+    {
+        get
+        {
             _CurrentOffset = _CurrentOffset ?? Schema.GetOffset(0xDF974C315AD334FA);
             return ref _Handle.AsRef<float>(_CurrentOffset!.Value);
         }
     }
     private static nint? _TargetOffset;
 
-    public ref float Target {
-        get {
+    public ref float Target
+    {
+        get
+        {
             _TargetOffset = _TargetOffset ?? Schema.GetOffset(0xDF974C31FA08A9E8);
             return ref _Handle.AsRef<float>(_TargetOffset!.Value);
         }
     }
     private static nint? _RateOffset;
 
-    public ref float Rate {
-        get {
+    public ref float Rate
+    {
+        get
+        {
             _RateOffset = _RateOffset ?? Schema.GetOffset(0xDF974C316C5ECD07);
             return ref _Handle.AsRef<float>(_RateOffset!.Value);
         }
     }
     private static nint? _ForceupdateOffset;
 
-    public ref bool Forceupdate {
-        get {
+    public ref bool Forceupdate
+    {
+        get
+        {
             _ForceupdateOffset = _ForceupdateOffset ?? Schema.GetOffset(0xDF974C3131B01C25);
             return ref _Handle.AsRef<bool>(_ForceupdateOffset!.Value);
         }
     }
-
 
 }

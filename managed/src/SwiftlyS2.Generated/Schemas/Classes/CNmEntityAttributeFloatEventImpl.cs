@@ -18,12 +18,13 @@ internal partial class CNmEntityAttributeFloatEventImpl : CNmEntityAttributeEven
 
     private static nint? _FloatValueOffset;
 
-    public SchemaUntypedField FloatValue {
-        get {
+    public SchemaUntypedField FloatValue
+    {
+        get
+        {
             _FloatValueOffset = _FloatValueOffset ?? Schema.GetOffset(0x3ADB66C2ADBE62AA);
             return new SchemaUntypedField(_Handle + _FloatValueOffset!.Value);
         }
     }
-
 
 }

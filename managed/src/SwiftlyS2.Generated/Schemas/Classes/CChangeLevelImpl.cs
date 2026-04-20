@@ -18,68 +18,83 @@ internal partial class CChangeLevelImpl : CBaseTriggerImpl, CChangeLevel
 
     private static nint? _MapNameOffset;
 
-    public string MapName {
-        get {
+    public string MapName
+    {
+        get
+        {
             _MapNameOffset = _MapNameOffset ?? Schema.GetOffset(0x52008134CE11EF47);
             return Schema.GetCUtlString(_Handle.Read<nint>(_MapNameOffset!.Value));
         }
-        set {
+        set
+        {
             _MapNameOffset = _MapNameOffset ?? Schema.GetOffset(0x52008134CE11EF47);
             Schema.SetCUtlString(_Handle, _MapNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _LandmarkNameOffset;
 
-    public string LandmarkName {
-        get {
+    public string LandmarkName
+    {
+        get
+        {
             _LandmarkNameOffset = _LandmarkNameOffset ?? Schema.GetOffset(0x520081342DEE941D);
             return Schema.GetCUtlString(_Handle.Read<nint>(_LandmarkNameOffset!.Value));
         }
-        set {
+        set
+        {
             _LandmarkNameOffset = _LandmarkNameOffset ?? Schema.GetOffset(0x520081342DEE941D);
             Schema.SetCUtlString(_Handle, _LandmarkNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OnChangeLevelOffset;
 
-    public ref CEntityIOOutput OnChangeLevel {
-        get {
+    public ref CEntityIOOutput OnChangeLevel
+    {
+        get
+        {
             _OnChangeLevelOffset = _OnChangeLevelOffset ?? Schema.GetOffset(0x52008134EED57EDE);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnChangeLevelOffset!.Value);
         }
     }
     private static nint? _TouchedOffset;
 
-    public ref bool Touched {
-        get {
+    public ref bool Touched
+    {
+        get
+        {
             _TouchedOffset = _TouchedOffset ?? Schema.GetOffset(0x520081342BF07839);
             return ref _Handle.AsRef<bool>(_TouchedOffset!.Value);
         }
     }
     private static nint? _NoTouchOffset;
 
-    public ref bool NoTouch {
-        get {
+    public ref bool NoTouch
+    {
+        get
+        {
             _NoTouchOffset = _NoTouchOffset ?? Schema.GetOffset(0x520081343004899D);
             return ref _Handle.AsRef<bool>(_NoTouchOffset!.Value);
         }
     }
     private static nint? _NewChapterOffset;
 
-    public ref bool NewChapter {
-        get {
+    public ref bool NewChapter
+    {
+        get
+        {
             _NewChapterOffset = _NewChapterOffset ?? Schema.GetOffset(0x520081342D184126);
             return ref _Handle.AsRef<bool>(_NewChapterOffset!.Value);
         }
     }
     private static nint? _OnChangeLevelFiredOffset;
 
-    public ref bool OnChangeLevelFired {
-        get {
+    public ref bool OnChangeLevelFired
+    {
+        get
+        {
             _OnChangeLevelFiredOffset = _OnChangeLevelFiredOffset ?? Schema.GetOffset(0x520081341173C672);
             return ref _Handle.AsRef<bool>(_OnChangeLevelFiredOffset!.Value);
         }
     }
-
 
 }

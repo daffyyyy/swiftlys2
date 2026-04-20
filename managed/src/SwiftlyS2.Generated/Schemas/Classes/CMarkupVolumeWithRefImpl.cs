@@ -18,36 +18,43 @@ internal partial class CMarkupVolumeWithRefImpl : CMarkupVolumeTaggedImpl, CMark
 
     private static nint? _UseRefOffset;
 
-    public ref bool UseRef {
-        get {
+    public ref bool UseRef
+    {
+        get
+        {
             _UseRefOffset = _UseRefOffset ?? Schema.GetOffset(0x12AA97857F572B29);
             return ref _Handle.AsRef<bool>(_UseRefOffset!.Value);
         }
     }
     private static nint? _RefPosEntitySpaceOffset;
 
-    public ref Vector RefPosEntitySpace {
-        get {
+    public ref Vector RefPosEntitySpace
+    {
+        get
+        {
             _RefPosEntitySpaceOffset = _RefPosEntitySpaceOffset ?? Schema.GetOffset(0x12AA978532BBDFAB);
             return ref _Handle.AsRef<Vector>(_RefPosEntitySpaceOffset!.Value);
         }
     }
     private static nint? _RefPosWorldSpaceOffset;
 
-    public ref Vector RefPosWorldSpace {
-        get {
+    public ref Vector RefPosWorldSpace
+    {
+        get
+        {
             _RefPosWorldSpaceOffset = _RefPosWorldSpaceOffset ?? Schema.GetOffset(0x12AA97856139C236);
             return ref _Handle.AsRef<Vector>(_RefPosWorldSpaceOffset!.Value);
         }
     }
     private static nint? _RefDotOffset;
 
-    public ref float RefDot {
-        get {
+    public ref float RefDot
+    {
+        get
+        {
             _RefDotOffset = _RefDotOffset ?? Schema.GetOffset(0x12AA9785584DB957);
             return ref _Handle.AsRef<float>(_RefDotOffset!.Value);
         }
     }
-
 
 }

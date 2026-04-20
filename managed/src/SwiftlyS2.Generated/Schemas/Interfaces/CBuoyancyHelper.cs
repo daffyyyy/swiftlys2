@@ -15,6 +15,8 @@ public partial interface CBuoyancyHelper : ISchemaClass<CBuoyancyHelper>
     static string? ISchemaClass<CBuoyancyHelper>.ClassName => null;
 
 
+    public IPhysicsMotionController? Controller { get; }
+
     public ref CUtlStringToken FluidType { get; }
 
     public ref float FluidDensity { get; }

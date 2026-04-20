@@ -18,12 +18,13 @@ internal partial class RnFace_tImpl : SchemaClass, RnFace_t
 
     private static nint? _EdgeOffset;
 
-    public ref byte Edge {
-        get {
+    public ref byte Edge
+    {
+        get
+        {
             _EdgeOffset = _EdgeOffset ?? Schema.GetOffset(0xE71D75B3E2949FC8);
             return ref _Handle.AsRef<byte>(_EdgeOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CAnimEventQueueListenerImpl : CAnimEventListenerBaseImpl,
 {
     public CAnimEventQueueListenerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

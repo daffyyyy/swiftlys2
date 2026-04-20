@@ -14,7 +14,4 @@ public partial interface CPointConstraint : CBaseConstraint, ISchemaClass<CPoint
     static int ISchemaClass<CPointConstraint>.Size => 96;
     static string? ISchemaClass<CPointConstraint>.ClassName => null;
 
-
-
-
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPrecipitationVData : CEntitySubclassVDataBase, ISchemaClass<CPrecipitationVData>
 {
     static CPrecipitationVData ISchemaClass<CPrecipitationVData>.From(nint handle) => new CPrecipitationVDataImpl(handle);
-    static int ISchemaClass<CPrecipitationVData>.Size => 296;
+    static int ISchemaClass<CPrecipitationVData>.Size => 304;
     static string? ISchemaClass<CPrecipitationVData>.ClassName => null;
 
 
@@ -29,6 +29,10 @@ public partial interface CPrecipitationVData : CEntitySubclassVDataBase, ISchema
     public ref int RTEnvCPComponent { get; }
 
     public string Modifier { get; set; }
+
+    public ref int UseSnapshotFromSurfaceGraph { get; }
+
+    public PrecipitationFilter_t SnapshotFilter { get; }
 
 
 }

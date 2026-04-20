@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCResourceManifestInternal : ISchemaC
     static int ISchemaClass<InfoForResourceTypeCResourceManifestInternal>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCResourceManifestInternal>.ClassName => null;
 
-
-
-
 }

@@ -18,36 +18,43 @@ internal partial class CVoiceContainerTapePlayerImpl : CVoiceContainerAsyncGener
 
     private static nint? _ShouldWraparoundOffset;
 
-    public ref bool ShouldWraparound {
-        get {
+    public ref bool ShouldWraparound
+    {
+        get
+        {
             _ShouldWraparoundOffset = _ShouldWraparoundOffset ?? Schema.GetOffset(0x47089DCA5F9E45A3);
             return ref _Handle.AsRef<bool>(_ShouldWraparoundOffset!.Value);
         }
     }
     private static nint? _SourceAudioOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SourceAudio {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SourceAudio
+    {
+        get
+        {
             _SourceAudioOffset = _SourceAudioOffset ?? Schema.GetOffset(0x47089DCAE5E00DE2);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(_SourceAudioOffset!.Value);
         }
     }
     private static nint? _TapeSpeedAttackTimeOffset;
 
-    public ref float TapeSpeedAttackTime {
-        get {
+    public ref float TapeSpeedAttackTime
+    {
+        get
+        {
             _TapeSpeedAttackTimeOffset = _TapeSpeedAttackTimeOffset ?? Schema.GetOffset(0x47089DCA795068DF);
             return ref _Handle.AsRef<float>(_TapeSpeedAttackTimeOffset!.Value);
         }
     }
     private static nint? _TapeSpeedReleaseTimeOffset;
 
-    public ref float TapeSpeedReleaseTime {
-        get {
+    public ref float TapeSpeedReleaseTime
+    {
+        get
+        {
             _TapeSpeedReleaseTimeOffset = _TapeSpeedReleaseTimeOffset ?? Schema.GetOffset(0x47089DCA2B3533C2);
             return ref _Handle.AsRef<float>(_TapeSpeedReleaseTimeOffset!.Value);
         }
     }
-
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_LockToSavedSequentialPath : CParticleFunctionOperator, ISchemaClass<C_OP_LockToSavedSequentialPath>
 {
     static C_OP_LockToSavedSequentialPath ISchemaClass<C_OP_LockToSavedSequentialPath>.From(nint handle) => new C_OP_LockToSavedSequentialPathImpl(handle);
-    static int ISchemaClass<C_OP_LockToSavedSequentialPath>.Size => 544;
+    static int ISchemaClass<C_OP_LockToSavedSequentialPath>.Size => 560;
     static string? ISchemaClass<C_OP_LockToSavedSequentialPath>.ClassName => null;
 
 

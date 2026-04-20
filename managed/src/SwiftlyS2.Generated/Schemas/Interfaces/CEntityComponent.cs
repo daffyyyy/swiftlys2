@@ -14,7 +14,4 @@ public partial interface CEntityComponent : ISchemaClass<CEntityComponent>
     static int ISchemaClass<CEntityComponent>.Size => 8;
     static string? ISchemaClass<CEntityComponent>.ClassName => null;
 
-
-
-
 }

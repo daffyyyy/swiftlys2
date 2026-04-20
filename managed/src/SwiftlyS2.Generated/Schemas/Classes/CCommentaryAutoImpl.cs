@@ -18,28 +18,33 @@ internal partial class CCommentaryAutoImpl : CBaseEntityImpl, CCommentaryAuto
 
     private static nint? _OnCommentaryNewGameOffset;
 
-    public ref CEntityIOOutput OnCommentaryNewGame {
-        get {
+    public ref CEntityIOOutput OnCommentaryNewGame
+    {
+        get
+        {
             _OnCommentaryNewGameOffset = _OnCommentaryNewGameOffset ?? Schema.GetOffset(0x5BB39498C3245D97);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnCommentaryNewGameOffset!.Value);
         }
     }
     private static nint? _OnCommentaryMidGameOffset;
 
-    public ref CEntityIOOutput OnCommentaryMidGame {
-        get {
+    public ref CEntityIOOutput OnCommentaryMidGame
+    {
+        get
+        {
             _OnCommentaryMidGameOffset = _OnCommentaryMidGameOffset ?? Schema.GetOffset(0x5BB39498A1777FCB);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnCommentaryMidGameOffset!.Value);
         }
     }
     private static nint? _OnCommentaryMultiplayerSpawnOffset;
 
-    public ref CEntityIOOutput OnCommentaryMultiplayerSpawn {
-        get {
+    public ref CEntityIOOutput OnCommentaryMultiplayerSpawn
+    {
+        get
+        {
             _OnCommentaryMultiplayerSpawnOffset = _OnCommentaryMultiplayerSpawnOffset ?? Schema.GetOffset(0x5BB3949819FDEEB2);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnCommentaryMultiplayerSpawnOffset!.Value);
         }
     }
-
 
 }

@@ -18,164 +18,203 @@ internal partial class CCS2WeaponGraphControllerImpl : CAnimGraphControllerBaseI
 
     private static nint? _ActionOffset;
 
-    public SchemaUntypedField Action {
-        get {
+    public SchemaUntypedField Action
+    {
+        get
+        {
             _ActionOffset = _ActionOffset ?? Schema.GetOffset(0x8553337E7918619F);
             return new SchemaUntypedField(_Handle + _ActionOffset!.Value);
         }
     }
     private static nint? _ActionResetOffset;
 
-    public SchemaUntypedField ActionReset {
-        get {
+    public SchemaUntypedField ActionReset
+    {
+        get
+        {
             _ActionResetOffset = _ActionResetOffset ?? Schema.GetOffset(0x8553337E580F422E);
             return new SchemaUntypedField(_Handle + _ActionResetOffset!.Value);
         }
     }
     private static nint? _WeaponActionSpeedScaleOffset;
 
-    public SchemaUntypedField WeaponActionSpeedScale {
-        get {
+    public SchemaUntypedField WeaponActionSpeedScale
+    {
+        get
+        {
             _WeaponActionSpeedScaleOffset = _WeaponActionSpeedScaleOffset ?? Schema.GetOffset(0x8553337EC667EC52);
             return new SchemaUntypedField(_Handle + _WeaponActionSpeedScaleOffset!.Value);
         }
     }
     private static nint? _WeaponCategoryOffset;
 
-    public SchemaUntypedField WeaponCategory {
-        get {
+    public SchemaUntypedField WeaponCategory
+    {
+        get
+        {
             _WeaponCategoryOffset = _WeaponCategoryOffset ?? Schema.GetOffset(0x8553337EE2B7A95D);
             return new SchemaUntypedField(_Handle + _WeaponCategoryOffset!.Value);
         }
     }
     private static nint? _WeaponTypeOffset;
 
-    public SchemaUntypedField WeaponType {
-        get {
+    public SchemaUntypedField WeaponType
+    {
+        get
+        {
             _WeaponTypeOffset = _WeaponTypeOffset ?? Schema.GetOffset(0x8553337E0C0E3309);
             return new SchemaUntypedField(_Handle + _WeaponTypeOffset!.Value);
         }
     }
     private static nint? _WeaponExtraInfoOffset;
 
-    public SchemaUntypedField WeaponExtraInfo {
-        get {
+    public SchemaUntypedField WeaponExtraInfo
+    {
+        get
+        {
             _WeaponExtraInfoOffset = _WeaponExtraInfoOffset ?? Schema.GetOffset(0x8553337EF4004D3D);
             return new SchemaUntypedField(_Handle + _WeaponExtraInfoOffset!.Value);
         }
     }
     private static nint? _WeaponAmmoOffset;
 
-    public SchemaUntypedField WeaponAmmo {
-        get {
+    public SchemaUntypedField WeaponAmmo
+    {
+        get
+        {
             _WeaponAmmoOffset = _WeaponAmmoOffset ?? Schema.GetOffset(0x8553337ED1A06C75);
             return new SchemaUntypedField(_Handle + _WeaponAmmoOffset!.Value);
         }
     }
     private static nint? _WeaponAmmoMaxOffset;
 
-    public SchemaUntypedField WeaponAmmoMax {
-        get {
+    public SchemaUntypedField WeaponAmmoMax
+    {
+        get
+        {
             _WeaponAmmoMaxOffset = _WeaponAmmoMaxOffset ?? Schema.GetOffset(0x8553337EEE4C1969);
             return new SchemaUntypedField(_Handle + _WeaponAmmoMaxOffset!.Value);
         }
     }
     private static nint? _WeaponAmmoReserveOffset;
 
-    public SchemaUntypedField WeaponAmmoReserve {
-        get {
+    public SchemaUntypedField WeaponAmmoReserve
+    {
+        get
+        {
             _WeaponAmmoReserveOffset = _WeaponAmmoReserveOffset ?? Schema.GetOffset(0x8553337E000AC7BB);
             return new SchemaUntypedField(_Handle + _WeaponAmmoReserveOffset!.Value);
         }
     }
     private static nint? _WeaponIsSilencedOffset;
 
-    public SchemaUntypedField WeaponIsSilenced {
-        get {
+    public SchemaUntypedField WeaponIsSilenced
+    {
+        get
+        {
             _WeaponIsSilencedOffset = _WeaponIsSilencedOffset ?? Schema.GetOffset(0x8553337EBF4E259C);
             return new SchemaUntypedField(_Handle + _WeaponIsSilencedOffset!.Value);
         }
     }
     private static nint? _WeaponIronsightAmountOffset;
 
-    public SchemaUntypedField WeaponIronsightAmount {
-        get {
+    public SchemaUntypedField WeaponIronsightAmount
+    {
+        get
+        {
             _WeaponIronsightAmountOffset = _WeaponIronsightAmountOffset ?? Schema.GetOffset(0x8553337E4239F6F6);
             return new SchemaUntypedField(_Handle + _WeaponIronsightAmountOffset!.Value);
         }
     }
     private static nint? _IsUsingLegacyModelOffset;
 
-    public SchemaUntypedField IsUsingLegacyModel {
-        get {
+    public SchemaUntypedField IsUsingLegacyModel
+    {
+        get
+        {
             _IsUsingLegacyModelOffset = _IsUsingLegacyModelOffset ?? Schema.GetOffset(0x8553337EBA564E5D);
             return new SchemaUntypedField(_Handle + _IsUsingLegacyModelOffset!.Value);
         }
     }
     private static nint? _IdleVariationOffset;
 
-    public SchemaUntypedField IdleVariation {
-        get {
+    public SchemaUntypedField IdleVariation
+    {
+        get
+        {
             _IdleVariationOffset = _IdleVariationOffset ?? Schema.GetOffset(0x8553337ECF0EF118);
             return new SchemaUntypedField(_Handle + _IdleVariationOffset!.Value);
         }
     }
     private static nint? _DeployVariationOffset;
 
-    public SchemaUntypedField DeployVariation {
-        get {
+    public SchemaUntypedField DeployVariation
+    {
+        get
+        {
             _DeployVariationOffset = _DeployVariationOffset ?? Schema.GetOffset(0x8553337E95BD68D7);
             return new SchemaUntypedField(_Handle + _DeployVariationOffset!.Value);
         }
     }
     private static nint? _AttackTypeOffset;
 
-    public SchemaUntypedField AttackType {
-        get {
+    public SchemaUntypedField AttackType
+    {
+        get
+        {
             _AttackTypeOffset = _AttackTypeOffset ?? Schema.GetOffset(0x8553337E0CCFAC15);
             return new SchemaUntypedField(_Handle + _AttackTypeOffset!.Value);
         }
     }
     private static nint? _AttackThrowStrengthOffset;
 
-    public SchemaUntypedField AttackThrowStrength {
-        get {
+    public SchemaUntypedField AttackThrowStrength
+    {
+        get
+        {
             _AttackThrowStrengthOffset = _AttackThrowStrengthOffset ?? Schema.GetOffset(0x8553337EB4387222);
             return new SchemaUntypedField(_Handle + _AttackThrowStrengthOffset!.Value);
         }
     }
     private static nint? _AttackVariationOffset;
 
-    public SchemaUntypedField AttackVariation {
-        get {
+    public SchemaUntypedField AttackVariation
+    {
+        get
+        {
             _AttackVariationOffset = _AttackVariationOffset ?? Schema.GetOffset(0x8553337E70A63014);
             return new SchemaUntypedField(_Handle + _AttackVariationOffset!.Value);
         }
     }
     private static nint? _InspectVariationOffset;
 
-    public SchemaUntypedField InspectVariation {
-        get {
+    public SchemaUntypedField InspectVariation
+    {
+        get
+        {
             _InspectVariationOffset = _InspectVariationOffset ?? Schema.GetOffset(0x8553337EBDFCECA4);
             return new SchemaUntypedField(_Handle + _InspectVariationOffset!.Value);
         }
     }
     private static nint? _InspectExtraInfoOffset;
 
-    public SchemaUntypedField InspectExtraInfo {
-        get {
+    public SchemaUntypedField InspectExtraInfo
+    {
+        get
+        {
             _InspectExtraInfoOffset = _InspectExtraInfoOffset ?? Schema.GetOffset(0x8553337EF50D283F);
             return new SchemaUntypedField(_Handle + _InspectExtraInfoOffset!.Value);
         }
     }
     private static nint? _ReloadStageOffset;
 
-    public SchemaUntypedField ReloadStage {
-        get {
+    public SchemaUntypedField ReloadStage
+    {
+        get
+        {
             _ReloadStageOffset = _ReloadStageOffset ?? Schema.GetOffset(0x8553337E7F8E072A);
             return new SchemaUntypedField(_Handle + _ReloadStageOffset!.Value);
         }
     }
-
 
 }

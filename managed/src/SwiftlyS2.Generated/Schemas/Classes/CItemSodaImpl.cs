@@ -16,7 +16,4 @@ internal partial class CItemSodaImpl : CBaseAnimGraphImpl, CItemSoda
 {
     public CItemSodaImpl(nint handle) : base(handle) { }
 
-
-
-
 }

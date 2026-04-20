@@ -18,16 +18,18 @@ internal partial class COrnamentPropImpl : CDynamicPropImpl, COrnamentProp
 
     private static nint? _InitialOwnerOffset;
 
-    public string InitialOwner {
-        get {
+    public string InitialOwner
+    {
+        get
+        {
             _InitialOwnerOffset = _InitialOwnerOffset ?? Schema.GetOffset(0x1B8675B7BAA055D6);
             return Schema.GetString(_Handle.Read<nint>(_InitialOwnerOffset!.Value));
         }
-        set {
+        set
+        {
             _InitialOwnerOffset = _InitialOwnerOffset ?? Schema.GetOffset(0x1B8675B7BAA055D6);
             Schema.SetString(_Handle, _InitialOwnerOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

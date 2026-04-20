@@ -18,36 +18,43 @@ internal partial class C_OP_SetControlPointRotationImpl : CParticleFunctionPreEm
 
     private static nint? _RotAxisOffset;
 
-    public CParticleCollectionVecInput RotAxis {
-        get {
+    public CParticleCollectionVecInput RotAxis
+    {
+        get
+        {
             _RotAxisOffset = _RotAxisOffset ?? Schema.GetOffset(0x8F20B2F891872163);
             return new CParticleCollectionVecInputImpl(_Handle + _RotAxisOffset!.Value);
         }
     }
     private static nint? _RotRateOffset;
 
-    public CParticleCollectionFloatInput RotRate {
-        get {
+    public CParticleCollectionFloatInput RotRate
+    {
+        get
+        {
             _RotRateOffset = _RotRateOffset ?? Schema.GetOffset(0x8F20B2F86747B556);
             return new CParticleCollectionFloatInputImpl(_Handle + _RotRateOffset!.Value);
         }
     }
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x8F20B2F8EB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _LocalCPOffset;
 
-    public ref int LocalCP {
-        get {
+    public ref int LocalCP
+    {
+        get
+        {
             _LocalCPOffset = _LocalCPOffset ?? Schema.GetOffset(0x8F20B2F8ACAAFF8F);
             return ref _Handle.AsRef<int>(_LocalCPOffset!.Value);
         }
     }
-
 
 }

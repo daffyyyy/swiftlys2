@@ -16,7 +16,4 @@ internal partial class CPulseAnimFuncsImpl : SchemaClass, CPulseAnimFuncs
 {
     public CPulseAnimFuncsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

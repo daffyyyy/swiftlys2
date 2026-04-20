@@ -16,7 +16,4 @@ internal partial class CAK47Impl : CCSWeaponBaseGunImpl, CAK47
 {
     public CAK47Impl(nint handle) : base(handle) { }
 
-
-
-
 }

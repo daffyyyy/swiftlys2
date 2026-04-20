@@ -18,36 +18,43 @@ internal partial class CNmFloatCurveEventNode__CDefinitionImpl : CNmFloatValueNo
 
     private static nint? _EventIDOffset;
 
-    public ref CGlobalSymbol EventID {
-        get {
+    public ref CGlobalSymbol EventID
+    {
+        get
+        {
             _EventIDOffset = _EventIDOffset ?? Schema.GetOffset(0x4512F5A69D798A72);
             return ref _Handle.AsRef<CGlobalSymbol>(_EventIDOffset!.Value);
         }
     }
     private static nint? _DefaultNodeIdxOffset;
 
-    public ref short DefaultNodeIdx {
-        get {
+    public ref short DefaultNodeIdx
+    {
+        get
+        {
             _DefaultNodeIdxOffset = _DefaultNodeIdxOffset ?? Schema.GetOffset(0x4512F5A6C14C9521);
             return ref _Handle.AsRef<short>(_DefaultNodeIdxOffset!.Value);
         }
     }
     private static nint? _DefaultValueOffset;
 
-    public ref float DefaultValue {
-        get {
+    public ref float DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x4512F5A6700AB429);
             return ref _Handle.AsRef<float>(_DefaultValueOffset!.Value);
         }
     }
     private static nint? _EventConditionRulesOffset;
 
-    public CNmBitFlags EventConditionRules {
-        get {
+    public CNmBitFlags EventConditionRules
+    {
+        get
+        {
             _EventConditionRulesOffset = _EventConditionRulesOffset ?? Schema.GetOffset(0x4512F5A6A904315F);
             return new CNmBitFlagsImpl(_Handle + _EventConditionRulesOffset!.Value);
         }
     }
-
 
 }

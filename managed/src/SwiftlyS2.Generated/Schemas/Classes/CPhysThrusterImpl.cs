@@ -18,12 +18,13 @@ internal partial class CPhysThrusterImpl : CPhysForceImpl, CPhysThruster
 
     private static nint? _LocalOriginOffset;
 
-    public ref Vector LocalOrigin {
-        get {
+    public ref Vector LocalOrigin
+    {
+        get
+        {
             _LocalOriginOffset = _LocalOriginOffset ?? Schema.GetOffset(0xC6E190F75672584A);
             return ref _Handle.AsRef<Vector>(_LocalOriginOffset!.Value);
         }
     }
-
 
 }

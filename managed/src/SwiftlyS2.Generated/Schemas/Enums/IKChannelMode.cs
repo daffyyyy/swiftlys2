@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum IKChannelMode : uint
 {
- TwoBone = 0,
-
- TwoBone_Translate = 1,
-
- OneBone = 2,
-
- OneBone_Translate = 3,
+    TwoBone = 0,
+    TwoBone_Translate = 1,
+    OneBone = 2,
+    OneBone_Translate = 3,
 }

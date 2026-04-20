@@ -16,7 +16,4 @@ internal partial class CBodyComponentBaseModelEntityImpl : CBodyComponentSkeleto
 {
     public CBodyComponentBaseModelEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

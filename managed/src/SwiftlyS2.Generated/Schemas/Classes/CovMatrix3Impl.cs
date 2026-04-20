@@ -18,36 +18,43 @@ internal partial class CovMatrix3Impl : SchemaClass, CovMatrix3
 
     private static nint? _DiagOffset;
 
-    public ref Vector Diag {
-        get {
+    public ref Vector Diag
+    {
+        get
+        {
             _DiagOffset = _DiagOffset ?? Schema.GetOffset(0xA222FA6F7CC0D332);
             return ref _Handle.AsRef<Vector>(_DiagOffset!.Value);
         }
     }
     private static nint? _XYOffset;
 
-    public ref float XY {
-        get {
+    public ref float XY
+    {
+        get
+        {
             _XYOffset = _XYOffset ?? Schema.GetOffset(0xA222FA6FA58DC304);
             return ref _Handle.AsRef<float>(_XYOffset!.Value);
         }
     }
     private static nint? _XZOffset;
 
-    public ref float XZ {
-        get {
+    public ref float XZ
+    {
+        get
+        {
             _XZOffset = _XZOffset ?? Schema.GetOffset(0xA222FA6FA88DC7BD);
             return ref _Handle.AsRef<float>(_XZOffset!.Value);
         }
     }
     private static nint? _YZOffset;
 
-    public ref float YZ {
-        get {
+    public ref float YZ
+    {
+        get
+        {
             _YZOffset = _YZOffset ?? Schema.GetOffset(0xA222FA6F9E8B7968);
             return ref _Handle.AsRef<float>(_YZOffset!.Value);
         }
     }
-
 
 }

@@ -18,20 +18,23 @@ internal partial class PulseNodeDynamicOutflows_t__DynamicOutflow_tImpl : Schema
 
     private static nint? _OutflowIDOffset;
 
-    public ref CGlobalSymbol OutflowID {
-        get {
+    public ref CGlobalSymbol OutflowID
+    {
+        get
+        {
             _OutflowIDOffset = _OutflowIDOffset ?? Schema.GetOffset(0x4ACC8D59E16DD56);
             return ref _Handle.AsRef<CGlobalSymbol>(_OutflowIDOffset!.Value);
         }
     }
     private static nint? _ConnectionOffset;
 
-    public CPulse_OutflowConnection Connection {
-        get {
+    public CPulse_OutflowConnection Connection
+    {
+        get
+        {
             _ConnectionOffset = _ConnectionOffset ?? Schema.GetOffset(0x4ACC8D5D4CD5F59);
             return new CPulse_OutflowConnectionImpl(_Handle + _ConnectionOffset!.Value);
         }
     }
-
 
 }

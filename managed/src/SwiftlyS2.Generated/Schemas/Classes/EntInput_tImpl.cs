@@ -16,7 +16,4 @@ internal partial class EntInput_tImpl : SchemaClass, EntInput_t
 {
     public EntInput_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,28 +18,33 @@ internal partial class C_OP_ReinitializeScalarEndCapImpl : CParticleFunctionOper
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xC52E8D41E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public ref float OutputMin {
-        get {
+    public ref float OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0xC52E8D415F8D7716);
             return ref _Handle.AsRef<float>(_OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public ref float OutputMax {
-        get {
+    public ref float OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0xC52E8D4151A0E8C4);
             return ref _Handle.AsRef<float>(_OutputMaxOffset!.Value);
         }
     }
-
 
 }

@@ -18,24 +18,30 @@ internal partial class CFogControllerImpl : CBaseEntityImpl, CFogController
 
     private static nint? _FogOffset;
 
-    public fogparams_t Fog {
-        get {
+    public fogparams_t Fog
+    {
+        get
+        {
             _FogOffset = _FogOffset ?? Schema.GetOffset(0x719804B29014635F);
             return new fogparams_tImpl(_Handle + _FogOffset!.Value);
         }
     }
     private static nint? _UseAnglesOffset;
 
-    public ref bool UseAngles {
-        get {
+    public ref bool UseAngles
+    {
+        get
+        {
             _UseAnglesOffset = _UseAnglesOffset ?? Schema.GetOffset(0x719804B2434C3DB4);
             return ref _Handle.AsRef<bool>(_UseAnglesOffset!.Value);
         }
     }
     private static nint? _ChangedVariablesOffset;
 
-    public ref int ChangedVariables {
-        get {
+    public ref int ChangedVariables
+    {
+        get
+        {
             _ChangedVariablesOffset = _ChangedVariablesOffset ?? Schema.GetOffset(0x719804B2BC173F39);
             return ref _Handle.AsRef<int>(_ChangedVariablesOffset!.Value);
         }

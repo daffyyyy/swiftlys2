@@ -16,7 +16,4 @@ internal partial class CPathSimpleAPIImpl : SchemaClass, CPathSimpleAPI
 {
     public CPathSimpleAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

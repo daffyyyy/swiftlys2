@@ -16,7 +16,4 @@ internal partial class CFootCycleImpl : CCycleBaseImpl, CFootCycle
 {
     public CFootCycleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

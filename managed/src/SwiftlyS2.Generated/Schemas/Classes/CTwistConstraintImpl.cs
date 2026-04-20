@@ -18,28 +18,33 @@ internal partial class CTwistConstraintImpl : CBaseConstraintImpl, CTwistConstra
 
     private static nint? _InverseOffset;
 
-    public ref bool Inverse {
-        get {
+    public ref bool Inverse
+    {
+        get
+        {
             _InverseOffset = _InverseOffset ?? Schema.GetOffset(0xA3EC320A0DE8C163);
             return ref _Handle.AsRef<bool>(_InverseOffset!.Value);
         }
     }
     private static nint? _ParentBindRotationOffset;
 
-    public ref Quaternion ParentBindRotation {
-        get {
+    public ref Quaternion ParentBindRotation
+    {
+        get
+        {
             _ParentBindRotationOffset = _ParentBindRotationOffset ?? Schema.GetOffset(0xA3EC320AE46C74E5);
             return ref _Handle.AsRef<Quaternion>(_ParentBindRotationOffset!.Value);
         }
     }
     private static nint? _ChildBindRotationOffset;
 
-    public ref Quaternion ChildBindRotation {
-        get {
+    public ref Quaternion ChildBindRotation
+    {
+        get
+        {
             _ChildBindRotationOffset = _ChildBindRotationOffset ?? Schema.GetOffset(0xA3EC320A0FCDDACB);
             return ref _Handle.AsRef<Quaternion>(_ChildBindRotationOffset!.Value);
         }
     }
-
 
 }

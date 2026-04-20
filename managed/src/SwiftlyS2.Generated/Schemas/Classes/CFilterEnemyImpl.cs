@@ -18,52 +18,63 @@ internal partial class CFilterEnemyImpl : CBaseFilterImpl, CFilterEnemy
 
     private static nint? _EnemyNameOffset;
 
-    public string EnemyName {
-        get {
+    public string EnemyName
+    {
+        get
+        {
             _EnemyNameOffset = _EnemyNameOffset ?? Schema.GetOffset(0x23F92540C9E922A8);
             return Schema.GetString(_Handle.Read<nint>(_EnemyNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EnemyNameOffset = _EnemyNameOffset ?? Schema.GetOffset(0x23F92540C9E922A8);
             Schema.SetString(_Handle, _EnemyNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x23F925405ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _OuterRadiusOffset;
 
-    public ref float OuterRadius {
-        get {
+    public ref float OuterRadius
+    {
+        get
+        {
             _OuterRadiusOffset = _OuterRadiusOffset ?? Schema.GetOffset(0x23F925407B66A818);
             return ref _Handle.AsRef<float>(_OuterRadiusOffset!.Value);
         }
     }
     private static nint? _MaxSquadmatesPerEnemyOffset;
 
-    public ref int MaxSquadmatesPerEnemy {
-        get {
+    public ref int MaxSquadmatesPerEnemy
+    {
+        get
+        {
             _MaxSquadmatesPerEnemyOffset = _MaxSquadmatesPerEnemyOffset ?? Schema.GetOffset(0x23F925407AA226A0);
             return ref _Handle.AsRef<int>(_MaxSquadmatesPerEnemyOffset!.Value);
         }
     }
     private static nint? _PlayerNameOffset;
 
-    public string PlayerName {
-        get {
+    public string PlayerName
+    {
+        get
+        {
             _PlayerNameOffset = _PlayerNameOffset ?? Schema.GetOffset(0x23F92540DE61DD3B);
             return Schema.GetString(_Handle.Read<nint>(_PlayerNameOffset!.Value));
         }
-        set {
+        set
+        {
             _PlayerNameOffset = _PlayerNameOffset ?? Schema.GetOffset(0x23F92540DE61DD3B);
             Schema.SetString(_Handle, _PlayerNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

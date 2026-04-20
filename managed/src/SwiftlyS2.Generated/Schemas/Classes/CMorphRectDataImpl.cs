@@ -18,44 +18,53 @@ internal partial class CMorphRectDataImpl : SchemaClass, CMorphRectData
 
     private static nint? _XLeftDstOffset;
 
-    public ref short XLeftDst {
-        get {
+    public ref short XLeftDst
+    {
+        get
+        {
             _XLeftDstOffset = _XLeftDstOffset ?? Schema.GetOffset(0xB12257C224FC92D5);
             return ref _Handle.AsRef<short>(_XLeftDstOffset!.Value);
         }
     }
     private static nint? _YTopDstOffset;
 
-    public ref short YTopDst {
-        get {
+    public ref short YTopDst
+    {
+        get
+        {
             _YTopDstOffset = _YTopDstOffset ?? Schema.GetOffset(0xB12257C291EBF0D2);
             return ref _Handle.AsRef<short>(_YTopDstOffset!.Value);
         }
     }
     private static nint? _UWidthSrcOffset;
 
-    public ref float UWidthSrc {
-        get {
+    public ref float UWidthSrc
+    {
+        get
+        {
             _UWidthSrcOffset = _UWidthSrcOffset ?? Schema.GetOffset(0xB12257C29F37ECB8);
             return ref _Handle.AsRef<float>(_UWidthSrcOffset!.Value);
         }
     }
     private static nint? _VHeightSrcOffset;
 
-    public ref float VHeightSrc {
-        get {
+    public ref float VHeightSrc
+    {
+        get
+        {
             _VHeightSrcOffset = _VHeightSrcOffset ?? Schema.GetOffset(0xB12257C230C84BA2);
             return ref _Handle.AsRef<float>(_VHeightSrcOffset!.Value);
         }
     }
     private static nint? _BundleDatasOffset;
 
-    public ref CUtlVector<CMorphBundleData> BundleDatas {
-        get {
+    public ref CUtlVector<CMorphBundleData> BundleDatas
+    {
+        get
+        {
             _BundleDatasOffset = _BundleDatasOffset ?? Schema.GetOffset(0xB12257C255A3B6A2);
             return ref _Handle.AsRef<CUtlVector<CMorphBundleData>>(_BundleDatasOffset!.Value);
         }
     }
-
 
 }

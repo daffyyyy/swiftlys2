@@ -18,12 +18,13 @@ internal partial class CAnimParamHandleMapImpl : SchemaClass, CAnimParamHandleMa
 
     private static nint? _ListOffset;
 
-    public SchemaUntypedField List {
-        get {
+    public SchemaUntypedField List
+    {
+        get
+        {
             _ListOffset = _ListOffset ?? Schema.GetOffset(0x82522A78CAD81C21);
             return new SchemaUntypedField(_Handle + _ListOffset!.Value);
         }
     }
-
 
 }

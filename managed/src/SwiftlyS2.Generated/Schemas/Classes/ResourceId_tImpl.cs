@@ -18,12 +18,13 @@ internal partial class ResourceId_tImpl : SchemaClass, ResourceId_t
 
     private static nint? _ValueOffset;
 
-    public ref ulong Value {
-        get {
+    public ref ulong Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x21F7998BDCB0894A);
             return ref _Handle.AsRef<ulong>(_ValueOffset!.Value);
         }
     }
-
 
 }

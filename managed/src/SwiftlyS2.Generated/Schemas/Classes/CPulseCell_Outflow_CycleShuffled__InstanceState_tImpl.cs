@@ -18,20 +18,23 @@ internal partial class CPulseCell_Outflow_CycleShuffled__InstanceState_tImpl : S
 
     private static nint? _ShuffleOffset;
 
-    public SchemaUntypedField Shuffle {
-        get {
+    public SchemaUntypedField Shuffle
+    {
+        get
+        {
             _ShuffleOffset = _ShuffleOffset ?? Schema.GetOffset(0xD33F67BD200E9ACE);
             return new SchemaUntypedField(_Handle + _ShuffleOffset!.Value);
         }
     }
     private static nint? _NextShuffleOffset;
 
-    public ref int NextShuffle {
-        get {
+    public ref int NextShuffle
+    {
+        get
+        {
             _NextShuffleOffset = _NextShuffleOffset ?? Schema.GetOffset(0xD33F67BD741282A5);
             return ref _Handle.AsRef<int>(_NextShuffleOffset!.Value);
         }
     }
-
 
 }

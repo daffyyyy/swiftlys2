@@ -18,64 +18,98 @@ internal partial class CPrecipitationVDataImpl : CEntitySubclassVDataBaseImpl, C
 
     private static nint? _ParticlePrecipitationEffectOffset;
 
-    public SchemaUntypedField ParticlePrecipitationEffect {
-        get {
+    public SchemaUntypedField ParticlePrecipitationEffect
+    {
+        get
+        {
             _ParticlePrecipitationEffectOffset = _ParticlePrecipitationEffectOffset ?? Schema.GetOffset(0x4F75C25D9E8770E0);
             return new SchemaUntypedField(_Handle + _ParticlePrecipitationEffectOffset!.Value);
         }
     }
     private static nint? _InnerDistanceOffset;
 
-    public ref float InnerDistance {
-        get {
+    public ref float InnerDistance
+    {
+        get
+        {
             _InnerDistanceOffset = _InnerDistanceOffset ?? Schema.GetOffset(0x4F75C25D29845276);
             return ref _Handle.AsRef<float>(_InnerDistanceOffset!.Value);
         }
     }
     private static nint? _AttachTypeOffset;
 
-    public ref ParticleAttachment_t AttachType {
-        get {
+    public ref ParticleAttachment_t AttachType
+    {
+        get
+        {
             _AttachTypeOffset = _AttachTypeOffset ?? Schema.GetOffset(0x4F75C25DC8613038);
             return ref _Handle.AsRef<ParticleAttachment_t>(_AttachTypeOffset!.Value);
         }
     }
     private static nint? _BatchSameVolumeTypeOffset;
 
-    public ref bool BatchSameVolumeType {
-        get {
+    public ref bool BatchSameVolumeType
+    {
+        get
+        {
             _BatchSameVolumeTypeOffset = _BatchSameVolumeTypeOffset ?? Schema.GetOffset(0x4F75C25DDE7F21F7);
             return ref _Handle.AsRef<bool>(_BatchSameVolumeTypeOffset!.Value);
         }
     }
     private static nint? _RTEnvCPOffset;
 
-    public ref int RTEnvCP {
-        get {
+    public ref int RTEnvCP
+    {
+        get
+        {
             _RTEnvCPOffset = _RTEnvCPOffset ?? Schema.GetOffset(0x4F75C25D01881731);
             return ref _Handle.AsRef<int>(_RTEnvCPOffset!.Value);
         }
     }
     private static nint? _RTEnvCPComponentOffset;
 
-    public ref int RTEnvCPComponent {
-        get {
+    public ref int RTEnvCPComponent
+    {
+        get
+        {
             _RTEnvCPComponentOffset = _RTEnvCPComponentOffset ?? Schema.GetOffset(0x4F75C25D968B054C);
             return ref _Handle.AsRef<int>(_RTEnvCPComponentOffset!.Value);
         }
     }
     private static nint? _ModifierOffset;
 
-    public string Modifier {
-        get {
+    public string Modifier
+    {
+        get
+        {
             _ModifierOffset = _ModifierOffset ?? Schema.GetOffset(0x4F75C25D2742E611);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ModifierOffset!.Value));
         }
-        set {
+        set
+        {
             _ModifierOffset = _ModifierOffset ?? Schema.GetOffset(0x4F75C25D2742E611);
             Schema.SetCUtlString(_Handle, _ModifierOffset!.Value, value);
         }
-    } 
+    }
+    private static nint? _UseSnapshotFromSurfaceGraphOffset;
 
+    public ref int UseSnapshotFromSurfaceGraph
+    {
+        get
+        {
+            _UseSnapshotFromSurfaceGraphOffset = _UseSnapshotFromSurfaceGraphOffset ?? Schema.GetOffset(0x4F75C25D5137D2ED);
+            return ref _Handle.AsRef<int>(_UseSnapshotFromSurfaceGraphOffset!.Value);
+        }
+    }
+    private static nint? _SnapshotFilterOffset;
+
+    public PrecipitationFilter_t SnapshotFilter
+    {
+        get
+        {
+            _SnapshotFilterOffset = _SnapshotFilterOffset ?? Schema.GetOffset(0x4F75C25DE6E146FF);
+            return new PrecipitationFilter_tImpl(_Handle + _SnapshotFilterOffset!.Value);
+        }
+    }
 
 }

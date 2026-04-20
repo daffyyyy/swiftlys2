@@ -14,7 +14,4 @@ public partial interface CInfoTarget : CPointEntity, ISchemaClass<CInfoTarget>
     static int ISchemaClass<CInfoTarget>.Size => 1192;
     static string? ISchemaClass<CInfoTarget>.ClassName => "info_target";
 
-
-
-
 }

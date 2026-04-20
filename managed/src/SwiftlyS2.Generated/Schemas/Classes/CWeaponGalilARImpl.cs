@@ -16,7 +16,4 @@ internal partial class CWeaponGalilARImpl : CCSWeaponBaseGunImpl, CWeaponGalilAR
 {
     public CWeaponGalilARImpl(nint handle) : base(handle) { }
 
-
-
-
 }

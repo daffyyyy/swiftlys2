@@ -18,20 +18,23 @@ internal partial class SkeletonBoneBounds_tImpl : SchemaClass, SkeletonBoneBound
 
     private static nint? _CenterOffset;
 
-    public ref Vector Center {
-        get {
+    public ref Vector Center
+    {
+        get
+        {
             _CenterOffset = _CenterOffset ?? Schema.GetOffset(0xFF0CF520FA3A6E4);
             return ref _Handle.AsRef<Vector>(_CenterOffset!.Value);
         }
     }
     private static nint? _SizeOffset;
 
-    public ref Vector Size {
-        get {
+    public ref Vector Size
+    {
+        get
+        {
             _SizeOffset = _SizeOffset ?? Schema.GetOffset(0xFF0CF52DABBAEBC);
             return ref _Handle.AsRef<Vector>(_SizeOffset!.Value);
         }
     }
-
 
 }

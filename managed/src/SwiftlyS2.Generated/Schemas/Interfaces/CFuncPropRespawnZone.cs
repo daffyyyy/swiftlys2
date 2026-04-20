@@ -14,7 +14,4 @@ public partial interface CFuncPropRespawnZone : CBaseEntity, ISchemaClass<CFuncP
     static int ISchemaClass<CFuncPropRespawnZone>.Size => 1192;
     static string? ISchemaClass<CFuncPropRespawnZone>.ClassName => "func_proprrespawnzone";
 
-
-
-
 }

@@ -18,12 +18,13 @@ internal partial class CDampedValueComponentUpdaterImpl : CAnimComponentUpdaterI
 
     private static nint? _ItemsOffset;
 
-    public ref CUtlVector<CDampedValueUpdateItem> Items {
-        get {
+    public ref CUtlVector<CDampedValueUpdateItem> Items
+    {
+        get
+        {
             _ItemsOffset = _ItemsOffset ?? Schema.GetOffset(0x9FFDDC9E7A87EDAF);
             return ref _Handle.AsRef<CUtlVector<CDampedValueUpdateItem>>(_ItemsOffset!.Value);
         }
     }
-
 
 }

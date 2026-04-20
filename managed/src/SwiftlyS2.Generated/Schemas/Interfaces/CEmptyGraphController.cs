@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEmptyGraphController : CAnimGraphControllerBase, ISchemaClass<CEmptyGraphController>
 {
     static CEmptyGraphController ISchemaClass<CEmptyGraphController>.From(nint handle) => new CEmptyGraphControllerImpl(handle);
-    static int ISchemaClass<CEmptyGraphController>.Size => 144;
+    static int ISchemaClass<CEmptyGraphController>.Size => 136;
     static string? ISchemaClass<CEmptyGraphController>.ClassName => null;
-
-
-
 
 }

@@ -14,7 +14,4 @@ public partial interface CInputStreamUpdateNode : CLeafUpdateNode, ISchemaClass<
     static int ISchemaClass<CInputStreamUpdateNode>.Size => 96;
     static string? ISchemaClass<CInputStreamUpdateNode>.ClassName => null;
 
-
-
-
 }

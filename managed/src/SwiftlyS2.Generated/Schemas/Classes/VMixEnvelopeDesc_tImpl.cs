@@ -18,28 +18,33 @@ internal partial class VMixEnvelopeDesc_tImpl : SchemaClass, VMixEnvelopeDesc_t
 
     private static nint? _AttackTimeMSOffset;
 
-    public ref float AttackTimeMS {
-        get {
+    public ref float AttackTimeMS
+    {
+        get
+        {
             _AttackTimeMSOffset = _AttackTimeMSOffset ?? Schema.GetOffset(0xEF93602BD4A28216);
             return ref _Handle.AsRef<float>(_AttackTimeMSOffset!.Value);
         }
     }
     private static nint? _HoldTimeMSOffset;
 
-    public ref float HoldTimeMS {
-        get {
+    public ref float HoldTimeMS
+    {
+        get
+        {
             _HoldTimeMSOffset = _HoldTimeMSOffset ?? Schema.GetOffset(0xEF93602B028BA44F);
             return ref _Handle.AsRef<float>(_HoldTimeMSOffset!.Value);
         }
     }
     private static nint? _ReleaseTimeMSOffset;
 
-    public ref float ReleaseTimeMS {
-        get {
+    public ref float ReleaseTimeMS
+    {
+        get
+        {
             _ReleaseTimeMSOffset = _ReleaseTimeMSOffset ?? Schema.GetOffset(0xEF93602BEBB62791);
             return ref _Handle.AsRef<float>(_ReleaseTimeMSOffset!.Value);
         }
     }
-
 
 }

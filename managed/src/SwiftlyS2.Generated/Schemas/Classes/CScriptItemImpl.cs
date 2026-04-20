@@ -18,12 +18,13 @@ internal partial class CScriptItemImpl : CItemImpl, CScriptItem
 
     private static nint? _MoveTypeOverrideOffset;
 
-    public ref MoveType_t MoveTypeOverride {
-        get {
+    public ref MoveType_t MoveTypeOverride
+    {
+        get
+        {
             _MoveTypeOverrideOffset = _MoveTypeOverrideOffset ?? Schema.GetOffset(0x501D9DD2B4DC8A64);
             return ref _Handle.AsRef<MoveType_t>(_MoveTypeOverrideOffset!.Value);
         }
     }
-
 
 }

@@ -18,32 +18,39 @@ internal partial class CCSGameModeRules_DeathmatchImpl : CCSGameModeRulesImpl, C
 
     private static nint? _DMBonusStartTimeOffset;
 
-    public GameTime_t DMBonusStartTime {
-        get {
+    public GameTime_t DMBonusStartTime
+    {
+        get
+        {
             _DMBonusStartTimeOffset = _DMBonusStartTimeOffset ?? Schema.GetOffset(0x77BC0D42870B2CD0);
             return new GameTime_tImpl(_Handle + _DMBonusStartTimeOffset!.Value);
         }
     }
     private static nint? _DMBonusTimeLengthOffset;
 
-    public ref float DMBonusTimeLength {
-        get {
+    public ref float DMBonusTimeLength
+    {
+        get
+        {
             _DMBonusTimeLengthOffset = _DMBonusTimeLengthOffset ?? Schema.GetOffset(0x77BC0D42C4F13CC6);
             return ref _Handle.AsRef<float>(_DMBonusTimeLengthOffset!.Value);
         }
     }
     private static nint? _DMBonusWeaponOffset;
 
-    public string DMBonusWeapon {
-        get {
+    public string DMBonusWeapon
+    {
+        get
+        {
             _DMBonusWeaponOffset = _DMBonusWeaponOffset ?? Schema.GetOffset(0x77BC0D42A33FC260);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DMBonusWeaponOffset!.Value));
         }
-        set {
+        set
+        {
             _DMBonusWeaponOffset = _DMBonusWeaponOffset ?? Schema.GetOffset(0x77BC0D42A33FC260);
             Schema.SetCUtlString(_Handle, _DMBonusWeaponOffset!.Value, value);
         }
-    } 
+    }
 
     public void DMBonusStartTimeUpdated() => Schema.Update(_Handle, 0x77BC0D42870B2CD0);
     public void DMBonusTimeLengthUpdated() => Schema.Update(_Handle, 0x77BC0D42C4F13CC6);

@@ -18,36 +18,43 @@ internal partial class RnNode_tImpl : SchemaClass, RnNode_t
 
     private static nint? _MinOffset;
 
-    public ref Vector Min {
-        get {
+    public ref Vector Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x7C7D54E2F4B0AA63);
             return ref _Handle.AsRef<Vector>(_MinOffset!.Value);
         }
     }
     private static nint? _ChildrenOffset;
 
-    public ref uint Children {
-        get {
+    public ref uint Children
+    {
+        get
+        {
             _ChildrenOffset = _ChildrenOffset ?? Schema.GetOffset(0x7C7D54E2D0F4635E);
             return ref _Handle.AsRef<uint>(_ChildrenOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref Vector Max {
-        get {
+    public ref Vector Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x7C7D54E2EAC4225D);
             return ref _Handle.AsRef<Vector>(_MaxOffset!.Value);
         }
     }
     private static nint? _TriangleOffsetOffset;
 
-    public ref uint TriangleOffset {
-        get {
+    public ref uint TriangleOffset
+    {
+        get
+        {
             _TriangleOffsetOffset = _TriangleOffsetOffset ?? Schema.GetOffset(0x7C7D54E2AFE22CE6);
             return ref _Handle.AsRef<uint>(_TriangleOffsetOffset!.Value);
         }
     }
-
 
 }

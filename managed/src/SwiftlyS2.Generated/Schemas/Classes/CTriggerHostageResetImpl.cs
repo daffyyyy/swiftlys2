@@ -16,7 +16,4 @@ internal partial class CTriggerHostageResetImpl : CBaseTriggerImpl, CTriggerHost
 {
     public CTriggerHostageResetImpl(nint handle) : base(handle) { }
 
-
-
-
 }

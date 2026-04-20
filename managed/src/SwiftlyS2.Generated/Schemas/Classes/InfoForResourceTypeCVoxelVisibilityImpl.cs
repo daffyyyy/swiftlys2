@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCVoxelVisibilityImpl : SchemaClass, In
 {
     public InfoForResourceTypeCVoxelVisibilityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

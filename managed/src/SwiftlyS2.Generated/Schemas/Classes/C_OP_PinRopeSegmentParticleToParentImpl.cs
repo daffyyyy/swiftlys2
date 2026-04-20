@@ -18,28 +18,33 @@ internal partial class C_OP_PinRopeSegmentParticleToParentImpl : CParticleFuncti
 
     private static nint? _ParticleSelectionOffset;
 
-    public ref ParticleSelection_t ParticleSelection {
-        get {
+    public ref ParticleSelection_t ParticleSelection
+    {
+        get
+        {
             _ParticleSelectionOffset = _ParticleSelectionOffset ?? Schema.GetOffset(0x5F59F78EA2307EA7);
             return ref _Handle.AsRef<ParticleSelection_t>(_ParticleSelectionOffset!.Value);
         }
     }
     private static nint? _ParticleNumberOffset;
 
-    public CParticleCollectionFloatInput ParticleNumber {
-        get {
+    public CParticleCollectionFloatInput ParticleNumber
+    {
+        get
+        {
             _ParticleNumberOffset = _ParticleNumberOffset ?? Schema.GetOffset(0x5F59F78E12F26402);
             return new CParticleCollectionFloatInputImpl(_Handle + _ParticleNumberOffset!.Value);
         }
     }
     private static nint? _InterpolationOffset;
 
-    public CPerParticleFloatInput Interpolation {
-        get {
+    public CPerParticleFloatInput Interpolation
+    {
+        get
+        {
             _InterpolationOffset = _InterpolationOffset ?? Schema.GetOffset(0x5F59F78ECF55B987);
             return new CPerParticleFloatInputImpl(_Handle + _InterpolationOffset!.Value);
         }
     }
-
 
 }

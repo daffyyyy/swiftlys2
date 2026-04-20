@@ -16,49 +16,59 @@ internal partial class FeHingeLimit_tImpl : SchemaClass, FeHingeLimit_t
 {
     public FeHingeLimit_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x3E7F1FF5CD6694B9, 6, 2, 2);
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x3E7F1FF5B8D52E48);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _Weight4Offset;
 
-    public ref float Weight4 {
-        get {
+    public ref float Weight4
+    {
+        get
+        {
             _Weight4Offset = _Weight4Offset ?? Schema.GetOffset(0x3E7F1FF56956236D);
             return ref _Handle.AsRef<float>(_Weight4Offset!.Value);
         }
     }
     private static nint? _Weight5Offset;
 
-    public ref float Weight5 {
-        get {
+    public ref float Weight5
+    {
+        get
+        {
             _Weight5Offset = _Weight5Offset ?? Schema.GetOffset(0x3E7F1FF5685621DA);
             return ref _Handle.AsRef<float>(_Weight5Offset!.Value);
         }
     }
     private static nint? _AngleCenterOffset;
 
-    public ref float AngleCenter {
-        get {
+    public ref float AngleCenter
+    {
+        get
+        {
             _AngleCenterOffset = _AngleCenterOffset ?? Schema.GetOffset(0x3E7F1FF57BF2D76B);
             return ref _Handle.AsRef<float>(_AngleCenterOffset!.Value);
         }
     }
     private static nint? _AngleExtentsOffset;
 
-    public ref float AngleExtents {
-        get {
+    public ref float AngleExtents
+    {
+        get
+        {
             _AngleExtentsOffset = _AngleExtentsOffset ?? Schema.GetOffset(0x3E7F1FF59D58EF0B);
             return ref _Handle.AsRef<float>(_AngleExtentsOffset!.Value);
         }
     }
-
 
 }

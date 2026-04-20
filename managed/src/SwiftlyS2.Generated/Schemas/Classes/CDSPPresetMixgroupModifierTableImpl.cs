@@ -18,12 +18,13 @@ internal partial class CDSPPresetMixgroupModifierTableImpl : SchemaClass, CDSPPr
 
     private static nint? _TableOffset;
 
-    public ref CUtlVector<CDspPresetModifierList> Table {
-        get {
+    public ref CUtlVector<CDspPresetModifierList> Table
+    {
+        get
+        {
             _TableOffset = _TableOffset ?? Schema.GetOffset(0xB4266D22715EA0FF);
             return ref _Handle.AsRef<CUtlVector<CDspPresetModifierList>>(_TableOffset!.Value);
         }
     }
-
 
 }

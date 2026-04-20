@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum FootstepJumpPhase_t : byte
 {
- Unknown = 0,
-
- NotJumping = 1,
-
- Jumping = 2,
-
- Landing = 4,
+    Unknown = 0,
+    NotJumping = 1,
+    Jumping = 2,
+    Landing = 4,
 }

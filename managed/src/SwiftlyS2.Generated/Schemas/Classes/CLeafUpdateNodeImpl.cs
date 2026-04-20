@@ -16,7 +16,4 @@ internal partial class CLeafUpdateNodeImpl : CAnimUpdateNodeBaseImpl, CLeafUpdat
 {
     public CLeafUpdateNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

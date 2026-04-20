@@ -18,28 +18,33 @@ internal partial class CNmFloatRangeComparisonNode__CDefinitionImpl : CNmBoolVal
 
     private static nint? _RangeOffset;
 
-    public SchemaUntypedField Range {
-        get {
+    public SchemaUntypedField Range
+    {
+        get
+        {
             _RangeOffset = _RangeOffset ?? Schema.GetOffset(0x6F364CB3D639CF2);
             return new SchemaUntypedField(_Handle + _RangeOffset!.Value);
         }
     }
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x6F364CB95E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _IsInclusiveCheckOffset;
 
-    public ref bool IsInclusiveCheck {
-        get {
+    public ref bool IsInclusiveCheck
+    {
+        get
+        {
             _IsInclusiveCheckOffset = _IsInclusiveCheckOffset ?? Schema.GetOffset(0x6F364CBA95FA7C3);
             return ref _Handle.AsRef<bool>(_IsInclusiveCheckOffset!.Value);
         }
     }
-
 
 }

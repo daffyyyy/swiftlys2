@@ -14,7 +14,4 @@ public partial interface CNmValueNode__CDefinition : CNmGraphNode__CDefinition, 
     static int ISchemaClass<CNmValueNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmValueNode__CDefinition>.ClassName => null;
 
-
-
-
 }

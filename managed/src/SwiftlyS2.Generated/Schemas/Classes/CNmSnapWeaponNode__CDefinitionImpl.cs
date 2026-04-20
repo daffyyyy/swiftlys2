@@ -16,30 +16,35 @@ internal partial class CNmSnapWeaponNode__CDefinitionImpl : CNmPassthroughNode__
 {
     public CNmSnapWeaponNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-    private static nint? _EnabledNodeIdxOffset;
+    private static nint? _FlashedAmountNodeIdxOffset;
 
-    public ref short EnabledNodeIdx {
-        get {
-            _EnabledNodeIdxOffset = _EnabledNodeIdxOffset ?? Schema.GetOffset(0x60733C89F7CDF5E9);
-            return ref _Handle.AsRef<short>(_EnabledNodeIdxOffset!.Value);
+    public ref short FlashedAmountNodeIdx
+    {
+        get
+        {
+            _FlashedAmountNodeIdxOffset = _FlashedAmountNodeIdxOffset ?? Schema.GetOffset(0x60733C8950F53E73);
+            return ref _Handle.AsRef<short>(_FlashedAmountNodeIdxOffset!.Value);
         }
     }
-    private static nint? _LockLeftHandNodeIdxOffset;
+    private static nint? _WeaponCategoryNodeIdxOffset;
 
-    public ref short LockLeftHandNodeIdx {
-        get {
-            _LockLeftHandNodeIdxOffset = _LockLeftHandNodeIdxOffset ?? Schema.GetOffset(0x60733C89493D63C1);
-            return ref _Handle.AsRef<short>(_LockLeftHandNodeIdxOffset!.Value);
+    public ref short WeaponCategoryNodeIdx
+    {
+        get
+        {
+            _WeaponCategoryNodeIdxOffset = _WeaponCategoryNodeIdxOffset ?? Schema.GetOffset(0x60733C8916D198E4);
+            return ref _Handle.AsRef<short>(_WeaponCategoryNodeIdxOffset!.Value);
         }
     }
-    private static nint? _BlendTimeSecondsOffset;
+    private static nint? _WeaponTypeNodeIdxOffset;
 
-    public ref float BlendTimeSeconds {
-        get {
-            _BlendTimeSecondsOffset = _BlendTimeSecondsOffset ?? Schema.GetOffset(0x60733C896D3A08FC);
-            return ref _Handle.AsRef<float>(_BlendTimeSecondsOffset!.Value);
+    public ref short WeaponTypeNodeIdx
+    {
+        get
+        {
+            _WeaponTypeNodeIdxOffset = _WeaponTypeNodeIdxOffset ?? Schema.GetOffset(0x60733C8947A17C20);
+            return ref _Handle.AsRef<short>(_WeaponTypeNodeIdxOffset!.Value);
         }
     }
-
 
 }

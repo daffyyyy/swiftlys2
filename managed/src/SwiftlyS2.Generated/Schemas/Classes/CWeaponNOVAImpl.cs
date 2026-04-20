@@ -16,7 +16,4 @@ internal partial class CWeaponNOVAImpl : CCSWeaponBaseShotgunImpl, CWeaponNOVA
 {
     public CWeaponNOVAImpl(nint handle) : base(handle) { }
 
-
-
-
 }

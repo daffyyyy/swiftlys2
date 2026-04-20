@@ -18,36 +18,43 @@ internal partial class C_OP_RenderVRHapticEventImpl : CParticleFunctionRendererI
 
     private static nint? _HandOffset;
 
-    public ref ParticleVRHandChoiceList_t Hand {
-        get {
+    public ref ParticleVRHandChoiceList_t Hand
+    {
+        get
+        {
             _HandOffset = _HandOffset ?? Schema.GetOffset(0xB83C5242D49ECB4C);
             return ref _Handle.AsRef<ParticleVRHandChoiceList_t>(_HandOffset!.Value);
         }
     }
     private static nint? _OutputHandCPOffset;
 
-    public ref int OutputHandCP {
-        get {
+    public ref int OutputHandCP
+    {
+        get
+        {
             _OutputHandCPOffset = _OutputHandCPOffset ?? Schema.GetOffset(0xB83C52428D35D26A);
             return ref _Handle.AsRef<int>(_OutputHandCPOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ref int OutputField {
-        get {
+    public ref int OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0xB83C5242324F6F74);
             return ref _Handle.AsRef<int>(_OutputFieldOffset!.Value);
         }
     }
     private static nint? _AmplitudeOffset;
 
-    public CPerParticleFloatInput Amplitude {
-        get {
+    public CPerParticleFloatInput Amplitude
+    {
+        get
+        {
             _AmplitudeOffset = _AmplitudeOffset ?? Schema.GetOffset(0xB83C5242B44B0E18);
             return new CPerParticleFloatInputImpl(_Handle + _AmplitudeOffset!.Value);
         }
     }
-
 
 }

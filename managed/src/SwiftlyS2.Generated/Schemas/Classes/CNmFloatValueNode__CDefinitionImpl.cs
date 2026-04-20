@@ -16,7 +16,4 @@ internal partial class CNmFloatValueNode__CDefinitionImpl : CNmValueNode__CDefin
 {
     public CNmFloatValueNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

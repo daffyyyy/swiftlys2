@@ -16,7 +16,4 @@ internal partial class CPhysicsPropMultiplayerImpl : CPhysicsPropImpl, CPhysicsP
 {
     public CPhysicsPropMultiplayerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

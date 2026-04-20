@@ -18,12 +18,13 @@ internal partial class CTwoBoneIKUpdateNodeImpl : CUnaryUpdateNodeImpl, CTwoBone
 
     private static nint? _OpFixedDataOffset;
 
-    public TwoBoneIKSettings_t OpFixedData {
-        get {
+    public TwoBoneIKSettings_t OpFixedData
+    {
+        get
+        {
             _OpFixedDataOffset = _OpFixedDataOffset ?? Schema.GetOffset(0x419F07E36960AF8C);
             return new TwoBoneIKSettings_tImpl(_Handle + _OpFixedDataOffset!.Value);
         }
     }
-
 
 }

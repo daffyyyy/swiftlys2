@@ -18,52 +18,63 @@ internal partial class C_OP_MovementMoveAlongSkinnedCPSnapshotImpl : CParticleFu
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xBF34A6C93F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _SnapshotControlPointNumberOffset;
 
-    public ref int SnapshotControlPointNumber {
-        get {
+    public ref int SnapshotControlPointNumber
+    {
+        get
+        {
             _SnapshotControlPointNumberOffset = _SnapshotControlPointNumberOffset ?? Schema.GetOffset(0xBF34A6C929D3EEDD);
             return ref _Handle.AsRef<int>(_SnapshotControlPointNumberOffset!.Value);
         }
     }
     private static nint? _SetNormalOffset;
 
-    public ref bool SetNormal {
-        get {
+    public ref bool SetNormal
+    {
+        get
+        {
             _SetNormalOffset = _SetNormalOffset ?? Schema.GetOffset(0xBF34A6C9542722AC);
             return ref _Handle.AsRef<bool>(_SetNormalOffset!.Value);
         }
     }
     private static nint? _SetRadiusOffset;
 
-    public ref bool SetRadius {
-        get {
+    public ref bool SetRadius
+    {
+        get
+        {
             _SetRadiusOffset = _SetRadiusOffset ?? Schema.GetOffset(0xBF34A6C9918808D1);
             return ref _Handle.AsRef<bool>(_SetRadiusOffset!.Value);
         }
     }
     private static nint? _InterpolationOffset;
 
-    public CPerParticleFloatInput Interpolation {
-        get {
+    public CPerParticleFloatInput Interpolation
+    {
+        get
+        {
             _InterpolationOffset = _InterpolationOffset ?? Schema.GetOffset(0xBF34A6C9CF55B987);
             return new CPerParticleFloatInputImpl(_Handle + _InterpolationOffset!.Value);
         }
     }
     private static nint? _TValueOffset;
 
-    public CPerParticleFloatInput TValue {
-        get {
+    public CPerParticleFloatInput TValue
+    {
+        get
+        {
             _TValueOffset = _TValueOffset ?? Schema.GetOffset(0xBF34A6C9B4CE908E);
             return new CPerParticleFloatInputImpl(_Handle + _TValueOffset!.Value);
         }
     }
-
 
 }

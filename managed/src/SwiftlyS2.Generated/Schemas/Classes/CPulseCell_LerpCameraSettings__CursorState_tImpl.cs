@@ -18,28 +18,33 @@ internal partial class CPulseCell_LerpCameraSettings__CursorState_tImpl : CPulse
 
     private static nint? _CameraOffset;
 
-    public ref CHandle<CPointCamera> Camera {
-        get {
+    public ref CHandle<CPointCamera> Camera
+    {
+        get
+        {
             _CameraOffset = _CameraOffset ?? Schema.GetOffset(0x84AB53FD538EFB98);
             return ref _Handle.AsRef<CHandle<CPointCamera>>(_CameraOffset!.Value);
         }
     }
     private static nint? _OverlaidStartOffset;
 
-    public PointCameraSettings_t OverlaidStart {
-        get {
+    public PointCameraSettings_t OverlaidStart
+    {
+        get
+        {
             _OverlaidStartOffset = _OverlaidStartOffset ?? Schema.GetOffset(0x84AB53FD54E9A76F);
             return new PointCameraSettings_tImpl(_Handle + _OverlaidStartOffset!.Value);
         }
     }
     private static nint? _OverlaidEndOffset;
 
-    public PointCameraSettings_t OverlaidEnd {
-        get {
+    public PointCameraSettings_t OverlaidEnd
+    {
+        get
+        {
             _OverlaidEndOffset = _OverlaidEndOffset ?? Schema.GetOffset(0x84AB53FD3CDFDEFA);
             return new PointCameraSettings_tImpl(_Handle + _OverlaidEndOffset!.Value);
         }
     }
-
 
 }

@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NPCFollowFormation_t : uint
 {
- Default = uint.MaxValue,
-
- CloseCircle = 0,
-
- WideCircle = 1,
-
- MediumCircle = 5,
-
- Sidekick = 6,
+    Default = uint.MaxValue,
+    CloseCircle = 0,
+    WideCircle = 1,
+    MediumCircle = 5,
+    Sidekick = 6,
 }

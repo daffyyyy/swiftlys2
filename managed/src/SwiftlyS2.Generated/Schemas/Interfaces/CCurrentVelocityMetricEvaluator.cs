@@ -14,7 +14,4 @@ public partial interface CCurrentVelocityMetricEvaluator : CMotionMetricEvaluato
     static int ISchemaClass<CCurrentVelocityMetricEvaluator>.Size => 80;
     static string? ISchemaClass<CCurrentVelocityMetricEvaluator>.ClassName => null;
 
-
-
-
 }

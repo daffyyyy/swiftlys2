@@ -15,6 +15,7 @@ public partial interface WrappedPhysicsJoint_t : ISchemaClass<WrappedPhysicsJoin
     static string? ISchemaClass<WrappedPhysicsJoint_t>.ClassName => null;
 
 
+    public IPhysicsJoint? Joint { get; }
 
 
 }

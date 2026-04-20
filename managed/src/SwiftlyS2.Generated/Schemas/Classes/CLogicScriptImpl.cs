@@ -16,7 +16,4 @@ internal partial class CLogicScriptImpl : CPointEntityImpl, CLogicScript
 {
     public CLogicScriptImpl(nint handle) : base(handle) { }
 
-
-
-
 }

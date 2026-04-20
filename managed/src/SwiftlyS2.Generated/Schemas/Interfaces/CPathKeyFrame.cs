@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathKeyFrame : CLogicalEntity, ISchemaClass<CPathKeyFrame>
 {
     static CPathKeyFrame ISchemaClass<CPathKeyFrame>.From(nint handle) => new CPathKeyFrameImpl(handle);
-    static int ISchemaClass<CPathKeyFrame>.Size => 1280;
+    static int ISchemaClass<CPathKeyFrame>.Size => 1264;
     static string? ISchemaClass<CPathKeyFrame>.ClassName => "keyframe_track";
 
 
@@ -25,9 +25,9 @@ public partial interface CPathKeyFrame : CLogicalEntity, ISchemaClass<CPathKeyFr
 
     public ref float NextTime { get; }
 
-    public CPathKeyFrame? NextKey1 { get; }
+    public ref CHandle<CPathKeyFrame> NextKey1 { get; }
 
-    public CPathKeyFrame? PrevKey { get; }
+    public ref CHandle<CPathKeyFrame> PrevKey { get; }
 
     public ref float MoveSpeed { get; }
 

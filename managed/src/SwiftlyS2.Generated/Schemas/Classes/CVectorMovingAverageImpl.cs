@@ -16,7 +16,4 @@ internal partial class CVectorMovingAverageImpl : SchemaClass, CVectorMovingAver
 {
     public CVectorMovingAverageImpl(nint handle) : base(handle) { }
 
-
-
-
 }

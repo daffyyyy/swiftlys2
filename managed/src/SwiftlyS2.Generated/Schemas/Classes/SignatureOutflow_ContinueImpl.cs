@@ -16,7 +16,4 @@ internal partial class SignatureOutflow_ContinueImpl : CPulse_OutflowConnectionI
 {
     public SignatureOutflow_ContinueImpl(nint handle) : base(handle) { }
 
-
-
-
 }

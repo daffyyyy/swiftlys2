@@ -16,7 +16,4 @@ internal partial class CBtNodeCompositeImpl : CBtNodeImpl, CBtNodeComposite
 {
     public CBtNodeCompositeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

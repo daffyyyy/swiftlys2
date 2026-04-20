@@ -14,7 +14,4 @@ public partial interface CNullEntity : CBaseEntity, ISchemaClass<CNullEntity>
     static int ISchemaClass<CNullEntity>.Size => 1192;
     static string? ISchemaClass<CNullEntity>.ClassName => "info_null";
 
-
-
-
 }

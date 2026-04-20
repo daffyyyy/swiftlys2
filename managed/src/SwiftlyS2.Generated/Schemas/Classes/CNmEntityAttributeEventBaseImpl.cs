@@ -16,18 +16,30 @@ internal partial class CNmEntityAttributeEventBaseImpl : CNmEventImpl, CNmEntity
 {
     public CNmEntityAttributeEventBaseImpl(nint handle) : base(handle) { }
 
+    private static nint? _TargetOffset;
+
+    public ref CNmEventTargetEntity_t Target
+    {
+        get
+        {
+            _TargetOffset = _TargetOffset ?? Schema.GetOffset(0x92D29AE9FA08A9E8);
+            return ref _Handle.AsRef<CNmEventTargetEntity_t>(_TargetOffset!.Value);
+        }
+    }
     private static nint? _AttributeNameOffset;
 
-    public string AttributeName {
-        get {
+    public string AttributeName
+    {
+        get
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x92D29AE99168F02C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_AttributeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x92D29AE99168F02C);
             Schema.SetCUtlString(_Handle, _AttributeNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

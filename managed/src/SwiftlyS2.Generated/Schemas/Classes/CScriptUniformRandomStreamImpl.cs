@@ -18,20 +18,23 @@ internal partial class CScriptUniformRandomStreamImpl : SchemaClass, CScriptUnif
 
     private static nint? _ScriptScopeOffset;
 
-    public ref HSCRIPTHandler ScriptScope {
-        get {
+    public ref HSCRIPTHandler ScriptScope
+    {
+        get
+        {
             _ScriptScopeOffset = _ScriptScopeOffset ?? Schema.GetOffset(0xF6699588B14F90D4);
             return ref _Handle.AsRef<HSCRIPTHandler>(_ScriptScopeOffset!.Value);
         }
     }
     private static nint? _InitialSeedOffset;
 
-    public ref int InitialSeed {
-        get {
+    public ref int InitialSeed
+    {
+        get
+        {
             _InitialSeedOffset = _InitialSeedOffset ?? Schema.GetOffset(0xF6699588944D5EB2);
             return ref _Handle.AsRef<int>(_InitialSeedOffset!.Value);
         }
     }
-
 
 }

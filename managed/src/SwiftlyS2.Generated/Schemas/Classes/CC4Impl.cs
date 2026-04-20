@@ -18,83 +18,104 @@ internal partial class CC4Impl : CCSWeaponBaseImpl, CC4
 
     private static nint? _LastValidPlayerHeldPositionOffset;
 
-    public ref Vector LastValidPlayerHeldPosition {
-        get {
+    public ref Vector LastValidPlayerHeldPosition
+    {
+        get
+        {
             _LastValidPlayerHeldPositionOffset = _LastValidPlayerHeldPositionOffset ?? Schema.GetOffset(0x1D49B0B580F67DBC);
             return ref _Handle.AsRef<Vector>(_LastValidPlayerHeldPositionOffset!.Value);
         }
     }
     private static nint? _LastValidDroppedPositionOffset;
 
-    public ref Vector LastValidDroppedPosition {
-        get {
+    public ref Vector LastValidDroppedPosition
+    {
+        get
+        {
             _LastValidDroppedPositionOffset = _LastValidDroppedPositionOffset ?? Schema.GetOffset(0x1D49B0B552BFA49A);
             return ref _Handle.AsRef<Vector>(_LastValidDroppedPositionOffset!.Value);
         }
     }
     private static nint? _DoValidDroppedPositionCheckOffset;
 
-    public ref bool DoValidDroppedPositionCheck {
-        get {
+    public ref bool DoValidDroppedPositionCheck
+    {
+        get
+        {
             _DoValidDroppedPositionCheckOffset = _DoValidDroppedPositionCheckOffset ?? Schema.GetOffset(0x1D49B0B586C3166D);
             return ref _Handle.AsRef<bool>(_DoValidDroppedPositionCheckOffset!.Value);
         }
     }
     private static nint? _StartedArmingOffset;
 
-    public ref bool StartedArming {
-        get {
+    public ref bool StartedArming
+    {
+        get
+        {
             _StartedArmingOffset = _StartedArmingOffset ?? Schema.GetOffset(0x1D49B0B5BE331CA8);
             return ref _Handle.AsRef<bool>(_StartedArmingOffset!.Value);
         }
     }
     private static nint? _ArmedTimeOffset;
 
-    public GameTime_t ArmedTime {
-        get {
+    public GameTime_t ArmedTime
+    {
+        get
+        {
             _ArmedTimeOffset = _ArmedTimeOffset ?? Schema.GetOffset(0x1D49B0B54C4C86C9);
             return new GameTime_tImpl(_Handle + _ArmedTimeOffset!.Value);
         }
     }
     private static nint? _BombPlacedAnimationOffset;
 
-    public ref bool BombPlacedAnimation {
-        get {
+    public ref bool BombPlacedAnimation
+    {
+        get
+        {
             _BombPlacedAnimationOffset = _BombPlacedAnimationOffset ?? Schema.GetOffset(0x1D49B0B52F5F9F2A);
             return ref _Handle.AsRef<bool>(_BombPlacedAnimationOffset!.Value);
         }
     }
     private static nint? _IsPlantingViaUseOffset;
 
-    public ref bool IsPlantingViaUse {
-        get {
+    public ref bool IsPlantingViaUse
+    {
+        get
+        {
             _IsPlantingViaUseOffset = _IsPlantingViaUseOffset ?? Schema.GetOffset(0x1D49B0B566506CF1);
             return ref _Handle.AsRef<bool>(_IsPlantingViaUseOffset!.Value);
         }
     }
     private static nint? _EntitySpottedStateOffset;
 
-    public EntitySpottedState_t EntitySpottedState {
-        get {
+    public EntitySpottedState_t EntitySpottedState
+    {
+        get
+        {
             _EntitySpottedStateOffset = _EntitySpottedStateOffset ?? Schema.GetOffset(0x1D49B0B5032B547C);
             return new EntitySpottedState_tImpl(_Handle + _EntitySpottedStateOffset!.Value);
         }
     }
     private static nint? _SpotRulesOffset;
 
-    public ref int SpotRules {
-        get {
+    public ref int SpotRules
+    {
+        get
+        {
             _SpotRulesOffset = _SpotRulesOffset ?? Schema.GetOffset(0x1D49B0B5776CCE44);
             return ref _Handle.AsRef<int>(_SpotRulesOffset!.Value);
         }
     }
-    public ISchemaFixedArray<bool> PlayedArmingBeeps {
+    public ISchemaFixedArray<bool> PlayedArmingBeeps
+    {
         get => new SchemaFixedArray<bool>(_Handle, 0x1D49B0B525D5D369, 7, 1, 1);
     }
     private static nint? _BombPlantedOffset;
 
-    public ref bool BombPlanted {
-        get {
+    public ref bool BombPlanted
+    {
+        get
+        {
             _BombPlantedOffset = _BombPlantedOffset ?? Schema.GetOffset(0x1D49B0B53C00B55F);
             return ref _Handle.AsRef<bool>(_BombPlantedOffset!.Value);
         }

@@ -14,7 +14,4 @@ public partial interface CInfoData : CServerOnlyEntity, ISchemaClass<CInfoData>
     static int ISchemaClass<CInfoData>.Size => 2112;
     static string? ISchemaClass<CInfoData>.ClassName => "info_data";
 
-
-
-
 }

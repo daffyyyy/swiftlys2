@@ -18,104 +18,128 @@ internal partial class FeVertexMapDesc_tImpl : SchemaClass, FeVertexMapDesc_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xD8EDB44626980769);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xD8EDB44626980769);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NameHashOffset;
 
-    public ref uint NameHash {
-        get {
+    public ref uint NameHash
+    {
+        get
+        {
             _NameHashOffset = _NameHashOffset ?? Schema.GetOffset(0xD8EDB446BA4B2BDE);
             return ref _Handle.AsRef<uint>(_NameHashOffset!.Value);
         }
     }
     private static nint? _ColorOffset;
 
-    public ref uint Color {
-        get {
+    public ref uint Color
+    {
+        get
+        {
             _ColorOffset = _ColorOffset ?? Schema.GetOffset(0xD8EDB44643AC69B4);
             return ref _Handle.AsRef<uint>(_ColorOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0xD8EDB446B8D52E48);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _VertexBaseOffset;
 
-    public ref ushort VertexBase {
-        get {
+    public ref ushort VertexBase
+    {
+        get
+        {
             _VertexBaseOffset = _VertexBaseOffset ?? Schema.GetOffset(0xD8EDB4462D00367E);
             return ref _Handle.AsRef<ushort>(_VertexBaseOffset!.Value);
         }
     }
     private static nint? _VertexCountOffset;
 
-    public ref ushort VertexCount {
-        get {
+    public ref ushort VertexCount
+    {
+        get
+        {
             _VertexCountOffset = _VertexCountOffset ?? Schema.GetOffset(0xD8EDB44625B0F972);
             return ref _Handle.AsRef<ushort>(_VertexCountOffset!.Value);
         }
     }
     private static nint? _MapOffsetOffset;
 
-    public ref uint MapOffset {
-        get {
+    public ref uint MapOffset
+    {
+        get
+        {
             _MapOffsetOffset = _MapOffsetOffset ?? Schema.GetOffset(0xD8EDB4463B93E882);
             return ref _Handle.AsRef<uint>(_MapOffsetOffset!.Value);
         }
     }
     private static nint? _NodeListOffsetOffset;
 
-    public ref uint NodeListOffset {
-        get {
+    public ref uint NodeListOffset
+    {
+        get
+        {
             _NodeListOffsetOffset = _NodeListOffsetOffset ?? Schema.GetOffset(0xD8EDB44655CAC7CA);
             return ref _Handle.AsRef<uint>(_NodeListOffsetOffset!.Value);
         }
     }
     private static nint? _CenterOfMassOffset;
 
-    public ref Vector CenterOfMass {
-        get {
+    public ref Vector CenterOfMass
+    {
+        get
+        {
             _CenterOfMassOffset = _CenterOfMassOffset ?? Schema.GetOffset(0xD8EDB4467DD919BD);
             return ref _Handle.AsRef<Vector>(_CenterOfMassOffset!.Value);
         }
     }
     private static nint? _VolumetricSolveStrengthOffset;
 
-    public ref float VolumetricSolveStrength {
-        get {
+    public ref float VolumetricSolveStrength
+    {
+        get
+        {
             _VolumetricSolveStrengthOffset = _VolumetricSolveStrengthOffset ?? Schema.GetOffset(0xD8EDB446F787BED7);
             return ref _Handle.AsRef<float>(_VolumetricSolveStrengthOffset!.Value);
         }
     }
     private static nint? _ScaleSourceNodeOffset;
 
-    public ref short ScaleSourceNode {
-        get {
+    public ref short ScaleSourceNode
+    {
+        get
+        {
             _ScaleSourceNodeOffset = _ScaleSourceNodeOffset ?? Schema.GetOffset(0xD8EDB446052CD004);
             return ref _Handle.AsRef<short>(_ScaleSourceNodeOffset!.Value);
         }
     }
     private static nint? _NodeListCountOffset;
 
-    public ref ushort NodeListCount {
-        get {
+    public ref ushort NodeListCount
+    {
+        get
+        {
             _NodeListCountOffset = _NodeListCountOffset ?? Schema.GetOffset(0xD8EDB446CAB099F4);
             return ref _Handle.AsRef<ushort>(_NodeListCountOffset!.Value);
         }
     }
-
 
 }

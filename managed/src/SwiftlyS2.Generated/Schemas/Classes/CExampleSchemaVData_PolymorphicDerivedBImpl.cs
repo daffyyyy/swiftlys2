@@ -18,12 +18,13 @@ internal partial class CExampleSchemaVData_PolymorphicDerivedBImpl : CExampleSch
 
     private static nint? _DerivedBOffset;
 
-    public ref int DerivedB {
-        get {
+    public ref int DerivedB
+    {
+        get
+        {
             _DerivedBOffset = _DerivedBOffset ?? Schema.GetOffset(0x2A5BE585B46A6150);
             return ref _Handle.AsRef<int>(_DerivedBOffset!.Value);
         }
     }
-
 
 }

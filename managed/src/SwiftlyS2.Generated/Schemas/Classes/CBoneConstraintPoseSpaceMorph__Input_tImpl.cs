@@ -18,20 +18,23 @@ internal partial class CBoneConstraintPoseSpaceMorph__Input_tImpl : SchemaClass,
 
     private static nint? _InputValueOffset;
 
-    public ref Vector InputValue {
-        get {
+    public ref Vector InputValue
+    {
+        get
+        {
             _InputValueOffset = _InputValueOffset ?? Schema.GetOffset(0x2DF008994039DA98);
             return ref _Handle.AsRef<Vector>(_InputValueOffset!.Value);
         }
     }
     private static nint? _OutputWeightListOffset;
 
-    public ref CUtlVector<float> OutputWeightList {
-        get {
+    public ref CUtlVector<float> OutputWeightList
+    {
+        get
+        {
             _OutputWeightListOffset = _OutputWeightListOffset ?? Schema.GetOffset(0x2DF00899567B1A1C);
             return ref _Handle.AsRef<CUtlVector<float>>(_OutputWeightListOffset!.Value);
         }
     }
-
 
 }

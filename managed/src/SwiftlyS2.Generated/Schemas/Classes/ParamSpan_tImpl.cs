@@ -18,44 +18,53 @@ internal partial class ParamSpan_tImpl : SchemaClass, ParamSpan_t
 
     private static nint? _SamplesOffset;
 
-    public ref CUtlVector<ParamSpanSample_t> Samples {
-        get {
+    public ref CUtlVector<ParamSpanSample_t> Samples
+    {
+        get
+        {
             _SamplesOffset = _SamplesOffset ?? Schema.GetOffset(0x5EE209D9364CA9DC);
             return ref _Handle.AsRef<CUtlVector<ParamSpanSample_t>>(_SamplesOffset!.Value);
         }
     }
     private static nint? _ParamOffset;
 
-    public CAnimParamHandle Param {
-        get {
+    public CAnimParamHandle Param
+    {
+        get
+        {
             _ParamOffset = _ParamOffset ?? Schema.GetOffset(0x5EE209D9679286A4);
             return new CAnimParamHandleImpl(_Handle + _ParamOffset!.Value);
         }
     }
     private static nint? _ParamTypeOffset;
 
-    public ref AnimParamType_t ParamType {
-        get {
+    public ref AnimParamType_t ParamType
+    {
+        get
+        {
             _ParamTypeOffset = _ParamTypeOffset ?? Schema.GetOffset(0x5EE209D9F05DFDD9);
             return ref _Handle.AsRef<AnimParamType_t>(_ParamTypeOffset!.Value);
         }
     }
     private static nint? _StartCycleOffset;
 
-    public ref float StartCycle {
-        get {
+    public ref float StartCycle
+    {
+        get
+        {
             _StartCycleOffset = _StartCycleOffset ?? Schema.GetOffset(0x5EE209D9ABB46051);
             return ref _Handle.AsRef<float>(_StartCycleOffset!.Value);
         }
     }
     private static nint? _EndCycleOffset;
 
-    public ref float EndCycle {
-        get {
+    public ref float EndCycle
+    {
+        get
+        {
             _EndCycleOffset = _EndCycleOffset ?? Schema.GetOffset(0x5EE209D9176E8F62);
             return ref _Handle.AsRef<float>(_EndCycleOffset!.Value);
         }
     }
-
 
 }

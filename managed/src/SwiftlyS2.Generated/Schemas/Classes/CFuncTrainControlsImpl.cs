@@ -16,7 +16,4 @@ internal partial class CFuncTrainControlsImpl : CBaseModelEntityImpl, CFuncTrain
 {
     public CFuncTrainControlsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

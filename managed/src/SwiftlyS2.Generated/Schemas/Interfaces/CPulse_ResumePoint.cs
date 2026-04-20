@@ -14,7 +14,4 @@ public partial interface CPulse_ResumePoint : CPulse_OutflowConnection, ISchemaC
     static int ISchemaClass<CPulse_ResumePoint>.Size => 72;
     static string? ISchemaClass<CPulse_ResumePoint>.ClassName => null;
 
-
-
-
 }

@@ -18,36 +18,43 @@ internal partial class FeNodeIntegrator_tImpl : SchemaClass, FeNodeIntegrator_t
 
     private static nint? _PointDampingOffset;
 
-    public ref float PointDamping {
-        get {
+    public ref float PointDamping
+    {
+        get
+        {
             _PointDampingOffset = _PointDampingOffset ?? Schema.GetOffset(0x64217E4215738003);
             return ref _Handle.AsRef<float>(_PointDampingOffset!.Value);
         }
     }
     private static nint? _AnimationForceAttractionOffset;
 
-    public ref float AnimationForceAttraction {
-        get {
+    public ref float AnimationForceAttraction
+    {
+        get
+        {
             _AnimationForceAttractionOffset = _AnimationForceAttractionOffset ?? Schema.GetOffset(0x64217E423D09A7B3);
             return ref _Handle.AsRef<float>(_AnimationForceAttractionOffset!.Value);
         }
     }
     private static nint? _AnimationVertexAttractionOffset;
 
-    public ref float AnimationVertexAttraction {
-        get {
+    public ref float AnimationVertexAttraction
+    {
+        get
+        {
             _AnimationVertexAttractionOffset = _AnimationVertexAttractionOffset ?? Schema.GetOffset(0x64217E424E9EA4DC);
             return ref _Handle.AsRef<float>(_AnimationVertexAttractionOffset!.Value);
         }
     }
     private static nint? _GravityOffset;
 
-    public ref float Gravity {
-        get {
+    public ref float Gravity
+    {
+        get
+        {
             _GravityOffset = _GravityOffset ?? Schema.GetOffset(0x64217E4289B3B847);
             return ref _Handle.AsRef<float>(_GravityOffset!.Value);
         }
     }
-
 
 }

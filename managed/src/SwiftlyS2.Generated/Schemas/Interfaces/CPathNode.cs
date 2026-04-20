@@ -12,7 +12,7 @@ public partial interface CPathNode : CPointEntity, ISchemaClass<CPathNode>
 {
     static CPathNode ISchemaClass<CPathNode>.From(nint handle) => new CPathNodeImpl(handle);
     static int ISchemaClass<CPathNode>.Size => 1280;
-    static string? ISchemaClass<CPathNode>.ClassName => null;
+    static string? ISchemaClass<CPathNode>.ClassName => "path_node";
 
 
     public ref Vector InTangentLocal { get; }

@@ -16,7 +16,4 @@ internal partial class CCSPetPlacementImpl : CBaseEntityImpl, CCSPetPlacement
 {
     public CCSPetPlacementImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -11,12 +11,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerVData : CEntitySubclassVDataBase, ISchemaClass<CBasePlayerVData>
 {
     static CBasePlayerVData ISchemaClass<CBasePlayerVData>.From(nint handle) => new CBasePlayerVDataImpl(handle);
-    static int ISchemaClass<CBasePlayerVData>.Size => 376;
+    static int ISchemaClass<CBasePlayerVData>.Size => 600;
     static string? ISchemaClass<CBasePlayerVData>.ClassName => null;
 
 
     // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
     public SchemaUntypedField ModelName { get; }
+
+    // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
+    public SchemaUntypedField ModelNameAg2Override { get; }
 
     public CSkillFloat HeadDamageMultiplier { get; }
 

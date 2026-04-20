@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ParticleLightUnitChoiceList_t : uint
 {
- PARTICLE_LIGHT_UNIT_CANDELAS = 0,
-
- PARTICLE_LIGHT_UNIT_LUMENS = 1,
+    PARTICLE_LIGHT_UNIT_CANDELAS = 0,
+    PARTICLE_LIGHT_UNIT_LUMENS = 1,
 }

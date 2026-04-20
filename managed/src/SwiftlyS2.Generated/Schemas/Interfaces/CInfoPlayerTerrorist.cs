@@ -14,7 +14,4 @@ public partial interface CInfoPlayerTerrorist : SpawnPoint, ISchemaClass<CInfoPl
     static int ISchemaClass<CInfoPlayerTerrorist>.Size => 1208;
     static string? ISchemaClass<CInfoPlayerTerrorist>.ClassName => "info_player_terrorist";
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CParticleCollectionBindingInstance : CBasePulseGraphIns
     static int ISchemaClass<CParticleCollectionBindingInstance>.Size => 312;
     static string? ISchemaClass<CParticleCollectionBindingInstance>.ClassName => null;
 
-
-
-
 }

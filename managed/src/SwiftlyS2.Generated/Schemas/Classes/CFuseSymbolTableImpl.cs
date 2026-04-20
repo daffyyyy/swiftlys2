@@ -18,52 +18,63 @@ internal partial class CFuseSymbolTableImpl : SchemaClass, CFuseSymbolTable
 
     private static nint? _ConstantsOffset;
 
-    public ref CUtlVector<ConstantInfo_t> Constants {
-        get {
+    public ref CUtlVector<ConstantInfo_t> Constants
+    {
+        get
+        {
             _ConstantsOffset = _ConstantsOffset ?? Schema.GetOffset(0xD8A03B41460C1382);
             return ref _Handle.AsRef<CUtlVector<ConstantInfo_t>>(_ConstantsOffset!.Value);
         }
     }
     private static nint? _VariablesOffset;
 
-    public ref CUtlVector<VariableInfo_t> Variables {
-        get {
+    public ref CUtlVector<VariableInfo_t> Variables
+    {
+        get
+        {
             _VariablesOffset = _VariablesOffset ?? Schema.GetOffset(0xD8A03B4106AE7DE2);
             return ref _Handle.AsRef<CUtlVector<VariableInfo_t>>(_VariablesOffset!.Value);
         }
     }
     private static nint? _FunctionsOffset;
 
-    public ref CUtlVector<FunctionInfo_t> Functions {
-        get {
+    public ref CUtlVector<FunctionInfo_t> Functions
+    {
+        get
+        {
             _FunctionsOffset = _FunctionsOffset ?? Schema.GetOffset(0xD8A03B41F6EF246E);
             return ref _Handle.AsRef<CUtlVector<FunctionInfo_t>>(_FunctionsOffset!.Value);
         }
     }
     private static nint? _ConstantMapOffset;
 
-    public SchemaUntypedField ConstantMap {
-        get {
+    public SchemaUntypedField ConstantMap
+    {
+        get
+        {
             _ConstantMapOffset = _ConstantMapOffset ?? Schema.GetOffset(0xD8A03B4198BF6E51);
             return new SchemaUntypedField(_Handle + _ConstantMapOffset!.Value);
         }
     }
     private static nint? _VariableMapOffset;
 
-    public SchemaUntypedField VariableMap {
-        get {
+    public SchemaUntypedField VariableMap
+    {
+        get
+        {
             _VariableMapOffset = _VariableMapOffset ?? Schema.GetOffset(0xD8A03B410FDE3671);
             return new SchemaUntypedField(_Handle + _VariableMapOffset!.Value);
         }
     }
     private static nint? _FunctionMapOffset;
 
-    public SchemaUntypedField FunctionMap {
-        get {
+    public SchemaUntypedField FunctionMap
+    {
+        get
+        {
             _FunctionMapOffset = _FunctionMapOffset ?? Schema.GetOffset(0xD8A03B4147A33EC5);
             return new SchemaUntypedField(_Handle + _FunctionMapOffset!.Value);
         }
     }
-
 
 }

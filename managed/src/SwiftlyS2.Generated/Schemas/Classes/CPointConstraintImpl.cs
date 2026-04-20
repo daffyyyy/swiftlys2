@@ -16,7 +16,4 @@ internal partial class CPointConstraintImpl : CBaseConstraintImpl, CPointConstra
 {
     public CPointConstraintImpl(nint handle) : base(handle) { }
 
-
-
-
 }

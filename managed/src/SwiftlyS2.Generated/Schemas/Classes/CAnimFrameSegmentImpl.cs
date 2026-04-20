@@ -18,36 +18,43 @@ internal partial class CAnimFrameSegmentImpl : SchemaClass, CAnimFrameSegment
 
     private static nint? _UniqueFrameIndexOffset;
 
-    public ref int UniqueFrameIndex {
-        get {
+    public ref int UniqueFrameIndex
+    {
+        get
+        {
             _UniqueFrameIndexOffset = _UniqueFrameIndexOffset ?? Schema.GetOffset(0x1D6E27D17D02E339);
             return ref _Handle.AsRef<int>(_UniqueFrameIndexOffset!.Value);
         }
     }
     private static nint? _LocalElementMasksOffset;
 
-    public ref uint LocalElementMasks {
-        get {
+    public ref uint LocalElementMasks
+    {
+        get
+        {
             _LocalElementMasksOffset = _LocalElementMasksOffset ?? Schema.GetOffset(0x1D6E27D16981357D);
             return ref _Handle.AsRef<uint>(_LocalElementMasksOffset!.Value);
         }
     }
     private static nint? _LocalChannelOffset;
 
-    public ref int LocalChannel {
-        get {
+    public ref int LocalChannel
+    {
+        get
+        {
             _LocalChannelOffset = _LocalChannelOffset ?? Schema.GetOffset(0x1D6E27D10BCF9E77);
             return ref _Handle.AsRef<int>(_LocalChannelOffset!.Value);
         }
     }
     private static nint? _ContainerOffset;
 
-    public ref CUtlBinaryBlock Container {
-        get {
+    public ref CUtlBinaryBlock Container
+    {
+        get
+        {
             _ContainerOffset = _ContainerOffset ?? Schema.GetOffset(0x1D6E27D13F54D498);
             return ref _Handle.AsRef<CUtlBinaryBlock>(_ContainerOffset!.Value);
         }
     }
-
 
 }

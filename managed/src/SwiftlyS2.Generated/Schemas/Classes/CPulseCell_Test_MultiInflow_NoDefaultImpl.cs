@@ -16,7 +16,4 @@ internal partial class CPulseCell_Test_MultiInflow_NoDefaultImpl : CPulseCell_Ba
 {
     public CPulseCell_Test_MultiInflow_NoDefaultImpl(nint handle) : base(handle) { }
 
-
-
-
 }

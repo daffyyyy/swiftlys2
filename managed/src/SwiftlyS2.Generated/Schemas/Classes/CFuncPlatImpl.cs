@@ -18,16 +18,18 @@ internal partial class CFuncPlatImpl : CBasePlatTrainImpl, CFuncPlat
 
     private static nint? _NoiseOffset;
 
-    public string Noise {
-        get {
+    public string Noise
+    {
+        get
+        {
             _NoiseOffset = _NoiseOffset ?? Schema.GetOffset(0x57400D651F22B8CC);
             return Schema.GetString(_Handle.Read<nint>(_NoiseOffset!.Value));
         }
-        set {
+        set
+        {
             _NoiseOffset = _NoiseOffset ?? Schema.GetOffset(0x57400D651F22B8CC);
             Schema.SetString(_Handle, _NoiseOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

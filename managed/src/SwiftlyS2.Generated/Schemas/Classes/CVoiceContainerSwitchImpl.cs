@@ -18,12 +18,13 @@ internal partial class CVoiceContainerSwitchImpl : CVoiceContainerBaseImpl, CVoi
 
     private static nint? _SoundsToPlayOffset;
 
-    public ref CUtlVector<CSoundContainerReference> SoundsToPlay {
-        get {
+    public ref CUtlVector<CSoundContainerReference> SoundsToPlay
+    {
+        get
+        {
             _SoundsToPlayOffset = _SoundsToPlayOffset ?? Schema.GetOffset(0x79EA569BDCB5F70E);
             return ref _Handle.AsRef<CUtlVector<CSoundContainerReference>>(_SoundsToPlayOffset!.Value);
         }
     }
-
 
 }

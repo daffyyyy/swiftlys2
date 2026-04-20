@@ -18,12 +18,13 @@ internal partial class CPulseCell_LimitCount__Criteria_tImpl : SchemaClass, CPul
 
     private static nint? _LimitCountPassesOffset;
 
-    public ref bool LimitCountPasses {
-        get {
+    public ref bool LimitCountPasses
+    {
+        get
+        {
             _LimitCountPassesOffset = _LimitCountPassesOffset ?? Schema.GetOffset(0x3B47B1B460A35826);
             return ref _Handle.AsRef<bool>(_LimitCountPassesOffset!.Value);
         }
     }
-
 
 }

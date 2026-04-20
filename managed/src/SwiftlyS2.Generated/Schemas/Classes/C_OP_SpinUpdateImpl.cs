@@ -16,7 +16,4 @@ internal partial class C_OP_SpinUpdateImpl : CSpinUpdateBaseImpl, C_OP_SpinUpdat
 {
     public C_OP_SpinUpdateImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,20 +18,23 @@ internal partial class CStepsRemainingMetricEvaluatorImpl : CMotionMetricEvaluat
 
     private static nint? _FootIndicesOffset;
 
-    public ref CUtlVector<int> FootIndices {
-        get {
+    public ref CUtlVector<int> FootIndices
+    {
+        get
+        {
             _FootIndicesOffset = _FootIndicesOffset ?? Schema.GetOffset(0xDDD8E3884C840316);
             return ref _Handle.AsRef<CUtlVector<int>>(_FootIndicesOffset!.Value);
         }
     }
     private static nint? _MinStepsRemainingOffset;
 
-    public ref float MinStepsRemaining {
-        get {
+    public ref float MinStepsRemaining
+    {
+        get
+        {
             _MinStepsRemainingOffset = _MinStepsRemainingOffset ?? Schema.GetOffset(0xDDD8E388382CE1FC);
             return ref _Handle.AsRef<float>(_MinStepsRemainingOffset!.Value);
         }
     }
-
 
 }

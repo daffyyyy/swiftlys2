@@ -18,52 +18,63 @@ internal partial class C_INIT_PositionOffsetImpl : CParticleFunctionInitializerI
 
     private static nint? _OffsetMinOffset;
 
-    public CPerParticleVecInput OffsetMin {
-        get {
+    public CPerParticleVecInput OffsetMin
+    {
+        get
+        {
             _OffsetMinOffset = _OffsetMinOffset ?? Schema.GetOffset(0x263FD76A7E1ECBDE);
             return new CPerParticleVecInputImpl(_Handle + _OffsetMinOffset!.Value);
         }
     }
     private static nint? _OffsetMaxOffset;
 
-    public CPerParticleVecInput OffsetMax {
-        get {
+    public CPerParticleVecInput OffsetMax
+    {
+        get
+        {
             _OffsetMaxOffset = _OffsetMaxOffset ?? Schema.GetOffset(0x263FD76A9009CD7C);
             return new CPerParticleVecInputImpl(_Handle + _OffsetMaxOffset!.Value);
         }
     }
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0x263FD76AB3FDC289);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
     private static nint? _LocalCoordsOffset;
 
-    public ref bool LocalCoords {
-        get {
+    public ref bool LocalCoords
+    {
+        get
+        {
             _LocalCoordsOffset = _LocalCoordsOffset ?? Schema.GetOffset(0x263FD76A30E716DE);
             return ref _Handle.AsRef<bool>(_LocalCoordsOffset!.Value);
         }
     }
     private static nint? _ProportionalOffset;
 
-    public ref bool Proportional {
-        get {
+    public ref bool Proportional
+    {
+        get
+        {
             _ProportionalOffset = _ProportionalOffset ?? Schema.GetOffset(0x263FD76A891F328A);
             return ref _Handle.AsRef<bool>(_ProportionalOffset!.Value);
         }
     }
     private static nint? _RandomnessParametersOffset;
 
-    public CRandomNumberGeneratorParameters RandomnessParameters {
-        get {
+    public CRandomNumberGeneratorParameters RandomnessParameters
+    {
+        get
+        {
             _RandomnessParametersOffset = _RandomnessParametersOffset ?? Schema.GetOffset(0x263FD76A7EDF50AD);
             return new CRandomNumberGeneratorParametersImpl(_Handle + _RandomnessParametersOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CPathQueryComponentImpl : CEntityComponentImpl, CPathQuer
 {
     public CPathQueryComponentImpl(nint handle) : base(handle) { }
 
-
-
-
 }

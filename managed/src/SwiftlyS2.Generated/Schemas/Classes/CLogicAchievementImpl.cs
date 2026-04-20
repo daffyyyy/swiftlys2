@@ -18,32 +18,38 @@ internal partial class CLogicAchievementImpl : CLogicalEntityImpl, CLogicAchieve
 
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0xE8C4579F3A7C5965);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _AchievementEventIDOffset;
 
-    public string AchievementEventID {
-        get {
+    public string AchievementEventID
+    {
+        get
+        {
             _AchievementEventIDOffset = _AchievementEventIDOffset ?? Schema.GetOffset(0xE8C4579F12AB7E15);
             return Schema.GetString(_Handle.Read<nint>(_AchievementEventIDOffset!.Value));
         }
-        set {
+        set
+        {
             _AchievementEventIDOffset = _AchievementEventIDOffset ?? Schema.GetOffset(0xE8C4579F12AB7E15);
             Schema.SetString(_Handle, _AchievementEventIDOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OnFiredOffset;
 
-    public ref CEntityIOOutput OnFired {
-        get {
+    public ref CEntityIOOutput OnFired
+    {
+        get
+        {
             _OnFiredOffset = _OnFiredOffset ?? Schema.GetOffset(0xE8C4579F84825730);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnFiredOffset!.Value);
         }
     }
-
 
 }

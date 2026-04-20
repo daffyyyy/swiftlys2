@@ -16,7 +16,4 @@ internal partial class CCSMinimapBoundaryImpl : CBaseEntityImpl, CCSMinimapBound
 {
     public CCSMinimapBoundaryImpl(nint handle) : base(handle) { }
 
-
-
-
 }

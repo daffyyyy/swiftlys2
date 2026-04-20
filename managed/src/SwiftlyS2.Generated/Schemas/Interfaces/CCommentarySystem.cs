@@ -15,8 +15,6 @@ public partial interface CCommentarySystem : ISchemaClass<CCommentarySystem>
     static string? ISchemaClass<CCommentarySystem>.ClassName => null;
 
 
-    public ref bool CommentaryConvarsChanging { get; }
-
     public ref bool CommentaryEnabledMidGame { get; }
 
     public GameTime_t NextTeleportTime { get; }
@@ -26,6 +24,8 @@ public partial interface CCommentarySystem : ISchemaClass<CCommentarySystem>
     public ref bool CheatState { get; }
 
     public ref bool IsFirstSpawnGroupToLoad { get; }
+
+    public ref CUtlVector<modifiedconvars_t> ModifiedConvars { get; }
 
     public ref CHandle<CPointCommentaryNode> CurrentNode { get; }
 

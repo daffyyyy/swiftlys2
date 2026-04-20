@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum AimMatrixBlendMode : uint
 {
- AimMatrixBlendMode_None = 0,
-
- AimMatrixBlendMode_Additive = 1,
-
- AimMatrixBlendMode_ModelSpaceAdditive = 2,
-
- AimMatrixBlendMode_BoneMask = 3,
+    AimMatrixBlendMode_None = 0,
+    AimMatrixBlendMode_Additive = 1,
+    AimMatrixBlendMode_ModelSpaceAdditive = 2,
+    AimMatrixBlendMode_BoneMask = 3,
 }

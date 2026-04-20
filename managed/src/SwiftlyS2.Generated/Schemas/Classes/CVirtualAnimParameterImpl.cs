@@ -18,24 +18,28 @@ internal partial class CVirtualAnimParameterImpl : CAnimParameterBaseImpl, CVirt
 
     private static nint? _ExpressionStringOffset;
 
-    public string ExpressionString {
-        get {
+    public string ExpressionString
+    {
+        get
+        {
             _ExpressionStringOffset = _ExpressionStringOffset ?? Schema.GetOffset(0x3D45915B3039426E);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ExpressionStringOffset!.Value));
         }
-        set {
+        set
+        {
             _ExpressionStringOffset = _ExpressionStringOffset ?? Schema.GetOffset(0x3D45915B3039426E);
             Schema.SetCUtlString(_Handle, _ExpressionStringOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ParamTypeOffset;
 
-    public ref AnimParamType_t ParamType {
-        get {
+    public ref AnimParamType_t ParamType
+    {
+        get
+        {
             _ParamTypeOffset = _ParamTypeOffset ?? Schema.GetOffset(0x3D45915BF05DFDD9);
             return ref _Handle.AsRef<AnimParamType_t>(_ParamTypeOffset!.Value);
         }
     }
-
 
 }

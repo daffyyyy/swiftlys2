@@ -16,7 +16,4 @@ internal partial class EventClientAdvanceNonRenderedFrame_tImpl : SchemaClass, E
 {
     public EventClientAdvanceNonRenderedFrame_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

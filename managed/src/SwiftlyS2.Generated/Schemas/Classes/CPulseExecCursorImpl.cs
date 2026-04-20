@@ -16,7 +16,4 @@ internal partial class CPulseExecCursorImpl : SchemaClass, CPulseExecCursor
 {
     public CPulseExecCursorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

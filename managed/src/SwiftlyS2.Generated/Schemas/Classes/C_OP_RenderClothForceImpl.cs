@@ -16,7 +16,4 @@ internal partial class C_OP_RenderClothForceImpl : CParticleFunctionRendererImpl
 {
     public C_OP_RenderClothForceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

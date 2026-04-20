@@ -18,28 +18,33 @@ internal partial class CWorldCompositionChunkReferenceElement_tImpl : SchemaClas
 
     private static nint? _StrMapToLoadOffset;
 
-    public string StrMapToLoad {
-        get {
+    public string StrMapToLoad
+    {
+        get
+        {
             _StrMapToLoadOffset = _StrMapToLoadOffset ?? Schema.GetOffset(0x9B80004DE87F0C1B);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrMapToLoadOffset!.Value));
         }
-        set {
+        set
+        {
             _StrMapToLoadOffset = _StrMapToLoadOffset ?? Schema.GetOffset(0x9B80004DE87F0C1B);
             Schema.SetCUtlString(_Handle, _StrMapToLoadOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _StrLandmarkNameOffset;
 
-    public string StrLandmarkName {
-        get {
+    public string StrLandmarkName
+    {
+        get
+        {
             _StrLandmarkNameOffset = _StrLandmarkNameOffset ?? Schema.GetOffset(0x9B80004DE0BB30D3);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrLandmarkNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StrLandmarkNameOffset = _StrLandmarkNameOffset ?? Schema.GetOffset(0x9B80004DE0BB30D3);
             Schema.SetCUtlString(_Handle, _StrLandmarkNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

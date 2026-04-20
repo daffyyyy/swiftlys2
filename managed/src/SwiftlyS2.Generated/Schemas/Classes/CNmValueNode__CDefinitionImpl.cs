@@ -16,7 +16,4 @@ internal partial class CNmValueNode__CDefinitionImpl : CNmGraphNode__CDefinition
 {
     public CNmValueNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

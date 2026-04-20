@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCVoiceContainerBaseImpl : SchemaClass,
 {
     public InfoForResourceTypeCVoiceContainerBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

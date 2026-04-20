@@ -18,28 +18,33 @@ internal partial class CAnimInputDampingImpl : SchemaClass, CAnimInputDamping
 
     private static nint? _SpeedFunctionOffset;
 
-    public ref DampingSpeedFunction SpeedFunction {
-        get {
+    public ref DampingSpeedFunction SpeedFunction
+    {
+        get
+        {
             _SpeedFunctionOffset = _SpeedFunctionOffset ?? Schema.GetOffset(0xFAECFC318682F508);
             return ref _Handle.AsRef<DampingSpeedFunction>(_SpeedFunctionOffset!.Value);
         }
     }
     private static nint? _SpeedScaleOffset;
 
-    public ref float SpeedScale {
-        get {
+    public ref float SpeedScale
+    {
+        get
+        {
             _SpeedScaleOffset = _SpeedScaleOffset ?? Schema.GetOffset(0xFAECFC31E70BB6FE);
             return ref _Handle.AsRef<float>(_SpeedScaleOffset!.Value);
         }
     }
     private static nint? _FallingSpeedScaleOffset;
 
-    public ref float FallingSpeedScale {
-        get {
+    public ref float FallingSpeedScale
+    {
+        get
+        {
             _FallingSpeedScaleOffset = _FallingSpeedScaleOffset ?? Schema.GetOffset(0xFAECFC31128A6857);
             return ref _Handle.AsRef<float>(_FallingSpeedScaleOffset!.Value);
         }
     }
-
 
 }

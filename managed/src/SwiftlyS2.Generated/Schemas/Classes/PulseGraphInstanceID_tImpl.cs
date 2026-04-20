@@ -18,12 +18,13 @@ internal partial class PulseGraphInstanceID_tImpl : SchemaClass, PulseGraphInsta
 
     private static nint? _ValueOffset;
 
-    public ref uint Value {
-        get {
+    public ref uint Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x4291F7FFDCB0894A);
             return ref _Handle.AsRef<uint>(_ValueOffset!.Value);
         }
     }
-
 
 }

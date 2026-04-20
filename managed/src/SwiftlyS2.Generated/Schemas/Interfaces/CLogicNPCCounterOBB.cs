@@ -14,7 +14,4 @@ public partial interface CLogicNPCCounterOBB : CLogicNPCCounterAABB, ISchemaClas
     static int ISchemaClass<CLogicNPCCounterOBB>.Size => 1880;
     static string? ISchemaClass<CLogicNPCCounterOBB>.ClassName => "logic_npc_counter_obb";
 
-
-
-
 }

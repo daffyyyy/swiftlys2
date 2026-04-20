@@ -18,20 +18,23 @@ internal partial class FollowAttachmentDataImpl : SchemaClass, FollowAttachmentD
 
     private static nint? _BoneIndexOffset;
 
-    public ref int BoneIndex {
-        get {
+    public ref int BoneIndex
+    {
+        get
+        {
             _BoneIndexOffset = _BoneIndexOffset ?? Schema.GetOffset(0x7E37AD4D6AFA4155);
             return ref _Handle.AsRef<int>(_BoneIndexOffset!.Value);
         }
     }
     private static nint? _AttachmentHandleOffset;
 
-    public AttachmentHandle_t AttachmentHandle {
-        get {
+    public AttachmentHandle_t AttachmentHandle
+    {
+        get
+        {
             _AttachmentHandleOffset = _AttachmentHandleOffset ?? Schema.GetOffset(0x7E37AD4DA203035E);
             return new AttachmentHandle_tImpl(_Handle + _AttachmentHandleOffset!.Value);
         }
     }
-
 
 }

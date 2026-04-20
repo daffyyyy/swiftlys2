@@ -16,7 +16,4 @@ internal partial class EventClientSimulate_tImpl : EventSimulate_tImpl, EventCli
 {
     public EventClientSimulate_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

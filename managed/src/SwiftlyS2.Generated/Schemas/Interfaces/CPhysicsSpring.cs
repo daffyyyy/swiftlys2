@@ -15,6 +15,8 @@ public partial interface CPhysicsSpring : CBaseEntity, ISchemaClass<CPhysicsSpri
     static string? ISchemaClass<CPhysicsSpring>.ClassName => "phys_spring";
 
 
+    public IPhysicsJoint? SpringJoint { get; }
+
     public ref float Frequency { get; }
 
     public ref float DampingRatio { get; }

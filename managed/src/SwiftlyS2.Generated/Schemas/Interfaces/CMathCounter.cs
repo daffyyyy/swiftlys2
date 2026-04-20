@@ -25,10 +25,10 @@ public partial interface CMathCounter : CLogicalEntity, ISchemaClass<CMathCounte
 
     public ref bool Disabled { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OutValue { get; }
 
-    // CEntityOutputTemplate< float32, float32 >
+    // CEntityOutputTemplate< float32 >
     public SchemaUntypedField OnGetValue { get; }
 
     public ref CEntityIOOutput OnHitMin { get; }

@@ -18,34 +18,41 @@ internal partial class FeAxialEdgeBend_tImpl : SchemaClass, FeAxialEdgeBend_t
 
     private static nint? _TeOffset;
 
-    public ref float Te {
-        get {
+    public ref float Te
+    {
+        get
+        {
             _TeOffset = _TeOffset ?? Schema.GetOffset(0x6CF84D703C453EB2);
             return ref _Handle.AsRef<float>(_TeOffset!.Value);
         }
     }
     private static nint? _TvOffset;
 
-    public ref float Tv {
-        get {
+    public ref float Tv
+    {
+        get
+        {
             _TvOffset = _TvOffset ?? Schema.GetOffset(0x6CF84D704B45564F);
             return ref _Handle.AsRef<float>(_TvOffset!.Value);
         }
     }
     private static nint? _DistOffset;
 
-    public ref float Dist {
-        get {
+    public ref float Dist
+    {
+        get
+        {
             _DistOffset = _DistOffset ?? Schema.GetOffset(0x6CF84D701234268F);
             return ref _Handle.AsRef<float>(_DistOffset!.Value);
         }
     }
-    public ISchemaFixedArray<float> Weight {
+    public ISchemaFixedArray<float> Weight
+    {
         get => new SchemaFixedArray<float>(_Handle, 0x6CF84D70CFFC66CB, 4, 4, 4);
     }
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x6CF84D70CD6694B9, 6, 2, 2);
     }
-
 
 }

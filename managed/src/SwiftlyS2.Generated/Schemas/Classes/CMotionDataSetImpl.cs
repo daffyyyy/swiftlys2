@@ -18,20 +18,23 @@ internal partial class CMotionDataSetImpl : SchemaClass, CMotionDataSet
 
     private static nint? _GroupsOffset;
 
-    public ref CUtlVector<CMotionGraphGroup> Groups {
-        get {
+    public ref CUtlVector<CMotionGraphGroup> Groups
+    {
+        get
+        {
             _GroupsOffset = _GroupsOffset ?? Schema.GetOffset(0x8AC1A050641FFE0D);
             return ref _Handle.AsRef<CUtlVector<CMotionGraphGroup>>(_GroupsOffset!.Value);
         }
     }
     private static nint? _DimensionCountOffset;
 
-    public ref int DimensionCount {
-        get {
+    public ref int DimensionCount
+    {
+        get
+        {
             _DimensionCountOffset = _DimensionCountOffset ?? Schema.GetOffset(0x8AC1A05036656C8E);
             return ref _Handle.AsRef<int>(_DimensionCountOffset!.Value);
         }
     }
-
 
 }

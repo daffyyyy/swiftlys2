@@ -18,28 +18,33 @@ internal partial class CTriggerSaveImpl : CBaseTriggerImpl, CTriggerSave
 
     private static nint? _ForceNewLevelUnitOffset;
 
-    public ref bool ForceNewLevelUnit {
-        get {
+    public ref bool ForceNewLevelUnit
+    {
+        get
+        {
             _ForceNewLevelUnitOffset = _ForceNewLevelUnitOffset ?? Schema.GetOffset(0xFA0C03F1473BFDE);
             return ref _Handle.AsRef<bool>(_ForceNewLevelUnitOffset!.Value);
         }
     }
     private static nint? _DangerousTimerOffset;
 
-    public ref float DangerousTimer {
-        get {
+    public ref float DangerousTimer
+    {
+        get
+        {
             _DangerousTimerOffset = _DangerousTimerOffset ?? Schema.GetOffset(0xFA0C03F5CF80EC4);
             return ref _Handle.AsRef<float>(_DangerousTimerOffset!.Value);
         }
     }
     private static nint? _MinHitPointsOffset;
 
-    public ref int MinHitPoints {
-        get {
+    public ref int MinHitPoints
+    {
+        get
+        {
             _MinHitPointsOffset = _MinHitPointsOffset ?? Schema.GetOffset(0xFA0C03F2C7E0C57);
             return ref _Handle.AsRef<int>(_MinHitPointsOffset!.Value);
         }
     }
-
 
 }

@@ -18,60 +18,73 @@ internal partial class ParticleNode_tImpl : SchemaClass, ParticleNode_t
 
     private static nint? _EntityOffset;
 
-    public ref CHandle<CBaseEntity> Entity {
-        get {
+    public ref CHandle<CBaseEntity> Entity
+    {
+        get
+        {
             _EntityOffset = _EntityOffset ?? Schema.GetOffset(0xBECF421C6EBADCB0);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EntityOffset!.Value);
         }
     }
     private static nint? _IndexOffset;
 
-    public ParticleIndex_t Index {
-        get {
+    public ParticleIndex_t Index
+    {
+        get
+        {
             _IndexOffset = _IndexOffset ?? Schema.GetOffset(0xBECF421C8F270140);
             return new ParticleIndex_tImpl(_Handle + _IndexOffset!.Value);
         }
     }
     private static nint? _StartTimeOffset;
 
-    public GameTime_t StartTime {
-        get {
+    public GameTime_t StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0xBECF421C67FE9DC4);
             return new GameTime_tImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
     private static nint? _GrowthDurationOffset;
 
-    public ref float GrowthDuration {
-        get {
+    public ref float GrowthDuration
+    {
+        get
+        {
             _GrowthDurationOffset = _GrowthDurationOffset ?? Schema.GetOffset(0xBECF421CF0D91F70);
             return ref _Handle.AsRef<float>(_GrowthDurationOffset!.Value);
         }
     }
     private static nint? _GrowthOriginOffset;
 
-    public ref Vector GrowthOrigin {
-        get {
+    public ref Vector GrowthOrigin
+    {
+        get
+        {
             _GrowthOriginOffset = _GrowthOriginOffset ?? Schema.GetOffset(0xBECF421C4A651090);
             return ref _Handle.AsRef<Vector>(_GrowthOriginOffset!.Value);
         }
     }
     private static nint? _EndcapTimeOffset;
 
-    public ref float EndcapTime {
-        get {
+    public ref float EndcapTime
+    {
+        get
+        {
             _EndcapTimeOffset = _EndcapTimeOffset ?? Schema.GetOffset(0xBECF421CCF1342BD);
             return ref _Handle.AsRef<float>(_EndcapTimeOffset!.Value);
         }
     }
     private static nint? _MarkedForDeleteOffset;
 
-    public ref bool MarkedForDelete {
-        get {
+    public ref bool MarkedForDelete
+    {
+        get
+        {
             _MarkedForDeleteOffset = _MarkedForDeleteOffset ?? Schema.GetOffset(0xBECF421C6C9EC48F);
             return ref _Handle.AsRef<bool>(_MarkedForDeleteOffset!.Value);
         }
     }
-
 
 }

@@ -18,52 +18,63 @@ internal partial class C_OP_FadeOutImpl : CParticleFunctionOperatorImpl, C_OP_Fa
 
     private static nint? _FadeOutTimeMinOffset;
 
-    public ref float FadeOutTimeMin {
-        get {
+    public ref float FadeOutTimeMin
+    {
+        get
+        {
             _FadeOutTimeMinOffset = _FadeOutTimeMinOffset ?? Schema.GetOffset(0xDB3026B50D900CF6);
             return ref _Handle.AsRef<float>(_FadeOutTimeMinOffset!.Value);
         }
     }
     private static nint? _FadeOutTimeMaxOffset;
 
-    public ref float FadeOutTimeMax {
-        get {
+    public ref float FadeOutTimeMax
+    {
+        get
+        {
             _FadeOutTimeMaxOffset = _FadeOutTimeMaxOffset ?? Schema.GetOffset(0xDB3026B5FFA37EA4);
             return ref _Handle.AsRef<float>(_FadeOutTimeMaxOffset!.Value);
         }
     }
     private static nint? _FadeOutTimeExpOffset;
 
-    public ref float FadeOutTimeExp {
-        get {
+    public ref float FadeOutTimeExp
+    {
+        get
+        {
             _FadeOutTimeExpOffset = _FadeOutTimeExpOffset ?? Schema.GetOffset(0xDB3026B596AB9995);
             return ref _Handle.AsRef<float>(_FadeOutTimeExpOffset!.Value);
         }
     }
     private static nint? _FadeBiasOffset;
 
-    public ref float FadeBias {
-        get {
+    public ref float FadeBias
+    {
+        get
+        {
             _FadeBiasOffset = _FadeBiasOffset ?? Schema.GetOffset(0xDB3026B5D35FA840);
             return ref _Handle.AsRef<float>(_FadeBiasOffset!.Value);
         }
     }
     private static nint? _ProportionalOffset;
 
-    public ref bool Proportional {
-        get {
+    public ref bool Proportional
+    {
+        get
+        {
             _ProportionalOffset = _ProportionalOffset ?? Schema.GetOffset(0xDB3026B5891F328A);
             return ref _Handle.AsRef<bool>(_ProportionalOffset!.Value);
         }
     }
     private static nint? _EaseInAndOutOffset;
 
-    public ref bool EaseInAndOut {
-        get {
+    public ref bool EaseInAndOut
+    {
+        get
+        {
             _EaseInAndOutOffset = _EaseInAndOutOffset ?? Schema.GetOffset(0xDB3026B5D14612BF);
             return ref _Handle.AsRef<bool>(_EaseInAndOutOffset!.Value);
         }
     }
-
 
 }

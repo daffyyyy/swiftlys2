@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderDeferredLight : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderDeferredLight>
 {
     static C_OP_RenderDeferredLight ISchemaClass<C_OP_RenderDeferredLight>.From(nint handle) => new C_OP_RenderDeferredLightImpl(handle);
-    static int ISchemaClass<C_OP_RenderDeferredLight>.Size => 2328;
+    static int ISchemaClass<C_OP_RenderDeferredLight>.Size => 2336;
     static string? ISchemaClass<C_OP_RenderDeferredLight>.ClassName => null;
 
 

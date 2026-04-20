@@ -18,12 +18,13 @@ internal partial class CPulseCell_Outflow_CycleRandomImpl : CPulseCell_BaseFlowI
 
     private static nint? _OutputsOffset;
 
-    public ref CUtlVector<CPulse_OutflowConnection> Outputs {
-        get {
+    public ref CUtlVector<CPulse_OutflowConnection> Outputs
+    {
+        get
+        {
             _OutputsOffset = _OutputsOffset ?? Schema.GetOffset(0xF24A555AA38A89D5);
             return ref _Handle.AsRef<CUtlVector<CPulse_OutflowConnection>>(_OutputsOffset!.Value);
         }
     }
-
 
 }

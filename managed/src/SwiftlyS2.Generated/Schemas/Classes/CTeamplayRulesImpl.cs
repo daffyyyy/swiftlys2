@@ -16,7 +16,4 @@ internal partial class CTeamplayRulesImpl : CMultiplayRulesImpl, CTeamplayRules
 {
     public CTeamplayRulesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

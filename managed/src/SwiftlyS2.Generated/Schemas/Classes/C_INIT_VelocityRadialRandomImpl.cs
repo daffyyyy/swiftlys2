@@ -18,68 +18,83 @@ internal partial class C_INIT_VelocityRadialRandomImpl : CParticleFunctionInitia
 
     private static nint? _PerParticleCenterOffset;
 
-    public ref bool PerParticleCenter {
-        get {
+    public ref bool PerParticleCenter
+    {
+        get
+        {
             _PerParticleCenterOffset = _PerParticleCenterOffset ?? Schema.GetOffset(0x61A3C8D50314399B);
             return ref _Handle.AsRef<bool>(_PerParticleCenterOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x61A3C8D53F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _PositionOffset;
 
-    public CPerParticleVecInput Position {
-        get {
+    public CPerParticleVecInput Position
+    {
+        get
+        {
             _PositionOffset = _PositionOffset ?? Schema.GetOffset(0x61A3C8D5E092EE6A);
             return new CPerParticleVecInputImpl(_Handle + _PositionOffset!.Value);
         }
     }
     private static nint? _FwdOffset;
 
-    public CPerParticleVecInput Fwd {
-        get {
+    public CPerParticleVecInput Fwd
+    {
+        get
+        {
             _FwdOffset = _FwdOffset ?? Schema.GetOffset(0x61A3C8D5974CB62A);
             return new CPerParticleVecInputImpl(_Handle + _FwdOffset!.Value);
         }
     }
     private static nint? _SpeedMinOffset;
 
-    public CPerParticleFloatInput SpeedMin {
-        get {
+    public CPerParticleFloatInput SpeedMin
+    {
+        get
+        {
             _SpeedMinOffset = _SpeedMinOffset ?? Schema.GetOffset(0x61A3C8D5B989E1F8);
             return new CPerParticleFloatInputImpl(_Handle + _SpeedMinOffset!.Value);
         }
     }
     private static nint? _SpeedMaxOffset;
 
-    public CPerParticleFloatInput SpeedMax {
-        get {
+    public CPerParticleFloatInput SpeedMax
+    {
+        get
+        {
             _SpeedMaxOffset = _SpeedMaxOffset ?? Schema.GetOffset(0x61A3C8D5CF9D8C52);
             return new CPerParticleFloatInputImpl(_Handle + _SpeedMaxOffset!.Value);
         }
     }
     private static nint? _LocalCoordinateSystemSpeedScaleOffset;
 
-    public ref Vector LocalCoordinateSystemSpeedScale {
-        get {
+    public ref Vector LocalCoordinateSystemSpeedScale
+    {
+        get
+        {
             _LocalCoordinateSystemSpeedScaleOffset = _LocalCoordinateSystemSpeedScaleOffset ?? Schema.GetOffset(0x61A3C8D5CEF062F0);
             return ref _Handle.AsRef<Vector>(_LocalCoordinateSystemSpeedScaleOffset!.Value);
         }
     }
     private static nint? _IgnoreDeltaOffset;
 
-    public ref bool IgnoreDelta {
-        get {
+    public ref bool IgnoreDelta
+    {
+        get
+        {
             _IgnoreDeltaOffset = _IgnoreDeltaOffset ?? Schema.GetOffset(0x61A3C8D5A944B263);
             return ref _Handle.AsRef<bool>(_IgnoreDeltaOffset!.Value);
         }
     }
-
 
 }

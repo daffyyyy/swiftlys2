@@ -18,8 +18,10 @@ internal partial class CWeaponCZ75aImpl : CCSWeaponBaseGunImpl, CWeaponCZ75a
 
     private static nint? _MagazineRemovedOffset;
 
-    public ref bool MagazineRemoved {
-        get {
+    public ref bool MagazineRemoved
+    {
+        get
+        {
             _MagazineRemovedOffset = _MagazineRemovedOffset ?? Schema.GetOffset(0x5FFE9C69188A471);
             return ref _Handle.AsRef<bool>(_MagazineRemovedOffset!.Value);
         }

@@ -14,7 +14,4 @@ public partial interface CNmDurationScaleNode__CDefinition : CNmSpeedScaleBaseNo
     static int ISchemaClass<CNmDurationScaleNode__CDefinition>.Size => 32;
     static string? ISchemaClass<CNmDurationScaleNode__CDefinition>.ClassName => null;
 
-
-
-
 }

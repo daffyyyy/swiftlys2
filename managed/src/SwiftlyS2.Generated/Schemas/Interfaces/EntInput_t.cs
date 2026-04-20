@@ -14,7 +14,4 @@ public partial interface EntInput_t : ISchemaClass<EntInput_t>
     static int ISchemaClass<EntInput_t>.Size => 48;
     static string? ISchemaClass<EntInput_t>.ClassName => null;
 
-
-
-
 }

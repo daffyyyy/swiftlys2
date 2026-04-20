@@ -18,20 +18,23 @@ internal partial class CParticleVariableRefImpl : SchemaClass, CParticleVariable
 
     private static nint? _VariableNameOffset;
 
-    public SchemaUntypedField VariableName {
-        get {
+    public SchemaUntypedField VariableName
+    {
+        get
+        {
             _VariableNameOffset = _VariableNameOffset ?? Schema.GetOffset(0x4FB747D9D3D609A6);
             return new SchemaUntypedField(_Handle + _VariableNameOffset!.Value);
         }
     }
     private static nint? _VariableTypeOffset;
 
-    public SchemaUntypedField VariableType {
-        get {
+    public SchemaUntypedField VariableType
+    {
+        get
+        {
             _VariableTypeOffset = _VariableTypeOffset ?? Schema.GetOffset(0x4FB747D9954B670D);
             return new SchemaUntypedField(_Handle + _VariableTypeOffset!.Value);
         }
     }
-
 
 }

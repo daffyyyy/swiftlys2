@@ -18,60 +18,73 @@ internal partial class C_OP_SetControlPointFieldFromVectorExpressionImpl : CPart
 
     private static nint? _ExpressionOffset;
 
-    public ref VectorFloatExpressionType_t Expression {
-        get {
+    public ref VectorFloatExpressionType_t Expression
+    {
+        get
+        {
             _ExpressionOffset = _ExpressionOffset ?? Schema.GetOffset(0x1A9FFD07160B2427);
             return ref _Handle.AsRef<VectorFloatExpressionType_t>(_ExpressionOffset!.Value);
         }
     }
     private static nint? _Input1Offset;
 
-    public CParticleCollectionVecInput Input1 {
-        get {
+    public CParticleCollectionVecInput Input1
+    {
+        get
+        {
             _Input1Offset = _Input1Offset ?? Schema.GetOffset(0x1A9FFD07A155BDDE);
             return new CParticleCollectionVecInputImpl(_Handle + _Input1Offset!.Value);
         }
     }
     private static nint? _Input2Offset;
 
-    public CParticleCollectionVecInput Input2 {
-        get {
+    public CParticleCollectionVecInput Input2
+    {
+        get
+        {
             _Input2Offset = _Input2Offset ?? Schema.GetOffset(0x1A9FFD07A055BC4B);
             return new CParticleCollectionVecInputImpl(_Handle + _Input2Offset!.Value);
         }
     }
     private static nint? _LerpOffset;
 
-    public CPerParticleFloatInput Lerp {
-        get {
+    public CPerParticleFloatInput Lerp
+    {
+        get
+        {
             _LerpOffset = _LerpOffset ?? Schema.GetOffset(0x1A9FFD07622FAB06);
             return new CPerParticleFloatInputImpl(_Handle + _LerpOffset!.Value);
         }
     }
     private static nint? _OutputRemapOffset;
 
-    public CParticleRemapFloatInput OutputRemap {
-        get {
+    public CParticleRemapFloatInput OutputRemap
+    {
+        get
+        {
             _OutputRemapOffset = _OutputRemapOffset ?? Schema.GetOffset(0x1A9FFD071239396F);
             return new CParticleRemapFloatInputImpl(_Handle + _OutputRemapOffset!.Value);
         }
     }
     private static nint? _OutputCPOffset;
 
-    public ref int OutputCP {
-        get {
+    public ref int OutputCP
+    {
+        get
+        {
             _OutputCPOffset = _OutputCPOffset ?? Schema.GetOffset(0x1A9FFD0750DF5703);
             return ref _Handle.AsRef<int>(_OutputCPOffset!.Value);
         }
     }
     private static nint? _OutVectorFieldOffset;
 
-    public ref int OutVectorField {
-        get {
+    public ref int OutVectorField
+    {
+        get
+        {
             _OutVectorFieldOffset = _OutVectorFieldOffset ?? Schema.GetOffset(0x1A9FFD07F9041E74);
             return ref _Handle.AsRef<int>(_OutVectorFieldOffset!.Value);
         }
     }
-
 
 }

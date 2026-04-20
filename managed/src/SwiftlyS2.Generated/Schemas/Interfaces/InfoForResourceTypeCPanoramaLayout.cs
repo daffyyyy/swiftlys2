@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCPanoramaLayout : ISchemaClass<InfoF
     static int ISchemaClass<InfoForResourceTypeCPanoramaLayout>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCPanoramaLayout>.ClassName => null;
 
-
-
-
 }

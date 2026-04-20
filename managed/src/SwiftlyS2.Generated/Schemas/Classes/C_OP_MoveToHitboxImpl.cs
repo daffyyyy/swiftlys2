@@ -18,80 +18,98 @@ internal partial class C_OP_MoveToHitboxImpl : CParticleFunctionOperatorImpl, C_
 
     private static nint? _ModelInputOffset;
 
-    public CParticleModelInput ModelInput {
-        get {
+    public CParticleModelInput ModelInput
+    {
+        get
+        {
             _ModelInputOffset = _ModelInputOffset ?? Schema.GetOffset(0x4ACEA8FFEB74120E);
             return new CParticleModelInputImpl(_Handle + _ModelInputOffset!.Value);
         }
     }
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0x4ACEA8FF3A9ED669);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
     private static nint? _LifeTimeLerpStartOffset;
 
-    public ref float LifeTimeLerpStart {
-        get {
+    public ref float LifeTimeLerpStart
+    {
+        get
+        {
             _LifeTimeLerpStartOffset = _LifeTimeLerpStartOffset ?? Schema.GetOffset(0x4ACEA8FFB9B0BE37);
             return ref _Handle.AsRef<float>(_LifeTimeLerpStartOffset!.Value);
         }
     }
     private static nint? _LifeTimeLerpEndOffset;
 
-    public ref float LifeTimeLerpEnd {
-        get {
+    public ref float LifeTimeLerpEnd
+    {
+        get
+        {
             _LifeTimeLerpEndOffset = _LifeTimeLerpEndOffset ?? Schema.GetOffset(0x4ACEA8FF3BE2C292);
             return ref _Handle.AsRef<float>(_LifeTimeLerpEndOffset!.Value);
         }
     }
     private static nint? _PrevPosScaleOffset;
 
-    public ref float PrevPosScale {
-        get {
+    public ref float PrevPosScale
+    {
+        get
+        {
             _PrevPosScaleOffset = _PrevPosScaleOffset ?? Schema.GetOffset(0x4ACEA8FF46CED122);
             return ref _Handle.AsRef<float>(_PrevPosScaleOffset!.Value);
         }
     }
     private static nint? _HitboxSetNameOffset;
 
-    public string HitboxSetName {
-        get {
+    public string HitboxSetName
+    {
+        get
+        {
             _HitboxSetNameOffset = _HitboxSetNameOffset ?? Schema.GetOffset(0x4ACEA8FF6A21BB0E);
             return Schema.GetString(_Handle + _HitboxSetNameOffset!.Value);
         }
-        set {
+        set
+        {
             _HitboxSetNameOffset = _HitboxSetNameOffset ?? Schema.GetOffset(0x4ACEA8FF6A21BB0E);
             Schema.SetFixedString(_Handle, _HitboxSetNameOffset!.Value, value, 128);
         }
-    } 
+    }
     private static nint? _UseBonesOffset;
 
-    public ref bool UseBones {
-        get {
+    public ref bool UseBones
+    {
+        get
+        {
             _UseBonesOffset = _UseBonesOffset ?? Schema.GetOffset(0x4ACEA8FF10D1938B);
             return ref _Handle.AsRef<bool>(_UseBonesOffset!.Value);
         }
     }
     private static nint? _LerpTypeOffset;
 
-    public ref HitboxLerpType_t LerpType {
-        get {
+    public ref HitboxLerpType_t LerpType
+    {
+        get
+        {
             _LerpTypeOffset = _LerpTypeOffset ?? Schema.GetOffset(0x4ACEA8FF74114DCC);
             return ref _Handle.AsRef<HitboxLerpType_t>(_LerpTypeOffset!.Value);
         }
     }
     private static nint? _InterpolationOffset;
 
-    public CPerParticleFloatInput Interpolation {
-        get {
+    public CPerParticleFloatInput Interpolation
+    {
+        get
+        {
             _InterpolationOffset = _InterpolationOffset ?? Schema.GetOffset(0x4ACEA8FFCF55B987);
             return new CPerParticleFloatInputImpl(_Handle + _InterpolationOffset!.Value);
         }
     }
-
 
 }

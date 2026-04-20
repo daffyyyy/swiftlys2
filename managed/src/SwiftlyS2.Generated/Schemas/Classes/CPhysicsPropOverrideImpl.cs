@@ -16,7 +16,4 @@ internal partial class CPhysicsPropOverrideImpl : CPhysicsPropImpl, CPhysicsProp
 {
     public CPhysicsPropOverrideImpl(nint handle) : base(handle) { }
 
-
-
-
 }

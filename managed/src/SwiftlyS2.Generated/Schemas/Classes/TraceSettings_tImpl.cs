@@ -18,20 +18,23 @@ internal partial class TraceSettings_tImpl : SchemaClass, TraceSettings_t
 
     private static nint? _TraceHeightOffset;
 
-    public ref float TraceHeight {
-        get {
+    public ref float TraceHeight
+    {
+        get
+        {
             _TraceHeightOffset = _TraceHeightOffset ?? Schema.GetOffset(0x6983A048EFB858CF);
             return ref _Handle.AsRef<float>(_TraceHeightOffset!.Value);
         }
     }
     private static nint? _TraceRadiusOffset;
 
-    public ref float TraceRadius {
-        get {
+    public ref float TraceRadius
+    {
+        get
+        {
             _TraceRadiusOffset = _TraceRadiusOffset ?? Schema.GetOffset(0x6983A0489A33E452);
             return ref _Handle.AsRef<float>(_TraceRadiusOffset!.Value);
         }
     }
-
 
 }

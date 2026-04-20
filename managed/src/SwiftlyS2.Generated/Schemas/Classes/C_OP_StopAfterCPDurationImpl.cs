@@ -18,28 +18,33 @@ internal partial class C_OP_StopAfterCPDurationImpl : CParticleFunctionPreEmissi
 
     private static nint? _DurationOffset;
 
-    public CParticleCollectionFloatInput Duration {
-        get {
+    public CParticleCollectionFloatInput Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0xFC2AFAC6BC5E3BAB);
             return new CParticleCollectionFloatInputImpl(_Handle + _DurationOffset!.Value);
         }
     }
     private static nint? _DestroyImmediatelyOffset;
 
-    public ref bool DestroyImmediately {
-        get {
+    public ref bool DestroyImmediately
+    {
+        get
+        {
             _DestroyImmediatelyOffset = _DestroyImmediatelyOffset ?? Schema.GetOffset(0xFC2AFAC675F43101);
             return ref _Handle.AsRef<bool>(_DestroyImmediatelyOffset!.Value);
         }
     }
     private static nint? _PlayEndCapOffset;
 
-    public ref bool PlayEndCap {
-        get {
+    public ref bool PlayEndCap
+    {
+        get
+        {
             _PlayEndCapOffset = _PlayEndCapOffset ?? Schema.GetOffset(0xFC2AFAC6A7AB4A38);
             return ref _Handle.AsRef<bool>(_PlayEndCapOffset!.Value);
         }
     }
-
 
 }

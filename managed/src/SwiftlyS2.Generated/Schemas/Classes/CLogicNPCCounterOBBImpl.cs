@@ -16,7 +16,4 @@ internal partial class CLogicNPCCounterOBBImpl : CLogicNPCCounterAABBImpl, CLogi
 {
     public CLogicNPCCounterOBBImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,48 +18,58 @@ internal partial class CMessageEntityImpl : CPointEntityImpl, CMessageEntity
 
     private static nint? _RadiusOffset;
 
-    public ref int Radius {
-        get {
+    public ref int Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x893EADCEA921CA53);
             return ref _Handle.AsRef<int>(_RadiusOffset!.Value);
         }
     }
     private static nint? _MessageTextOffset;
 
-    public string MessageText {
-        get {
+    public string MessageText
+    {
+        get
+        {
             _MessageTextOffset = _MessageTextOffset ?? Schema.GetOffset(0x893EADCEBA6E5D73);
             return Schema.GetString(_Handle.Read<nint>(_MessageTextOffset!.Value));
         }
-        set {
+        set
+        {
             _MessageTextOffset = _MessageTextOffset ?? Schema.GetOffset(0x893EADCEBA6E5D73);
             Schema.SetString(_Handle, _MessageTextOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DrawTextOffset;
 
-    public ref bool DrawText {
-        get {
+    public ref bool DrawText
+    {
+        get
+        {
             _DrawTextOffset = _DrawTextOffset ?? Schema.GetOffset(0x893EADCE598871D4);
             return ref _Handle.AsRef<bool>(_DrawTextOffset!.Value);
         }
     }
     private static nint? _DeveloperOnlyOffset;
 
-    public ref bool DeveloperOnly {
-        get {
+    public ref bool DeveloperOnly
+    {
+        get
+        {
             _DeveloperOnlyOffset = _DeveloperOnlyOffset ?? Schema.GetOffset(0x893EADCE981A6E5F);
             return ref _Handle.AsRef<bool>(_DeveloperOnlyOffset!.Value);
         }
     }
     private static nint? _EnabledOffset;
 
-    public ref bool Enabled {
-        get {
+    public ref bool Enabled
+    {
+        get
+        {
             _EnabledOffset = _EnabledOffset ?? Schema.GetOffset(0x893EADCE6154EB7E);
             return ref _Handle.AsRef<bool>(_EnabledOffset!.Value);
         }
     }
-
 
 }

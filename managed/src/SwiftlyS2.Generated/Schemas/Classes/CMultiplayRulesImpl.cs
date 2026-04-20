@@ -16,7 +16,4 @@ internal partial class CMultiplayRulesImpl : CGameRulesImpl, CMultiplayRules
 {
     public CMultiplayRulesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

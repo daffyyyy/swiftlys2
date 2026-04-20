@@ -18,32 +18,38 @@ internal partial class CPulse_PublicOutputImpl : SchemaClass, CPulse_PublicOutpu
 
     private static nint? _NameOffset;
 
-    public SchemaUntypedField Name {
-        get {
+    public SchemaUntypedField Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x74B3BCA4CAE8A266);
             return new SchemaUntypedField(_Handle + _NameOffset!.Value);
         }
     }
     private static nint? _DescriptionOffset;
 
-    public string Description {
-        get {
+    public string Description
+    {
+        get
+        {
             _DescriptionOffset = _DescriptionOffset ?? Schema.GetOffset(0x74B3BCA4678744E9);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DescriptionOffset!.Value));
         }
-        set {
+        set
+        {
             _DescriptionOffset = _DescriptionOffset ?? Schema.GetOffset(0x74B3BCA4678744E9);
             Schema.SetCUtlString(_Handle, _DescriptionOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ArgsOffset;
 
-    public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args {
-        get {
+    public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args
+    {
+        get
+        {
             _ArgsOffset = _ArgsOffset ?? Schema.GetOffset(0x74B3BCA4DAB98BBC);
             return ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg, int>>(_ArgsOffset!.Value);
         }
     }
-
 
 }

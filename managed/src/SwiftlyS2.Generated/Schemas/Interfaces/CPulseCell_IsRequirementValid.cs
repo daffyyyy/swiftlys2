@@ -14,7 +14,4 @@ public partial interface CPulseCell_IsRequirementValid : CPulseCell_BaseRequirem
     static int ISchemaClass<CPulseCell_IsRequirementValid>.Size => 72;
     static string? ISchemaClass<CPulseCell_IsRequirementValid>.ClassName => null;
 
-
-
-
 }

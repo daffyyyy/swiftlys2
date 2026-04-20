@@ -16,7 +16,4 @@ internal partial class CParentConstraintImpl : CBaseConstraintImpl, CParentConst
 {
     public CParentConstraintImpl(nint handle) : base(handle) { }
 
-
-
-
 }

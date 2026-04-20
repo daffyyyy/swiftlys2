@@ -16,7 +16,4 @@ internal partial class CHostageRescueZoneShimImpl : CBaseTriggerImpl, CHostageRe
 {
     public CHostageRescueZoneShimImpl(nint handle) : base(handle) { }
 
-
-
-
 }

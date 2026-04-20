@@ -18,44 +18,53 @@ internal partial class CAddUpdateNodeImpl : CBinaryUpdateNodeImpl, CAddUpdateNod
 
     private static nint? _FootMotionTimingOffset;
 
-    public ref BinaryNodeChildOption FootMotionTiming {
-        get {
+    public ref BinaryNodeChildOption FootMotionTiming
+    {
+        get
+        {
             _FootMotionTimingOffset = _FootMotionTimingOffset ?? Schema.GetOffset(0x607346F4BB17F13D);
             return ref _Handle.AsRef<BinaryNodeChildOption>(_FootMotionTimingOffset!.Value);
         }
     }
     private static nint? _ApplyToFootMotionOffset;
 
-    public ref bool ApplyToFootMotion {
-        get {
+    public ref bool ApplyToFootMotion
+    {
+        get
+        {
             _ApplyToFootMotionOffset = _ApplyToFootMotionOffset ?? Schema.GetOffset(0x607346F43D831E94);
             return ref _Handle.AsRef<bool>(_ApplyToFootMotionOffset!.Value);
         }
     }
     private static nint? _ApplyChannelsSeparatelyOffset;
 
-    public ref bool ApplyChannelsSeparately {
-        get {
+    public ref bool ApplyChannelsSeparately
+    {
+        get
+        {
             _ApplyChannelsSeparatelyOffset = _ApplyChannelsSeparatelyOffset ?? Schema.GetOffset(0x607346F4FF2DBB45);
             return ref _Handle.AsRef<bool>(_ApplyChannelsSeparatelyOffset!.Value);
         }
     }
     private static nint? _UseModelSpaceOffset;
 
-    public ref bool UseModelSpace {
-        get {
+    public ref bool UseModelSpace
+    {
+        get
+        {
             _UseModelSpaceOffset = _UseModelSpaceOffset ?? Schema.GetOffset(0x607346F448863521);
             return ref _Handle.AsRef<bool>(_UseModelSpaceOffset!.Value);
         }
     }
     private static nint? _ApplyScaleOffset;
 
-    public ref bool ApplyScale {
-        get {
+    public ref bool ApplyScale
+    {
+        get
+        {
             _ApplyScaleOffset = _ApplyScaleOffset ?? Schema.GetOffset(0x607346F469D11233);
             return ref _Handle.AsRef<bool>(_ApplyScaleOffset!.Value);
         }
     }
-
 
 }

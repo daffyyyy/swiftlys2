@@ -19,6 +19,8 @@ public partial interface CSplineConstraint : CPhysConstraint, ISchemaClass<CSpli
 
     public ref CHandle<CBaseEntity> SplineEntity { get; }
 
+    public IPhysicsBody? SplineBody { get; }
+
     public ref bool EnableLateralConstraint { get; }
 
     public ref bool EnableVerticalConstraint { get; }

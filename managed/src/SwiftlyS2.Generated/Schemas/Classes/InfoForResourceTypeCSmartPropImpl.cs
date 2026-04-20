@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCSmartPropImpl : SchemaClass, InfoForR
 {
     public InfoForResourceTypeCSmartPropImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CStaticPoseCacheBuilder : CStaticPoseCache, ISchemaClas
     static int ISchemaClass<CStaticPoseCacheBuilder>.Size => 56;
     static string? ISchemaClass<CStaticPoseCacheBuilder>.ClassName => null;
 
-
-
-
 }

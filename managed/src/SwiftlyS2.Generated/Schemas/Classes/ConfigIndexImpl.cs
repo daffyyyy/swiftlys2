@@ -18,20 +18,23 @@ internal partial class ConfigIndexImpl : SchemaClass, ConfigIndex
 
     private static nint? _GroupOffset;
 
-    public ref ushort Group {
-        get {
+    public ref ushort Group
+    {
+        get
+        {
             _GroupOffset = _GroupOffset ?? Schema.GetOffset(0x193FE40D0CD16308);
             return ref _Handle.AsRef<ushort>(_GroupOffset!.Value);
         }
     }
     private static nint? _ConfigOffset;
 
-    public ref ushort Config {
-        get {
+    public ref ushort Config
+    {
+        get
+        {
             _ConfigOffset = _ConfigOffset ?? Schema.GetOffset(0x193FE40D8BD1DF73);
             return ref _Handle.AsRef<ushort>(_ConfigOffset!.Value);
         }
     }
-
 
 }

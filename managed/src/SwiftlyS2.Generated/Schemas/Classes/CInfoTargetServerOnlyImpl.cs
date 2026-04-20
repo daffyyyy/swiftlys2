@@ -16,7 +16,4 @@ internal partial class CInfoTargetServerOnlyImpl : CServerOnlyPointEntityImpl, C
 {
     public CInfoTargetServerOnlyImpl(nint handle) : base(handle) { }
 
-
-
-
 }

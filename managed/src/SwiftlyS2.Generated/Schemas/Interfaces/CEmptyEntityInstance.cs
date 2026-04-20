@@ -14,7 +14,4 @@ public partial interface CEmptyEntityInstance : ISchemaClass<CEmptyEntityInstanc
     static int ISchemaClass<CEmptyEntityInstance>.Size => 1;
     static string? ISchemaClass<CEmptyEntityInstance>.ClassName => null;
 
-
-
-
 }

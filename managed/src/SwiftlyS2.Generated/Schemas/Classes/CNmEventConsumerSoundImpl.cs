@@ -16,7 +16,4 @@ internal partial class CNmEventConsumerSoundImpl : CNmEventConsumerImpl, CNmEven
 {
     public CNmEventConsumerSoundImpl(nint handle) : base(handle) { }
 
-
-
-
 }

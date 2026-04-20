@@ -16,7 +16,4 @@ internal partial class CSimpleMarkupVolumeTaggedImpl : CMarkupVolumeTaggedImpl, 
 {
     public CSimpleMarkupVolumeTaggedImpl(nint handle) : base(handle) { }
 
-
-
-
 }

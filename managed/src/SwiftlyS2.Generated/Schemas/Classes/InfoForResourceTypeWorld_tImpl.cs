@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeWorld_tImpl : SchemaClass, InfoForReso
 {
     public InfoForResourceTypeWorld_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

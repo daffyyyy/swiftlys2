@@ -19,6 +19,5 @@ public partial interface CodeGenAABB_t : ISchemaClass<CodeGenAABB_t>
 
     public ref Vector MaxBounds { get; }
 
-    public void MinBoundsUpdated();
-    public void MaxBoundsUpdated();
+
 }

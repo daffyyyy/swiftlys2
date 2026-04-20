@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeWorld_t : ISchemaClass<InfoForResour
     static int ISchemaClass<InfoForResourceTypeWorld_t>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeWorld_t>.ClassName => null;
 
-
-
-
 }

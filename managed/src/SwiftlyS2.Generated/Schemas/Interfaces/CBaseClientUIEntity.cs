@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseClientUIEntity : CBaseModelEntity, ISchemaClass<CBaseClientUIEntity>
 {
     static CBaseClientUIEntity ISchemaClass<CBaseClientUIEntity>.From(nint handle) => new CBaseClientUIEntityImpl(handle);
-    static int ISchemaClass<CBaseClientUIEntity>.Size => 2192;
+    static int ISchemaClass<CBaseClientUIEntity>.Size => 2248;
     static string? ISchemaClass<CBaseClientUIEntity>.ClassName => null;
 
 
@@ -23,34 +23,34 @@ public partial interface CBaseClientUIEntity : CBaseModelEntity, ISchemaClass<CB
 
     public string PanelID { get; set; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput0 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput1 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput2 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput3 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput4 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput5 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput6 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput7 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput8 { get; }
 
-    // CEntityOutputTemplate< CUtlString, char* >
+    // CEntityOutputTemplate< CUtlString >
     public SchemaUntypedField CustomOutput9 { get; }
 
     public void EnabledUpdated();

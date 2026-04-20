@@ -18,36 +18,43 @@ internal partial class C_OP_LockToSavedSequentialPathV2Impl : CParticleFunctionO
 
     private static nint? _FadeStartOffset;
 
-    public ref float FadeStart {
-        get {
+    public ref float FadeStart
+    {
+        get
+        {
             _FadeStartOffset = _FadeStartOffset ?? Schema.GetOffset(0x817A0CEE1A81343);
             return ref _Handle.AsRef<float>(_FadeStartOffset!.Value);
         }
     }
     private static nint? _FadeEndOffset;
 
-    public ref float FadeEnd {
-        get {
+    public ref float FadeEnd
+    {
+        get
+        {
             _FadeEndOffset = _FadeEndOffset ?? Schema.GetOffset(0x817A0CEBE7F4636);
             return ref _Handle.AsRef<float>(_FadeEndOffset!.Value);
         }
     }
     private static nint? _CPPairsOffset;
 
-    public ref bool CPPairs {
-        get {
+    public ref bool CPPairs
+    {
+        get
+        {
             _CPPairsOffset = _CPPairsOffset ?? Schema.GetOffset(0x817A0CEA5D36D0F);
             return ref _Handle.AsRef<bool>(_CPPairsOffset!.Value);
         }
     }
     private static nint? _PathParamsOffset;
 
-    public CPathParameters PathParams {
-        get {
+    public CPathParameters PathParams
+    {
+        get
+        {
             _PathParamsOffset = _PathParamsOffset ?? Schema.GetOffset(0x817A0CE3C10092C);
             return new CPathParametersImpl(_Handle + _PathParamsOffset!.Value);
         }
     }
-
 
 }

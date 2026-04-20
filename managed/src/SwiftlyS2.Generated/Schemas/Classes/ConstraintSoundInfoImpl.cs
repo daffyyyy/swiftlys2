@@ -18,104 +18,128 @@ internal partial class ConstraintSoundInfoImpl : SchemaClass, ConstraintSoundInf
 
     private static nint? _SamplerOffset;
 
-    public VelocitySampler Sampler {
-        get {
+    public VelocitySampler Sampler
+    {
+        get
+        {
             _SamplerOffset = _SamplerOffset ?? Schema.GetOffset(0x79068C49FCCD6193);
             return new VelocitySamplerImpl(_Handle + _SamplerOffset!.Value);
         }
     }
     private static nint? _SoundProfileOffset;
 
-    public SimpleConstraintSoundProfile SoundProfile {
-        get {
+    public SimpleConstraintSoundProfile SoundProfile
+    {
+        get
+        {
             _SoundProfileOffset = _SoundProfileOffset ?? Schema.GetOffset(0x79068C49D9300921);
             return new SimpleConstraintSoundProfileImpl(_Handle + _SoundProfileOffset!.Value);
         }
     }
     private static nint? _ForwardAxisOffset;
 
-    public ref Vector ForwardAxis {
-        get {
+    public ref Vector ForwardAxis
+    {
+        get
+        {
             _ForwardAxisOffset = _ForwardAxisOffset ?? Schema.GetOffset(0x79068C49DC95B25F);
             return ref _Handle.AsRef<Vector>(_ForwardAxisOffset!.Value);
         }
     }
     private static nint? _TravelSoundFwdOffset;
 
-    public string TravelSoundFwd {
-        get {
+    public string TravelSoundFwd
+    {
+        get
+        {
             _TravelSoundFwdOffset = _TravelSoundFwdOffset ?? Schema.GetOffset(0x79068C497A65F069);
             return Schema.GetString(_Handle.Read<nint>(_TravelSoundFwdOffset!.Value));
         }
-        set {
+        set
+        {
             _TravelSoundFwdOffset = _TravelSoundFwdOffset ?? Schema.GetOffset(0x79068C497A65F069);
             Schema.SetString(_Handle, _TravelSoundFwdOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TravelSoundBackOffset;
 
-    public string TravelSoundBack {
-        get {
+    public string TravelSoundBack
+    {
+        get
+        {
             _TravelSoundBackOffset = _TravelSoundBackOffset ?? Schema.GetOffset(0x79068C49506B73E3);
             return Schema.GetString(_Handle.Read<nint>(_TravelSoundBackOffset!.Value));
         }
-        set {
+        set
+        {
             _TravelSoundBackOffset = _TravelSoundBackOffset ?? Schema.GetOffset(0x79068C49506B73E3);
             Schema.SetString(_Handle, _TravelSoundBackOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ReversalSoundSmallOffset;
 
-    public string ReversalSoundSmall {
-        get {
+    public string ReversalSoundSmall
+    {
+        get
+        {
             _ReversalSoundSmallOffset = _ReversalSoundSmallOffset ?? Schema.GetOffset(0x79068C4920E822CD);
             return Schema.GetString(_Handle.Read<nint>(_ReversalSoundSmallOffset!.Value));
         }
-        set {
+        set
+        {
             _ReversalSoundSmallOffset = _ReversalSoundSmallOffset ?? Schema.GetOffset(0x79068C4920E822CD);
             Schema.SetString(_Handle, _ReversalSoundSmallOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ReversalSoundMediumOffset;
 
-    public string ReversalSoundMedium {
-        get {
+    public string ReversalSoundMedium
+    {
+        get
+        {
             _ReversalSoundMediumOffset = _ReversalSoundMediumOffset ?? Schema.GetOffset(0x79068C49B6EF1B25);
             return Schema.GetString(_Handle.Read<nint>(_ReversalSoundMediumOffset!.Value));
         }
-        set {
+        set
+        {
             _ReversalSoundMediumOffset = _ReversalSoundMediumOffset ?? Schema.GetOffset(0x79068C49B6EF1B25);
             Schema.SetString(_Handle, _ReversalSoundMediumOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ReversalSoundLargeOffset;
 
-    public string ReversalSoundLarge {
-        get {
+    public string ReversalSoundLarge
+    {
+        get
+        {
             _ReversalSoundLargeOffset = _ReversalSoundLargeOffset ?? Schema.GetOffset(0x79068C493C3D3869);
             return Schema.GetString(_Handle.Read<nint>(_ReversalSoundLargeOffset!.Value));
         }
-        set {
+        set
+        {
             _ReversalSoundLargeOffset = _ReversalSoundLargeOffset ?? Schema.GetOffset(0x79068C493C3D3869);
             Schema.SetString(_Handle, _ReversalSoundLargeOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _PlayTravelSoundOffset;
 
-    public ref bool PlayTravelSound {
-        get {
+    public ref bool PlayTravelSound
+    {
+        get
+        {
             _PlayTravelSoundOffset = _PlayTravelSoundOffset ?? Schema.GetOffset(0x79068C49FF3432DE);
             return ref _Handle.AsRef<bool>(_PlayTravelSoundOffset!.Value);
         }
     }
     private static nint? _PlayReversalSoundOffset;
 
-    public ref bool PlayReversalSound {
-        get {
+    public ref bool PlayReversalSound
+    {
+        get
+        {
             _PlayReversalSoundOffset = _PlayReversalSoundOffset ?? Schema.GetOffset(0x79068C4941EF4324);
             return ref _Handle.AsRef<bool>(_PlayReversalSoundOffset!.Value);
         }
     }
-
 
 }

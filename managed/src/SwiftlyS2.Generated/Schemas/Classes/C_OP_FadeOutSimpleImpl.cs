@@ -18,20 +18,23 @@ internal partial class C_OP_FadeOutSimpleImpl : CParticleFunctionOperatorImpl, C
 
     private static nint? _FadeOutTimeOffset;
 
-    public ref float FadeOutTime {
-        get {
+    public ref float FadeOutTime
+    {
+        get
+        {
             _FadeOutTimeOffset = _FadeOutTimeOffset ?? Schema.GetOffset(0xD439658FE86D2FC2);
             return ref _Handle.AsRef<float>(_FadeOutTimeOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xD439658FE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
-
 
 }

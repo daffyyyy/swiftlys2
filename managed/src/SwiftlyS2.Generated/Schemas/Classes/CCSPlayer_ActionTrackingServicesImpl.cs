@@ -18,32 +18,40 @@ internal partial class CCSPlayer_ActionTrackingServicesImpl : CPlayerPawnCompone
 
     private static nint? _LastWeaponBeforeC4AutoSwitchOffset;
 
-    public ref CHandle<CBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch {
-        get {
+    public ref CHandle<CBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch
+    {
+        get
+        {
             _LastWeaponBeforeC4AutoSwitchOffset = _LastWeaponBeforeC4AutoSwitchOffset ?? Schema.GetOffset(0xC890019D6687BAC0);
             return ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(_LastWeaponBeforeC4AutoSwitchOffset!.Value);
         }
     }
     private static nint? _IsRescuingOffset;
 
-    public ref bool IsRescuing {
-        get {
+    public ref bool IsRescuing
+    {
+        get
+        {
             _IsRescuingOffset = _IsRescuingOffset ?? Schema.GetOffset(0xC890019D225BDB2F);
             return ref _Handle.AsRef<bool>(_IsRescuingOffset!.Value);
         }
     }
     private static nint? _WeaponPurchasesThisMatchOffset;
 
-    public WeaponPurchaseTracker_t WeaponPurchasesThisMatch {
-        get {
+    public WeaponPurchaseTracker_t WeaponPurchasesThisMatch
+    {
+        get
+        {
             _WeaponPurchasesThisMatchOffset = _WeaponPurchasesThisMatchOffset ?? Schema.GetOffset(0xC890019D43F68EE0);
             return new WeaponPurchaseTracker_tImpl(_Handle + _WeaponPurchasesThisMatchOffset!.Value);
         }
     }
     private static nint? _WeaponPurchasesThisRoundOffset;
 
-    public WeaponPurchaseTracker_t WeaponPurchasesThisRound {
-        get {
+    public WeaponPurchaseTracker_t WeaponPurchasesThisRound
+    {
+        get
+        {
             _WeaponPurchasesThisRoundOffset = _WeaponPurchasesThisRoundOffset ?? Schema.GetOffset(0xC890019D7C64F835);
             return new WeaponPurchaseTracker_tImpl(_Handle + _WeaponPurchasesThisRoundOffset!.Value);
         }

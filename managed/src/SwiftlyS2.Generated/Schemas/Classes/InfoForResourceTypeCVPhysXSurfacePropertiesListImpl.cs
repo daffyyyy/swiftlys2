@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCVPhysXSurfacePropertiesListImpl : Sch
 {
     public InfoForResourceTypeCVPhysXSurfacePropertiesListImpl(nint handle) : base(handle) { }
 
-
-
-
 }

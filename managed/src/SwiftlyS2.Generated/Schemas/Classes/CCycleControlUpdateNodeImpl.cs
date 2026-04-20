@@ -18,28 +18,33 @@ internal partial class CCycleControlUpdateNodeImpl : CUnaryUpdateNodeImpl, CCycl
 
     private static nint? _ValueSourceOffset;
 
-    public ref AnimValueSource ValueSource {
-        get {
+    public ref AnimValueSource ValueSource
+    {
+        get
+        {
             _ValueSourceOffset = _ValueSourceOffset ?? Schema.GetOffset(0xB811C15CD4D5B6B7);
             return ref _Handle.AsRef<AnimValueSource>(_ValueSourceOffset!.Value);
         }
     }
     private static nint? _ParamIndexOffset;
 
-    public CAnimParamHandle ParamIndex {
-        get {
+    public CAnimParamHandle ParamIndex
+    {
+        get
+        {
             _ParamIndexOffset = _ParamIndexOffset ?? Schema.GetOffset(0xB811C15C61990A86);
             return new CAnimParamHandleImpl(_Handle + _ParamIndexOffset!.Value);
         }
     }
     private static nint? _LockWhenWaningOffset;
 
-    public ref bool LockWhenWaning {
-        get {
+    public ref bool LockWhenWaning
+    {
+        get
+        {
             _LockWhenWaningOffset = _LockWhenWaningOffset ?? Schema.GetOffset(0xB811C15CEED48004);
             return ref _Handle.AsRef<bool>(_LockWhenWaningOffset!.Value);
         }
     }
-
 
 }

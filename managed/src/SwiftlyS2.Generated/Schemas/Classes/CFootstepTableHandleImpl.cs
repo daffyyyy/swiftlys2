@@ -16,7 +16,4 @@ internal partial class CFootstepTableHandleImpl : SchemaClass, CFootstepTableHan
 {
     public CFootstepTableHandleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

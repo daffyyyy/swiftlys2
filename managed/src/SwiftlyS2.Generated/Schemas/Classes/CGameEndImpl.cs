@@ -16,7 +16,4 @@ internal partial class CGameEndImpl : CRulePointEntityImpl, CGameEnd
 {
     public CGameEndImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,20 +18,23 @@ internal partial class CVoiceContainerAnalysisBaseImpl : SchemaClass, CVoiceCont
 
     private static nint? _RegenerateCurveOnCompileOffset;
 
-    public ref bool RegenerateCurveOnCompile {
-        get {
+    public ref bool RegenerateCurveOnCompile
+    {
+        get
+        {
             _RegenerateCurveOnCompileOffset = _RegenerateCurveOnCompileOffset ?? Schema.GetOffset(0xC0BE2FE061AFA19C);
             return ref _Handle.AsRef<bool>(_RegenerateCurveOnCompileOffset!.Value);
         }
     }
     private static nint? _CurveOffset;
 
-    public SchemaUntypedField Curve {
-        get {
+    public SchemaUntypedField Curve
+    {
+        get
+        {
             _CurveOffset = _CurveOffset ?? Schema.GetOffset(0xC0BE2FE0BFFA0B34);
             return new SchemaUntypedField(_Handle + _CurveOffset!.Value);
         }
     }
-
 
 }

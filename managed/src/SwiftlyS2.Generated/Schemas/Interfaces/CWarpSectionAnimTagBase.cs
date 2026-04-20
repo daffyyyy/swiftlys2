@@ -14,7 +14,4 @@ public partial interface CWarpSectionAnimTagBase : CAnimTagBase, ISchemaClass<CW
     static int ISchemaClass<CWarpSectionAnimTagBase>.Size => 80;
     static string? ISchemaClass<CWarpSectionAnimTagBase>.ClassName => null;
 
-
-
-
 }

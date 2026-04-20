@@ -18,44 +18,53 @@ internal partial class C_INIT_RemapInitialVisibilityScalarImpl : CParticleFuncti
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x6EA0C1DE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public ref float InputMin {
-        get {
+    public ref float InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0x6EA0C1DE88A0D0F);
             return ref _Handle.AsRef<float>(_InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public ref float InputMax {
-        get {
+    public ref float InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0x6EA0C1DD6766901);
             return ref _Handle.AsRef<float>(_InputMaxOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public ref float OutputMin {
-        get {
+    public ref float OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0x6EA0C1D5F8D7716);
             return ref _Handle.AsRef<float>(_OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public ref float OutputMax {
-        get {
+    public ref float OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0x6EA0C1D51A0E8C4);
             return ref _Handle.AsRef<float>(_OutputMaxOffset!.Value);
         }
     }
-
 
 }

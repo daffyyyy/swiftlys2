@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTextureBasedAnimatable : CBaseModelEntity, ISchemaClass<CTextureBasedAnimatable>
 {
     static CTextureBasedAnimatable ISchemaClass<CTextureBasedAnimatable>.From(nint handle) => new CTextureBasedAnimatableImpl(handle);
-    static int ISchemaClass<CTextureBasedAnimatable>.Size => 1896;
+    static int ISchemaClass<CTextureBasedAnimatable>.Size => 1952;
     static string? ISchemaClass<CTextureBasedAnimatable>.ClassName => "hl_vr_texture_based_animatable";
 
 

@@ -18,20 +18,23 @@ internal partial class CVoiceContainerSetElementImpl : SchemaClass, CVoiceContai
 
     private static nint? _SoundOffset;
 
-    public CSoundContainerReference Sound {
-        get {
+    public CSoundContainerReference Sound
+    {
+        get
+        {
             _SoundOffset = _SoundOffset ?? Schema.GetOffset(0x1280027B4E1C4FB4);
             return new CSoundContainerReferenceImpl(_Handle + _SoundOffset!.Value);
         }
     }
     private static nint? _VolumeDBOffset;
 
-    public ref float VolumeDB {
-        get {
+    public ref float VolumeDB
+    {
+        get
+        {
             _VolumeDBOffset = _VolumeDBOffset ?? Schema.GetOffset(0x1280027B3197E3EF);
             return ref _Handle.AsRef<float>(_VolumeDBOffset!.Value);
         }
     }
-
 
 }

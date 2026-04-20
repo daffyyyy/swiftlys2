@@ -16,7 +16,4 @@ internal partial class EventSplitScreenStateChanged_tImpl : SchemaClass, EventSp
 {
     public EventSplitScreenStateChanged_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

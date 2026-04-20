@@ -18,12 +18,13 @@ internal partial class CStopwatchBaseImpl : CSimpleSimTimerImpl, CStopwatchBase
 
     private static nint? _IsRunningOffset;
 
-    public ref bool IsRunning {
-        get {
+    public ref bool IsRunning
+    {
+        get
+        {
             _IsRunningOffset = _IsRunningOffset ?? Schema.GetOffset(0x80DA66DCF34F2570);
             return ref _Handle.AsRef<bool>(_IsRunningOffset!.Value);
         }
     }
-
 
 }

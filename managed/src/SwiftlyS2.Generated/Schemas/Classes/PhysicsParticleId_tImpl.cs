@@ -18,12 +18,13 @@ internal partial class PhysicsParticleId_tImpl : SchemaClass, PhysicsParticleId_
 
     private static nint? _ValueOffset;
 
-    public ref uint Value {
-        get {
+    public ref uint Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xADF050DADCB0894A);
             return ref _Handle.AsRef<uint>(_ValueOffset!.Value);
         }
     }
-
 
 }

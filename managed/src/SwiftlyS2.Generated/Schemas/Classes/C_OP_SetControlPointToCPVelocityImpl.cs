@@ -18,52 +18,63 @@ internal partial class C_OP_SetControlPointToCPVelocityImpl : CParticleFunctionP
 
     private static nint? _CPInputOffset;
 
-    public ref int CPInput {
-        get {
+    public ref int CPInput
+    {
+        get
+        {
             _CPInputOffset = _CPInputOffset ?? Schema.GetOffset(0x8D70A057FB805736);
             return ref _Handle.AsRef<int>(_CPInputOffset!.Value);
         }
     }
     private static nint? _CPOutputVelOffset;
 
-    public ref int CPOutputVel {
-        get {
+    public ref int CPOutputVel
+    {
+        get
+        {
             _CPOutputVelOffset = _CPOutputVelOffset ?? Schema.GetOffset(0x8D70A0576AC86D06);
             return ref _Handle.AsRef<int>(_CPOutputVelOffset!.Value);
         }
     }
     private static nint? _NormalizeOffset;
 
-    public ref bool Normalize {
-        get {
+    public ref bool Normalize
+    {
+        get
+        {
             _NormalizeOffset = _NormalizeOffset ?? Schema.GetOffset(0x8D70A05748BC424C);
             return ref _Handle.AsRef<bool>(_NormalizeOffset!.Value);
         }
     }
     private static nint? _CPOutputMagOffset;
 
-    public ref int CPOutputMag {
-        get {
+    public ref int CPOutputMag
+    {
+        get
+        {
             _CPOutputMagOffset = _CPOutputMagOffset ?? Schema.GetOffset(0x8D70A05704FD82D2);
             return ref _Handle.AsRef<int>(_CPOutputMagOffset!.Value);
         }
     }
     private static nint? _CPFieldOffset;
 
-    public ref int CPField {
-        get {
+    public ref int CPField
+    {
+        get
+        {
             _CPFieldOffset = _CPFieldOffset ?? Schema.GetOffset(0x8D70A05750B79876);
             return ref _Handle.AsRef<int>(_CPFieldOffset!.Value);
         }
     }
     private static nint? _ComparisonVelocityOffset;
 
-    public CParticleCollectionVecInput ComparisonVelocity {
-        get {
+    public CParticleCollectionVecInput ComparisonVelocity
+    {
+        get
+        {
             _ComparisonVelocityOffset = _ComparisonVelocityOffset ?? Schema.GetOffset(0x8D70A05723BF409F);
             return new CParticleCollectionVecInputImpl(_Handle + _ComparisonVelocityOffset!.Value);
         }
     }
-
 
 }

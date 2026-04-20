@@ -16,7 +16,4 @@ internal partial class CPathCornerCrashImpl : CPathCornerImpl, CPathCornerCrash
 {
     public CPathCornerCrashImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CInfoDeathmatchSpawn : SpawnPoint, ISchemaClass<CInfoDe
     static int ISchemaClass<CInfoDeathmatchSpawn>.Size => 1208;
     static string? ISchemaClass<CInfoDeathmatchSpawn>.ClassName => "info_deathmatch_spawn";
 
-
-
-
 }

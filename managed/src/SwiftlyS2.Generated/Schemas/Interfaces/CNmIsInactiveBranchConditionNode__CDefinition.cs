@@ -14,7 +14,4 @@ public partial interface CNmIsInactiveBranchConditionNode__CDefinition : CNmBool
     static int ISchemaClass<CNmIsInactiveBranchConditionNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmIsInactiveBranchConditionNode__CDefinition>.ClassName => null;
 
-
-
-
 }

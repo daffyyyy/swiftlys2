@@ -18,20 +18,23 @@ internal partial class StanceInfo_tImpl : SchemaClass, StanceInfo_t
 
     private static nint? _PositionOffset;
 
-    public ref Vector Position {
-        get {
+    public ref Vector Position
+    {
+        get
+        {
             _PositionOffset = _PositionOffset ?? Schema.GetOffset(0x5DBAB98EBD6A6C9E);
             return ref _Handle.AsRef<Vector>(_PositionOffset!.Value);
         }
     }
     private static nint? _DirectionOffset;
 
-    public ref float Direction {
-        get {
+    public ref float Direction
+    {
+        get
+        {
             _DirectionOffset = _DirectionOffset ?? Schema.GetOffset(0x5DBAB98E28D81988);
             return ref _Handle.AsRef<float>(_DirectionOffset!.Value);
         }
     }
-
 
 }

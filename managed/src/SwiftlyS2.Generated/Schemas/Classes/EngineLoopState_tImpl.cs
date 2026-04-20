@@ -18,36 +18,43 @@ internal partial class EngineLoopState_tImpl : SchemaClass, EngineLoopState_t
 
     private static nint? _PlatWindowWidthOffset;
 
-    public ref int PlatWindowWidth {
-        get {
+    public ref int PlatWindowWidth
+    {
+        get
+        {
             _PlatWindowWidthOffset = _PlatWindowWidthOffset ?? Schema.GetOffset(0x8A7EC4513AF18278);
             return ref _Handle.AsRef<int>(_PlatWindowWidthOffset!.Value);
         }
     }
     private static nint? _PlatWindowHeightOffset;
 
-    public ref int PlatWindowHeight {
-        get {
+    public ref int PlatWindowHeight
+    {
+        get
+        {
             _PlatWindowHeightOffset = _PlatWindowHeightOffset ?? Schema.GetOffset(0x8A7EC45157A7B88F);
             return ref _Handle.AsRef<int>(_PlatWindowHeightOffset!.Value);
         }
     }
     private static nint? _RenderWidthOffset;
 
-    public ref int RenderWidth {
-        get {
+    public ref int RenderWidth
+    {
+        get
+        {
             _RenderWidthOffset = _RenderWidthOffset ?? Schema.GetOffset(0x8A7EC45179B0DC63);
             return ref _Handle.AsRef<int>(_RenderWidthOffset!.Value);
         }
     }
     private static nint? _RenderHeightOffset;
 
-    public ref int RenderHeight {
-        get {
+    public ref int RenderHeight
+    {
+        get
+        {
             _RenderHeightOffset = _RenderHeightOffset ?? Schema.GetOffset(0x8A7EC451A184E51E);
             return ref _Handle.AsRef<int>(_RenderHeightOffset!.Value);
         }
     }
-
 
 }

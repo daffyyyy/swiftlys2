@@ -16,41 +16,49 @@ internal partial class CMotionGraphConfigImpl : SchemaClass, CMotionGraphConfig
 {
     public CMotionGraphConfigImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<float> ParamValues {
+    public ISchemaFixedArray<float> ParamValues
+    {
         get => new SchemaFixedArray<float>(_Handle, 0x851F6EEA365BD3F8, 4, 4, 4);
     }
     private static nint? _DurationOffset;
 
-    public ref float Duration {
-        get {
+    public ref float Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0x851F6EEABC5E3BAB);
             return ref _Handle.AsRef<float>(_DurationOffset!.Value);
         }
     }
     private static nint? _MotionIndexOffset;
 
-    public MotionIndex MotionIndex {
-        get {
+    public MotionIndex MotionIndex
+    {
+        get
+        {
             _MotionIndexOffset = _MotionIndexOffset ?? Schema.GetOffset(0x851F6EEABF50B8E1);
             return new MotionIndexImpl(_Handle + _MotionIndexOffset!.Value);
         }
     }
     private static nint? _SampleStartOffset;
 
-    public ref int SampleStart {
-        get {
+    public ref int SampleStart
+    {
+        get
+        {
             _SampleStartOffset = _SampleStartOffset ?? Schema.GetOffset(0x851F6EEA43384B19);
             return ref _Handle.AsRef<int>(_SampleStartOffset!.Value);
         }
     }
     private static nint? _SampleCountOffset;
 
-    public ref int SampleCount {
-        get {
+    public ref int SampleCount
+    {
+        get
+        {
             _SampleCountOffset = _SampleCountOffset ?? Schema.GetOffset(0x851F6EEA2DEF676A);
             return ref _Handle.AsRef<int>(_SampleCountOffset!.Value);
         }
     }
-
 
 }

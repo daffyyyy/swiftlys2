@@ -18,12 +18,13 @@ internal partial class CPulseCell_Step_PublicOutputImpl : CPulseCell_BaseFlowImp
 
     private static nint? _OutputIndexOffset;
 
-    public PulseRuntimeOutputIndex_t OutputIndex {
-        get {
+    public PulseRuntimeOutputIndex_t OutputIndex
+    {
+        get
+        {
             _OutputIndexOffset = _OutputIndexOffset ?? Schema.GetOffset(0x40053C931E4D5BA0);
             return new PulseRuntimeOutputIndex_tImpl(_Handle + _OutputIndexOffset!.Value);
         }
     }
-
 
 }

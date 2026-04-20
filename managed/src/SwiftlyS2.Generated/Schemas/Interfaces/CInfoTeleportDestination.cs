@@ -14,7 +14,4 @@ public partial interface CInfoTeleportDestination : CPointEntity, ISchemaClass<C
     static int ISchemaClass<CInfoTeleportDestination>.Size => 1192;
     static string? ISchemaClass<CInfoTeleportDestination>.ClassName => "info_teleport_destination";
 
-
-
-
 }

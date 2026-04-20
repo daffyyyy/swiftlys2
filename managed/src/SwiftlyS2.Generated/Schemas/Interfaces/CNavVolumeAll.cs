@@ -14,7 +14,4 @@ public partial interface CNavVolumeAll : CNavVolumeVector, ISchemaClass<CNavVolu
     static int ISchemaClass<CNavVolumeAll>.Size => 160;
     static string? ISchemaClass<CNavVolumeAll>.ClassName => null;
 
-
-
-
 }

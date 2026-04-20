@@ -18,24 +18,30 @@ internal partial class CNetworkOriginQuantizedVectorImpl : SchemaClass, CNetwork
 
     private static nint? _XOffset;
 
-    public ref CNetworkedQuantizedFloat X {
-        get {
+    public ref CNetworkedQuantizedFloat X
+    {
+        get
+        {
             _XOffset = _XOffset ?? Schema.GetOffset(0xB34626888FEB7867);
             return ref _Handle.AsRef<CNetworkedQuantizedFloat>(_XOffset!.Value);
         }
     }
     private static nint? _YOffset;
 
-    public ref CNetworkedQuantizedFloat Y {
-        get {
+    public ref CNetworkedQuantizedFloat Y
+    {
+        get
+        {
             _YOffset = _YOffset ?? Schema.GetOffset(0xB34626888EEB76D4);
             return ref _Handle.AsRef<CNetworkedQuantizedFloat>(_YOffset!.Value);
         }
     }
     private static nint? _ZOffset;
 
-    public ref CNetworkedQuantizedFloat Z {
-        get {
+    public ref CNetworkedQuantizedFloat Z
+    {
+        get
+        {
             _ZOffset = _ZOffset ?? Schema.GetOffset(0xB346268891EB7B8D);
             return ref _Handle.AsRef<CNetworkedQuantizedFloat>(_ZOffset!.Value);
         }

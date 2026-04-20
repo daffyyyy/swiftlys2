@@ -18,12 +18,13 @@ internal partial class CCycleBaseImpl : SchemaClass, CCycleBase
 
     private static nint? _CycleOffset;
 
-    public ref float Cycle {
-        get {
+    public ref float Cycle
+    {
+        get
+        {
             _CycleOffset = _CycleOffset ?? Schema.GetOffset(0x8FBE16990C77829F);
             return ref _Handle.AsRef<float>(_CycleOffset!.Value);
         }
     }
-
 
 }

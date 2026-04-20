@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCNmClipImpl : SchemaClass, InfoForReso
 {
     public InfoForResourceTypeCNmClipImpl(nint handle) : base(handle) { }
 
-
-
-
 }

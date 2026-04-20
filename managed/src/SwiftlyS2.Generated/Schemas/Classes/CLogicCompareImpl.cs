@@ -18,52 +18,63 @@ internal partial class CLogicCompareImpl : CLogicalEntityImpl, CLogicCompare
 
     private static nint? _InValueOffset;
 
-    public ref float InValue {
-        get {
+    public ref float InValue
+    {
+        get
+        {
             _InValueOffset = _InValueOffset ?? Schema.GetOffset(0xCEFDBF2F414AD5ED);
             return ref _Handle.AsRef<float>(_InValueOffset!.Value);
         }
     }
     private static nint? _CompareValueOffset;
 
-    public ref float CompareValue {
-        get {
+    public ref float CompareValue
+    {
+        get
+        {
             _CompareValueOffset = _CompareValueOffset ?? Schema.GetOffset(0xCEFDBF2F42C0882F);
             return ref _Handle.AsRef<float>(_CompareValueOffset!.Value);
         }
     }
     private static nint? _OnLessThanOffset;
 
-    public SchemaUntypedField OnLessThan {
-        get {
+    public SchemaUntypedField OnLessThan
+    {
+        get
+        {
             _OnLessThanOffset = _OnLessThanOffset ?? Schema.GetOffset(0xCEFDBF2FB6AC02FE);
             return new SchemaUntypedField(_Handle + _OnLessThanOffset!.Value);
         }
     }
     private static nint? _OnEqualToOffset;
 
-    public SchemaUntypedField OnEqualTo {
-        get {
+    public SchemaUntypedField OnEqualTo
+    {
+        get
+        {
             _OnEqualToOffset = _OnEqualToOffset ?? Schema.GetOffset(0xCEFDBF2F87EEC581);
             return new SchemaUntypedField(_Handle + _OnEqualToOffset!.Value);
         }
     }
     private static nint? _OnNotEqualToOffset;
 
-    public SchemaUntypedField OnNotEqualTo {
-        get {
+    public SchemaUntypedField OnNotEqualTo
+    {
+        get
+        {
             _OnNotEqualToOffset = _OnNotEqualToOffset ?? Schema.GetOffset(0xCEFDBF2FDA1680D6);
             return new SchemaUntypedField(_Handle + _OnNotEqualToOffset!.Value);
         }
     }
     private static nint? _OnGreaterThanOffset;
 
-    public SchemaUntypedField OnGreaterThan {
-        get {
+    public SchemaUntypedField OnGreaterThan
+    {
+        get
+        {
             _OnGreaterThanOffset = _OnGreaterThanOffset ?? Schema.GetOffset(0xCEFDBF2F50BD472D);
             return new SchemaUntypedField(_Handle + _OnGreaterThanOffset!.Value);
         }
     }
-
 
 }

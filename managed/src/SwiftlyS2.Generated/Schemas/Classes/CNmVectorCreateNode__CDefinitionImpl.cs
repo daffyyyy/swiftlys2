@@ -18,36 +18,43 @@ internal partial class CNmVectorCreateNode__CDefinitionImpl : CNmVectorValueNode
 
     private static nint? _InputVectorValueNodeIdxOffset;
 
-    public ref short InputVectorValueNodeIdx {
-        get {
+    public ref short InputVectorValueNodeIdx
+    {
+        get
+        {
             _InputVectorValueNodeIdxOffset = _InputVectorValueNodeIdxOffset ?? Schema.GetOffset(0xA7AE86C01EF0C864);
             return ref _Handle.AsRef<short>(_InputVectorValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _InputValueXNodeIdxOffset;
 
-    public ref short InputValueXNodeIdx {
-        get {
+    public ref short InputValueXNodeIdx
+    {
+        get
+        {
             _InputValueXNodeIdxOffset = _InputValueXNodeIdxOffset ?? Schema.GetOffset(0xA7AE86C0F25367BB);
             return ref _Handle.AsRef<short>(_InputValueXNodeIdxOffset!.Value);
         }
     }
     private static nint? _InputValueYNodeIdxOffset;
 
-    public ref short InputValueYNodeIdx {
-        get {
+    public ref short InputValueYNodeIdx
+    {
+        get
+        {
             _InputValueYNodeIdxOffset = _InputValueYNodeIdxOffset ?? Schema.GetOffset(0xA7AE86C0D056A5E2);
             return ref _Handle.AsRef<short>(_InputValueYNodeIdxOffset!.Value);
         }
     }
     private static nint? _InputValueZNodeIdxOffset;
 
-    public ref short InputValueZNodeIdx {
-        get {
+    public ref short InputValueZNodeIdx
+    {
+        get
+        {
             _InputValueZNodeIdxOffset = _InputValueZNodeIdxOffset ?? Schema.GetOffset(0xA7AE86C05ED1BD45);
             return ref _Handle.AsRef<short>(_InputValueZNodeIdxOffset!.Value);
         }
     }
-
 
 }

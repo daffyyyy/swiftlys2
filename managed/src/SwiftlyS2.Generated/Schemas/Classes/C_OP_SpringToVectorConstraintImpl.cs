@@ -18,44 +18,53 @@ internal partial class C_OP_SpringToVectorConstraintImpl : CParticleFunctionCons
 
     private static nint? _RestLengthOffset;
 
-    public CPerParticleFloatInput RestLength {
-        get {
+    public CPerParticleFloatInput RestLength
+    {
+        get
+        {
             _RestLengthOffset = _RestLengthOffset ?? Schema.GetOffset(0xF442244193AC4079);
             return new CPerParticleFloatInputImpl(_Handle + _RestLengthOffset!.Value);
         }
     }
     private static nint? _MinDistanceOffset;
 
-    public CPerParticleFloatInput MinDistance {
-        get {
+    public CPerParticleFloatInput MinDistance
+    {
+        get
+        {
             _MinDistanceOffset = _MinDistanceOffset ?? Schema.GetOffset(0xF442244192BCAD06);
             return new CPerParticleFloatInputImpl(_Handle + _MinDistanceOffset!.Value);
         }
     }
     private static nint? _MaxDistanceOffset;
 
-    public CPerParticleFloatInput MaxDistance {
-        get {
+    public CPerParticleFloatInput MaxDistance
+    {
+        get
+        {
             _MaxDistanceOffset = _MaxDistanceOffset ?? Schema.GetOffset(0xF442244198893360);
             return new CPerParticleFloatInputImpl(_Handle + _MaxDistanceOffset!.Value);
         }
     }
     private static nint? _RestingLengthOffset;
 
-    public CPerParticleFloatInput RestingLength {
-        get {
+    public CPerParticleFloatInput RestingLength
+    {
+        get
+        {
             _RestingLengthOffset = _RestingLengthOffset ?? Schema.GetOffset(0xF4422441BB988EAF);
             return new CPerParticleFloatInputImpl(_Handle + _RestingLengthOffset!.Value);
         }
     }
     private static nint? _AnchorVectorOffset;
 
-    public CPerParticleVecInput AnchorVector {
-        get {
+    public CPerParticleVecInput AnchorVector
+    {
+        get
+        {
             _AnchorVectorOffset = _AnchorVectorOffset ?? Schema.GetOffset(0xF442244180D613F3);
             return new CPerParticleVecInputImpl(_Handle + _AnchorVectorOffset!.Value);
         }
     }
-
 
 }

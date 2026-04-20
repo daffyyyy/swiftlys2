@@ -18,40 +18,48 @@ internal partial class CAnimComponentUpdaterImpl : SchemaClass, CAnimComponentUp
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x3E0F51C74D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x3E0F51C74D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _IdOffset;
 
-    public AnimComponentID Id {
-        get {
+    public AnimComponentID Id
+    {
+        get
+        {
             _IdOffset = _IdOffset ?? Schema.GetOffset(0x3E0F51C7B4B6E980);
             return new AnimComponentIDImpl(_Handle + _IdOffset!.Value);
         }
     }
     private static nint? _NetworkModeOffset;
 
-    public ref AnimNodeNetworkMode NetworkMode {
-        get {
+    public ref AnimNodeNetworkMode NetworkMode
+    {
+        get
+        {
             _NetworkModeOffset = _NetworkModeOffset ?? Schema.GetOffset(0x3E0F51C7E3307112);
             return ref _Handle.AsRef<AnimNodeNetworkMode>(_NetworkModeOffset!.Value);
         }
     }
     private static nint? _StartEnabledOffset;
 
-    public ref bool StartEnabled {
-        get {
+    public ref bool StartEnabled
+    {
+        get
+        {
             _StartEnabledOffset = _StartEnabledOffset ?? Schema.GetOffset(0x3E0F51C7500D5C24);
             return ref _Handle.AsRef<bool>(_StartEnabledOffset!.Value);
         }
     }
-
 
 }

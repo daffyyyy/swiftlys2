@@ -18,24 +18,28 @@ internal partial class PermModelDataAnimatedMaterialAttribute_tImpl : SchemaClas
 
     private static nint? _AttributeNameOffset;
 
-    public string AttributeName {
-        get {
+    public string AttributeName
+    {
+        get
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x6489C15F1408864C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_AttributeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x6489C15F1408864C);
             Schema.SetCUtlString(_Handle, _AttributeNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NumChannelsOffset;
 
-    public ref int NumChannels {
-        get {
+    public ref int NumChannels
+    {
+        get
+        {
             _NumChannelsOffset = _NumChannelsOffset ?? Schema.GetOffset(0x6489C15FEA44FE77);
             return ref _Handle.AsRef<int>(_NumChannelsOffset!.Value);
         }
     }
-
 
 }

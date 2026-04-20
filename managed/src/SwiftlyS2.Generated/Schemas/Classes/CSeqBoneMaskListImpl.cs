@@ -18,44 +18,53 @@ internal partial class CSeqBoneMaskListImpl : SchemaClass, CSeqBoneMaskList
 
     private static nint? _NameOffset;
 
-    public ref CBufferString Name {
-        get {
+    public ref CBufferString Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xCD7B4EF763D22D49);
             return ref _Handle.AsRef<CBufferString>(_NameOffset!.Value);
         }
     }
     private static nint? _LocalBoneArrayOffset;
 
-    public ref CUtlVector<short> LocalBoneArray {
-        get {
+    public ref CUtlVector<short> LocalBoneArray
+    {
+        get
+        {
             _LocalBoneArrayOffset = _LocalBoneArrayOffset ?? Schema.GetOffset(0xCD7B4EF70B8EFD6B);
             return ref _Handle.AsRef<CUtlVector<short>>(_LocalBoneArrayOffset!.Value);
         }
     }
     private static nint? _BoneWeightArrayOffset;
 
-    public ref CUtlVector<float> BoneWeightArray {
-        get {
+    public ref CUtlVector<float> BoneWeightArray
+    {
+        get
+        {
             _BoneWeightArrayOffset = _BoneWeightArrayOffset ?? Schema.GetOffset(0xCD7B4EF747E1E612);
             return ref _Handle.AsRef<CUtlVector<float>>(_BoneWeightArrayOffset!.Value);
         }
     }
     private static nint? _DefaultMorphCtrlWeightOffset;
 
-    public ref float DefaultMorphCtrlWeight {
-        get {
+    public ref float DefaultMorphCtrlWeight
+    {
+        get
+        {
             _DefaultMorphCtrlWeightOffset = _DefaultMorphCtrlWeightOffset ?? Schema.GetOffset(0xCD7B4EF7AA0F3843);
             return ref _Handle.AsRef<float>(_DefaultMorphCtrlWeightOffset!.Value);
         }
     }
     private static nint? _MorphCtrlWeightArrayOffset;
 
-    public ref CUtlVector<SchemaUntypedField> MorphCtrlWeightArray {
-        get {
+    public ref CUtlVector<SchemaUntypedField> MorphCtrlWeightArray
+    {
+        get
+        {
             _MorphCtrlWeightArrayOffset = _MorphCtrlWeightArrayOffset ?? Schema.GetOffset(0xCD7B4EF72C45A089);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_MorphCtrlWeightArrayOffset!.Value);
         }
     }
-
 
 }

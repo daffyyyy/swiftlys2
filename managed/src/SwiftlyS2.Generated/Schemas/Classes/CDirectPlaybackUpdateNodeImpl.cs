@@ -18,28 +18,33 @@ internal partial class CDirectPlaybackUpdateNodeImpl : CUnaryUpdateNodeImpl, CDi
 
     private static nint? _FinishEarlyOffset;
 
-    public ref bool FinishEarly {
-        get {
+    public ref bool FinishEarly
+    {
+        get
+        {
             _FinishEarlyOffset = _FinishEarlyOffset ?? Schema.GetOffset(0x4E1CBFEFC2E75991);
             return ref _Handle.AsRef<bool>(_FinishEarlyOffset!.Value);
         }
     }
     private static nint? _ResetOnFinishOffset;
 
-    public ref bool ResetOnFinish {
-        get {
+    public ref bool ResetOnFinish
+    {
+        get
+        {
             _ResetOnFinishOffset = _ResetOnFinishOffset ?? Schema.GetOffset(0x4E1CBFEFD5293C96);
             return ref _Handle.AsRef<bool>(_ResetOnFinishOffset!.Value);
         }
     }
     private static nint? _AllTagsOffset;
 
-    public ref CUtlVector<CDirectPlaybackTagData> AllTags {
-        get {
+    public ref CUtlVector<CDirectPlaybackTagData> AllTags
+    {
+        get
+        {
             _AllTagsOffset = _AllTagsOffset ?? Schema.GetOffset(0x4E1CBFEF7A57C5AD);
             return ref _Handle.AsRef<CUtlVector<CDirectPlaybackTagData>>(_AllTagsOffset!.Value);
         }
     }
-
 
 }

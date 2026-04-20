@@ -18,36 +18,43 @@ internal partial class C_INIT_RandomModelSequenceImpl : CParticleFunctionInitial
 
     private static nint? _ActivityNameOffset;
 
-    public string ActivityName {
-        get {
+    public string ActivityName
+    {
+        get
+        {
             _ActivityNameOffset = _ActivityNameOffset ?? Schema.GetOffset(0x2F450DC3BF0C5087);
             return Schema.GetString(_Handle + _ActivityNameOffset!.Value);
         }
-        set {
+        set
+        {
             _ActivityNameOffset = _ActivityNameOffset ?? Schema.GetOffset(0x2F450DC3BF0C5087);
             Schema.SetFixedString(_Handle, _ActivityNameOffset!.Value, value, 256);
         }
-    } 
+    }
     private static nint? _SequenceNameOffset;
 
-    public string SequenceName {
-        get {
+    public string SequenceName
+    {
+        get
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0x2F450DC3A270F66B);
             return Schema.GetString(_Handle + _SequenceNameOffset!.Value);
         }
-        set {
+        set
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0x2F450DC3A270F66B);
             Schema.SetFixedString(_Handle, _SequenceNameOffset!.Value, value, 256);
         }
-    } 
+    }
     private static nint? _ModelOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCModel> Model {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCModel> Model
+    {
+        get
+        {
             _ModelOffset = _ModelOffset ?? Schema.GetOffset(0x2F450DC3E100C814);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(_ModelOffset!.Value);
         }
     }
-
 
 }

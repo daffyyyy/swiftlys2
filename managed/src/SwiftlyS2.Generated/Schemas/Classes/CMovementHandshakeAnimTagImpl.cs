@@ -16,7 +16,4 @@ internal partial class CMovementHandshakeAnimTagImpl : CHandshakeAnimTagBaseImpl
 {
     public CMovementHandshakeAnimTagImpl(nint handle) : base(handle) { }
 
-
-
-
 }

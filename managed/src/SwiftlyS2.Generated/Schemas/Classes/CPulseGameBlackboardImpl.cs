@@ -18,28 +18,34 @@ internal partial class CPulseGameBlackboardImpl : CBaseEntityImpl, CPulseGameBla
 
     private static nint? _StrGraphNameOffset;
 
-    public string StrGraphName {
-        get {
+    public string StrGraphName
+    {
+        get
+        {
             _StrGraphNameOffset = _StrGraphNameOffset ?? Schema.GetOffset(0xF9A17A20C99E48AF);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrGraphNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StrGraphNameOffset = _StrGraphNameOffset ?? Schema.GetOffset(0xF9A17A20C99E48AF);
             Schema.SetCUtlString(_Handle, _StrGraphNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _StrStateBlobOffset;
 
-    public string StrStateBlob {
-        get {
+    public string StrStateBlob
+    {
+        get
+        {
             _StrStateBlobOffset = _StrStateBlobOffset ?? Schema.GetOffset(0xF9A17A2046708C2A);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrStateBlobOffset!.Value));
         }
-        set {
+        set
+        {
             _StrStateBlobOffset = _StrStateBlobOffset ?? Schema.GetOffset(0xF9A17A2046708C2A);
             Schema.SetCUtlString(_Handle, _StrStateBlobOffset!.Value, value);
         }
-    } 
+    }
 
     public void StrGraphNameUpdated() => Schema.Update(_Handle, 0xF9A17A20C99E48AF);
     public void StrStateBlobUpdated() => Schema.Update(_Handle, 0xF9A17A2046708C2A);

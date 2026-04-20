@@ -18,36 +18,43 @@ internal partial class CNmIDToFloatNode__CDefinitionImpl : CNmFloatValueNode__CD
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x9F6F687D95E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _DefaultValueOffset;
 
-    public ref float DefaultValue {
-        get {
+    public ref float DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x9F6F687DBBE0341F);
             return ref _Handle.AsRef<float>(_DefaultValueOffset!.Value);
         }
     }
     private static nint? _IDsOffset;
 
-    public SchemaUntypedField IDs {
-        get {
+    public SchemaUntypedField IDs
+    {
+        get
+        {
             _IDsOffset = _IDsOffset ?? Schema.GetOffset(0x9F6F687D0C180009);
             return new SchemaUntypedField(_Handle + _IDsOffset!.Value);
         }
     }
     private static nint? _ValuesOffset;
 
-    public SchemaUntypedField Values {
-        get {
+    public SchemaUntypedField Values
+    {
+        get
+        {
             _ValuesOffset = _ValuesOffset ?? Schema.GetOffset(0x9F6F687DFBEDDADB);
             return new SchemaUntypedField(_Handle + _ValuesOffset!.Value);
         }
     }
-
 
 }

@@ -18,44 +18,53 @@ internal partial class C_OP_RemapBoundingVolumetoCPImpl : CParticleFunctionPreEm
 
     private static nint? _OutControlPointNumberOffset;
 
-    public ref int OutControlPointNumber {
-        get {
+    public ref int OutControlPointNumber
+    {
+        get
+        {
             _OutControlPointNumberOffset = _OutControlPointNumberOffset ?? Schema.GetOffset(0xBFFF451ED021D73F);
             return ref _Handle.AsRef<int>(_OutControlPointNumberOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public ref float InputMin {
-        get {
+    public ref float InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0xBFFF451EE88A0D0F);
             return ref _Handle.AsRef<float>(_InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public ref float InputMax {
-        get {
+    public ref float InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0xBFFF451ED6766901);
             return ref _Handle.AsRef<float>(_InputMaxOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public ref float OutputMin {
-        get {
+    public ref float OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0xBFFF451E5F8D7716);
             return ref _Handle.AsRef<float>(_OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public ref float OutputMax {
-        get {
+    public ref float OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0xBFFF451E51A0E8C4);
             return ref _Handle.AsRef<float>(_OutputMaxOffset!.Value);
         }
     }
-
 
 }

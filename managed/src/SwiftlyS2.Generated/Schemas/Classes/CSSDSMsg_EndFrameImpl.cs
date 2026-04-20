@@ -18,12 +18,13 @@ internal partial class CSSDSMsg_EndFrameImpl : SchemaClass, CSSDSMsg_EndFrame
 
     private static nint? _ViewsOffset;
 
-    public ref CUtlVector<CSSDSEndFrameViewInfo> Views {
-        get {
+    public ref CUtlVector<CSSDSEndFrameViewInfo> Views
+    {
+        get
+        {
             _ViewsOffset = _ViewsOffset ?? Schema.GetOffset(0x6F265E19E9FEAC51);
             return ref _Handle.AsRef<CUtlVector<CSSDSEndFrameViewInfo>>(_ViewsOffset!.Value);
         }
     }
-
 
 }

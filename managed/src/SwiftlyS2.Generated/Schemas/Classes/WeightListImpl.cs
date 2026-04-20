@@ -18,24 +18,28 @@ internal partial class WeightListImpl : SchemaClass, WeightList
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x4A08DD454D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x4A08DD454D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _WeightsOffset;
 
-    public ref CUtlVector<float> Weights {
-        get {
+    public ref CUtlVector<float> Weights
+    {
+        get
+        {
             _WeightsOffset = _WeightsOffset ?? Schema.GetOffset(0x4A08DD4577B2F91E);
             return ref _Handle.AsRef<CUtlVector<float>>(_WeightsOffset!.Value);
         }
     }
-
 
 }

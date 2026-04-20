@@ -18,16 +18,18 @@ internal partial class CModelConfigElement_SetMaterialGroupImpl : CModelConfigEl
 
     private static nint? _MaterialGroupNameOffset;
 
-    public string MaterialGroupName {
-        get {
+    public string MaterialGroupName
+    {
+        get
+        {
             _MaterialGroupNameOffset = _MaterialGroupNameOffset ?? Schema.GetOffset(0xFF9AED50C2DD3048);
             return Schema.GetCUtlString(_Handle.Read<nint>(_MaterialGroupNameOffset!.Value));
         }
-        set {
+        set
+        {
             _MaterialGroupNameOffset = _MaterialGroupNameOffset ?? Schema.GetOffset(0xFF9AED50C2DD3048);
             Schema.SetCUtlString(_Handle, _MaterialGroupNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

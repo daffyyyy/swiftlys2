@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum DampingSpeedFunction : uint
 {
- NoDamping = 0,
-
- Constant = 1,
-
- Spring = 2,
-
- AsymmetricSpring = 3,
+    NoDamping = 0,
+    Constant = 1,
+    Spring = 2,
+    AsymmetricSpring = 3,
 }

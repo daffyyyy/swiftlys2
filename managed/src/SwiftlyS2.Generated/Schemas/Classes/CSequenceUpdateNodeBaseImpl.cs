@@ -18,20 +18,23 @@ internal partial class CSequenceUpdateNodeBaseImpl : CLeafUpdateNodeImpl, CSeque
 
     private static nint? _PlaybackSpeedOffset;
 
-    public ref float PlaybackSpeed {
-        get {
+    public ref float PlaybackSpeed
+    {
+        get
+        {
             _PlaybackSpeedOffset = _PlaybackSpeedOffset ?? Schema.GetOffset(0x6FCA4DDB1AFA7387);
             return ref _Handle.AsRef<float>(_PlaybackSpeedOffset!.Value);
         }
     }
     private static nint? _LoopOffset;
 
-    public ref bool Loop {
-        get {
+    public ref bool Loop
+    {
+        get
+        {
             _LoopOffset = _LoopOffset ?? Schema.GetOffset(0x6FCA4DDBC668A4CB);
             return ref _Handle.AsRef<bool>(_LoopOffset!.Value);
         }
     }
-
 
 }

@@ -18,20 +18,23 @@ internal partial class CVoiceContainerDecayingSineWaveImpl : CVoiceContainerGene
 
     private static nint? _FrequencyOffset;
 
-    public ref float Frequency {
-        get {
+    public ref float Frequency
+    {
+        get
+        {
             _FrequencyOffset = _FrequencyOffset ?? Schema.GetOffset(0x3383CD01D2C16DD7);
             return ref _Handle.AsRef<float>(_FrequencyOffset!.Value);
         }
     }
     private static nint? _DecayTimeOffset;
 
-    public ref float DecayTime {
-        get {
+    public ref float DecayTime
+    {
+        get
+        {
             _DecayTimeOffset = _DecayTimeOffset ?? Schema.GetOffset(0x3383CD01E94A0656);
             return ref _Handle.AsRef<float>(_DecayTimeOffset!.Value);
         }
     }
-
 
 }

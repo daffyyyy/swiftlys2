@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerToggleSave : CBaseTrigger, ISchemaClass<CTriggerToggleSave>
 {
     static CTriggerToggleSave ISchemaClass<CTriggerToggleSave>.From(nint handle) => new CTriggerToggleSaveImpl(handle);
-    static int ISchemaClass<CTriggerToggleSave>.Size => 2192;
+    static int ISchemaClass<CTriggerToggleSave>.Size => 2248;
     static string? ISchemaClass<CTriggerToggleSave>.ClassName => "trigger_togglesave";
-
-
-
 
 }

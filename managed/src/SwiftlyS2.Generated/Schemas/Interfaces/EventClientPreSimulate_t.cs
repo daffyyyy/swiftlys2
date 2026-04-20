@@ -14,7 +14,4 @@ public partial interface EventClientPreSimulate_t : EventSimulate_t, ISchemaClas
     static int ISchemaClass<EventClientPreSimulate_t>.Size => 48;
     static string? ISchemaClass<EventClientPreSimulate_t>.ClassName => null;
 
-
-
-
 }

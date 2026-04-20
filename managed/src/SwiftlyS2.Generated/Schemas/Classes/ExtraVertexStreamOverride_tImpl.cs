@@ -18,36 +18,43 @@ internal partial class ExtraVertexStreamOverride_tImpl : BaseSceneObjectOverride
 
     private static nint? _SubSceneObjectOffset;
 
-    public ref uint SubSceneObject {
-        get {
+    public ref uint SubSceneObject
+    {
+        get
+        {
             _SubSceneObjectOffset = _SubSceneObjectOffset ?? Schema.GetOffset(0x38857FE855C3CCBC);
             return ref _Handle.AsRef<uint>(_SubSceneObjectOffset!.Value);
         }
     }
     private static nint? _DrawCallIndexOffset;
 
-    public ref uint DrawCallIndex {
-        get {
+    public ref uint DrawCallIndex
+    {
+        get
+        {
             _DrawCallIndexOffset = _DrawCallIndexOffset ?? Schema.GetOffset(0x38857FE8FA5614D5);
             return ref _Handle.AsRef<uint>(_DrawCallIndexOffset!.Value);
         }
     }
     private static nint? _AdditionalMeshDrawPrimitiveFlagsOffset;
 
-    public ref MeshDrawPrimitiveFlags_t AdditionalMeshDrawPrimitiveFlags {
-        get {
+    public ref MeshDrawPrimitiveFlags_t AdditionalMeshDrawPrimitiveFlags
+    {
+        get
+        {
             _AdditionalMeshDrawPrimitiveFlagsOffset = _AdditionalMeshDrawPrimitiveFlagsOffset ?? Schema.GetOffset(0x38857FE8F0E57F2B);
             return ref _Handle.AsRef<MeshDrawPrimitiveFlags_t>(_AdditionalMeshDrawPrimitiveFlagsOffset!.Value);
         }
     }
     private static nint? _ExtraBufferBindingOffset;
 
-    public CRenderBufferBinding ExtraBufferBinding {
-        get {
+    public CRenderBufferBinding ExtraBufferBinding
+    {
+        get
+        {
             _ExtraBufferBindingOffset = _ExtraBufferBindingOffset ?? Schema.GetOffset(0x38857FE800630FD0);
             return new CRenderBufferBindingImpl(_Handle + _ExtraBufferBindingOffset!.Value);
         }
     }
-
 
 }

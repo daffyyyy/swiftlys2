@@ -16,7 +16,4 @@ internal partial class CParticleCollectionVecInputImpl : CParticleVecInputImpl, 
 {
     public CParticleCollectionVecInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

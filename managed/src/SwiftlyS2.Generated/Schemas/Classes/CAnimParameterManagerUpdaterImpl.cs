@@ -18,52 +18,63 @@ internal partial class CAnimParameterManagerUpdaterImpl : SchemaClass, CAnimPara
 
     private static nint? _ParametersOffset;
 
-    public ref CUtlVector<SchemaUntypedField> Parameters {
-        get {
+    public ref CUtlVector<SchemaUntypedField> Parameters
+    {
+        get
+        {
             _ParametersOffset = _ParametersOffset ?? Schema.GetOffset(0x2289044E99935479);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_ParametersOffset!.Value);
         }
     }
     private static nint? _IdToIndexMapOffset;
 
-    public SchemaUntypedField IdToIndexMap {
-        get {
+    public SchemaUntypedField IdToIndexMap
+    {
+        get
+        {
             _IdToIndexMapOffset = _IdToIndexMapOffset ?? Schema.GetOffset(0x2289044E7B873A5F);
             return new SchemaUntypedField(_Handle + _IdToIndexMapOffset!.Value);
         }
     }
     private static nint? _NameToIndexMapOffset;
 
-    public SchemaUntypedField NameToIndexMap {
-        get {
+    public SchemaUntypedField NameToIndexMap
+    {
+        get
+        {
             _NameToIndexMapOffset = _NameToIndexMapOffset ?? Schema.GetOffset(0x2289044EDA1FC14D);
             return new SchemaUntypedField(_Handle + _NameToIndexMapOffset!.Value);
         }
     }
     private static nint? _IndexToHandleOffset;
 
-    public ref CUtlVector<CAnimParamHandle> IndexToHandle {
-        get {
+    public ref CUtlVector<CAnimParamHandle> IndexToHandle
+    {
+        get
+        {
             _IndexToHandleOffset = _IndexToHandleOffset ?? Schema.GetOffset(0x2289044E3F943600);
             return ref _Handle.AsRef<CUtlVector<CAnimParamHandle>>(_IndexToHandleOffset!.Value);
         }
     }
     private static nint? _AutoResetParamsOffset;
 
-    public ref CUtlVector<SchemaUntypedField> AutoResetParams {
-        get {
+    public ref CUtlVector<SchemaUntypedField> AutoResetParams
+    {
+        get
+        {
             _AutoResetParamsOffset = _AutoResetParamsOffset ?? Schema.GetOffset(0x2289044EA74F889F);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_AutoResetParamsOffset!.Value);
         }
     }
     private static nint? _AutoResetMapOffset;
 
-    public SchemaUntypedField AutoResetMap {
-        get {
+    public SchemaUntypedField AutoResetMap
+    {
+        get
+        {
             _AutoResetMapOffset = _AutoResetMapOffset ?? Schema.GetOffset(0x2289044E024CB2F5);
             return new SchemaUntypedField(_Handle + _AutoResetMapOffset!.Value);
         }
     }
-
 
 }

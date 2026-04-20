@@ -18,20 +18,23 @@ internal partial class NmSyncTrackTime_tImpl : SchemaClass, NmSyncTrackTime_t
 
     private static nint? _EventIdxOffset;
 
-    public ref int EventIdx {
-        get {
+    public ref int EventIdx
+    {
+        get
+        {
             _EventIdxOffset = _EventIdxOffset ?? Schema.GetOffset(0x12BF3F3C2A6FC8DA);
             return ref _Handle.AsRef<int>(_EventIdxOffset!.Value);
         }
     }
     private static nint? _PercentageThroughOffset;
 
-    public NmPercent_t PercentageThrough {
-        get {
+    public NmPercent_t PercentageThrough
+    {
+        get
+        {
             _PercentageThroughOffset = _PercentageThroughOffset ?? Schema.GetOffset(0x12BF3F3C77B731AA);
             return new NmPercent_tImpl(_Handle + _PercentageThroughOffset!.Value);
         }
     }
-
 
 }

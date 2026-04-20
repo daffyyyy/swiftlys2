@@ -18,12 +18,13 @@ internal partial class CPathAnimMotorUpdaterBaseImpl : CAnimMotorUpdaterBaseImpl
 
     private static nint? _LockToPathOffset;
 
-    public ref bool LockToPath {
-        get {
+    public ref bool LockToPath
+    {
+        get
+        {
             _LockToPathOffset = _LockToPathOffset ?? Schema.GetOffset(0x165EE5771F2F0960);
             return ref _Handle.AsRef<bool>(_LockToPathOffset!.Value);
         }
     }
-
 
 }

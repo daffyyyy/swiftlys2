@@ -16,7 +16,4 @@ internal partial class CPerParticleFloatInputImpl : CParticleFloatInputImpl, CPe
 {
     public CPerParticleFloatInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

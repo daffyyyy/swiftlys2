@@ -18,44 +18,53 @@ internal partial class CFlexControllerImpl : SchemaClass, CFlexController
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x5265FDF16750BACB);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x5265FDF16750BACB);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TypeOffset;
 
-    public string Type {
-        get {
+    public string Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x5265FDF1B580AB00);
             return Schema.GetCUtlString(_Handle.Read<nint>(_TypeOffset!.Value));
         }
-        set {
+        set
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x5265FDF1B580AB00);
             Schema.SetCUtlString(_Handle, _TypeOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _MinOffset;
 
-    public ref float Min {
-        get {
+    public ref float Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x5265FDF1C98F4557);
             return ref _Handle.AsRef<float>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref float Max {
-        get {
+    public ref float Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x5265FDF1D7A2E319);
             return ref _Handle.AsRef<float>(_MaxOffset!.Value);
         }
     }
-
 
 }

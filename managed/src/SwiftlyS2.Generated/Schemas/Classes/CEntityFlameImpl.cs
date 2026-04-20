@@ -18,80 +18,100 @@ internal partial class CEntityFlameImpl : CBaseEntityImpl, CEntityFlame
 
     private static nint? _EntAttachedOffset;
 
-    public ref CHandle<CBaseEntity> EntAttached {
-        get {
+    public ref CHandle<CBaseEntity> EntAttached
+    {
+        get
+        {
             _EntAttachedOffset = _EntAttachedOffset ?? Schema.GetOffset(0x386F199409F89DF0);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EntAttachedOffset!.Value);
         }
     }
     private static nint? _CheapEffectOffset;
 
-    public ref bool CheapEffect {
-        get {
+    public ref bool CheapEffect
+    {
+        get
+        {
             _CheapEffectOffset = _CheapEffectOffset ?? Schema.GetOffset(0x386F1994DF421B51);
             return ref _Handle.AsRef<bool>(_CheapEffectOffset!.Value);
         }
     }
     private static nint? _SizeOffset;
 
-    public ref float Size {
-        get {
+    public ref float Size
+    {
+        get
+        {
             _SizeOffset = _SizeOffset ?? Schema.GetOffset(0x386F19944CF0EBC6);
             return ref _Handle.AsRef<float>(_SizeOffset!.Value);
         }
     }
     private static nint? _UseHitboxesOffset;
 
-    public ref bool UseHitboxes {
-        get {
+    public ref bool UseHitboxes
+    {
+        get
+        {
             _UseHitboxesOffset = _UseHitboxesOffset ?? Schema.GetOffset(0x386F19948C5BFEBE);
             return ref _Handle.AsRef<bool>(_UseHitboxesOffset!.Value);
         }
     }
     private static nint? _NumHitboxFiresOffset;
 
-    public ref int NumHitboxFires {
-        get {
+    public ref int NumHitboxFires
+    {
+        get
+        {
             _NumHitboxFiresOffset = _NumHitboxFiresOffset ?? Schema.GetOffset(0x386F199457E3580B);
             return ref _Handle.AsRef<int>(_NumHitboxFiresOffset!.Value);
         }
     }
     private static nint? _HitboxFireScaleOffset;
 
-    public ref float HitboxFireScale {
-        get {
+    public ref float HitboxFireScale
+    {
+        get
+        {
             _HitboxFireScaleOffset = _HitboxFireScaleOffset ?? Schema.GetOffset(0x386F19942AD17519);
             return ref _Handle.AsRef<float>(_HitboxFireScaleOffset!.Value);
         }
     }
     private static nint? _LifetimeOffset;
 
-    public GameTime_t Lifetime {
-        get {
+    public GameTime_t Lifetime
+    {
+        get
+        {
             _LifetimeOffset = _LifetimeOffset ?? Schema.GetOffset(0x386F199439B35564);
             return new GameTime_tImpl(_Handle + _LifetimeOffset!.Value);
         }
     }
     private static nint? _AttackerOffset;
 
-    public ref CHandle<CBaseEntity> Attacker {
-        get {
+    public ref CHandle<CBaseEntity> Attacker
+    {
+        get
+        {
             _AttackerOffset = _AttackerOffset ?? Schema.GetOffset(0x386F199468573D54);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_AttackerOffset!.Value);
         }
     }
     private static nint? _DirectDamagePerSecondOffset;
 
-    public ref float DirectDamagePerSecond {
-        get {
+    public ref float DirectDamagePerSecond
+    {
+        get
+        {
             _DirectDamagePerSecondOffset = _DirectDamagePerSecondOffset ?? Schema.GetOffset(0x386F199482A435AE);
             return ref _Handle.AsRef<float>(_DirectDamagePerSecondOffset!.Value);
         }
     }
     private static nint? _CustomDamageTypeOffset;
 
-    public ref int CustomDamageType {
-        get {
+    public ref int CustomDamageType
+    {
+        get
+        {
             _CustomDamageTypeOffset = _CustomDamageTypeOffset ?? Schema.GetOffset(0x386F1994E0A58F6E);
             return ref _Handle.AsRef<int>(_CustomDamageTypeOffset!.Value);
         }

@@ -11,15 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Step_CallExternalMethod : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Step_CallExternalMethod>
 {
     static CPulseCell_Step_CallExternalMethod ISchemaClass<CPulseCell_Step_CallExternalMethod>.From(nint handle) => new CPulseCell_Step_CallExternalMethodImpl(handle);
-    static int ISchemaClass<CPulseCell_Step_CallExternalMethod>.Size => 200;
+    static int ISchemaClass<CPulseCell_Step_CallExternalMethod>.Size => 192;
     static string? ISchemaClass<CPulseCell_Step_CallExternalMethod>.ClassName => null;
 
 
     // PulseSymbol_t
     public SchemaUntypedField MethodName { get; }
 
-    // PulseSymbol_t
-    public SchemaUntypedField GameBlackboard { get; }
+    public PulseRuntimeBlackboardReferenceIndex_t BlackboardIndex { get; }
 
     public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> ExpectedArgs { get; }
 

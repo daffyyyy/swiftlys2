@@ -18,36 +18,43 @@ internal partial class CFuseProgramImpl : SchemaClass, CFuseProgram
 
     private static nint? _ProgramBufferOffset;
 
-    public ref CUtlVector<byte> ProgramBuffer {
-        get {
+    public ref CUtlVector<byte> ProgramBuffer
+    {
+        get
+        {
             _ProgramBufferOffset = _ProgramBufferOffset ?? Schema.GetOffset(0x81E69119349962E1);
             return ref _Handle.AsRef<CUtlVector<byte>>(_ProgramBufferOffset!.Value);
         }
     }
     private static nint? _VariablesReadOffset;
 
-    public ref CUtlVector<FuseVariableIndex_t> VariablesRead {
-        get {
+    public ref CUtlVector<FuseVariableIndex_t> VariablesRead
+    {
+        get
+        {
             _VariablesReadOffset = _VariablesReadOffset ?? Schema.GetOffset(0x81E691194C160BEA);
             return ref _Handle.AsRef<CUtlVector<FuseVariableIndex_t>>(_VariablesReadOffset!.Value);
         }
     }
     private static nint? _VariablesWrittenOffset;
 
-    public ref CUtlVector<FuseVariableIndex_t> VariablesWritten {
-        get {
+    public ref CUtlVector<FuseVariableIndex_t> VariablesWritten
+    {
+        get
+        {
             _VariablesWrittenOffset = _VariablesWrittenOffset ?? Schema.GetOffset(0x81E69119E9491C49);
             return ref _Handle.AsRef<CUtlVector<FuseVariableIndex_t>>(_VariablesWrittenOffset!.Value);
         }
     }
     private static nint? _MaxTempVarsUsedOffset;
 
-    public ref int MaxTempVarsUsed {
-        get {
+    public ref int MaxTempVarsUsed
+    {
+        get
+        {
             _MaxTempVarsUsedOffset = _MaxTempVarsUsedOffset ?? Schema.GetOffset(0x81E69119981A1518);
             return ref _Handle.AsRef<int>(_MaxTempVarsUsedOffset!.Value);
         }
     }
-
 
 }

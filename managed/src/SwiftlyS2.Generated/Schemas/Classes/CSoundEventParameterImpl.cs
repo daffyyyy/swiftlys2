@@ -18,24 +18,28 @@ internal partial class CSoundEventParameterImpl : CBaseEntityImpl, CSoundEventPa
 
     private static nint? _ParamNameOffset;
 
-    public string ParamName {
-        get {
+    public string ParamName
+    {
+        get
+        {
             _ParamNameOffset = _ParamNameOffset ?? Schema.GetOffset(0xEFEED49AFF6F4311);
             return Schema.GetString(_Handle.Read<nint>(_ParamNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ParamNameOffset = _ParamNameOffset ?? Schema.GetOffset(0xEFEED49AFF6F4311);
             Schema.SetString(_Handle, _ParamNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FloatValueOffset;
 
-    public ref float FloatValue {
-        get {
+    public ref float FloatValue
+    {
+        get
+        {
             _FloatValueOffset = _FloatValueOffset ?? Schema.GetOffset(0xEFEED49A80BDA558);
             return ref _Handle.AsRef<float>(_FloatValueOffset!.Value);
         }
     }
-
 
 }

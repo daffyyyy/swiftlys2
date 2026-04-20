@@ -18,44 +18,53 @@ internal partial class C_INIT_PointListImpl : CParticleFunctionInitializerImpl, 
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x5E193E54E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _PointListOffset;
 
-    public ref CUtlVector<PointDefinition_t> PointList {
-        get {
+    public ref CUtlVector<PointDefinition_t> PointList
+    {
+        get
+        {
             _PointListOffset = _PointListOffset ?? Schema.GetOffset(0x5E193E54976AB4FD);
             return ref _Handle.AsRef<CUtlVector<PointDefinition_t>>(_PointListOffset!.Value);
         }
     }
     private static nint? _PlaceAlongPathOffset;
 
-    public ref bool PlaceAlongPath {
-        get {
+    public ref bool PlaceAlongPath
+    {
+        get
+        {
             _PlaceAlongPathOffset = _PlaceAlongPathOffset ?? Schema.GetOffset(0x5E193E5481CF2E1A);
             return ref _Handle.AsRef<bool>(_PlaceAlongPathOffset!.Value);
         }
     }
     private static nint? _ClosedLoopOffset;
 
-    public ref bool ClosedLoop {
-        get {
+    public ref bool ClosedLoop
+    {
+        get
+        {
             _ClosedLoopOffset = _ClosedLoopOffset ?? Schema.GetOffset(0x5E193E547C20D1AB);
             return ref _Handle.AsRef<bool>(_ClosedLoopOffset!.Value);
         }
     }
     private static nint? _NumPointsAlongPathOffset;
 
-    public ref int NumPointsAlongPath {
-        get {
+    public ref int NumPointsAlongPath
+    {
+        get
+        {
             _NumPointsAlongPathOffset = _NumPointsAlongPathOffset ?? Schema.GetOffset(0x5E193E54ACB5FC8A);
             return ref _Handle.AsRef<int>(_NumPointsAlongPathOffset!.Value);
         }
     }
-
 
 }

@@ -18,28 +18,33 @@ internal partial class C_INIT_RandomRadiusImpl : CParticleFunctionInitializerImp
 
     private static nint? _RadiusMinOffset;
 
-    public ref float RadiusMin {
-        get {
+    public ref float RadiusMin
+    {
+        get
+        {
             _RadiusMinOffset = _RadiusMinOffset ?? Schema.GetOffset(0xE9419C037AEB467F);
             return ref _Handle.AsRef<float>(_RadiusMinOffset!.Value);
         }
     }
     private static nint? _RadiusMaxOffset;
 
-    public ref float RadiusMax {
-        get {
+    public ref float RadiusMax
+    {
+        get
+        {
             _RadiusMaxOffset = _RadiusMaxOffset ?? Schema.GetOffset(0xE9419C0388D641D1);
             return ref _Handle.AsRef<float>(_RadiusMaxOffset!.Value);
         }
     }
     private static nint? _RadiusRandExponentOffset;
 
-    public ref float RadiusRandExponent {
-        get {
+    public ref float RadiusRandExponent
+    {
+        get
+        {
             _RadiusRandExponentOffset = _RadiusRandExponentOffset ?? Schema.GetOffset(0xE9419C03D4637A31);
             return ref _Handle.AsRef<float>(_RadiusRandExponentOffset!.Value);
         }
     }
-
 
 }

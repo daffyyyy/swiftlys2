@@ -15,7 +15,7 @@ public partial interface CEnvGlobal : CLogicalEntity, ISchemaClass<CEnvGlobal>
     static string? ISchemaClass<CEnvGlobal>.ClassName => "env_global";
 
 
-    // CEntityOutputTemplate< int32, int32 >
+    // CEntityOutputTemplate< int32 >
     public SchemaUntypedField OutCounter { get; }
 
     public string Globalstate { get; set; }

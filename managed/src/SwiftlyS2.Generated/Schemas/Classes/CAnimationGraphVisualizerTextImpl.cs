@@ -18,32 +18,38 @@ internal partial class CAnimationGraphVisualizerTextImpl : CAnimationGraphVisual
 
     private static nint? _WsPositionOffset;
 
-    public ref Vector WsPosition {
-        get {
+    public ref Vector WsPosition
+    {
+        get
+        {
             _WsPositionOffset = _WsPositionOffset ?? Schema.GetOffset(0x123E08CFCA77AB88);
             return ref _Handle.AsRef<Vector>(_WsPositionOffset!.Value);
         }
     }
     private static nint? _ColorOffset;
 
-    public ref Color Color {
-        get {
+    public ref Color Color
+    {
+        get
+        {
             _ColorOffset = _ColorOffset ?? Schema.GetOffset(0x123E08CFD7D017D8);
             return ref _Handle.AsRef<Color>(_ColorOffset!.Value);
         }
     }
     private static nint? _TextOffset;
 
-    public string Text {
-        get {
+    public string Text
+    {
+        get
+        {
             _TextOffset = _TextOffset ?? Schema.GetOffset(0x123E08CFFB9532BE);
             return Schema.GetCUtlString(_Handle.Read<nint>(_TextOffset!.Value));
         }
-        set {
+        set
+        {
             _TextOffset = _TextOffset ?? Schema.GetOffset(0x123E08CFFB9532BE);
             Schema.SetCUtlString(_Handle, _TextOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

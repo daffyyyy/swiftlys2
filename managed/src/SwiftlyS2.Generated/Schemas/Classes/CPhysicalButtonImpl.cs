@@ -16,7 +16,4 @@ internal partial class CPhysicalButtonImpl : CBaseButtonImpl, CPhysicalButton
 {
     public CPhysicalButtonImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseTurtleGraphicsCursor : CPulseExecCursor, ISchemaClass<CPulseTurtleGraphicsCursor>
 {
     static CPulseTurtleGraphicsCursor ISchemaClass<CPulseTurtleGraphicsCursor>.From(nint handle) => new CPulseTurtleGraphicsCursorImpl(handle);
-    static int ISchemaClass<CPulseTurtleGraphicsCursor>.Size => 232;
+    static int ISchemaClass<CPulseTurtleGraphicsCursor>.Size => 240;
     static string? ISchemaClass<CPulseTurtleGraphicsCursor>.ClassName => null;
 
 

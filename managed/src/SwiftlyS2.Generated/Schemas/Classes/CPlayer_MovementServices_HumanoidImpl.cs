@@ -18,56 +18,70 @@ internal partial class CPlayer_MovementServices_HumanoidImpl : CPlayer_MovementS
 
     private static nint? _StepSoundTimeOffset;
 
-    public ref float StepSoundTime {
-        get {
+    public ref float StepSoundTime
+    {
+        get
+        {
             _StepSoundTimeOffset = _StepSoundTimeOffset ?? Schema.GetOffset(0xB65FEA796DEC5F7D);
             return ref _Handle.AsRef<float>(_StepSoundTimeOffset!.Value);
         }
     }
     private static nint? _FallVelocityOffset;
 
-    public ref float FallVelocity {
-        get {
+    public ref float FallVelocity
+    {
+        get
+        {
             _FallVelocityOffset = _FallVelocityOffset ?? Schema.GetOffset(0xB65FEA796D8D7D9D);
             return ref _Handle.AsRef<float>(_FallVelocityOffset!.Value);
         }
     }
     private static nint? _GroundNormalOffset;
 
-    public ref Vector GroundNormal {
-        get {
+    public ref Vector GroundNormal
+    {
+        get
+        {
             _GroundNormalOffset = _GroundNormalOffset ?? Schema.GetOffset(0xB65FEA79ED2C77CD);
             return ref _Handle.AsRef<Vector>(_GroundNormalOffset!.Value);
         }
     }
     private static nint? _SurfaceFrictionOffset;
 
-    public ref float SurfaceFriction {
-        get {
+    public ref float SurfaceFriction
+    {
+        get
+        {
             _SurfaceFrictionOffset = _SurfaceFrictionOffset ?? Schema.GetOffset(0xB65FEA792BCEE768);
             return ref _Handle.AsRef<float>(_SurfaceFrictionOffset!.Value);
         }
     }
     private static nint? _SurfacePropsOffset;
 
-    public ref CUtlStringToken SurfaceProps {
-        get {
+    public ref CUtlStringToken SurfaceProps
+    {
+        get
+        {
             _SurfacePropsOffset = _SurfacePropsOffset ?? Schema.GetOffset(0xB65FEA7974007B42);
             return ref _Handle.AsRef<CUtlStringToken>(_SurfacePropsOffset!.Value);
         }
     }
     private static nint? _StepsideOffset;
 
-    public ref int Stepside {
-        get {
+    public ref int Stepside
+    {
+        get
+        {
             _StepsideOffset = _StepsideOffset ?? Schema.GetOffset(0xB65FEA7919FC0520);
             return ref _Handle.AsRef<int>(_StepsideOffset!.Value);
         }
     }
     private static nint? _SmoothedVelocityOffset;
 
-    public ref Vector SmoothedVelocity {
-        get {
+    public ref Vector SmoothedVelocity
+    {
+        get
+        {
             _SmoothedVelocityOffset = _SmoothedVelocityOffset ?? Schema.GetOffset(0xB65FEA7999186E1D);
             return ref _Handle.AsRef<Vector>(_SmoothedVelocityOffset!.Value);
         }

@@ -14,7 +14,4 @@ public partial interface CPhysMotorAPI : ISchemaClass<CPhysMotorAPI>
     static int ISchemaClass<CPhysMotorAPI>.Size => 8;
     static string? ISchemaClass<CPhysMotorAPI>.ClassName => null;
 
-
-
-
 }

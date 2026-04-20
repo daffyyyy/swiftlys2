@@ -18,28 +18,33 @@ internal partial class FeSimdAnimStrayRadius_tImpl : SchemaClass, FeSimdAnimStra
 
     private static nint? _NodeOffset;
 
-    public SchemaUntypedField Node {
-        get {
+    public SchemaUntypedField Node
+    {
+        get
+        {
             _NodeOffset = _NodeOffset ?? Schema.GetOffset(0xEEC96A9CCD6694B9);
             return new SchemaUntypedField(_Handle + _NodeOffset!.Value);
         }
     }
     private static nint? _MaxDistOffset;
 
-    public ref fltx4 MaxDist {
-        get {
+    public ref fltx4 MaxDist
+    {
+        get
+        {
             _MaxDistOffset = _MaxDistOffset ?? Schema.GetOffset(0xEEC96A9CC9FFDD57);
             return ref _Handle.AsRef<fltx4>(_MaxDistOffset!.Value);
         }
     }
     private static nint? _RelaxationFactorOffset;
 
-    public ref fltx4 RelaxationFactor {
-        get {
+    public ref fltx4 RelaxationFactor
+    {
+        get
+        {
             _RelaxationFactorOffset = _RelaxationFactorOffset ?? Schema.GetOffset(0xEEC96A9C357F3BFF);
             return ref _Handle.AsRef<fltx4>(_RelaxationFactorOffset!.Value);
         }
     }
-
 
 }

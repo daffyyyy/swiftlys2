@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleFunctionRenderer : CParticleFunction, ISchemaClass<CParticleFunctionRenderer>
 {
     static CParticleFunctionRenderer ISchemaClass<CParticleFunctionRenderer>.From(nint handle) => new CParticleFunctionRendererImpl(handle);
-    static int ISchemaClass<CParticleFunctionRenderer>.Size => 544;
+    static int ISchemaClass<CParticleFunctionRenderer>.Size => 552;
     static string? ISchemaClass<CParticleFunctionRenderer>.ClassName => null;
 
 

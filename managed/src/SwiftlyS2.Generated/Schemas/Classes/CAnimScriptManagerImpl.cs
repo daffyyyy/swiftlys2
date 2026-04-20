@@ -18,12 +18,13 @@ internal partial class CAnimScriptManagerImpl : SchemaClass, CAnimScriptManager
 
     private static nint? _ScriptInfoOffset;
 
-    public ref CUtlVector<ScriptInfo_t> ScriptInfo {
-        get {
+    public ref CUtlVector<ScriptInfo_t> ScriptInfo
+    {
+        get
+        {
             _ScriptInfoOffset = _ScriptInfoOffset ?? Schema.GetOffset(0x13962EC3119509F2);
             return ref _Handle.AsRef<CUtlVector<ScriptInfo_t>>(_ScriptInfoOffset!.Value);
         }
     }
-
 
 }

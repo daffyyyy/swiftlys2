@@ -18,12 +18,13 @@ internal partial class CNmFootEventImpl : CNmEventImpl, CNmFootEvent
 
     private static nint? _PhaseOffset;
 
-    public ref NmFootPhase_t Phase {
-        get {
+    public ref NmFootPhase_t Phase
+    {
+        get
+        {
             _PhaseOffset = _PhaseOffset ?? Schema.GetOffset(0x1F9E5CE14846D318);
             return ref _Handle.AsRef<NmFootPhase_t>(_PhaseOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCPanoramaStyleImpl : SchemaClass, Info
 {
     public InfoForResourceTypeCPanoramaStyleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

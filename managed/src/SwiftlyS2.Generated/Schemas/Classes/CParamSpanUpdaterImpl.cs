@@ -18,12 +18,13 @@ internal partial class CParamSpanUpdaterImpl : SchemaClass, CParamSpanUpdater
 
     private static nint? _SpansOffset;
 
-    public ref CUtlVector<ParamSpan_t> Spans {
-        get {
+    public ref CUtlVector<ParamSpan_t> Spans
+    {
+        get
+        {
             _SpansOffset = _SpansOffset ?? Schema.GetOffset(0xA35886AC66213056);
             return ref _Handle.AsRef<CUtlVector<ParamSpan_t>>(_SpansOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CWeaponUMP45Impl : CCSWeaponBaseGunImpl, CWeaponUMP45
 {
     public CWeaponUMP45Impl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,24 +18,30 @@ internal partial class CMolotovProjectileImpl : CBaseCSGrenadeProjectileImpl, CM
 
     private static nint? _IsIncGrenadeOffset;
 
-    public ref bool IsIncGrenade {
-        get {
+    public ref bool IsIncGrenade
+    {
+        get
+        {
             _IsIncGrenadeOffset = _IsIncGrenadeOffset ?? Schema.GetOffset(0xA239EA8F9D1C12B7);
             return ref _Handle.AsRef<bool>(_IsIncGrenadeOffset!.Value);
         }
     }
     private static nint? _DetonatedOffset;
 
-    public ref bool Detonated {
-        get {
+    public ref bool Detonated
+    {
+        get
+        {
             _DetonatedOffset = _DetonatedOffset ?? Schema.GetOffset(0xA239EA8F97D602AF);
             return ref _Handle.AsRef<bool>(_DetonatedOffset!.Value);
         }
     }
     private static nint? _StillTimerOffset;
 
-    public IntervalTimer StillTimer {
-        get {
+    public IntervalTimer StillTimer
+    {
+        get
+        {
             _StillTimerOffset = _StillTimerOffset ?? Schema.GetOffset(0xA239EA8F2772246E);
             return new IntervalTimerImpl(_Handle + _StillTimerOffset!.Value);
         }

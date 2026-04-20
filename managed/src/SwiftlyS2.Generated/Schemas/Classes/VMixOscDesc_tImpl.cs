@@ -18,28 +18,33 @@ internal partial class VMixOscDesc_tImpl : SchemaClass, VMixOscDesc_t
 
     private static nint? _OscTypeOffset;
 
-    public ref VMixLFOShape_t OscType {
-        get {
+    public ref VMixLFOShape_t OscType
+    {
+        get
+        {
             _OscTypeOffset = _OscTypeOffset ?? Schema.GetOffset(0x414F0016106B4054);
             return ref _Handle.AsRef<VMixLFOShape_t>(_OscTypeOffset!.Value);
         }
     }
     private static nint? _FreqOffset;
 
-    public ref float Freq {
-        get {
+    public ref float Freq
+    {
+        get
+        {
             _FreqOffset = _FreqOffset ?? Schema.GetOffset(0x414F00164E0B0897);
             return ref _Handle.AsRef<float>(_FreqOffset!.Value);
         }
     }
     private static nint? _PhaseOffset;
 
-    public ref float Phase {
-        get {
+    public ref float Phase
+    {
+        get
+        {
             _PhaseOffset = _PhaseOffset ?? Schema.GetOffset(0x414F00163C22A9CA);
             return ref _Handle.AsRef<float>(_PhaseOffset!.Value);
         }
     }
-
 
 }

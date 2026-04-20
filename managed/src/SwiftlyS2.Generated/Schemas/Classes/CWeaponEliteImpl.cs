@@ -16,7 +16,4 @@ internal partial class CWeaponEliteImpl : CCSWeaponBaseGunImpl, CWeaponElite
 {
     public CWeaponEliteImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CPulseServerFuncsImpl : SchemaClass, CPulseServerFuncs
 {
     public CPulseServerFuncsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

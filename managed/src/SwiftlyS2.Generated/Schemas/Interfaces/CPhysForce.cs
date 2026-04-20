@@ -15,6 +15,8 @@ public partial interface CPhysForce : CPointEntity, ISchemaClass<CPhysForce>
     static string? ISchemaClass<CPhysForce>.ClassName => null;
 
 
+    public IPhysicsMotionController? Controller { get; }
+
     public string NameAttach { get; set; }
 
     public ref float Force { get; }

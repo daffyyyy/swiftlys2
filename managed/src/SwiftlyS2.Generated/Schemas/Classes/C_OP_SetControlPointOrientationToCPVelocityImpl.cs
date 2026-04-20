@@ -18,20 +18,23 @@ internal partial class C_OP_SetControlPointOrientationToCPVelocityImpl : CPartic
 
     private static nint? _CPInputOffset;
 
-    public ref int CPInput {
-        get {
+    public ref int CPInput
+    {
+        get
+        {
             _CPInputOffset = _CPInputOffset ?? Schema.GetOffset(0x8FFC9885FB805736);
             return ref _Handle.AsRef<int>(_CPInputOffset!.Value);
         }
     }
     private static nint? _CPOutputOffset;
 
-    public ref int CPOutput {
-        get {
+    public ref int CPOutput
+    {
+        get
+        {
             _CPOutputOffset = _CPOutputOffset ?? Schema.GetOffset(0x8FFC98852077C953);
             return ref _Handle.AsRef<int>(_CPOutputOffset!.Value);
         }
     }
-
 
 }

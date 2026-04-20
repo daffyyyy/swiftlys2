@@ -14,7 +14,4 @@ public partial interface CPlayer_ItemServices : CPlayerPawnComponent, ISchemaCla
     static int ISchemaClass<CPlayer_ItemServices>.Size => 72;
     static string? ISchemaClass<CPlayer_ItemServices>.ClassName => null;
 
-
-
-
 }

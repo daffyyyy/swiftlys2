@@ -18,12 +18,13 @@ internal partial class SheetSequenceIntegerId_tImpl : SchemaClass, SheetSequence
 
     private static nint? _ValueOffset;
 
-    public ref uint Value {
-        get {
+    public ref uint Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x7578626BDCB0894A);
             return ref _Handle.AsRef<uint>(_ValueOffset!.Value);
         }
     }
-
 
 }

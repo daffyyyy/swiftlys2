@@ -16,7 +16,4 @@ internal partial class CRuleBrushEntityImpl : CRuleEntityImpl, CRuleBrushEntity
 {
     public CRuleBrushEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

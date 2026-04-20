@@ -18,36 +18,43 @@ internal partial class locksound_tImpl : SchemaClass, locksound_t
 
     private static nint? _LockedSoundOffset;
 
-    public string LockedSound {
-        get {
+    public string LockedSound
+    {
+        get
+        {
             _LockedSoundOffset = _LockedSoundOffset ?? Schema.GetOffset(0xDAD0AE229881D7AB);
             return Schema.GetString(_Handle.Read<nint>(_LockedSoundOffset!.Value));
         }
-        set {
+        set
+        {
             _LockedSoundOffset = _LockedSoundOffset ?? Schema.GetOffset(0xDAD0AE229881D7AB);
             Schema.SetString(_Handle, _LockedSoundOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _UnlockedSoundOffset;
 
-    public string UnlockedSound {
-        get {
+    public string UnlockedSound
+    {
+        get
+        {
             _UnlockedSoundOffset = _UnlockedSoundOffset ?? Schema.GetOffset(0xDAD0AE227EE88276);
             return Schema.GetString(_Handle.Read<nint>(_UnlockedSoundOffset!.Value));
         }
-        set {
+        set
+        {
             _UnlockedSoundOffset = _UnlockedSoundOffset ?? Schema.GetOffset(0xDAD0AE227EE88276);
             Schema.SetString(_Handle, _UnlockedSoundOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FlwaitSoundOffset;
 
-    public GameTime_t FlwaitSound {
-        get {
+    public GameTime_t FlwaitSound
+    {
+        get
+        {
             _FlwaitSoundOffset = _FlwaitSoundOffset ?? Schema.GetOffset(0xDAD0AE2297A4A845);
             return new GameTime_tImpl(_Handle + _FlwaitSoundOffset!.Value);
         }
     }
-
 
 }

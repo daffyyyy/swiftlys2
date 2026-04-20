@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCVDataResource : ISchemaClass<InfoFo
     static int ISchemaClass<InfoForResourceTypeCVDataResource>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCVDataResource>.ClassName => null;
 
-
-
-
 }

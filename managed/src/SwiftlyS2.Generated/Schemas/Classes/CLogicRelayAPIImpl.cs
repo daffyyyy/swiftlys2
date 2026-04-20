@@ -16,7 +16,4 @@ internal partial class CLogicRelayAPIImpl : SchemaClass, CLogicRelayAPI
 {
     public CLogicRelayAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

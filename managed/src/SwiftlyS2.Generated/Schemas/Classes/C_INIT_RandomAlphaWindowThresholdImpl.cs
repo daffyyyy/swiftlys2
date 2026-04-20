@@ -18,28 +18,33 @@ internal partial class C_INIT_RandomAlphaWindowThresholdImpl : CParticleFunction
 
     private static nint? _MinOffset;
 
-    public ref float Min {
-        get {
+    public ref float Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x68DB6A2E3B1A5649);
             return ref _Handle.AsRef<float>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref float Max {
-        get {
+    public ref float Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x68DB6A2E2D06B887);
             return ref _Handle.AsRef<float>(_MaxOffset!.Value);
         }
     }
     private static nint? _ExponentOffset;
 
-    public ref float Exponent {
-        get {
+    public ref float Exponent
+    {
+        get
+        {
             _ExponentOffset = _ExponentOffset ?? Schema.GetOffset(0x68DB6A2E20A7BCBC);
             return ref _Handle.AsRef<float>(_ExponentOffset!.Value);
         }
     }
-
 
 }

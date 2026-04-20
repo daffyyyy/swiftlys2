@@ -18,36 +18,43 @@ internal partial class CPulse_OutputConnectionImpl : SchemaClass, CPulse_OutputC
 
     private static nint? _SourceOutputOffset;
 
-    public SchemaUntypedField SourceOutput {
-        get {
+    public SchemaUntypedField SourceOutput
+    {
+        get
+        {
             _SourceOutputOffset = _SourceOutputOffset ?? Schema.GetOffset(0x6DEBCD452D46D7F5);
             return new SchemaUntypedField(_Handle + _SourceOutputOffset!.Value);
         }
     }
     private static nint? _TargetEntityOffset;
 
-    public SchemaUntypedField TargetEntity {
-        get {
+    public SchemaUntypedField TargetEntity
+    {
+        get
+        {
             _TargetEntityOffset = _TargetEntityOffset ?? Schema.GetOffset(0x6DEBCD45948B1533);
             return new SchemaUntypedField(_Handle + _TargetEntityOffset!.Value);
         }
     }
     private static nint? _TargetInputOffset;
 
-    public SchemaUntypedField TargetInput {
-        get {
+    public SchemaUntypedField TargetInput
+    {
+        get
+        {
             _TargetInputOffset = _TargetInputOffset ?? Schema.GetOffset(0x6DEBCD45F1A0003C);
             return new SchemaUntypedField(_Handle + _TargetInputOffset!.Value);
         }
     }
     private static nint? _ParamOffset;
 
-    public SchemaUntypedField Param {
-        get {
+    public SchemaUntypedField Param
+    {
+        get
+        {
             _ParamOffset = _ParamOffset ?? Schema.GetOffset(0x6DEBCD45E85FEBB2);
             return new SchemaUntypedField(_Handle + _ParamOffset!.Value);
         }
     }
-
 
 }

@@ -18,288 +18,360 @@ internal partial class CEnvVolumetricFogControllerImpl : CBaseEntityImpl, CEnvVo
 
     private static nint? _ScatteringOffset;
 
-    public ref float Scattering {
-        get {
+    public ref float Scattering
+    {
+        get
+        {
             _ScatteringOffset = _ScatteringOffset ?? Schema.GetOffset(0x2A8A520FE243F9E5);
             return ref _Handle.AsRef<float>(_ScatteringOffset!.Value);
         }
     }
     private static nint? _TintColorOffset;
 
-    public ref Color TintColor {
-        get {
+    public ref Color TintColor
+    {
+        get
+        {
             _TintColorOffset = _TintColorOffset ?? Schema.GetOffset(0x2A8A520FAF2613F3);
             return ref _Handle.AsRef<Color>(_TintColorOffset!.Value);
         }
     }
     private static nint? _AnisotropyOffset;
 
-    public ref float Anisotropy {
-        get {
+    public ref float Anisotropy
+    {
+        get
+        {
             _AnisotropyOffset = _AnisotropyOffset ?? Schema.GetOffset(0x2A8A520FE7F1A723);
             return ref _Handle.AsRef<float>(_AnisotropyOffset!.Value);
         }
     }
     private static nint? _FadeSpeedOffset;
 
-    public ref float FadeSpeed {
-        get {
+    public ref float FadeSpeed
+    {
+        get
+        {
             _FadeSpeedOffset = _FadeSpeedOffset ?? Schema.GetOffset(0x2A8A520FC041A38C);
             return ref _Handle.AsRef<float>(_FadeSpeedOffset!.Value);
         }
     }
     private static nint? _DrawDistanceOffset;
 
-    public ref float DrawDistance {
-        get {
+    public ref float DrawDistance
+    {
+        get
+        {
             _DrawDistanceOffset = _DrawDistanceOffset ?? Schema.GetOffset(0x2A8A520F57522D4A);
             return ref _Handle.AsRef<float>(_DrawDistanceOffset!.Value);
         }
     }
     private static nint? _FadeInStartOffset;
 
-    public ref float FadeInStart {
-        get {
+    public ref float FadeInStart
+    {
+        get
+        {
             _FadeInStartOffset = _FadeInStartOffset ?? Schema.GetOffset(0x2A8A520FF5AD2D6A);
             return ref _Handle.AsRef<float>(_FadeInStartOffset!.Value);
         }
     }
     private static nint? _FadeInEndOffset;
 
-    public ref float FadeInEnd {
-        get {
+    public ref float FadeInEnd
+    {
+        get
+        {
             _FadeInEndOffset = _FadeInEndOffset ?? Schema.GetOffset(0x2A8A520FE2C847BF);
             return ref _Handle.AsRef<float>(_FadeInEndOffset!.Value);
         }
     }
     private static nint? _IndirectStrengthOffset;
 
-    public ref float IndirectStrength {
-        get {
+    public ref float IndirectStrength
+    {
+        get
+        {
             _IndirectStrengthOffset = _IndirectStrengthOffset ?? Schema.GetOffset(0x2A8A520F559AA198);
             return ref _Handle.AsRef<float>(_IndirectStrengthOffset!.Value);
         }
     }
     private static nint? _VolumeDepthOffset;
 
-    public ref int VolumeDepth {
-        get {
+    public ref int VolumeDepth
+    {
+        get
+        {
             _VolumeDepthOffset = _VolumeDepthOffset ?? Schema.GetOffset(0x2A8A520F2276C184);
             return ref _Handle.AsRef<int>(_VolumeDepthOffset!.Value);
         }
     }
     private static nint? _FirstVolumeSliceThicknessOffset;
 
-    public ref float FirstVolumeSliceThickness {
-        get {
+    public ref float FirstVolumeSliceThickness
+    {
+        get
+        {
             _FirstVolumeSliceThicknessOffset = _FirstVolumeSliceThicknessOffset ?? Schema.GetOffset(0x2A8A520FCB8BF49F);
             return ref _Handle.AsRef<float>(_FirstVolumeSliceThicknessOffset!.Value);
         }
     }
     private static nint? _IndirectTextureDimXOffset;
 
-    public ref int IndirectTextureDimX {
-        get {
+    public ref int IndirectTextureDimX
+    {
+        get
+        {
             _IndirectTextureDimXOffset = _IndirectTextureDimXOffset ?? Schema.GetOffset(0x2A8A520F885076D4);
             return ref _Handle.AsRef<int>(_IndirectTextureDimXOffset!.Value);
         }
     }
     private static nint? _IndirectTextureDimYOffset;
 
-    public ref int IndirectTextureDimY {
-        get {
+    public ref int IndirectTextureDimY
+    {
+        get
+        {
             _IndirectTextureDimYOffset = _IndirectTextureDimYOffset ?? Schema.GetOffset(0x2A8A520F89507867);
             return ref _Handle.AsRef<int>(_IndirectTextureDimYOffset!.Value);
         }
     }
     private static nint? _IndirectTextureDimZOffset;
 
-    public ref int IndirectTextureDimZ {
-        get {
+    public ref int IndirectTextureDimZ
+    {
+        get
+        {
             _IndirectTextureDimZOffset = _IndirectTextureDimZOffset ?? Schema.GetOffset(0x2A8A520F8A5079FA);
             return ref _Handle.AsRef<int>(_IndirectTextureDimZOffset!.Value);
         }
     }
     private static nint? _BoxMinsOffset;
 
-    public ref Vector BoxMins {
-        get {
+    public ref Vector BoxMins
+    {
+        get
+        {
             _BoxMinsOffset = _BoxMinsOffset ?? Schema.GetOffset(0x2A8A520FD8201373);
             return ref _Handle.AsRef<Vector>(_BoxMinsOffset!.Value);
         }
     }
     private static nint? _BoxMaxsOffset;
 
-    public ref Vector BoxMaxs {
-        get {
+    public ref Vector BoxMaxs
+    {
+        get
+        {
             _BoxMaxsOffset = _BoxMaxsOffset ?? Schema.GetOffset(0x2A8A520F817A3B31);
             return ref _Handle.AsRef<Vector>(_BoxMaxsOffset!.Value);
         }
     }
     private static nint? _ActiveOffset;
 
-    public ref bool Active {
-        get {
+    public ref bool Active
+    {
+        get
+        {
             _ActiveOffset = _ActiveOffset ?? Schema.GetOffset(0x2A8A520F8334208F);
             return ref _Handle.AsRef<bool>(_ActiveOffset!.Value);
         }
     }
     private static nint? _StartAnisoTimeOffset;
 
-    public GameTime_t StartAnisoTime {
-        get {
+    public GameTime_t StartAnisoTime
+    {
+        get
+        {
             _StartAnisoTimeOffset = _StartAnisoTimeOffset ?? Schema.GetOffset(0x2A8A520F84853AEE);
             return new GameTime_tImpl(_Handle + _StartAnisoTimeOffset!.Value);
         }
     }
     private static nint? _StartScatterTimeOffset;
 
-    public GameTime_t StartScatterTime {
-        get {
+    public GameTime_t StartScatterTime
+    {
+        get
+        {
             _StartScatterTimeOffset = _StartScatterTimeOffset ?? Schema.GetOffset(0x2A8A520F550791B8);
             return new GameTime_tImpl(_Handle + _StartScatterTimeOffset!.Value);
         }
     }
     private static nint? _StartDrawDistanceTimeOffset;
 
-    public GameTime_t StartDrawDistanceTime {
-        get {
+    public GameTime_t StartDrawDistanceTime
+    {
+        get
+        {
             _StartDrawDistanceTimeOffset = _StartDrawDistanceTimeOffset ?? Schema.GetOffset(0x2A8A520F0108704D);
             return new GameTime_tImpl(_Handle + _StartDrawDistanceTimeOffset!.Value);
         }
     }
     private static nint? _StartAnisotropyOffset;
 
-    public ref float StartAnisotropy {
-        get {
+    public ref float StartAnisotropy
+    {
+        get
+        {
             _StartAnisotropyOffset = _StartAnisotropyOffset ?? Schema.GetOffset(0x2A8A520FCFF4A7DD);
             return ref _Handle.AsRef<float>(_StartAnisotropyOffset!.Value);
         }
     }
     private static nint? _StartScatteringOffset;
 
-    public ref float StartScattering {
-        get {
+    public ref float StartScattering
+    {
+        get
+        {
             _StartScatteringOffset = _StartScatteringOffset ?? Schema.GetOffset(0x2A8A520F134FA97F);
             return ref _Handle.AsRef<float>(_StartScatteringOffset!.Value);
         }
     }
     private static nint? _StartDrawDistanceOffset;
 
-    public ref float StartDrawDistance {
-        get {
+    public ref float StartDrawDistance
+    {
+        get
+        {
             _StartDrawDistanceOffset = _StartDrawDistanceOffset ?? Schema.GetOffset(0x2A8A520FCF179D0C);
             return ref _Handle.AsRef<float>(_StartDrawDistanceOffset!.Value);
         }
     }
     private static nint? _DefaultAnisotropyOffset;
 
-    public ref float DefaultAnisotropy {
-        get {
+    public ref float DefaultAnisotropy
+    {
+        get
+        {
             _DefaultAnisotropyOffset = _DefaultAnisotropyOffset ?? Schema.GetOffset(0x2A8A520FB9484338);
             return ref _Handle.AsRef<float>(_DefaultAnisotropyOffset!.Value);
         }
     }
     private static nint? _DefaultScatteringOffset;
 
-    public ref float DefaultScattering {
-        get {
+    public ref float DefaultScattering
+    {
+        get
+        {
             _DefaultScatteringOffset = _DefaultScatteringOffset ?? Schema.GetOffset(0x2A8A520F3F2D053A);
             return ref _Handle.AsRef<float>(_DefaultScatteringOffset!.Value);
         }
     }
     private static nint? _DefaultDrawDistanceOffset;
 
-    public ref float DefaultDrawDistance {
-        get {
+    public ref float DefaultDrawDistance
+    {
+        get
+        {
             _DefaultDrawDistanceOffset = _DefaultDrawDistanceOffset ?? Schema.GetOffset(0x2A8A520FCCADC381);
             return ref _Handle.AsRef<float>(_DefaultDrawDistanceOffset!.Value);
         }
     }
     private static nint? _StartDisabledOffset;
 
-    public ref bool StartDisabled {
-        get {
+    public ref bool StartDisabled
+    {
+        get
+        {
             _StartDisabledOffset = _StartDisabledOffset ?? Schema.GetOffset(0x2A8A520F61ED0C4F);
             return ref _Handle.AsRef<bool>(_StartDisabledOffset!.Value);
         }
     }
     private static nint? _EnableIndirectOffset;
 
-    public ref bool EnableIndirect {
-        get {
+    public ref bool EnableIndirect
+    {
+        get
+        {
             _EnableIndirectOffset = _EnableIndirectOffset ?? Schema.GetOffset(0x2A8A520FD9682660);
             return ref _Handle.AsRef<bool>(_EnableIndirectOffset!.Value);
         }
     }
     private static nint? _IsMasterOffset;
 
-    public ref bool IsMaster {
-        get {
+    public ref bool IsMaster
+    {
+        get
+        {
             _IsMasterOffset = _IsMasterOffset ?? Schema.GetOffset(0x2A8A520FDE5719A3);
             return ref _Handle.AsRef<bool>(_IsMasterOffset!.Value);
         }
     }
     private static nint? _FogIndirectTextureOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogIndirectTexture {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogIndirectTexture
+    {
+        get
+        {
             _FogIndirectTextureOffset = _FogIndirectTextureOffset ?? Schema.GetOffset(0x2A8A520FD42D635A);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(_FogIndirectTextureOffset!.Value);
         }
     }
     private static nint? _ForceRefreshCountOffset;
 
-    public ref int ForceRefreshCount {
-        get {
+    public ref int ForceRefreshCount
+    {
+        get
+        {
             _ForceRefreshCountOffset = _ForceRefreshCountOffset ?? Schema.GetOffset(0x2A8A520F77E98C4A);
             return ref _Handle.AsRef<int>(_ForceRefreshCountOffset!.Value);
         }
     }
     private static nint? _NoiseSpeedOffset;
 
-    public ref float NoiseSpeed {
-        get {
+    public ref float NoiseSpeed
+    {
+        get
+        {
             _NoiseSpeedOffset = _NoiseSpeedOffset ?? Schema.GetOffset(0x2A8A520F5C5BB620);
             return ref _Handle.AsRef<float>(_NoiseSpeedOffset!.Value);
         }
     }
     private static nint? _NoiseStrengthOffset;
 
-    public ref float NoiseStrength {
-        get {
+    public ref float NoiseStrength
+    {
+        get
+        {
             _NoiseStrengthOffset = _NoiseStrengthOffset ?? Schema.GetOffset(0x2A8A520F556ED5D0);
             return ref _Handle.AsRef<float>(_NoiseStrengthOffset!.Value);
         }
     }
     private static nint? _NoiseScaleOffset;
 
-    public ref Vector NoiseScale {
-        get {
+    public ref Vector NoiseScale
+    {
+        get
+        {
             _NoiseScaleOffset = _NoiseScaleOffset ?? Schema.GetOffset(0x2A8A520F420F9B01);
             return ref _Handle.AsRef<Vector>(_NoiseScaleOffset!.Value);
         }
     }
     private static nint? _WindSpeedOffset;
 
-    public ref float WindSpeed {
-        get {
+    public ref float WindSpeed
+    {
+        get
+        {
             _WindSpeedOffset = _WindSpeedOffset ?? Schema.GetOffset(0x2A8A520F37AADB3E);
             return ref _Handle.AsRef<float>(_WindSpeedOffset!.Value);
         }
     }
     private static nint? _WindDirectionOffset;
 
-    public ref Vector WindDirection {
-        get {
+    public ref Vector WindDirection
+    {
+        get
+        {
             _WindDirectionOffset = _WindDirectionOffset ?? Schema.GetOffset(0x2A8A520FED0F7D3C);
             return ref _Handle.AsRef<Vector>(_WindDirectionOffset!.Value);
         }
     }
     private static nint? _FirstTimeOffset;
 
-    public ref bool FirstTime {
-        get {
+    public ref bool FirstTime
+    {
+        get
+        {
             _FirstTimeOffset = _FirstTimeOffset ?? Schema.GetOffset(0x2A8A520FD23C3138);
             return ref _Handle.AsRef<bool>(_FirstTimeOffset!.Value);
         }

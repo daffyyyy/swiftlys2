@@ -18,12 +18,13 @@ internal partial class AmmoIndex_tImpl : SchemaClass, AmmoIndex_t
 
     private static nint? _ValueOffset;
 
-    public ref byte Value {
-        get {
+    public ref byte Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x47E6281EDCB0894A);
             return ref _Handle.AsRef<byte>(_ValueOffset!.Value);
         }
     }
-
 
 }

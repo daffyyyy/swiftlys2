@@ -18,20 +18,23 @@ internal partial class CRopeOverlapHitImpl : SchemaClass, CRopeOverlapHit
 
     private static nint? _EntityOffset;
 
-    public ref CHandle<CBaseEntity> Entity {
-        get {
+    public ref CHandle<CBaseEntity> Entity
+    {
+        get
+        {
             _EntityOffset = _EntityOffset ?? Schema.GetOffset(0x9262EE3E6EBADCB0);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EntityOffset!.Value);
         }
     }
     private static nint? _OverlappingLinksOffset;
 
-    public ref CUtlVector<int> OverlappingLinks {
-        get {
+    public ref CUtlVector<int> OverlappingLinks
+    {
+        get
+        {
             _OverlappingLinksOffset = _OverlappingLinksOffset ?? Schema.GetOffset(0x9262EE3E44D0B359);
             return ref _Handle.AsRef<CUtlVector<int>>(_OverlappingLinksOffset!.Value);
         }
     }
-
 
 }

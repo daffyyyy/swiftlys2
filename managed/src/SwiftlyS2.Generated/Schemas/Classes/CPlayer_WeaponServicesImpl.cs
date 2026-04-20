@@ -18,35 +18,44 @@ internal partial class CPlayer_WeaponServicesImpl : CPlayerPawnComponentImpl, CP
 
     private static nint? _MyWeaponsOffset;
 
-    public ref CUtlVector<CHandle<CBasePlayerWeapon>> MyWeapons {
-        get {
+    public ref CUtlVector<CHandle<CBasePlayerWeapon>> MyWeapons
+    {
+        get
+        {
             _MyWeaponsOffset = _MyWeaponsOffset ?? Schema.GetOffset(0x634D22804C8A13A6);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBasePlayerWeapon>>>(_MyWeaponsOffset!.Value);
         }
     }
     private static nint? _ActiveWeaponOffset;
 
-    public ref CHandle<CBasePlayerWeapon> ActiveWeapon {
-        get {
+    public ref CHandle<CBasePlayerWeapon> ActiveWeapon
+    {
+        get
+        {
             _ActiveWeaponOffset = _ActiveWeaponOffset ?? Schema.GetOffset(0x634D2280940131C5);
             return ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(_ActiveWeaponOffset!.Value);
         }
     }
     private static nint? _LastWeaponOffset;
 
-    public ref CHandle<CBasePlayerWeapon> LastWeapon {
-        get {
+    public ref CHandle<CBasePlayerWeapon> LastWeapon
+    {
+        get
+        {
             _LastWeaponOffset = _LastWeaponOffset ?? Schema.GetOffset(0x634D2280EA5C9547);
             return ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(_LastWeaponOffset!.Value);
         }
     }
-    public ISchemaFixedArray<ushort> Ammo {
+    public ISchemaFixedArray<ushort> Ammo
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x634D22800D59E6CA, 32, 2, 2);
     }
     private static nint? _PreventWeaponPickupOffset;
 
-    public ref bool PreventWeaponPickup {
-        get {
+    public ref bool PreventWeaponPickup
+    {
+        get
+        {
             _PreventWeaponPickupOffset = _PreventWeaponPickupOffset ?? Schema.GetOffset(0x634D228093894029);
             return ref _Handle.AsRef<bool>(_PreventWeaponPickupOffset!.Value);
         }

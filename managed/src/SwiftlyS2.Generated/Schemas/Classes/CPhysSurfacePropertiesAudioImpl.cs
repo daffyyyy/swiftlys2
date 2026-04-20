@@ -18,68 +18,83 @@ internal partial class CPhysSurfacePropertiesAudioImpl : SchemaClass, CPhysSurfa
 
     private static nint? _ReflectivityOffset;
 
-    public ref float Reflectivity {
-        get {
+    public ref float Reflectivity
+    {
+        get
+        {
             _ReflectivityOffset = _ReflectivityOffset ?? Schema.GetOffset(0x7FD94D2E904671F3);
             return ref _Handle.AsRef<float>(_ReflectivityOffset!.Value);
         }
     }
     private static nint? _HardnessFactorOffset;
 
-    public ref float HardnessFactor {
-        get {
+    public ref float HardnessFactor
+    {
+        get
+        {
             _HardnessFactorOffset = _HardnessFactorOffset ?? Schema.GetOffset(0x7FD94D2E376CBD68);
             return ref _Handle.AsRef<float>(_HardnessFactorOffset!.Value);
         }
     }
     private static nint? _RoughnessFactorOffset;
 
-    public ref float RoughnessFactor {
-        get {
+    public ref float RoughnessFactor
+    {
+        get
+        {
             _RoughnessFactorOffset = _RoughnessFactorOffset ?? Schema.GetOffset(0x7FD94D2E8F4C4316);
             return ref _Handle.AsRef<float>(_RoughnessFactorOffset!.Value);
         }
     }
     private static nint? _RoughThresholdOffset;
 
-    public ref float RoughThreshold {
-        get {
+    public ref float RoughThreshold
+    {
+        get
+        {
             _RoughThresholdOffset = _RoughThresholdOffset ?? Schema.GetOffset(0x7FD94D2EEB458AD9);
             return ref _Handle.AsRef<float>(_RoughThresholdOffset!.Value);
         }
     }
     private static nint? _HardThresholdOffset;
 
-    public ref float HardThreshold {
-        get {
+    public ref float HardThreshold
+    {
+        get
+        {
             _HardThresholdOffset = _HardThresholdOffset ?? Schema.GetOffset(0x7FD94D2EEE4B563F);
             return ref _Handle.AsRef<float>(_HardThresholdOffset!.Value);
         }
     }
     private static nint? _HardVelocityThresholdOffset;
 
-    public ref float HardVelocityThreshold {
-        get {
+    public ref float HardVelocityThreshold
+    {
+        get
+        {
             _HardVelocityThresholdOffset = _HardVelocityThresholdOffset ?? Schema.GetOffset(0x7FD94D2E296B6B62);
             return ref _Handle.AsRef<float>(_HardVelocityThresholdOffset!.Value);
         }
     }
     private static nint? _StaticImpactVolumeOffset;
 
-    public ref float StaticImpactVolume {
-        get {
+    public ref float StaticImpactVolume
+    {
+        get
+        {
             _StaticImpactVolumeOffset = _StaticImpactVolumeOffset ?? Schema.GetOffset(0x7FD94D2E04124001);
             return ref _Handle.AsRef<float>(_StaticImpactVolumeOffset!.Value);
         }
     }
     private static nint? _OcclusionFactorOffset;
 
-    public ref float OcclusionFactor {
-        get {
+    public ref float OcclusionFactor
+    {
+        get
+        {
             _OcclusionFactorOffset = _OcclusionFactorOffset ?? Schema.GetOffset(0x7FD94D2E2D764853);
             return ref _Handle.AsRef<float>(_OcclusionFactorOffset!.Value);
         }
     }
-
 
 }

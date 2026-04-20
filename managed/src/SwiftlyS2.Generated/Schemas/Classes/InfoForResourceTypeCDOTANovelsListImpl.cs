@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCDOTANovelsListImpl : SchemaClass, Inf
 {
     public InfoForResourceTypeCDOTANovelsListImpl(nint handle) : base(handle) { }
 
-
-
-
 }

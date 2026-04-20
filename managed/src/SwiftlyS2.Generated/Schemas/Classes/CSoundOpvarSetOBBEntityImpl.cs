@@ -16,7 +16,4 @@ internal partial class CSoundOpvarSetOBBEntityImpl : CSoundOpvarSetAABBEntityImp
 {
     public CSoundOpvarSetOBBEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CCSPointPulseAPIImpl : SchemaClass, CCSPointPulseAPI
 {
     public CCSPointPulseAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

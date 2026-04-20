@@ -16,7 +16,4 @@ internal partial class CParticleFunctionOperatorImpl : CParticleFunctionImpl, CP
 {
     public CParticleFunctionOperatorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CPlayer_ItemServicesImpl : CPlayerPawnComponentImpl, CPla
 {
     public CPlayer_ItemServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,16 +18,18 @@ internal partial class CFilterContextImpl : CBaseFilterImpl, CFilterContext
 
     private static nint? _FilterContextOffset;
 
-    public string FilterContext {
-        get {
+    public string FilterContext
+    {
+        get
+        {
             _FilterContextOffset = _FilterContextOffset ?? Schema.GetOffset(0xA9DA7EEFF90438D1);
             return Schema.GetString(_Handle.Read<nint>(_FilterContextOffset!.Value));
         }
-        set {
+        set
+        {
             _FilterContextOffset = _FilterContextOffset ?? Schema.GetOffset(0xA9DA7EEFF90438D1);
             Schema.SetString(_Handle, _FilterContextOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

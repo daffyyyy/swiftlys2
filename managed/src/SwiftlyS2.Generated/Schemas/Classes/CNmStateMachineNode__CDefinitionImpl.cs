@@ -18,20 +18,23 @@ internal partial class CNmStateMachineNode__CDefinitionImpl : CNmPoseNode__CDefi
 
     private static nint? _StateDefinitionsOffset;
 
-    public SchemaUntypedField StateDefinitions {
-        get {
+    public SchemaUntypedField StateDefinitions
+    {
+        get
+        {
             _StateDefinitionsOffset = _StateDefinitionsOffset ?? Schema.GetOffset(0xA73F392775230B54);
             return new SchemaUntypedField(_Handle + _StateDefinitionsOffset!.Value);
         }
     }
     private static nint? _DefaultStateIndexOffset;
 
-    public ref short DefaultStateIndex {
-        get {
+    public ref short DefaultStateIndex
+    {
+        get
+        {
             _DefaultStateIndexOffset = _DefaultStateIndexOffset ?? Schema.GetOffset(0xA73F39276C1EC5ED);
             return ref _Handle.AsRef<short>(_DefaultStateIndexOffset!.Value);
         }
     }
-
 
 }

@@ -33,6 +33,8 @@ public partial interface CEnvShake : CPointEntity, ISchemaClass<CEnvShake>
 
     public ref Vector MaxForce { get; }
 
+    public IPhysicsMotionController? ShakeController { get; }
+
     public CPhysicsShake ShakeCallback { get; }
 
 

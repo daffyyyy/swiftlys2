@@ -18,84 +18,103 @@ internal partial class C_OP_RemapCPtoCPImpl : CParticleFunctionPreEmissionImpl, 
 
     private static nint? _InputControlPointOffset;
 
-    public ref int InputControlPoint {
-        get {
+    public ref int InputControlPoint
+    {
+        get
+        {
             _InputControlPointOffset = _InputControlPointOffset ?? Schema.GetOffset(0xF7F0A2676A869E3E);
             return ref _Handle.AsRef<int>(_InputControlPointOffset!.Value);
         }
     }
     private static nint? _OutputControlPointOffset;
 
-    public ref int OutputControlPoint {
-        get {
+    public ref int OutputControlPoint
+    {
+        get
+        {
             _OutputControlPointOffset = _OutputControlPointOffset ?? Schema.GetOffset(0xF7F0A267266B0FD9);
             return ref _Handle.AsRef<int>(_OutputControlPointOffset!.Value);
         }
     }
     private static nint? _InputFieldOffset;
 
-    public ref int InputField {
-        get {
+    public ref int InputField
+    {
+        get
+        {
             _InputFieldOffset = _InputFieldOffset ?? Schema.GetOffset(0xF7F0A267FB4C1579);
             return ref _Handle.AsRef<int>(_InputFieldOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ref int OutputField {
-        get {
+    public ref int OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0xF7F0A267324F6F74);
             return ref _Handle.AsRef<int>(_OutputFieldOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public ref float InputMin {
-        get {
+    public ref float InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0xF7F0A267E88A0D0F);
             return ref _Handle.AsRef<float>(_InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public ref float InputMax {
-        get {
+    public ref float InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0xF7F0A267D6766901);
             return ref _Handle.AsRef<float>(_InputMaxOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public ref float OutputMin {
-        get {
+    public ref float OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0xF7F0A2675F8D7716);
             return ref _Handle.AsRef<float>(_OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public ref float OutputMax {
-        get {
+    public ref float OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0xF7F0A26751A0E8C4);
             return ref _Handle.AsRef<float>(_OutputMaxOffset!.Value);
         }
     }
     private static nint? _DerivativeOffset;
 
-    public ref bool Derivative {
-        get {
+    public ref bool Derivative
+    {
+        get
+        {
             _DerivativeOffset = _DerivativeOffset ?? Schema.GetOffset(0xF7F0A267D10213C0);
             return ref _Handle.AsRef<bool>(_DerivativeOffset!.Value);
         }
     }
     private static nint? _InterpRateOffset;
 
-    public ref float InterpRate {
-        get {
+    public ref float InterpRate
+    {
+        get
+        {
             _InterpRateOffset = _InterpRateOffset ?? Schema.GetOffset(0xF7F0A267D3B705A7);
             return ref _Handle.AsRef<float>(_InterpRateOffset!.Value);
         }
     }
-
 
 }

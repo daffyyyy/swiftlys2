@@ -18,28 +18,33 @@ internal partial class CNmParameterizedBlendNode__CDefinitionImpl : CNmPoseNode_
 
     private static nint? _SourceNodeIndicesOffset;
 
-    public SchemaUntypedField SourceNodeIndices {
-        get {
+    public SchemaUntypedField SourceNodeIndices
+    {
+        get
+        {
             _SourceNodeIndicesOffset = _SourceNodeIndicesOffset ?? Schema.GetOffset(0x83A56F31E90F1FE1);
             return new SchemaUntypedField(_Handle + _SourceNodeIndicesOffset!.Value);
         }
     }
     private static nint? _InputParameterValueNodeIdxOffset;
 
-    public ref short InputParameterValueNodeIdx {
-        get {
+    public ref short InputParameterValueNodeIdx
+    {
+        get
+        {
             _InputParameterValueNodeIdxOffset = _InputParameterValueNodeIdxOffset ?? Schema.GetOffset(0x83A56F31AEA94516);
             return ref _Handle.AsRef<short>(_InputParameterValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _AllowLoopingOffset;
 
-    public ref bool AllowLooping {
-        get {
+    public ref bool AllowLooping
+    {
+        get
+        {
             _AllowLoopingOffset = _AllowLoopingOffset ?? Schema.GetOffset(0x83A56F31FEB26D98);
             return ref _Handle.AsRef<bool>(_AllowLoopingOffset!.Value);
         }
     }
-
 
 }

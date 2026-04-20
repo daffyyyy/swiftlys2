@@ -18,36 +18,43 @@ internal partial class C_INIT_ScreenSpacePositionOfTargetImpl : CParticleFunctio
 
     private static nint? _TargetPositionOffset;
 
-    public CPerParticleVecInput TargetPosition {
-        get {
+    public CPerParticleVecInput TargetPosition
+    {
+        get
+        {
             _TargetPositionOffset = _TargetPositionOffset ?? Schema.GetOffset(0xBA53E3F7554C563B);
             return new CPerParticleVecInputImpl(_Handle + _TargetPositionOffset!.Value);
         }
     }
     private static nint? _OututBehindnessOffset;
 
-    public ref bool OututBehindness {
-        get {
+    public ref bool OututBehindness
+    {
+        get
+        {
             _OututBehindnessOffset = _OututBehindnessOffset ?? Schema.GetOffset(0xBA53E3F7DB123D49);
             return ref _Handle.AsRef<bool>(_OututBehindnessOffset!.Value);
         }
     }
     private static nint? _BehindFieldOutputOffset;
 
-    public ParticleAttributeIndex_t BehindFieldOutput {
-        get {
+    public ParticleAttributeIndex_t BehindFieldOutput
+    {
+        get
+        {
             _BehindFieldOutputOffset = _BehindFieldOutputOffset ?? Schema.GetOffset(0xBA53E3F769F4F392);
             return new ParticleAttributeIndex_tImpl(_Handle + _BehindFieldOutputOffset!.Value);
         }
     }
     private static nint? _BehindOutputRemapOffset;
 
-    public CParticleRemapFloatInput BehindOutputRemap {
-        get {
+    public CParticleRemapFloatInput BehindOutputRemap
+    {
+        get
+        {
             _BehindOutputRemapOffset = _BehindOutputRemapOffset ?? Schema.GetOffset(0xBA53E3F74B35FBF3);
             return new CParticleRemapFloatInputImpl(_Handle + _BehindOutputRemapOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CAnimEnumImpl : SchemaClass, CAnimEnum
 
     private static nint? _ValueOffset;
 
-    public ref byte Value {
-        get {
+    public ref byte Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xFB67C2A26B99AEEA);
             return ref _Handle.AsRef<byte>(_ValueOffset!.Value);
         }
     }
-
 
 }

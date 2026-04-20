@@ -18,48 +18,58 @@ internal partial class CAnimTagBaseImpl : SchemaClass, CAnimTagBase
 
     private static nint? _NameOffset;
 
-    public ref CGlobalSymbol Name {
-        get {
+    public ref CGlobalSymbol Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x8F7709C44D8F5786);
             return ref _Handle.AsRef<CGlobalSymbol>(_NameOffset!.Value);
         }
     }
     private static nint? _CommentOffset;
 
-    public string Comment {
-        get {
+    public string Comment
+    {
+        get
+        {
             _CommentOffset = _CommentOffset ?? Schema.GetOffset(0x8F7709C488A0B4DF);
             return Schema.GetCUtlString(_Handle.Read<nint>(_CommentOffset!.Value));
         }
-        set {
+        set
+        {
             _CommentOffset = _CommentOffset ?? Schema.GetOffset(0x8F7709C488A0B4DF);
             Schema.SetCUtlString(_Handle, _CommentOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _GroupOffset;
 
-    public ref CGlobalSymbol Group {
-        get {
+    public ref CGlobalSymbol Group
+    {
+        get
+        {
             _GroupOffset = _GroupOffset ?? Schema.GetOffset(0x8F7709C49FC645AC);
             return ref _Handle.AsRef<CGlobalSymbol>(_GroupOffset!.Value);
         }
     }
     private static nint? _TagIDOffset;
 
-    public AnimTagID TagID {
-        get {
+    public AnimTagID TagID
+    {
+        get
+        {
             _TagIDOffset = _TagIDOffset ?? Schema.GetOffset(0x8F7709C41F65DDFE);
             return new AnimTagIDImpl(_Handle + _TagIDOffset!.Value);
         }
     }
     private static nint? _IsReferencedOffset;
 
-    public ref bool IsReferenced {
-        get {
+    public ref bool IsReferenced
+    {
+        get
+        {
             _IsReferencedOffset = _IsReferencedOffset ?? Schema.GetOffset(0x8F7709C4CEABFB2A);
             return ref _Handle.AsRef<bool>(_IsReferencedOffset!.Value);
         }
     }
-
 
 }

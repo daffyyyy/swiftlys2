@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCEntityLumpImpl : SchemaClass, InfoFor
 {
     public InfoForResourceTypeCEntityLumpImpl(nint handle) : base(handle) { }
 
-
-
-
 }

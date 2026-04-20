@@ -14,7 +14,4 @@ public partial interface CParticleInput : ISchemaClass<CParticleInput>
     static int ISchemaClass<CParticleInput>.Size => 16;
     static string? ISchemaClass<CParticleInput>.ClassName => null;
 
-
-
-
 }

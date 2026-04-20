@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ExternalAnimGraphInactiveBehavior_t : byte
 {
- eNone = 0,
-
- eUnbind = 1,
-
- eUnbindAndDelete = 2,
+    eNone = 0,
+    eUnbind = 1,
+    eUnbindAndDelete = 2,
 }

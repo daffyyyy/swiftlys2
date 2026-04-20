@@ -16,7 +16,4 @@ internal partial class CWeaponUSPSilencerImpl : CCSWeaponBaseGunImpl, CWeaponUSP
 {
     public CWeaponUSPSilencerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

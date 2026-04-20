@@ -18,68 +18,83 @@ internal partial class C_OP_PlanarConstraintImpl : CParticleFunctionConstraintIm
 
     private static nint? _PointOnPlaneOffset;
 
-    public ref Vector PointOnPlane {
-        get {
+    public ref Vector PointOnPlane
+    {
+        get
+        {
             _PointOnPlaneOffset = _PointOnPlaneOffset ?? Schema.GetOffset(0x1440B2AE4A5806BE);
             return ref _Handle.AsRef<Vector>(_PointOnPlaneOffset!.Value);
         }
     }
     private static nint? _PlaneNormalOffset;
 
-    public ref Vector PlaneNormal {
-        get {
+    public ref Vector PlaneNormal
+    {
+        get
+        {
             _PlaneNormalOffset = _PlaneNormalOffset ?? Schema.GetOffset(0x1440B2AEEAA80062);
             return ref _Handle.AsRef<Vector>(_PlaneNormalOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x1440B2AE3F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _GlobalOriginOffset;
 
-    public ref bool GlobalOrigin {
-        get {
+    public ref bool GlobalOrigin
+    {
+        get
+        {
             _GlobalOriginOffset = _GlobalOriginOffset ?? Schema.GetOffset(0x1440B2AEDF871518);
             return ref _Handle.AsRef<bool>(_GlobalOriginOffset!.Value);
         }
     }
     private static nint? _GlobalNormalOffset;
 
-    public ref bool GlobalNormal {
-        get {
+    public ref bool GlobalNormal
+    {
+        get
+        {
             _GlobalNormalOffset = _GlobalNormalOffset ?? Schema.GetOffset(0x1440B2AE266C15DD);
             return ref _Handle.AsRef<bool>(_GlobalNormalOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public CPerParticleFloatInput RadiusScale {
-        get {
+    public CPerParticleFloatInput RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0x1440B2AEA7A20159);
             return new CPerParticleFloatInputImpl(_Handle + _RadiusScaleOffset!.Value);
         }
     }
     private static nint? _MaximumDistanceToCPOffset;
 
-    public CParticleCollectionFloatInput MaximumDistanceToCP {
-        get {
+    public CParticleCollectionFloatInput MaximumDistanceToCP
+    {
+        get
+        {
             _MaximumDistanceToCPOffset = _MaximumDistanceToCPOffset ?? Schema.GetOffset(0x1440B2AE91B48FEA);
             return new CParticleCollectionFloatInputImpl(_Handle + _MaximumDistanceToCPOffset!.Value);
         }
     }
     private static nint? _UseOldCodeOffset;
 
-    public ref bool UseOldCode {
-        get {
+    public ref bool UseOldCode
+    {
+        get
+        {
             _UseOldCodeOffset = _UseOldCodeOffset ?? Schema.GetOffset(0x1440B2AEB7886300);
             return ref _Handle.AsRef<bool>(_UseOldCodeOffset!.Value);
         }
     }
-
 
 }

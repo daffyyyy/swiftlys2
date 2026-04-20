@@ -18,36 +18,43 @@ internal partial class C_OP_MovementLoopInsideSphereImpl : CParticleFunctionOper
 
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x7C19959FEB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _DistanceOffset;
 
-    public CParticleCollectionFloatInput Distance {
-        get {
+    public CParticleCollectionFloatInput Distance
+    {
+        get
+        {
             _DistanceOffset = _DistanceOffset ?? Schema.GetOffset(0x7C19959F00DC4A68);
             return new CParticleCollectionFloatInputImpl(_Handle + _DistanceOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public CParticleCollectionVecInput Scale {
-        get {
+    public CParticleCollectionVecInput Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x7C19959F5F596B51);
             return new CParticleCollectionVecInputImpl(_Handle + _ScaleOffset!.Value);
         }
     }
     private static nint? _DistSqrAttrOffset;
 
-    public ParticleAttributeIndex_t DistSqrAttr {
-        get {
+    public ParticleAttributeIndex_t DistSqrAttr
+    {
+        get
+        {
             _DistSqrAttrOffset = _DistSqrAttrOffset ?? Schema.GetOffset(0x7C19959F767818FE);
             return new ParticleAttributeIndex_tImpl(_Handle + _DistSqrAttrOffset!.Value);
         }
     }
-
 
 }

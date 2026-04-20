@@ -18,24 +18,28 @@ internal partial class CDirectPlaybackTagDataImpl : SchemaClass, CDirectPlayback
 
     private static nint? _SequenceNameOffset;
 
-    public string SequenceName {
-        get {
+    public string SequenceName
+    {
+        get
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0xAADCE162B4A24CB);
             return Schema.GetCUtlString(_Handle.Read<nint>(_SequenceNameOffset!.Value));
         }
-        set {
+        set
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0xAADCE162B4A24CB);
             Schema.SetCUtlString(_Handle, _SequenceNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TagsOffset;
 
-    public ref CUtlVector<TagSpan_t> Tags {
-        get {
+    public ref CUtlVector<TagSpan_t> Tags
+    {
+        get
+        {
             _TagsOffset = _TagsOffset ?? Schema.GetOffset(0xAADCE16B46C8540);
             return ref _Handle.AsRef<CUtlVector<TagSpan_t>>(_TagsOffset!.Value);
         }
     }
-
 
 }

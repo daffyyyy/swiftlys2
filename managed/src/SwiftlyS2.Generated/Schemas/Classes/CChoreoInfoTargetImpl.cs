@@ -16,7 +16,4 @@ internal partial class CChoreoInfoTargetImpl : CPointEntityImpl, CChoreoInfoTarg
 {
     public CChoreoInfoTargetImpl(nint handle) : base(handle) { }
 
-
-
-
 }

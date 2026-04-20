@@ -11,15 +11,28 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSceneRequest : ISchemaClass<CSceneRequest>
 {
     static CSceneRequest ISchemaClass<CSceneRequest>.From(nint handle) => new CSceneRequestImpl(handle);
-    static int ISchemaClass<CSceneRequest>.Size => 32;
+    static int ISchemaClass<CSceneRequest>.Size => 136;
     static string? ISchemaClass<CSceneRequest>.ClassName => null;
 
 
-    public string PayloadTypeName { get; set; }
+    public string PayloadVDataName { get; set; }
 
     public SceneRequestHandle_t Handle { get; }
 
     public ref ESceneRequestState_t State { get; }
+
+    public ref ENPCBehaviorOverride_t NPCBehaviorOverride { get; }
+
+    public ref CUtlVector<SceneRequestTargetMapPair_t> ActorMap { get; }
+
+    public ref CUtlVector<SceneRequestTargetMapPair_t> AnchorMap { get; }
+
+    public ref CUtlVector<SceneRequestTargetMapPair_t> GraphMap { get; }
+
+    public ref CHandle<CBaseEntity> Owner { get; }
+
+    // KeyValues3
+    public SchemaUntypedField NameMapKV3 { get; }
 
 
 }

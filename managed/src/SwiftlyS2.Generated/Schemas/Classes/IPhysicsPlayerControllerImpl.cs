@@ -16,7 +16,4 @@ internal partial class IPhysicsPlayerControllerImpl : SchemaClass, IPhysicsPlaye
 {
     public IPhysicsPlayerControllerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

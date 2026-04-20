@@ -18,20 +18,23 @@ internal partial class CPulseCell_PickBestOutflowSelectorImpl : CPulseCell_BaseF
 
     private static nint? _CheckTypeOffset;
 
-    public ref PulseBestOutflowRules_t CheckType {
-        get {
+    public ref PulseBestOutflowRules_t CheckType
+    {
+        get
+        {
             _CheckTypeOffset = _CheckTypeOffset ?? Schema.GetOffset(0x7239DF04A94C6E6B);
             return ref _Handle.AsRef<PulseBestOutflowRules_t>(_CheckTypeOffset!.Value);
         }
     }
     private static nint? _OutflowListOffset;
 
-    public PulseSelectorOutflowList_t OutflowList {
-        get {
+    public PulseSelectorOutflowList_t OutflowList
+    {
+        get
+        {
             _OutflowListOffset = _OutflowListOffset ?? Schema.GetOffset(0x7239DF041461E743);
             return new PulseSelectorOutflowList_tImpl(_Handle + _OutflowListOffset!.Value);
         }
     }
-
 
 }

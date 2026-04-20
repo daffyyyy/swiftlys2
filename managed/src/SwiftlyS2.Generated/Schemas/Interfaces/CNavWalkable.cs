@@ -14,7 +14,4 @@ public partial interface CNavWalkable : CPointEntity, ISchemaClass<CNavWalkable>
     static int ISchemaClass<CNavWalkable>.Size => 1192;
     static string? ISchemaClass<CNavWalkable>.ClassName => "point_nav_walkable";
 
-
-
-
 }

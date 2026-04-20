@@ -14,7 +14,4 @@ public partial interface CParticleCollectionRendererVecInput : CParticleCollecti
     static int ISchemaClass<CParticleCollectionRendererVecInput>.Size => 1720;
     static string? ISchemaClass<CParticleCollectionRendererVecInput>.ClassName => null;
 
-
-
-
 }

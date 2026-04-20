@@ -18,28 +18,33 @@ internal partial class CMotionSearchDBImpl : SchemaClass, CMotionSearchDB
 
     private static nint? _RootNodeOffset;
 
-    public CMotionSearchNode RootNode {
-        get {
+    public CMotionSearchNode RootNode
+    {
+        get
+        {
             _RootNodeOffset = _RootNodeOffset ?? Schema.GetOffset(0x5F49286C3D5FF0D);
             return new CMotionSearchNodeImpl(_Handle + _RootNodeOffset!.Value);
         }
     }
     private static nint? _ResidualQuantizerOffset;
 
-    public CProductQuantizer ResidualQuantizer {
-        get {
+    public CProductQuantizer ResidualQuantizer
+    {
+        get
+        {
             _ResidualQuantizerOffset = _ResidualQuantizerOffset ?? Schema.GetOffset(0x5F49286A3EDA009);
             return new CProductQuantizerImpl(_Handle + _ResidualQuantizerOffset!.Value);
         }
     }
     private static nint? _CodeIndicesOffset;
 
-    public ref CUtlVector<MotionDBIndex> CodeIndices {
-        get {
+    public ref CUtlVector<MotionDBIndex> CodeIndices
+    {
+        get
+        {
             _CodeIndicesOffset = _CodeIndicesOffset ?? Schema.GetOffset(0x5F49286767A76B1);
             return ref _Handle.AsRef<CUtlVector<MotionDBIndex>>(_CodeIndicesOffset!.Value);
         }
     }
-
 
 }

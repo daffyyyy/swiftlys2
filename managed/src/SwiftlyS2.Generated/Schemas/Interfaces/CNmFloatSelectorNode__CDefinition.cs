@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatSelectorNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatSelectorNode__CDefinition>
 {
     static CNmFloatSelectorNode__CDefinition ISchemaClass<CNmFloatSelectorNode__CDefinition>.From(nint handle) => new CNmFloatSelectorNode__CDefinitionImpl(handle);
-    static int ISchemaClass<CNmFloatSelectorNode__CDefinition>.Size => 120;
+    static int ISchemaClass<CNmFloatSelectorNode__CDefinition>.Size => 88;
     static string? ISchemaClass<CNmFloatSelectorNode__CDefinition>.ClassName => null;
 
 
-    // CUtlVectorFixedGrowable< int16, 5 >
+    // CUtlLeanVectorFixedGrowable< int16, 5 >
     public SchemaUntypedField ConditionNodeIndices { get; }
 
-    // CUtlVectorFixedGrowable< float32, 5 >
+    // CUtlLeanVectorFixedGrowable< float32, 5 >
     public SchemaUntypedField Values { get; }
 
     public ref float DefaultValue { get; }

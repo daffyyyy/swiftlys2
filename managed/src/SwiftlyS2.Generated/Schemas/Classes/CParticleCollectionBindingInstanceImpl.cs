@@ -16,7 +16,4 @@ internal partial class CParticleCollectionBindingInstanceImpl : CBasePulseGraphI
 {
     public CParticleCollectionBindingInstanceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

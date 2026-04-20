@@ -16,7 +16,4 @@ internal partial class CNmZeroPoseNode__CDefinitionImpl : CNmPoseNode__CDefiniti
 {
     public CNmZeroPoseNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

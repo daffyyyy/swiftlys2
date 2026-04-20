@@ -14,7 +14,4 @@ public partial interface EventServerEndAsyncPostTickWork_t : ISchemaClass<EventS
     static int ISchemaClass<EventServerEndAsyncPostTickWork_t>.Size => 1;
     static string? ISchemaClass<EventServerEndAsyncPostTickWork_t>.ClassName => null;
 
-
-
-
 }

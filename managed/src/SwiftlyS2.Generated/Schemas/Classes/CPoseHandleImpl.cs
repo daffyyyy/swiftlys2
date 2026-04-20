@@ -18,20 +18,23 @@ internal partial class CPoseHandleImpl : SchemaClass, CPoseHandle
 
     private static nint? _IndexOffset;
 
-    public ref ushort Index {
-        get {
+    public ref ushort Index
+    {
+        get
+        {
             _IndexOffset = _IndexOffset ?? Schema.GetOffset(0x2F05C439B73DBE67);
             return ref _Handle.AsRef<ushort>(_IndexOffset!.Value);
         }
     }
     private static nint? _TypeOffset;
 
-    public ref PoseType_t Type {
-        get {
+    public ref PoseType_t Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x2F05C43921B39888);
             return ref _Handle.AsRef<PoseType_t>(_TypeOffset!.Value);
         }
     }
-
 
 }

@@ -18,28 +18,33 @@ internal partial class FeFollowNode_tImpl : SchemaClass, FeFollowNode_t
 
     private static nint? _ParentNodeOffset;
 
-    public ref ushort ParentNode {
-        get {
+    public ref ushort ParentNode
+    {
+        get
+        {
             _ParentNodeOffset = _ParentNodeOffset ?? Schema.GetOffset(0x8BE908126CBBA7F9);
             return ref _Handle.AsRef<ushort>(_ParentNodeOffset!.Value);
         }
     }
     private static nint? _ChildNodeOffset;
 
-    public ref ushort ChildNode {
-        get {
+    public ref ushort ChildNode
+    {
+        get
+        {
             _ChildNodeOffset = _ChildNodeOffset ?? Schema.GetOffset(0x8BE9081292A8E0E9);
             return ref _Handle.AsRef<ushort>(_ChildNodeOffset!.Value);
         }
     }
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0x8BE90812CFFC66CB);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
-
 
 }

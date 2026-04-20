@@ -14,7 +14,4 @@ public partial interface CInfoSpawnGroupLandmark : CPointEntity, ISchemaClass<CI
     static int ISchemaClass<CInfoSpawnGroupLandmark>.Size => 1192;
     static string? ISchemaClass<CInfoSpawnGroupLandmark>.ClassName => "info_spawngroup_landmark";
 
-
-
-
 }

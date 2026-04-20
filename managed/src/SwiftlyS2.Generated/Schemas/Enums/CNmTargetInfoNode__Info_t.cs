@@ -6,19 +6,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CNmTargetInfoNode__Info_t : uint
 {
- AngleHorizontal = 0,
-
- AngleVertical = 1,
-
- Distance = 2,
-
- DistanceHorizontalOnly = 3,
-
- DistanceVerticalOnly = 4,
-
- DeltaOrientationX = 5,
-
- DeltaOrientationY = 6,
-
- DeltaOrientationZ = 7,
+    AngleHorizontal = 0,
+    AngleVertical = 1,
+    Distance = 2,
+    DistanceHorizontalOnly = 3,
+    DistanceVerticalOnly = 4,
+    DeltaOrientationX = 5,
+    DeltaOrientationY = 6,
+    DeltaOrientationZ = 7,
 }

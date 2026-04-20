@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum AnimGraphDebugDrawType_t : uint
 {
- None = 0,
-
- WsPosition = 1,
-
- MsPosition = 2,
-
- WsDirection = 3,
-
- MsDirection = 4,
+    None = 0,
+    WsPosition = 1,
+    MsPosition = 2,
+    WsDirection = 3,
+    MsDirection = 4,
 }

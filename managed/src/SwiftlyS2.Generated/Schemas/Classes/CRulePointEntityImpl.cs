@@ -18,12 +18,13 @@ internal partial class CRulePointEntityImpl : CRuleEntityImpl, CRulePointEntity
 
     private static nint? _ScoreOffset;
 
-    public ref int Score {
-        get {
+    public ref int Score
+    {
+        get
+        {
             _ScoreOffset = _ScoreOffset ?? Schema.GetOffset(0x9E2258396C814615);
             return ref _Handle.AsRef<int>(_ScoreOffset!.Value);
         }
     }
-
 
 }

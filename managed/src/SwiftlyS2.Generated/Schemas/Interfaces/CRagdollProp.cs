@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollProp>
 {
     static CRagdollProp ISchemaClass<CRagdollProp>.From(nint handle) => new CRagdollPropImpl(handle);
-    static int ISchemaClass<CRagdollProp>.Size => 2928;
+    static int ISchemaClass<CRagdollProp>.Size => 2736;
     static string? ISchemaClass<CRagdollProp>.ClassName => "prop_ragdoll";
 
 
@@ -30,6 +30,14 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
     public ref bool AllAsleep { get; }
 
     public ref bool FirstCollisionAfterLaunch { get; }
+
+    public ref INavObstacle__NavObstacleType_t NavObstacleType { get; }
+
+    public ref bool UpdateNavWhenMoving { get; }
+
+    public ref bool ForceNavObstacleCut { get; }
+
+    public ref bool AttachedToReferenceFrame { get; }
 
     public ref CHandle<CBaseEntity> DamageEntity { get; }
 
@@ -66,6 +74,8 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
     public ref CUtlVector<Vector> RagdollMaxs { get; }
 
     public ref bool ShouldDeleteActivationRecord { get; }
+
+    public ref CUtlVector<PointerTo<INavObstacle>> NavObstacles { get; }
 
     public void RagEnabledUpdated();
     public void RagPosUpdated();

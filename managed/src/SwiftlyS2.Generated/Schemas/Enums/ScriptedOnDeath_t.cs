@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ScriptedOnDeath_t : uint
 {
- SS_ONDEATH_NOT_APPLICABLE = uint.MaxValue,
-
- SS_ONDEATH_UNDEFINED = 0,
-
- SS_ONDEATH_RAGDOLL = 1,
-
- SS_ONDEATH_ANIMATED_DEATH = 2,
+    SS_ONDEATH_NOT_APPLICABLE = uint.MaxValue,
+    SS_ONDEATH_UNDEFINED = 0,
+    SS_ONDEATH_RAGDOLL = 1,
+    SS_ONDEATH_ANIMATED_DEATH = 2,
 }

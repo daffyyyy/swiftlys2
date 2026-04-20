@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCRenderMeshImpl : SchemaClass, InfoFor
 {
     public InfoForResourceTypeCRenderMeshImpl(nint handle) : base(handle) { }
 
-
-
-
 }

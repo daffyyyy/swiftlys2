@@ -16,7 +16,4 @@ internal partial class CWeaponAugImpl : CCSWeaponBaseGunImpl, CWeaponAug
 {
     public CWeaponAugImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,12 +18,13 @@ internal partial class CModelConfigElement_UserPickImpl : CModelConfigElementImp
 
     private static nint? _ChoicesOffset;
 
-    public ref CUtlVector<CUtlString> Choices {
-        get {
+    public ref CUtlVector<CUtlString> Choices
+    {
+        get
+        {
             _ChoicesOffset = _ChoicesOffset ?? Schema.GetOffset(0x9AB617A69E9959BF);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_ChoicesOffset!.Value);
         }
     }
-
 
 }

@@ -18,20 +18,23 @@ internal partial class CNmFloatCurveNode__CDefinitionImpl : CNmFloatValueNode__C
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x34D6839A95E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _CurveOffset;
 
-    public SchemaUntypedField Curve {
-        get {
+    public SchemaUntypedField Curve
+    {
+        get
+        {
             _CurveOffset = _CurveOffset ?? Schema.GetOffset(0x34D6839ABFFA0B34);
             return new SchemaUntypedField(_Handle + _CurveOffset!.Value);
         }
     }
-
 
 }

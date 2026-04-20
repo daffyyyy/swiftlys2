@@ -16,7 +16,4 @@ internal partial class VMapResourceData_tImpl : SchemaClass, VMapResourceData_t
 {
     public VMapResourceData_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

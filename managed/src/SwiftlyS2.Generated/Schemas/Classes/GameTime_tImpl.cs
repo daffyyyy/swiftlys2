@@ -18,12 +18,13 @@ internal partial class GameTime_tImpl : SchemaClass, GameTime_t
 
     private static nint? _ValueOffset;
 
-    public ref float Value {
-        get {
+    public ref float Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x1DBEBD4DDCB0894A);
             return ref _Handle.AsRef<float>(_ValueOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class EventAppShutdown_tImpl : SchemaClass, EventAppShutdown_t
 
     private static nint? _Dummy0Offset;
 
-    public ref int Dummy0 {
-        get {
+    public ref int Dummy0
+    {
+        get
+        {
             _Dummy0Offset = _Dummy0Offset ?? Schema.GetOffset(0x815B1527A26B2B9D);
             return ref _Handle.AsRef<int>(_Dummy0Offset!.Value);
         }
     }
-
 
 }

@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum RenderMode_t : byte
 {
- kRenderNormal = 0,
-
- kRenderTransAlpha = 1,
-
- kRenderNone = 2,
-
- kRenderModeCount = 3,
+    kRenderNormal = 0,
+    kRenderTransAlpha = 1,
+    kRenderNone = 2,
+    kRenderModeCount = 3,
 }

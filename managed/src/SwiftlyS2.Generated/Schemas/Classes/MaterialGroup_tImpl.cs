@@ -18,24 +18,28 @@ internal partial class MaterialGroup_tImpl : SchemaClass, MaterialGroup_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x702431604D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x702431604D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _MaterialsOffset;
 
-    public ref CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>> Materials {
-        get {
+    public ref CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>> Materials
+    {
+        get
+        {
             _MaterialsOffset = _MaterialsOffset ?? Schema.GetOffset(0x7024316060E46909);
             return ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>>>(_MaterialsOffset!.Value);
         }
     }
-
 
 }

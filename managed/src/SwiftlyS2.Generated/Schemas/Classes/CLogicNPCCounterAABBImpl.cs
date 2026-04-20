@@ -18,36 +18,43 @@ internal partial class CLogicNPCCounterAABBImpl : CLogicNPCCounterImpl, CLogicNP
 
     private static nint? _DistanceOuterMinsOffset;
 
-    public ref Vector DistanceOuterMins {
-        get {
+    public ref Vector DistanceOuterMins
+    {
+        get
+        {
             _DistanceOuterMinsOffset = _DistanceOuterMinsOffset ?? Schema.GetOffset(0x264C2C4B185EC6F4);
             return ref _Handle.AsRef<Vector>(_DistanceOuterMinsOffset!.Value);
         }
     }
     private static nint? _DistanceOuterMaxsOffset;
 
-    public ref Vector DistanceOuterMaxs {
-        get {
+    public ref Vector DistanceOuterMaxs
+    {
+        get
+        {
             _DistanceOuterMaxsOffset = _DistanceOuterMaxsOffset ?? Schema.GetOffset(0x264C2C4B99738B36);
             return ref _Handle.AsRef<Vector>(_DistanceOuterMaxsOffset!.Value);
         }
     }
     private static nint? _OuterMinsOffset;
 
-    public ref Vector OuterMins {
-        get {
+    public ref Vector OuterMins
+    {
+        get
+        {
             _OuterMinsOffset = _OuterMinsOffset ?? Schema.GetOffset(0x264C2C4B30928F3D);
             return ref _Handle.AsRef<Vector>(_OuterMinsOffset!.Value);
         }
     }
     private static nint? _OuterMaxsOffset;
 
-    public ref Vector OuterMaxs {
-        get {
+    public ref Vector OuterMaxs
+    {
+        get
+        {
             _OuterMaxsOffset = _OuterMaxsOffset ?? Schema.GetOffset(0x264C2C4BC9A77947);
             return ref _Handle.AsRef<Vector>(_OuterMaxsOffset!.Value);
         }
     }
-
 
 }

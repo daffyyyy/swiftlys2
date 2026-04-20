@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeIVectorGraphic : ISchemaClass<InfoFo
     static int ISchemaClass<InfoForResourceTypeIVectorGraphic>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeIVectorGraphic>.ClassName => null;
 
-
-
-
 }

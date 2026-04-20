@@ -18,20 +18,23 @@ internal partial class WaterWheelDrag_tImpl : SchemaClass, WaterWheelDrag_t
 
     private static nint? _FractionOfWheelSubmergedOffset;
 
-    public ref float FractionOfWheelSubmerged {
-        get {
+    public ref float FractionOfWheelSubmerged
+    {
+        get
+        {
             _FractionOfWheelSubmergedOffset = _FractionOfWheelSubmergedOffset ?? Schema.GetOffset(0x51DDFA66F2D4C09B);
             return ref _Handle.AsRef<float>(_FractionOfWheelSubmergedOffset!.Value);
         }
     }
     private static nint? _WheelDragOffset;
 
-    public ref float WheelDrag {
-        get {
+    public ref float WheelDrag
+    {
+        get
+        {
             _WheelDragOffset = _WheelDragOffset ?? Schema.GetOffset(0x51DDFA66B996F340);
             return ref _Handle.AsRef<float>(_WheelDragOffset!.Value);
         }
     }
-
 
 }

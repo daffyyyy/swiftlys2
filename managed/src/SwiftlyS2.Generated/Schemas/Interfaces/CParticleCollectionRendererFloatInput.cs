@@ -14,7 +14,4 @@ public partial interface CParticleCollectionRendererFloatInput : CParticleCollec
     static int ISchemaClass<CParticleCollectionRendererFloatInput>.Size => 368;
     static string? ISchemaClass<CParticleCollectionRendererFloatInput>.ClassName => null;
 
-
-
-
 }

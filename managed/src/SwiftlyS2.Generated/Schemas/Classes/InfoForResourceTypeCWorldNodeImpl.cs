@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCWorldNodeImpl : SchemaClass, InfoForR
 {
     public InfoForResourceTypeCWorldNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,56 +18,68 @@ internal partial class CFuncTrainImpl : CBasePlatTrainImpl, CFuncTrain
 
     private static nint? _CurrentTargetOffset;
 
-    public ref CHandle<CBaseEntity> CurrentTarget {
-        get {
+    public ref CHandle<CBaseEntity> CurrentTarget
+    {
+        get
+        {
             _CurrentTargetOffset = _CurrentTargetOffset ?? Schema.GetOffset(0xAAD8EE8EBD175911);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_CurrentTargetOffset!.Value);
         }
     }
     private static nint? _ActivatedOffset;
 
-    public ref bool Activated {
-        get {
+    public ref bool Activated
+    {
+        get
+        {
             _ActivatedOffset = _ActivatedOffset ?? Schema.GetOffset(0xAAD8EE8E4337A09C);
             return ref _Handle.AsRef<bool>(_ActivatedOffset!.Value);
         }
     }
     private static nint? _EnemyOffset;
 
-    public ref CHandle<CBaseEntity> Enemy {
-        get {
+    public ref CHandle<CBaseEntity> Enemy
+    {
+        get
+        {
             _EnemyOffset = _EnemyOffset ?? Schema.GetOffset(0xAAD8EE8E430EC2D5);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EnemyOffset!.Value);
         }
     }
     private static nint? _BlockDamageOffset;
 
-    public ref float BlockDamage {
-        get {
+    public ref float BlockDamage
+    {
+        get
+        {
             _BlockDamageOffset = _BlockDamageOffset ?? Schema.GetOffset(0xAAD8EE8EA5348091);
             return ref _Handle.AsRef<float>(_BlockDamageOffset!.Value);
         }
     }
     private static nint? _NextBlockTimeOffset;
 
-    public GameTime_t NextBlockTime {
-        get {
+    public GameTime_t NextBlockTime
+    {
+        get
+        {
             _NextBlockTimeOffset = _NextBlockTimeOffset ?? Schema.GetOffset(0xAAD8EE8E82BC1902);
             return new GameTime_tImpl(_Handle + _NextBlockTimeOffset!.Value);
         }
     }
     private static nint? _LastTargetOffset;
 
-    public string LastTarget {
-        get {
+    public string LastTarget
+    {
+        get
+        {
             _LastTargetOffset = _LastTargetOffset ?? Schema.GetOffset(0xAAD8EE8ECF22FD34);
             return Schema.GetString(_Handle.Read<nint>(_LastTargetOffset!.Value));
         }
-        set {
+        set
+        {
             _LastTargetOffset = _LastTargetOffset ?? Schema.GetOffset(0xAAD8EE8ECF22FD34);
             Schema.SetString(_Handle, _LastTargetOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

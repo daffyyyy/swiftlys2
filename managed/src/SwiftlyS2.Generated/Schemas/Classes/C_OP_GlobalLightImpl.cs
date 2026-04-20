@@ -18,28 +18,33 @@ internal partial class C_OP_GlobalLightImpl : CParticleFunctionOperatorImpl, C_O
 
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xC02700C2B731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
     private static nint? _ClampLowerRangeOffset;
 
-    public ref bool ClampLowerRange {
-        get {
+    public ref bool ClampLowerRange
+    {
+        get
+        {
             _ClampLowerRangeOffset = _ClampLowerRangeOffset ?? Schema.GetOffset(0xC02700C20F690326);
             return ref _Handle.AsRef<bool>(_ClampLowerRangeOffset!.Value);
         }
     }
     private static nint? _ClampUpperRangeOffset;
 
-    public ref bool ClampUpperRange {
-        get {
+    public ref bool ClampUpperRange
+    {
+        get
+        {
             _ClampUpperRangeOffset = _ClampUpperRangeOffset ?? Schema.GetOffset(0xC02700C2815873B5);
             return ref _Handle.AsRef<bool>(_ClampUpperRangeOffset!.Value);
         }
     }
-
 
 }

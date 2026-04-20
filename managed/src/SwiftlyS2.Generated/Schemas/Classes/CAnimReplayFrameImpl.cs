@@ -18,44 +18,53 @@ internal partial class CAnimReplayFrameImpl : SchemaClass, CAnimReplayFrame
 
     private static nint? _InputDataBlocksOffset;
 
-    public ref CUtlVector<CUtlBinaryBlock> InputDataBlocks {
-        get {
+    public ref CUtlVector<CUtlBinaryBlock> InputDataBlocks
+    {
+        get
+        {
             _InputDataBlocksOffset = _InputDataBlocksOffset ?? Schema.GetOffset(0xBED2F401F7E8195D);
             return ref _Handle.AsRef<CUtlVector<CUtlBinaryBlock>>(_InputDataBlocksOffset!.Value);
         }
     }
     private static nint? _InstanceDataOffset;
 
-    public ref CUtlBinaryBlock InstanceData {
-        get {
+    public ref CUtlBinaryBlock InstanceData
+    {
+        get
+        {
             _InstanceDataOffset = _InstanceDataOffset ?? Schema.GetOffset(0xBED2F401AE26D9C2);
             return ref _Handle.AsRef<CUtlBinaryBlock>(_InstanceDataOffset!.Value);
         }
     }
     private static nint? _StartingLocalToWorldTransformOffset;
 
-    public ref CTransform StartingLocalToWorldTransform {
-        get {
+    public ref CTransform StartingLocalToWorldTransform
+    {
+        get
+        {
             _StartingLocalToWorldTransformOffset = _StartingLocalToWorldTransformOffset ?? Schema.GetOffset(0xBED2F40140311BA5);
             return ref _Handle.AsRef<CTransform>(_StartingLocalToWorldTransformOffset!.Value);
         }
     }
     private static nint? _LocalToWorldTransformOffset;
 
-    public ref CTransform LocalToWorldTransform {
-        get {
+    public ref CTransform LocalToWorldTransform
+    {
+        get
+        {
             _LocalToWorldTransformOffset = _LocalToWorldTransformOffset ?? Schema.GetOffset(0xBED2F401AE75F5B9);
             return ref _Handle.AsRef<CTransform>(_LocalToWorldTransformOffset!.Value);
         }
     }
     private static nint? _TimeStampOffset;
 
-    public ref float TimeStamp {
-        get {
+    public ref float TimeStamp
+    {
+        get
+        {
             _TimeStampOffset = _TimeStampOffset ?? Schema.GetOffset(0xBED2F4014335BEE3);
             return ref _Handle.AsRef<float>(_TimeStampOffset!.Value);
         }
     }
-
 
 }

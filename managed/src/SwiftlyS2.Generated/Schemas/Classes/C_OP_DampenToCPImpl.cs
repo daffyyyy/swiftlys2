@@ -18,28 +18,33 @@ internal partial class C_OP_DampenToCPImpl : CParticleFunctionOperatorImpl, C_OP
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0xB04699CE3F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _RangeOffset;
 
-    public ref float Range {
-        get {
+    public ref float Range
+    {
+        get
+        {
             _RangeOffset = _RangeOffset ?? Schema.GetOffset(0xB04699CE3FC92844);
             return ref _Handle.AsRef<float>(_RangeOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xB04699CEB731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CPairedSequenceComponentUpdaterImpl : CAnimComponentUpdat
 {
     public CPairedSequenceComponentUpdaterImpl(nint handle) : base(handle) { }
 
-
-
-
 }

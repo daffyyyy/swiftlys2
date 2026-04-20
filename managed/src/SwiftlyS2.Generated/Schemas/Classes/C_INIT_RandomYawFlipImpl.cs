@@ -18,12 +18,13 @@ internal partial class C_INIT_RandomYawFlipImpl : CParticleFunctionInitializerIm
 
     private static nint? _PercentOffset;
 
-    public ref float Percent {
-        get {
+    public ref float Percent
+    {
+        get
+        {
             _PercentOffset = _PercentOffset ?? Schema.GetOffset(0x86C3C253183D7FC4);
             return ref _Handle.AsRef<float>(_PercentOffset!.Value);
         }
     }
-
 
 }

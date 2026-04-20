@@ -16,7 +16,4 @@ internal partial class CBaseModelEntityAPIImpl : SchemaClass, CBaseModelEntityAP
 {
     public CBaseModelEntityAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

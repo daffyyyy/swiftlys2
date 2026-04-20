@@ -18,28 +18,33 @@ internal partial class C_OP_OrientTo2dDirectionImpl : CParticleFunctionOperatorI
 
     private static nint? _RotOffsetOffset;
 
-    public ref float RotOffset {
-        get {
+    public ref float RotOffset
+    {
+        get
+        {
             _RotOffsetOffset = _RotOffsetOffset ?? Schema.GetOffset(0x2AC61F04D1EA9CDF);
             return ref _Handle.AsRef<float>(_RotOffsetOffset!.Value);
         }
     }
     private static nint? _SpinStrengthOffset;
 
-    public ref float SpinStrength {
-        get {
+    public ref float SpinStrength
+    {
+        get
+        {
             _SpinStrengthOffset = _SpinStrengthOffset ?? Schema.GetOffset(0x2AC61F0412520F26);
             return ref _Handle.AsRef<float>(_SpinStrengthOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x2AC61F04E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
-
 
 }

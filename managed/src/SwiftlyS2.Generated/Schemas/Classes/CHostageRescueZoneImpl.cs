@@ -16,7 +16,4 @@ internal partial class CHostageRescueZoneImpl : CHostageRescueZoneShimImpl, CHos
 {
     public CHostageRescueZoneImpl(nint handle) : base(handle) { }
 
-
-
-
 }

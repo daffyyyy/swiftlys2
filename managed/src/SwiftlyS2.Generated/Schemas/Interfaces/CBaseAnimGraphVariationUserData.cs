@@ -14,7 +14,4 @@ public partial interface CBaseAnimGraphVariationUserData : CNmGraphVariationUser
     static int ISchemaClass<CBaseAnimGraphVariationUserData>.Size => 8;
     static string? ISchemaClass<CBaseAnimGraphVariationUserData>.ClassName => null;
 
-
-
-
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointClientUIWorldPanel : CBaseClientUIEntity, ISchemaClass<CPointClientUIWorldPanel>
 {
     static CPointClientUIWorldPanel ISchemaClass<CPointClientUIWorldPanel>.From(nint handle) => new CPointClientUIWorldPanelImpl(handle);
-    static int ISchemaClass<CPointClientUIWorldPanel>.Size => 2280;
+    static int ISchemaClass<CPointClientUIWorldPanel>.Size => 2336;
     static string? ISchemaClass<CPointClientUIWorldPanel>.ClassName => "point_clientui_world_panel";
 
 

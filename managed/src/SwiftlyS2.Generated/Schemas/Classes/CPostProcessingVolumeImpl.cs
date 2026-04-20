@@ -18,96 +18,120 @@ internal partial class CPostProcessingVolumeImpl : CBaseTriggerImpl, CPostProces
 
     private static nint? _PostSettingsOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostSettings {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostSettings
+    {
+        get
+        {
             _PostSettingsOffset = _PostSettingsOffset ?? Schema.GetOffset(0x5DBC28C1D2EB75A4);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCPostProcessingResource>>(_PostSettingsOffset!.Value);
         }
     }
     private static nint? _FadeDurationOffset;
 
-    public ref float FadeDuration {
-        get {
+    public ref float FadeDuration
+    {
+        get
+        {
             _FadeDurationOffset = _FadeDurationOffset ?? Schema.GetOffset(0x5DBC28C1C4E6DEE1);
             return ref _Handle.AsRef<float>(_FadeDurationOffset!.Value);
         }
     }
     private static nint? _MinLogExposureOffset;
 
-    public ref float MinLogExposure {
-        get {
+    public ref float MinLogExposure
+    {
+        get
+        {
             _MinLogExposureOffset = _MinLogExposureOffset ?? Schema.GetOffset(0x5DBC28C17457F7D0);
             return ref _Handle.AsRef<float>(_MinLogExposureOffset!.Value);
         }
     }
     private static nint? _MaxLogExposureOffset;
 
-    public ref float MaxLogExposure {
-        get {
+    public ref float MaxLogExposure
+    {
+        get
+        {
             _MaxLogExposureOffset = _MaxLogExposureOffset ?? Schema.GetOffset(0x5DBC28C1DC5D3ED6);
             return ref _Handle.AsRef<float>(_MaxLogExposureOffset!.Value);
         }
     }
     private static nint? _MinExposureOffset;
 
-    public ref float MinExposure {
-        get {
+    public ref float MinExposure
+    {
+        get
+        {
             _MinExposureOffset = _MinExposureOffset ?? Schema.GetOffset(0x5DBC28C122FAB634);
             return ref _Handle.AsRef<float>(_MinExposureOffset!.Value);
         }
     }
     private static nint? _MaxExposureOffset;
 
-    public ref float MaxExposure {
-        get {
+    public ref float MaxExposure
+    {
+        get
+        {
             _MaxExposureOffset = _MaxExposureOffset ?? Schema.GetOffset(0x5DBC28C15D4951D6);
             return ref _Handle.AsRef<float>(_MaxExposureOffset!.Value);
         }
     }
     private static nint? _ExposureCompensationOffset;
 
-    public ref float ExposureCompensation {
-        get {
+    public ref float ExposureCompensation
+    {
+        get
+        {
             _ExposureCompensationOffset = _ExposureCompensationOffset ?? Schema.GetOffset(0x5DBC28C16EC15498);
             return ref _Handle.AsRef<float>(_ExposureCompensationOffset!.Value);
         }
     }
     private static nint? _ExposureFadeSpeedUpOffset;
 
-    public ref float ExposureFadeSpeedUp {
-        get {
+    public ref float ExposureFadeSpeedUp
+    {
+        get
+        {
             _ExposureFadeSpeedUpOffset = _ExposureFadeSpeedUpOffset ?? Schema.GetOffset(0x5DBC28C19789BBB6);
             return ref _Handle.AsRef<float>(_ExposureFadeSpeedUpOffset!.Value);
         }
     }
     private static nint? _ExposureFadeSpeedDownOffset;
 
-    public ref float ExposureFadeSpeedDown {
-        get {
+    public ref float ExposureFadeSpeedDown
+    {
+        get
+        {
             _ExposureFadeSpeedDownOffset = _ExposureFadeSpeedDownOffset ?? Schema.GetOffset(0x5DBC28C154685D1F);
             return ref _Handle.AsRef<float>(_ExposureFadeSpeedDownOffset!.Value);
         }
     }
     private static nint? _TonemapEVSmoothingRangeOffset;
 
-    public ref float TonemapEVSmoothingRange {
-        get {
+    public ref float TonemapEVSmoothingRange
+    {
+        get
+        {
             _TonemapEVSmoothingRangeOffset = _TonemapEVSmoothingRangeOffset ?? Schema.GetOffset(0x5DBC28C19C2546CB);
             return ref _Handle.AsRef<float>(_TonemapEVSmoothingRangeOffset!.Value);
         }
     }
     private static nint? _MasterOffset;
 
-    public ref bool Master {
-        get {
+    public ref bool Master
+    {
+        get
+        {
             _MasterOffset = _MasterOffset ?? Schema.GetOffset(0x5DBC28C15AFF9193);
             return ref _Handle.AsRef<bool>(_MasterOffset!.Value);
         }
     }
     private static nint? _ExposureControlOffset;
 
-    public ref bool ExposureControl {
-        get {
+    public ref bool ExposureControl
+    {
+        get
+        {
             _ExposureControlOffset = _ExposureControlOffset ?? Schema.GetOffset(0x5DBC28C12C195925);
             return ref _Handle.AsRef<bool>(_ExposureControlOffset!.Value);
         }

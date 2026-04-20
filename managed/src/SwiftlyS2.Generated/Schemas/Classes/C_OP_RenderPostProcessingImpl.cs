@@ -18,28 +18,33 @@ internal partial class C_OP_RenderPostProcessingImpl : CParticleFunctionRenderer
 
     private static nint? _PostProcessStrengthOffset;
 
-    public CPerParticleFloatInput PostProcessStrength {
-        get {
+    public CPerParticleFloatInput PostProcessStrength
+    {
+        get
+        {
             _PostProcessStrengthOffset = _PostProcessStrengthOffset ?? Schema.GetOffset(0xD64D179C653C1A17);
             return new CPerParticleFloatInputImpl(_Handle + _PostProcessStrengthOffset!.Value);
         }
     }
     private static nint? _PostTextureOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostTexture {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostTexture
+    {
+        get
+        {
             _PostTextureOffset = _PostTextureOffset ?? Schema.GetOffset(0xD64D179C943F8D28);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCPostProcessingResource>>(_PostTextureOffset!.Value);
         }
     }
     private static nint? _PriorityOffset;
 
-    public ref ParticlePostProcessPriorityGroup_t Priority {
-        get {
+    public ref ParticlePostProcessPriorityGroup_t Priority
+    {
+        get
+        {
             _PriorityOffset = _PriorityOffset ?? Schema.GetOffset(0xD64D179CE7EFB335);
             return ref _Handle.AsRef<ParticlePostProcessPriorityGroup_t>(_PriorityOffset!.Value);
         }
     }
-
 
 }

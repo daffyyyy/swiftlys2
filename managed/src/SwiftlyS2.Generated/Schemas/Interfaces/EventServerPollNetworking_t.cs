@@ -14,7 +14,4 @@ public partial interface EventServerPollNetworking_t : EventSimulate_t, ISchemaC
     static int ISchemaClass<EventServerPollNetworking_t>.Size => 48;
     static string? ISchemaClass<EventServerPollNetworking_t>.ClassName => null;
 
-
-
-
 }

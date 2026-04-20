@@ -19,7 +19,19 @@ public partial interface CModelState : ISchemaClass<CModelState>
 
     public string ModelName { get; set; }
 
+    public IPhysAggregateInstance? VPhysicsAggregate { get; }
+
+    public ref float RootBoneOffset_x { get; }
+
+    public ref float RootBoneOffset_y { get; }
+
+    public ref float RootBoneOffset_z { get; }
+
+    public ref byte RootBoneOffsetResetSerialNumber { get; }
+
     public ref bool ClientClothCreationSuppressed { get; }
+
+    public ref byte AnimStateNoInterpSerialNumber { get; }
 
     public ref ulong MeshGroupMask { get; }
 
@@ -32,7 +44,12 @@ public partial interface CModelState : ISchemaClass<CModelState>
     public ref byte ClothUpdateFlags { get; }
 
     public void ModelUpdated();
+    public void RootBoneOffset_xUpdated();
+    public void RootBoneOffset_yUpdated();
+    public void RootBoneOffset_zUpdated();
+    public void RootBoneOffsetResetSerialNumberUpdated();
     public void ClientClothCreationSuppressedUpdated();
+    public void AnimStateNoInterpSerialNumberUpdated();
     public void MeshGroupMaskUpdated();
     public void BodyGroupChoicesUpdated();
     public void IdealMotionTypeUpdated();

@@ -18,21 +18,23 @@ internal partial class CodeGenAABB_tImpl : SchemaClass, CodeGenAABB_t
 
     private static nint? _MinBoundsOffset;
 
-    public ref Vector MinBounds {
-        get {
+    public ref Vector MinBounds
+    {
+        get
+        {
             _MinBoundsOffset = _MinBoundsOffset ?? Schema.GetOffset(0xB0F2ACCB114799FE);
             return ref _Handle.AsRef<Vector>(_MinBoundsOffset!.Value);
         }
     }
     private static nint? _MaxBoundsOffset;
 
-    public ref Vector MaxBounds {
-        get {
+    public ref Vector MaxBounds
+    {
+        get
+        {
             _MaxBoundsOffset = _MaxBoundsOffset ?? Schema.GetOffset(0xB0F2ACCBC0B4CE60);
             return ref _Handle.AsRef<Vector>(_MaxBoundsOffset!.Value);
         }
     }
 
-    public void MinBoundsUpdated() => Schema.Update(_Handle, 0xB0F2ACCB114799FE);
-    public void MaxBoundsUpdated() => Schema.Update(_Handle, 0xB0F2ACCBC0B4CE60);
 }

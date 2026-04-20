@@ -14,7 +14,4 @@ public partial interface CFilterLOS : CBaseFilter, ISchemaClass<CFilterLOS>
     static int ISchemaClass<CFilterLOS>.Size => 1248;
     static string? ISchemaClass<CFilterLOS>.ClassName => "filter_los";
 
-
-
-
 }

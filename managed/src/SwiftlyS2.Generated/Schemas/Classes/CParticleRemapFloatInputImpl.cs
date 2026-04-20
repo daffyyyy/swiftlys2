@@ -16,7 +16,4 @@ internal partial class CParticleRemapFloatInputImpl : CParticleFloatInputImpl, C
 {
     public CParticleRemapFloatInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

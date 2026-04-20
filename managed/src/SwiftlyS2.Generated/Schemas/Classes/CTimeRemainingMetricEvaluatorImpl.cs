@@ -18,36 +18,43 @@ internal partial class CTimeRemainingMetricEvaluatorImpl : CMotionMetricEvaluato
 
     private static nint? _MatchByTimeRemainingOffset;
 
-    public ref bool MatchByTimeRemaining {
-        get {
+    public ref bool MatchByTimeRemaining
+    {
+        get
+        {
             _MatchByTimeRemainingOffset = _MatchByTimeRemainingOffset ?? Schema.GetOffset(0xAB802C86BB70462E);
             return ref _Handle.AsRef<bool>(_MatchByTimeRemainingOffset!.Value);
         }
     }
     private static nint? _MaxTimeRemainingOffset;
 
-    public ref float MaxTimeRemaining {
-        get {
+    public ref float MaxTimeRemaining
+    {
+        get
+        {
             _MaxTimeRemainingOffset = _MaxTimeRemainingOffset ?? Schema.GetOffset(0xAB802C8686818AD6);
             return ref _Handle.AsRef<float>(_MaxTimeRemainingOffset!.Value);
         }
     }
     private static nint? _FilterByTimeRemainingOffset;
 
-    public ref bool FilterByTimeRemaining {
-        get {
+    public ref bool FilterByTimeRemaining
+    {
+        get
+        {
             _FilterByTimeRemainingOffset = _FilterByTimeRemainingOffset ?? Schema.GetOffset(0xAB802C8668E9E5BD);
             return ref _Handle.AsRef<bool>(_FilterByTimeRemainingOffset!.Value);
         }
     }
     private static nint? _MinTimeRemainingOffset;
 
-    public ref float MinTimeRemaining {
-        get {
+    public ref float MinTimeRemaining
+    {
+        get
+        {
             _MinTimeRemainingOffset = _MinTimeRemainingOffset ?? Schema.GetOffset(0xAB802C8604DD377C);
             return ref _Handle.AsRef<float>(_MinTimeRemainingOffset!.Value);
         }
     }
-
 
 }

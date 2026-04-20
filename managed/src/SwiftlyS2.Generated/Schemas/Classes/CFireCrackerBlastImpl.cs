@@ -16,7 +16,4 @@ internal partial class CFireCrackerBlastImpl : CInfernoImpl, CFireCrackerBlast
 {
     public CFireCrackerBlastImpl(nint handle) : base(handle) { }
 
-
-
-
 }

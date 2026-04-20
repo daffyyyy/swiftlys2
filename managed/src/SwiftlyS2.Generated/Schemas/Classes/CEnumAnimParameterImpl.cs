@@ -18,28 +18,33 @@ internal partial class CEnumAnimParameterImpl : CConcreteAnimParameterImpl, CEnu
 
     private static nint? _DefaultValueOffset;
 
-    public ref byte DefaultValue {
-        get {
+    public ref byte DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0xCCD4BF1DBBE0341F);
             return ref _Handle.AsRef<byte>(_DefaultValueOffset!.Value);
         }
     }
     private static nint? _EnumOptionsOffset;
 
-    public ref CUtlVector<CUtlString> EnumOptions {
-        get {
+    public ref CUtlVector<CUtlString> EnumOptions
+    {
+        get
+        {
             _EnumOptionsOffset = _EnumOptionsOffset ?? Schema.GetOffset(0xCCD4BF1D5A08D71E);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_EnumOptionsOffset!.Value);
         }
     }
     private static nint? _EnumReferencedOffset;
 
-    public ref CUtlVector<ulong> EnumReferenced {
-        get {
+    public ref CUtlVector<ulong> EnumReferenced
+    {
+        get
+        {
             _EnumReferencedOffset = _EnumReferencedOffset ?? Schema.GetOffset(0xCCD4BF1D5C66779B);
             return ref _Handle.AsRef<CUtlVector<ulong>>(_EnumReferencedOffset!.Value);
         }
     }
-
 
 }

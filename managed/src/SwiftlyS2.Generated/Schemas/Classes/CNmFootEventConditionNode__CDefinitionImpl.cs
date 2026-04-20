@@ -18,28 +18,33 @@ internal partial class CNmFootEventConditionNode__CDefinitionImpl : CNmBoolValue
 
     private static nint? _SourceStateNodeIdxOffset;
 
-    public ref short SourceStateNodeIdx {
-        get {
+    public ref short SourceStateNodeIdx
+    {
+        get
+        {
             _SourceStateNodeIdxOffset = _SourceStateNodeIdxOffset ?? Schema.GetOffset(0xA837BCFE63F0228C);
             return ref _Handle.AsRef<short>(_SourceStateNodeIdxOffset!.Value);
         }
     }
     private static nint? _PhaseConditionOffset;
 
-    public ref NmFootPhaseCondition_t PhaseCondition {
-        get {
+    public ref NmFootPhaseCondition_t PhaseCondition
+    {
+        get
+        {
             _PhaseConditionOffset = _PhaseConditionOffset ?? Schema.GetOffset(0xA837BCFE79D4BD7D);
             return ref _Handle.AsRef<NmFootPhaseCondition_t>(_PhaseConditionOffset!.Value);
         }
     }
     private static nint? _EventConditionRulesOffset;
 
-    public CNmBitFlags EventConditionRules {
-        get {
+    public CNmBitFlags EventConditionRules
+    {
+        get
+        {
             _EventConditionRulesOffset = _EventConditionRulesOffset ?? Schema.GetOffset(0xA837BCFEA904315F);
             return new CNmBitFlagsImpl(_Handle + _EventConditionRulesOffset!.Value);
         }
     }
-
 
 }

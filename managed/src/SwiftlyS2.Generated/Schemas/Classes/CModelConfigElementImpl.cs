@@ -18,24 +18,28 @@ internal partial class CModelConfigElementImpl : SchemaClass, CModelConfigElemen
 
     private static nint? _ElementNameOffset;
 
-    public string ElementName {
-        get {
+    public string ElementName
+    {
+        get
+        {
             _ElementNameOffset = _ElementNameOffset ?? Schema.GetOffset(0x240CE3EFEBDAB614);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ElementNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ElementNameOffset = _ElementNameOffset ?? Schema.GetOffset(0x240CE3EFEBDAB614);
             Schema.SetCUtlString(_Handle, _ElementNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NestedElementsOffset;
 
-    public ref CUtlVector<PointerTo<CModelConfigElement>> NestedElements {
-        get {
+    public ref CUtlVector<PointerTo<CModelConfigElement>> NestedElements
+    {
+        get
+        {
             _NestedElementsOffset = _NestedElementsOffset ?? Schema.GetOffset(0x240CE3EFA31BDBC3);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CModelConfigElement>>>(_NestedElementsOffset!.Value);
         }
     }
-
 
 }

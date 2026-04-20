@@ -18,12 +18,13 @@ internal partial class CSingleplayRulesImpl : CGameRulesImpl, CSingleplayRules
 
     private static nint? _SinglePlayerGameEndingOffset;
 
-    public ref bool SinglePlayerGameEnding {
-        get {
+    public ref bool SinglePlayerGameEnding
+    {
+        get
+        {
             _SinglePlayerGameEndingOffset = _SinglePlayerGameEndingOffset ?? Schema.GetOffset(0x633D071BAD9EAF1D);
             return ref _Handle.AsRef<bool>(_SinglePlayerGameEndingOffset!.Value);
         }
     }
-
 
 }

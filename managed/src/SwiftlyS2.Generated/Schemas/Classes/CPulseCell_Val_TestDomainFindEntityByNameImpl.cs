@@ -16,7 +16,4 @@ internal partial class CPulseCell_Val_TestDomainFindEntityByNameImpl : CPulseCel
 {
     public CPulseCell_Val_TestDomainFindEntityByNameImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CCSSpriteImpl : CSpriteImpl, CCSSprite
 {
     public CCSSpriteImpl(nint handle) : base(handle) { }
 
-
-
-
 }

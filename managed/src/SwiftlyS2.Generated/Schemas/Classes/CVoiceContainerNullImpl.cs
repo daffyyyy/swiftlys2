@@ -16,7 +16,4 @@ internal partial class CVoiceContainerNullImpl : CVoiceContainerGeneratorImpl, C
 {
     public CVoiceContainerNullImpl(nint handle) : base(handle) { }
 
-
-
-
 }

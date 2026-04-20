@@ -35,7 +35,7 @@ public partial interface CAI_Expresser : ISchemaClass<CAI_Expresser>
 
     public ref int LastSpokenPriority { get; }
 
-    public CBaseFlex? Outer { get; }
+    public CBaseModelEntity? Outer { get; }
 
 
 }

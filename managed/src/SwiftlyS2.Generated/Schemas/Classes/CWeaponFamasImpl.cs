@@ -16,7 +16,4 @@ internal partial class CWeaponFamasImpl : CCSWeaponBaseGunImpl, CWeaponFamas
 {
     public CWeaponFamasImpl(nint handle) : base(handle) { }
 
-
-
-
 }

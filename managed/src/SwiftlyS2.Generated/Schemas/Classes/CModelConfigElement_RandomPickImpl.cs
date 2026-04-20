@@ -18,20 +18,23 @@ internal partial class CModelConfigElement_RandomPickImpl : CModelConfigElementI
 
     private static nint? _ChoicesOffset;
 
-    public ref CUtlVector<CUtlString> Choices {
-        get {
+    public ref CUtlVector<CUtlString> Choices
+    {
+        get
+        {
             _ChoicesOffset = _ChoicesOffset ?? Schema.GetOffset(0x31F9AEEA9E9959BF);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_ChoicesOffset!.Value);
         }
     }
     private static nint? _ChoiceWeightsOffset;
 
-    public ref CUtlVector<float> ChoiceWeights {
-        get {
+    public ref CUtlVector<float> ChoiceWeights
+    {
+        get
+        {
             _ChoiceWeightsOffset = _ChoiceWeightsOffset ?? Schema.GetOffset(0x31F9AEEA379579F7);
             return ref _Handle.AsRef<CUtlVector<float>>(_ChoiceWeightsOffset!.Value);
         }
     }
-
 
 }

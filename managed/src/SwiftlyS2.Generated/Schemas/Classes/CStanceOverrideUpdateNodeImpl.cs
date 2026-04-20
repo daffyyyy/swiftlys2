@@ -18,36 +18,43 @@ internal partial class CStanceOverrideUpdateNodeImpl : CUnaryUpdateNodeImpl, CSt
 
     private static nint? _FootStanceInfoOffset;
 
-    public ref CUtlVector<StanceInfo_t> FootStanceInfo {
-        get {
+    public ref CUtlVector<StanceInfo_t> FootStanceInfo
+    {
+        get
+        {
             _FootStanceInfoOffset = _FootStanceInfoOffset ?? Schema.GetOffset(0x322EE1B7D5687289);
             return ref _Handle.AsRef<CUtlVector<StanceInfo_t>>(_FootStanceInfoOffset!.Value);
         }
     }
     private static nint? _StanceSourceNodeOffset;
 
-    public CAnimUpdateNodeRef StanceSourceNode {
-        get {
+    public CAnimUpdateNodeRef StanceSourceNode
+    {
+        get
+        {
             _StanceSourceNodeOffset = _StanceSourceNodeOffset ?? Schema.GetOffset(0x322EE1B7D25DA07A);
             return new CAnimUpdateNodeRefImpl(_Handle + _StanceSourceNodeOffset!.Value);
         }
     }
     private static nint? _ParameterOffset;
 
-    public CAnimParamHandle Parameter {
-        get {
+    public CAnimParamHandle Parameter
+    {
+        get
+        {
             _ParameterOffset = _ParameterOffset ?? Schema.GetOffset(0x322EE1B70C7008F6);
             return new CAnimParamHandleImpl(_Handle + _ParameterOffset!.Value);
         }
     }
     private static nint? _ModeOffset;
 
-    public ref StanceOverrideMode Mode {
-        get {
+    public ref StanceOverrideMode Mode
+    {
+        get
+        {
             _ModeOffset = _ModeOffset ?? Schema.GetOffset(0x322EE1B71050A633);
             return ref _Handle.AsRef<StanceOverrideMode>(_ModeOffset!.Value);
         }
     }
-
 
 }

@@ -18,36 +18,43 @@ internal partial class CLogicBranchImpl : CLogicalEntityImpl, CLogicBranch
 
     private static nint? _InValueOffset;
 
-    public ref bool InValue {
-        get {
+    public ref bool InValue
+    {
+        get
+        {
             _InValueOffset = _InValueOffset ?? Schema.GetOffset(0x5B700E1052400A1F);
             return ref _Handle.AsRef<bool>(_InValueOffset!.Value);
         }
     }
     private static nint? _ListenersOffset;
 
-    public ref CUtlVector<CHandle<CBaseEntity>> Listeners {
-        get {
+    public ref CUtlVector<CHandle<CBaseEntity>> Listeners
+    {
+        get
+        {
             _ListenersOffset = _ListenersOffset ?? Schema.GetOffset(0x5B700E10E4AECE86);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(_ListenersOffset!.Value);
         }
     }
     private static nint? _OnTrueOffset;
 
-    public ref CEntityIOOutput OnTrue {
-        get {
+    public ref CEntityIOOutput OnTrue
+    {
+        get
+        {
             _OnTrueOffset = _OnTrueOffset ?? Schema.GetOffset(0x5B700E106EAE5D88);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnTrueOffset!.Value);
         }
     }
     private static nint? _OnFalseOffset;
 
-    public ref CEntityIOOutput OnFalse {
-        get {
+    public ref CEntityIOOutput OnFalse
+    {
+        get
+        {
             _OnFalseOffset = _OnFalseOffset ?? Schema.GetOffset(0x5B700E104973AF03);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnFalseOffset!.Value);
         }
     }
-
 
 }

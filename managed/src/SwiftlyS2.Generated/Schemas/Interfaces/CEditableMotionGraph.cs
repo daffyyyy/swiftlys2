@@ -14,7 +14,4 @@ public partial interface CEditableMotionGraph : CMotionGraph, ISchemaClass<CEdit
     static int ISchemaClass<CEditableMotionGraph>.Size => 88;
     static string? ISchemaClass<CEditableMotionGraph>.ClassName => null;
 
-
-
-
 }

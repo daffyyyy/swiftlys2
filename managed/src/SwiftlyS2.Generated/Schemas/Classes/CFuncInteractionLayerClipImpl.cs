@@ -18,36 +18,43 @@ internal partial class CFuncInteractionLayerClipImpl : CBaseModelEntityImpl, CFu
 
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0x5A9288DF3A7C5965);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _InteractsAsOffset;
 
-    public string InteractsAs {
-        get {
+    public string InteractsAs
+    {
+        get
+        {
             _InteractsAsOffset = _InteractsAsOffset ?? Schema.GetOffset(0x5A9288DF488FC5DC);
             return Schema.GetString(_Handle.Read<nint>(_InteractsAsOffset!.Value));
         }
-        set {
+        set
+        {
             _InteractsAsOffset = _InteractsAsOffset ?? Schema.GetOffset(0x5A9288DF488FC5DC);
             Schema.SetString(_Handle, _InteractsAsOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _InteractsWithOffset;
 
-    public string InteractsWith {
-        get {
+    public string InteractsWith
+    {
+        get
+        {
             _InteractsWithOffset = _InteractsWithOffset ?? Schema.GetOffset(0x5A9288DF84AB4214);
             return Schema.GetString(_Handle.Read<nint>(_InteractsWithOffset!.Value));
         }
-        set {
+        set
+        {
             _InteractsWithOffset = _InteractsWithOffset ?? Schema.GetOffset(0x5A9288DF84AB4214);
             Schema.SetString(_Handle, _InteractsWithOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

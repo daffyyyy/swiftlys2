@@ -18,36 +18,43 @@ internal partial class CPulseCell_BooleanSwitchStateImpl : CPulseCell_BaseStateI
 
     private static nint? _ConditionOffset;
 
-    public PulseObservableBoolExpression_t Condition {
-        get {
+    public PulseObservableBoolExpression_t Condition
+    {
+        get
+        {
             _ConditionOffset = _ConditionOffset ?? Schema.GetOffset(0xB0380EFD5F2A883E);
             return new PulseObservableBoolExpression_tImpl(_Handle + _ConditionOffset!.Value);
         }
     }
-    private static nint? _SubGraphOffset;
+    private static nint? _AlwaysOffset;
 
-    public CPulse_OutflowConnection SubGraph {
-        get {
-            _SubGraphOffset = _SubGraphOffset ?? Schema.GetOffset(0xB0380EFD979BD817);
-            return new CPulse_OutflowConnectionImpl(_Handle + _SubGraphOffset!.Value);
+    public CPulse_OutflowConnection Always
+    {
+        get
+        {
+            _AlwaysOffset = _AlwaysOffset ?? Schema.GetOffset(0xB0380EFDD5D76864);
+            return new CPulse_OutflowConnectionImpl(_Handle + _AlwaysOffset!.Value);
         }
     }
     private static nint? _WhenTrueOffset;
 
-    public CPulse_OutflowConnection WhenTrue {
-        get {
+    public CPulse_OutflowConnection WhenTrue
+    {
+        get
+        {
             _WhenTrueOffset = _WhenTrueOffset ?? Schema.GetOffset(0xB0380EFDB329ED61);
             return new CPulse_OutflowConnectionImpl(_Handle + _WhenTrueOffset!.Value);
         }
     }
     private static nint? _WhenFalseOffset;
 
-    public CPulse_OutflowConnection WhenFalse {
-        get {
+    public CPulse_OutflowConnection WhenFalse
+    {
+        get
+        {
             _WhenFalseOffset = _WhenFalseOffset ?? Schema.GetOffset(0xB0380EFD4DD1A01C);
             return new CPulse_OutflowConnectionImpl(_Handle + _WhenFalseOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class C_INIT_ScaleVelocityImpl : CParticleFunctionInitializerIm
 
     private static nint? _ScaleOffset;
 
-    public CParticleCollectionVecInput Scale {
-        get {
+    public CParticleCollectionVecInput Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xF226CCC35F596B51);
             return new CParticleCollectionVecInputImpl(_Handle + _ScaleOffset!.Value);
         }
     }
-
 
 }

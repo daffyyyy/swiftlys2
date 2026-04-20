@@ -16,7 +16,4 @@ internal partial class C_OP_RemapNamedModelBodyPartOnceTimedImpl : C_OP_RemapNam
 {
     public C_OP_RemapNamedModelBodyPartOnceTimedImpl(nint handle) : base(handle) { }
 
-
-
-
 }

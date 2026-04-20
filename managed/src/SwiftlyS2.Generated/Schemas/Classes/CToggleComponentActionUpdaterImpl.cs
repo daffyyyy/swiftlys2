@@ -18,20 +18,23 @@ internal partial class CToggleComponentActionUpdaterImpl : CAnimActionUpdaterImp
 
     private static nint? _ComponentIDOffset;
 
-    public AnimComponentID ComponentID {
-        get {
+    public AnimComponentID ComponentID
+    {
+        get
+        {
             _ComponentIDOffset = _ComponentIDOffset ?? Schema.GetOffset(0x4641AA28C1B9267D);
             return new AnimComponentIDImpl(_Handle + _ComponentIDOffset!.Value);
         }
     }
     private static nint? _SetEnabledOffset;
 
-    public ref bool SetEnabled {
-        get {
+    public ref bool SetEnabled
+    {
+        get
+        {
             _SetEnabledOffset = _SetEnabledOffset ?? Schema.GetOffset(0x4641AA28BC6294B8);
             return ref _Handle.AsRef<bool>(_SetEnabledOffset!.Value);
         }
     }
-
 
 }

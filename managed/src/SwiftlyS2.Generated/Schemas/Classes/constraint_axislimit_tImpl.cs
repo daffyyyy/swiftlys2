@@ -18,36 +18,43 @@ internal partial class constraint_axislimit_tImpl : SchemaClass, constraint_axis
 
     private static nint? _MinRotationOffset;
 
-    public ref float MinRotation {
-        get {
+    public ref float MinRotation
+    {
+        get
+        {
             _MinRotationOffset = _MinRotationOffset ?? Schema.GetOffset(0x610A06522A8C970B);
             return ref _Handle.AsRef<float>(_MinRotationOffset!.Value);
         }
     }
     private static nint? _MaxRotationOffset;
 
-    public ref float MaxRotation {
-        get {
+    public ref float MaxRotation
+    {
+        get
+        {
             _MaxRotationOffset = _MaxRotationOffset ?? Schema.GetOffset(0x610A0652FEB73D49);
             return ref _Handle.AsRef<float>(_MaxRotationOffset!.Value);
         }
     }
     private static nint? _MotorTargetAngSpeedOffset;
 
-    public ref float MotorTargetAngSpeed {
-        get {
+    public ref float MotorTargetAngSpeed
+    {
+        get
+        {
             _MotorTargetAngSpeedOffset = _MotorTargetAngSpeedOffset ?? Schema.GetOffset(0x610A0652C783A98E);
             return ref _Handle.AsRef<float>(_MotorTargetAngSpeedOffset!.Value);
         }
     }
     private static nint? _MotorMaxTorqueOffset;
 
-    public ref float MotorMaxTorque {
-        get {
+    public ref float MotorMaxTorque
+    {
+        get
+        {
             _MotorMaxTorqueOffset = _MotorMaxTorqueOffset ?? Schema.GetOffset(0x610A0652808C4A00);
             return ref _Handle.AsRef<float>(_MotorMaxTorqueOffset!.Value);
         }
     }
-
 
 }

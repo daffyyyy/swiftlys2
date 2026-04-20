@@ -16,7 +16,4 @@ internal partial class CPulseCell_Step_DebugLogImpl : CPulseCell_BaseFlowImpl, C
 {
     public CPulseCell_Step_DebugLogImpl(nint handle) : base(handle) { }
 
-
-
-
 }

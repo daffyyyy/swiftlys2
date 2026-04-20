@@ -18,8 +18,10 @@ internal partial class CCSPlayer_BulletServicesImpl : CPlayerPawnComponentImpl, 
 
     private static nint? _TotalHitsOnServerOffset;
 
-    public ref int TotalHitsOnServer {
-        get {
+    public ref int TotalHitsOnServer
+    {
+        get
+        {
             _TotalHitsOnServerOffset = _TotalHitsOnServerOffset ?? Schema.GetOffset(0x39B0E99E8006CF29);
             return ref _Handle.AsRef<int>(_TotalHitsOnServerOffset!.Value);
         }

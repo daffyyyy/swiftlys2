@@ -15,10 +15,10 @@ public partial interface CNmSelectorNode__CDefinition : CNmPoseNode__CDefinition
     static string? ISchemaClass<CNmSelectorNode__CDefinition>.ClassName => null;
 
 
-    // CUtlLeanVectorFixedGrowable< int16, 5 >
+    // CUtlLeanVectorFixedGrowable< int16, 8 >
     public SchemaUntypedField OptionNodeIndices { get; }
 
-    // CUtlLeanVectorFixedGrowable< int16, 5 >
+    // CUtlLeanVectorFixedGrowable< int16, 8 >
     public SchemaUntypedField ConditionNodeIndices { get; }
 
 

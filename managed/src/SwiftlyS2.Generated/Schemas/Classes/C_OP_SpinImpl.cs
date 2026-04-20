@@ -16,7 +16,4 @@ internal partial class C_OP_SpinImpl : CGeneralSpinImpl, C_OP_Spin
 {
     public C_OP_SpinImpl(nint handle) : base(handle) { }
 
-
-
-
 }

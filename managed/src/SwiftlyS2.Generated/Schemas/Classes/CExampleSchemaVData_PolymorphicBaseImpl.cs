@@ -18,12 +18,13 @@ internal partial class CExampleSchemaVData_PolymorphicBaseImpl : SchemaClass, CE
 
     private static nint? _BaseOffset;
 
-    public ref int Base {
-        get {
+    public ref int Base
+    {
+        get
+        {
             _BaseOffset = _BaseOffset ?? Schema.GetOffset(0x2CEB124160282B7C);
             return ref _Handle.AsRef<int>(_BaseOffset!.Value);
         }
     }
-
 
 }

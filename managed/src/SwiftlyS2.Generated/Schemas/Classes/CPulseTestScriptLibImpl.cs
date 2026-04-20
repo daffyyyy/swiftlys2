@@ -16,7 +16,4 @@ internal partial class CPulseTestScriptLibImpl : SchemaClass, CPulseTestScriptLi
 {
     public CPulseTestScriptLibImpl(nint handle) : base(handle) { }
 
-
-
-
 }

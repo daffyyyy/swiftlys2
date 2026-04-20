@@ -16,7 +16,4 @@ internal partial class CDynamicPropAlias_prop_dynamic_overrideImpl : CDynamicPro
 {
     public CDynamicPropAlias_prop_dynamic_overrideImpl(nint handle) : base(handle) { }
 
-
-
-
 }

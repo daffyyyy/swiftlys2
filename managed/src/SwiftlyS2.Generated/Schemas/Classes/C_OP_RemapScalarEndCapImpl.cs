@@ -18,52 +18,63 @@ internal partial class C_OP_RemapScalarEndCapImpl : CParticleFunctionOperatorImp
 
     private static nint? _FieldInputOffset;
 
-    public ParticleAttributeIndex_t FieldInput {
-        get {
+    public ParticleAttributeIndex_t FieldInput
+    {
+        get
+        {
             _FieldInputOffset = _FieldInputOffset ?? Schema.GetOffset(0x73A6F7F1AE775669);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldInputOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x73A6F7F1E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public ref float InputMin {
-        get {
+    public ref float InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0x73A6F7F1E88A0D0F);
             return ref _Handle.AsRef<float>(_InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public ref float InputMax {
-        get {
+    public ref float InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0x73A6F7F1D6766901);
             return ref _Handle.AsRef<float>(_InputMaxOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public ref float OutputMin {
-        get {
+    public ref float OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0x73A6F7F15F8D7716);
             return ref _Handle.AsRef<float>(_OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public ref float OutputMax {
-        get {
+    public ref float OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0x73A6F7F151A0E8C4);
             return ref _Handle.AsRef<float>(_OutputMaxOffset!.Value);
         }
     }
-
 
 }

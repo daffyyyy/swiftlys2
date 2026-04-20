@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCAnimationGroupImpl : SchemaClass, Inf
 {
     public InfoForResourceTypeCAnimationGroupImpl(nint handle) : base(handle) { }
 
-
-
-
 }

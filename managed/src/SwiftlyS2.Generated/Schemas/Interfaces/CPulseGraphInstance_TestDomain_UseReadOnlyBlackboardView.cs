@@ -14,7 +14,4 @@ public partial interface CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardVie
     static int ISchemaClass<CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView>.Size => 352;
     static string? ISchemaClass<CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView>.ClassName => null;
 
-
-
-
 }

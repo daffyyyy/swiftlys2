@@ -18,28 +18,33 @@ internal partial class SpawnPointImpl : CServerOnlyPointEntityImpl, SpawnPoint
 
     private static nint? _PriorityOffset;
 
-    public ref int Priority {
-        get {
+    public ref int Priority
+    {
+        get
+        {
             _PriorityOffset = _PriorityOffset ?? Schema.GetOffset(0x72527C0E6224A30C);
             return ref _Handle.AsRef<int>(_PriorityOffset!.Value);
         }
     }
     private static nint? _EnabledOffset;
 
-    public ref bool Enabled {
-        get {
+    public ref bool Enabled
+    {
+        get
+        {
             _EnabledOffset = _EnabledOffset ?? Schema.GetOffset(0x72527C0E6154EB7E);
             return ref _Handle.AsRef<bool>(_EnabledOffset!.Value);
         }
     }
     private static nint? _TypeOffset;
 
-    public ref int Type {
-        get {
+    public ref int Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x72527C0E18853D59);
             return ref _Handle.AsRef<int>(_TypeOffset!.Value);
         }
     }
-
 
 }

@@ -11,16 +11,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseAnimGraphController : CSkeletonAnimationController, ISchemaClass<CBaseAnimGraphController>
 {
     static CBaseAnimGraphController ISchemaClass<CBaseAnimGraphController>.From(nint handle) => new CBaseAnimGraphControllerImpl(handle);
-    static int ISchemaClass<CBaseAnimGraphController>.Size => 2136;
+    static int ISchemaClass<CBaseAnimGraphController>.Size => 1600;
     static string? ISchemaClass<CBaseAnimGraphController>.ClassName => null;
 
 
     public ref AnimationAlgorithm_t AnimationAlgorithm { get; }
-
-    public CAnimGraphNetworkedVariables AnimGraphNetworkedVars { get; }
-
-    // CSmartPtr< IAnimationGraphInstance >
-    public SchemaUntypedField AnimGraphInstance { get; }
 
     public ExternalAnimGraphHandle_t NextExternalGraphHandle { get; }
 
@@ -58,9 +53,11 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
 
     public ref CStrongHandle<InfoForResourceTypeCNmGraphDefinition> GraphDefinitionAG2 { get; }
 
-    public ref CUtlVector<byte> SerializedPoseRecipeAG2 { get; }
+    public ref CUtlVector<AnimGraph2SerializedPoseRecipe_t> SerializePoseRecipeAG2Slots { get; }
 
-    public ref int SerializePoseRecipeSizeAG2 { get; }
+    public ref CUtlVector<byte> SerializePoseRecipeAG2Dynamic { get; }
+
+    public ref ushort SerializePoseRecipeAG2ActiveSlot { get; }
 
     public ref int SerializePoseRecipeVersionAG2 { get; }
 
@@ -76,10 +73,11 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
 
     public ref CGlobalSymbol AnimGraph2Identifier { get; }
 
+    public CNmGraphInstance? GraphInstanceAG2 { get; }
+
     public ref CUtlVector<ExternalAnimGraph_t> ExternalGraphs { get; }
 
     public void AnimationAlgorithmUpdated();
-    public void AnimGraphNetworkedVarsUpdated();
     public void SecondarySkeletonsUpdated();
     public void SecondarySkeletonMasterCountUpdated();
     public void SequenceUpdated();
@@ -88,8 +86,9 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
     public void AnimLoopModeUpdated();
     public void PlaybackRateUpdated();
     public void GraphDefinitionAG2Updated();
-    public void SerializedPoseRecipeAG2Updated();
-    public void SerializePoseRecipeSizeAG2Updated();
+    public void SerializePoseRecipeAG2SlotsUpdated();
+    public void SerializePoseRecipeAG2DynamicUpdated();
+    public void SerializePoseRecipeAG2ActiveSlotUpdated();
     public void SerializePoseRecipeVersionAG2Updated();
     public void ServerGraphInstanceIterationUpdated();
     public void ServerSerializationContextIterationUpdated();

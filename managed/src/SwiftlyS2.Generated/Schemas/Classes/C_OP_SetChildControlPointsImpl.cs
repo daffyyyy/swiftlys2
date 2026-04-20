@@ -18,60 +18,73 @@ internal partial class C_OP_SetChildControlPointsImpl : CParticleFunctionOperato
 
     private static nint? _ChildGroupIDOffset;
 
-    public ref int ChildGroupID {
-        get {
+    public ref int ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0x42125413E3F3C965);
             return ref _Handle.AsRef<int>(_ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _FirstControlPointOffset;
 
-    public ref int FirstControlPoint {
-        get {
+    public ref int FirstControlPoint
+    {
+        get
+        {
             _FirstControlPointOffset = _FirstControlPointOffset ?? Schema.GetOffset(0x4212541372117650);
             return ref _Handle.AsRef<int>(_FirstControlPointOffset!.Value);
         }
     }
     private static nint? _NumControlPointsOffset;
 
-    public ref int NumControlPoints {
-        get {
+    public ref int NumControlPoints
+    {
+        get
+        {
             _NumControlPointsOffset = _NumControlPointsOffset ?? Schema.GetOffset(0x42125413551EBC4F);
             return ref _Handle.AsRef<int>(_NumControlPointsOffset!.Value);
         }
     }
     private static nint? _FirstSourcePointOffset;
 
-    public CParticleCollectionFloatInput FirstSourcePoint {
-        get {
+    public CParticleCollectionFloatInput FirstSourcePoint
+    {
+        get
+        {
             _FirstSourcePointOffset = _FirstSourcePointOffset ?? Schema.GetOffset(0x421254139D7DC18E);
             return new CParticleCollectionFloatInputImpl(_Handle + _FirstSourcePointOffset!.Value);
         }
     }
     private static nint? _ReverseOffset;
 
-    public ref bool Reverse {
-        get {
+    public ref bool Reverse
+    {
+        get
+        {
             _ReverseOffset = _ReverseOffset ?? Schema.GetOffset(0x42125413EA4E22E5);
             return ref _Handle.AsRef<bool>(_ReverseOffset!.Value);
         }
     }
     private static nint? _SetOrientationOffset;
 
-    public ref bool SetOrientation {
-        get {
+    public ref bool SetOrientation
+    {
+        get
+        {
             _SetOrientationOffset = _SetOrientationOffset ?? Schema.GetOffset(0x42125413E1390E37);
             return ref _Handle.AsRef<bool>(_SetOrientationOffset!.Value);
         }
     }
     private static nint? _OrientationOffset;
 
-    public ref ParticleOrientationType_t Orientation {
-        get {
+    public ref ParticleOrientationType_t Orientation
+    {
+        get
+        {
             _OrientationOffset = _OrientationOffset ?? Schema.GetOffset(0x42125413B02B656D);
             return ref _Handle.AsRef<ParticleOrientationType_t>(_OrientationOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CLightEnvironmentEntityImpl : CLightDirectionalEntityImpl
 {
     public CLightEnvironmentEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

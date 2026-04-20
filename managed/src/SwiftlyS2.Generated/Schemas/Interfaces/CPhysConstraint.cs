@@ -15,6 +15,8 @@ public partial interface CPhysConstraint : CLogicalEntity, ISchemaClass<CPhysCon
     static string? ISchemaClass<CPhysConstraint>.ClassName => null;
 
 
+    public IPhysicsJoint? Joint { get; }
+
     public string NameAttach1 { get; set; }
 
     public string NameAttach2 { get; set; }

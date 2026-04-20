@@ -14,7 +14,4 @@ public partial interface CSosGroupActionSchema : ISchemaClass<CSosGroupActionSch
     static int ISchemaClass<CSosGroupActionSchema>.Size => 8;
     static string? ISchemaClass<CSosGroupActionSchema>.ClassName => null;
 
-
-
-
 }

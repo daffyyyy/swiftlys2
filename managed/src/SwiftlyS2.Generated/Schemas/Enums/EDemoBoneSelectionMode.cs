@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EDemoBoneSelectionMode : uint
 {
- CaptureAllBones = 0,
-
- CaptureSelectedBones = 1,
+    CaptureAllBones = 0,
+    CaptureSelectedBones = 1,
 }

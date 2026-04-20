@@ -18,12 +18,13 @@ internal partial class CNmIsExternalGraphSlotFilledNode__CDefinitionImpl : CNmBo
 
     private static nint? _ExternalGraphNodeIdxOffset;
 
-    public ref short ExternalGraphNodeIdx {
-        get {
+    public ref short ExternalGraphNodeIdx
+    {
+        get
+        {
             _ExternalGraphNodeIdxOffset = _ExternalGraphNodeIdxOffset ?? Schema.GetOffset(0x973486C85D32D8E5);
             return ref _Handle.AsRef<short>(_ExternalGraphNodeIdxOffset!.Value);
         }
     }
-
 
 }

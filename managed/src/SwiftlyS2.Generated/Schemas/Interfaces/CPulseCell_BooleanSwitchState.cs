@@ -17,7 +17,7 @@ public partial interface CPulseCell_BooleanSwitchState : CPulseCell_BaseState, I
 
     public PulseObservableBoolExpression_t Condition { get; }
 
-    public CPulse_OutflowConnection SubGraph { get; }
+    public CPulse_OutflowConnection Always { get; }
 
     public CPulse_OutflowConnection WhenTrue { get; }
 

@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCMorphSetData : ISchemaClass<InfoFor
     static int ISchemaClass<InfoForResourceTypeCMorphSetData>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCMorphSetData>.ClassName => null;
 
-
-
-
 }

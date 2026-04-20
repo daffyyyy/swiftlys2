@@ -18,20 +18,23 @@ internal partial class CFuncNavObstructionImpl : CBaseModelEntityImpl, CFuncNavO
 
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0xCF9A1E413A7C5965);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _UseAsyncObstacleUpdateOffset;
 
-    public ref bool UseAsyncObstacleUpdate {
-        get {
+    public ref bool UseAsyncObstacleUpdate
+    {
+        get
+        {
             _UseAsyncObstacleUpdateOffset = _UseAsyncObstacleUpdateOffset ?? Schema.GetOffset(0xCF9A1E41094FA698);
             return ref _Handle.AsRef<bool>(_UseAsyncObstacleUpdateOffset!.Value);
         }
     }
-
 
 }

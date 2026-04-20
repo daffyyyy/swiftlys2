@@ -39,6 +39,10 @@ public partial interface CPhysMotor : CLogicalEntity, ISchemaClass<CPhysMotor>
 
     public ref float SpeedWhenSpinUpOrSpinDownStarted { get; }
 
+    public IPhysicsBody? FixedWorldBody { get; }
+
+    public IPhysicsJoint? MotorJoint { get; }
+
     public CMotorController Motor { get; }
 
 

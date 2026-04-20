@@ -18,52 +18,63 @@ internal partial class DecalGroupOption_tImpl : SchemaClass, DecalGroupOption_t
 
     private static nint? _MaterialOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material
+    {
+        get
+        {
             _MaterialOffset = _MaterialOffset ?? Schema.GetOffset(0x9F3DB78B888CE42E);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(_MaterialOffset!.Value);
         }
     }
     private static nint? _SequenceNameOffset;
 
-    public ref CGlobalSymbol SequenceName {
-        get {
+    public ref CGlobalSymbol SequenceName
+    {
+        get
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0x9F3DB78B7462AF30);
             return ref _Handle.AsRef<CGlobalSymbol>(_SequenceNameOffset!.Value);
         }
     }
     private static nint? _ProbabilityOffset;
 
-    public ref float Probability {
-        get {
+    public ref float Probability
+    {
+        get
+        {
             _ProbabilityOffset = _ProbabilityOffset ?? Schema.GetOffset(0x9F3DB78B9ABB533A);
             return ref _Handle.AsRef<float>(_ProbabilityOffset!.Value);
         }
     }
     private static nint? _EnableAngleBetweenNormalAndGravityRangeOffset;
 
-    public ref bool EnableAngleBetweenNormalAndGravityRange {
-        get {
+    public ref bool EnableAngleBetweenNormalAndGravityRange
+    {
+        get
+        {
             _EnableAngleBetweenNormalAndGravityRangeOffset = _EnableAngleBetweenNormalAndGravityRangeOffset ?? Schema.GetOffset(0x9F3DB78B5C382DAE);
             return ref _Handle.AsRef<bool>(_EnableAngleBetweenNormalAndGravityRangeOffset!.Value);
         }
     }
     private static nint? _MinAngleBetweenNormalAndGravityOffset;
 
-    public ref float MinAngleBetweenNormalAndGravity {
-        get {
+    public ref float MinAngleBetweenNormalAndGravity
+    {
+        get
+        {
             _MinAngleBetweenNormalAndGravityOffset = _MinAngleBetweenNormalAndGravityOffset ?? Schema.GetOffset(0x9F3DB78B8EB6C526);
             return ref _Handle.AsRef<float>(_MinAngleBetweenNormalAndGravityOffset!.Value);
         }
     }
     private static nint? _MaxAngleBetweenNormalAndGravityOffset;
 
-    public ref float MaxAngleBetweenNormalAndGravity {
-        get {
+    public ref float MaxAngleBetweenNormalAndGravity
+    {
+        get
+        {
             _MaxAngleBetweenNormalAndGravityOffset = _MaxAngleBetweenNormalAndGravityOffset ?? Schema.GetOffset(0x9F3DB78B44368314);
             return ref _Handle.AsRef<float>(_MaxAngleBetweenNormalAndGravityOffset!.Value);
         }
     }
-
 
 }

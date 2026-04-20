@@ -14,7 +14,4 @@ public partial interface CPulseCell_Value_TestValue50 : CPulseCell_BaseValue, IS
     static int ISchemaClass<CPulseCell_Value_TestValue50>.Size => 72;
     static string? ISchemaClass<CPulseCell_Value_TestValue50>.ClassName => null;
 
-
-
-
 }

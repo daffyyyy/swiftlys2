@@ -16,7 +16,4 @@ internal partial class CNavVolumeAllImpl : CNavVolumeVectorImpl, CNavVolumeAll
 {
     public CNavVolumeAllImpl(nint handle) : base(handle) { }
 
-
-
-
 }

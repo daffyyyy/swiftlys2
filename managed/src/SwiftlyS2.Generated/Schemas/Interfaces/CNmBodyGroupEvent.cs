@@ -15,6 +15,8 @@ public partial interface CNmBodyGroupEvent : CNmEvent, ISchemaClass<CNmBodyGroup
     static string? ISchemaClass<CNmBodyGroupEvent>.ClassName => null;
 
 
+    public ref CNmEventTargetEntity_t Target { get; }
+
     public string GroupName { get; set; }
 
     public ref int GroupValue { get; }

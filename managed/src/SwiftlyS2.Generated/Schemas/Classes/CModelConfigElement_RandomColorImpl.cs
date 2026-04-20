@@ -18,12 +18,13 @@ internal partial class CModelConfigElement_RandomColorImpl : CModelConfigElement
 
     private static nint? _GradientOffset;
 
-    public SchemaUntypedField Gradient {
-        get {
+    public SchemaUntypedField Gradient
+    {
+        get
+        {
             _GradientOffset = _GradientOffset ?? Schema.GetOffset(0x375CC66605C95F25);
             return new SchemaUntypedField(_Handle + _GradientOffset!.Value);
         }
     }
-
 
 }

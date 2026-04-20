@@ -18,48 +18,60 @@ internal partial class CAttributeManagerImpl : SchemaClass, CAttributeManager
 
     private static nint? _ProvidersOffset;
 
-    public ref CUtlVector<CHandle<CBaseEntity>> Providers {
-        get {
+    public ref CUtlVector<CHandle<CBaseEntity>> Providers
+    {
+        get
+        {
             _ProvidersOffset = _ProvidersOffset ?? Schema.GetOffset(0x7FCB380DA07F345D);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(_ProvidersOffset!.Value);
         }
     }
     private static nint? _ReapplyProvisionParityOffset;
 
-    public ref int ReapplyProvisionParity {
-        get {
+    public ref int ReapplyProvisionParity
+    {
+        get
+        {
             _ReapplyProvisionParityOffset = _ReapplyProvisionParityOffset ?? Schema.GetOffset(0x7FCB380D2F68110B);
             return ref _Handle.AsRef<int>(_ReapplyProvisionParityOffset!.Value);
         }
     }
     private static nint? _OuterOffset;
 
-    public ref CHandle<CBaseEntity> Outer {
-        get {
+    public ref CHandle<CBaseEntity> Outer
+    {
+        get
+        {
             _OuterOffset = _OuterOffset ?? Schema.GetOffset(0x7FCB380D30AE9FA2);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_OuterOffset!.Value);
         }
     }
     private static nint? _PreventLoopbackOffset;
 
-    public ref bool PreventLoopback {
-        get {
+    public ref bool PreventLoopback
+    {
+        get
+        {
             _PreventLoopbackOffset = _PreventLoopbackOffset ?? Schema.GetOffset(0x7FCB380D2CE71CA4);
             return ref _Handle.AsRef<bool>(_PreventLoopbackOffset!.Value);
         }
     }
     private static nint? _ProviderTypeOffset;
 
-    public ref attributeprovidertypes_t ProviderType {
-        get {
+    public ref attributeprovidertypes_t ProviderType
+    {
+        get
+        {
             _ProviderTypeOffset = _ProviderTypeOffset ?? Schema.GetOffset(0x7FCB380DD5677CB4);
             return ref _Handle.AsRef<attributeprovidertypes_t>(_ProviderTypeOffset!.Value);
         }
     }
     private static nint? _CachedResultsOffset;
 
-    public ref CUtlVector<CAttributeManager__cached_attribute_float_t> CachedResults {
-        get {
+    public ref CUtlVector<CAttributeManager__cached_attribute_float_t> CachedResults
+    {
+        get
+        {
             _CachedResultsOffset = _CachedResultsOffset ?? Schema.GetOffset(0x7FCB380D3CD4B7CB);
             return ref _Handle.AsRef<CUtlVector<CAttributeManager__cached_attribute_float_t>>(_CachedResultsOffset!.Value);
         }

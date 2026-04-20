@@ -16,33 +16,39 @@ internal partial class FeHingeLimitBuild_tImpl : SchemaClass, FeHingeLimitBuild_
 {
     public FeHingeLimitBuild_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x50E120ADCD6694B9, 6, 2, 2);
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x50E120ADB8D52E48);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _LimitCWOffset;
 
-    public ref float LimitCW {
-        get {
+    public ref float LimitCW
+    {
+        get
+        {
             _LimitCWOffset = _LimitCWOffset ?? Schema.GetOffset(0x50E120ADC3D20C44);
             return ref _Handle.AsRef<float>(_LimitCWOffset!.Value);
         }
     }
     private static nint? _LimitCCWOffset;
 
-    public ref float LimitCCW {
-        get {
+    public ref float LimitCCW
+    {
+        get
+        {
             _LimitCCWOffset = _LimitCCWOffset ?? Schema.GetOffset(0x50E120ADA6C794ED);
             return ref _Handle.AsRef<float>(_LimitCCWOffset!.Value);
         }
     }
-
 
 }

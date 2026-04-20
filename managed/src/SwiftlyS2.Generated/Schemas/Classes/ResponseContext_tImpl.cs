@@ -18,36 +18,43 @@ internal partial class ResponseContext_tImpl : SchemaClass, ResponseContext_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x8F5A90A274FF65FE);
             return Schema.GetString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x8F5A90A274FF65FE);
             Schema.SetString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ValueOffset;
 
-    public string Value {
-        get {
+    public string Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x8F5A90A28044B702);
             return Schema.GetString(_Handle.Read<nint>(_ValueOffset!.Value));
         }
-        set {
+        set
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x8F5A90A28044B702);
             Schema.SetString(_Handle, _ValueOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ExpirationTimeOffset;
 
-    public GameTime_t ExpirationTime {
-        get {
+    public GameTime_t ExpirationTime
+    {
+        get
+        {
             _ExpirationTimeOffset = _ExpirationTimeOffset ?? Schema.GetOffset(0x8F5A90A20389142D);
             return new GameTime_tImpl(_Handle + _ExpirationTimeOffset!.Value);
         }
     }
-
 
 }

@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmCachedValueMode_t : uint
 {
- OnEntry = 0,
-
- OnExit = 1,
+    OnEntry = 0,
+    OnExit = 1,
 }

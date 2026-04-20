@@ -14,7 +14,4 @@ public partial interface CNmControlParameterBoolNode__CDefinition : CNmBoolValue
     static int ISchemaClass<CNmControlParameterBoolNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmControlParameterBoolNode__CDefinition>.ClassName => null;
 
-
-
-
 }

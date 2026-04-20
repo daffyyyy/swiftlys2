@@ -18,36 +18,43 @@ internal partial class C_OP_RampScalarLinearSimpleImpl : CParticleFunctionOperat
 
     private static nint? _RateOffset;
 
-    public ref float Rate {
-        get {
+    public ref float Rate
+    {
+        get
+        {
             _RateOffset = _RateOffset ?? Schema.GetOffset(0xCD04073EEC3280E7);
             return ref _Handle.AsRef<float>(_RateOffset!.Value);
         }
     }
     private static nint? _StartTimeOffset;
 
-    public ref float StartTime {
-        get {
+    public ref float StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0xCD04073E67FE9DC4);
             return ref _Handle.AsRef<float>(_StartTimeOffset!.Value);
         }
     }
     private static nint? _EndTimeOffset;
 
-    public ref float EndTime {
-        get {
+    public ref float EndTime
+    {
+        get
+        {
             _EndTimeOffset = _EndTimeOffset ?? Schema.GetOffset(0xCD04073E2041DF9D);
             return ref _Handle.AsRef<float>(_EndTimeOffset!.Value);
         }
     }
     private static nint? _FieldOffset;
 
-    public ParticleAttributeIndex_t Field {
-        get {
+    public ParticleAttributeIndex_t Field
+    {
+        get
+        {
             _FieldOffset = _FieldOffset ?? Schema.GetOffset(0xCD04073EC257B93B);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOffset!.Value);
         }
     }
-
 
 }

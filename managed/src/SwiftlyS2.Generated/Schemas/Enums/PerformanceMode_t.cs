@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PerformanceMode_t : uint
 {
- PM_NORMAL = 0,
-
- PM_NO_GIBS = 1,
+    PM_NORMAL = 0,
+    PM_NO_GIBS = 1,
 }

@@ -14,7 +14,4 @@ public partial interface CPulseArraylib : ISchemaClass<CPulseArraylib>
     static int ISchemaClass<CPulseArraylib>.Size => 1;
     static string? ISchemaClass<CPulseArraylib>.ClassName => null;
 
-
-
-
 }

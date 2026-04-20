@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCGcExportableExternalDataImpl : Schema
 {
     public InfoForResourceTypeCGcExportableExternalDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

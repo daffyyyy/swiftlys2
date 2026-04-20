@@ -18,12 +18,13 @@ internal partial class CollisionGroupContext_tImpl : SchemaClass, CollisionGroup
 
     private static nint? _CollisionGroupNumberOffset;
 
-    public ref int CollisionGroupNumber {
-        get {
+    public ref int CollisionGroupNumber
+    {
+        get
+        {
             _CollisionGroupNumberOffset = _CollisionGroupNumberOffset ?? Schema.GetOffset(0xF923B00A9115013F);
             return ref _Handle.AsRef<int>(_CollisionGroupNumberOffset!.Value);
         }
     }
-
 
 }

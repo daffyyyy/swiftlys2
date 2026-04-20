@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCJavaScriptResourceImpl : SchemaClass,
 {
     public InfoForResourceTypeCJavaScriptResourceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

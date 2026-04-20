@@ -18,68 +18,83 @@ internal partial class SkeletonAnimCapture_t__FrameStamp_tImpl : SchemaClass, Sk
 
     private static nint? _TimeOffset;
 
-    public ref float Time {
-        get {
+    public ref float Time
+    {
+        get
+        {
             _TimeOffset = _TimeOffset ?? Schema.GetOffset(0x4ECAEB4FC957229E);
             return ref _Handle.AsRef<float>(_TimeOffset!.Value);
         }
     }
     private static nint? _EntitySimTimeOffset;
 
-    public ref float EntitySimTime {
-        get {
+    public ref float EntitySimTime
+    {
+        get
+        {
             _EntitySimTimeOffset = _EntitySimTimeOffset ?? Schema.GetOffset(0x4ECAEB4FAE2BAB2E);
             return ref _Handle.AsRef<float>(_EntitySimTimeOffset!.Value);
         }
     }
     private static nint? _TeleportTickOffset;
 
-    public ref bool TeleportTick {
-        get {
+    public ref bool TeleportTick
+    {
+        get
+        {
             _TeleportTickOffset = _TeleportTickOffset ?? Schema.GetOffset(0x4ECAEB4F7068242B);
             return ref _Handle.AsRef<bool>(_TeleportTickOffset!.Value);
         }
     }
     private static nint? _PredictedOffset;
 
-    public ref bool Predicted {
-        get {
+    public ref bool Predicted
+    {
+        get
+        {
             _PredictedOffset = _PredictedOffset ?? Schema.GetOffset(0x4ECAEB4F419B6D9B);
             return ref _Handle.AsRef<bool>(_PredictedOffset!.Value);
         }
     }
     private static nint? _CurTimeOffset;
 
-    public ref float CurTime {
-        get {
+    public ref float CurTime
+    {
+        get
+        {
             _CurTimeOffset = _CurTimeOffset ?? Schema.GetOffset(0x4ECAEB4F08036F9A);
             return ref _Handle.AsRef<float>(_CurTimeOffset!.Value);
         }
     }
     private static nint? _RealTimeOffset;
 
-    public ref float RealTime {
-        get {
+    public ref float RealTime
+    {
+        get
+        {
             _RealTimeOffset = _RealTimeOffset ?? Schema.GetOffset(0x4ECAEB4F1168EC02);
             return ref _Handle.AsRef<float>(_RealTimeOffset!.Value);
         }
     }
     private static nint? _FrameCountOffset;
 
-    public ref int FrameCount {
-        get {
+    public ref int FrameCount
+    {
+        get
+        {
             _FrameCountOffset = _FrameCountOffset ?? Schema.GetOffset(0x4ECAEB4F1DBCD049);
             return ref _Handle.AsRef<int>(_FrameCountOffset!.Value);
         }
     }
     private static nint? _TickCountOffset;
 
-    public ref int TickCount {
-        get {
+    public ref int TickCount
+    {
+        get
+        {
             _TickCountOffset = _TickCountOffset ?? Schema.GetOffset(0x4ECAEB4FE25E6B27);
             return ref _Handle.AsRef<int>(_TickCountOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface CNmGraphVariationUserData : ISchemaClass<CNmGraphVariat
     static int ISchemaClass<CNmGraphVariationUserData>.Size => 8;
     static string? ISchemaClass<CNmGraphVariationUserData>.ClassName => null;
 
-
-
-
 }

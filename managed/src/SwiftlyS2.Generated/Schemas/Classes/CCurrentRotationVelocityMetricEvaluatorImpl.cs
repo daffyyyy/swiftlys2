@@ -16,7 +16,4 @@ internal partial class CCurrentRotationVelocityMetricEvaluatorImpl : CMotionMetr
 {
     public CCurrentRotationVelocityMetricEvaluatorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

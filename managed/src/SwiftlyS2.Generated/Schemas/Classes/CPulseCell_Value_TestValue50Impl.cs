@@ -16,7 +16,4 @@ internal partial class CPulseCell_Value_TestValue50Impl : CPulseCell_BaseValueIm
 {
     public CPulseCell_Value_TestValue50Impl(nint handle) : base(handle) { }
 
-
-
-
 }

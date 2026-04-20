@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ScriptedConflictResponse_t : uint
 {
- SS_CONFLICT_ENQUEUE = 0,
-
- SS_CONFLICT_INTERRUPT = 1,
+    SS_CONFLICT_ENQUEUE = 0,
+    SS_CONFLICT_INTERRUPT = 1,
 }

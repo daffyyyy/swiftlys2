@@ -14,7 +14,4 @@ public partial interface CBtNode : ISchemaClass<CBtNode>
     static int ISchemaClass<CBtNode>.Size => 88;
     static string? ISchemaClass<CBtNode>.ClassName => null;
 
-
-
-
 }

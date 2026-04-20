@@ -16,7 +16,4 @@ internal partial class CChoreoUpdateNodeImpl : CUnaryUpdateNodeImpl, CChoreoUpda
 {
     public CChoreoUpdateNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

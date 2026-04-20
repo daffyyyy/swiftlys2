@@ -18,20 +18,23 @@ internal partial class NmFloatCurveCompressionSettings_tImpl : SchemaClass, NmFl
 
     private static nint? _RangeOffset;
 
-    public NmCompressionSettings_t__QuantizationRange_t Range {
-        get {
+    public NmCompressionSettings_t__QuantizationRange_t Range
+    {
+        get
+        {
             _RangeOffset = _RangeOffset ?? Schema.GetOffset(0x5BD5686F3D639CF2);
             return new NmCompressionSettings_t__QuantizationRange_tImpl(_Handle + _RangeOffset!.Value);
         }
     }
     private static nint? _IsStaticOffset;
 
-    public ref bool IsStatic {
-        get {
+    public ref bool IsStatic
+    {
+        get
+        {
             _IsStaticOffset = _IsStaticOffset ?? Schema.GetOffset(0x5BD5686F57ECC7EB);
             return ref _Handle.AsRef<bool>(_IsStaticOffset!.Value);
         }
     }
-
 
 }

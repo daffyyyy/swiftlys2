@@ -18,28 +18,33 @@ internal partial class C_INIT_RandomTrailLengthImpl : CParticleFunctionInitializ
 
     private static nint? _MinLengthOffset;
 
-    public ref float MinLength {
-        get {
+    public ref float MinLength
+    {
+        get
+        {
             _MinLengthOffset = _MinLengthOffset ?? Schema.GetOffset(0x6418031B95FB8E51);
             return ref _Handle.AsRef<float>(_MinLengthOffset!.Value);
         }
     }
     private static nint? _MaxLengthOffset;
 
-    public ref float MaxLength {
-        get {
+    public ref float MaxLength
+    {
+        get
+        {
             _MaxLengthOffset = _MaxLengthOffset ?? Schema.GetOffset(0x6418031B87A8B4C7);
             return ref _Handle.AsRef<float>(_MaxLengthOffset!.Value);
         }
     }
     private static nint? _LengthRandExponentOffset;
 
-    public ref float LengthRandExponent {
-        get {
+    public ref float LengthRandExponent
+    {
+        get
+        {
             _LengthRandExponentOffset = _LengthRandExponentOffset ?? Schema.GetOffset(0x6418031B41B064A7);
             return ref _Handle.AsRef<float>(_LengthRandExponentOffset!.Value);
         }
     }
-
 
 }

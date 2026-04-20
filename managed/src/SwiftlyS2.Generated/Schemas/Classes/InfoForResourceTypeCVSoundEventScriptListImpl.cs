@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCVSoundEventScriptListImpl : SchemaCla
 {
     public InfoForResourceTypeCVSoundEventScriptListImpl(nint handle) : base(handle) { }
 
-
-
-
 }

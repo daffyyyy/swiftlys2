@@ -18,28 +18,33 @@ internal partial class CGunTargetImpl : CBaseToggleImpl, CGunTarget
 
     private static nint? _OnOffset;
 
-    public ref bool On {
-        get {
+    public ref bool On
+    {
+        get
+        {
             _OnOffset = _OnOffset ?? Schema.GetOffset(0x4CB42969DEB2AE70);
             return ref _Handle.AsRef<bool>(_OnOffset!.Value);
         }
     }
     private static nint? _TargetEntOffset;
 
-    public ref CHandle<CBaseEntity> TargetEnt {
-        get {
+    public ref CHandle<CBaseEntity> TargetEnt
+    {
+        get
+        {
             _TargetEntOffset = _TargetEntOffset ?? Schema.GetOffset(0x4CB429692DD292D7);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_TargetEntOffset!.Value);
         }
     }
     private static nint? _OnDeathOffset;
 
-    public ref CEntityIOOutput OnDeath {
-        get {
+    public ref CEntityIOOutput OnDeath
+    {
+        get
+        {
             _OnDeathOffset = _OnDeathOffset ?? Schema.GetOffset(0x4CB429696F756BD2);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnDeathOffset!.Value);
         }
     }
-
 
 }

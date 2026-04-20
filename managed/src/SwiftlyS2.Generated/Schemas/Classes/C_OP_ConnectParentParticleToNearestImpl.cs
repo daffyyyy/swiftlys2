@@ -18,44 +18,53 @@ internal partial class C_OP_ConnectParentParticleToNearestImpl : CParticleFuncti
 
     private static nint? _FirstControlPointOffset;
 
-    public ref int FirstControlPoint {
-        get {
+    public ref int FirstControlPoint
+    {
+        get
+        {
             _FirstControlPointOffset = _FirstControlPointOffset ?? Schema.GetOffset(0x9C608BD072117650);
             return ref _Handle.AsRef<int>(_FirstControlPointOffset!.Value);
         }
     }
     private static nint? _SecondControlPointOffset;
 
-    public ref int SecondControlPoint {
-        get {
+    public ref int SecondControlPoint
+    {
+        get
+        {
             _SecondControlPointOffset = _SecondControlPointOffset ?? Schema.GetOffset(0x9C608BD04D8D2B44);
             return ref _Handle.AsRef<int>(_SecondControlPointOffset!.Value);
         }
     }
     private static nint? _UseRadiusOffset;
 
-    public ref bool UseRadius {
-        get {
+    public ref bool UseRadius
+    {
+        get
+        {
             _UseRadiusOffset = _UseRadiusOffset ?? Schema.GetOffset(0x9C608BD0B7D98E6A);
             return ref _Handle.AsRef<bool>(_UseRadiusOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public CParticleCollectionFloatInput RadiusScale {
-        get {
+    public CParticleCollectionFloatInput RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0x9C608BD0A7A20159);
             return new CParticleCollectionFloatInputImpl(_Handle + _RadiusScaleOffset!.Value);
         }
     }
     private static nint? _ParentRadiusScaleOffset;
 
-    public CParticleCollectionFloatInput ParentRadiusScale {
-        get {
+    public CParticleCollectionFloatInput ParentRadiusScale
+    {
+        get
+        {
             _ParentRadiusScaleOffset = _ParentRadiusScaleOffset ?? Schema.GetOffset(0x9C608BD0CD77EF69);
             return new CParticleCollectionFloatInputImpl(_Handle + _ParentRadiusScaleOffset!.Value);
         }
     }
-
 
 }

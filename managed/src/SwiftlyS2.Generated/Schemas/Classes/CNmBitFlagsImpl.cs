@@ -18,12 +18,13 @@ internal partial class CNmBitFlagsImpl : SchemaClass, CNmBitFlags
 
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x2D0B9CC1DC74A14C);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
-
 
 }

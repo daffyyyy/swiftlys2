@@ -14,7 +14,4 @@ public partial interface CZeroPoseUpdateNode : CLeafUpdateNode, ISchemaClass<CZe
     static int ISchemaClass<CZeroPoseUpdateNode>.Size => 96;
     static string? ISchemaClass<CZeroPoseUpdateNode>.ClassName => null;
 
-
-
-
 }

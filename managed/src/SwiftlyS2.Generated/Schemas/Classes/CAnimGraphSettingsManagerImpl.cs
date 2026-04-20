@@ -18,12 +18,13 @@ internal partial class CAnimGraphSettingsManagerImpl : SchemaClass, CAnimGraphSe
 
     private static nint? _SettingsGroupsOffset;
 
-    public ref CUtlVector<SchemaUntypedField> SettingsGroups {
-        get {
+    public ref CUtlVector<SchemaUntypedField> SettingsGroups
+    {
+        get
+        {
             _SettingsGroupsOffset = _SettingsGroupsOffset ?? Schema.GetOffset(0x53B994DB178D6408);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_SettingsGroupsOffset!.Value);
         }
     }
-
 
 }

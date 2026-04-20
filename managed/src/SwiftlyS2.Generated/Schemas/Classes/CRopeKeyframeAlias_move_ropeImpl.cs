@@ -16,7 +16,4 @@ internal partial class CRopeKeyframeAlias_move_ropeImpl : CRopeKeyframeImpl, CRo
 {
     public CRopeKeyframeAlias_move_ropeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

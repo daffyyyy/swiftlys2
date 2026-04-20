@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCResponseRulesList : ISchemaClass<In
     static int ISchemaClass<InfoForResourceTypeCResponseRulesList>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCResponseRulesList>.ClassName => null;
 
-
-
-
 }

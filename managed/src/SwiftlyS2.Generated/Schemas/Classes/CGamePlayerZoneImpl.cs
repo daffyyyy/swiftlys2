@@ -18,36 +18,43 @@ internal partial class CGamePlayerZoneImpl : CRuleBrushEntityImpl, CGamePlayerZo
 
     private static nint? _OnPlayerInZoneOffset;
 
-    public ref CEntityIOOutput OnPlayerInZone {
-        get {
+    public ref CEntityIOOutput OnPlayerInZone
+    {
+        get
+        {
             _OnPlayerInZoneOffset = _OnPlayerInZoneOffset ?? Schema.GetOffset(0x35811C97FBD22730);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnPlayerInZoneOffset!.Value);
         }
     }
     private static nint? _OnPlayerOutZoneOffset;
 
-    public ref CEntityIOOutput OnPlayerOutZone {
-        get {
+    public ref CEntityIOOutput OnPlayerOutZone
+    {
+        get
+        {
             _OnPlayerOutZoneOffset = _OnPlayerOutZoneOffset ?? Schema.GetOffset(0x35811C97E3DE880D);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnPlayerOutZoneOffset!.Value);
         }
     }
     private static nint? _PlayersInCountOffset;
 
-    public SchemaUntypedField PlayersInCount {
-        get {
+    public SchemaUntypedField PlayersInCount
+    {
+        get
+        {
             _PlayersInCountOffset = _PlayersInCountOffset ?? Schema.GetOffset(0x35811C9706A59501);
             return new SchemaUntypedField(_Handle + _PlayersInCountOffset!.Value);
         }
     }
     private static nint? _PlayersOutCountOffset;
 
-    public SchemaUntypedField PlayersOutCount {
-        get {
+    public SchemaUntypedField PlayersOutCount
+    {
+        get
+        {
             _PlayersOutCountOffset = _PlayersOutCountOffset ?? Schema.GetOffset(0x35811C976894D862);
             return new SchemaUntypedField(_Handle + _PlayersOutCountOffset!.Value);
         }
     }
-
 
 }

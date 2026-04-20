@@ -18,36 +18,43 @@ internal partial class CPulse_OutflowConnectionImpl : SchemaClass, CPulse_Outflo
 
     private static nint? _SourceOutflowNameOffset;
 
-    public SchemaUntypedField SourceOutflowName {
-        get {
+    public SchemaUntypedField SourceOutflowName
+    {
+        get
+        {
             _SourceOutflowNameOffset = _SourceOutflowNameOffset ?? Schema.GetOffset(0x58023C685EA2FFCF);
             return new SchemaUntypedField(_Handle + _SourceOutflowNameOffset!.Value);
         }
     }
     private static nint? _DestChunkOffset;
 
-    public PulseRuntimeChunkIndex_t DestChunk {
-        get {
+    public PulseRuntimeChunkIndex_t DestChunk
+    {
+        get
+        {
             _DestChunkOffset = _DestChunkOffset ?? Schema.GetOffset(0x58023C68D6AC502E);
             return new PulseRuntimeChunkIndex_tImpl(_Handle + _DestChunkOffset!.Value);
         }
     }
     private static nint? _InstructionOffset;
 
-    public ref int Instruction {
-        get {
+    public ref int Instruction
+    {
+        get
+        {
             _InstructionOffset = _InstructionOffset ?? Schema.GetOffset(0x58023C6890E63133);
             return ref _Handle.AsRef<int>(_InstructionOffset!.Value);
         }
     }
     private static nint? _OutflowRegisterMapOffset;
 
-    public PulseRegisterMap_t OutflowRegisterMap {
-        get {
+    public PulseRegisterMap_t OutflowRegisterMap
+    {
+        get
+        {
             _OutflowRegisterMapOffset = _OutflowRegisterMapOffset ?? Schema.GetOffset(0x58023C68F89A90F8);
             return new PulseRegisterMap_tImpl(_Handle + _OutflowRegisterMapOffset!.Value);
         }
     }
-
 
 }

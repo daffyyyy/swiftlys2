@@ -18,20 +18,23 @@ internal partial class C_OP_SetCPOrientationToDirectionImpl : CParticleFunctionO
 
     private static nint? _InputControlPointOffset;
 
-    public ref int InputControlPoint {
-        get {
+    public ref int InputControlPoint
+    {
+        get
+        {
             _InputControlPointOffset = _InputControlPointOffset ?? Schema.GetOffset(0x761C6D886A869E3E);
             return ref _Handle.AsRef<int>(_InputControlPointOffset!.Value);
         }
     }
     private static nint? _OutputControlPointOffset;
 
-    public ref int OutputControlPoint {
-        get {
+    public ref int OutputControlPoint
+    {
+        get
+        {
             _OutputControlPointOffset = _OutputControlPointOffset ?? Schema.GetOffset(0x761C6D88266B0FD9);
             return ref _Handle.AsRef<int>(_OutputControlPointOffset!.Value);
         }
     }
-
 
 }

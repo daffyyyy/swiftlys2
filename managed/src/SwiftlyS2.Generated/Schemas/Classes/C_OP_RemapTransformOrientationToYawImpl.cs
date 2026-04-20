@@ -18,36 +18,43 @@ internal partial class C_OP_RemapTransformOrientationToYawImpl : CParticleFuncti
 
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0xA0DF014CB3FDC289);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xA0DF014CE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _RotOffsetOffset;
 
-    public ref float RotOffset {
-        get {
+    public ref float RotOffset
+    {
+        get
+        {
             _RotOffsetOffset = _RotOffsetOffset ?? Schema.GetOffset(0xA0DF014CD1EA9CDF);
             return ref _Handle.AsRef<float>(_RotOffsetOffset!.Value);
         }
     }
     private static nint? _SpinStrengthOffset;
 
-    public ref float SpinStrength {
-        get {
+    public ref float SpinStrength
+    {
+        get
+        {
             _SpinStrengthOffset = _SpinStrengthOffset ?? Schema.GetOffset(0xA0DF014C12520F26);
             return ref _Handle.AsRef<float>(_SpinStrengthOffset!.Value);
         }
     }
-
 
 }

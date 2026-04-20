@@ -18,20 +18,23 @@ internal partial class CFuncPlatRotImpl : CFuncPlatImpl, CFuncPlatRot
 
     private static nint? _EndOffset;
 
-    public ref QAngle End {
-        get {
+    public ref QAngle End
+    {
+        get
+        {
             _EndOffset = _EndOffset ?? Schema.GetOffset(0xF566498E5B29CFCA);
             return ref _Handle.AsRef<QAngle>(_EndOffset!.Value);
         }
     }
     private static nint? _StartOffset;
 
-    public ref QAngle Start {
-        get {
+    public ref QAngle Start
+    {
+        get
+        {
             _StartOffset = _StartOffset ?? Schema.GetOffset(0xF566498EA539BEFF);
             return ref _Handle.AsRef<QAngle>(_StartOffset!.Value);
         }
     }
-
 
 }

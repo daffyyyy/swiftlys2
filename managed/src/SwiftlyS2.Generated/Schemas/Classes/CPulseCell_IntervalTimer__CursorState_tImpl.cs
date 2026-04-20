@@ -18,44 +18,53 @@ internal partial class CPulseCell_IntervalTimer__CursorState_tImpl : SchemaClass
 
     private static nint? _StartTimeOffset;
 
-    public GameTime_t StartTime {
-        get {
+    public GameTime_t StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0x63BF122697B5FA8E);
             return new GameTime_tImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
     private static nint? _EndTimeOffset;
 
-    public GameTime_t EndTime {
-        get {
+    public GameTime_t EndTime
+    {
+        get
+        {
             _EndTimeOffset = _EndTimeOffset ?? Schema.GetOffset(0x63BF12267AA8F56B);
             return new GameTime_tImpl(_Handle + _EndTimeOffset!.Value);
         }
     }
     private static nint? _WaitIntervalOffset;
 
-    public ref float WaitInterval {
-        get {
+    public ref float WaitInterval
+    {
+        get
+        {
             _WaitIntervalOffset = _WaitIntervalOffset ?? Schema.GetOffset(0x63BF122677B6B563);
             return ref _Handle.AsRef<float>(_WaitIntervalOffset!.Value);
         }
     }
     private static nint? _WaitIntervalHighOffset;
 
-    public ref float WaitIntervalHigh {
-        get {
+    public ref float WaitIntervalHigh
+    {
+        get
+        {
             _WaitIntervalHighOffset = _WaitIntervalHighOffset ?? Schema.GetOffset(0x63BF12267540534F);
             return ref _Handle.AsRef<float>(_WaitIntervalHighOffset!.Value);
         }
     }
     private static nint? _CompleteOnNextWakeOffset;
 
-    public ref bool CompleteOnNextWake {
-        get {
+    public ref bool CompleteOnNextWake
+    {
+        get
+        {
             _CompleteOnNextWakeOffset = _CompleteOnNextWakeOffset ?? Schema.GetOffset(0x63BF122684615952);
             return ref _Handle.AsRef<bool>(_CompleteOnNextWakeOffset!.Value);
         }
     }
-
 
 }

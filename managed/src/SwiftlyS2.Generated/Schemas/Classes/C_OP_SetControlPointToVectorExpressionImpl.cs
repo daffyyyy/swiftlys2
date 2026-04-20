@@ -18,52 +18,63 @@ internal partial class C_OP_SetControlPointToVectorExpressionImpl : CParticleFun
 
     private static nint? _ExpressionOffset;
 
-    public ref VectorExpressionType_t Expression {
-        get {
+    public ref VectorExpressionType_t Expression
+    {
+        get
+        {
             _ExpressionOffset = _ExpressionOffset ?? Schema.GetOffset(0x67E9EFDE160B2427);
             return ref _Handle.AsRef<VectorExpressionType_t>(_ExpressionOffset!.Value);
         }
     }
     private static nint? _OutputCPOffset;
 
-    public ref int OutputCP {
-        get {
+    public ref int OutputCP
+    {
+        get
+        {
             _OutputCPOffset = _OutputCPOffset ?? Schema.GetOffset(0x67E9EFDE50DF5703);
             return ref _Handle.AsRef<int>(_OutputCPOffset!.Value);
         }
     }
     private static nint? _Input1Offset;
 
-    public CParticleCollectionVecInput Input1 {
-        get {
+    public CParticleCollectionVecInput Input1
+    {
+        get
+        {
             _Input1Offset = _Input1Offset ?? Schema.GetOffset(0x67E9EFDEE17F27DA);
             return new CParticleCollectionVecInputImpl(_Handle + _Input1Offset!.Value);
         }
     }
     private static nint? _Input2Offset;
 
-    public CParticleCollectionVecInput Input2 {
-        get {
+    public CParticleCollectionVecInput Input2
+    {
+        get
+        {
             _Input2Offset = _Input2Offset ?? Schema.GetOffset(0x67E9EFDEE07F2647);
             return new CParticleCollectionVecInputImpl(_Handle + _Input2Offset!.Value);
         }
     }
     private static nint? _LerpOffset;
 
-    public CPerParticleFloatInput Lerp {
-        get {
+    public CPerParticleFloatInput Lerp
+    {
+        get
+        {
             _LerpOffset = _LerpOffset ?? Schema.GetOffset(0x67E9EFDE622FAB06);
             return new CPerParticleFloatInputImpl(_Handle + _LerpOffset!.Value);
         }
     }
     private static nint? _NormalizedOutputOffset;
 
-    public ref bool NormalizedOutput {
-        get {
+    public ref bool NormalizedOutput
+    {
+        get
+        {
             _NormalizedOutputOffset = _NormalizedOutputOffset ?? Schema.GetOffset(0x67E9EFDE0AA98C55);
             return ref _Handle.AsRef<bool>(_NormalizedOutputOffset!.Value);
         }
     }
-
 
 }

@@ -18,36 +18,43 @@ internal partial class FeCollisionPlane_tImpl : SchemaClass, FeCollisionPlane_t
 
     private static nint? _CtrlParentOffset;
 
-    public ref ushort CtrlParent {
-        get {
+    public ref ushort CtrlParent
+    {
+        get
+        {
             _CtrlParentOffset = _CtrlParentOffset ?? Schema.GetOffset(0xF8EBA99555049230);
             return ref _Handle.AsRef<ushort>(_CtrlParentOffset!.Value);
         }
     }
     private static nint? _ChildNodeOffset;
 
-    public ref ushort ChildNode {
-        get {
+    public ref ushort ChildNode
+    {
+        get
+        {
             _ChildNodeOffset = _ChildNodeOffset ?? Schema.GetOffset(0xF8EBA99592A8E0E9);
             return ref _Handle.AsRef<ushort>(_ChildNodeOffset!.Value);
         }
     }
     private static nint? _PlaneOffset;
 
-    public RnPlane_t Plane {
-        get {
+    public RnPlane_t Plane
+    {
+        get
+        {
             _PlaneOffset = _PlaneOffset ?? Schema.GetOffset(0xF8EBA995671CB5D5);
             return new RnPlane_tImpl(_Handle + _PlaneOffset!.Value);
         }
     }
     private static nint? _StrengthOffset;
 
-    public ref float Strength {
-        get {
+    public ref float Strength
+    {
+        get
+        {
             _StrengthOffset = _StrengthOffset ?? Schema.GetOffset(0xF8EBA995AFA3323A);
             return ref _Handle.AsRef<float>(_StrengthOffset!.Value);
         }
     }
-
 
 }

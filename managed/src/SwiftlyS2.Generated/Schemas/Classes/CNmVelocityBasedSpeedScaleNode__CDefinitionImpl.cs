@@ -16,7 +16,4 @@ internal partial class CNmVelocityBasedSpeedScaleNode__CDefinitionImpl : CNmSpee
 {
     public CNmVelocityBasedSpeedScaleNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

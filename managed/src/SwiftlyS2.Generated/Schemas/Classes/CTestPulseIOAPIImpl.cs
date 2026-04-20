@@ -16,7 +16,4 @@ internal partial class CTestPulseIOAPIImpl : SchemaClass, CTestPulseIOAPI
 {
     public CTestPulseIOAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

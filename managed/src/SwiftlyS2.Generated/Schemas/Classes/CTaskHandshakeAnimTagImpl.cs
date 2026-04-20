@@ -16,7 +16,4 @@ internal partial class CTaskHandshakeAnimTagImpl : CHandshakeAnimTagBaseImpl, CT
 {
     public CTaskHandshakeAnimTagImpl(nint handle) : base(handle) { }
 
-
-
-
 }

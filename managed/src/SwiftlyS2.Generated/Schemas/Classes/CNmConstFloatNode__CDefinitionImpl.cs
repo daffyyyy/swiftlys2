@@ -18,12 +18,13 @@ internal partial class CNmConstFloatNode__CDefinitionImpl : CNmFloatValueNode__C
 
     private static nint? _ValueOffset;
 
-    public ref float Value {
-        get {
+    public ref float Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xCB1D2D708DFCB984);
             return ref _Handle.AsRef<float>(_ValueOffset!.Value);
         }
     }
-
 
 }

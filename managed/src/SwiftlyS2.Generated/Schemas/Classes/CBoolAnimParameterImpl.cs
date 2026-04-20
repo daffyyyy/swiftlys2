@@ -18,12 +18,13 @@ internal partial class CBoolAnimParameterImpl : CConcreteAnimParameterImpl, CBoo
 
     private static nint? _DefaultValueOffset;
 
-    public ref bool DefaultValue {
-        get {
+    public ref bool DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x3BF60C6A26126DF);
             return ref _Handle.AsRef<bool>(_DefaultValueOffset!.Value);
         }
     }
-
 
 }

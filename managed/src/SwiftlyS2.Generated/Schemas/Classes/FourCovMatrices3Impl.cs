@@ -18,36 +18,43 @@ internal partial class FourCovMatrices3Impl : SchemaClass, FourCovMatrices3
 
     private static nint? _DiagOffset;
 
-    public ref FourVectors Diag {
-        get {
+    public ref FourVectors Diag
+    {
+        get
+        {
             _DiagOffset = _DiagOffset ?? Schema.GetOffset(0xCEA91E487CC0D332);
             return ref _Handle.AsRef<FourVectors>(_DiagOffset!.Value);
         }
     }
     private static nint? _XYOffset;
 
-    public ref fltx4 XY {
-        get {
+    public ref fltx4 XY
+    {
+        get
+        {
             _XYOffset = _XYOffset ?? Schema.GetOffset(0xCEA91E48A58DC304);
             return ref _Handle.AsRef<fltx4>(_XYOffset!.Value);
         }
     }
     private static nint? _XZOffset;
 
-    public ref fltx4 XZ {
-        get {
+    public ref fltx4 XZ
+    {
+        get
+        {
             _XZOffset = _XZOffset ?? Schema.GetOffset(0xCEA91E48A88DC7BD);
             return ref _Handle.AsRef<fltx4>(_XZOffset!.Value);
         }
     }
     private static nint? _YZOffset;
 
-    public ref fltx4 YZ {
-        get {
+    public ref fltx4 YZ
+    {
+        get
+        {
             _YZOffset = _YZOffset ?? Schema.GetOffset(0xCEA91E489E8B7968);
             return ref _Handle.AsRef<fltx4>(_YZOffset!.Value);
         }
     }
-
 
 }

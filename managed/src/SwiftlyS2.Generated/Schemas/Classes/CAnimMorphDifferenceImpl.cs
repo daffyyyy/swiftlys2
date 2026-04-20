@@ -18,12 +18,13 @@ internal partial class CAnimMorphDifferenceImpl : SchemaClass, CAnimMorphDiffere
 
     private static nint? _NameOffset;
 
-    public ref CBufferString Name {
-        get {
+    public ref CBufferString Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x57D69D104D8F5786);
             return ref _Handle.AsRef<CBufferString>(_NameOffset!.Value);
         }
     }
-
 
 }

@@ -18,76 +18,93 @@ internal partial class CTankTrainAIImpl : CPointEntityImpl, CTankTrainAI
 
     private static nint? _TrainOffset;
 
-    public ref CHandle<CFuncTrackTrain> Train {
-        get {
+    public ref CHandle<CFuncTrackTrain> Train
+    {
+        get
+        {
             _TrainOffset = _TrainOffset ?? Schema.GetOffset(0x25820826D58EE22F);
             return ref _Handle.AsRef<CHandle<CFuncTrackTrain>>(_TrainOffset!.Value);
         }
     }
     private static nint? _TargetEntityOffset;
 
-    public ref CHandle<CBaseEntity> TargetEntity {
-        get {
+    public ref CHandle<CBaseEntity> TargetEntity
+    {
+        get
+        {
             _TargetEntityOffset = _TargetEntityOffset ?? Schema.GetOffset(0x2582082625D042A9);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_TargetEntityOffset!.Value);
         }
     }
     private static nint? _SoundPlayingOffset;
 
-    public ref int SoundPlaying {
-        get {
+    public ref int SoundPlaying
+    {
+        get
+        {
             _SoundPlayingOffset = _SoundPlayingOffset ?? Schema.GetOffset(0x2582082658CF60D2);
             return ref _Handle.AsRef<int>(_SoundPlayingOffset!.Value);
         }
     }
     private static nint? _StartSoundNameOffset;
 
-    public string StartSoundName {
-        get {
+    public string StartSoundName
+    {
+        get
+        {
             _StartSoundNameOffset = _StartSoundNameOffset ?? Schema.GetOffset(0x258208263F1AB605);
             return Schema.GetString(_Handle.Read<nint>(_StartSoundNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StartSoundNameOffset = _StartSoundNameOffset ?? Schema.GetOffset(0x258208263F1AB605);
             Schema.SetString(_Handle, _StartSoundNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EngineSoundNameOffset;
 
-    public string EngineSoundName {
-        get {
+    public string EngineSoundName
+    {
+        get
+        {
             _EngineSoundNameOffset = _EngineSoundNameOffset ?? Schema.GetOffset(0x2582082627E36CD1);
             return Schema.GetString(_Handle.Read<nint>(_EngineSoundNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EngineSoundNameOffset = _EngineSoundNameOffset ?? Schema.GetOffset(0x2582082627E36CD1);
             Schema.SetString(_Handle, _EngineSoundNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _MovementSoundNameOffset;
 
-    public string MovementSoundName {
-        get {
+    public string MovementSoundName
+    {
+        get
+        {
             _MovementSoundNameOffset = _MovementSoundNameOffset ?? Schema.GetOffset(0x25820826F2195774);
             return Schema.GetString(_Handle.Read<nint>(_MovementSoundNameOffset!.Value));
         }
-        set {
+        set
+        {
             _MovementSoundNameOffset = _MovementSoundNameOffset ?? Schema.GetOffset(0x25820826F2195774);
             Schema.SetString(_Handle, _MovementSoundNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TargetEntityNameOffset;
 
-    public string TargetEntityName {
-        get {
+    public string TargetEntityName
+    {
+        get
+        {
             _TargetEntityNameOffset = _TargetEntityNameOffset ?? Schema.GetOffset(0x25820826F88EC878);
             return Schema.GetString(_Handle.Read<nint>(_TargetEntityNameOffset!.Value));
         }
-        set {
+        set
+        {
             _TargetEntityNameOffset = _TargetEntityNameOffset ?? Schema.GetOffset(0x25820826F88EC878);
             Schema.SetString(_Handle, _TargetEntityNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

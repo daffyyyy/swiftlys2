@@ -18,8 +18,10 @@ internal partial class CSoundAreaEntitySphereImpl : CSoundAreaEntityBaseImpl, CS
 
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x2FF7C1D65ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }

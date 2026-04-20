@@ -18,28 +18,33 @@ internal partial class SoundOpvarTraceResult_tImpl : SchemaClass, SoundOpvarTrac
 
     private static nint? _PosOffset;
 
-    public ref Vector Pos {
-        get {
+    public ref Vector Pos
+    {
+        get
+        {
             _PosOffset = _PosOffset ?? Schema.GetOffset(0xF93EB0CBE5D6FAFD);
             return ref _Handle.AsRef<Vector>(_PosOffset!.Value);
         }
     }
     private static nint? _DidHitOffset;
 
-    public ref bool DidHit {
-        get {
+    public ref bool DidHit
+    {
+        get
+        {
             _DidHitOffset = _DidHitOffset ?? Schema.GetOffset(0xF93EB0CBA8217B9F);
             return ref _Handle.AsRef<bool>(_DidHitOffset!.Value);
         }
     }
     private static nint? _DistSqrToCenterOffset;
 
-    public ref float DistSqrToCenter {
-        get {
+    public ref float DistSqrToCenter
+    {
+        get
+        {
             _DistSqrToCenterOffset = _DistSqrToCenterOffset ?? Schema.GetOffset(0xF93EB0CB96618227);
             return ref _Handle.AsRef<float>(_DistSqrToCenterOffset!.Value);
         }
     }
-
 
 }

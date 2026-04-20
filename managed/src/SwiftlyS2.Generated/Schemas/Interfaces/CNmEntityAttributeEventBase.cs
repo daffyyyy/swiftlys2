@@ -15,6 +15,8 @@ public partial interface CNmEntityAttributeEventBase : CNmEvent, ISchemaClass<CN
     static string? ISchemaClass<CNmEntityAttributeEventBase>.ClassName => null;
 
 
+    public ref CNmEventTargetEntity_t Target { get; }
+
     public string AttributeName { get; set; }
 
 

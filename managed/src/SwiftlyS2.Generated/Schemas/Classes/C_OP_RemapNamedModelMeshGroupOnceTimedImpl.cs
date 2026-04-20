@@ -16,7 +16,4 @@ internal partial class C_OP_RemapNamedModelMeshGroupOnceTimedImpl : C_OP_RemapNa
 {
     public C_OP_RemapNamedModelMeshGroupOnceTimedImpl(nint handle) : base(handle) { }
 
-
-
-
 }

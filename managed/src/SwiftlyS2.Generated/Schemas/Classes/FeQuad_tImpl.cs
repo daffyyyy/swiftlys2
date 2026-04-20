@@ -16,20 +16,23 @@ internal partial class FeQuad_tImpl : SchemaClass, FeQuad_t
 {
     public FeQuad_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x22A47BB8CD6694B9, 4, 2, 2);
     }
     private static nint? _SlackOffset;
 
-    public ref float Slack {
-        get {
+    public ref float Slack
+    {
+        get
+        {
             _SlackOffset = _SlackOffset ?? Schema.GetOffset(0x22A47BB8C6554869);
             return ref _Handle.AsRef<float>(_SlackOffset!.Value);
         }
     }
-    public ISchemaFixedArray<Vector4D> Shape {
+    public ISchemaFixedArray<Vector4D> Shape
+    {
         get => new SchemaFixedArray<Vector4D>(_Handle, 0x22A47BB8E159551A, 4, 16, 4);
     }
-
 
 }

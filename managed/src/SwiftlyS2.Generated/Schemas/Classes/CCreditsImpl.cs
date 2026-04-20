@@ -18,28 +18,33 @@ internal partial class CCreditsImpl : CPointEntityImpl, CCredits
 
     private static nint? _OnCreditsDoneOffset;
 
-    public ref CEntityIOOutput OnCreditsDone {
-        get {
+    public ref CEntityIOOutput OnCreditsDone
+    {
+        get
+        {
             _OnCreditsDoneOffset = _OnCreditsDoneOffset ?? Schema.GetOffset(0xF1224C0488A2DA7A);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnCreditsDoneOffset!.Value);
         }
     }
     private static nint? _RolledOutroCreditsOffset;
 
-    public ref bool RolledOutroCredits {
-        get {
+    public ref bool RolledOutroCredits
+    {
+        get
+        {
             _RolledOutroCreditsOffset = _RolledOutroCreditsOffset ?? Schema.GetOffset(0xF1224C048E1511D4);
             return ref _Handle.AsRef<bool>(_RolledOutroCreditsOffset!.Value);
         }
     }
     private static nint? _LogoLengthOffset;
 
-    public ref float LogoLength {
-        get {
+    public ref float LogoLength
+    {
+        get
+        {
             _LogoLengthOffset = _LogoLengthOffset ?? Schema.GetOffset(0xF1224C04D283492C);
             return ref _Handle.AsRef<float>(_LogoLengthOffset!.Value);
         }
     }
-
 
 }

@@ -15,10 +15,10 @@ public partial interface CNmParameterizedClipSelectorNode__CDefinition : CNmClip
     static string? ISchemaClass<CNmParameterizedClipSelectorNode__CDefinition>.ClassName => null;
 
 
-    // CUtlLeanVectorFixedGrowable< int16, 5 >
+    // CUtlLeanVectorFixedGrowable< int16, 8 >
     public SchemaUntypedField OptionNodeIndices { get; }
 
-    // CUtlLeanVectorFixedGrowable< uint8, 5 >
+    // CUtlLeanVectorFixedGrowable< uint8, 8 >
     public SchemaUntypedField OptionWeights { get; }
 
     public ref short ParameterNodeIdx { get; }

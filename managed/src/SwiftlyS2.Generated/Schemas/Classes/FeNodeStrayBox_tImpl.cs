@@ -18,31 +18,37 @@ internal partial class FeNodeStrayBox_tImpl : SchemaClass, FeNodeStrayBox_t
 
     private static nint? _MinOffset;
 
-    public ref Vector Min {
-        get {
+    public ref Vector Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x6809134DFBEAA903);
             return ref _Handle.AsRef<Vector>(_MinOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x6809134DB8D52E48);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref Vector Max {
-        get {
+    public ref Vector Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x6809134DF1FE20FD);
             return ref _Handle.AsRef<Vector>(_MaxOffset!.Value);
         }
     }
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x6809134DCD6694B9, 2, 2, 2);
     }
-
 
 }

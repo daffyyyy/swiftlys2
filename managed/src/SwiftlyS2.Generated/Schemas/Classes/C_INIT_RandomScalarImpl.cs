@@ -18,36 +18,43 @@ internal partial class C_INIT_RandomScalarImpl : CParticleFunctionInitializerImp
 
     private static nint? _MinOffset;
 
-    public ref float Min {
-        get {
+    public ref float Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x76660B0D3B1A5649);
             return ref _Handle.AsRef<float>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref float Max {
-        get {
+    public ref float Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x76660B0D2D06B887);
             return ref _Handle.AsRef<float>(_MaxOffset!.Value);
         }
     }
     private static nint? _ExponentOffset;
 
-    public ref float Exponent {
-        get {
+    public ref float Exponent
+    {
+        get
+        {
             _ExponentOffset = _ExponentOffset ?? Schema.GetOffset(0x76660B0D20A7BCBC);
             return ref _Handle.AsRef<float>(_ExponentOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x76660B0DE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
-
 
 }

@@ -18,28 +18,33 @@ internal partial class FeFitWeight_tImpl : SchemaClass, FeFitWeight_t
 
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0x292AB604CFFC66CB);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
     private static nint? _NodeOffset;
 
-    public ref ushort Node {
-        get {
+    public ref ushort Node
+    {
+        get
+        {
             _NodeOffset = _NodeOffset ?? Schema.GetOffset(0x292AB604CD6694B9);
             return ref _Handle.AsRef<ushort>(_NodeOffset!.Value);
         }
     }
     private static nint? _DummyOffset;
 
-    public ref ushort Dummy {
-        get {
+    public ref ushort Dummy
+    {
+        get
+        {
             _DummyOffset = _DummyOffset ?? Schema.GetOffset(0x292AB604CD8BAE5F);
             return ref _Handle.AsRef<ushort>(_DummyOffset!.Value);
         }
     }
-
 
 }

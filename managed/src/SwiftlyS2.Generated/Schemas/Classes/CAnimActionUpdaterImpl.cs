@@ -16,7 +16,4 @@ internal partial class CAnimActionUpdaterImpl : SchemaClass, CAnimActionUpdater
 {
     public CAnimActionUpdaterImpl(nint handle) : base(handle) { }
 
-
-
-
 }

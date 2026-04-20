@@ -16,42 +16,51 @@ internal partial class RenderHairStrandInfo_tImpl : SchemaClass, RenderHairStran
 {
     public RenderHairStrandInfo_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<uint> GuideHairIndices_nSurfaceTriIndex {
+    public ISchemaFixedArray<uint> GuideHairIndices_nSurfaceTriIndex
+    {
         get => new SchemaFixedArray<uint>(_Handle, 0x9037AEC699AC7193, 2, 4, 4);
     }
-    public ISchemaFixedArray<ushort> GuideBary_vBaseBary {
+    public ISchemaFixedArray<ushort> GuideBary_vBaseBary
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x9037AEC6B3848BF7, 4, 2, 2);
     }
-    public ISchemaFixedArray<ushort> RootOffset_flLengthScale {
+    public ISchemaFixedArray<ushort> RootOffset_flLengthScale
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x9037AEC67324D845, 4, 2, 2);
     }
-    public ISchemaFixedArray<ushort> PackedBaseUv {
+    public ISchemaFixedArray<ushort> PackedBaseUv
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0x9037AEC6D5457D8B, 2, 2, 2);
     }
     private static nint? _PackedSurfaceNormalOsOffset;
 
-    public ref uint PackedSurfaceNormalOs {
-        get {
+    public ref uint PackedSurfaceNormalOs
+    {
+        get
+        {
             _PackedSurfaceNormalOsOffset = _PackedSurfaceNormalOsOffset ?? Schema.GetOffset(0x9037AEC605444631);
             return ref _Handle.AsRef<uint>(_PackedSurfaceNormalOsOffset!.Value);
         }
     }
     private static nint? _PackedSurfaceTangentOsOffset;
 
-    public ref uint PackedSurfaceTangentOs {
-        get {
+    public ref uint PackedSurfaceTangentOs
+    {
+        get
+        {
             _PackedSurfaceTangentOsOffset = _PackedSurfaceTangentOsOffset ?? Schema.GetOffset(0x9037AEC6FD9896F7);
             return ref _Handle.AsRef<uint>(_PackedSurfaceTangentOsOffset!.Value);
         }
     }
     private static nint? _DataOffset_SegmentsOffset;
 
-    public ref uint DataOffset_Segments {
-        get {
+    public ref uint DataOffset_Segments
+    {
+        get
+        {
             _DataOffset_SegmentsOffset = _DataOffset_SegmentsOffset ?? Schema.GetOffset(0x9037AEC6BB31BC1D);
             return ref _Handle.AsRef<uint>(_DataOffset_SegmentsOffset!.Value);
         }
     }
-
 
 }

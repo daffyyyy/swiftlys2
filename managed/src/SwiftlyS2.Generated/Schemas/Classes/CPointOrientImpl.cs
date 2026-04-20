@@ -18,64 +18,78 @@ internal partial class CPointOrientImpl : CBaseEntityImpl, CPointOrient
 
     private static nint? _SpawnTargetNameOffset;
 
-    public string SpawnTargetName {
-        get {
+    public string SpawnTargetName
+    {
+        get
+        {
             _SpawnTargetNameOffset = _SpawnTargetNameOffset ?? Schema.GetOffset(0x31E4EBC561780472);
             return Schema.GetString(_Handle.Read<nint>(_SpawnTargetNameOffset!.Value));
         }
-        set {
+        set
+        {
             _SpawnTargetNameOffset = _SpawnTargetNameOffset ?? Schema.GetOffset(0x31E4EBC561780472);
             Schema.SetString(_Handle, _SpawnTargetNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TargetOffset;
 
-    public ref CHandle<CBaseEntity> Target {
-        get {
+    public ref CHandle<CBaseEntity> Target
+    {
+        get
+        {
             _TargetOffset = _TargetOffset ?? Schema.GetOffset(0x31E4EBC5CE35901A);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_TargetOffset!.Value);
         }
     }
     private static nint? _ActiveOffset;
 
-    public ref bool Active {
-        get {
+    public ref bool Active
+    {
+        get
+        {
             _ActiveOffset = _ActiveOffset ?? Schema.GetOffset(0x31E4EBC58334208F);
             return ref _Handle.AsRef<bool>(_ActiveOffset!.Value);
         }
     }
     private static nint? _GoalDirectionOffset;
 
-    public ref PointOrientGoalDirectionType_t GoalDirection {
-        get {
+    public ref PointOrientGoalDirectionType_t GoalDirection
+    {
+        get
+        {
             _GoalDirectionOffset = _GoalDirectionOffset ?? Schema.GetOffset(0x31E4EBC5EF8D5D0F);
             return ref _Handle.AsRef<PointOrientGoalDirectionType_t>(_GoalDirectionOffset!.Value);
         }
     }
     private static nint? _ConstraintOffset;
 
-    public ref PointOrientConstraint_t Constraint {
-        get {
+    public ref PointOrientConstraint_t Constraint
+    {
+        get
+        {
             _ConstraintOffset = _ConstraintOffset ?? Schema.GetOffset(0x31E4EBC5A20016CE);
             return ref _Handle.AsRef<PointOrientConstraint_t>(_ConstraintOffset!.Value);
         }
     }
     private static nint? _MaxTurnRateOffset;
 
-    public ref float MaxTurnRate {
-        get {
+    public ref float MaxTurnRate
+    {
+        get
+        {
             _MaxTurnRateOffset = _MaxTurnRateOffset ?? Schema.GetOffset(0x31E4EBC5860DD1C6);
             return ref _Handle.AsRef<float>(_MaxTurnRateOffset!.Value);
         }
     }
     private static nint? _LastGameTimeOffset;
 
-    public GameTime_t LastGameTime {
-        get {
+    public GameTime_t LastGameTime
+    {
+        get
+        {
             _LastGameTimeOffset = _LastGameTimeOffset ?? Schema.GetOffset(0x31E4EBC591D10404);
             return new GameTime_tImpl(_Handle + _LastGameTimeOffset!.Value);
         }
     }
-
 
 }

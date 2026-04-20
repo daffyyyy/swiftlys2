@@ -18,28 +18,33 @@ internal partial class C_OP_DirectionBetweenVecsToVecImpl : CParticleFunctionOpe
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x6022BA82E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _Point1Offset;
 
-    public CPerParticleVecInput Point1 {
-        get {
+    public CPerParticleVecInput Point1
+    {
+        get
+        {
             _Point1Offset = _Point1Offset ?? Schema.GetOffset(0x6022BA8204AD2BC0);
             return new CPerParticleVecInputImpl(_Handle + _Point1Offset!.Value);
         }
     }
     private static nint? _Point2Offset;
 
-    public CPerParticleVecInput Point2 {
-        get {
+    public CPerParticleVecInput Point2
+    {
+        get
+        {
             _Point2Offset = _Point2Offset ?? Schema.GetOffset(0x6022BA8207AD3079);
             return new CPerParticleVecInputImpl(_Handle + _Point2Offset!.Value);
         }
     }
-
 
 }

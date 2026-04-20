@@ -18,32 +18,38 @@ internal partial class SkeletonAnimCapture_t__Bone_tImpl : SchemaClass, Skeleton
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x30D396FDCAE8A266);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x30D396FDCAE8A266);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _BindPoseOffset;
 
-    public ref CTransform BindPose {
-        get {
+    public ref CTransform BindPose
+    {
+        get
+        {
             _BindPoseOffset = _BindPoseOffset ?? Schema.GetOffset(0x30D396FDE664FE63);
             return ref _Handle.AsRef<CTransform>(_BindPoseOffset!.Value);
         }
     }
     private static nint? _ParentOffset;
 
-    public ref int Parent {
-        get {
+    public ref int Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0x30D396FD0AABB9D1);
             return ref _Handle.AsRef<int>(_ParentOffset!.Value);
         }
     }
-
 
 }

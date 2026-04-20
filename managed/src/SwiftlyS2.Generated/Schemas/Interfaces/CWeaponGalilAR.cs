@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CWeaponGalilAR : CCSWeaponBaseGun, ISchemaClass<CWeaponGalilAR>
 {
     static CWeaponGalilAR ISchemaClass<CWeaponGalilAR>.From(nint handle) => new CWeaponGalilARImpl(handle);
-    static int ISchemaClass<CWeaponGalilAR>.Size => 4432;
+    static int ISchemaClass<CWeaponGalilAR>.Size => 4160;
     static string? ISchemaClass<CWeaponGalilAR>.ClassName => "weapon_galilar";
-
-
-
 
 }

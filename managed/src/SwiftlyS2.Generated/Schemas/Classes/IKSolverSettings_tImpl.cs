@@ -18,28 +18,33 @@ internal partial class IKSolverSettings_tImpl : SchemaClass, IKSolverSettings_t
 
     private static nint? _SolverTypeOffset;
 
-    public ref IKSolverType SolverType {
-        get {
+    public ref IKSolverType SolverType
+    {
+        get
+        {
             _SolverTypeOffset = _SolverTypeOffset ?? Schema.GetOffset(0x368DC59819CA61B6);
             return ref _Handle.AsRef<IKSolverType>(_SolverTypeOffset!.Value);
         }
     }
     private static nint? _NumIterationsOffset;
 
-    public ref int NumIterations {
-        get {
+    public ref int NumIterations
+    {
+        get
+        {
             _NumIterationsOffset = _NumIterationsOffset ?? Schema.GetOffset(0x368DC59878BB0057);
             return ref _Handle.AsRef<int>(_NumIterationsOffset!.Value);
         }
     }
     private static nint? _EndEffectorRotationFixUpModeOffset;
 
-    public ref EIKEndEffectorRotationFixUpMode EndEffectorRotationFixUpMode {
-        get {
+    public ref EIKEndEffectorRotationFixUpMode EndEffectorRotationFixUpMode
+    {
+        get
+        {
             _EndEffectorRotationFixUpModeOffset = _EndEffectorRotationFixUpModeOffset ?? Schema.GetOffset(0x368DC5980B45E281);
             return ref _Handle.AsRef<EIKEndEffectorRotationFixUpMode>(_EndEffectorRotationFixUpModeOffset!.Value);
         }
     }
-
 
 }

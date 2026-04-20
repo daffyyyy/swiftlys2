@@ -18,92 +18,113 @@ internal partial class C_INIT_RingWaveImpl : CParticleFunctionInitializerImpl, C
 
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0xA5DA0691B3FDC289);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
     private static nint? _ParticlesPerOrbitOffset;
 
-    public CParticleCollectionFloatInput ParticlesPerOrbit {
-        get {
+    public CParticleCollectionFloatInput ParticlesPerOrbit
+    {
+        get
+        {
             _ParticlesPerOrbitOffset = _ParticlesPerOrbitOffset ?? Schema.GetOffset(0xA5DA069184EA503F);
             return new CParticleCollectionFloatInputImpl(_Handle + _ParticlesPerOrbitOffset!.Value);
         }
     }
     private static nint? _InitialRadiusOffset;
 
-    public CPerParticleFloatInput InitialRadius {
-        get {
+    public CPerParticleFloatInput InitialRadius
+    {
+        get
+        {
             _InitialRadiusOffset = _InitialRadiusOffset ?? Schema.GetOffset(0xA5DA06918B8AAB8B);
             return new CPerParticleFloatInputImpl(_Handle + _InitialRadiusOffset!.Value);
         }
     }
     private static nint? _ThicknessOffset;
 
-    public CPerParticleFloatInput Thickness {
-        get {
+    public CPerParticleFloatInput Thickness
+    {
+        get
+        {
             _ThicknessOffset = _ThicknessOffset ?? Schema.GetOffset(0xA5DA0691DC7C1987);
             return new CPerParticleFloatInputImpl(_Handle + _ThicknessOffset!.Value);
         }
     }
     private static nint? _InitialSpeedMinOffset;
 
-    public CPerParticleFloatInput InitialSpeedMin {
-        get {
+    public CPerParticleFloatInput InitialSpeedMin
+    {
+        get
+        {
             _InitialSpeedMinOffset = _InitialSpeedMinOffset ?? Schema.GetOffset(0xA5DA0691E36FD694);
             return new CPerParticleFloatInputImpl(_Handle + _InitialSpeedMinOffset!.Value);
         }
     }
     private static nint? _InitialSpeedMaxOffset;
 
-    public CPerParticleFloatInput InitialSpeedMax {
-        get {
+    public CPerParticleFloatInput InitialSpeedMax
+    {
+        get
+        {
             _InitialSpeedMaxOffset = _InitialSpeedMaxOffset ?? Schema.GetOffset(0xA5DA0691D184D4F6);
             return new CPerParticleFloatInputImpl(_Handle + _InitialSpeedMaxOffset!.Value);
         }
     }
     private static nint? _RollOffset;
 
-    public CPerParticleFloatInput Roll {
-        get {
+    public CPerParticleFloatInput Roll
+    {
+        get
+        {
             _RollOffset = _RollOffset ?? Schema.GetOffset(0xA5DA069188F97A90);
             return new CPerParticleFloatInputImpl(_Handle + _RollOffset!.Value);
         }
     }
     private static nint? _PitchOffset;
 
-    public CPerParticleFloatInput Pitch {
-        get {
+    public CPerParticleFloatInput Pitch
+    {
+        get
+        {
             _PitchOffset = _PitchOffset ?? Schema.GetOffset(0xA5DA06911CBA22DB);
             return new CPerParticleFloatInputImpl(_Handle + _PitchOffset!.Value);
         }
     }
     private static nint? _YawOffset;
 
-    public CPerParticleFloatInput Yaw {
-        get {
+    public CPerParticleFloatInput Yaw
+    {
+        get
+        {
             _YawOffset = _YawOffset ?? Schema.GetOffset(0xA5DA0691B40C1E8A);
             return new CPerParticleFloatInputImpl(_Handle + _YawOffset!.Value);
         }
     }
     private static nint? _EvenDistributionOffset;
 
-    public ref bool EvenDistribution {
-        get {
+    public ref bool EvenDistribution
+    {
+        get
+        {
             _EvenDistributionOffset = _EvenDistributionOffset ?? Schema.GetOffset(0xA5DA069184932067);
             return ref _Handle.AsRef<bool>(_EvenDistributionOffset!.Value);
         }
     }
     private static nint? _XYVelocityOnlyOffset;
 
-    public ref bool XYVelocityOnly {
-        get {
+    public ref bool XYVelocityOnly
+    {
+        get
+        {
             _XYVelocityOnlyOffset = _XYVelocityOnlyOffset ?? Schema.GetOffset(0xA5DA0691A20CED5B);
             return ref _Handle.AsRef<bool>(_XYVelocityOnlyOffset!.Value);
         }
     }
-
 
 }

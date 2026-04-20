@@ -16,7 +16,4 @@ internal partial class CFuncLadderAlias_func_useableladderImpl : CFuncLadderImpl
 {
     public CFuncLadderAlias_func_useableladderImpl(nint handle) : base(handle) { }
 
-
-
-
 }

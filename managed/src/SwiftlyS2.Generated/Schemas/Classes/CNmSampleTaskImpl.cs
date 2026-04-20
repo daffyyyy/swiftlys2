@@ -16,7 +16,4 @@ internal partial class CNmSampleTaskImpl : CNmPoseTaskImpl, CNmSampleTask
 {
     public CNmSampleTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

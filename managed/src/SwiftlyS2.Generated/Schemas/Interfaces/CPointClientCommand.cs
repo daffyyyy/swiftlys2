@@ -14,7 +14,4 @@ public partial interface CPointClientCommand : CPointEntity, ISchemaClass<CPoint
     static int ISchemaClass<CPointClientCommand>.Size => 1192;
     static string? ISchemaClass<CPointClientCommand>.ClassName => "point_clientcommand";
 
-
-
-
 }

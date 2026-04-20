@@ -18,16 +18,18 @@ internal partial class CSequenceFinishedAnimTagImpl : CAnimTagBaseImpl, CSequenc
 
     private static nint? _SequenceNameOffset;
 
-    public string SequenceName {
-        get {
+    public string SequenceName
+    {
+        get
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0x1B46C5202B4A24CB);
             return Schema.GetCUtlString(_Handle.Read<nint>(_SequenceNameOffset!.Value));
         }
-        set {
+        set
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0x1B46C5202B4A24CB);
             Schema.SetCUtlString(_Handle, _SequenceNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

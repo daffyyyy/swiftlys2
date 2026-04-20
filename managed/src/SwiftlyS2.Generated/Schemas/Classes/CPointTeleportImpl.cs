@@ -18,36 +18,43 @@ internal partial class CPointTeleportImpl : CServerOnlyPointEntityImpl, CPointTe
 
     private static nint? _SaveOriginOffset;
 
-    public ref Vector SaveOrigin {
-        get {
+    public ref Vector SaveOrigin
+    {
+        get
+        {
             _SaveOriginOffset = _SaveOriginOffset ?? Schema.GetOffset(0x9AE1393FD9277FA6);
             return ref _Handle.AsRef<Vector>(_SaveOriginOffset!.Value);
         }
     }
     private static nint? _SaveAnglesOffset;
 
-    public ref QAngle SaveAngles {
-        get {
+    public ref QAngle SaveAngles
+    {
+        get
+        {
             _SaveAnglesOffset = _SaveAnglesOffset ?? Schema.GetOffset(0x9AE1393FD68F48DC);
             return ref _Handle.AsRef<QAngle>(_SaveAnglesOffset!.Value);
         }
     }
     private static nint? _TeleportParentedEntitiesOffset;
 
-    public ref bool TeleportParentedEntities {
-        get {
+    public ref bool TeleportParentedEntities
+    {
+        get
+        {
             _TeleportParentedEntitiesOffset = _TeleportParentedEntitiesOffset ?? Schema.GetOffset(0x9AE1393F20FFB18C);
             return ref _Handle.AsRef<bool>(_TeleportParentedEntitiesOffset!.Value);
         }
     }
     private static nint? _TeleportUseCurrentAngleOffset;
 
-    public ref bool TeleportUseCurrentAngle {
-        get {
+    public ref bool TeleportUseCurrentAngle
+    {
+        get
+        {
             _TeleportUseCurrentAngleOffset = _TeleportUseCurrentAngleOffset ?? Schema.GetOffset(0x9AE1393F528952CD);
             return ref _Handle.AsRef<bool>(_TeleportUseCurrentAngleOffset!.Value);
         }
     }
-
 
 }

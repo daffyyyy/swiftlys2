@@ -18,20 +18,23 @@ internal partial class CSequenceTagSpansImpl : SchemaClass, CSequenceTagSpans
 
     private static nint? _SequenceNameOffset;
 
-    public ref CGlobalSymbol SequenceName {
-        get {
+    public ref CGlobalSymbol SequenceName
+    {
+        get
+        {
             _SequenceNameOffset = _SequenceNameOffset ?? Schema.GetOffset(0x132BFE6A7462AF30);
             return ref _Handle.AsRef<CGlobalSymbol>(_SequenceNameOffset!.Value);
         }
     }
     private static nint? _TagsOffset;
 
-    public ref CUtlVector<TagSpan_t> Tags {
-        get {
+    public ref CUtlVector<TagSpan_t> Tags
+    {
+        get
+        {
             _TagsOffset = _TagsOffset ?? Schema.GetOffset(0x132BFE6AB46C8540);
             return ref _Handle.AsRef<CUtlVector<TagSpan_t>>(_TagsOffset!.Value);
         }
     }
-
 
 }

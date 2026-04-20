@@ -18,28 +18,33 @@ internal partial class C_OP_RampCPLinearRandomImpl : CParticleFunctionPreEmissio
 
     private static nint? _OutControlPointNumberOffset;
 
-    public ref int OutControlPointNumber {
-        get {
+    public ref int OutControlPointNumber
+    {
+        get
+        {
             _OutControlPointNumberOffset = _OutControlPointNumberOffset ?? Schema.GetOffset(0xF3F4631CD021D73F);
             return ref _Handle.AsRef<int>(_OutControlPointNumberOffset!.Value);
         }
     }
     private static nint? _RateMinOffset;
 
-    public ref Vector RateMin {
-        get {
+    public ref Vector RateMin
+    {
+        get
+        {
             _RateMinOffset = _RateMinOffset ?? Schema.GetOffset(0xF3F4631CB1C06501);
             return ref _Handle.AsRef<Vector>(_RateMinOffset!.Value);
         }
     }
     private static nint? _RateMaxOffset;
 
-    public ref Vector RateMax {
-        get {
+    public ref Vector RateMax
+    {
+        get
+        {
             _RateMaxOffset = _RateMaxOffset ?? Schema.GetOffset(0xF3F4631CA3D569AF);
             return ref _Handle.AsRef<Vector>(_RateMaxOffset!.Value);
         }
     }
-
 
 }

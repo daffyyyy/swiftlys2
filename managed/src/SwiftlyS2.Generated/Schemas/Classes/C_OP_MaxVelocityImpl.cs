@@ -18,36 +18,43 @@ internal partial class C_OP_MaxVelocityImpl : CParticleFunctionOperatorImpl, C_O
 
     private static nint? _MaxVelocityOffset;
 
-    public ref float MaxVelocity {
-        get {
+    public ref float MaxVelocity
+    {
+        get
+        {
             _MaxVelocityOffset = _MaxVelocityOffset ?? Schema.GetOffset(0xE7D67D7E281BD640);
             return ref _Handle.AsRef<float>(_MaxVelocityOffset!.Value);
         }
     }
     private static nint? _MinVelocityOffset;
 
-    public ref float MinVelocity {
-        get {
+    public ref float MinVelocity
+    {
+        get
+        {
             _MinVelocityOffset = _MinVelocityOffset ?? Schema.GetOffset(0xE7D67D7EAE8F0ADE);
             return ref _Handle.AsRef<float>(_MinVelocityOffset!.Value);
         }
     }
     private static nint? _OverrideCPOffset;
 
-    public ref int OverrideCP {
-        get {
+    public ref int OverrideCP
+    {
+        get
+        {
             _OverrideCPOffset = _OverrideCPOffset ?? Schema.GetOffset(0xE7D67D7EDD495162);
             return ref _Handle.AsRef<int>(_OverrideCPOffset!.Value);
         }
     }
     private static nint? _OverrideCPFieldOffset;
 
-    public ref int OverrideCPField {
-        get {
+    public ref int OverrideCPField
+    {
+        get
+        {
             _OverrideCPFieldOffset = _OverrideCPFieldOffset ?? Schema.GetOffset(0xE7D67D7E2FF9A086);
             return ref _Handle.AsRef<int>(_OverrideCPFieldOffset!.Value);
         }
     }
-
 
 }

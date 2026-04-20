@@ -18,60 +18,73 @@ internal partial class CDistanceRemainingMetricEvaluatorImpl : CMotionMetricEval
 
     private static nint? _MaxDistanceOffset;
 
-    public ref float MaxDistance {
-        get {
+    public ref float MaxDistance
+    {
+        get
+        {
             _MaxDistanceOffset = _MaxDistanceOffset ?? Schema.GetOffset(0xEF12BCC898893360);
             return ref _Handle.AsRef<float>(_MaxDistanceOffset!.Value);
         }
     }
     private static nint? _MinDistanceOffset;
 
-    public ref float MinDistance {
-        get {
+    public ref float MinDistance
+    {
+        get
+        {
             _MinDistanceOffset = _MinDistanceOffset ?? Schema.GetOffset(0xEF12BCC892BCAD06);
             return ref _Handle.AsRef<float>(_MinDistanceOffset!.Value);
         }
     }
     private static nint? _StartGoalFilterDistanceOffset;
 
-    public ref float StartGoalFilterDistance {
-        get {
+    public ref float StartGoalFilterDistance
+    {
+        get
+        {
             _StartGoalFilterDistanceOffset = _StartGoalFilterDistanceOffset ?? Schema.GetOffset(0xEF12BCC8531B6E2B);
             return ref _Handle.AsRef<float>(_StartGoalFilterDistanceOffset!.Value);
         }
     }
     private static nint? _MaxGoalOvershootScaleOffset;
 
-    public ref float MaxGoalOvershootScale {
-        get {
+    public ref float MaxGoalOvershootScale
+    {
+        get
+        {
             _MaxGoalOvershootScaleOffset = _MaxGoalOvershootScaleOffset ?? Schema.GetOffset(0xEF12BCC8D2E0A335);
             return ref _Handle.AsRef<float>(_MaxGoalOvershootScaleOffset!.Value);
         }
     }
     private static nint? _FilterFixedMinDistanceOffset;
 
-    public ref bool FilterFixedMinDistance {
-        get {
+    public ref bool FilterFixedMinDistance
+    {
+        get
+        {
             _FilterFixedMinDistanceOffset = _FilterFixedMinDistanceOffset ?? Schema.GetOffset(0xEF12BCC85AD937B2);
             return ref _Handle.AsRef<bool>(_FilterFixedMinDistanceOffset!.Value);
         }
     }
     private static nint? _FilterGoalDistanceOffset;
 
-    public ref bool FilterGoalDistance {
-        get {
+    public ref bool FilterGoalDistance
+    {
+        get
+        {
             _FilterGoalDistanceOffset = _FilterGoalDistanceOffset ?? Schema.GetOffset(0xEF12BCC8A9641DB3);
             return ref _Handle.AsRef<bool>(_FilterGoalDistanceOffset!.Value);
         }
     }
     private static nint? _FilterGoalOvershootOffset;
 
-    public ref bool FilterGoalOvershoot {
-        get {
+    public ref bool FilterGoalOvershoot
+    {
+        get
+        {
             _FilterGoalOvershootOffset = _FilterGoalOvershootOffset ?? Schema.GetOffset(0xEF12BCC89A875DD1);
             return ref _Handle.AsRef<bool>(_FilterGoalOvershootOffset!.Value);
         }
     }
-
 
 }

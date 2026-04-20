@@ -18,12 +18,13 @@ internal partial class CVMixOscProcessorDescImpl : CVMixBaseProcessorDescImpl, C
 
     private static nint? _DescOffset;
 
-    public VMixOscDesc_t Desc {
-        get {
+    public VMixOscDesc_t Desc
+    {
+        get
+        {
             _DescOffset = _DescOffset ?? Schema.GetOffset(0x18D0F65A27917BC0);
             return new VMixOscDesc_tImpl(_Handle + _DescOffset!.Value);
         }
     }
-
 
 }

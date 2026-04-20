@@ -16,7 +16,4 @@ internal partial class CNmModelSpaceBlendTaskImpl : CNmBlendTaskBaseImpl, CNmMod
 {
     public CNmModelSpaceBlendTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

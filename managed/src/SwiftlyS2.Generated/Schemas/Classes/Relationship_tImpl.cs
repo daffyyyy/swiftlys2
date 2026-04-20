@@ -18,20 +18,23 @@ internal partial class Relationship_tImpl : SchemaClass, Relationship_t
 
     private static nint? _DispositionOffset;
 
-    public ref Disposition_t Disposition {
-        get {
+    public ref Disposition_t Disposition
+    {
+        get
+        {
             _DispositionOffset = _DispositionOffset ?? Schema.GetOffset(0xD0FE62280D365234);
             return ref _Handle.AsRef<Disposition_t>(_DispositionOffset!.Value);
         }
     }
     private static nint? _PriorityOffset;
 
-    public ref int Priority {
-        get {
+    public ref int Priority
+    {
+        get
+        {
             _PriorityOffset = _PriorityOffset ?? Schema.GetOffset(0xD0FE622894E4E309);
             return ref _Handle.AsRef<int>(_PriorityOffset!.Value);
         }
     }
-
 
 }

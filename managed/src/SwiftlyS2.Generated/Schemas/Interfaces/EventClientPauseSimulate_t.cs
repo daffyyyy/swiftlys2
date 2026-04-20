@@ -14,7 +14,4 @@ public partial interface EventClientPauseSimulate_t : EventSimulate_t, ISchemaCl
     static int ISchemaClass<EventClientPauseSimulate_t>.Size => 48;
     static string? ISchemaClass<EventClientPauseSimulate_t>.ClassName => null;
 
-
-
-
 }

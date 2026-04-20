@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EntityDormancyType_t : uint
 {
- ENTITY_NOT_DORMANT = 0,
-
- ENTITY_DORMANT = 1,
-
- ENTITY_SUSPENDED = 2,
+    ENTITY_NOT_DORMANT = 0,
+    ENTITY_DORMANT = 1,
+    ENTITY_SUSPENDED = 2,
 }

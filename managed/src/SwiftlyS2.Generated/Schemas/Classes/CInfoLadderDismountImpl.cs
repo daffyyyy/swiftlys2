@@ -16,7 +16,4 @@ internal partial class CInfoLadderDismountImpl : CBaseEntityImpl, CInfoLadderDis
 {
     public CInfoLadderDismountImpl(nint handle) : base(handle) { }
 
-
-
-
 }

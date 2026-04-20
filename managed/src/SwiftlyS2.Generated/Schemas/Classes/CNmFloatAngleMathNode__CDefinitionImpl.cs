@@ -18,20 +18,23 @@ internal partial class CNmFloatAngleMathNode__CDefinitionImpl : CNmFloatValueNod
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x464A924095E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _OperationOffset;
 
-    public ref CNmFloatAngleMathNode__Operation_t Operation {
-        get {
+    public ref CNmFloatAngleMathNode__Operation_t Operation
+    {
+        get
+        {
             _OperationOffset = _OperationOffset ?? Schema.GetOffset(0x464A9240AEA59026);
             return ref _Handle.AsRef<CNmFloatAngleMathNode__Operation_t>(_OperationOffset!.Value);
         }
     }
-
 
 }

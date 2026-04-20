@@ -11,11 +11,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderStandardLight : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderStandardLight>
 {
     static C_OP_RenderStandardLight ISchemaClass<C_OP_RenderStandardLight>.From(nint handle) => new C_OP_RenderStandardLightImpl(handle);
-    static int ISchemaClass<C_OP_RenderStandardLight>.Size => 5312;
+    static int ISchemaClass<C_OP_RenderStandardLight>.Size => 5688;
     static string? ISchemaClass<C_OP_RenderStandardLight>.ClassName => null;
 
 
     public ref ParticleLightTypeChoiceList_t LightType { get; }
+
+    public ref ushort MaxAllowed { get; }
 
     public CParticleCollectionVecInput ColorScale { get; }
 
@@ -24,6 +26,10 @@ public partial interface C_OP_RenderStandardLight : CParticleFunctionRenderer, I
     public CPerParticleFloatInput Intensity { get; }
 
     public ref bool CastShadows { get; }
+
+    public ref bool DynamicBounce { get; }
+
+    public CParticleCollectionFloatInput BounceScale { get; }
 
     public CParticleCollectionFloatInput Theta { get; }
 

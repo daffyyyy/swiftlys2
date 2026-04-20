@@ -18,28 +18,33 @@ internal partial class CNmTargetInfoNode__CDefinitionImpl : CNmFloatValueNode__C
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x2288EABA95E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _InfoTypeOffset;
 
-    public ref CNmTargetInfoNode__Info_t InfoType {
-        get {
+    public ref CNmTargetInfoNode__Info_t InfoType
+    {
+        get
+        {
             _InfoTypeOffset = _InfoTypeOffset ?? Schema.GetOffset(0x2288EABACE6BA20D);
             return ref _Handle.AsRef<CNmTargetInfoNode__Info_t>(_InfoTypeOffset!.Value);
         }
     }
     private static nint? _IsWorldSpaceTargetOffset;
 
-    public ref bool IsWorldSpaceTarget {
-        get {
+    public ref bool IsWorldSpaceTarget
+    {
+        get
+        {
             _IsWorldSpaceTargetOffset = _IsWorldSpaceTargetOffset ?? Schema.GetOffset(0x2288EABAB81D53F2);
             return ref _Handle.AsRef<bool>(_IsWorldSpaceTargetOffset!.Value);
         }
     }
-
 
 }

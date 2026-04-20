@@ -18,28 +18,33 @@ internal partial class CAnimFrameBlockAnimImpl : SchemaClass, CAnimFrameBlockAni
 
     private static nint? _StartFrameOffset;
 
-    public ref int StartFrame {
-        get {
+    public ref int StartFrame
+    {
+        get
+        {
             _StartFrameOffset = _StartFrameOffset ?? Schema.GetOffset(0x6318445C9134F088);
             return ref _Handle.AsRef<int>(_StartFrameOffset!.Value);
         }
     }
     private static nint? _EndFrameOffset;
 
-    public ref int EndFrame {
-        get {
+    public ref int EndFrame
+    {
+        get
+        {
             _EndFrameOffset = _EndFrameOffset ?? Schema.GetOffset(0x6318445CEA91BD07);
             return ref _Handle.AsRef<int>(_EndFrameOffset!.Value);
         }
     }
     private static nint? _SegmentIndexArrayOffset;
 
-    public ref CUtlVector<int> SegmentIndexArray {
-        get {
+    public ref CUtlVector<int> SegmentIndexArray
+    {
+        get
+        {
             _SegmentIndexArrayOffset = _SegmentIndexArrayOffset ?? Schema.GetOffset(0x6318445C1A46EA6B);
             return ref _Handle.AsRef<CUtlVector<int>>(_SegmentIndexArrayOffset!.Value);
         }
     }
-
 
 }

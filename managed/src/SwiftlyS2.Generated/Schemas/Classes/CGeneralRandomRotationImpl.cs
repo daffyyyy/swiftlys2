@@ -18,52 +18,63 @@ internal partial class CGeneralRandomRotationImpl : CParticleFunctionInitializer
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xB15F344FE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _DegreesOffset;
 
-    public ref float Degrees {
-        get {
+    public ref float Degrees
+    {
+        get
+        {
             _DegreesOffset = _DegreesOffset ?? Schema.GetOffset(0xB15F344FB2A877A0);
             return ref _Handle.AsRef<float>(_DegreesOffset!.Value);
         }
     }
     private static nint? _DegreesMinOffset;
 
-    public ref float DegreesMin {
-        get {
+    public ref float DegreesMin
+    {
+        get
+        {
             _DegreesMinOffset = _DegreesMinOffset ?? Schema.GetOffset(0xB15F344F6D22DDDC);
             return ref _Handle.AsRef<float>(_DegreesMinOffset!.Value);
         }
     }
     private static nint? _DegreesMaxOffset;
 
-    public ref float DegreesMax {
-        get {
+    public ref float DegreesMax
+    {
+        get
+        {
             _DegreesMaxOffset = _DegreesMaxOffset ?? Schema.GetOffset(0xB15F344F5B0F39CE);
             return ref _Handle.AsRef<float>(_DegreesMaxOffset!.Value);
         }
     }
     private static nint? _RotationRandExponentOffset;
 
-    public ref float RotationRandExponent {
-        get {
+    public ref float RotationRandExponent
+    {
+        get
+        {
             _RotationRandExponentOffset = _RotationRandExponentOffset ?? Schema.GetOffset(0xB15F344F348610D5);
             return ref _Handle.AsRef<float>(_RotationRandExponentOffset!.Value);
         }
     }
     private static nint? _RandomlyFlipDirectionOffset;
 
-    public ref bool RandomlyFlipDirection {
-        get {
+    public ref bool RandomlyFlipDirection
+    {
+        get
+        {
             _RandomlyFlipDirectionOffset = _RandomlyFlipDirectionOffset ?? Schema.GetOffset(0xB15F344F26D0F2EF);
             return ref _Handle.AsRef<bool>(_RandomlyFlipDirectionOffset!.Value);
         }
     }
-
 
 }

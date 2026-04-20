@@ -18,20 +18,23 @@ internal partial class C_OP_PlayEndCapWhenFinishedImpl : CParticleFunctionPreEmi
 
     private static nint? _FireOnEmissionEndOffset;
 
-    public ref bool FireOnEmissionEnd {
-        get {
+    public ref bool FireOnEmissionEnd
+    {
+        get
+        {
             _FireOnEmissionEndOffset = _FireOnEmissionEndOffset ?? Schema.GetOffset(0xFC89982E01C357B0);
             return ref _Handle.AsRef<bool>(_FireOnEmissionEndOffset!.Value);
         }
     }
     private static nint? _IncludeChildrenOffset;
 
-    public ref bool IncludeChildren {
-        get {
+    public ref bool IncludeChildren
+    {
+        get
+        {
             _IncludeChildrenOffset = _IncludeChildrenOffset ?? Schema.GetOffset(0xFC89982EA7706C80);
             return ref _Handle.AsRef<bool>(_IncludeChildrenOffset!.Value);
         }
     }
-
 
 }

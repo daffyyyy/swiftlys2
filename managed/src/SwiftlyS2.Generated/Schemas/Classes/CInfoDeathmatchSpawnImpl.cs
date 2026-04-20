@@ -16,7 +16,4 @@ internal partial class CInfoDeathmatchSpawnImpl : SpawnPointImpl, CInfoDeathmatc
 {
     public CInfoDeathmatchSpawnImpl(nint handle) : base(handle) { }
 
-
-
-
 }

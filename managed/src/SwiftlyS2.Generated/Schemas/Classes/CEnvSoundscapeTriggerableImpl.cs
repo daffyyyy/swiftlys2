@@ -16,7 +16,4 @@ internal partial class CEnvSoundscapeTriggerableImpl : CEnvSoundscapeImpl, CEnvS
 {
     public CEnvSoundscapeTriggerableImpl(nint handle) : base(handle) { }
 
-
-
-
 }

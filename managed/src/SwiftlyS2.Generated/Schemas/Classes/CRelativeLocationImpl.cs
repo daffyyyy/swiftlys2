@@ -18,36 +18,43 @@ internal partial class CRelativeLocationImpl : SchemaClass, CRelativeLocation
 
     private static nint? _TypeOffset;
 
-    public ref RelativeLocationType_t Type {
-        get {
+    public ref RelativeLocationType_t Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0xA25CE2418ED6D5CD);
             return ref _Handle.AsRef<RelativeLocationType_t>(_TypeOffset!.Value);
         }
     }
     private static nint? _RelativeOffsetOffset;
 
-    public ref Vector RelativeOffset {
-        get {
+    public ref Vector RelativeOffset
+    {
+        get
+        {
             _RelativeOffsetOffset = _RelativeOffsetOffset ?? Schema.GetOffset(0xA25CE241B6F2D296);
             return ref _Handle.AsRef<Vector>(_RelativeOffsetOffset!.Value);
         }
     }
     private static nint? _WorldSpacePosOffset;
 
-    public ref Vector WorldSpacePos {
-        get {
+    public ref Vector WorldSpacePos
+    {
+        get
+        {
             _WorldSpacePosOffset = _WorldSpacePosOffset ?? Schema.GetOffset(0xA25CE2410A43E96B);
             return ref _Handle.AsRef<Vector>(_WorldSpacePosOffset!.Value);
         }
     }
     private static nint? _EntityOffset;
 
-    public ref CHandle<CBaseEntity> Entity {
-        get {
+    public ref CHandle<CBaseEntity> Entity
+    {
+        get
+        {
             _EntityOffset = _EntityOffset ?? Schema.GetOffset(0xA25CE2416EBADCB0);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EntityOffset!.Value);
         }
     }
-
 
 }

@@ -18,28 +18,33 @@ internal partial class CIntAnimParameterImpl : CConcreteAnimParameterImpl, CIntA
 
     private static nint? _DefaultValueOffset;
 
-    public ref int DefaultValue {
-        get {
+    public ref int DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0xD1AA42D5BBE0341F);
             return ref _Handle.AsRef<int>(_DefaultValueOffset!.Value);
         }
     }
     private static nint? _MinValueOffset;
 
-    public ref int MinValue {
-        get {
+    public ref int MinValue
+    {
+        get
+        {
             _MinValueOffset = _MinValueOffset ?? Schema.GetOffset(0xD1AA42D503F1334C);
             return ref _Handle.AsRef<int>(_MinValueOffset!.Value);
         }
     }
     private static nint? _MaxValueOffset;
 
-    public ref int MaxValue {
-        get {
+    public ref int MaxValue
+    {
+        get
+        {
             _MaxValueOffset = _MaxValueOffset ?? Schema.GetOffset(0xD1AA42D5857E5426);
             return ref _Handle.AsRef<int>(_MaxValueOffset!.Value);
         }
     }
-
 
 }

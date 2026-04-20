@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCModel : ISchemaClass<InfoForResourc
     static int ISchemaClass<InfoForResourceTypeCModel>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCModel>.ClassName => null;
 
-
-
-
 }

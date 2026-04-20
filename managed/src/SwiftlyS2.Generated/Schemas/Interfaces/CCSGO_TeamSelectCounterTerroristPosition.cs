@@ -14,7 +14,4 @@ public partial interface CCSGO_TeamSelectCounterTerroristPosition : CCSGO_TeamSe
     static int ISchemaClass<CCSGO_TeamSelectCounterTerroristPosition>.Size => 3264;
     static string? ISchemaClass<CCSGO_TeamSelectCounterTerroristPosition>.ClassName => "team_select_counterterrorist";
 
-
-
-
 }

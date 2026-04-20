@@ -14,7 +14,4 @@ public partial interface CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCha
     static int ISchemaClass<CCSGO_TeamIntroCharacterPosition>.Size => 3264;
     static string? ISchemaClass<CCSGO_TeamIntroCharacterPosition>.ClassName => null;
 
-
-
-
 }

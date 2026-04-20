@@ -18,28 +18,33 @@ internal partial class CPulseCell_Inflow_EntOutputHandlerImpl : CPulseCell_Inflo
 
     private static nint? _SourceEntityOffset;
 
-    public SchemaUntypedField SourceEntity {
-        get {
+    public SchemaUntypedField SourceEntity
+    {
+        get
+        {
             _SourceEntityOffset = _SourceEntityOffset ?? Schema.GetOffset(0x8C9310C4AD2DB063);
             return new SchemaUntypedField(_Handle + _SourceEntityOffset!.Value);
         }
     }
     private static nint? _SourceOutputOffset;
 
-    public SchemaUntypedField SourceOutput {
-        get {
+    public SchemaUntypedField SourceOutput
+    {
+        get
+        {
             _SourceOutputOffset = _SourceOutputOffset ?? Schema.GetOffset(0x8C9310C42D46D7F5);
             return new SchemaUntypedField(_Handle + _SourceOutputOffset!.Value);
         }
     }
     private static nint? _ExpectedParamTypeOffset;
 
-    public SchemaUntypedField ExpectedParamType {
-        get {
+    public SchemaUntypedField ExpectedParamType
+    {
+        get
+        {
             _ExpectedParamTypeOffset = _ExpectedParamTypeOffset ?? Schema.GetOffset(0x8C9310C41C1CB8A6);
             return new SchemaUntypedField(_Handle + _ExpectedParamTypeOffset!.Value);
         }
     }
-
 
 }

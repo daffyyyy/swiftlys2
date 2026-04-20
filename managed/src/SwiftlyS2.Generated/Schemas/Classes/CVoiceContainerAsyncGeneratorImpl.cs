@@ -16,7 +16,4 @@ internal partial class CVoiceContainerAsyncGeneratorImpl : CVoiceContainerGenera
 {
     public CVoiceContainerAsyncGeneratorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

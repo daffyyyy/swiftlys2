@@ -18,76 +18,93 @@ internal partial class CRagdollConstraintImpl : CPhysConstraintImpl, CRagdollCon
 
     private static nint? _XminOffset;
 
-    public ref float Xmin {
-        get {
+    public ref float Xmin
+    {
+        get
+        {
             _XminOffset = _XminOffset ?? Schema.GetOffset(0xF36946DA76E67DC1);
             return ref _Handle.AsRef<float>(_XminOffset!.Value);
         }
     }
     private static nint? _XmaxOffset;
 
-    public ref float Xmax {
-        get {
+    public ref float Xmax
+    {
+        get
+        {
             _XmaxOffset = _XmaxOffset ?? Schema.GetOffset(0xF36946DA68F9EF6F);
             return ref _Handle.AsRef<float>(_XmaxOffset!.Value);
         }
     }
     private static nint? _YminOffset;
 
-    public ref float Ymin {
-        get {
+    public ref float Ymin
+    {
+        get
+        {
             _YminOffset = _YminOffset ?? Schema.GetOffset(0xF36946DACE2F1828);
             return ref _Handle.AsRef<float>(_YminOffset!.Value);
         }
     }
     private static nint? _YmaxOffset;
 
-    public ref float Ymax {
-        get {
+    public ref float Ymax
+    {
+        get
+        {
             _YmaxOffset = _YmaxOffset ?? Schema.GetOffset(0xF36946DAC4429022);
             return ref _Handle.AsRef<float>(_YmaxOffset!.Value);
         }
     }
     private static nint? _ZminOffset;
 
-    public ref float Zmin {
-        get {
+    public ref float Zmin
+    {
+        get
+        {
             _ZminOffset = _ZminOffset ?? Schema.GetOffset(0xF36946DAC34E881F);
             return ref _Handle.AsRef<float>(_ZminOffset!.Value);
         }
     }
     private static nint? _ZmaxOffset;
 
-    public ref float Zmax {
-        get {
+    public ref float Zmax
+    {
+        get
+        {
             _ZmaxOffset = _ZmaxOffset ?? Schema.GetOffset(0xF36946DAD13B1671);
             return ref _Handle.AsRef<float>(_ZmaxOffset!.Value);
         }
     }
     private static nint? _XfrictionOffset;
 
-    public ref float Xfriction {
-        get {
+    public ref float Xfriction
+    {
+        get
+        {
             _XfrictionOffset = _XfrictionOffset ?? Schema.GetOffset(0xF36946DA08758E19);
             return ref _Handle.AsRef<float>(_XfrictionOffset!.Value);
         }
     }
     private static nint? _YfrictionOffset;
 
-    public ref float Yfriction {
-        get {
+    public ref float Yfriction
+    {
+        get
+        {
             _YfrictionOffset = _YfrictionOffset ?? Schema.GetOffset(0xF36946DAEFC8C6C6);
             return ref _Handle.AsRef<float>(_YfrictionOffset!.Value);
         }
     }
     private static nint? _ZfrictionOffset;
 
-    public ref float Zfriction {
-        get {
+    public ref float Zfriction
+    {
+        get
+        {
             _ZfrictionOffset = _ZfrictionOffset ?? Schema.GetOffset(0xF36946DA5587BDC3);
             return ref _Handle.AsRef<float>(_ZfrictionOffset!.Value);
         }
     }
-
 
 }

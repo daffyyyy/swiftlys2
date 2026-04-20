@@ -18,44 +18,53 @@ internal partial class C_OP_RepeatedTriggerChildGroupImpl : CParticleFunctionPre
 
     private static nint? _ChildGroupIDOffset;
 
-    public ref int ChildGroupID {
-        get {
+    public ref int ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0x3D9A0D4E3F3C965);
             return ref _Handle.AsRef<int>(_ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _ClusterRefireTimeOffset;
 
-    public CParticleCollectionFloatInput ClusterRefireTime {
-        get {
+    public CParticleCollectionFloatInput ClusterRefireTime
+    {
+        get
+        {
             _ClusterRefireTimeOffset = _ClusterRefireTimeOffset ?? Schema.GetOffset(0x3D9A0D47E6BEEAB);
             return new CParticleCollectionFloatInputImpl(_Handle + _ClusterRefireTimeOffset!.Value);
         }
     }
     private static nint? _ClusterSizeOffset;
 
-    public CParticleCollectionFloatInput ClusterSize {
-        get {
+    public CParticleCollectionFloatInput ClusterSize
+    {
+        get
+        {
             _ClusterSizeOffset = _ClusterSizeOffset ?? Schema.GetOffset(0x3D9A0D4A7549FF6);
             return new CParticleCollectionFloatInputImpl(_Handle + _ClusterSizeOffset!.Value);
         }
     }
     private static nint? _ClusterCooldownOffset;
 
-    public CParticleCollectionFloatInput ClusterCooldown {
-        get {
+    public CParticleCollectionFloatInput ClusterCooldown
+    {
+        get
+        {
             _ClusterCooldownOffset = _ClusterCooldownOffset ?? Schema.GetOffset(0x3D9A0D4753687EA);
             return new CParticleCollectionFloatInputImpl(_Handle + _ClusterCooldownOffset!.Value);
         }
     }
     private static nint? _LimitChildCountOffset;
 
-    public ref bool LimitChildCount {
-        get {
+    public ref bool LimitChildCount
+    {
+        get
+        {
             _LimitChildCountOffset = _LimitChildCountOffset ?? Schema.GetOffset(0x3D9A0D4EA978249);
             return ref _Handle.AsRef<bool>(_LimitChildCountOffset!.Value);
         }
     }
-
 
 }

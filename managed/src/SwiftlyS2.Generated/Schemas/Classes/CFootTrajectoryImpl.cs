@@ -18,28 +18,33 @@ internal partial class CFootTrajectoryImpl : SchemaClass, CFootTrajectory
 
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0x193297AFFE159136);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
     private static nint? _RotationOffsetOffset;
 
-    public ref float RotationOffset {
-        get {
+    public ref float RotationOffset
+    {
+        get
+        {
             _RotationOffsetOffset = _RotationOffsetOffset ?? Schema.GetOffset(0x193297AFF811C66E);
             return ref _Handle.AsRef<float>(_RotationOffsetOffset!.Value);
         }
     }
     private static nint? _ProgressionOffset;
 
-    public ref float Progression {
-        get {
+    public ref float Progression
+    {
+        get
+        {
             _ProgressionOffset = _ProgressionOffset ?? Schema.GetOffset(0x193297AF4C9E1656);
             return ref _Handle.AsRef<float>(_ProgressionOffset!.Value);
         }
     }
-
 
 }

@@ -25,6 +25,8 @@ public partial interface ModelMeshBufferData_t : ISchemaClass<ModelMeshBufferDat
 
     public ref bool MeshoptIndexSequence { get; }
 
+    public ref byte MeshoptMeshletEncodeVersion { get; }
+
     public ref bool CompressedZSTD { get; }
 
     public ref bool CreateBufferSRV { get; }

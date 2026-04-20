@@ -18,20 +18,23 @@ internal partial class CPulseCell_Timeline__TimelineEvent_tImpl : SchemaClass, C
 
     private static nint? _TimeFromPreviousOffset;
 
-    public ref float TimeFromPrevious {
-        get {
+    public ref float TimeFromPrevious
+    {
+        get
+        {
             _TimeFromPreviousOffset = _TimeFromPreviousOffset ?? Schema.GetOffset(0x1CEAA89BD23FC4AF);
             return ref _Handle.AsRef<float>(_TimeFromPreviousOffset!.Value);
         }
     }
     private static nint? _EventOutflowOffset;
 
-    public CPulse_OutflowConnection EventOutflow {
-        get {
+    public CPulse_OutflowConnection EventOutflow
+    {
+        get
+        {
             _EventOutflowOffset = _EventOutflowOffset ?? Schema.GetOffset(0x1CEAA89BC72D3231);
             return new CPulse_OutflowConnectionImpl(_Handle + _EventOutflowOffset!.Value);
         }
     }
-
 
 }

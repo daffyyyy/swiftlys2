@@ -16,7 +16,4 @@ internal partial class CCSPointScriptEntityImpl : CBaseEntityImpl, CCSPointScrip
 {
     public CCSPointScriptEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

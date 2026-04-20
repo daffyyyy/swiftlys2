@@ -16,7 +16,4 @@ internal partial class CFloatMovingAverageImpl : SchemaClass, CFloatMovingAverag
 {
     public CFloatMovingAverageImpl(nint handle) : base(handle) { }
 
-
-
-
 }

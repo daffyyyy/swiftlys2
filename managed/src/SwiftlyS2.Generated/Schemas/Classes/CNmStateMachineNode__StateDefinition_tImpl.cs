@@ -18,28 +18,33 @@ internal partial class CNmStateMachineNode__StateDefinition_tImpl : SchemaClass,
 
     private static nint? _StateNodeIdxOffset;
 
-    public ref short StateNodeIdx {
-        get {
+    public ref short StateNodeIdx
+    {
+        get
+        {
             _StateNodeIdxOffset = _StateNodeIdxOffset ?? Schema.GetOffset(0x539BB818074CB7A1);
             return ref _Handle.AsRef<short>(_StateNodeIdxOffset!.Value);
         }
     }
     private static nint? _EntryConditionNodeIdxOffset;
 
-    public ref short EntryConditionNodeIdx {
-        get {
+    public ref short EntryConditionNodeIdx
+    {
+        get
+        {
             _EntryConditionNodeIdxOffset = _EntryConditionNodeIdxOffset ?? Schema.GetOffset(0x539BB8180B262993);
             return ref _Handle.AsRef<short>(_EntryConditionNodeIdxOffset!.Value);
         }
     }
     private static nint? _TransitionDefinitionsOffset;
 
-    public SchemaUntypedField TransitionDefinitions {
-        get {
+    public SchemaUntypedField TransitionDefinitions
+    {
+        get
+        {
             _TransitionDefinitionsOffset = _TransitionDefinitionsOffset ?? Schema.GetOffset(0x539BB818F02EF580);
             return new SchemaUntypedField(_Handle + _TransitionDefinitionsOffset!.Value);
         }
     }
-
 
 }

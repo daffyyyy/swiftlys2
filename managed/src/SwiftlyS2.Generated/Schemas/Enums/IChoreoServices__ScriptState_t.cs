@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum IChoreoServices__ScriptState_t : uint
 {
- SCRIPT_PLAYING = 0,
-
- SCRIPT_WAIT = 1,
-
- SCRIPT_POST_IDLE = 2,
-
- SCRIPT_CLEANUP = 3,
-
- SCRIPT_MOVE_TO_MARK = 4,
+    SCRIPT_PLAYING = 0,
+    SCRIPT_WAIT = 1,
+    SCRIPT_POST_IDLE = 2,
+    SCRIPT_CLEANUP = 3,
+    SCRIPT_MOVE_TO_MARK = 4,
 }

@@ -18,44 +18,53 @@ internal partial class C_OP_SelectivelyEnableChildrenImpl : CParticleFunctionPre
 
     private static nint? _ChildGroupIDOffset;
 
-    public CParticleCollectionFloatInput ChildGroupID {
-        get {
+    public CParticleCollectionFloatInput ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0x73804886E3F3C965);
             return new CParticleCollectionFloatInputImpl(_Handle + _ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _FirstChildOffset;
 
-    public CParticleCollectionFloatInput FirstChild {
-        get {
+    public CParticleCollectionFloatInput FirstChild
+    {
+        get
+        {
             _FirstChildOffset = _FirstChildOffset ?? Schema.GetOffset(0x738048862DF4A8BD);
             return new CParticleCollectionFloatInputImpl(_Handle + _FirstChildOffset!.Value);
         }
     }
     private static nint? _NumChildrenToEnableOffset;
 
-    public CParticleCollectionFloatInput NumChildrenToEnable {
-        get {
+    public CParticleCollectionFloatInput NumChildrenToEnable
+    {
+        get
+        {
             _NumChildrenToEnableOffset = _NumChildrenToEnableOffset ?? Schema.GetOffset(0x738048868039247A);
             return new CParticleCollectionFloatInputImpl(_Handle + _NumChildrenToEnableOffset!.Value);
         }
     }
     private static nint? _PlayEndcapOnStopOffset;
 
-    public ref bool PlayEndcapOnStop {
-        get {
+    public ref bool PlayEndcapOnStop
+    {
+        get
+        {
             _PlayEndcapOnStopOffset = _PlayEndcapOnStopOffset ?? Schema.GetOffset(0x73804886CEC82FA1);
             return ref _Handle.AsRef<bool>(_PlayEndcapOnStopOffset!.Value);
         }
     }
     private static nint? _DestroyImmediatelyOffset;
 
-    public ref bool DestroyImmediately {
-        get {
+    public ref bool DestroyImmediately
+    {
+        get
+        {
             _DestroyImmediatelyOffset = _DestroyImmediatelyOffset ?? Schema.GetOffset(0x7380488675F43101);
             return ref _Handle.AsRef<bool>(_DestroyImmediatelyOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CEmptyGraphControllerImpl : CAnimGraphControllerBaseImpl,
 {
     public CEmptyGraphControllerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

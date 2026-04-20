@@ -18,48 +18,58 @@ internal partial class CSosGroupActionSetSoundeventParameterSchemaImpl : CSosGro
 
     private static nint? _MaxCountOffset;
 
-    public ref int MaxCount {
-        get {
+    public ref int MaxCount
+    {
+        get
+        {
             _MaxCountOffset = _MaxCountOffset ?? Schema.GetOffset(0x40D29D8964BED864);
             return ref _Handle.AsRef<int>(_MaxCountOffset!.Value);
         }
     }
     private static nint? _MinValueOffset;
 
-    public ref float MinValue {
-        get {
+    public ref float MinValue
+    {
+        get
+        {
             _MinValueOffset = _MinValueOffset ?? Schema.GetOffset(0x40D29D897C31AC56);
             return ref _Handle.AsRef<float>(_MinValueOffset!.Value);
         }
     }
     private static nint? _MaxValueOffset;
 
-    public ref float MaxValue {
-        get {
+    public ref float MaxValue
+    {
+        get
+        {
             _MaxValueOffset = _MaxValueOffset ?? Schema.GetOffset(0x40D29D89D0A5C87C);
             return ref _Handle.AsRef<float>(_MaxValueOffset!.Value);
         }
     }
     private static nint? _OpvarNameOffset;
 
-    public string OpvarName {
-        get {
+    public string OpvarName
+    {
+        get
+        {
             _OpvarNameOffset = _OpvarNameOffset ?? Schema.GetOffset(0x40D29D894ECBF7E4);
             return Schema.GetCUtlString(_Handle.Read<nint>(_OpvarNameOffset!.Value));
         }
-        set {
+        set
+        {
             _OpvarNameOffset = _OpvarNameOffset ?? Schema.GetOffset(0x40D29D894ECBF7E4);
             Schema.SetCUtlString(_Handle, _OpvarNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _SortTypeOffset;
 
-    public ref SosActionSetParamSortType_t SortType {
-        get {
+    public ref SosActionSetParamSortType_t SortType
+    {
+        get
+        {
             _SortTypeOffset = _SortTypeOffset ?? Schema.GetOffset(0x40D29D892E0E44B5);
             return ref _Handle.AsRef<SosActionSetParamSortType_t>(_SortTypeOffset!.Value);
         }
     }
-
 
 }

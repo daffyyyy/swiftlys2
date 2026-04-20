@@ -16,7 +16,4 @@ internal partial class CPulseCell_Step_TestDomainCreateFakeEntityImpl : CPulseCe
 {
     public CPulseCell_Step_TestDomainCreateFakeEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

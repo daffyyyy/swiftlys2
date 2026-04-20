@@ -18,28 +18,33 @@ internal partial class C_OP_RemapDistanceToLineSegmentToScalarImpl : C_OP_RemapD
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xF4B67462E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _MinOutputValueOffset;
 
-    public ref float MinOutputValue {
-        get {
+    public ref float MinOutputValue
+    {
+        get
+        {
             _MinOutputValueOffset = _MinOutputValueOffset ?? Schema.GetOffset(0xF4B67462F63C7011);
             return ref _Handle.AsRef<float>(_MinOutputValueOffset!.Value);
         }
     }
     private static nint? _MaxOutputValueOffset;
 
-    public ref float MaxOutputValue {
-        get {
+    public ref float MaxOutputValue
+    {
+        get
+        {
             _MaxOutputValueOffset = _MaxOutputValueOffset ?? Schema.GetOffset(0xF4B67462A91B71B3);
             return ref _Handle.AsRef<float>(_MaxOutputValueOffset!.Value);
         }
     }
-
 
 }

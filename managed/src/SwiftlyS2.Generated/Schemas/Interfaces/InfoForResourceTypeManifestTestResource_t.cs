@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeManifestTestResource_t : ISchemaClas
     static int ISchemaClass<InfoForResourceTypeManifestTestResource_t>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeManifestTestResource_t>.ClassName => null;
 
-
-
-
 }

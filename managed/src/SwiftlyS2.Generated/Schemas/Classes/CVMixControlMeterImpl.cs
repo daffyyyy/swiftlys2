@@ -18,12 +18,13 @@ internal partial class CVMixControlMeterImpl : CVMixInputBaseImpl, CVMixControlM
 
     private static nint? _ValueIndexOffset;
 
-    public ref int ValueIndex {
-        get {
+    public ref int ValueIndex
+    {
+        get
+        {
             _ValueIndexOffset = _ValueIndexOffset ?? Schema.GetOffset(0x8E30B7D49567C242);
             return ref _Handle.AsRef<int>(_ValueIndexOffset!.Value);
         }
     }
-
 
 }

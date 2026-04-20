@@ -16,7 +16,4 @@ internal partial class CAI_ExpresserWithFollowupImpl : CAI_ExpresserImpl, CAI_Ex
 {
     public CAI_ExpresserWithFollowupImpl(nint handle) : base(handle) { }
 
-
-
-
 }

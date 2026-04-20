@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFireCrackerBlast : CInferno, ISchemaClass<CFireCrackerBlast>
 {
     static CFireCrackerBlast ISchemaClass<CFireCrackerBlast>.From(nint handle) => new CFireCrackerBlastImpl(handle);
-    static int ISchemaClass<CFireCrackerBlast>.Size => 5048;
+    static int ISchemaClass<CFireCrackerBlast>.Size => 5104;
     static string? ISchemaClass<CFireCrackerBlast>.ClassName => null;
-
-
-
 
 }

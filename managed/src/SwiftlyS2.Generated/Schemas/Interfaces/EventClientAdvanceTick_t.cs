@@ -14,7 +14,4 @@ public partial interface EventClientAdvanceTick_t : EventAdvanceTick_t, ISchemaC
     static int ISchemaClass<EventClientAdvanceTick_t>.Size => 64;
     static string? ISchemaClass<EventClientAdvanceTick_t>.ClassName => null;
 
-
-
-
 }

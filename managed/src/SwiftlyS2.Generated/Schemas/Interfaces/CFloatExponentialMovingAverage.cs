@@ -14,7 +14,4 @@ public partial interface CFloatExponentialMovingAverage : ISchemaClass<CFloatExp
     static int ISchemaClass<CFloatExponentialMovingAverage>.Size => 20;
     static string? ISchemaClass<CFloatExponentialMovingAverage>.ClassName => null;
 
-
-
-
 }

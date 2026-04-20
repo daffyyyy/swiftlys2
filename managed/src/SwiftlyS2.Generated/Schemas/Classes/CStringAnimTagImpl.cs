@@ -16,7 +16,4 @@ internal partial class CStringAnimTagImpl : CAnimTagBaseImpl, CStringAnimTag
 {
     public CStringAnimTagImpl(nint handle) : base(handle) { }
 
-
-
-
 }

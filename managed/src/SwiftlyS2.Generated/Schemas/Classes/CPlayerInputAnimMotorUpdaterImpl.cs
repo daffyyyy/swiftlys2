@@ -18,52 +18,63 @@ internal partial class CPlayerInputAnimMotorUpdaterImpl : CAnimMotorUpdaterBaseI
 
     private static nint? _SampleTimesOffset;
 
-    public ref CUtlVector<float> SampleTimes {
-        get {
+    public ref CUtlVector<float> SampleTimes
+    {
+        get
+        {
             _SampleTimesOffset = _SampleTimesOffset ?? Schema.GetOffset(0xA117CC02471975DF);
             return ref _Handle.AsRef<CUtlVector<float>>(_SampleTimesOffset!.Value);
         }
     }
     private static nint? _SpringConstantOffset;
 
-    public ref float SpringConstant {
-        get {
+    public ref float SpringConstant
+    {
+        get
+        {
             _SpringConstantOffset = _SpringConstantOffset ?? Schema.GetOffset(0xA117CC02CE2260BE);
             return ref _Handle.AsRef<float>(_SpringConstantOffset!.Value);
         }
     }
     private static nint? _AnticipationDistanceOffset;
 
-    public ref float AnticipationDistance {
-        get {
+    public ref float AnticipationDistance
+    {
+        get
+        {
             _AnticipationDistanceOffset = _AnticipationDistanceOffset ?? Schema.GetOffset(0xA117CC0264273401);
             return ref _Handle.AsRef<float>(_AnticipationDistanceOffset!.Value);
         }
     }
     private static nint? _AnticipationPosParamOffset;
 
-    public CAnimParamHandle AnticipationPosParam {
-        get {
+    public CAnimParamHandle AnticipationPosParam
+    {
+        get
+        {
             _AnticipationPosParamOffset = _AnticipationPosParamOffset ?? Schema.GetOffset(0xA117CC0286389829);
             return new CAnimParamHandleImpl(_Handle + _AnticipationPosParamOffset!.Value);
         }
     }
     private static nint? _AnticipationHeadingParamOffset;
 
-    public CAnimParamHandle AnticipationHeadingParam {
-        get {
+    public CAnimParamHandle AnticipationHeadingParam
+    {
+        get
+        {
             _AnticipationHeadingParamOffset = _AnticipationHeadingParamOffset ?? Schema.GetOffset(0xA117CC02095DAB6D);
             return new CAnimParamHandleImpl(_Handle + _AnticipationHeadingParamOffset!.Value);
         }
     }
     private static nint? _UseAccelerationOffset;
 
-    public ref bool UseAcceleration {
-        get {
+    public ref bool UseAcceleration
+    {
+        get
+        {
             _UseAccelerationOffset = _UseAccelerationOffset ?? Schema.GetOffset(0xA117CC02254F8B08);
             return ref _Handle.AsRef<bool>(_UseAccelerationOffset!.Value);
         }
     }
-
 
 }

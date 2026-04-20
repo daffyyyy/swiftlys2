@@ -18,92 +18,113 @@ internal partial class C_OP_CPOffsetToPercentageBetweenCPsImpl : CParticleFuncti
 
     private static nint? _InputMinOffset;
 
-    public ref float InputMin {
-        get {
+    public ref float InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0x93039DC8E88A0D0F);
             return ref _Handle.AsRef<float>(_InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public ref float InputMax {
-        get {
+    public ref float InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0x93039DC8D6766901);
             return ref _Handle.AsRef<float>(_InputMaxOffset!.Value);
         }
     }
     private static nint? _InputBiasOffset;
 
-    public ref float InputBias {
-        get {
+    public ref float InputBias
+    {
+        get
+        {
             _InputBiasOffset = _InputBiasOffset ?? Schema.GetOffset(0x93039DC885F2736C);
             return ref _Handle.AsRef<float>(_InputBiasOffset!.Value);
         }
     }
     private static nint? _StartCPOffset;
 
-    public ref int StartCP {
-        get {
+    public ref int StartCP
+    {
+        get
+        {
             _StartCPOffset = _StartCPOffset ?? Schema.GetOffset(0x93039DC82C2FF970);
             return ref _Handle.AsRef<int>(_StartCPOffset!.Value);
         }
     }
     private static nint? _EndCPOffset;
 
-    public ref int EndCP {
-        get {
+    public ref int EndCP
+    {
+        get
+        {
             _EndCPOffset = _EndCPOffset ?? Schema.GetOffset(0x93039DC88C9B426D);
             return ref _Handle.AsRef<int>(_EndCPOffset!.Value);
         }
     }
     private static nint? _OffsetCPOffset;
 
-    public ref int OffsetCP {
-        get {
+    public ref int OffsetCP
+    {
+        get
+        {
             _OffsetCPOffset = _OffsetCPOffset ?? Schema.GetOffset(0x93039DC8587E7DA5);
             return ref _Handle.AsRef<int>(_OffsetCPOffset!.Value);
         }
     }
     private static nint? _OuputCPOffset;
 
-    public ref int OuputCP {
-        get {
+    public ref int OuputCP
+    {
+        get
+        {
             _OuputCPOffset = _OuputCPOffset ?? Schema.GetOffset(0x93039DC8FCE2222D);
             return ref _Handle.AsRef<int>(_OuputCPOffset!.Value);
         }
     }
     private static nint? _InputCPOffset;
 
-    public ref int InputCP {
-        get {
+    public ref int InputCP
+    {
+        get
+        {
             _InputCPOffset = _InputCPOffset ?? Schema.GetOffset(0x93039DC8F39A3C14);
             return ref _Handle.AsRef<int>(_InputCPOffset!.Value);
         }
     }
     private static nint? _RadialCheckOffset;
 
-    public ref bool RadialCheck {
-        get {
+    public ref bool RadialCheck
+    {
+        get
+        {
             _RadialCheckOffset = _RadialCheckOffset ?? Schema.GetOffset(0x93039DC8496187DE);
             return ref _Handle.AsRef<bool>(_RadialCheckOffset!.Value);
         }
     }
     private static nint? _ScaleOffsetOffset;
 
-    public ref bool ScaleOffset {
-        get {
+    public ref bool ScaleOffset
+    {
+        get
+        {
             _ScaleOffsetOffset = _ScaleOffsetOffset ?? Schema.GetOffset(0x93039DC8AB39558E);
             return ref _Handle.AsRef<bool>(_ScaleOffsetOffset!.Value);
         }
     }
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0x93039DC8BD25CC2A);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
-
 
 }

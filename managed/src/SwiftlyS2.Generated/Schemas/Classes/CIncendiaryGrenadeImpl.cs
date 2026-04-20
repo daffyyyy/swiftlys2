@@ -16,7 +16,4 @@ internal partial class CIncendiaryGrenadeImpl : CMolotovGrenadeImpl, CIncendiary
 {
     public CIncendiaryGrenadeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

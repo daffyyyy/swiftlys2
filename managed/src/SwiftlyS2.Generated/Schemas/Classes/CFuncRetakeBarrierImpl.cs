@@ -16,7 +16,4 @@ internal partial class CFuncRetakeBarrierImpl : CDynamicPropImpl, CFuncRetakeBar
 {
     public CFuncRetakeBarrierImpl(nint handle) : base(handle) { }
 
-
-
-
 }

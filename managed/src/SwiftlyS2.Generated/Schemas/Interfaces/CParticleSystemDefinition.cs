@@ -107,6 +107,8 @@ public partial interface CParticleSystemDefinition : IParticleSystemDefinition, 
 
     public ref int MinimumFrames { get; }
 
+    public ref bool IsGPUParticleSystem { get; }
+
     public ref int MinCPULevel { get; }
 
     public ref int MinGPULevel { get; }

@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum SosGroupFieldBehavior_t : uint
 {
- kIgnore = 0,
-
- kBranch = 1,
-
- kMatch = 2,
+    kIgnore = 0,
+    kBranch = 1,
+    kMatch = 2,
 }

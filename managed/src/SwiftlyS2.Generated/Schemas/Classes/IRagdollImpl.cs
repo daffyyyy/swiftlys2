@@ -16,7 +16,4 @@ internal partial class IRagdollImpl : SchemaClass, IRagdoll
 {
     public IRagdollImpl(nint handle) : base(handle) { }
 
-
-
-
 }

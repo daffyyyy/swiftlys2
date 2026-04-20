@@ -18,52 +18,63 @@ internal partial class AggregateRTProxySceneObject_tImpl : SchemaClass, Aggregat
 
     private static nint? _LayerOffset;
 
-    public ref short Layer {
-        get {
+    public ref short Layer
+    {
+        get
+        {
             _LayerOffset = _LayerOffset ?? Schema.GetOffset(0x5CA2907A477C7B2A);
             return ref _Handle.AsRef<short>(_LayerOffset!.Value);
         }
     }
     private static nint? _BLASesOffset;
 
-    public ref CUtlVector<RTProxyBLAS_t> BLASes {
-        get {
+    public ref CUtlVector<RTProxyBLAS_t> BLASes
+    {
+        get
+        {
             _BLASesOffset = _BLASesOffset ?? Schema.GetOffset(0x5CA2907A3159901F);
             return ref _Handle.AsRef<CUtlVector<RTProxyBLAS_t>>(_BLASesOffset!.Value);
         }
     }
     private static nint? _InstancesOffset;
 
-    public ref CUtlVector<RTProxyInstanceInfo_t> Instances {
-        get {
+    public ref CUtlVector<RTProxyInstanceInfo_t> Instances
+    {
+        get
+        {
             _InstancesOffset = _InstancesOffset ?? Schema.GetOffset(0x5CA2907A93608AB3);
             return ref _Handle.AsRef<CUtlVector<RTProxyInstanceInfo_t>>(_InstancesOffset!.Value);
         }
     }
     private static nint? _VBDataOffset;
 
-    public ref CUtlBinaryBlock VBData {
-        get {
+    public ref CUtlBinaryBlock VBData
+    {
+        get
+        {
             _VBDataOffset = _VBDataOffset ?? Schema.GetOffset(0x5CA2907AFA477801);
             return ref _Handle.AsRef<CUtlBinaryBlock>(_VBDataOffset!.Value);
         }
     }
     private static nint? _IBDataOffset;
 
-    public ref CUtlBinaryBlock IBData {
-        get {
+    public ref CUtlBinaryBlock IBData
+    {
+        get
+        {
             _IBDataOffset = _IBDataOffset ?? Schema.GetOffset(0x5CA2907A8ECD9102);
             return ref _Handle.AsRef<CUtlBinaryBlock>(_IBDataOffset!.Value);
         }
     }
     private static nint? _InstanceAlbedoDataOffset;
 
-    public ref CUtlBinaryBlock InstanceAlbedoData {
-        get {
+    public ref CUtlBinaryBlock InstanceAlbedoData
+    {
+        get
+        {
             _InstanceAlbedoDataOffset = _InstanceAlbedoDataOffset ?? Schema.GetOffset(0x5CA2907AEDCBD633);
             return ref _Handle.AsRef<CUtlBinaryBlock>(_InstanceAlbedoDataOffset!.Value);
         }
     }
-
 
 }

@@ -18,20 +18,23 @@ internal partial class NavGravity_tImpl : SchemaClass, NavGravity_t
 
     private static nint? _GravityOffset;
 
-    public ref Vector Gravity {
-        get {
+    public ref Vector Gravity
+    {
+        get
+        {
             _GravityOffset = _GravityOffset ?? Schema.GetOffset(0xAF45EC63A5AE4779);
             return ref _Handle.AsRef<Vector>(_GravityOffset!.Value);
         }
     }
     private static nint? _DefaultOffset;
 
-    public ref bool Default {
-        get {
+    public ref bool Default
+    {
+        get
+        {
             _DefaultOffset = _DefaultOffset ?? Schema.GetOffset(0xAF45EC6385F067BE);
             return ref _Handle.AsRef<bool>(_DefaultOffset!.Value);
         }
     }
-
 
 }

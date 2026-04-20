@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCChoreoSceneResourceImpl : SchemaClass
 {
     public InfoForResourceTypeCChoreoSceneResourceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

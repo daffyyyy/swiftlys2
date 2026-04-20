@@ -18,12 +18,13 @@ internal partial class CVPhysXSurfacePropertiesListImpl : SchemaClass, CVPhysXSu
 
     private static nint? _SurfacePropertiesListOffset;
 
-    public ref CUtlVector<PointerTo<CPhysSurfaceProperties>> SurfacePropertiesList {
-        get {
+    public ref CUtlVector<PointerTo<CPhysSurfaceProperties>> SurfacePropertiesList
+    {
+        get
+        {
             _SurfacePropertiesListOffset = _SurfacePropertiesListOffset ?? Schema.GetOffset(0x46700CAAC149A2D);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CPhysSurfaceProperties>>>(_SurfacePropertiesListOffset!.Value);
         }
     }
-
 
 }

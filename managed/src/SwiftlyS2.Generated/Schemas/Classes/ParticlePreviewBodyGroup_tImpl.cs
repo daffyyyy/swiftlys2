@@ -18,24 +18,28 @@ internal partial class ParticlePreviewBodyGroup_tImpl : SchemaClass, ParticlePre
 
     private static nint? _BodyGroupNameOffset;
 
-    public string BodyGroupName {
-        get {
+    public string BodyGroupName
+    {
+        get
+        {
             _BodyGroupNameOffset = _BodyGroupNameOffset ?? Schema.GetOffset(0xB53436EB1E953217);
             return Schema.GetCUtlString(_Handle.Read<nint>(_BodyGroupNameOffset!.Value));
         }
-        set {
+        set
+        {
             _BodyGroupNameOffset = _BodyGroupNameOffset ?? Schema.GetOffset(0xB53436EB1E953217);
             Schema.SetCUtlString(_Handle, _BodyGroupNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ValueOffset;
 
-    public ref int Value {
-        get {
+    public ref int Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xB53436EB077D337E);
             return ref _Handle.AsRef<int>(_ValueOffset!.Value);
         }
     }
-
 
 }

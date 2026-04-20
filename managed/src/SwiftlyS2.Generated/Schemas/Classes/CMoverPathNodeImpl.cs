@@ -18,44 +18,53 @@ internal partial class CMoverPathNodeImpl : CPathNodeImpl, CMoverPathNode
 
     private static nint? _OnStartFromOrInSegmentOffset;
 
-    public SchemaUntypedField OnStartFromOrInSegment {
-        get {
+    public SchemaUntypedField OnStartFromOrInSegment
+    {
+        get
+        {
             _OnStartFromOrInSegmentOffset = _OnStartFromOrInSegmentOffset ?? Schema.GetOffset(0x5847AABC6622BECB);
             return new SchemaUntypedField(_Handle + _OnStartFromOrInSegmentOffset!.Value);
         }
     }
     private static nint? _OnStoppedAtOrInSegmentOffset;
 
-    public SchemaUntypedField OnStoppedAtOrInSegment {
-        get {
+    public SchemaUntypedField OnStoppedAtOrInSegment
+    {
+        get
+        {
             _OnStoppedAtOrInSegmentOffset = _OnStoppedAtOrInSegmentOffset ?? Schema.GetOffset(0x5847AABCBF4204DB);
             return new SchemaUntypedField(_Handle + _OnStoppedAtOrInSegmentOffset!.Value);
         }
     }
     private static nint? _OnPassThroughOffset;
 
-    public SchemaUntypedField OnPassThrough {
-        get {
+    public SchemaUntypedField OnPassThrough
+    {
+        get
+        {
             _OnPassThroughOffset = _OnPassThroughOffset ?? Schema.GetOffset(0x5847AABC3A5F20B6);
             return new SchemaUntypedField(_Handle + _OnPassThroughOffset!.Value);
         }
     }
     private static nint? _OnPassThroughForwardOffset;
 
-    public SchemaUntypedField OnPassThroughForward {
-        get {
+    public SchemaUntypedField OnPassThroughForward
+    {
+        get
+        {
             _OnPassThroughForwardOffset = _OnPassThroughForwardOffset ?? Schema.GetOffset(0x5847AABCA62F443B);
             return new SchemaUntypedField(_Handle + _OnPassThroughForwardOffset!.Value);
         }
     }
     private static nint? _OnPassThroughReverseOffset;
 
-    public SchemaUntypedField OnPassThroughReverse {
-        get {
+    public SchemaUntypedField OnPassThroughReverse
+    {
+        get
+        {
             _OnPassThroughReverseOffset = _OnPassThroughReverseOffset ?? Schema.GetOffset(0x5847AABC37667FA8);
             return new SchemaUntypedField(_Handle + _OnPassThroughReverseOffset!.Value);
         }
     }
-
 
 }

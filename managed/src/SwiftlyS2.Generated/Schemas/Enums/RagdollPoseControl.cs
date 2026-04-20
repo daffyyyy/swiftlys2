@@ -6,5 +6,5 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum RagdollPoseControl : uint
 {
- Absolute = 0,
+    Absolute = 0,
 }

@@ -18,32 +18,38 @@ internal partial class ModelBoneFlexDriver_tImpl : SchemaClass, ModelBoneFlexDri
 
     private static nint? _BoneNameOffset;
 
-    public string BoneName {
-        get {
+    public string BoneName
+    {
+        get
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0xBCBDE5AAFDEE0E0C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_BoneNameOffset!.Value));
         }
-        set {
+        set
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0xBCBDE5AAFDEE0E0C);
             Schema.SetCUtlString(_Handle, _BoneNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _BoneNameTokenOffset;
 
-    public ref uint BoneNameToken {
-        get {
+    public ref uint BoneNameToken
+    {
+        get
+        {
             _BoneNameTokenOffset = _BoneNameTokenOffset ?? Schema.GetOffset(0xBCBDE5AA44D1E369);
             return ref _Handle.AsRef<uint>(_BoneNameTokenOffset!.Value);
         }
     }
     private static nint? _ControlsOffset;
 
-    public ref CUtlVector<ModelBoneFlexDriverControl_t> Controls {
-        get {
+    public ref CUtlVector<ModelBoneFlexDriverControl_t> Controls
+    {
+        get
+        {
             _ControlsOffset = _ControlsOffset ?? Schema.GetOffset(0xBCBDE5AA5FCAD2B7);
             return ref _Handle.AsRef<CUtlVector<ModelBoneFlexDriverControl_t>>(_ControlsOffset!.Value);
         }
     }
-
 
 }

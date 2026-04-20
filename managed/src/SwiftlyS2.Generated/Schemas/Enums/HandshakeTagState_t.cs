@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum HandshakeTagState_t : byte
 {
- eInactive = 0,
-
- eActive = 1,
-
- eMomentarilyInactive = 2,
+    eInactive = 0,
+    eActive = 1,
+    eMomentarilyInactive = 2,
 }

@@ -18,28 +18,33 @@ internal partial class CSoundContainerReferenceArrayImpl : SchemaClass, CSoundCo
 
     private static nint? _UseReferenceOffset;
 
-    public ref bool UseReference {
-        get {
+    public ref bool UseReference
+    {
+        get
+        {
             _UseReferenceOffset = _UseReferenceOffset ?? Schema.GetOffset(0x80FA0E8A45BCD5C9);
             return ref _Handle.AsRef<bool>(_UseReferenceOffset!.Value);
         }
     }
     private static nint? _SoundsOffset;
 
-    public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> Sounds {
-        get {
+    public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> Sounds
+    {
+        get
+        {
             _SoundsOffset = _SoundsOffset ?? Schema.GetOffset(0x80FA0E8ABD919645);
             return ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>>(_SoundsOffset!.Value);
         }
     }
     private static nint? _Sounds1Offset;
 
-    public ref CUtlVector<PointerTo<CVoiceContainerBase>> Sounds1 {
-        get {
+    public ref CUtlVector<PointerTo<CVoiceContainerBase>> Sounds1
+    {
+        get
+        {
             _Sounds1Offset = _Sounds1Offset ?? Schema.GetOffset(0x80FA0E8AAA82BE1F);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CVoiceContainerBase>>>(_Sounds1Offset!.Value);
         }
     }
-
 
 }

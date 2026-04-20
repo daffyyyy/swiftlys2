@@ -18,28 +18,33 @@ internal partial class C_OP_RenderClientPhysicsImpulseImpl : CParticleFunctionRe
 
     private static nint? _RadiusOffset;
 
-    public CPerParticleFloatInput Radius {
-        get {
+    public CPerParticleFloatInput Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x618F365ACFC08D);
             return new CPerParticleFloatInputImpl(_Handle + _RadiusOffset!.Value);
         }
     }
     private static nint? _MagnitudeOffset;
 
-    public CPerParticleFloatInput Magnitude {
-        get {
+    public CPerParticleFloatInput Magnitude
+    {
+        get
+        {
             _MagnitudeOffset = _MagnitudeOffset ?? Schema.GetOffset(0x618F36ED0A1D8B);
             return new CPerParticleFloatInputImpl(_Handle + _MagnitudeOffset!.Value);
         }
     }
     private static nint? _SimIdFilterOffset;
 
-    public ref int SimIdFilter {
-        get {
+    public ref int SimIdFilter
+    {
+        get
+        {
             _SimIdFilterOffset = _SimIdFilterOffset ?? Schema.GetOffset(0x618F36C5FA023F);
             return ref _Handle.AsRef<int>(_SimIdFilterOffset!.Value);
         }
     }
-
 
 }

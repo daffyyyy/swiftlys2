@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSSprite : CSprite, ISchemaClass<CCSSprite>
 {
     static CCSSprite ISchemaClass<CCSSprite>.From(nint handle) => new CCSSpriteImpl(handle);
-    static int ISchemaClass<CCSSprite>.Size => 1952;
+    static int ISchemaClass<CCSSprite>.Size => 2008;
     static string? ISchemaClass<CCSSprite>.ClassName => "env_sprite_clientside";
-
-
-
 
 }

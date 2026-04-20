@@ -18,20 +18,23 @@ internal partial class PulseGraphExecutionHistoryNodeDesc_tImpl : SchemaClass, P
 
     private static nint? _StrCellDescOffset;
 
-    public ref CBufferString StrCellDesc {
-        get {
+    public ref CBufferString StrCellDesc
+    {
+        get
+        {
             _StrCellDescOffset = _StrCellDescOffset ?? Schema.GetOffset(0x7F4ECA02AD3F01DD);
             return ref _Handle.AsRef<CBufferString>(_StrCellDescOffset!.Value);
         }
     }
     private static nint? _StrBindingNameOffset;
 
-    public SchemaUntypedField StrBindingName {
-        get {
+    public SchemaUntypedField StrBindingName
+    {
+        get
+        {
             _StrBindingNameOffset = _StrBindingNameOffset ?? Schema.GetOffset(0x7F4ECA021A5069AA);
             return new SchemaUntypedField(_Handle + _StrBindingNameOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CTriggerToggleSaveImpl : CBaseTriggerImpl, CTriggerToggle
 {
     public CTriggerToggleSaveImpl(nint handle) : base(handle) { }
 
-
-
-
 }

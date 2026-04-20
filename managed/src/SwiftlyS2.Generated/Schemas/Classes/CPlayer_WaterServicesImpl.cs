@@ -16,7 +16,4 @@ internal partial class CPlayer_WaterServicesImpl : CPlayerPawnComponentImpl, CPl
 {
     public CPlayer_WaterServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

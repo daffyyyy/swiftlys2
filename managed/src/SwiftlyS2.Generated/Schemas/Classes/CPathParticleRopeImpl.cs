@@ -18,132 +18,165 @@ internal partial class CPathParticleRopeImpl : CBaseEntityImpl, CPathParticleRop
 
     private static nint? _StartActiveOffset;
 
-    public ref bool StartActive {
-        get {
+    public ref bool StartActive
+    {
+        get
+        {
             _StartActiveOffset = _StartActiveOffset ?? Schema.GetOffset(0xBC0C741B953CBC21);
             return ref _Handle.AsRef<bool>(_StartActiveOffset!.Value);
         }
     }
     private static nint? _MaxSimulationTimeOffset;
 
-    public ref float MaxSimulationTime {
-        get {
+    public ref float MaxSimulationTime
+    {
+        get
+        {
             _MaxSimulationTimeOffset = _MaxSimulationTimeOffset ?? Schema.GetOffset(0xBC0C741B80F036E5);
             return ref _Handle.AsRef<float>(_MaxSimulationTimeOffset!.Value);
         }
     }
     private static nint? _EffectNameOffset;
 
-    public string EffectName {
-        get {
+    public string EffectName
+    {
+        get
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0xBC0C741B82D2BFC7);
             return Schema.GetString(_Handle.Read<nint>(_EffectNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0xBC0C741B82D2BFC7);
             Schema.SetString(_Handle, _EffectNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _PathNodes_NameOffset;
 
-    public ref CUtlVector<SchemaUntypedField> PathNodes_Name {
-        get {
+    public ref CUtlVector<SchemaUntypedField> PathNodes_Name
+    {
+        get
+        {
             _PathNodes_NameOffset = _PathNodes_NameOffset ?? Schema.GetOffset(0xBC0C741BFFAFA92F);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_PathNodes_NameOffset!.Value);
         }
     }
     private static nint? _ParticleSpacingOffset;
 
-    public ref float ParticleSpacing {
-        get {
+    public ref float ParticleSpacing
+    {
+        get
+        {
             _ParticleSpacingOffset = _ParticleSpacingOffset ?? Schema.GetOffset(0xBC0C741B66CCF542);
             return ref _Handle.AsRef<float>(_ParticleSpacingOffset!.Value);
         }
     }
     private static nint? _SlackOffset;
 
-    public ref float Slack {
-        get {
+    public ref float Slack
+    {
+        get
+        {
             _SlackOffset = _SlackOffset ?? Schema.GetOffset(0xBC0C741B183285C9);
             return ref _Handle.AsRef<float>(_SlackOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xBC0C741B5ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _ColorTintOffset;
 
-    public ref Color ColorTint {
-        get {
+    public ref Color ColorTint
+    {
+        get
+        {
             _ColorTintOffset = _ColorTintOffset ?? Schema.GetOffset(0xBC0C741BD55CDDFD);
             return ref _Handle.AsRef<Color>(_ColorTintOffset!.Value);
         }
     }
     private static nint? _EffectStateOffset;
 
-    public ref int EffectState {
-        get {
+    public ref int EffectState
+    {
+        get
+        {
             _EffectStateOffset = _EffectStateOffset ?? Schema.GetOffset(0xBC0C741B4188A2AD);
             return ref _Handle.AsRef<int>(_EffectStateOffset!.Value);
         }
     }
     private static nint? _EffectIndexOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> EffectIndex {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> EffectIndex
+    {
+        get
+        {
             _EffectIndexOffset = _EffectIndexOffset ?? Schema.GetOffset(0xBC0C741B3C93DC73);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(_EffectIndexOffset!.Value);
         }
     }
     private static nint? _PathNodes_PositionOffset;
 
-    public ref CUtlVector<Vector> PathNodes_Position {
-        get {
+    public ref CUtlVector<Vector> PathNodes_Position
+    {
+        get
+        {
             _PathNodes_PositionOffset = _PathNodes_PositionOffset ?? Schema.GetOffset(0xBC0C741BC84253C7);
             return ref _Handle.AsRef<CUtlVector<Vector>>(_PathNodes_PositionOffset!.Value);
         }
     }
     private static nint? _PathNodes_TangentInOffset;
 
-    public ref CUtlVector<Vector> PathNodes_TangentIn {
-        get {
+    public ref CUtlVector<Vector> PathNodes_TangentIn
+    {
+        get
+        {
             _PathNodes_TangentInOffset = _PathNodes_TangentInOffset ?? Schema.GetOffset(0xBC0C741B4CEA7F8E);
             return ref _Handle.AsRef<CUtlVector<Vector>>(_PathNodes_TangentInOffset!.Value);
         }
     }
     private static nint? _PathNodes_TangentOutOffset;
 
-    public ref CUtlVector<Vector> PathNodes_TangentOut {
-        get {
+    public ref CUtlVector<Vector> PathNodes_TangentOut
+    {
+        get
+        {
             _PathNodes_TangentOutOffset = _PathNodes_TangentOutOffset ?? Schema.GetOffset(0xBC0C741B218FA6AF);
             return ref _Handle.AsRef<CUtlVector<Vector>>(_PathNodes_TangentOutOffset!.Value);
         }
     }
     private static nint? _PathNodes_ColorOffset;
 
-    public ref CUtlVector<Vector> PathNodes_Color {
-        get {
+    public ref CUtlVector<Vector> PathNodes_Color
+    {
+        get
+        {
             _PathNodes_ColorOffset = _PathNodes_ColorOffset ?? Schema.GetOffset(0xBC0C741B6DB8C1DB);
             return ref _Handle.AsRef<CUtlVector<Vector>>(_PathNodes_ColorOffset!.Value);
         }
     }
     private static nint? _PathNodes_PinEnabledOffset;
 
-    public ref CUtlVector<bool> PathNodes_PinEnabled {
-        get {
+    public ref CUtlVector<bool> PathNodes_PinEnabled
+    {
+        get
+        {
             _PathNodes_PinEnabledOffset = _PathNodes_PinEnabledOffset ?? Schema.GetOffset(0xBC0C741B830E8AD8);
             return ref _Handle.AsRef<CUtlVector<bool>>(_PathNodes_PinEnabledOffset!.Value);
         }
     }
     private static nint? _PathNodes_RadiusScaleOffset;
 
-    public ref CUtlVector<float> PathNodes_RadiusScale {
-        get {
+    public ref CUtlVector<float> PathNodes_RadiusScale
+    {
+        get
+        {
             _PathNodes_RadiusScaleOffset = _PathNodes_RadiusScaleOffset ?? Schema.GetOffset(0xBC0C741B593CB340);
             return ref _Handle.AsRef<CUtlVector<float>>(_PathNodes_RadiusScaleOffset!.Value);
         }

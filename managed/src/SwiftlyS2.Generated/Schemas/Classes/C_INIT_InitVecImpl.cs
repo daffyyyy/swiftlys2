@@ -18,44 +18,53 @@ internal partial class C_INIT_InitVecImpl : CParticleFunctionInitializerImpl, C_
 
     private static nint? _InputValueOffset;
 
-    public CPerParticleVecInput InputValue {
-        get {
+    public CPerParticleVecInput InputValue
+    {
+        get
+        {
             _InputValueOffset = _InputValueOffset ?? Schema.GetOffset(0x60C95B0234445438);
             return new CPerParticleVecInputImpl(_Handle + _InputValueOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ParticleAttributeIndex_t OutputField {
-        get {
+    public ParticleAttributeIndex_t OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0x60C95B02324F6F74);
             return new ParticleAttributeIndex_tImpl(_Handle + _OutputFieldOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0x60C95B02FB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
     private static nint? _NormalizedOutputOffset;
 
-    public ref bool NormalizedOutput {
-        get {
+    public ref bool NormalizedOutput
+    {
+        get
+        {
             _NormalizedOutputOffset = _NormalizedOutputOffset ?? Schema.GetOffset(0x60C95B020AA98C55);
             return ref _Handle.AsRef<bool>(_NormalizedOutputOffset!.Value);
         }
     }
     private static nint? _WritePreviousPositionOffset;
 
-    public ref bool WritePreviousPosition {
-        get {
+    public ref bool WritePreviousPosition
+    {
+        get
+        {
             _WritePreviousPositionOffset = _WritePreviousPositionOffset ?? Schema.GetOffset(0x60C95B02EA635776);
             return ref _Handle.AsRef<bool>(_WritePreviousPositionOffset!.Value);
         }
     }
-
 
 }

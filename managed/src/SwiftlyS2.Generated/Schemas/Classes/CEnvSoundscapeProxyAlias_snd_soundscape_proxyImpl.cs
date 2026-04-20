@@ -16,7 +16,4 @@ internal partial class CEnvSoundscapeProxyAlias_snd_soundscape_proxyImpl : CEnvS
 {
     public CEnvSoundscapeProxyAlias_snd_soundscape_proxyImpl(nint handle) : base(handle) { }
 
-
-
-
 }

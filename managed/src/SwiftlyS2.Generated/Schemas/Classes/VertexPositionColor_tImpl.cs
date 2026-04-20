@@ -18,12 +18,13 @@ internal partial class VertexPositionColor_tImpl : SchemaClass, VertexPositionCo
 
     private static nint? _PositionOffset;
 
-    public ref Vector Position {
-        get {
+    public ref Vector Position
+    {
+        get
+        {
             _PositionOffset = _PositionOffset ?? Schema.GetOffset(0x9E531188BD6A6C9E);
             return ref _Handle.AsRef<Vector>(_PositionOffset!.Value);
         }
     }
-
 
 }

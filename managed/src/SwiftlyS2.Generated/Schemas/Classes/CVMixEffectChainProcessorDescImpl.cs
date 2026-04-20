@@ -18,12 +18,13 @@ internal partial class CVMixEffectChainProcessorDescImpl : CVMixBaseProcessorDes
 
     private static nint? _DescOffset;
 
-    public VMixEffectChainDesc_t Desc {
-        get {
+    public VMixEffectChainDesc_t Desc
+    {
+        get
+        {
             _DescOffset = _DescOffset ?? Schema.GetOffset(0x9154B78127917BC0);
             return new VMixEffectChainDesc_tImpl(_Handle + _DescOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface CPointTeleportAPI : ISchemaClass<CPointTeleportAPI>
     static int ISchemaClass<CPointTeleportAPI>.Size => 8;
     static string? ISchemaClass<CPointTeleportAPI>.ClassName => null;
 
-
-
-
 }

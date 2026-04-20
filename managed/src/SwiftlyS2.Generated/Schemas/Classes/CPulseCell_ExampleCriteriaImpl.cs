@@ -16,7 +16,4 @@ internal partial class CPulseCell_ExampleCriteriaImpl : CPulseCell_BaseRequireme
 {
     public CPulseCell_ExampleCriteriaImpl(nint handle) : base(handle) { }
 
-
-
-
 }

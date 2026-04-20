@@ -18,36 +18,43 @@ internal partial class C_OP_InheritFromParentParticlesImpl : CParticleFunctionOp
 
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x4310722BB731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x4310722BE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _IncrementOffset;
 
-    public ref int Increment {
-        get {
+    public ref int Increment
+    {
+        get
+        {
             _IncrementOffset = _IncrementOffset ?? Schema.GetOffset(0x4310722B2359F182);
             return ref _Handle.AsRef<int>(_IncrementOffset!.Value);
         }
     }
     private static nint? _RandomDistributionOffset;
 
-    public ref bool RandomDistribution {
-        get {
+    public ref bool RandomDistribution
+    {
+        get
+        {
             _RandomDistributionOffset = _RandomDistributionOffset ?? Schema.GetOffset(0x4310722B830F6B38);
             return ref _Handle.AsRef<bool>(_RandomDistributionOffset!.Value);
         }
     }
-
 
 }

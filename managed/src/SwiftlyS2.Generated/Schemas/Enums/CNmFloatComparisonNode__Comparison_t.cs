@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CNmFloatComparisonNode__Comparison_t : byte
 {
- GreaterThanEqual = 0,
-
- LessThanEqual = 1,
-
- NearEqual = 2,
-
- GreaterThan = 3,
-
- LessThan = 4,
+    GreaterThanEqual = 0,
+    LessThanEqual = 1,
+    NearEqual = 2,
+    GreaterThan = 3,
+    LessThan = 4,
 }

@@ -16,7 +16,4 @@ internal partial class CPulseMathlibImpl : SchemaClass, CPulseMathlib
 {
     public CPulseMathlibImpl(nint handle) : base(handle) { }
 
-
-
-
 }

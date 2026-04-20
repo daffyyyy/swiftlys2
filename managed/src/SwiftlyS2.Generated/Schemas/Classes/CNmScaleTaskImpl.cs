@@ -16,7 +16,4 @@ internal partial class CNmScaleTaskImpl : CNmPoseTaskImpl, CNmScaleTask
 {
     public CNmScaleTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

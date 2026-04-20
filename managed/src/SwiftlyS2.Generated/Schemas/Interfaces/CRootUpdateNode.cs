@@ -14,7 +14,4 @@ public partial interface CRootUpdateNode : CUnaryUpdateNode, ISchemaClass<CRootU
     static int ISchemaClass<CRootUpdateNode>.Size => 112;
     static string? ISchemaClass<CRootUpdateNode>.ClassName => null;
 
-
-
-
 }

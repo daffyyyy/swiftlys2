@@ -18,36 +18,43 @@ internal partial class EventClientFrameSimulate_tImpl : SchemaClass, EventClient
 
     private static nint? _LoopStateOffset;
 
-    public EngineLoopState_t LoopState {
-        get {
+    public EngineLoopState_t LoopState
+    {
+        get
+        {
             _LoopStateOffset = _LoopStateOffset ?? Schema.GetOffset(0x18229C4F928A2EC);
             return new EngineLoopState_tImpl(_Handle + _LoopStateOffset!.Value);
         }
     }
     private static nint? _RealTimeOffset;
 
-    public ref float RealTime {
-        get {
+    public ref float RealTime
+    {
+        get
+        {
             _RealTimeOffset = _RealTimeOffset ?? Schema.GetOffset(0x18229C41168EC02);
             return ref _Handle.AsRef<float>(_RealTimeOffset!.Value);
         }
     }
     private static nint? _FrameTimeOffset;
 
-    public ref float FrameTime {
-        get {
+    public ref float FrameTime
+    {
+        get
+        {
             _FrameTimeOffset = _FrameTimeOffset ?? Schema.GetOffset(0x18229C4659DF875);
             return ref _Handle.AsRef<float>(_FrameTimeOffset!.Value);
         }
     }
     private static nint? _ScheduleSendTickPacketOffset;
 
-    public ref bool ScheduleSendTickPacket {
-        get {
+    public ref bool ScheduleSendTickPacket
+    {
+        get
+        {
             _ScheduleSendTickPacketOffset = _ScheduleSendTickPacketOffset ?? Schema.GetOffset(0x18229C400A650C3);
             return ref _Handle.AsRef<bool>(_ScheduleSendTickPacketOffset!.Value);
         }
     }
-
 
 }

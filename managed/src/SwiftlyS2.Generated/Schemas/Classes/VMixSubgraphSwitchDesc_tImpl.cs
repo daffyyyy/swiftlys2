@@ -18,60 +18,73 @@ internal partial class VMixSubgraphSwitchDesc_tImpl : SchemaClass, VMixSubgraphS
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x9671DF894D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x9671DF894D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _EffectNameOffset;
 
-    public string EffectName {
-        get {
+    public string EffectName
+    {
+        get
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0x9671DF894DF4F5CF);
             return Schema.GetCUtlString(_Handle.Read<nint>(_EffectNameOffset!.Value));
         }
-        set {
+        set
+        {
             _EffectNameOffset = _EffectNameOffset ?? Schema.GetOffset(0x9671DF894DF4F5CF);
             Schema.SetCUtlString(_Handle, _EffectNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _SubgraphsOffset;
 
-    public ref CUtlVector<CUtlString> Subgraphs {
-        get {
+    public ref CUtlVector<CUtlString> Subgraphs
+    {
+        get
+        {
             _SubgraphsOffset = _SubgraphsOffset ?? Schema.GetOffset(0x9671DF89ECCF80EC);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_SubgraphsOffset!.Value);
         }
     }
     private static nint? _InterpolationModeOffset;
 
-    public ref VMixSubgraphSwitchInterpolationType_t InterpolationMode {
-        get {
+    public ref VMixSubgraphSwitchInterpolationType_t InterpolationMode
+    {
+        get
+        {
             _InterpolationModeOffset = _InterpolationModeOffset ?? Schema.GetOffset(0x9671DF890C06348A);
             return ref _Handle.AsRef<VMixSubgraphSwitchInterpolationType_t>(_InterpolationModeOffset!.Value);
         }
     }
     private static nint? _OnlyTailsOnFadeOutOffset;
 
-    public ref bool OnlyTailsOnFadeOut {
-        get {
+    public ref bool OnlyTailsOnFadeOut
+    {
+        get
+        {
             _OnlyTailsOnFadeOutOffset = _OnlyTailsOnFadeOutOffset ?? Schema.GetOffset(0x9671DF89B74519D7);
             return ref _Handle.AsRef<bool>(_OnlyTailsOnFadeOutOffset!.Value);
         }
     }
     private static nint? _InterpolationTimeOffset;
 
-    public ref float InterpolationTime {
-        get {
+    public ref float InterpolationTime
+    {
+        get
+        {
             _InterpolationTimeOffset = _InterpolationTimeOffset ?? Schema.GetOffset(0x9671DF896D3B0FB6);
             return ref _Handle.AsRef<float>(_InterpolationTimeOffset!.Value);
         }
     }
-
 
 }

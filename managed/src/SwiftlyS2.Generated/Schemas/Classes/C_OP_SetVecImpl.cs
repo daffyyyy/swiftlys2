@@ -18,44 +18,53 @@ internal partial class C_OP_SetVecImpl : CParticleFunctionOperatorImpl, C_OP_Set
 
     private static nint? _InputValueOffset;
 
-    public CPerParticleVecInput InputValue {
-        get {
+    public CPerParticleVecInput InputValue
+    {
+        get
+        {
             _InputValueOffset = _InputValueOffset ?? Schema.GetOffset(0x24E155B734445438);
             return new CPerParticleVecInputImpl(_Handle + _InputValueOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ParticleAttributeIndex_t OutputField {
-        get {
+    public ParticleAttributeIndex_t OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0x24E155B7324F6F74);
             return new ParticleAttributeIndex_tImpl(_Handle + _OutputFieldOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0x24E155B7FB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
     private static nint? _LerpOffset;
 
-    public CPerParticleFloatInput Lerp {
-        get {
+    public CPerParticleFloatInput Lerp
+    {
+        get
+        {
             _LerpOffset = _LerpOffset ?? Schema.GetOffset(0x24E155B75C17F8E8);
             return new CPerParticleFloatInputImpl(_Handle + _LerpOffset!.Value);
         }
     }
     private static nint? _NormalizedOutputOffset;
 
-    public ref bool NormalizedOutput {
-        get {
+    public ref bool NormalizedOutput
+    {
+        get
+        {
             _NormalizedOutputOffset = _NormalizedOutputOffset ?? Schema.GetOffset(0x24E155B70AA98C55);
             return ref _Handle.AsRef<bool>(_NormalizedOutputOffset!.Value);
         }
     }
-
 
 }

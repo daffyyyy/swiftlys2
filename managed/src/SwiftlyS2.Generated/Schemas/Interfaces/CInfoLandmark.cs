@@ -14,7 +14,4 @@ public partial interface CInfoLandmark : CPointEntity, ISchemaClass<CInfoLandmar
     static int ISchemaClass<CInfoLandmark>.Size => 1192;
     static string? ISchemaClass<CInfoLandmark>.ClassName => "info_landmark";
 
-
-
-
 }

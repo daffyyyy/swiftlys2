@@ -16,7 +16,4 @@ internal partial class ISkeletonAnimationControllerImpl : SchemaClass, ISkeleton
 {
     public ISkeletonAnimationControllerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

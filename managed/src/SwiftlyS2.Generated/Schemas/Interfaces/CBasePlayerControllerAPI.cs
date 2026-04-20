@@ -14,7 +14,4 @@ public partial interface CBasePlayerControllerAPI : ISchemaClass<CBasePlayerCont
     static int ISchemaClass<CBasePlayerControllerAPI>.Size => 8;
     static string? ISchemaClass<CBasePlayerControllerAPI>.ClassName => null;
 
-
-
-
 }

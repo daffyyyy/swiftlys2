@@ -14,7 +14,4 @@ public partial interface IRagdoll : ISchemaClass<IRagdoll>
     static int ISchemaClass<IRagdoll>.Size => 8;
     static string? ISchemaClass<IRagdoll>.ClassName => null;
 
-
-
-
 }

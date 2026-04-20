@@ -18,13 +18,14 @@ internal partial class CHostageExpresserShimImpl : CBaseCombatCharacterImpl, CHo
 
     private static nint? _ExpresserOffset;
 
-    public CAI_Expresser? Expresser {
-        get {
+    public CAI_Expresser? Expresser
+    {
+        get
+        {
             _ExpresserOffset = _ExpresserOffset ?? Schema.GetOffset(0xD6B3DCE7697CAC2A);
             var ptr = _Handle.Read<nint>(_ExpresserOffset!.Value);
             return ptr.IsValidPtr() ? new CAI_ExpresserImpl(ptr) : null;
         }
     }
-
 
 }

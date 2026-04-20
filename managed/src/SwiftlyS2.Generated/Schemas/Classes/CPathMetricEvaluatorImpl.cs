@@ -18,36 +18,43 @@ internal partial class CPathMetricEvaluatorImpl : CMotionMetricEvaluatorImpl, CP
 
     private static nint? _PathTimeSamplesOffset;
 
-    public ref CUtlVector<float> PathTimeSamples {
-        get {
+    public ref CUtlVector<float> PathTimeSamples
+    {
+        get
+        {
             _PathTimeSamplesOffset = _PathTimeSamplesOffset ?? Schema.GetOffset(0x6BF20F3A94DC552A);
             return ref _Handle.AsRef<CUtlVector<float>>(_PathTimeSamplesOffset!.Value);
         }
     }
     private static nint? _DistanceOffset;
 
-    public ref float Distance {
-        get {
+    public ref float Distance
+    {
+        get
+        {
             _DistanceOffset = _DistanceOffset ?? Schema.GetOffset(0x6BF20F3A00DC4A68);
             return ref _Handle.AsRef<float>(_DistanceOffset!.Value);
         }
     }
     private static nint? _ExtrapolateMovementOffset;
 
-    public ref bool ExtrapolateMovement {
-        get {
+    public ref bool ExtrapolateMovement
+    {
+        get
+        {
             _ExtrapolateMovementOffset = _ExtrapolateMovementOffset ?? Schema.GetOffset(0x6BF20F3ACBEE3025);
             return ref _Handle.AsRef<bool>(_ExtrapolateMovementOffset!.Value);
         }
     }
     private static nint? _MinExtrapolationSpeedOffset;
 
-    public ref float MinExtrapolationSpeed {
-        get {
+    public ref float MinExtrapolationSpeed
+    {
+        get
+        {
             _MinExtrapolationSpeedOffset = _MinExtrapolationSpeedOffset ?? Schema.GetOffset(0x6BF20F3A9F6FB95C);
             return ref _Handle.AsRef<float>(_MinExtrapolationSpeedOffset!.Value);
         }
     }
-
 
 }

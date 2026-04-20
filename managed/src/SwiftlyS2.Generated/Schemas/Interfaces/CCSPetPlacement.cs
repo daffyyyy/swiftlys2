@@ -14,7 +14,4 @@ public partial interface CCSPetPlacement : CBaseEntity, ISchemaClass<CCSPetPlace
     static int ISchemaClass<CCSPetPlacement>.Size => 1192;
     static string? ISchemaClass<CCSPetPlacement>.ClassName => "cs_pet_placement";
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface IParticleSystemDefinition : ISchemaClass<IParticleSyste
     static int ISchemaClass<IParticleSystemDefinition>.Size => 8;
     static string? ISchemaClass<IParticleSystemDefinition>.ClassName => null;
 
-
-
-
 }

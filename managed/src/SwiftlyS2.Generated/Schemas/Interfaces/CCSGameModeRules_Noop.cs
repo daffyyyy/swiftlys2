@@ -14,7 +14,4 @@ public partial interface CCSGameModeRules_Noop : CCSGameModeRules, ISchemaClass<
     static int ISchemaClass<CCSGameModeRules_Noop>.Size => 48;
     static string? ISchemaClass<CCSGameModeRules_Noop>.ClassName => null;
 
-
-
-
 }

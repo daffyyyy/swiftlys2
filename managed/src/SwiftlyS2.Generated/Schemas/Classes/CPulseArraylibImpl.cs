@@ -16,7 +16,4 @@ internal partial class CPulseArraylibImpl : SchemaClass, CPulseArraylib
 {
     public CPulseArraylibImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,20 +18,23 @@ internal partial class CFlexOpImpl : SchemaClass, CFlexOp
 
     private static nint? _OpCodeOffset;
 
-    public ref FlexOpCode_t OpCode {
-        get {
+    public ref FlexOpCode_t OpCode
+    {
+        get
+        {
             _OpCodeOffset = _OpCodeOffset ?? Schema.GetOffset(0xC684CC9A9850F387);
             return ref _Handle.AsRef<FlexOpCode_t>(_OpCodeOffset!.Value);
         }
     }
     private static nint? _DataOffset;
 
-    public ref int Data {
-        get {
+    public ref int Data
+    {
+        get
+        {
             _DataOffset = _DataOffset ?? Schema.GetOffset(0xC684CC9A1621C725);
             return ref _Handle.AsRef<int>(_DataOffset!.Value);
         }
     }
-
 
 }

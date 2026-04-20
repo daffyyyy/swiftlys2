@@ -18,24 +18,30 @@ internal partial class COmniLightImpl : CBarnLightImpl, COmniLight
 
     private static nint? _InnerAngleOffset;
 
-    public ref float InnerAngle {
-        get {
+    public ref float InnerAngle
+    {
+        get
+        {
             _InnerAngleOffset = _InnerAngleOffset ?? Schema.GetOffset(0x46F0D2E5142C32F4);
             return ref _Handle.AsRef<float>(_InnerAngleOffset!.Value);
         }
     }
     private static nint? _OuterAngleOffset;
 
-    public ref float OuterAngle {
-        get {
+    public ref float OuterAngle
+    {
+        get
+        {
             _OuterAngleOffset = _OuterAngleOffset ?? Schema.GetOffset(0x46F0D2E5ECB8B519);
             return ref _Handle.AsRef<float>(_OuterAngleOffset!.Value);
         }
     }
     private static nint? _ShowLightOffset;
 
-    public ref bool ShowLight {
-        get {
+    public ref bool ShowLight
+    {
+        get
+        {
             _ShowLightOffset = _ShowLightOffset ?? Schema.GetOffset(0x46F0D2E5D67BC720);
             return ref _Handle.AsRef<bool>(_ShowLightOffset!.Value);
         }

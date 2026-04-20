@@ -18,12 +18,13 @@ internal partial class CNmConstTargetNode__CDefinitionImpl : CNmTargetValueNode_
 
     private static nint? _ValueOffset;
 
-    public CNmTarget Value {
-        get {
+    public CNmTarget Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xC54E1DF56B99AEEA);
             return new CNmTargetImpl(_Handle + _ValueOffset!.Value);
         }
     }
-
 
 }

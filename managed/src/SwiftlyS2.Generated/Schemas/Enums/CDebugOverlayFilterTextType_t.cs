@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CDebugOverlayFilterTextType_t : uint
 {
- FILTER_TEXT_NONE = 0,
-
- MATCH = 1,
-
- HIERARCHY = 2,
-
- COUNT = 3,
+    FILTER_TEXT_NONE = 0,
+    MATCH = 1,
+    HIERARCHY = 2,
+    COUNT = 3,
 }

@@ -18,18 +18,21 @@ internal partial class CSceneListManagerImpl : CLogicalEntityImpl, CSceneListMan
 
     private static nint? _ListManagersOffset;
 
-    public ref CUtlVector<CHandle<CSceneListManager>> ListManagers {
-        get {
+    public ref CUtlVector<CHandle<CSceneListManager>> ListManagers
+    {
+        get
+        {
             _ListManagersOffset = _ListManagersOffset ?? Schema.GetOffset(0x6DF51C6DAD7882DF);
             return ref _Handle.AsRef<CUtlVector<CHandle<CSceneListManager>>>(_ListManagersOffset!.Value);
         }
     }
-    public ISchemaStringFixedArray Scenes {
+    public ISchemaStringFixedArray Scenes
+    {
         get => new SchemaStringFixedArray(_Handle, 0x6DF51C6D967363E8, 16, 8, 8);
     }
-    public ISchemaFixedArray<CHandle<CBaseEntity>> Scenes1 {
+    public ISchemaFixedArray<CHandle<CBaseEntity>> Scenes1
+    {
         get => new SchemaFixedArray<CHandle<CBaseEntity>>(_Handle, 0x6DF51C6D2B7EE872, 16, 4, 4);
     }
-
 
 }

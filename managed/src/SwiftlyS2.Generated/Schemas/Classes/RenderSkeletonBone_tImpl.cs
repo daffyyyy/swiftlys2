@@ -18,52 +18,63 @@ internal partial class RenderSkeletonBone_tImpl : SchemaClass, RenderSkeletonBon
 
     private static nint? _BoneNameOffset;
 
-    public string BoneName {
-        get {
+    public string BoneName
+    {
+        get
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0x6A3BCC9BFDEE0E0C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_BoneNameOffset!.Value));
         }
-        set {
+        set
+        {
             _BoneNameOffset = _BoneNameOffset ?? Schema.GetOffset(0x6A3BCC9BFDEE0E0C);
             Schema.SetCUtlString(_Handle, _BoneNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ParentNameOffset;
 
-    public string ParentName {
-        get {
+    public string ParentName
+    {
+        get
+        {
             _ParentNameOffset = _ParentNameOffset ?? Schema.GetOffset(0x6A3BCC9BC45C5BBE);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ParentNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ParentNameOffset = _ParentNameOffset ?? Schema.GetOffset(0x6A3BCC9BC45C5BBE);
             Schema.SetCUtlString(_Handle, _ParentNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _InvBindPoseOffset;
 
-    public ref matrix3x4_t InvBindPose {
-        get {
+    public ref matrix3x4_t InvBindPose
+    {
+        get
+        {
             _InvBindPoseOffset = _InvBindPoseOffset ?? Schema.GetOffset(0x6A3BCC9B265CACBE);
             return ref _Handle.AsRef<matrix3x4_t>(_InvBindPoseOffset!.Value);
         }
     }
     private static nint? _BboxOffset;
 
-    public SkeletonBoneBounds_t Bbox {
-        get {
+    public SkeletonBoneBounds_t Bbox
+    {
+        get
+        {
             _BboxOffset = _BboxOffset ?? Schema.GetOffset(0x6A3BCC9B39392A72);
             return new SkeletonBoneBounds_tImpl(_Handle + _BboxOffset!.Value);
         }
     }
     private static nint? _SphereRadiusOffset;
 
-    public ref float SphereRadius {
-        get {
+    public ref float SphereRadius
+    {
+        get
+        {
             _SphereRadiusOffset = _SphereRadiusOffset ?? Schema.GetOffset(0x6A3BCC9B7AF55658);
             return ref _Handle.AsRef<float>(_SphereRadiusOffset!.Value);
         }
     }
-
 
 }

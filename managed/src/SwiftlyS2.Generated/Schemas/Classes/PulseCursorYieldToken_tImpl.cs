@@ -18,12 +18,13 @@ internal partial class PulseCursorYieldToken_tImpl : SchemaClass, PulseCursorYie
 
     private static nint? _ValueOffset;
 
-    public ref int Value {
-        get {
+    public ref int Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xBA7B3561DCB0894A);
             return ref _Handle.AsRef<int>(_ValueOffset!.Value);
         }
     }
-
 
 }

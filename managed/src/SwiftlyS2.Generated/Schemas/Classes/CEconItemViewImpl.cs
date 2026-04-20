@@ -18,116 +18,144 @@ internal partial class CEconItemViewImpl : IEconItemInterfaceImpl, CEconItemView
 
     private static nint? _ItemDefinitionIndexOffset;
 
-    public ref ushort ItemDefinitionIndex {
-        get {
+    public ref ushort ItemDefinitionIndex
+    {
+        get
+        {
             _ItemDefinitionIndexOffset = _ItemDefinitionIndexOffset ?? Schema.GetOffset(0xE1A93F25A2CCB41A);
             return ref _Handle.AsRef<ushort>(_ItemDefinitionIndexOffset!.Value);
         }
     }
     private static nint? _EntityQualityOffset;
 
-    public ref int EntityQuality {
-        get {
+    public ref int EntityQuality
+    {
+        get
+        {
             _EntityQualityOffset = _EntityQualityOffset ?? Schema.GetOffset(0xE1A93F256A67D4C4);
             return ref _Handle.AsRef<int>(_EntityQualityOffset!.Value);
         }
     }
     private static nint? _EntityLevelOffset;
 
-    public ref uint EntityLevel {
-        get {
+    public ref uint EntityLevel
+    {
+        get
+        {
             _EntityLevelOffset = _EntityLevelOffset ?? Schema.GetOffset(0xE1A93F2555EF3B5F);
             return ref _Handle.AsRef<uint>(_EntityLevelOffset!.Value);
         }
     }
     private static nint? _ItemIDOffset;
 
-    public ref ulong ItemID {
-        get {
+    public ref ulong ItemID
+    {
+        get
+        {
             _ItemIDOffset = _ItemIDOffset ?? Schema.GetOffset(0xE1A93F2534B55816);
             return ref _Handle.AsRef<ulong>(_ItemIDOffset!.Value);
         }
     }
     private static nint? _ItemIDHighOffset;
 
-    public ref uint ItemIDHigh {
-        get {
+    public ref uint ItemIDHigh
+    {
+        get
+        {
             _ItemIDHighOffset = _ItemIDHighOffset ?? Schema.GetOffset(0xE1A93F25373EE446);
             return ref _Handle.AsRef<uint>(_ItemIDHighOffset!.Value);
         }
     }
     private static nint? _ItemIDLowOffset;
 
-    public ref uint ItemIDLow {
-        get {
+    public ref uint ItemIDLow
+    {
+        get
+        {
             _ItemIDLowOffset = _ItemIDLowOffset ?? Schema.GetOffset(0xE1A93F250DF29C2C);
             return ref _Handle.AsRef<uint>(_ItemIDLowOffset!.Value);
         }
     }
     private static nint? _AccountIDOffset;
 
-    public ref uint AccountID {
-        get {
+    public ref uint AccountID
+    {
+        get
+        {
             _AccountIDOffset = _AccountIDOffset ?? Schema.GetOffset(0xE1A93F25C65DE986);
             return ref _Handle.AsRef<uint>(_AccountIDOffset!.Value);
         }
     }
     private static nint? _InventoryPositionOffset;
 
-    public ref uint InventoryPosition {
-        get {
+    public ref uint InventoryPosition
+    {
+        get
+        {
             _InventoryPositionOffset = _InventoryPositionOffset ?? Schema.GetOffset(0xE1A93F2592F42873);
             return ref _Handle.AsRef<uint>(_InventoryPositionOffset!.Value);
         }
     }
     private static nint? _InitializedOffset;
 
-    public ref bool Initialized {
-        get {
+    public ref bool Initialized
+    {
+        get
+        {
             _InitializedOffset = _InitializedOffset ?? Schema.GetOffset(0xE1A93F250710ABDD);
             return ref _Handle.AsRef<bool>(_InitializedOffset!.Value);
         }
     }
     private static nint? _AttributeListOffset;
 
-    public CAttributeList AttributeList {
-        get {
+    public CAttributeList AttributeList
+    {
+        get
+        {
             _AttributeListOffset = _AttributeListOffset ?? Schema.GetOffset(0xE1A93F25EF065D97);
             return new CAttributeListImpl(_Handle + _AttributeListOffset!.Value);
         }
     }
     private static nint? _NetworkedDynamicAttributesOffset;
 
-    public CAttributeList NetworkedDynamicAttributes {
-        get {
+    public CAttributeList NetworkedDynamicAttributes
+    {
+        get
+        {
             _NetworkedDynamicAttributesOffset = _NetworkedDynamicAttributesOffset ?? Schema.GetOffset(0xE1A93F25B576449C);
             return new CAttributeListImpl(_Handle + _NetworkedDynamicAttributesOffset!.Value);
         }
     }
     private static nint? _CustomNameOffset;
 
-    public string CustomName {
-        get {
+    public string CustomName
+    {
+        get
+        {
             _CustomNameOffset = _CustomNameOffset ?? Schema.GetOffset(0xE1A93F25AFD12EE8);
             return Schema.GetString(_Handle + _CustomNameOffset!.Value);
         }
-        set {
+        set
+        {
             _CustomNameOffset = _CustomNameOffset ?? Schema.GetOffset(0xE1A93F25AFD12EE8);
             Schema.SetFixedString(_Handle, _CustomNameOffset!.Value, value, 161);
         }
-    } 
+    }
     private static nint? _CustomNameOverrideOffset;
 
-    public string CustomNameOverride {
-        get {
+    public string CustomNameOverride
+    {
+        get
+        {
             _CustomNameOverrideOffset = _CustomNameOverrideOffset ?? Schema.GetOffset(0xE1A93F25A74A6ED8);
             return Schema.GetString(_Handle + _CustomNameOverrideOffset!.Value);
         }
-        set {
+        set
+        {
             _CustomNameOverrideOffset = _CustomNameOverrideOffset ?? Schema.GetOffset(0xE1A93F25A74A6ED8);
             Schema.SetFixedString(_Handle, _CustomNameOverrideOffset!.Value, value, 161);
         }
-    } 
+    }
 
     public void ItemDefinitionIndexUpdated() => Schema.Update(_Handle, 0xE1A93F25A2CCB41A);
     public void EntityQualityUpdated() => Schema.Update(_Handle, 0xE1A93F256A67D4C4);

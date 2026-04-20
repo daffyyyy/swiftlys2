@@ -18,28 +18,33 @@ internal partial class CVectorQuantizerImpl : SchemaClass, CVectorQuantizer
 
     private static nint? _CentroidVectorsOffset;
 
-    public ref CUtlVector<float> CentroidVectors {
-        get {
+    public ref CUtlVector<float> CentroidVectors
+    {
+        get
+        {
             _CentroidVectorsOffset = _CentroidVectorsOffset ?? Schema.GetOffset(0x9E79F13089538103);
             return ref _Handle.AsRef<CUtlVector<float>>(_CentroidVectorsOffset!.Value);
         }
     }
     private static nint? _CentroidsOffset;
 
-    public ref int Centroids {
-        get {
+    public ref int Centroids
+    {
+        get
+        {
             _CentroidsOffset = _CentroidsOffset ?? Schema.GetOffset(0x9E79F13064667B2E);
             return ref _Handle.AsRef<int>(_CentroidsOffset!.Value);
         }
     }
     private static nint? _DimensionsOffset;
 
-    public ref int Dimensions {
-        get {
+    public ref int Dimensions
+    {
+        get
+        {
             _DimensionsOffset = _DimensionsOffset ?? Schema.GetOffset(0x9E79F1302D8795AC);
             return ref _Handle.AsRef<int>(_DimensionsOffset!.Value);
         }
     }
-
 
 }

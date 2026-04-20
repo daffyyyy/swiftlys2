@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatCurveEvent : CNmEvent, ISchemaClass<CNmFloatCurveEvent>
 {
     static CNmFloatCurveEvent ISchemaClass<CNmFloatCurveEvent>.From(nint handle) => new CNmFloatCurveEventImpl(handle);
-    static int ISchemaClass<CNmFloatCurveEvent>.Size => 104;
+    static int ISchemaClass<CNmFloatCurveEvent>.Size => 96;
     static string? ISchemaClass<CNmFloatCurveEvent>.ClassName => null;
 
 

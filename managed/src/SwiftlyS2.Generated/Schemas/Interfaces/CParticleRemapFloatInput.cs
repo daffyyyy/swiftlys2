@@ -14,7 +14,4 @@ public partial interface CParticleRemapFloatInput : CParticleFloatInput, ISchema
     static int ISchemaClass<CParticleRemapFloatInput>.Size => 368;
     static string? ISchemaClass<CParticleRemapFloatInput>.ClassName => null;
 
-
-
-
 }

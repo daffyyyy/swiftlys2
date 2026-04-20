@@ -18,68 +18,83 @@ internal partial class C_OP_RemapDotProductToCPImpl : CParticleFunctionPreEmissi
 
     private static nint? _InputCP1Offset;
 
-    public ref int InputCP1 {
-        get {
+    public ref int InputCP1
+    {
+        get
+        {
             _InputCP1Offset = _InputCP1Offset ?? Schema.GetOffset(0xDC012AAEA0CCAE3F);
             return ref _Handle.AsRef<int>(_InputCP1Offset!.Value);
         }
     }
     private static nint? _InputCP2Offset;
 
-    public ref int InputCP2 {
-        get {
+    public ref int InputCP2
+    {
+        get
+        {
             _InputCP2Offset = _InputCP2Offset ?? Schema.GetOffset(0xDC012AAEA1CCAFD2);
             return ref _Handle.AsRef<int>(_InputCP2Offset!.Value);
         }
     }
     private static nint? _OutputCPOffset;
 
-    public ref int OutputCP {
-        get {
+    public ref int OutputCP
+    {
+        get
+        {
             _OutputCPOffset = _OutputCPOffset ?? Schema.GetOffset(0xDC012AAE50DF5703);
             return ref _Handle.AsRef<int>(_OutputCPOffset!.Value);
         }
     }
     private static nint? _OutVectorFieldOffset;
 
-    public ref int OutVectorField {
-        get {
+    public ref int OutVectorField
+    {
+        get
+        {
             _OutVectorFieldOffset = _OutVectorFieldOffset ?? Schema.GetOffset(0xDC012AAEF9041E74);
             return ref _Handle.AsRef<int>(_OutVectorFieldOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public CParticleCollectionFloatInput InputMin {
-        get {
+    public CParticleCollectionFloatInput InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0xDC012AAEE88A0D0F);
             return new CParticleCollectionFloatInputImpl(_Handle + _InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public CParticleCollectionFloatInput InputMax {
-        get {
+    public CParticleCollectionFloatInput InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0xDC012AAED6766901);
             return new CParticleCollectionFloatInputImpl(_Handle + _InputMaxOffset!.Value);
         }
     }
     private static nint? _OutputMinOffset;
 
-    public CParticleCollectionFloatInput OutputMin {
-        get {
+    public CParticleCollectionFloatInput OutputMin
+    {
+        get
+        {
             _OutputMinOffset = _OutputMinOffset ?? Schema.GetOffset(0xDC012AAE5F8D7716);
             return new CParticleCollectionFloatInputImpl(_Handle + _OutputMinOffset!.Value);
         }
     }
     private static nint? _OutputMaxOffset;
 
-    public CParticleCollectionFloatInput OutputMax {
-        get {
+    public CParticleCollectionFloatInput OutputMax
+    {
+        get
+        {
             _OutputMaxOffset = _OutputMaxOffset ?? Schema.GetOffset(0xDC012AAE51A0E8C4);
             return new CParticleCollectionFloatInputImpl(_Handle + _OutputMaxOffset!.Value);
         }
     }
-
 
 }

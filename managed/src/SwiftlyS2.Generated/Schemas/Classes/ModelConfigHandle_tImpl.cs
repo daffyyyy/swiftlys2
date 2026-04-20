@@ -18,12 +18,13 @@ internal partial class ModelConfigHandle_tImpl : SchemaClass, ModelConfigHandle_
 
     private static nint? _ValueOffset;
 
-    public ref uint Value {
-        get {
+    public ref uint Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x5DC9B751DCB0894A);
             return ref _Handle.AsRef<uint>(_ValueOffset!.Value);
         }
     }
-
 
 }

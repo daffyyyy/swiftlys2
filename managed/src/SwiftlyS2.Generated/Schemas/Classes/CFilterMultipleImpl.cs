@@ -18,18 +18,21 @@ internal partial class CFilterMultipleImpl : CBaseFilterImpl, CFilterMultiple
 
     private static nint? _FilterTypeOffset;
 
-    public ref filter_t FilterType {
-        get {
+    public ref filter_t FilterType
+    {
+        get
+        {
             _FilterTypeOffset = _FilterTypeOffset ?? Schema.GetOffset(0x6EA0578071861EDB);
             return ref _Handle.AsRef<filter_t>(_FilterTypeOffset!.Value);
         }
     }
-    public ISchemaStringFixedArray FilterName {
+    public ISchemaStringFixedArray FilterName
+    {
         get => new SchemaStringFixedArray(_Handle, 0x6EA0578009C86445, 10, 8, 8);
     }
-    public ISchemaFixedArray<CHandle<CBaseEntity>> Filter {
+    public ISchemaFixedArray<CHandle<CBaseEntity>> Filter
+    {
         get => new SchemaFixedArray<CHandle<CBaseEntity>>(_Handle, 0x6EA0578045D9E0B1, 10, 4, 4);
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CFootCycleMetricEvaluatorImpl : CMotionMetricEvaluatorImp
 
     private static nint? _FootIndicesOffset;
 
-    public ref CUtlVector<int> FootIndices {
-        get {
+    public ref CUtlVector<int> FootIndices
+    {
+        get
+        {
             _FootIndicesOffset = _FootIndicesOffset ?? Schema.GetOffset(0x1773C1814C840316);
             return ref _Handle.AsRef<CUtlVector<int>>(_FootIndicesOffset!.Value);
         }
     }
-
 
 }

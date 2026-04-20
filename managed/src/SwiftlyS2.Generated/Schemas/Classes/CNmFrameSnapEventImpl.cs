@@ -18,12 +18,13 @@ internal partial class CNmFrameSnapEventImpl : CNmEventImpl, CNmFrameSnapEvent
 
     private static nint? _FrameSnapModeOffset;
 
-    public ref NmFrameSnapEventMode_t FrameSnapMode {
-        get {
+    public ref NmFrameSnapEventMode_t FrameSnapMode
+    {
+        get
+        {
             _FrameSnapModeOffset = _FrameSnapModeOffset ?? Schema.GetOffset(0x948CA66C6C68AC59);
             return ref _Handle.AsRef<NmFrameSnapEventMode_t>(_FrameSnapModeOffset!.Value);
         }
     }
-
 
 }

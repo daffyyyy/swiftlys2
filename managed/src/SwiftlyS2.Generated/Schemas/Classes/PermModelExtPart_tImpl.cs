@@ -18,40 +18,48 @@ internal partial class PermModelExtPart_tImpl : SchemaClass, PermModelExtPart_t
 
     private static nint? _TransformOffset;
 
-    public ref CTransform Transform {
-        get {
+    public ref CTransform Transform
+    {
+        get
+        {
             _TransformOffset = _TransformOffset ?? Schema.GetOffset(0xCA30851D6EC5209B);
             return ref _Handle.AsRef<CTransform>(_TransformOffset!.Value);
         }
     }
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xCA30851DCAE8A266);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xCA30851DCAE8A266);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ParentOffset;
 
-    public ref int Parent {
-        get {
+    public ref int Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0xCA30851D0AABB9D1);
             return ref _Handle.AsRef<int>(_ParentOffset!.Value);
         }
     }
     private static nint? _RefModelOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCModel> RefModel {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCModel> RefModel
+    {
+        get
+        {
             _RefModelOffset = _RefModelOffset ?? Schema.GetOffset(0xCA30851D63E6E3DF);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(_RefModelOffset!.Value);
         }
     }
-
 
 }

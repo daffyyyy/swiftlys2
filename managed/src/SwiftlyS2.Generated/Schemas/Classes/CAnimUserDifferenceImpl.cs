@@ -18,20 +18,23 @@ internal partial class CAnimUserDifferenceImpl : SchemaClass, CAnimUserDifferenc
 
     private static nint? _NameOffset;
 
-    public ref CBufferString Name {
-        get {
+    public ref CBufferString Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x8F174EDB4D8F5786);
             return ref _Handle.AsRef<CBufferString>(_NameOffset!.Value);
         }
     }
     private static nint? _TypeOffset;
 
-    public ref int Type {
-        get {
+    public ref int Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x8F174EDB18853D59);
             return ref _Handle.AsRef<int>(_TypeOffset!.Value);
         }
     }
-
 
 }

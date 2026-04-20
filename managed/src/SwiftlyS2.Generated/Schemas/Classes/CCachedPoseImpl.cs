@@ -18,36 +18,43 @@ internal partial class CCachedPoseImpl : SchemaClass, CCachedPose
 
     private static nint? _TransformsOffset;
 
-    public ref CUtlVector<CTransform> Transforms {
-        get {
+    public ref CUtlVector<CTransform> Transforms
+    {
+        get
+        {
             _TransformsOffset = _TransformsOffset ?? Schema.GetOffset(0x4B6C235988C82C58);
             return ref _Handle.AsRef<CUtlVector<CTransform>>(_TransformsOffset!.Value);
         }
     }
     private static nint? _MorphWeightsOffset;
 
-    public ref CUtlVector<float> MorphWeights {
-        get {
+    public ref CUtlVector<float> MorphWeights
+    {
+        get
+        {
             _MorphWeightsOffset = _MorphWeightsOffset ?? Schema.GetOffset(0x4B6C23596B6689BE);
             return ref _Handle.AsRef<CUtlVector<float>>(_MorphWeightsOffset!.Value);
         }
     }
     private static nint? _SequenceOffset;
 
-    public HSequence Sequence {
-        get {
+    public HSequence Sequence
+    {
+        get
+        {
             _SequenceOffset = _SequenceOffset ?? Schema.GetOffset(0x4B6C2359E0A0598E);
             return new HSequenceImpl(_Handle + _SequenceOffset!.Value);
         }
     }
     private static nint? _CycleOffset;
 
-    public ref float Cycle {
-        get {
+    public ref float Cycle
+    {
+        get
+        {
             _CycleOffset = _CycleOffset ?? Schema.GetOffset(0x4B6C23590C77829F);
             return ref _Handle.AsRef<float>(_CycleOffset!.Value);
         }
     }
-
 
 }

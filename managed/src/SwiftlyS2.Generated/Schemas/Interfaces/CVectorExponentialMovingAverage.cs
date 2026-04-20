@@ -14,7 +14,4 @@ public partial interface CVectorExponentialMovingAverage : ISchemaClass<CVectorE
     static int ISchemaClass<CVectorExponentialMovingAverage>.Size => 44;
     static string? ISchemaClass<CVectorExponentialMovingAverage>.ClassName => null;
 
-
-
-
 }

@@ -18,12 +18,13 @@ internal partial class CBtActionParachutePositioningImpl : CBtNodeImpl, CBtActio
 
     private static nint? _ActionTimerOffset;
 
-    public CountdownTimer ActionTimer {
-        get {
+    public CountdownTimer ActionTimer
+    {
+        get
+        {
             _ActionTimerOffset = _ActionTimerOffset ?? Schema.GetOffset(0x132D0F5E8777F414);
             return new CountdownTimerImpl(_Handle + _ActionTimerOffset!.Value);
         }
     }
-
 
 }

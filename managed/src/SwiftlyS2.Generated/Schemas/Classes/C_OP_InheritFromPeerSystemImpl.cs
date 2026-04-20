@@ -18,36 +18,43 @@ internal partial class C_OP_InheritFromPeerSystemImpl : CParticleFunctionOperato
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x8105C85DE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _FieldInputOffset;
 
-    public ParticleAttributeIndex_t FieldInput {
-        get {
+    public ParticleAttributeIndex_t FieldInput
+    {
+        get
+        {
             _FieldInputOffset = _FieldInputOffset ?? Schema.GetOffset(0x8105C85DAE775669);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldInputOffset!.Value);
         }
     }
     private static nint? _IncrementOffset;
 
-    public ref int Increment {
-        get {
+    public ref int Increment
+    {
+        get
+        {
             _IncrementOffset = _IncrementOffset ?? Schema.GetOffset(0x8105C85D2359F182);
             return ref _Handle.AsRef<int>(_IncrementOffset!.Value);
         }
     }
     private static nint? _GroupIDOffset;
 
-    public ref int GroupID {
-        get {
+    public ref int GroupID
+    {
+        get
+        {
             _GroupIDOffset = _GroupIDOffset ?? Schema.GetOffset(0x8105C85D3BB05135);
             return ref _Handle.AsRef<int>(_GroupIDOffset!.Value);
         }
     }
-
 
 }

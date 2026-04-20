@@ -18,52 +18,63 @@ internal partial class CRemapValueUpdateItemImpl : SchemaClass, CRemapValueUpdat
 
     private static nint? _ParamInOffset;
 
-    public CAnimParamHandle ParamIn {
-        get {
+    public CAnimParamHandle ParamIn
+    {
+        get
+        {
             _ParamInOffset = _ParamInOffset ?? Schema.GetOffset(0x93C5E8D6ED40E37B);
             return new CAnimParamHandleImpl(_Handle + _ParamInOffset!.Value);
         }
     }
     private static nint? _ParamOutOffset;
 
-    public CAnimParamHandle ParamOut {
-        get {
+    public CAnimParamHandle ParamOut
+    {
+        get
+        {
             _ParamOutOffset = _ParamOutOffset ?? Schema.GetOffset(0x93C5E8D6AA5799A8);
             return new CAnimParamHandleImpl(_Handle + _ParamOutOffset!.Value);
         }
     }
     private static nint? _MinInputValueOffset;
 
-    public ref float MinInputValue {
-        get {
+    public ref float MinInputValue
+    {
+        get
+        {
             _MinInputValueOffset = _MinInputValueOffset ?? Schema.GetOffset(0x93C5E8D6BDB4BC64);
             return ref _Handle.AsRef<float>(_MinInputValueOffset!.Value);
         }
     }
     private static nint? _MaxInputValueOffset;
 
-    public ref float MaxInputValue {
-        get {
+    public ref float MaxInputValue
+    {
+        get
+        {
             _MaxInputValueOffset = _MaxInputValueOffset ?? Schema.GetOffset(0x93C5E8D63EF75C2A);
             return ref _Handle.AsRef<float>(_MaxInputValueOffset!.Value);
         }
     }
     private static nint? _MinOutputValueOffset;
 
-    public ref float MinOutputValue {
-        get {
+    public ref float MinOutputValue
+    {
+        get
+        {
             _MinOutputValueOffset = _MinOutputValueOffset ?? Schema.GetOffset(0x93C5E8D6F63C7011);
             return ref _Handle.AsRef<float>(_MinOutputValueOffset!.Value);
         }
     }
     private static nint? _MaxOutputValueOffset;
 
-    public ref float MaxOutputValue {
-        get {
+    public ref float MaxOutputValue
+    {
+        get
+        {
             _MaxOutputValueOffset = _MaxOutputValueOffset ?? Schema.GetOffset(0x93C5E8D6A91B71B3);
             return ref _Handle.AsRef<float>(_MaxOutputValueOffset!.Value);
         }
     }
-
 
 }

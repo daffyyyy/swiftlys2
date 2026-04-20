@@ -14,7 +14,4 @@ public partial interface CGameRulesProxy : CBaseEntity, ISchemaClass<CGameRulesP
     static int ISchemaClass<CGameRulesProxy>.Size => 1192;
     static string? ISchemaClass<CGameRulesProxy>.ClassName => null;
 
-
-
-
 }

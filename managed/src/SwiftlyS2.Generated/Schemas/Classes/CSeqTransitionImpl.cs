@@ -18,20 +18,23 @@ internal partial class CSeqTransitionImpl : SchemaClass, CSeqTransition
 
     private static nint? _FadeInTimeOffset;
 
-    public ref float FadeInTime {
-        get {
+    public ref float FadeInTime
+    {
+        get
+        {
             _FadeInTimeOffset = _FadeInTimeOffset ?? Schema.GetOffset(0xF641804E1F0255B3);
             return ref _Handle.AsRef<float>(_FadeInTimeOffset!.Value);
         }
     }
     private static nint? _FadeOutTimeOffset;
 
-    public ref float FadeOutTime {
-        get {
+    public ref float FadeOutTime
+    {
+        get
+        {
             _FadeOutTimeOffset = _FadeOutTimeOffset ?? Schema.GetOffset(0xF641804EE86D2FC2);
             return ref _Handle.AsRef<float>(_FadeOutTimeOffset!.Value);
         }
     }
-
 
 }

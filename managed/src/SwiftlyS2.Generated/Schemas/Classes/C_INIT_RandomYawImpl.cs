@@ -16,7 +16,4 @@ internal partial class C_INIT_RandomYawImpl : CGeneralRandomRotationImpl, C_INIT
 {
     public C_INIT_RandomYawImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCTestResourceDataImpl : SchemaClass, I
 {
     public InfoForResourceTypeCTestResourceDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

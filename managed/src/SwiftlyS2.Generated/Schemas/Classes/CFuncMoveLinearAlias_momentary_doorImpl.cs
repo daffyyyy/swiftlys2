@@ -16,7 +16,4 @@ internal partial class CFuncMoveLinearAlias_momentary_doorImpl : CFuncMoveLinear
 {
     public CFuncMoveLinearAlias_momentary_doorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

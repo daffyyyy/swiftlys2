@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum FixAngleSet_t : byte
 {
- None = 0,
-
- Absolute = 1,
-
- Relative = 2,
+    None = 0,
+    Absolute = 1,
+    Relative = 2,
 }

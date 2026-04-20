@@ -18,34 +18,41 @@ internal partial class CTestEffectImpl : CBaseEntityImpl, CTestEffect
 
     private static nint? _LoopOffset;
 
-    public ref int Loop {
-        get {
+    public ref int Loop
+    {
+        get
+        {
             _LoopOffset = _LoopOffset ?? Schema.GetOffset(0xF4103FBFFFB6D07A);
             return ref _Handle.AsRef<int>(_LoopOffset!.Value);
         }
     }
     private static nint? _BeamOffset;
 
-    public ref int Beam {
-        get {
+    public ref int Beam
+    {
+        get
+        {
             _BeamOffset = _BeamOffset ?? Schema.GetOffset(0xF4103FBF54034EE3);
             return ref _Handle.AsRef<int>(_BeamOffset!.Value);
         }
     }
-    public ISchemaFixedArray<CHandle<CBeam>> Beam1 {
+    public ISchemaFixedArray<CHandle<CBeam>> Beam1
+    {
         get => new SchemaFixedArray<CHandle<CBeam>>(_Handle, 0xF4103FBFC4017428, 24, 4, 4);
     }
-    public ISchemaClassFixedArray<GameTime_t> BeamTime {
+    public ISchemaClassFixedArray<GameTime_t> BeamTime
+    {
         get => new SchemaClassFixedArray<GameTime_t>(_Handle, 0xF4103FBF60293F01, 24, 4, 4);
     }
     private static nint? _StartTimeOffset;
 
-    public GameTime_t StartTime {
-        get {
+    public GameTime_t StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0xF4103FBF67FE9DC4);
             return new GameTime_tImpl(_Handle + _StartTimeOffset!.Value);
         }
     }
-
 
 }

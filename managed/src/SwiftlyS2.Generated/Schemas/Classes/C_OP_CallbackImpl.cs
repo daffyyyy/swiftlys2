@@ -16,7 +16,4 @@ internal partial class C_OP_CallbackImpl : CParticleFunctionRendererImpl, C_OP_C
 {
     public C_OP_CallbackImpl(nint handle) : base(handle) { }
 
-
-
-
 }

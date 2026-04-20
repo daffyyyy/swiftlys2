@@ -18,44 +18,53 @@ internal partial class C_OP_RopeSpringConstraintImpl : CParticleFunctionConstrai
 
     private static nint? _RestLengthOffset;
 
-    public CParticleCollectionFloatInput RestLength {
-        get {
+    public CParticleCollectionFloatInput RestLength
+    {
+        get
+        {
             _RestLengthOffset = _RestLengthOffset ?? Schema.GetOffset(0x2CF6156393AC4079);
             return new CParticleCollectionFloatInputImpl(_Handle + _RestLengthOffset!.Value);
         }
     }
     private static nint? _MinDistanceOffset;
 
-    public CParticleCollectionFloatInput MinDistance {
-        get {
+    public CParticleCollectionFloatInput MinDistance
+    {
+        get
+        {
             _MinDistanceOffset = _MinDistanceOffset ?? Schema.GetOffset(0x2CF6156392BCAD06);
             return new CParticleCollectionFloatInputImpl(_Handle + _MinDistanceOffset!.Value);
         }
     }
     private static nint? _MaxDistanceOffset;
 
-    public CParticleCollectionFloatInput MaxDistance {
-        get {
+    public CParticleCollectionFloatInput MaxDistance
+    {
+        get
+        {
             _MaxDistanceOffset = _MaxDistanceOffset ?? Schema.GetOffset(0x2CF6156398893360);
             return new CParticleCollectionFloatInputImpl(_Handle + _MaxDistanceOffset!.Value);
         }
     }
     private static nint? _AdjustmentScaleOffset;
 
-    public ref float AdjustmentScale {
-        get {
+    public ref float AdjustmentScale
+    {
+        get
+        {
             _AdjustmentScaleOffset = _AdjustmentScaleOffset ?? Schema.GetOffset(0x2CF61563A29D34AE);
             return ref _Handle.AsRef<float>(_AdjustmentScaleOffset!.Value);
         }
     }
     private static nint? _InitialRestingLengthOffset;
 
-    public CParticleCollectionFloatInput InitialRestingLength {
-        get {
+    public CParticleCollectionFloatInput InitialRestingLength
+    {
+        get
+        {
             _InitialRestingLengthOffset = _InitialRestingLengthOffset ?? Schema.GetOffset(0x2CF61563FE9273C1);
             return new CParticleCollectionFloatInputImpl(_Handle + _InitialRestingLengthOffset!.Value);
         }
     }
-
 
 }

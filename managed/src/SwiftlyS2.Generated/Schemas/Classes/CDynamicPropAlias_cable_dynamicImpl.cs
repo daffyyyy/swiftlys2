@@ -16,7 +16,4 @@ internal partial class CDynamicPropAlias_cable_dynamicImpl : CDynamicPropImpl, C
 {
     public CDynamicPropAlias_cable_dynamicImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,52 +18,63 @@ internal partial class WorldBuilderParams_tImpl : SchemaClass, WorldBuilderParam
 
     private static nint? _MinDrawVolumeSizeOffset;
 
-    public ref float MinDrawVolumeSize {
-        get {
+    public ref float MinDrawVolumeSize
+    {
+        get
+        {
             _MinDrawVolumeSizeOffset = _MinDrawVolumeSizeOffset ?? Schema.GetOffset(0x37270ACBA9648390);
             return ref _Handle.AsRef<float>(_MinDrawVolumeSizeOffset!.Value);
         }
     }
     private static nint? _BuildBakedLightingOffset;
 
-    public ref bool BuildBakedLighting {
-        get {
+    public ref bool BuildBakedLighting
+    {
+        get
+        {
             _BuildBakedLightingOffset = _BuildBakedLightingOffset ?? Schema.GetOffset(0x37270ACBCF369FF6);
             return ref _Handle.AsRef<bool>(_BuildBakedLightingOffset!.Value);
         }
     }
     private static nint? _AggregateInstanceStreamsOffset;
 
-    public ref bool AggregateInstanceStreams {
-        get {
+    public ref bool AggregateInstanceStreams
+    {
+        get
+        {
             _AggregateInstanceStreamsOffset = _AggregateInstanceStreamsOffset ?? Schema.GetOffset(0x37270ACB36B2AE78);
             return ref _Handle.AsRef<bool>(_AggregateInstanceStreamsOffset!.Value);
         }
     }
     private static nint? _BakedLightingInfoOffset;
 
-    public BakedLightingInfo_t BakedLightingInfo {
-        get {
+    public BakedLightingInfo_t BakedLightingInfo
+    {
+        get
+        {
             _BakedLightingInfoOffset = _BakedLightingInfoOffset ?? Schema.GetOffset(0x37270ACBC2128E04);
             return new BakedLightingInfo_tImpl(_Handle + _BakedLightingInfoOffset!.Value);
         }
     }
     private static nint? _CompileTimestampOffset;
 
-    public ref ulong CompileTimestamp {
-        get {
+    public ref ulong CompileTimestamp
+    {
+        get
+        {
             _CompileTimestampOffset = _CompileTimestampOffset ?? Schema.GetOffset(0x37270ACB1CAADE3A);
             return ref _Handle.AsRef<ulong>(_CompileTimestampOffset!.Value);
         }
     }
     private static nint? _CompileFingerprintOffset;
 
-    public ref ulong CompileFingerprint {
-        get {
+    public ref ulong CompileFingerprint
+    {
+        get
+        {
             _CompileFingerprintOffset = _CompileFingerprintOffset ?? Schema.GetOffset(0x37270ACB98F6F58A);
             return ref _Handle.AsRef<ulong>(_CompileFingerprintOffset!.Value);
         }
     }
-
 
 }

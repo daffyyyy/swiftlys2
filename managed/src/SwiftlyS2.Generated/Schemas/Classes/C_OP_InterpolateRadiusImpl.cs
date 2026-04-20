@@ -18,52 +18,63 @@ internal partial class C_OP_InterpolateRadiusImpl : CParticleFunctionOperatorImp
 
     private static nint? _StartTimeOffset;
 
-    public ref float StartTime {
-        get {
+    public ref float StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0x1912EFA667FE9DC4);
             return ref _Handle.AsRef<float>(_StartTimeOffset!.Value);
         }
     }
     private static nint? _EndTimeOffset;
 
-    public ref float EndTime {
-        get {
+    public ref float EndTime
+    {
+        get
+        {
             _EndTimeOffset = _EndTimeOffset ?? Schema.GetOffset(0x1912EFA62041DF9D);
             return ref _Handle.AsRef<float>(_EndTimeOffset!.Value);
         }
     }
     private static nint? _StartScaleOffset;
 
-    public ref float StartScale {
-        get {
+    public ref float StartScale
+    {
+        get
+        {
             _StartScaleOffset = _StartScaleOffset ?? Schema.GetOffset(0x1912EFA6634567D1);
             return ref _Handle.AsRef<float>(_StartScaleOffset!.Value);
         }
     }
     private static nint? _EndScaleOffset;
 
-    public ref float EndScale {
-        get {
+    public ref float EndScale
+    {
+        get
+        {
             _EndScaleOffset = _EndScaleOffset ?? Schema.GetOffset(0x1912EFA67F017DB6);
             return ref _Handle.AsRef<float>(_EndScaleOffset!.Value);
         }
     }
     private static nint? _EaseInAndOutOffset;
 
-    public ref bool EaseInAndOut {
-        get {
+    public ref bool EaseInAndOut
+    {
+        get
+        {
             _EaseInAndOutOffset = _EaseInAndOutOffset ?? Schema.GetOffset(0x1912EFA6D14612BF);
             return ref _Handle.AsRef<bool>(_EaseInAndOutOffset!.Value);
         }
     }
     private static nint? _BiasOffset;
 
-    public ref float Bias {
-        get {
+    public ref float Bias
+    {
+        get
+        {
             _BiasOffset = _BiasOffset ?? Schema.GetOffset(0x1912EFA6E7EF43B6);
             return ref _Handle.AsRef<float>(_BiasOffset!.Value);
         }
     }
-
 
 }

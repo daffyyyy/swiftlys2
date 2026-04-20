@@ -16,7 +16,4 @@ internal partial class CBlockSelectionMetricEvaluatorImpl : CMotionMetricEvaluat
 {
     public CBlockSelectionMetricEvaluatorImpl(nint handle) : base(handle) { }
 
-
-
-
 }

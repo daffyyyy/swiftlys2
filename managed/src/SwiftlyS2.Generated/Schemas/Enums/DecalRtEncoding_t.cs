@@ -6,15 +6,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum DecalRtEncoding_t : byte
 {
- kDecalInvalid = 255,
-
- kDecalMin = 0,
-
- kDecalBlood = 0,
-
- kDecalCloak = 1,
-
- kDecalMax = 2,
-
- kDecalDefault = 0,
+    kDecalInvalid = 255,
+    kDecalMin = 0,
+    kDecalBlood = 0,
+    kDecalCloak = 1,
+    kDecalMax = 2,
+    kDecalDefault = 0,
 }

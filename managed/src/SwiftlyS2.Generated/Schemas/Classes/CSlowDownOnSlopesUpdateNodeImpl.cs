@@ -18,12 +18,13 @@ internal partial class CSlowDownOnSlopesUpdateNodeImpl : CUnaryUpdateNodeImpl, C
 
     private static nint? _SlowDownStrengthOffset;
 
-    public ref float SlowDownStrength {
-        get {
+    public ref float SlowDownStrength
+    {
+        get
+        {
             _SlowDownStrengthOffset = _SlowDownStrengthOffset ?? Schema.GetOffset(0x196FB4938D85E247);
             return ref _Handle.AsRef<float>(_SlowDownStrengthOffset!.Value);
         }
     }
-
 
 }

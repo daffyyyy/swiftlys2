@@ -18,24 +18,28 @@ internal partial class CMotionNodeImpl : SchemaClass, CMotionNode
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xB29D04644D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xB29D04644D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _IdOffset;
 
-    public AnimNodeID Id {
-        get {
+    public AnimNodeID Id
+    {
+        get
+        {
             _IdOffset = _IdOffset ?? Schema.GetOffset(0xB29D0464B4B6E980);
             return new AnimNodeIDImpl(_Handle + _IdOffset!.Value);
         }
     }
-
 
 }

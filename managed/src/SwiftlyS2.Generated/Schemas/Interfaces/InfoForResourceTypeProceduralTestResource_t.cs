@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeProceduralTestResource_t : ISchemaCl
     static int ISchemaClass<InfoForResourceTypeProceduralTestResource_t>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeProceduralTestResource_t>.ClassName => null;
 
-
-
-
 }

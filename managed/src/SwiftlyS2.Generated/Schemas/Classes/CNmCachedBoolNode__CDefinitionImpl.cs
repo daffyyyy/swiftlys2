@@ -18,20 +18,23 @@ internal partial class CNmCachedBoolNode__CDefinitionImpl : CNmBoolValueNode__CD
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x4BFAE2E795E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _ModeOffset;
 
-    public ref NmCachedValueMode_t Mode {
-        get {
+    public ref NmCachedValueMode_t Mode
+    {
+        get
+        {
             _ModeOffset = _ModeOffset ?? Schema.GetOffset(0x4BFAE2E790FD5BB2);
             return ref _Handle.AsRef<NmCachedValueMode_t>(_ModeOffset!.Value);
         }
     }
-
 
 }

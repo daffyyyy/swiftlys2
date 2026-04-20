@@ -18,44 +18,53 @@ internal partial class C_OP_OscillateScalarSimpleImpl : CParticleFunctionOperato
 
     private static nint? _RateOffset;
 
-    public ref float Rate {
-        get {
+    public ref float Rate
+    {
+        get
+        {
             _RateOffset = _RateOffset ?? Schema.GetOffset(0xDD611E3FEC3280E7);
             return ref _Handle.AsRef<float>(_RateOffset!.Value);
         }
     }
     private static nint? _FrequencyOffset;
 
-    public ref float Frequency {
-        get {
+    public ref float Frequency
+    {
+        get
+        {
             _FrequencyOffset = _FrequencyOffset ?? Schema.GetOffset(0xDD611E3FBCCAA981);
             return ref _Handle.AsRef<float>(_FrequencyOffset!.Value);
         }
     }
     private static nint? _FieldOffset;
 
-    public ParticleAttributeIndex_t Field {
-        get {
+    public ParticleAttributeIndex_t Field
+    {
+        get
+        {
             _FieldOffset = _FieldOffset ?? Schema.GetOffset(0xDD611E3FC257B93B);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOffset!.Value);
         }
     }
     private static nint? _OscMultOffset;
 
-    public ref float OscMult {
-        get {
+    public ref float OscMult
+    {
+        get
+        {
             _OscMultOffset = _OscMultOffset ?? Schema.GetOffset(0xDD611E3F16278E94);
             return ref _Handle.AsRef<float>(_OscMultOffset!.Value);
         }
     }
     private static nint? _OscAddOffset;
 
-    public ref float OscAdd {
-        get {
+    public ref float OscAdd
+    {
+        get
+        {
             _OscAddOffset = _OscAddOffset ?? Schema.GetOffset(0xDD611E3F7B38A63D);
             return ref _Handle.AsRef<float>(_OscAddOffset!.Value);
         }
     }
-
 
 }

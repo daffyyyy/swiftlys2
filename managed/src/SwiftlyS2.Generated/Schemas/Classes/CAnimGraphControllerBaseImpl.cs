@@ -18,12 +18,13 @@ internal partial class CAnimGraphControllerBaseImpl : SchemaClass, CAnimGraphCon
 
     private static nint? _ExternalGraphOffset;
 
-    public ExternalAnimGraphHandle_t ExternalGraph {
-        get {
+    public ExternalAnimGraphHandle_t ExternalGraph
+    {
+        get
+        {
             _ExternalGraphOffset = _ExternalGraphOffset ?? Schema.GetOffset(0x1AA25B609FE82D60);
             return new ExternalAnimGraphHandle_tImpl(_Handle + _ExternalGraphOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CFuncIllusionaryImpl : CBaseModelEntityImpl, CFuncIllusio
 {
     public CFuncIllusionaryImpl(nint handle) : base(handle) { }
 
-
-
-
 }

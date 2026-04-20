@@ -18,52 +18,63 @@ internal partial class CPointVelocitySensorImpl : CPointEntityImpl, CPointVeloci
 
     private static nint? _TargetEntityOffset;
 
-    public ref CHandle<CBaseEntity> TargetEntity {
-        get {
+    public ref CHandle<CBaseEntity> TargetEntity
+    {
+        get
+        {
             _TargetEntityOffset = _TargetEntityOffset ?? Schema.GetOffset(0x96CA232125D042A9);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_TargetEntityOffset!.Value);
         }
     }
     private static nint? _AxisOffset;
 
-    public ref Vector Axis {
-        get {
+    public ref Vector Axis
+    {
+        get
+        {
             _AxisOffset = _AxisOffset ?? Schema.GetOffset(0x96CA23210AF9CE54);
             return ref _Handle.AsRef<Vector>(_AxisOffset!.Value);
         }
     }
     private static nint? _EnabledOffset;
 
-    public ref bool Enabled {
-        get {
+    public ref bool Enabled
+    {
+        get
+        {
             _EnabledOffset = _EnabledOffset ?? Schema.GetOffset(0x96CA23216154EB7E);
             return ref _Handle.AsRef<bool>(_EnabledOffset!.Value);
         }
     }
     private static nint? _PrevVelocityOffset;
 
-    public ref float PrevVelocity {
-        get {
+    public ref float PrevVelocity
+    {
+        get
+        {
             _PrevVelocityOffset = _PrevVelocityOffset ?? Schema.GetOffset(0x96CA23211F9ACE5F);
             return ref _Handle.AsRef<float>(_PrevVelocityOffset!.Value);
         }
     }
     private static nint? _AvgIntervalOffset;
 
-    public ref float AvgInterval {
-        get {
+    public ref float AvgInterval
+    {
+        get
+        {
             _AvgIntervalOffset = _AvgIntervalOffset ?? Schema.GetOffset(0x96CA2321D6693004);
             return ref _Handle.AsRef<float>(_AvgIntervalOffset!.Value);
         }
     }
     private static nint? _VelocityOffset;
 
-    public SchemaUntypedField Velocity {
-        get {
+    public SchemaUntypedField Velocity
+    {
+        get
+        {
             _VelocityOffset = _VelocityOffset ?? Schema.GetOffset(0x96CA23219B4CC8B2);
             return new SchemaUntypedField(_Handle + _VelocityOffset!.Value);
         }
     }
-
 
 }

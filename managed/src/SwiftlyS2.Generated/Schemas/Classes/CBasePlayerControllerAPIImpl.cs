@@ -16,7 +16,4 @@ internal partial class CBasePlayerControllerAPIImpl : SchemaClass, CBasePlayerCo
 {
     public CBasePlayerControllerAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

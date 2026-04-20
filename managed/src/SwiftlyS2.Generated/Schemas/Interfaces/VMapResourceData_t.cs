@@ -14,7 +14,4 @@ public partial interface VMapResourceData_t : ISchemaClass<VMapResourceData_t>
     static int ISchemaClass<VMapResourceData_t>.Size => 1;
     static string? ISchemaClass<VMapResourceData_t>.ClassName => null;
 
-
-
-
 }

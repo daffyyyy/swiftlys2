@@ -16,7 +16,4 @@ internal partial class CPulseGraphInstance_TurtleGraphicsImpl : CBasePulseGraphI
 {
     public CPulseGraphInstance_TurtleGraphicsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointTemplate : CLogicalEntity, ISchemaClass<CPointTemplate>
 {
     static CPointTemplate ISchemaClass<CPointTemplate>.From(nint handle) => new CPointTemplateImpl(handle);
-    static int ISchemaClass<CPointTemplate>.Size => 1296;
+    static int ISchemaClass<CPointTemplate>.Size => 1344;
     static string? ISchemaClass<CPointTemplate>.ClassName => "point_template";
 
 
@@ -36,6 +36,9 @@ public partial interface CPointTemplate : CLogicalEntity, ISchemaClass<CPointTem
     public ref HSCRIPTHandler ScriptSpawnCallback { get; }
 
     public ref HSCRIPTHandler ScriptCallbackScope { get; }
+
+    // CEntityOutputTemplate< CUtlVector< CEntityHandle > >
+    public SchemaUntypedField OnEntitySpawned { get; }
 
 
 }

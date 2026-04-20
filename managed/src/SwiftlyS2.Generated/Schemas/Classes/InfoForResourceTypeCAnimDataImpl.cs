@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCAnimDataImpl : SchemaClass, InfoForRe
 {
     public InfoForResourceTypeCAnimDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

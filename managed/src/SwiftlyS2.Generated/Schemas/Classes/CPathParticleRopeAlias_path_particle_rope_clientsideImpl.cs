@@ -16,7 +16,4 @@ internal partial class CPathParticleRopeAlias_path_particle_rope_clientsideImpl 
 {
     public CPathParticleRopeAlias_path_particle_rope_clientsideImpl(nint handle) : base(handle) { }
 
-
-
-
 }

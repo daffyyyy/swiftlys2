@@ -16,7 +16,4 @@ internal partial class C_INIT_RemapNamedModelBodyPartToScalarImpl : C_INIT_Remap
 {
     public C_INIT_RemapNamedModelBodyPartToScalarImpl(nint handle) : base(handle) { }
 
-
-
-
 }

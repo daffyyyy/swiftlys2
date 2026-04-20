@@ -16,7 +16,4 @@ internal partial class CCSObserver_MovementServicesImpl : CPlayer_MovementServic
 {
     public CCSObserver_MovementServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

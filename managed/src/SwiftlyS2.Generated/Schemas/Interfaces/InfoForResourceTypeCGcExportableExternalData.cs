@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCGcExportableExternalData : ISchemaC
     static int ISchemaClass<InfoForResourceTypeCGcExportableExternalData>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCGcExportableExternalData>.ClassName => null;
 
-
-
-
 }

@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CNmCurrentSyncEventNode__InfoType_t : byte
 {
- IndexAndPercentage = 0,
-
- IndexOnly = 1,
-
- PercentageOnly = 2,
+    IndexAndPercentage = 0,
+    IndexOnly = 1,
+    PercentageOnly = 2,
 }

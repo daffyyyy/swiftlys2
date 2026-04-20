@@ -18,16 +18,20 @@ internal partial class CWeaponBaseItemImpl : CCSWeaponBaseImpl, CWeaponBaseItem
 
     private static nint? _SequenceInProgressOffset;
 
-    public ref bool SequenceInProgress {
-        get {
+    public ref bool SequenceInProgress
+    {
+        get
+        {
             _SequenceInProgressOffset = _SequenceInProgressOffset ?? Schema.GetOffset(0xE4ECC3486DDA8858);
             return ref _Handle.AsRef<bool>(_SequenceInProgressOffset!.Value);
         }
     }
     private static nint? _RedrawOffset;
 
-    public ref bool Redraw {
-        get {
+    public ref bool Redraw
+    {
+        get
+        {
             _RedrawOffset = _RedrawOffset ?? Schema.GetOffset(0xE4ECC348612F4EB2);
             return ref _Handle.AsRef<bool>(_RedrawOffset!.Value);
         }

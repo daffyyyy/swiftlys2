@@ -16,7 +16,4 @@ internal partial class CAnimCycleImpl : CCycleBaseImpl, CAnimCycle
 {
     public CAnimCycleImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,12 +18,13 @@ internal partial class CStateMachineComponentUpdaterImpl : CAnimComponentUpdater
 
     private static nint? _StateMachineOffset;
 
-    public CAnimStateMachineUpdater StateMachine {
-        get {
+    public CAnimStateMachineUpdater StateMachine
+    {
+        get
+        {
             _StateMachineOffset = _StateMachineOffset ?? Schema.GetOffset(0x25255200BB7EEF2F);
             return new CAnimStateMachineUpdaterImpl(_Handle + _StateMachineOffset!.Value);
         }
     }
-
 
 }

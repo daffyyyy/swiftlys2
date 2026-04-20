@@ -14,7 +14,4 @@ public partial interface CAnimActionUpdater : ISchemaClass<CAnimActionUpdater>
     static int ISchemaClass<CAnimActionUpdater>.Size => 24;
     static string? ISchemaClass<CAnimActionUpdater>.ClassName => null;
 
-
-
-
 }

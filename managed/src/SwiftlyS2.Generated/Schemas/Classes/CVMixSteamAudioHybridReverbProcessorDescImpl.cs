@@ -16,7 +16,4 @@ internal partial class CVMixSteamAudioHybridReverbProcessorDescImpl : CVMixBaseP
 {
     public CVMixSteamAudioHybridReverbProcessorDescImpl(nint handle) : base(handle) { }
 
-
-
-
 }

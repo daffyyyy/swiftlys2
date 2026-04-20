@@ -18,36 +18,43 @@ internal partial class C_OP_RemapCPVelocityToVectorImpl : CParticleFunctionOpera
 
     private static nint? _ControlPointOffset;
 
-    public ref int ControlPoint {
-        get {
+    public ref int ControlPoint
+    {
+        get
+        {
             _ControlPointOffset = _ControlPointOffset ?? Schema.GetOffset(0xAD6CE1DC0D0DDF8C);
             return ref _Handle.AsRef<int>(_ControlPointOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xAD6CE1DCE5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xAD6CE1DCB731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
     private static nint? _NormalizeOffset;
 
-    public ref bool Normalize {
-        get {
+    public ref bool Normalize
+    {
+        get
+        {
             _NormalizeOffset = _NormalizeOffset ?? Schema.GetOffset(0xAD6CE1DC48BC424C);
             return ref _Handle.AsRef<bool>(_NormalizeOffset!.Value);
         }
     }
-
 
 }

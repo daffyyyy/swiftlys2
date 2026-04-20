@@ -18,16 +18,20 @@ internal partial class CCSPlayer_ItemServicesImpl : CPlayer_ItemServicesImpl, CC
 
     private static nint? _HasDefuserOffset;
 
-    public ref bool HasDefuser {
-        get {
+    public ref bool HasDefuser
+    {
+        get
+        {
             _HasDefuserOffset = _HasDefuserOffset ?? Schema.GetOffset(0x6BB85EAD5AF87AF5);
             return ref _Handle.AsRef<bool>(_HasDefuserOffset!.Value);
         }
     }
     private static nint? _HasHelmetOffset;
 
-    public ref bool HasHelmet {
-        get {
+    public ref bool HasHelmet
+    {
+        get
+        {
             _HasHelmetOffset = _HasHelmetOffset ?? Schema.GetOffset(0x6BB85EAD4240B6F6);
             return ref _Handle.AsRef<bool>(_HasHelmetOffset!.Value);
         }

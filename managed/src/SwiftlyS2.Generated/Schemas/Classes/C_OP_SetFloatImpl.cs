@@ -18,36 +18,43 @@ internal partial class C_OP_SetFloatImpl : CParticleFunctionOperatorImpl, C_OP_S
 
     private static nint? _InputValueOffset;
 
-    public CPerParticleFloatInput InputValue {
-        get {
+    public CPerParticleFloatInput InputValue
+    {
+        get
+        {
             _InputValueOffset = _InputValueOffset ?? Schema.GetOffset(0xF719E43734445438);
             return new CPerParticleFloatInputImpl(_Handle + _InputValueOffset!.Value);
         }
     }
     private static nint? _OutputFieldOffset;
 
-    public ParticleAttributeIndex_t OutputField {
-        get {
+    public ParticleAttributeIndex_t OutputField
+    {
+        get
+        {
             _OutputFieldOffset = _OutputFieldOffset ?? Schema.GetOffset(0xF719E437324F6F74);
             return new ParticleAttributeIndex_tImpl(_Handle + _OutputFieldOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0xF719E437FB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
     private static nint? _LerpOffset;
 
-    public CPerParticleFloatInput Lerp {
-        get {
+    public CPerParticleFloatInput Lerp
+    {
+        get
+        {
             _LerpOffset = _LerpOffset ?? Schema.GetOffset(0xF719E4375C17F8E8);
             return new CPerParticleFloatInputImpl(_Handle + _LerpOffset!.Value);
         }
     }
-
 
 }

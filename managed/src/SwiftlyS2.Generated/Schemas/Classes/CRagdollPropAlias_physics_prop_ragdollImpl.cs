@@ -16,7 +16,4 @@ internal partial class CRagdollPropAlias_physics_prop_ragdollImpl : CRagdollProp
 {
     public CRagdollPropAlias_physics_prop_ragdollImpl(nint handle) : base(handle) { }
 
-
-
-
 }

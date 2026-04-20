@@ -18,24 +18,28 @@ internal partial class CDspPresetModifierListImpl : SchemaClass, CDspPresetModif
 
     private static nint? _DspNameOffset;
 
-    public string DspName {
-        get {
+    public string DspName
+    {
+        get
+        {
             _DspNameOffset = _DspNameOffset ?? Schema.GetOffset(0x68EE16FD7E9A0D3);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DspNameOffset!.Value));
         }
-        set {
+        set
+        {
             _DspNameOffset = _DspNameOffset ?? Schema.GetOffset(0x68EE16FD7E9A0D3);
             Schema.SetCUtlString(_Handle, _DspNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ModifiersOffset;
 
-    public ref CUtlVector<CDSPMixgroupModifier> Modifiers {
-        get {
+    public ref CUtlVector<CDSPMixgroupModifier> Modifiers
+    {
+        get
+        {
             _ModifiersOffset = _ModifiersOffset ?? Schema.GetOffset(0x68EE16F541F1439);
             return ref _Handle.AsRef<CUtlVector<CDSPMixgroupModifier>>(_ModifiersOffset!.Value);
         }
     }
-
 
 }

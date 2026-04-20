@@ -18,24 +18,28 @@ internal partial class CollisionDetailLayerInfo_t__Name_tImpl : SchemaClass, Col
 
     private static nint? _NameTokenOffset;
 
-    public ref CUtlStringToken NameToken {
-        get {
+    public ref CUtlStringToken NameToken
+    {
+        get
+        {
             _NameTokenOffset = _NameTokenOffset ?? Schema.GetOffset(0x1875C420C9D4AD7F);
             return ref _Handle.AsRef<CUtlStringToken>(_NameTokenOffset!.Value);
         }
     }
     private static nint? _NameStringOffset;
 
-    public string NameString {
-        get {
+    public string NameString
+    {
+        get
+        {
             _NameStringOffset = _NameStringOffset ?? Schema.GetOffset(0x1875C4204ED9FF04);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameStringOffset!.Value));
         }
-        set {
+        set
+        {
             _NameStringOffset = _NameStringOffset ?? Schema.GetOffset(0x1875C4204ED9FF04);
             Schema.SetCUtlString(_Handle, _NameStringOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

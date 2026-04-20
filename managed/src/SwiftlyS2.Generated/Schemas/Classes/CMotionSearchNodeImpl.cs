@@ -18,44 +18,53 @@ internal partial class CMotionSearchNodeImpl : SchemaClass, CMotionSearchNode
 
     private static nint? _ChildrenOffset;
 
-    public ref CUtlVector<PointerTo<CMotionSearchNode>> Children {
-        get {
+    public ref CUtlVector<PointerTo<CMotionSearchNode>> Children
+    {
+        get
+        {
             _ChildrenOffset = _ChildrenOffset ?? Schema.GetOffset(0x7CB28AA07415FA72);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CMotionSearchNode>>>(_ChildrenOffset!.Value);
         }
     }
     private static nint? _QuantizerOffset;
 
-    public CVectorQuantizer Quantizer {
-        get {
+    public CVectorQuantizer Quantizer
+    {
+        get
+        {
             _QuantizerOffset = _QuantizerOffset ?? Schema.GetOffset(0x7CB28AA0C7DE6374);
             return new CVectorQuantizerImpl(_Handle + _QuantizerOffset!.Value);
         }
     }
     private static nint? _SampleCodesOffset;
 
-    public ref CUtlVector<CUtlVector<SampleCode>> SampleCodes {
-        get {
+    public ref CUtlVector<CUtlVector<SampleCode>> SampleCodes
+    {
+        get
+        {
             _SampleCodesOffset = _SampleCodesOffset ?? Schema.GetOffset(0x7CB28AA0D703E42F);
             return ref _Handle.AsRef<CUtlVector<CUtlVector<SampleCode>>>(_SampleCodesOffset!.Value);
         }
     }
     private static nint? _SampleIndicesOffset;
 
-    public ref CUtlVector<CUtlVector<int>> SampleIndices {
-        get {
+    public ref CUtlVector<CUtlVector<int>> SampleIndices
+    {
+        get
+        {
             _SampleIndicesOffset = _SampleIndicesOffset ?? Schema.GetOffset(0x7CB28AA02EDA0064);
             return ref _Handle.AsRef<CUtlVector<CUtlVector<int>>>(_SampleIndicesOffset!.Value);
         }
     }
     private static nint? _SelectableSamplesOffset;
 
-    public ref CUtlVector<int> SelectableSamples {
-        get {
+    public ref CUtlVector<int> SelectableSamples
+    {
+        get
+        {
             _SelectableSamplesOffset = _SelectableSamplesOffset ?? Schema.GetOffset(0x7CB28AA0C1D40F34);
             return ref _Handle.AsRef<CUtlVector<int>>(_SelectableSamplesOffset!.Value);
         }
     }
-
 
 }

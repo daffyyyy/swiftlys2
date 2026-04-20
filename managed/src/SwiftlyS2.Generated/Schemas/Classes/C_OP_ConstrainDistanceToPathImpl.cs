@@ -18,68 +18,83 @@ internal partial class C_OP_ConstrainDistanceToPathImpl : CParticleFunctionConst
 
     private static nint? _MinDistanceOffset;
 
-    public ref float MinDistance {
-        get {
+    public ref float MinDistance
+    {
+        get
+        {
             _MinDistanceOffset = _MinDistanceOffset ?? Schema.GetOffset(0x8146F787F016B7AC);
             return ref _Handle.AsRef<float>(_MinDistanceOffset!.Value);
         }
     }
     private static nint? _MaxDistance0Offset;
 
-    public ref float MaxDistance0 {
-        get {
+    public ref float MaxDistance0
+    {
+        get
+        {
             _MaxDistance0Offset = _MaxDistance0Offset ?? Schema.GetOffset(0x8146F7876FFBC6F0);
             return ref _Handle.AsRef<float>(_MaxDistance0Offset!.Value);
         }
     }
     private static nint? _MaxDistanceMidOffset;
 
-    public ref float MaxDistanceMid {
-        get {
+    public ref float MaxDistanceMid
+    {
+        get
+        {
             _MaxDistanceMidOffset = _MaxDistanceMidOffset ?? Schema.GetOffset(0x8146F7872D2B1E5A);
             return ref _Handle.AsRef<float>(_MaxDistanceMidOffset!.Value);
         }
     }
     private static nint? _MaxDistance1Offset;
 
-    public ref float MaxDistance1 {
-        get {
+    public ref float MaxDistance1
+    {
+        get
+        {
             _MaxDistance1Offset = _MaxDistance1Offset ?? Schema.GetOffset(0x8146F78770FBC883);
             return ref _Handle.AsRef<float>(_MaxDistance1Offset!.Value);
         }
     }
     private static nint? _PathParametersOffset;
 
-    public CPathParameters PathParameters {
-        get {
+    public CPathParameters PathParameters
+    {
+        get
+        {
             _PathParametersOffset = _PathParametersOffset ?? Schema.GetOffset(0x8146F7878C111646);
             return new CPathParametersImpl(_Handle + _PathParametersOffset!.Value);
         }
     }
     private static nint? _TravelTimeOffset;
 
-    public ref float TravelTime {
-        get {
+    public ref float TravelTime
+    {
+        get
+        {
             _TravelTimeOffset = _TravelTimeOffset ?? Schema.GetOffset(0x8146F7870228B67A);
             return ref _Handle.AsRef<float>(_TravelTimeOffset!.Value);
         }
     }
     private static nint? _FieldScaleOffset;
 
-    public ParticleAttributeIndex_t FieldScale {
-        get {
+    public ParticleAttributeIndex_t FieldScale
+    {
+        get
+        {
             _FieldScaleOffset = _FieldScaleOffset ?? Schema.GetOffset(0x8146F787BE94CE93);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldScaleOffset!.Value);
         }
     }
     private static nint? _ManualTFieldOffset;
 
-    public ParticleAttributeIndex_t ManualTField {
-        get {
+    public ParticleAttributeIndex_t ManualTField
+    {
+        get
+        {
             _ManualTFieldOffset = _ManualTFieldOffset ?? Schema.GetOffset(0x8146F7871190C51B);
             return new ParticleAttributeIndex_tImpl(_Handle + _ManualTFieldOffset!.Value);
         }
     }
-
 
 }

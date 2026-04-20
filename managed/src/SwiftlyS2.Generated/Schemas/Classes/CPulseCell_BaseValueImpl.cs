@@ -16,7 +16,4 @@ internal partial class CPulseCell_BaseValueImpl : CPulseCell_BaseImpl, CPulseCel
 {
     public CPulseCell_BaseValueImpl(nint handle) : base(handle) { }
 
-
-
-
 }

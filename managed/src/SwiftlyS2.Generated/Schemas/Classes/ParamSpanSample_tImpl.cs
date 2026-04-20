@@ -18,20 +18,23 @@ internal partial class ParamSpanSample_tImpl : SchemaClass, ParamSpanSample_t
 
     private static nint? _ValueOffset;
 
-    public SchemaUntypedField Value {
-        get {
+    public SchemaUntypedField Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x37E203136B99AEEA);
             return new SchemaUntypedField(_Handle + _ValueOffset!.Value);
         }
     }
     private static nint? _CycleOffset;
 
-    public ref float Cycle {
-        get {
+    public ref float Cycle
+    {
+        get
+        {
             _CycleOffset = _CycleOffset ?? Schema.GetOffset(0x37E203130C77829F);
             return ref _Handle.AsRef<float>(_CycleOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CPulseTestFuncs_LibraryAImpl : SchemaClass, CPulseTestFun
 {
     public CPulseTestFuncs_LibraryAImpl(nint handle) : base(handle) { }
 
-
-
-
 }

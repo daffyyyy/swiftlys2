@@ -14,7 +14,4 @@ public partial interface IParticleEffect : ISchemaClass<IParticleEffect>
     static int ISchemaClass<IParticleEffect>.Size => 8;
     static string? ISchemaClass<IParticleEffect>.ClassName => null;
 
-
-
-
 }

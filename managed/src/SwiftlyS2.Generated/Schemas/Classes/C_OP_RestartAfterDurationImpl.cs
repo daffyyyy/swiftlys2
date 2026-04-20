@@ -18,52 +18,63 @@ internal partial class C_OP_RestartAfterDurationImpl : CParticleFunctionOperator
 
     private static nint? _DurationMinOffset;
 
-    public ref float DurationMin {
-        get {
+    public ref float DurationMin
+    {
+        get
+        {
             _DurationMinOffset = _DurationMinOffset ?? Schema.GetOffset(0x3F8C903A5D25DBDD);
             return ref _Handle.AsRef<float>(_DurationMinOffset!.Value);
         }
     }
     private static nint? _DurationMaxOffset;
 
-    public ref float DurationMax {
-        get {
+    public ref float DurationMax
+    {
+        get
+        {
             _DurationMaxOffset = _DurationMaxOffset ?? Schema.GetOffset(0x3F8C903A671263E3);
             return ref _Handle.AsRef<float>(_DurationMaxOffset!.Value);
         }
     }
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x3F8C903AEB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _CPFieldOffset;
 
-    public ref int CPField {
-        get {
+    public ref int CPField
+    {
+        get
+        {
             _CPFieldOffset = _CPFieldOffset ?? Schema.GetOffset(0x3F8C903A50B79876);
             return ref _Handle.AsRef<int>(_CPFieldOffset!.Value);
         }
     }
     private static nint? _ChildGroupIDOffset;
 
-    public ref int ChildGroupID {
-        get {
+    public ref int ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0x3F8C903AE3F3C965);
             return ref _Handle.AsRef<int>(_ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _OnlyChildrenOffset;
 
-    public ref bool OnlyChildren {
-        get {
+    public ref bool OnlyChildren
+    {
+        get
+        {
             _OnlyChildrenOffset = _OnlyChildrenOffset ?? Schema.GetOffset(0x3F8C903AD53575B0);
             return ref _Handle.AsRef<bool>(_OnlyChildrenOffset!.Value);
         }
     }
-
 
 }

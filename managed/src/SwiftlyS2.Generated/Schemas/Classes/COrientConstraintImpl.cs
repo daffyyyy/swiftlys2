@@ -16,7 +16,4 @@ internal partial class COrientConstraintImpl : CBaseConstraintImpl, COrientConst
 {
     public COrientConstraintImpl(nint handle) : base(handle) { }
 
-
-
-
 }

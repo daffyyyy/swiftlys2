@@ -18,12 +18,13 @@ internal partial class CSpeedScaleUpdateNodeImpl : CUnaryUpdateNodeImpl, CSpeedS
 
     private static nint? _ParamIndexOffset;
 
-    public CAnimParamHandle ParamIndex {
-        get {
+    public CAnimParamHandle ParamIndex
+    {
+        get
+        {
             _ParamIndexOffset = _ParamIndexOffset ?? Schema.GetOffset(0xD43012BC61990A86);
             return new CAnimParamHandleImpl(_Handle + _ParamIndexOffset!.Value);
         }
     }
-
 
 }

@@ -18,44 +18,53 @@ internal partial class CSmoothFuncImpl : SchemaClass, CSmoothFunc
 
     private static nint? _SmoothAmplitudeOffset;
 
-    public ref float SmoothAmplitude {
-        get {
+    public ref float SmoothAmplitude
+    {
+        get
+        {
             _SmoothAmplitudeOffset = _SmoothAmplitudeOffset ?? Schema.GetOffset(0x4C3907DAAB831D3A);
             return ref _Handle.AsRef<float>(_SmoothAmplitudeOffset!.Value);
         }
     }
     private static nint? _SmoothBiasOffset;
 
-    public ref float SmoothBias {
-        get {
+    public ref float SmoothBias
+    {
+        get
+        {
             _SmoothBiasOffset = _SmoothBiasOffset ?? Schema.GetOffset(0x4C3907DA8DF7120C);
             return ref _Handle.AsRef<float>(_SmoothBiasOffset!.Value);
         }
     }
     private static nint? _SmoothDurationOffset;
 
-    public ref float SmoothDuration {
-        get {
+    public ref float SmoothDuration
+    {
+        get
+        {
             _SmoothDurationOffset = _SmoothDurationOffset ?? Schema.GetOffset(0x4C3907DA62F4C0D5);
             return ref _Handle.AsRef<float>(_SmoothDurationOffset!.Value);
         }
     }
     private static nint? _SmoothRemainingTimeOffset;
 
-    public ref float SmoothRemainingTime {
-        get {
+    public ref float SmoothRemainingTime
+    {
+        get
+        {
             _SmoothRemainingTimeOffset = _SmoothRemainingTimeOffset ?? Schema.GetOffset(0x4C3907DAB4D54372);
             return ref _Handle.AsRef<float>(_SmoothRemainingTimeOffset!.Value);
         }
     }
     private static nint? _SmoothDirOffset;
 
-    public ref int SmoothDir {
-        get {
+    public ref int SmoothDir
+    {
+        get
+        {
             _SmoothDirOffset = _SmoothDirOffset ?? Schema.GetOffset(0x4C3907DAB90556AA);
             return ref _Handle.AsRef<int>(_SmoothDirOffset!.Value);
         }
     }
-
 
 }

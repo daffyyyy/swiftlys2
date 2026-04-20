@@ -15,7 +15,7 @@ public partial interface CEntityIdentity : ISchemaClass<CEntityIdentity>
     static string? ISchemaClass<CEntityIdentity>.ClassName => null;
 
 
-    public ref int NameStringableIndex { get; }
+    public ref int NameStringTableIndex { get; }
 
     public string Name { get; set; }
 
@@ -39,5 +39,5 @@ public partial interface CEntityIdentity : ISchemaClass<CEntityIdentity>
 
     public CEntityIdentity? NextByClass { get; }
 
-    public void NameStringableIndexUpdated();
+    public void NameStringTableIndexUpdated();
 }

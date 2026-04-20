@@ -16,7 +16,4 @@ internal partial class dynpitchvol_tImpl : dynpitchvol_base_tImpl, dynpitchvol_t
 {
     public dynpitchvol_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

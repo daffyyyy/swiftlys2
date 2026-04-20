@@ -18,32 +18,38 @@ internal partial class CFootMotionImpl : SchemaClass, CFootMotion
 
     private static nint? _StridesOffset;
 
-    public ref CUtlVector<CFootStride> Strides {
-        get {
+    public ref CUtlVector<CFootStride> Strides
+    {
+        get
+        {
             _StridesOffset = _StridesOffset ?? Schema.GetOffset(0xA4A598B8AE9C97F1);
             return ref _Handle.AsRef<CUtlVector<CFootStride>>(_StridesOffset!.Value);
         }
     }
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xA4A598B84D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xA4A598B84D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AdditiveOffset;
 
-    public ref bool Additive {
-        get {
+    public ref bool Additive
+    {
+        get
+        {
             _AdditiveOffset = _AdditiveOffset ?? Schema.GetOffset(0xA4A598B80FA86105);
             return ref _Handle.AsRef<bool>(_AdditiveOffset!.Value);
         }
     }
-
 
 }

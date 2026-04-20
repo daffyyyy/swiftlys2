@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EntityDistanceMode_t : uint
 {
- eOriginToOrigin = 0,
-
- eCenterToCenter = 1,
-
- eAxisToAxis = 2,
+    eOriginToOrigin = 0,
+    eCenterToCenter = 1,
+    eAxisToAxis = 2,
 }

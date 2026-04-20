@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlantedC4 : CBaseAnimGraph, ISchemaClass<CPlantedC4>
 {
     static CPlantedC4 ISchemaClass<CPlantedC4>.From(nint handle) => new CPlantedC4Impl(handle);
-    static int ISchemaClass<CPlantedC4>.Size => 3568;
+    static int ISchemaClass<CPlantedC4>.Size => 3344;
     static string? ISchemaClass<CPlantedC4>.ClassName => "planted_c4";
 
 

@@ -16,7 +16,4 @@ internal partial class CParticleInputImpl : SchemaClass, CParticleInput
 {
     public CParticleInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

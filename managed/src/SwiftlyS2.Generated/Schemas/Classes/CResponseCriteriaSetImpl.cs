@@ -18,20 +18,23 @@ internal partial class CResponseCriteriaSetImpl : SchemaClass, CResponseCriteria
 
     private static nint? _NumPrefixedContextsOffset;
 
-    public ref int NumPrefixedContexts {
-        get {
+    public ref int NumPrefixedContexts
+    {
+        get
+        {
             _NumPrefixedContextsOffset = _NumPrefixedContextsOffset ?? Schema.GetOffset(0x96E39114B653ABCA);
             return ref _Handle.AsRef<int>(_NumPrefixedContextsOffset!.Value);
         }
     }
     private static nint? _OverrideOnAppendOffset;
 
-    public ref bool OverrideOnAppend {
-        get {
+    public ref bool OverrideOnAppend
+    {
+        get
+        {
             _OverrideOnAppendOffset = _OverrideOnAppendOffset ?? Schema.GetOffset(0x96E391140E1014F0);
             return ref _Handle.AsRef<bool>(_OverrideOnAppendOffset!.Value);
         }
     }
-
 
 }

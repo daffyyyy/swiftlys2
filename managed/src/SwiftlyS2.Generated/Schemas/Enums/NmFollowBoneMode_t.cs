@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmFollowBoneMode_t : byte
 {
- RotationAndTranslation = 0,
-
- RotationOnly = 1,
-
- TranslationOnly = 2,
+    RotationAndTranslation = 0,
+    RotationOnly = 1,
+    TranslationOnly = 2,
 }

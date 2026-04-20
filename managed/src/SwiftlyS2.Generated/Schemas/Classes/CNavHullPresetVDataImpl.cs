@@ -18,12 +18,13 @@ internal partial class CNavHullPresetVDataImpl : SchemaClass, CNavHullPresetVDat
 
     private static nint? _NavHullsOffset;
 
-    public ref CUtlVector<CUtlString> NavHulls {
-        get {
+    public ref CUtlVector<CUtlString> NavHulls
+    {
+        get
+        {
             _NavHullsOffset = _NavHullsOffset ?? Schema.GetOffset(0x9963D667366CCF96);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_NavHullsOffset!.Value);
         }
     }
-
 
 }

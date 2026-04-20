@@ -11,13 +11,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModelEntity>
 {
     static CBaseModelEntity ISchemaClass<CBaseModelEntity>.From(nint handle) => new CBaseModelEntityImpl(handle);
-    static int ISchemaClass<CBaseModelEntity>.Size => 1840;
+    static int ISchemaClass<CBaseModelEntity>.Size => 1896;
     static string? ISchemaClass<CBaseModelEntity>.ClassName => "basemodelentity";
 
 
     public CRenderComponent? CRenderComponent { get; }
 
     public CHitboxComponent CHitboxComponent { get; }
+
+    public CChoreoComponent? ChoreoComponent { get; }
 
     public ref HitGroup_t DestructiblePartInitialStateDestructed0 { get; }
 
@@ -39,7 +41,20 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
 
     public ref int DestructiblePartInitialStateDestructed4_PartIndex { get; }
 
+    public ref bool DestructiblePartInitialStateDestructed0_GenerateBreakpieces { get; }
+
+    public ref bool DestructiblePartInitialStateDestructed1_GenerateBreakpieces { get; }
+
+    public ref bool DestructiblePartInitialStateDestructed2_GenerateBreakpieces { get; }
+
+    public ref bool DestructiblePartInitialStateDestructed3_GenerateBreakpieces { get; }
+
+    public ref bool DestructiblePartInitialStateDestructed4_GenerateBreakpieces { get; }
+
     public CDestructiblePartsComponent? DestructiblePartsSystemComponent { get; }
+
+    // CEntityOutputTemplate< CBaseModelEntity::OnDamageLevelChangedArgs_t >
+    public SchemaUntypedField OnDestructibleHitGroupDamageLevelChanged { get; }
 
     public GameTime_t DissolveStartTime { get; }
 
@@ -75,11 +90,15 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
 
     public ref byte ObjectCulling { get; }
 
+    // CUtlOrderedMap< CGlobalSymbol, int32 >
+    public SchemaUntypedField BodyGroupChoices { get; }
+
     public CNetworkViewOffsetVector ViewOffset { get; }
 
     public ISchemaFixedArray<uint> DisabledHitGroups { get; }
 
     public void CHitboxComponentUpdated();
+    public void ChoreoComponentUpdated();
     public void DestructiblePartsSystemComponentUpdated();
     public void RenderModeUpdated();
     public void RenderFXUpdated();

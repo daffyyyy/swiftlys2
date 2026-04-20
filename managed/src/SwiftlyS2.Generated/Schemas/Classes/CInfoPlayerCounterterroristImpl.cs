@@ -16,7 +16,4 @@ internal partial class CInfoPlayerCounterterroristImpl : SpawnPointImpl, CInfoPl
 {
     public CInfoPlayerCounterterroristImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_CreateAlongPath : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateAlongPath>
 {
     static C_INIT_CreateAlongPath ISchemaClass<C_INIT_CreateAlongPath>.From(nint handle) => new C_INIT_CreateAlongPathImpl(handle);
-    static int ISchemaClass<C_INIT_CreateAlongPath>.Size => 576;
+    static int ISchemaClass<C_INIT_CreateAlongPath>.Size => 592;
     static string? ISchemaClass<C_INIT_CreateAlongPath>.ClassName => null;
 
 

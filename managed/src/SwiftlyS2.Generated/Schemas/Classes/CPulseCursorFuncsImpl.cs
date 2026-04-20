@@ -16,7 +16,4 @@ internal partial class CPulseCursorFuncsImpl : SchemaClass, CPulseCursorFuncs
 {
     public CPulseCursorFuncsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

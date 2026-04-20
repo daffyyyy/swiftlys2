@@ -18,8 +18,10 @@ internal partial class CBodyComponentBaseAnimGraphImpl : CBodyComponentSkeletonI
 
     private static nint? _AnimationControllerOffset;
 
-    public CBaseAnimGraphController AnimationController {
-        get {
+    public CBaseAnimGraphController AnimationController
+    {
+        get
+        {
             _AnimationControllerOffset = _AnimationControllerOffset ?? Schema.GetOffset(0xD004A34F552AD749);
             return new CBaseAnimGraphControllerImpl(_Handle + _AnimationControllerOffset!.Value);
         }

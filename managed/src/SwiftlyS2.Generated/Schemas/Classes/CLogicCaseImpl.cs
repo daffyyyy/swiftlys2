@@ -16,39 +16,47 @@ internal partial class CLogicCaseImpl : CLogicalEntityImpl, CLogicCase
 {
     public CLogicCaseImpl(nint handle) : base(handle) { }
 
-    public ISchemaStringFixedArray Case {
+    public ISchemaStringFixedArray Case
+    {
         get => new SchemaStringFixedArray(_Handle, 0x4B6BB20CBD726255, 32, 8, 8);
     }
     private static nint? _ShuffleCasesOffset;
 
-    public ref int ShuffleCases {
-        get {
+    public ref int ShuffleCases
+    {
+        get
+        {
             _ShuffleCasesOffset = _ShuffleCasesOffset ?? Schema.GetOffset(0x4B6BB20C3441354F);
             return ref _Handle.AsRef<int>(_ShuffleCasesOffset!.Value);
         }
     }
     private static nint? _LastShuffleCaseOffset;
 
-    public ref int LastShuffleCase {
-        get {
+    public ref int LastShuffleCase
+    {
+        get
+        {
             _LastShuffleCaseOffset = _LastShuffleCaseOffset ?? Schema.GetOffset(0x4B6BB20C053CE392);
             return ref _Handle.AsRef<int>(_LastShuffleCaseOffset!.Value);
         }
     }
-    public ISchemaFixedArray<byte> UchShuffleCaseMap {
+    public ISchemaFixedArray<byte> UchShuffleCaseMap
+    {
         get => new SchemaFixedArray<byte>(_Handle, 0x4B6BB20CF9FC41AE, 32, 1, 1);
     }
-    public ISchemaFixedArray<CEntityIOOutput> OnCase {
+    public ISchemaFixedArray<CEntityIOOutput> OnCase
+    {
         get => new SchemaFixedArray<CEntityIOOutput>(_Handle, 0x4B6BB20CF8743C7C, 32, 24, 8);
     }
     private static nint? _OnDefaultOffset;
 
-    public SchemaUntypedField OnDefault {
-        get {
+    public SchemaUntypedField OnDefault
+    {
+        get
+        {
             _OnDefaultOffset = _OnDefaultOffset ?? Schema.GetOffset(0x4B6BB20C4B03C3CD);
             return new SchemaUntypedField(_Handle + _OnDefaultOffset!.Value);
         }
     }
-
 
 }

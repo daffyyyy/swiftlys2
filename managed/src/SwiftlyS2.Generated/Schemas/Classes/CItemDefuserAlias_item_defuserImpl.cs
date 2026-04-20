@@ -16,7 +16,4 @@ internal partial class CItemDefuserAlias_item_defuserImpl : CItemDefuserImpl, CI
 {
     public CItemDefuserAlias_item_defuserImpl(nint handle) : base(handle) { }
 
-
-
-
 }

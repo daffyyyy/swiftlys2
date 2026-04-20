@@ -18,12 +18,13 @@ internal partial class C_OP_RemapTransformToVelocityImpl : CParticleFunctionOper
 
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0xC1A2CC64B3FDC289);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
-
 
 }

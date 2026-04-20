@@ -14,7 +14,4 @@ public partial interface CPulseCell_ExampleCriteria : CPulseCell_BaseRequirement
     static int ISchemaClass<CPulseCell_ExampleCriteria>.Size => 72;
     static string? ISchemaClass<CPulseCell_ExampleCriteria>.ClassName => null;
 
-
-
-
 }

@@ -18,28 +18,33 @@ internal partial class PulseRegisterMap_tImpl : SchemaClass, PulseRegisterMap_t
 
     private static nint? _InparamsOffset;
 
-    public SchemaUntypedField Inparams {
-        get {
+    public SchemaUntypedField Inparams
+    {
+        get
+        {
             _InparamsOffset = _InparamsOffset ?? Schema.GetOffset(0x833FEA64B9B18E04);
             return new SchemaUntypedField(_Handle + _InparamsOffset!.Value);
         }
     }
     private static nint? _InparamsWhichCanBeMovedOffset;
 
-    public SchemaUntypedField InparamsWhichCanBeMoved {
-        get {
+    public SchemaUntypedField InparamsWhichCanBeMoved
+    {
+        get
+        {
             _InparamsWhichCanBeMovedOffset = _InparamsWhichCanBeMovedOffset ?? Schema.GetOffset(0x833FEA6405245E23);
             return new SchemaUntypedField(_Handle + _InparamsWhichCanBeMovedOffset!.Value);
         }
     }
     private static nint? _OutparamsOffset;
 
-    public SchemaUntypedField Outparams {
-        get {
+    public SchemaUntypedField Outparams
+    {
+        get
+        {
             _OutparamsOffset = _OutparamsOffset ?? Schema.GetOffset(0x833FEA64798D964D);
             return new SchemaUntypedField(_Handle + _OutparamsOffset!.Value);
         }
     }
-
 
 }

@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleFunctionOperator : CParticleFunction, ISchemaClass<CParticleFunctionOperator>
 {
     static CParticleFunctionOperator ISchemaClass<CParticleFunctionOperator>.From(nint handle) => new CParticleFunctionOperatorImpl(handle);
-    static int ISchemaClass<CParticleFunctionOperator>.Size => 464;
+    static int ISchemaClass<CParticleFunctionOperator>.Size => 472;
     static string? ISchemaClass<CParticleFunctionOperator>.ClassName => null;
-
-
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CPlatTriggerImpl : CBaseModelEntityImpl, CPlatTrigger
 
     private static nint? _PlatformOffset;
 
-    public ref CHandle<CFuncPlat> Platform {
-        get {
+    public ref CHandle<CFuncPlat> Platform
+    {
+        get
+        {
             _PlatformOffset = _PlatformOffset ?? Schema.GetOffset(0xE5D76A656D16AFF0);
             return ref _Handle.AsRef<CHandle<CFuncPlat>>(_PlatformOffset!.Value);
         }
     }
-
 
 }

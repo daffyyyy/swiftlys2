@@ -18,20 +18,23 @@ internal partial class CNmGraphEventConditionNode__Condition_tImpl : SchemaClass
 
     private static nint? _EventIDOffset;
 
-    public ref CGlobalSymbol EventID {
-        get {
+    public ref CGlobalSymbol EventID
+    {
+        get
+        {
             _EventIDOffset = _EventIDOffset ?? Schema.GetOffset(0xA3252A829D798A72);
             return ref _Handle.AsRef<CGlobalSymbol>(_EventIDOffset!.Value);
         }
     }
     private static nint? _EventTypeConditionOffset;
 
-    public ref NmGraphEventTypeCondition_t EventTypeCondition {
-        get {
+    public ref NmGraphEventTypeCondition_t EventTypeCondition
+    {
+        get
+        {
             _EventTypeConditionOffset = _EventTypeConditionOffset ?? Schema.GetOffset(0xA3252A829BED2960);
             return ref _Handle.AsRef<NmGraphEventTypeCondition_t>(_EventTypeConditionOffset!.Value);
         }
     }
-
 
 }

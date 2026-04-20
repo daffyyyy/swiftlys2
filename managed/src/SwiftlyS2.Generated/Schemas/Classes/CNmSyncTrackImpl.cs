@@ -18,20 +18,23 @@ internal partial class CNmSyncTrackImpl : SchemaClass, CNmSyncTrack
 
     private static nint? _SyncEventsOffset;
 
-    public SchemaUntypedField SyncEvents {
-        get {
+    public SchemaUntypedField SyncEvents
+    {
+        get
+        {
             _SyncEventsOffset = _SyncEventsOffset ?? Schema.GetOffset(0x29C7FA0336BAB4FF);
             return new SchemaUntypedField(_Handle + _SyncEventsOffset!.Value);
         }
     }
     private static nint? _StartEventOffsetOffset;
 
-    public ref int StartEventOffset {
-        get {
+    public ref int StartEventOffset
+    {
+        get
+        {
             _StartEventOffsetOffset = _StartEventOffsetOffset ?? Schema.GetOffset(0x29C7FA03DDBC640E);
             return ref _Handle.AsRef<int>(_StartEventOffsetOffset!.Value);
         }
     }
-
 
 }

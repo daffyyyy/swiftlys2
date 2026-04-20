@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum OrientationWarpMode_t : uint
 {
- eInvalid = 0,
-
- eAngle = 1,
-
- eWorldPosition = 2,
+    eInvalid = 0,
+    eAngle = 1,
+    eWorldPosition = 2,
 }

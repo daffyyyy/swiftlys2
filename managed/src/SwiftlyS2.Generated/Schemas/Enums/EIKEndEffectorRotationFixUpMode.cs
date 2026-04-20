@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EIKEndEffectorRotationFixUpMode : uint
 {
- None = 0,
-
- MatchTargetOrientation = 1,
-
- LookAtTargetForward = 2,
-
- MaintainParentOrientation = 3,
-
- Count = 4,
+    None = 0,
+    MatchTargetOrientation = 1,
+    LookAtTargetForward = 2,
+    MaintainParentOrientation = 3,
+    Count = 4,
 }

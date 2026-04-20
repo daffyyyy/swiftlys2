@@ -18,28 +18,33 @@ internal partial class CVoiceContainerRealtimeFMSineWaveImpl : CVoiceContainerGe
 
     private static nint? _CarrierFrequencyOffset;
 
-    public ref float CarrierFrequency {
-        get {
+    public ref float CarrierFrequency
+    {
+        get
+        {
             _CarrierFrequencyOffset = _CarrierFrequencyOffset ?? Schema.GetOffset(0x3AB0D193041DC311);
             return ref _Handle.AsRef<float>(_CarrierFrequencyOffset!.Value);
         }
     }
     private static nint? _ModulatorFrequencyOffset;
 
-    public ref float ModulatorFrequency {
-        get {
+    public ref float ModulatorFrequency
+    {
+        get
+        {
             _ModulatorFrequencyOffset = _ModulatorFrequencyOffset ?? Schema.GetOffset(0x3AB0D193656A8FFE);
             return ref _Handle.AsRef<float>(_ModulatorFrequencyOffset!.Value);
         }
     }
     private static nint? _ModulatorAmountOffset;
 
-    public ref float ModulatorAmount {
-        get {
+    public ref float ModulatorAmount
+    {
+        get
+        {
             _ModulatorAmountOffset = _ModulatorAmountOffset ?? Schema.GetOffset(0x3AB0D1939B320E5C);
             return ref _Handle.AsRef<float>(_ModulatorAmountOffset!.Value);
         }
     }
-
 
 }

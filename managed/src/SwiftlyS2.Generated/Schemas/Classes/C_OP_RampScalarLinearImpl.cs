@@ -18,68 +18,83 @@ internal partial class C_OP_RampScalarLinearImpl : CParticleFunctionOperatorImpl
 
     private static nint? _RateMinOffset;
 
-    public ref float RateMin {
-        get {
+    public ref float RateMin
+    {
+        get
+        {
             _RateMinOffset = _RateMinOffset ?? Schema.GetOffset(0xEE7E510C645AF561);
             return ref _Handle.AsRef<float>(_RateMinOffset!.Value);
         }
     }
     private static nint? _RateMaxOffset;
 
-    public ref float RateMax {
-        get {
+    public ref float RateMax
+    {
+        get
+        {
             _RateMaxOffset = _RateMaxOffset ?? Schema.GetOffset(0xEE7E510C566E670F);
             return ref _Handle.AsRef<float>(_RateMaxOffset!.Value);
         }
     }
     private static nint? _StartTime_minOffset;
 
-    public ref float StartTime_min {
-        get {
+    public ref float StartTime_min
+    {
+        get
+        {
             _StartTime_minOffset = _StartTime_minOffset ?? Schema.GetOffset(0xEE7E510C5AC75BFB);
             return ref _Handle.AsRef<float>(_StartTime_minOffset!.Value);
         }
     }
     private static nint? _StartTime_maxOffset;
 
-    public ref float StartTime_max {
-        get {
+    public ref float StartTime_max
+    {
+        get
+        {
             _StartTime_maxOffset = _StartTime_maxOffset ?? Schema.GetOffset(0xEE7E510C50B23185);
             return ref _Handle.AsRef<float>(_StartTime_maxOffset!.Value);
         }
     }
     private static nint? _EndTime_minOffset;
 
-    public ref float EndTime_min {
-        get {
+    public ref float EndTime_min
+    {
+        get
+        {
             _EndTime_minOffset = _EndTime_minOffset ?? Schema.GetOffset(0xEE7E510C7B891932);
             return ref _Handle.AsRef<float>(_EndTime_minOffset!.Value);
         }
     }
     private static nint? _EndTime_maxOffset;
 
-    public ref float EndTime_max {
-        get {
+    public ref float EndTime_max
+    {
+        get
+        {
             _EndTime_maxOffset = _EndTime_maxOffset ?? Schema.GetOffset(0xEE7E510C8575A138);
             return ref _Handle.AsRef<float>(_EndTime_maxOffset!.Value);
         }
     }
     private static nint? _FieldOffset;
 
-    public ParticleAttributeIndex_t Field {
-        get {
+    public ParticleAttributeIndex_t Field
+    {
+        get
+        {
             _FieldOffset = _FieldOffset ?? Schema.GetOffset(0xEE7E510CC257B93B);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOffset!.Value);
         }
     }
     private static nint? _ProportionalOpOffset;
 
-    public ref bool ProportionalOp {
-        get {
+    public ref bool ProportionalOp
+    {
+        get
+        {
             _ProportionalOpOffset = _ProportionalOpOffset ?? Schema.GetOffset(0xEE7E510C0F8832BD);
             return ref _Handle.AsRef<bool>(_ProportionalOpOffset!.Value);
         }
     }
-
 
 }

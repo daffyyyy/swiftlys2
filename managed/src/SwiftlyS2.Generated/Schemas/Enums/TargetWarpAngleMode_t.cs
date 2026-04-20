@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum TargetWarpAngleMode_t : uint
 {
- eFacingHeading = 0,
-
- eMoveHeading = 1,
+    eFacingHeading = 0,
+    eMoveHeading = 1,
 }

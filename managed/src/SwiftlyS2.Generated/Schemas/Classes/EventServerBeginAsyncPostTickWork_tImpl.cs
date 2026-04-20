@@ -18,12 +18,13 @@ internal partial class EventServerBeginAsyncPostTickWork_tImpl : SchemaClass, Ev
 
     private static nint? _IsOncePerFrameAsyncWorkPhaseOffset;
 
-    public ref bool IsOncePerFrameAsyncWorkPhase {
-        get {
+    public ref bool IsOncePerFrameAsyncWorkPhase
+    {
+        get
+        {
             _IsOncePerFrameAsyncWorkPhaseOffset = _IsOncePerFrameAsyncWorkPhaseOffset ?? Schema.GetOffset(0x2113CA2A1908E5C4);
             return ref _Handle.AsRef<bool>(_IsOncePerFrameAsyncWorkPhaseOffset!.Value);
         }
     }
-
 
 }

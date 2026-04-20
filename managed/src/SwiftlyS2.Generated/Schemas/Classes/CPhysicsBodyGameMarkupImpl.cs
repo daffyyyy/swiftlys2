@@ -18,24 +18,28 @@ internal partial class CPhysicsBodyGameMarkupImpl : SchemaClass, CPhysicsBodyGam
 
     private static nint? _TargetBodyOffset;
 
-    public string TargetBody {
-        get {
+    public string TargetBody
+    {
+        get
+        {
             _TargetBodyOffset = _TargetBodyOffset ?? Schema.GetOffset(0xA5257571F2C6B554);
             return Schema.GetCUtlString(_Handle.Read<nint>(_TargetBodyOffset!.Value));
         }
-        set {
+        set
+        {
             _TargetBodyOffset = _TargetBodyOffset ?? Schema.GetOffset(0xA5257571F2C6B554);
             Schema.SetCUtlString(_Handle, _TargetBodyOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _TagOffset;
 
-    public ref CGlobalSymbol Tag {
-        get {
+    public ref CGlobalSymbol Tag
+    {
+        get
+        {
             _TagOffset = _TagOffset ?? Schema.GetOffset(0xA5257571218D8313);
             return ref _Handle.AsRef<CGlobalSymbol>(_TagOffset!.Value);
         }
     }
-
 
 }

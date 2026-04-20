@@ -18,36 +18,43 @@ internal partial class CPhysicsEntitySolverImpl : CLogicalEntityImpl, CPhysicsEn
 
     private static nint? _MovingEntityOffset;
 
-    public ref CHandle<CBaseEntity> MovingEntity {
-        get {
+    public ref CHandle<CBaseEntity> MovingEntity
+    {
+        get
+        {
             _MovingEntityOffset = _MovingEntityOffset ?? Schema.GetOffset(0x2948C36FC1DA080E);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_MovingEntityOffset!.Value);
         }
     }
     private static nint? _PhysicsBlockerOffset;
 
-    public ref CHandle<CBaseEntity> PhysicsBlocker {
-        get {
+    public ref CHandle<CBaseEntity> PhysicsBlocker
+    {
+        get
+        {
             _PhysicsBlockerOffset = _PhysicsBlockerOffset ?? Schema.GetOffset(0x2948C36F3DD8AB5E);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_PhysicsBlockerOffset!.Value);
         }
     }
     private static nint? _SeparationDurationOffset;
 
-    public ref float SeparationDuration {
-        get {
+    public ref float SeparationDuration
+    {
+        get
+        {
             _SeparationDurationOffset = _SeparationDurationOffset ?? Schema.GetOffset(0x2948C36F202FE0BD);
             return ref _Handle.AsRef<float>(_SeparationDurationOffset!.Value);
         }
     }
     private static nint? _CancelTimeOffset;
 
-    public GameTime_t CancelTime {
-        get {
+    public GameTime_t CancelTime
+    {
+        get
+        {
             _CancelTimeOffset = _CancelTimeOffset ?? Schema.GetOffset(0x2948C36F12944512);
             return new GameTime_tImpl(_Handle + _CancelTimeOffset!.Value);
         }
     }
-
 
 }

@@ -16,74 +16,92 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity
 {
     public CEntityIdentityImpl(nint handle) : base(handle) { }
 
-    private static nint? _NameStringableIndexOffset;
+    private static nint? _NameStringTableIndexOffset;
 
-    public ref int NameStringableIndex {
-        get {
-            _NameStringableIndexOffset = _NameStringableIndexOffset ?? Schema.GetOffset(0xAE42345F9A4938C9);
-            return ref _Handle.AsRef<int>(_NameStringableIndexOffset!.Value);
+    public ref int NameStringTableIndex
+    {
+        get
+        {
+            _NameStringTableIndexOffset = _NameStringTableIndexOffset ?? Schema.GetOffset(0xAE42345F85F9915F);
+            return ref _Handle.AsRef<int>(_NameStringTableIndexOffset!.Value);
         }
     }
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xAE42345F4D8F5786);
             return Schema.GetString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xAE42345F4D8F5786);
             Schema.SetString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DesignerNameOffset;
 
-    public string DesignerName {
-        get {
+    public string DesignerName
+    {
+        get
+        {
             _DesignerNameOffset = _DesignerNameOffset ?? Schema.GetOffset(0xAE42345FBFC1F33F);
             return Schema.GetString(_Handle.Read<nint>(_DesignerNameOffset!.Value));
         }
-        set {
+        set
+        {
             _DesignerNameOffset = _DesignerNameOffset ?? Schema.GetOffset(0xAE42345FBFC1F33F);
             Schema.SetString(_Handle, _DesignerNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0xAE42345FDC74A14C);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _WorldGroupIdOffset;
 
-    public ref uint WorldGroupId {
-        get {
+    public ref uint WorldGroupId
+    {
+        get
+        {
             _WorldGroupIdOffset = _WorldGroupIdOffset ?? Schema.GetOffset(0xAE42345F0BECFAC7);
             return ref _Handle.AsRef<uint>(_WorldGroupIdOffset!.Value);
         }
     }
     private static nint? _DataObjectTypesOffset;
 
-    public ref uint DataObjectTypes {
-        get {
+    public ref uint DataObjectTypes
+    {
+        get
+        {
             _DataObjectTypesOffset = _DataObjectTypesOffset ?? Schema.GetOffset(0xAE42345F6C7E475F);
             return ref _Handle.AsRef<uint>(_DataObjectTypesOffset!.Value);
         }
     }
     private static nint? _PathIndexOffset;
 
-    public ref ChangeAccessorFieldPathIndex_t PathIndex {
-        get {
+    public ref ChangeAccessorFieldPathIndex_t PathIndex
+    {
+        get
+        {
             _PathIndexOffset = _PathIndexOffset ?? Schema.GetOffset(0xAE42345F2DA3F47A);
             return ref _Handle.AsRef<ChangeAccessorFieldPathIndex_t>(_PathIndexOffset!.Value);
         }
     }
     private static nint? _AttributesOffset;
 
-    public CEntityAttributeTable? Attributes {
-        get {
+    public CEntityAttributeTable? Attributes
+    {
+        get
+        {
             _AttributesOffset = _AttributesOffset ?? Schema.GetOffset(0xAE42345F1DCF7962);
             var ptr = _Handle.Read<nint>(_AttributesOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityAttributeTableImpl(ptr) : null;
@@ -91,8 +109,10 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity
     }
     private static nint? _PrevOffset;
 
-    public CEntityIdentity? Prev {
-        get {
+    public CEntityIdentity? Prev
+    {
+        get
+        {
             _PrevOffset = _PrevOffset ?? Schema.GetOffset(0xAE42345FD49AD9AA);
             var ptr = _Handle.Read<nint>(_PrevOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityIdentityImpl(ptr) : null;
@@ -100,8 +120,10 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity
     }
     private static nint? _NextOffset;
 
-    public CEntityIdentity? Next {
-        get {
+    public CEntityIdentity? Next
+    {
+        get
+        {
             _NextOffset = _NextOffset ?? Schema.GetOffset(0xAE42345F32B11E0E);
             var ptr = _Handle.Read<nint>(_NextOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityIdentityImpl(ptr) : null;
@@ -109,8 +131,10 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity
     }
     private static nint? _PrevByClassOffset;
 
-    public CEntityIdentity? PrevByClass {
-        get {
+    public CEntityIdentity? PrevByClass
+    {
+        get
+        {
             _PrevByClassOffset = _PrevByClassOffset ?? Schema.GetOffset(0xAE42345F1F46E9A5);
             var ptr = _Handle.Read<nint>(_PrevByClassOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityIdentityImpl(ptr) : null;
@@ -118,13 +142,15 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity
     }
     private static nint? _NextByClassOffset;
 
-    public CEntityIdentity? NextByClass {
-        get {
+    public CEntityIdentity? NextByClass
+    {
+        get
+        {
             _NextByClassOffset = _NextByClassOffset ?? Schema.GetOffset(0xAE42345F908D6209);
             var ptr = _Handle.Read<nint>(_NextByClassOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityIdentityImpl(ptr) : null;
         }
     }
 
-    public void NameStringableIndexUpdated() => Schema.Update(_Handle, 0xAE42345F9A4938C9);
+    public void NameStringTableIndexUpdated() => Schema.Update(_Handle, 0xAE42345F85F9915F);
 }

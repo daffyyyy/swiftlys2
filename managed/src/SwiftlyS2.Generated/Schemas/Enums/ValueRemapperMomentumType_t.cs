@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ValueRemapperMomentumType_t : uint
 {
- MomentumType_None = 0,
-
- MomentumType_Friction = 1,
-
- MomentumType_SpringTowardSnapValue = 2,
-
- MomentumType_SpringAwayFromSnapValue = 3,
+    MomentumType_None = 0,
+    MomentumType_Friction = 1,
+    MomentumType_SpringTowardSnapValue = 2,
+    MomentumType_SpringAwayFromSnapValue = 3,
 }

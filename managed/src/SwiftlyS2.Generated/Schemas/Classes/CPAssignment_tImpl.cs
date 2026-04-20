@@ -18,28 +18,33 @@ internal partial class CPAssignment_tImpl : SchemaClass, CPAssignment_t
 
     private static nint? _CPNumberOffset;
 
-    public ref int CPNumber {
-        get {
+    public ref int CPNumber
+    {
+        get
+        {
             _CPNumberOffset = _CPNumberOffset ?? Schema.GetOffset(0xEB6A63F032CCA91F);
             return ref _Handle.AsRef<int>(_CPNumberOffset!.Value);
         }
     }
     private static nint? _PosOffset;
 
-    public CPerParticleVecInput Pos {
-        get {
+    public CPerParticleVecInput Pos
+    {
+        get
+        {
             _PosOffset = _PosOffset ?? Schema.GetOffset(0xEB6A63F0DFC9BE09);
             return new CPerParticleVecInputImpl(_Handle + _PosOffset!.Value);
         }
     }
     private static nint? _OrientationModeOffset;
 
-    public ref ParticleOrientationSetMode_t OrientationMode {
-        get {
+    public ref ParticleOrientationSetMode_t OrientationMode
+    {
+        get
+        {
             _OrientationModeOffset = _OrientationModeOffset ?? Schema.GetOffset(0xEB6A63F0272947BA);
             return ref _Handle.AsRef<ParticleOrientationSetMode_t>(_OrientationModeOffset!.Value);
         }
     }
-
 
 }

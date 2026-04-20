@@ -18,56 +18,68 @@ internal partial class RnShapeDesc_tImpl : SchemaClass, RnShapeDesc_t
 
     private static nint? _CollisionAttributeIndexOffset;
 
-    public ref uint CollisionAttributeIndex {
-        get {
+    public ref uint CollisionAttributeIndex
+    {
+        get
+        {
             _CollisionAttributeIndexOffset = _CollisionAttributeIndexOffset ?? Schema.GetOffset(0xA24D7D10C7B64DF7);
             return ref _Handle.AsRef<uint>(_CollisionAttributeIndexOffset!.Value);
         }
     }
     private static nint? _SurfacePropertyIndexOffset;
 
-    public ref uint SurfacePropertyIndex {
-        get {
+    public ref uint SurfacePropertyIndex
+    {
+        get
+        {
             _SurfacePropertyIndexOffset = _SurfacePropertyIndexOffset ?? Schema.GetOffset(0xA24D7D106DED6187);
             return ref _Handle.AsRef<uint>(_SurfacePropertyIndexOffset!.Value);
         }
     }
     private static nint? _UserFriendlyNameOffset;
 
-    public string UserFriendlyName {
-        get {
+    public string UserFriendlyName
+    {
+        get
+        {
             _UserFriendlyNameOffset = _UserFriendlyNameOffset ?? Schema.GetOffset(0xA24D7D1000D4523E);
             return Schema.GetCUtlString(_Handle.Read<nint>(_UserFriendlyNameOffset!.Value));
         }
-        set {
+        set
+        {
             _UserFriendlyNameOffset = _UserFriendlyNameOffset ?? Schema.GetOffset(0xA24D7D1000D4523E);
             Schema.SetCUtlString(_Handle, _UserFriendlyNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _UserFriendlyNameSealedOffset;
 
-    public ref bool UserFriendlyNameSealed {
-        get {
+    public ref bool UserFriendlyNameSealed
+    {
+        get
+        {
             _UserFriendlyNameSealedOffset = _UserFriendlyNameSealedOffset ?? Schema.GetOffset(0xA24D7D1076DBAE3A);
             return ref _Handle.AsRef<bool>(_UserFriendlyNameSealedOffset!.Value);
         }
     }
     private static nint? _UserFriendlyNameLongOffset;
 
-    public ref bool UserFriendlyNameLong {
-        get {
+    public ref bool UserFriendlyNameLong
+    {
+        get
+        {
             _UserFriendlyNameLongOffset = _UserFriendlyNameLongOffset ?? Schema.GetOffset(0xA24D7D10F02591B8);
             return ref _Handle.AsRef<bool>(_UserFriendlyNameLongOffset!.Value);
         }
     }
     private static nint? _ToolMaterialHashOffset;
 
-    public ref uint ToolMaterialHash {
-        get {
+    public ref uint ToolMaterialHash
+    {
+        get
+        {
             _ToolMaterialHashOffset = _ToolMaterialHashOffset ?? Schema.GetOffset(0xA24D7D105C3E2DDE);
             return ref _Handle.AsRef<uint>(_ToolMaterialHashOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CMolotovGrenadeImpl : CBaseCSGrenadeImpl, CMolotovGrenade
 {
     public CMolotovGrenadeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

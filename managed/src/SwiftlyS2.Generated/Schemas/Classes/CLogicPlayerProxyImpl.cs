@@ -18,44 +18,53 @@ internal partial class CLogicPlayerProxyImpl : CLogicalEntityImpl, CLogicPlayerP
 
     private static nint? _PlayerHasAmmoOffset;
 
-    public ref CEntityIOOutput PlayerHasAmmo {
-        get {
+    public ref CEntityIOOutput PlayerHasAmmo
+    {
+        get
+        {
             _PlayerHasAmmoOffset = _PlayerHasAmmoOffset ?? Schema.GetOffset(0x81D444EB6A23AB96);
             return ref _Handle.AsRef<CEntityIOOutput>(_PlayerHasAmmoOffset!.Value);
         }
     }
     private static nint? _PlayerHasNoAmmoOffset;
 
-    public ref CEntityIOOutput PlayerHasNoAmmo {
-        get {
+    public ref CEntityIOOutput PlayerHasNoAmmo
+    {
+        get
+        {
             _PlayerHasNoAmmoOffset = _PlayerHasNoAmmoOffset ?? Schema.GetOffset(0x81D444EB06CA340D);
             return ref _Handle.AsRef<CEntityIOOutput>(_PlayerHasNoAmmoOffset!.Value);
         }
     }
     private static nint? _PlayerDiedOffset;
 
-    public ref CEntityIOOutput PlayerDied {
-        get {
+    public ref CEntityIOOutput PlayerDied
+    {
+        get
+        {
             _PlayerDiedOffset = _PlayerDiedOffset ?? Schema.GetOffset(0x81D444EBB440E03E);
             return ref _Handle.AsRef<CEntityIOOutput>(_PlayerDiedOffset!.Value);
         }
     }
     private static nint? _RequestedPlayerHealthOffset;
 
-    public SchemaUntypedField RequestedPlayerHealth {
-        get {
+    public SchemaUntypedField RequestedPlayerHealth
+    {
+        get
+        {
             _RequestedPlayerHealthOffset = _RequestedPlayerHealthOffset ?? Schema.GetOffset(0x81D444EBF1F83D58);
             return new SchemaUntypedField(_Handle + _RequestedPlayerHealthOffset!.Value);
         }
     }
     private static nint? _PlayerOffset;
 
-    public ref CHandle<CBaseEntity> Player {
-        get {
+    public ref CHandle<CBaseEntity> Player
+    {
+        get
+        {
             _PlayerOffset = _PlayerOffset ?? Schema.GetOffset(0x81D444EB68856C16);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_PlayerOffset!.Value);
         }
     }
-
 
 }

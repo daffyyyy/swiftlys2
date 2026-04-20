@@ -18,23 +18,27 @@ internal partial class FeBandBendLimit_tImpl : SchemaClass, FeBandBendLimit_t
 
     private static nint? _DistMinOffset;
 
-    public ref float DistMin {
-        get {
+    public ref float DistMin
+    {
+        get
+        {
             _DistMinOffset = _DistMinOffset ?? Schema.GetOffset(0xB667406005D5EE89);
             return ref _Handle.AsRef<float>(_DistMinOffset!.Value);
         }
     }
     private static nint? _DistMaxOffset;
 
-    public ref float DistMax {
-        get {
+    public ref float DistMax
+    {
+        get
+        {
             _DistMaxOffset = _DistMaxOffset ?? Schema.GetOffset(0xB6674060F7C250C7);
             return ref _Handle.AsRef<float>(_DistMaxOffset!.Value);
         }
     }
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0xB6674060CD6694B9, 6, 2, 2);
     }
-
 
 }

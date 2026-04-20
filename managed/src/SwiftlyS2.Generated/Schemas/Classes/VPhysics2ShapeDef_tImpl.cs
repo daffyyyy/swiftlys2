@@ -18,44 +18,53 @@ internal partial class VPhysics2ShapeDef_tImpl : SchemaClass, VPhysics2ShapeDef_
 
     private static nint? _SpheresOffset;
 
-    public ref CUtlVector<RnSphereDesc_t> Spheres {
-        get {
+    public ref CUtlVector<RnSphereDesc_t> Spheres
+    {
+        get
+        {
             _SpheresOffset = _SpheresOffset ?? Schema.GetOffset(0xB5A68CEBBFDA8091);
             return ref _Handle.AsRef<CUtlVector<RnSphereDesc_t>>(_SpheresOffset!.Value);
         }
     }
     private static nint? _CapsulesOffset;
 
-    public ref CUtlVector<RnCapsuleDesc_t> Capsules {
-        get {
+    public ref CUtlVector<RnCapsuleDesc_t> Capsules
+    {
+        get
+        {
             _CapsulesOffset = _CapsulesOffset ?? Schema.GetOffset(0xB5A68CEBF8737C4D);
             return ref _Handle.AsRef<CUtlVector<RnCapsuleDesc_t>>(_CapsulesOffset!.Value);
         }
     }
     private static nint? _HullsOffset;
 
-    public ref CUtlVector<RnHullDesc_t> Hulls {
-        get {
+    public ref CUtlVector<RnHullDesc_t> Hulls
+    {
+        get
+        {
             _HullsOffset = _HullsOffset ?? Schema.GetOffset(0xB5A68CEB31F7453F);
             return ref _Handle.AsRef<CUtlVector<RnHullDesc_t>>(_HullsOffset!.Value);
         }
     }
     private static nint? _MeshesOffset;
 
-    public ref CUtlVector<RnMeshDesc_t> Meshes {
-        get {
+    public ref CUtlVector<RnMeshDesc_t> Meshes
+    {
+        get
+        {
             _MeshesOffset = _MeshesOffset ?? Schema.GetOffset(0xB5A68CEBC0F01FD8);
             return ref _Handle.AsRef<CUtlVector<RnMeshDesc_t>>(_MeshesOffset!.Value);
         }
     }
     private static nint? _CollisionAttributeIndicesOffset;
 
-    public ref CUtlVector<ushort> CollisionAttributeIndices {
-        get {
+    public ref CUtlVector<ushort> CollisionAttributeIndices
+    {
+        get
+        {
             _CollisionAttributeIndicesOffset = _CollisionAttributeIndicesOffset ?? Schema.GetOffset(0xB5A68CEB86453EB2);
             return ref _Handle.AsRef<CUtlVector<ushort>>(_CollisionAttributeIndicesOffset!.Value);
         }
     }
-
 
 }

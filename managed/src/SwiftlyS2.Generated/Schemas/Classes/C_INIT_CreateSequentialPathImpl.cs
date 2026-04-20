@@ -18,52 +18,63 @@ internal partial class C_INIT_CreateSequentialPathImpl : CParticleFunctionInitia
 
     private static nint? _MaxDistanceOffset;
 
-    public ref float MaxDistance {
-        get {
+    public ref float MaxDistance
+    {
+        get
+        {
             _MaxDistanceOffset = _MaxDistanceOffset ?? Schema.GetOffset(0xBCADEDE2844E396A);
             return ref _Handle.AsRef<float>(_MaxDistanceOffset!.Value);
         }
     }
     private static nint? _NumToAssignOffset;
 
-    public ref float NumToAssign {
-        get {
+    public ref float NumToAssign
+    {
+        get
+        {
             _NumToAssignOffset = _NumToAssignOffset ?? Schema.GetOffset(0xBCADEDE2F73366BD);
             return ref _Handle.AsRef<float>(_NumToAssignOffset!.Value);
         }
     }
     private static nint? _LoopOffset;
 
-    public ref bool Loop {
-        get {
+    public ref bool Loop
+    {
+        get
+        {
             _LoopOffset = _LoopOffset ?? Schema.GetOffset(0xBCADEDE2C668A4CB);
             return ref _Handle.AsRef<bool>(_LoopOffset!.Value);
         }
     }
     private static nint? _CPPairsOffset;
 
-    public ref bool CPPairs {
-        get {
+    public ref bool CPPairs
+    {
+        get
+        {
             _CPPairsOffset = _CPPairsOffset ?? Schema.GetOffset(0xBCADEDE2A5D36D0F);
             return ref _Handle.AsRef<bool>(_CPPairsOffset!.Value);
         }
     }
     private static nint? _SaveOffsetOffset;
 
-    public ref bool SaveOffset {
-        get {
+    public ref bool SaveOffset
+    {
+        get
+        {
             _SaveOffsetOffset = _SaveOffsetOffset ?? Schema.GetOffset(0xBCADEDE243F64E5B);
             return ref _Handle.AsRef<bool>(_SaveOffsetOffset!.Value);
         }
     }
     private static nint? _PathParamsOffset;
 
-    public CPathParameters PathParams {
-        get {
+    public CPathParameters PathParams
+    {
+        get
+        {
             _PathParamsOffset = _PathParamsOffset ?? Schema.GetOffset(0xBCADEDE23C10092C);
             return new CPathParametersImpl(_Handle + _PathParamsOffset!.Value);
         }
     }
-
 
 }

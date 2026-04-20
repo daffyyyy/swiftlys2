@@ -16,7 +16,4 @@ internal partial class CWeaponHKP2000Impl : CCSWeaponBaseGunImpl, CWeaponHKP2000
 {
     public CWeaponHKP2000Impl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CPrecipitationImpl : CBaseTriggerImpl, CPrecipitation
 {
     public CPrecipitationImpl(nint handle) : base(handle) { }
 
-
-
-
 }

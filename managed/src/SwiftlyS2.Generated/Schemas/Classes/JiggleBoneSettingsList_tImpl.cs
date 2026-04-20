@@ -18,12 +18,13 @@ internal partial class JiggleBoneSettingsList_tImpl : SchemaClass, JiggleBoneSet
 
     private static nint? _BoneSettingsOffset;
 
-    public ref CUtlVector<JiggleBoneSettings_t> BoneSettings {
-        get {
+    public ref CUtlVector<JiggleBoneSettings_t> BoneSettings
+    {
+        get
+        {
             _BoneSettingsOffset = _BoneSettingsOffset ?? Schema.GetOffset(0xD234E39D689AEBE2);
             return ref _Handle.AsRef<CUtlVector<JiggleBoneSettings_t>>(_BoneSettingsOffset!.Value);
         }
     }
-
 
 }

@@ -18,32 +18,40 @@ internal partial class CEnvFadeImpl : CLogicalEntityImpl, CEnvFade
 
     private static nint? _FadeColorOffset;
 
-    public ref Color FadeColor {
-        get {
+    public ref Color FadeColor
+    {
+        get
+        {
             _FadeColorOffset = _FadeColorOffset ?? Schema.GetOffset(0xEFBFC063C1517BF2);
             return ref _Handle.AsRef<Color>(_FadeColorOffset!.Value);
         }
     }
     private static nint? _DurationOffset;
 
-    public ref float Duration {
-        get {
+    public ref float Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0xEFBFC0639879A98D);
             return ref _Handle.AsRef<float>(_DurationOffset!.Value);
         }
     }
     private static nint? _HoldDurationOffset;
 
-    public ref float HoldDuration {
-        get {
+    public ref float HoldDuration
+    {
+        get
+        {
             _HoldDurationOffset = _HoldDurationOffset ?? Schema.GetOffset(0xEFBFC0631D577A68);
             return ref _Handle.AsRef<float>(_HoldDurationOffset!.Value);
         }
     }
     private static nint? _OnBeginFadeOffset;
 
-    public ref CEntityIOOutput OnBeginFade {
-        get {
+    public ref CEntityIOOutput OnBeginFade
+    {
+        get
+        {
             _OnBeginFadeOffset = _OnBeginFadeOffset ?? Schema.GetOffset(0xEFBFC0633308BA63);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnBeginFadeOffset!.Value);
         }

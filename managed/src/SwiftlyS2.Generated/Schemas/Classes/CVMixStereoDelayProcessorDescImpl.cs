@@ -16,7 +16,4 @@ internal partial class CVMixStereoDelayProcessorDescImpl : CVMixBaseProcessorDes
 {
     public CVMixStereoDelayProcessorDescImpl(nint handle) : base(handle) { }
 
-
-
-
 }

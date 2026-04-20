@@ -14,7 +14,4 @@ public partial interface CSoundOpvarSetOBBEntity : CSoundOpvarSetAABBEntity, ISc
     static int ISchemaClass<CSoundOpvarSetOBBEntity>.Size => 1704;
     static string? ISchemaClass<CSoundOpvarSetOBBEntity>.ClassName => "snd_opvar_set_obb";
 
-
-
-
 }

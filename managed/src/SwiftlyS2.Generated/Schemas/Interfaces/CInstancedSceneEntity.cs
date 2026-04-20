@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInstancedSceneEntity : CSceneEntity, ISchemaClass<CInstancedSceneEntity>
 {
     static CInstancedSceneEntity ISchemaClass<CInstancedSceneEntity>.From(nint handle) => new CInstancedSceneEntityImpl(handle);
-    static int ISchemaClass<CInstancedSceneEntity>.Size => 1864;
+    static int ISchemaClass<CInstancedSceneEntity>.Size => 2008;
     static string? ISchemaClass<CInstancedSceneEntity>.ClassName => "instanced_scripted_scene";
 
 

@@ -18,24 +18,28 @@ internal partial class CAnimMotorUpdaterBaseImpl : SchemaClass, CAnimMotorUpdate
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x3FB6E1144D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x3FB6E1144D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DefaultOffset;
 
-    public ref bool Default {
-        get {
+    public ref bool Default
+    {
+        get
+        {
             _DefaultOffset = _DefaultOffset ?? Schema.GetOffset(0x3FB6E11485F067BE);
             return ref _Handle.AsRef<bool>(_DefaultOffset!.Value);
         }
     }
-
 
 }

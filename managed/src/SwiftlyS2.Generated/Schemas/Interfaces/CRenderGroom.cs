@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderGroom : ISchemaClass<CRenderGroom>
 {
     static CRenderGroom ISchemaClass<CRenderGroom>.From(nint handle) => new CRenderGroomImpl(handle);
-    static int ISchemaClass<CRenderGroom>.Size => 160;
+    static int ISchemaClass<CRenderGroom>.Size => 176;
     static string? ISchemaClass<CRenderGroom>.ClassName => null;
 
 

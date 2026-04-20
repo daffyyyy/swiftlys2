@@ -14,7 +14,4 @@ public partial interface CTaskHandshakeAnimTag : CHandshakeAnimTagBase, ISchemaC
     static int ISchemaClass<CTaskHandshakeAnimTag>.Size => 88;
     static string? ISchemaClass<CTaskHandshakeAnimTag>.ClassName => null;
 
-
-
-
 }

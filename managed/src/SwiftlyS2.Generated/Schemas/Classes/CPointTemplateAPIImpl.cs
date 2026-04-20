@@ -16,7 +16,4 @@ internal partial class CPointTemplateAPIImpl : SchemaClass, CPointTemplateAPI
 {
     public CPointTemplateAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

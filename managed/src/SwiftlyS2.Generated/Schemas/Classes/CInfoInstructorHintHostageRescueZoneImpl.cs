@@ -16,7 +16,4 @@ internal partial class CInfoInstructorHintHostageRescueZoneImpl : CPointEntityIm
 {
     public CInfoInstructorHintHostageRescueZoneImpl(nint handle) : base(handle) { }
 
-
-
-
 }

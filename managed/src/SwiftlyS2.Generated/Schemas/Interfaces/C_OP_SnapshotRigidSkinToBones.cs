@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SnapshotRigidSkinToBones : CParticleFunctionOperator, ISchemaClass<C_OP_SnapshotRigidSkinToBones>
 {
     static C_OP_SnapshotRigidSkinToBones ISchemaClass<C_OP_SnapshotRigidSkinToBones>.From(nint handle) => new C_OP_SnapshotRigidSkinToBonesImpl(handle);
-    static int ISchemaClass<C_OP_SnapshotRigidSkinToBones>.Size => 472;
+    static int ISchemaClass<C_OP_SnapshotRigidSkinToBones>.Size => 480;
     static string? ISchemaClass<C_OP_SnapshotRigidSkinToBones>.ClassName => null;
 
 

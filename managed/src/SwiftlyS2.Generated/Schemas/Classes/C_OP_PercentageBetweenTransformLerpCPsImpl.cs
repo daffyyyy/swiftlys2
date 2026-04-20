@@ -18,100 +18,123 @@ internal partial class C_OP_PercentageBetweenTransformLerpCPsImpl : CParticleFun
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x96404634E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _InputMinOffset;
 
-    public ref float InputMin {
-        get {
+    public ref float InputMin
+    {
+        get
+        {
             _InputMinOffset = _InputMinOffset ?? Schema.GetOffset(0x96404634E88A0D0F);
             return ref _Handle.AsRef<float>(_InputMinOffset!.Value);
         }
     }
     private static nint? _InputMaxOffset;
 
-    public ref float InputMax {
-        get {
+    public ref float InputMax
+    {
+        get
+        {
             _InputMaxOffset = _InputMaxOffset ?? Schema.GetOffset(0x96404634D6766901);
             return ref _Handle.AsRef<float>(_InputMaxOffset!.Value);
         }
     }
     private static nint? _TransformStartOffset;
 
-    public CParticleTransformInput TransformStart {
-        get {
+    public CParticleTransformInput TransformStart
+    {
+        get
+        {
             _TransformStartOffset = _TransformStartOffset ?? Schema.GetOffset(0x96404634D94FA7F9);
             return new CParticleTransformInputImpl(_Handle + _TransformStartOffset!.Value);
         }
     }
     private static nint? _TransformEndOffset;
 
-    public CParticleTransformInput TransformEnd {
-        get {
+    public CParticleTransformInput TransformEnd
+    {
+        get
+        {
             _TransformEndOffset = _TransformEndOffset ?? Schema.GetOffset(0x964046340C3277C8);
             return new CParticleTransformInputImpl(_Handle + _TransformEndOffset!.Value);
         }
     }
     private static nint? _OutputStartCPOffset;
 
-    public ref int OutputStartCP {
-        get {
+    public ref int OutputStartCP
+    {
+        get
+        {
             _OutputStartCPOffset = _OutputStartCPOffset ?? Schema.GetOffset(0x96404634E2225D8F);
             return ref _Handle.AsRef<int>(_OutputStartCPOffset!.Value);
         }
     }
     private static nint? _OutputStartFieldOffset;
 
-    public ref int OutputStartField {
-        get {
+    public ref int OutputStartField
+    {
+        get
+        {
             _OutputStartFieldOffset = _OutputStartFieldOffset ?? Schema.GetOffset(0x96404634BEFE1578);
             return ref _Handle.AsRef<int>(_OutputStartFieldOffset!.Value);
         }
     }
     private static nint? _OutputEndCPOffset;
 
-    public ref int OutputEndCP {
-        get {
+    public ref int OutputEndCP
+    {
+        get
+        {
             _OutputEndCPOffset = _OutputEndCPOffset ?? Schema.GetOffset(0x96404634A30AF91E);
             return ref _Handle.AsRef<int>(_OutputEndCPOffset!.Value);
         }
     }
     private static nint? _OutputEndFieldOffset;
 
-    public ref int OutputEndField {
-        get {
+    public ref int OutputEndField
+    {
+        get
+        {
             _OutputEndFieldOffset = _OutputEndFieldOffset ?? Schema.GetOffset(0x964046344B3EC3AF);
             return ref _Handle.AsRef<int>(_OutputEndFieldOffset!.Value);
         }
     }
     private static nint? _SetMethodOffset;
 
-    public ref ParticleSetMethod_t SetMethod {
-        get {
+    public ref ParticleSetMethod_t SetMethod
+    {
+        get
+        {
             _SetMethodOffset = _SetMethodOffset ?? Schema.GetOffset(0x96404634FB53C31E);
             return ref _Handle.AsRef<ParticleSetMethod_t>(_SetMethodOffset!.Value);
         }
     }
     private static nint? _ActiveRangeOffset;
 
-    public ref bool ActiveRange {
-        get {
+    public ref bool ActiveRange
+    {
+        get
+        {
             _ActiveRangeOffset = _ActiveRangeOffset ?? Schema.GetOffset(0x964046343FA53B84);
             return ref _Handle.AsRef<bool>(_ActiveRangeOffset!.Value);
         }
     }
     private static nint? _RadialCheckOffset;
 
-    public ref bool RadialCheck {
-        get {
+    public ref bool RadialCheck
+    {
+        get
+        {
             _RadialCheckOffset = _RadialCheckOffset ?? Schema.GetOffset(0x96404634496187DE);
             return ref _Handle.AsRef<bool>(_RadialCheckOffset!.Value);
         }
     }
-
 
 }

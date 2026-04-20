@@ -14,7 +14,4 @@ public partial interface CPointTemplateAPI : ISchemaClass<CPointTemplateAPI>
     static int ISchemaClass<CPointTemplateAPI>.Size => 8;
     static string? ISchemaClass<CPointTemplateAPI>.ClassName => null;
 
-
-
-
 }

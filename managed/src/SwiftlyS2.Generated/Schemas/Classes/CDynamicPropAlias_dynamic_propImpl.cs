@@ -16,7 +16,4 @@ internal partial class CDynamicPropAlias_dynamic_propImpl : CDynamicPropImpl, CD
 {
     public CDynamicPropAlias_dynamic_propImpl(nint handle) : base(handle) { }
 
-
-
-
 }

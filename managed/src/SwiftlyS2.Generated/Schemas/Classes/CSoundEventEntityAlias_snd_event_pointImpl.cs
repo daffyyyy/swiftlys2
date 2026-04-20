@@ -16,7 +16,4 @@ internal partial class CSoundEventEntityAlias_snd_event_pointImpl : CSoundEventE
 {
     public CSoundEventEntityAlias_snd_event_pointImpl(nint handle) : base(handle) { }
 
-
-
-
 }

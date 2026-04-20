@@ -18,28 +18,33 @@ internal partial class C_OP_MovementMaintainOffsetImpl : CParticleFunctionOperat
 
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0xD9B3E796BD25CC2A);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0xD9B3E796EB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _RadiusScaleOffset;
 
-    public ref bool RadiusScale {
-        get {
+    public ref bool RadiusScale
+    {
+        get
+        {
             _RadiusScaleOffset = _RadiusScaleOffset ?? Schema.GetOffset(0xD9B3E796BBCB728B);
             return ref _Handle.AsRef<bool>(_RadiusScaleOffset!.Value);
         }
     }
-
 
 }

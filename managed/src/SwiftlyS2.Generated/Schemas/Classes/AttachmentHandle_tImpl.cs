@@ -18,12 +18,13 @@ internal partial class AttachmentHandle_tImpl : SchemaClass, AttachmentHandle_t
 
     private static nint? _ValueOffset;
 
-    public ref byte Value {
-        get {
+    public ref byte Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x7F31E925DCB0894A);
             return ref _Handle.AsRef<byte>(_ValueOffset!.Value);
         }
     }
-
 
 }

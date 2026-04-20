@@ -16,7 +16,4 @@ internal partial class CInfoTargetImpl : CPointEntityImpl, CInfoTarget
 {
     public CInfoTargetImpl(nint handle) : base(handle) { }
 
-
-
-
 }

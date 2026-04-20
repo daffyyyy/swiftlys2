@@ -14,7 +14,4 @@ public partial interface CPlayer_FlashlightServices : CPlayerPawnComponent, ISch
     static int ISchemaClass<CPlayer_FlashlightServices>.Size => 72;
     static string? ISchemaClass<CPlayer_FlashlightServices>.ClassName => null;
 
-
-
-
 }

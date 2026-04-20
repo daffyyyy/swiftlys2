@@ -18,44 +18,53 @@ internal partial class ExternalAnimGraph_tImpl : SchemaClass, ExternalAnimGraph_
 
     private static nint? _ExtGraphHandleOffset;
 
-    public ExternalAnimGraphHandle_t ExtGraphHandle {
-        get {
+    public ExternalAnimGraphHandle_t ExtGraphHandle
+    {
+        get
+        {
             _ExtGraphHandleOffset = _ExtGraphHandleOffset ?? Schema.GetOffset(0x68E349EA6A6265AC);
             return new ExternalAnimGraphHandle_tImpl(_Handle + _ExtGraphHandleOffset!.Value);
         }
     }
     private static nint? _ExternalGraphSlotIDOffset;
 
-    public ref CGlobalSymbol ExternalGraphSlotID {
-        get {
+    public ref CGlobalSymbol ExternalGraphSlotID
+    {
+        get
+        {
             _ExternalGraphSlotIDOffset = _ExternalGraphSlotIDOffset ?? Schema.GetOffset(0x68E349EA68D868FA);
             return ref _Handle.AsRef<CGlobalSymbol>(_ExternalGraphSlotIDOffset!.Value);
         }
     }
     private static nint? _GraphDefinitionOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCNmGraphDefinition> GraphDefinition {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCNmGraphDefinition> GraphDefinition
+    {
+        get
+        {
             _GraphDefinitionOffset = _GraphDefinitionOffset ?? Schema.GetOffset(0x68E349EAACF5CB60);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCNmGraphDefinition>>(_GraphDefinitionOffset!.Value);
         }
     }
     private static nint? _ExternalGraphOwnerOffset;
 
-    public ref CHandle<CBaseAnimGraph> ExternalGraphOwner {
-        get {
+    public ref CHandle<CBaseAnimGraph> ExternalGraphOwner
+    {
+        get
+        {
             _ExternalGraphOwnerOffset = _ExternalGraphOwnerOffset ?? Schema.GetOffset(0x68E349EAD982E447);
             return ref _Handle.AsRef<CHandle<CBaseAnimGraph>>(_ExternalGraphOwnerOffset!.Value);
         }
     }
     private static nint? _InactiveBehaviorOffset;
 
-    public ref ExternalAnimGraphInactiveBehavior_t InactiveBehavior {
-        get {
+    public ref ExternalAnimGraphInactiveBehavior_t InactiveBehavior
+    {
+        get
+        {
             _InactiveBehaviorOffset = _InactiveBehaviorOffset ?? Schema.GetOffset(0x68E349EA1DB8EE96);
             return ref _Handle.AsRef<ExternalAnimGraphInactiveBehavior_t>(_InactiveBehaviorOffset!.Value);
         }
     }
-
 
 }

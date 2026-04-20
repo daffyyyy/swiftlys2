@@ -18,52 +18,63 @@ internal partial class CSeqSynthAnimDescImpl : SchemaClass, CSeqSynthAnimDesc
 
     private static nint? _NameOffset;
 
-    public ref CBufferString Name {
-        get {
+    public ref CBufferString Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x7D8317C163D22D49);
             return ref _Handle.AsRef<CBufferString>(_NameOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public CSeqSeqDescFlag Flags {
-        get {
+    public CSeqSeqDescFlag Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x7D8317C1DC74A14C);
             return new CSeqSeqDescFlagImpl(_Handle + _FlagsOffset!.Value);
         }
     }
     private static nint? _TransitionOffset;
 
-    public CSeqTransition Transition {
-        get {
+    public CSeqTransition Transition
+    {
+        get
+        {
             _TransitionOffset = _TransitionOffset ?? Schema.GetOffset(0x7D8317C182B0A282);
             return new CSeqTransitionImpl(_Handle + _TransitionOffset!.Value);
         }
     }
     private static nint? _LocalBaseReferenceOffset;
 
-    public ref short LocalBaseReference {
-        get {
+    public ref short LocalBaseReference
+    {
+        get
+        {
             _LocalBaseReferenceOffset = _LocalBaseReferenceOffset ?? Schema.GetOffset(0x7D8317C1FE93178E);
             return ref _Handle.AsRef<short>(_LocalBaseReferenceOffset!.Value);
         }
     }
     private static nint? _LocalBoneMaskOffset;
 
-    public ref short LocalBoneMask {
-        get {
+    public ref short LocalBoneMask
+    {
+        get
+        {
             _LocalBoneMaskOffset = _LocalBoneMaskOffset ?? Schema.GetOffset(0x7D8317C191EDF3D2);
             return ref _Handle.AsRef<short>(_LocalBoneMaskOffset!.Value);
         }
     }
     private static nint? _ActivityArrayOffset;
 
-    public ref CUtlVector<CAnimActivity> ActivityArray {
-        get {
+    public ref CUtlVector<CAnimActivity> ActivityArray
+    {
+        get
+        {
             _ActivityArrayOffset = _ActivityArrayOffset ?? Schema.GetOffset(0x7D8317C138F0ACE1);
             return ref _Handle.AsRef<CUtlVector<CAnimActivity>>(_ActivityArrayOffset!.Value);
         }
     }
-
 
 }

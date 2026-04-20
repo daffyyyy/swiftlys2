@@ -18,64 +18,78 @@ internal partial class NodeData_tImpl : SchemaClass, NodeData_t
 
     private static nint? _ParentOffset;
 
-    public ref int Parent {
-        get {
+    public ref int Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0xB09FAAA60AABB9D1);
             return ref _Handle.AsRef<int>(_ParentOffset!.Value);
         }
     }
     private static nint? _OriginOffset;
 
-    public ref Vector Origin {
-        get {
+    public ref Vector Origin
+    {
+        get
+        {
             _OriginOffset = _OriginOffset ?? Schema.GetOffset(0xB09FAAA6F26E589B);
             return ref _Handle.AsRef<Vector>(_OriginOffset!.Value);
         }
     }
     private static nint? _MinBoundsOffset;
 
-    public ref Vector MinBounds {
-        get {
+    public ref Vector MinBounds
+    {
+        get
+        {
             _MinBoundsOffset = _MinBoundsOffset ?? Schema.GetOffset(0xB09FAAA6114799FE);
             return ref _Handle.AsRef<Vector>(_MinBoundsOffset!.Value);
         }
     }
     private static nint? _MaxBoundsOffset;
 
-    public ref Vector MaxBounds {
-        get {
+    public ref Vector MaxBounds
+    {
+        get
+        {
             _MaxBoundsOffset = _MaxBoundsOffset ?? Schema.GetOffset(0xB09FAAA6C0B4CE60);
             return ref _Handle.AsRef<Vector>(_MaxBoundsOffset!.Value);
         }
     }
     private static nint? _MinimumDistanceOffset;
 
-    public ref float MinimumDistance {
-        get {
+    public ref float MinimumDistance
+    {
+        get
+        {
             _MinimumDistanceOffset = _MinimumDistanceOffset ?? Schema.GetOffset(0xB09FAAA6D8B1200E);
             return ref _Handle.AsRef<float>(_MinimumDistanceOffset!.Value);
         }
     }
     private static nint? _ChildNodeIndicesOffset;
 
-    public ref CUtlVector<int> ChildNodeIndices {
-        get {
+    public ref CUtlVector<int> ChildNodeIndices
+    {
+        get
+        {
             _ChildNodeIndicesOffset = _ChildNodeIndicesOffset ?? Schema.GetOffset(0xB09FAAA63648C692);
             return ref _Handle.AsRef<CUtlVector<int>>(_ChildNodeIndicesOffset!.Value);
         }
     }
     private static nint? _WorldNodePrefixOffset;
 
-    public string WorldNodePrefix {
-        get {
+    public string WorldNodePrefix
+    {
+        get
+        {
             _WorldNodePrefixOffset = _WorldNodePrefixOffset ?? Schema.GetOffset(0xB09FAAA662126457);
             return Schema.GetCUtlString(_Handle.Read<nint>(_WorldNodePrefixOffset!.Value));
         }
-        set {
+        set
+        {
             _WorldNodePrefixOffset = _WorldNodePrefixOffset ?? Schema.GetOffset(0xB09FAAA662126457);
             Schema.SetCUtlString(_Handle, _WorldNodePrefixOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

@@ -14,7 +14,4 @@ public partial interface EventSplitScreenStateChanged_t : ISchemaClass<EventSpli
     static int ISchemaClass<EventSplitScreenStateChanged_t>.Size => 1;
     static string? ISchemaClass<EventSplitScreenStateChanged_t>.ClassName => null;
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CNavVolumeImpl : SchemaClass, CNavVolume
 {
     public CNavVolumeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

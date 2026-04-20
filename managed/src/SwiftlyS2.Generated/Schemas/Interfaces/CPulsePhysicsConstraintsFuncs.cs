@@ -14,7 +14,4 @@ public partial interface CPulsePhysicsConstraintsFuncs : ISchemaClass<CPulsePhys
     static int ISchemaClass<CPulsePhysicsConstraintsFuncs>.Size => 1;
     static string? ISchemaClass<CPulsePhysicsConstraintsFuncs>.ClassName => null;
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CVectorExponentialMovingAverageImpl : SchemaClass, CVecto
 {
     public CVectorExponentialMovingAverageImpl(nint handle) : base(handle) { }
 
-
-
-
 }

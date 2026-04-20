@@ -18,28 +18,33 @@ internal partial class TagSpan_tImpl : SchemaClass, TagSpan_t
 
     private static nint? _TagIndexOffset;
 
-    public ref int TagIndex {
-        get {
+    public ref int TagIndex
+    {
+        get
+        {
             _TagIndexOffset = _TagIndexOffset ?? Schema.GetOffset(0xA2611404D66997C9);
             return ref _Handle.AsRef<int>(_TagIndexOffset!.Value);
         }
     }
     private static nint? _StartCycleOffset;
 
-    public ref float StartCycle {
-        get {
+    public ref float StartCycle
+    {
+        get
+        {
             _StartCycleOffset = _StartCycleOffset ?? Schema.GetOffset(0xA26114043A764D4F);
             return ref _Handle.AsRef<float>(_StartCycleOffset!.Value);
         }
     }
     private static nint? _EndCycleOffset;
 
-    public ref float EndCycle {
-        get {
+    public ref float EndCycle
+    {
+        get
+        {
             _EndCycleOffset = _EndCycleOffset ?? Schema.GetOffset(0xA26114040B523694);
             return ref _Handle.AsRef<float>(_EndCycleOffset!.Value);
         }
     }
-
 
 }

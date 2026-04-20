@@ -14,7 +14,4 @@ public partial interface CPerParticleVecInput : CParticleVecInput, ISchemaClass<
     static int ISchemaClass<CPerParticleVecInput>.Size => 1720;
     static string? ISchemaClass<CPerParticleVecInput>.ClassName => null;
 
-
-
-
 }

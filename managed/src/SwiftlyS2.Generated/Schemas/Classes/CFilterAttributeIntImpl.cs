@@ -18,16 +18,18 @@ internal partial class CFilterAttributeIntImpl : CBaseFilterImpl, CFilterAttribu
 
     private static nint? _AttributeNameOffset;
 
-    public string AttributeName {
-        get {
+    public string AttributeName
+    {
+        get
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x7CC26955E63BC84D);
             return Schema.GetString(_Handle.Read<nint>(_AttributeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _AttributeNameOffset = _AttributeNameOffset ?? Schema.GetOffset(0x7CC26955E63BC84D);
             Schema.SetString(_Handle, _AttributeNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

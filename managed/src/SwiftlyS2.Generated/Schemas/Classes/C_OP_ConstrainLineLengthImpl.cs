@@ -18,20 +18,23 @@ internal partial class C_OP_ConstrainLineLengthImpl : CParticleFunctionConstrain
 
     private static nint? _MinDistanceOffset;
 
-    public ref float MinDistance {
-        get {
+    public ref float MinDistance
+    {
+        get
+        {
             _MinDistanceOffset = _MinDistanceOffset ?? Schema.GetOffset(0x50EFFC4492BCAD06);
             return ref _Handle.AsRef<float>(_MinDistanceOffset!.Value);
         }
     }
     private static nint? _MaxDistanceOffset;
 
-    public ref float MaxDistance {
-        get {
+    public ref float MaxDistance
+    {
+        get
+        {
             _MaxDistanceOffset = _MaxDistanceOffset ?? Schema.GetOffset(0x50EFFC4498893360);
             return ref _Handle.AsRef<float>(_MaxDistanceOffset!.Value);
         }
     }
-
 
 }

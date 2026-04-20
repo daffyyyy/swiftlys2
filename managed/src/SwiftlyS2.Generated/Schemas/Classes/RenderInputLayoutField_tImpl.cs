@@ -18,60 +18,73 @@ internal partial class RenderInputLayoutField_tImpl : SchemaClass, RenderInputLa
 
     private static nint? _SemanticNameOffset;
 
-    public string SemanticName {
-        get {
+    public string SemanticName
+    {
+        get
+        {
             _SemanticNameOffset = _SemanticNameOffset ?? Schema.GetOffset(0x752C88F08F25E44C);
             return Schema.GetString(_Handle + _SemanticNameOffset!.Value);
         }
-        set {
+        set
+        {
             _SemanticNameOffset = _SemanticNameOffset ?? Schema.GetOffset(0x752C88F08F25E44C);
             Schema.SetFixedString(_Handle, _SemanticNameOffset!.Value, value, 32);
         }
-    } 
+    }
     private static nint? _SemanticIndexOffset;
 
-    public ref byte SemanticIndex {
-        get {
+    public ref byte SemanticIndex
+    {
+        get
+        {
             _SemanticIndexOffset = _SemanticIndexOffset ?? Schema.GetOffset(0x752C88F0AAC99783);
             return ref _Handle.AsRef<byte>(_SemanticIndexOffset!.Value);
         }
     }
     private static nint? _OffsetOffset;
 
-    public ref short Offset {
-        get {
+    public ref short Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0x752C88F027734C8E);
             return ref _Handle.AsRef<short>(_OffsetOffset!.Value);
         }
     }
     private static nint? _SlotOffset;
 
-    public ref byte Slot {
-        get {
+    public ref byte Slot
+    {
+        get
+        {
             _SlotOffset = _SlotOffset ?? Schema.GetOffset(0x752C88F08A37D215);
             return ref _Handle.AsRef<byte>(_SlotOffset!.Value);
         }
     }
     private static nint? _SlotTypeOffset;
 
-    public ref RenderSlotType_t SlotType {
-        get {
+    public ref RenderSlotType_t SlotType
+    {
+        get
+        {
             _SlotTypeOffset = _SlotTypeOffset ?? Schema.GetOffset(0x752C88F05072B95D);
             return ref _Handle.AsRef<RenderSlotType_t>(_SlotTypeOffset!.Value);
         }
     }
     private static nint? _ShaderSemanticOffset;
 
-    public string ShaderSemantic {
-        get {
+    public string ShaderSemantic
+    {
+        get
+        {
             _ShaderSemanticOffset = _ShaderSemanticOffset ?? Schema.GetOffset(0x752C88F0897CAA95);
             return Schema.GetString(_Handle + _ShaderSemanticOffset!.Value);
         }
-        set {
+        set
+        {
             _ShaderSemanticOffset = _ShaderSemanticOffset ?? Schema.GetOffset(0x752C88F0897CAA95);
             Schema.SetFixedString(_Handle, _ShaderSemanticOffset!.Value, value, 32);
         }
-    } 
-
+    }
 
 }

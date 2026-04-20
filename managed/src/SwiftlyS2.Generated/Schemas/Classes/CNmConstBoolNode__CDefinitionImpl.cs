@@ -18,12 +18,13 @@ internal partial class CNmConstBoolNode__CDefinitionImpl : CNmBoolValueNode__CDe
 
     private static nint? _ValueOffset;
 
-    public ref bool Value {
-        get {
+    public ref bool Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xDEAA315605AAB4AA);
             return ref _Handle.AsRef<bool>(_ValueOffset!.Value);
         }
     }
-
 
 }

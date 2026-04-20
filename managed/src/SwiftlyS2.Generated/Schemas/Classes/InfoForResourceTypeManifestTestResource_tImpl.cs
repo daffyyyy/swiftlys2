@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeManifestTestResource_tImpl : SchemaCla
 {
     public InfoForResourceTypeManifestTestResource_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

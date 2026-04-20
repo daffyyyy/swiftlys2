@@ -15,7 +15,7 @@ public partial interface CGameChoreoServices : IChoreoServices, ISchemaClass<CGa
     static string? ISchemaClass<CGameChoreoServices>.ClassName => null;
 
 
-    public ref CHandle<CBaseAnimGraph> Owner { get; }
+    public ref CHandle<CBaseModelEntity> Owner { get; }
 
     public ref CHandle<CScriptedSequence> ScriptedSequence { get; }
 

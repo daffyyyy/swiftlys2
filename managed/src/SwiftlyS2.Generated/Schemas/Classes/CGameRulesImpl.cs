@@ -18,68 +18,85 @@ internal partial class CGameRulesImpl : SchemaClass, CGameRules
 
     private static nint? ___m_pChainEntityOffset;
 
-    public ref CNetworkVarChainer __m_pChainEntity {
-        get {
+    public ref CNetworkVarChainer __m_pChainEntity
+    {
+        get
+        {
             ___m_pChainEntityOffset = ___m_pChainEntityOffset ?? Schema.GetOffset(0x4807DA77F63F0E7D);
             return ref _Handle.AsRef<CNetworkVarChainer>(___m_pChainEntityOffset!.Value);
         }
     }
     private static nint? _QuestNameOffset;
 
-    public string QuestName {
-        get {
+    public string QuestName
+    {
+        get
+        {
             _QuestNameOffset = _QuestNameOffset ?? Schema.GetOffset(0x4807DA7748F621A1);
             return Schema.GetString(_Handle + _QuestNameOffset!.Value);
         }
-        set {
+        set
+        {
             _QuestNameOffset = _QuestNameOffset ?? Schema.GetOffset(0x4807DA7748F621A1);
             Schema.SetFixedString(_Handle, _QuestNameOffset!.Value, value, 128);
         }
-    } 
+    }
     private static nint? _QuestPhaseOffset;
 
-    public ref int QuestPhase {
-        get {
+    public ref int QuestPhase
+    {
+        get
+        {
             _QuestPhaseOffset = _QuestPhaseOffset ?? Schema.GetOffset(0x4807DA77335693EC);
             return ref _Handle.AsRef<int>(_QuestPhaseOffset!.Value);
         }
     }
     private static nint? _LastMatchTimeOffset;
 
-    public ref uint LastMatchTime {
-        get {
+    public ref uint LastMatchTime
+    {
+        get
+        {
             _LastMatchTimeOffset = _LastMatchTimeOffset ?? Schema.GetOffset(0x4807DA773C44A9EF);
             return ref _Handle.AsRef<uint>(_LastMatchTimeOffset!.Value);
         }
     }
     private static nint? _LastMatchTime_MatchID64Offset;
 
-    public ref ulong LastMatchTime_MatchID64 {
-        get {
+    public ref ulong LastMatchTime_MatchID64
+    {
+        get
+        {
             _LastMatchTime_MatchID64Offset = _LastMatchTime_MatchID64Offset ?? Schema.GetOffset(0x4807DA77A1DCA866);
             return ref _Handle.AsRef<ulong>(_LastMatchTime_MatchID64Offset!.Value);
         }
     }
     private static nint? _TotalPausedTicksOffset;
 
-    public ref int TotalPausedTicks {
-        get {
+    public ref int TotalPausedTicks
+    {
+        get
+        {
             _TotalPausedTicksOffset = _TotalPausedTicksOffset ?? Schema.GetOffset(0x4807DA7723281397);
             return ref _Handle.AsRef<int>(_TotalPausedTicksOffset!.Value);
         }
     }
     private static nint? _PauseStartTickOffset;
 
-    public ref int PauseStartTick {
-        get {
+    public ref int PauseStartTick
+    {
+        get
+        {
             _PauseStartTickOffset = _PauseStartTickOffset ?? Schema.GetOffset(0x4807DA77E64EC54A);
             return ref _Handle.AsRef<int>(_PauseStartTickOffset!.Value);
         }
     }
     private static nint? _GamePausedOffset;
 
-    public ref bool GamePaused {
-        get {
+    public ref bool GamePaused
+    {
+        get
+        {
             _GamePausedOffset = _GamePausedOffset ?? Schema.GetOffset(0x4807DA77582909A9);
             return ref _Handle.AsRef<bool>(_GamePausedOffset!.Value);
         }

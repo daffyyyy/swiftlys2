@@ -18,36 +18,43 @@ internal partial class C_OP_SetControlPointToHandImpl : CParticleFunctionPreEmis
 
     private static nint? _CP1Offset;
 
-    public ref int CP1 {
-        get {
+    public ref int CP1
+    {
+        get
+        {
             _CP1Offset = _CP1Offset ?? Schema.GetOffset(0x5D527B26D4B1E579);
             return ref _Handle.AsRef<int>(_CP1Offset!.Value);
         }
     }
     private static nint? _HandOffset;
 
-    public ref int Hand {
-        get {
+    public ref int Hand
+    {
+        get
+        {
             _HandOffset = _HandOffset ?? Schema.GetOffset(0x5D527B26D49ECB4C);
             return ref _Handle.AsRef<int>(_HandOffset!.Value);
         }
     }
     private static nint? _CP1PosOffset;
 
-    public ref Vector CP1Pos {
-        get {
+    public ref Vector CP1Pos
+    {
+        get
+        {
             _CP1PosOffset = _CP1PosOffset ?? Schema.GetOffset(0x5D527B26408288D9);
             return ref _Handle.AsRef<Vector>(_CP1PosOffset!.Value);
         }
     }
     private static nint? _OrientToHandOffset;
 
-    public ref bool OrientToHand {
-        get {
+    public ref bool OrientToHand
+    {
+        get
+        {
             _OrientToHandOffset = _OrientToHandOffset ?? Schema.GetOffset(0x5D527B26372CF7D8);
             return ref _Handle.AsRef<bool>(_OrientToHandOffset!.Value);
         }
     }
-
 
 }

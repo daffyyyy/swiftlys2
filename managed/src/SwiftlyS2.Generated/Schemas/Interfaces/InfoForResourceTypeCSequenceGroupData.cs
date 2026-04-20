@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCSequenceGroupData : ISchemaClass<In
     static int ISchemaClass<InfoForResourceTypeCSequenceGroupData>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCSequenceGroupData>.ClassName => null;
 
-
-
-
 }

@@ -18,16 +18,18 @@ internal partial class CPulseCell_Step_TestDomainEntFireImpl : CPulseCell_BaseFl
 
     private static nint? _InputOffset;
 
-    public string Input {
-        get {
+    public string Input
+    {
+        get
+        {
             _InputOffset = _InputOffset ?? Schema.GetOffset(0x22A0E258942A24FB);
             return Schema.GetCUtlString(_Handle.Read<nint>(_InputOffset!.Value));
         }
-        set {
+        set
+        {
             _InputOffset = _InputOffset ?? Schema.GetOffset(0x22A0E258942A24FB);
             Schema.SetCUtlString(_Handle, _InputOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

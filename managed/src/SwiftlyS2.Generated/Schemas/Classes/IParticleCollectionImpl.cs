@@ -16,7 +16,4 @@ internal partial class IParticleCollectionImpl : SchemaClass, IParticleCollectio
 {
     public IParticleCollectionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

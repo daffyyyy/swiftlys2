@@ -18,28 +18,33 @@ internal partial class CBtNodeConditionInactiveImpl : CBtNodeConditionImpl, CBtN
 
     private static nint? _RoundStartThresholdSecondsOffset;
 
-    public ref float RoundStartThresholdSeconds {
-        get {
+    public ref float RoundStartThresholdSeconds
+    {
+        get
+        {
             _RoundStartThresholdSecondsOffset = _RoundStartThresholdSecondsOffset ?? Schema.GetOffset(0x1AB44FB08A52CC47);
             return ref _Handle.AsRef<float>(_RoundStartThresholdSecondsOffset!.Value);
         }
     }
     private static nint? _SensorInactivityThresholdSecondsOffset;
 
-    public ref float SensorInactivityThresholdSeconds {
-        get {
+    public ref float SensorInactivityThresholdSeconds
+    {
+        get
+        {
             _SensorInactivityThresholdSecondsOffset = _SensorInactivityThresholdSecondsOffset ?? Schema.GetOffset(0x1AB44FB07E66A29F);
             return ref _Handle.AsRef<float>(_SensorInactivityThresholdSecondsOffset!.Value);
         }
     }
     private static nint? _SensorInactivityTimerOffset;
 
-    public CountdownTimer SensorInactivityTimer {
-        get {
+    public CountdownTimer SensorInactivityTimer
+    {
+        get
+        {
             _SensorInactivityTimerOffset = _SensorInactivityTimerOffset ?? Schema.GetOffset(0x1AB44FB0D921DF72);
             return new CountdownTimerImpl(_Handle + _SensorInactivityTimerOffset!.Value);
         }
     }
-
 
 }

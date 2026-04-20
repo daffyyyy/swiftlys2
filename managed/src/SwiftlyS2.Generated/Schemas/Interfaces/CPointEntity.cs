@@ -14,7 +14,4 @@ public partial interface CPointEntity : CBaseEntity, ISchemaClass<CPointEntity>
     static int ISchemaClass<CPointEntity>.Size => 1192;
     static string? ISchemaClass<CPointEntity>.ClassName => "point_entity";
 
-
-
-
 }

@@ -18,36 +18,43 @@ internal partial class CSubtractUpdateNodeImpl : CBinaryUpdateNodeImpl, CSubtrac
 
     private static nint? _FootMotionTimingOffset;
 
-    public ref BinaryNodeChildOption FootMotionTiming {
-        get {
+    public ref BinaryNodeChildOption FootMotionTiming
+    {
+        get
+        {
             _FootMotionTimingOffset = _FootMotionTimingOffset ?? Schema.GetOffset(0x108B5B3FBB17F13D);
             return ref _Handle.AsRef<BinaryNodeChildOption>(_FootMotionTimingOffset!.Value);
         }
     }
     private static nint? _ApplyToFootMotionOffset;
 
-    public ref bool ApplyToFootMotion {
-        get {
+    public ref bool ApplyToFootMotion
+    {
+        get
+        {
             _ApplyToFootMotionOffset = _ApplyToFootMotionOffset ?? Schema.GetOffset(0x108B5B3F3D831E94);
             return ref _Handle.AsRef<bool>(_ApplyToFootMotionOffset!.Value);
         }
     }
     private static nint? _ApplyChannelsSeparatelyOffset;
 
-    public ref bool ApplyChannelsSeparately {
-        get {
+    public ref bool ApplyChannelsSeparately
+    {
+        get
+        {
             _ApplyChannelsSeparatelyOffset = _ApplyChannelsSeparatelyOffset ?? Schema.GetOffset(0x108B5B3FFF2DBB45);
             return ref _Handle.AsRef<bool>(_ApplyChannelsSeparatelyOffset!.Value);
         }
     }
     private static nint? _UseModelSpaceOffset;
 
-    public ref bool UseModelSpace {
-        get {
+    public ref bool UseModelSpace
+    {
+        get
+        {
             _UseModelSpaceOffset = _UseModelSpaceOffset ?? Schema.GetOffset(0x108B5B3F48863521);
             return ref _Handle.AsRef<bool>(_UseModelSpaceOffset!.Value);
         }
     }
-
 
 }

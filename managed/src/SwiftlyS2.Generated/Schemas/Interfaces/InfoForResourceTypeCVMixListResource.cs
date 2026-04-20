@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCVMixListResource : ISchemaClass<Inf
     static int ISchemaClass<InfoForResourceTypeCVMixListResource>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCVMixListResource>.ClassName => null;
 
-
-
-
 }

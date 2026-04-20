@@ -16,7 +16,4 @@ internal partial class CNmControlParameterIDNode__CDefinitionImpl : CNmIDValueNo
 {
     public CNmControlParameterIDNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

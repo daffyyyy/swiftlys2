@@ -18,32 +18,40 @@ internal partial class CountdownTimerImpl : SchemaClass, CountdownTimer
 
     private static nint? _DurationOffset;
 
-    public ref float Duration {
-        get {
+    public ref float Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0x8A632F13D9FF5AD);
             return ref _Handle.AsRef<float>(_DurationOffset!.Value);
         }
     }
     private static nint? _TimestampOffset;
 
-    public GameTime_t Timestamp {
-        get {
+    public GameTime_t Timestamp
+    {
+        get
+        {
             _TimestampOffset = _TimestampOffset ?? Schema.GetOffset(0x8A632F1B6C56F43);
             return new GameTime_tImpl(_Handle + _TimestampOffset!.Value);
         }
     }
     private static nint? _TimescaleOffset;
 
-    public ref float Timescale {
-        get {
+    public ref float Timescale
+    {
+        get
+        {
             _TimescaleOffset = _TimescaleOffset ?? Schema.GetOffset(0x8A632F18A240BBE);
             return ref _Handle.AsRef<float>(_TimescaleOffset!.Value);
         }
     }
     private static nint? _WorldGroupIdOffset;
 
-    public ref uint WorldGroupId {
-        get {
+    public ref uint WorldGroupId
+    {
+        get
+        {
             _WorldGroupIdOffset = _WorldGroupIdOffset ?? Schema.GetOffset(0x8A632F17414B193);
             return ref _Handle.AsRef<uint>(_WorldGroupIdOffset!.Value);
         }

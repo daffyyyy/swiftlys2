@@ -16,7 +16,4 @@ internal partial class CWaterBulletImpl : CBaseAnimGraphImpl, CWaterBullet
 {
     public CWaterBulletImpl(nint handle) : base(handle) { }
 
-
-
-
 }

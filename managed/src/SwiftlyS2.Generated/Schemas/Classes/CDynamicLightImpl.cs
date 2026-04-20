@@ -18,72 +18,90 @@ internal partial class CDynamicLightImpl : CBaseModelEntityImpl, CDynamicLight
 
     private static nint? _ActualFlagsOffset;
 
-    public ref byte ActualFlags {
-        get {
+    public ref byte ActualFlags
+    {
+        get
+        {
             _ActualFlagsOffset = _ActualFlagsOffset ?? Schema.GetOffset(0x5256F8E9E685EDEE);
             return ref _Handle.AsRef<byte>(_ActualFlagsOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref byte Flags {
-        get {
+    public ref byte Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x5256F8E936B92FAC);
             return ref _Handle.AsRef<byte>(_FlagsOffset!.Value);
         }
     }
     private static nint? _LightStyleOffset;
 
-    public ref byte LightStyle {
-        get {
+    public ref byte LightStyle
+    {
+        get
+        {
             _LightStyleOffset = _LightStyleOffset ?? Schema.GetOffset(0x5256F8E965232F30);
             return ref _Handle.AsRef<byte>(_LightStyleOffset!.Value);
         }
     }
     private static nint? _OnOffset;
 
-    public ref bool On {
-        get {
+    public ref bool On
+    {
+        get
+        {
             _OnOffset = _OnOffset ?? Schema.GetOffset(0x5256F8E9DF026050);
             return ref _Handle.AsRef<bool>(_OnOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x5256F8E97C5B0533);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _ExponentOffset;
 
-    public ref int Exponent {
-        get {
+    public ref int Exponent
+    {
+        get
+        {
             _ExponentOffset = _ExponentOffset ?? Schema.GetOffset(0x5256F8E99BCA80C6);
             return ref _Handle.AsRef<int>(_ExponentOffset!.Value);
         }
     }
     private static nint? _InnerAngleOffset;
 
-    public ref float InnerAngle {
-        get {
+    public ref float InnerAngle
+    {
+        get
+        {
             _InnerAngleOffset = _InnerAngleOffset ?? Schema.GetOffset(0x5256F8E91D12DC0E);
             return ref _Handle.AsRef<float>(_InnerAngleOffset!.Value);
         }
     }
     private static nint? _OuterAngleOffset;
 
-    public ref float OuterAngle {
-        get {
+    public ref float OuterAngle
+    {
+        get
+        {
             _OuterAngleOffset = _OuterAngleOffset ?? Schema.GetOffset(0x5256F8E9328680EF);
             return ref _Handle.AsRef<float>(_OuterAngleOffset!.Value);
         }
     }
     private static nint? _SpotRadiusOffset;
 
-    public ref float SpotRadius {
-        get {
+    public ref float SpotRadius
+    {
+        get
+        {
             _SpotRadiusOffset = _SpotRadiusOffset ?? Schema.GetOffset(0x5256F8E993FBE5BB);
             return ref _Handle.AsRef<float>(_SpotRadiusOffset!.Value);
         }

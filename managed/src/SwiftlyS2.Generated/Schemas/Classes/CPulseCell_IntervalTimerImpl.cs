@@ -18,20 +18,23 @@ internal partial class CPulseCell_IntervalTimerImpl : CPulseCell_BaseYieldingInf
 
     private static nint? _CompletedOffset;
 
-    public CPulse_ResumePoint Completed {
-        get {
+    public CPulse_ResumePoint Completed
+    {
+        get
+        {
             _CompletedOffset = _CompletedOffset ?? Schema.GetOffset(0x33EF5E76818C0E92);
             return new CPulse_ResumePointImpl(_Handle + _CompletedOffset!.Value);
         }
     }
     private static nint? _OnIntervalOffset;
 
-    public SignatureOutflow_Continue OnInterval {
-        get {
+    public SignatureOutflow_Continue OnInterval
+    {
+        get
+        {
             _OnIntervalOffset = _OnIntervalOffset ?? Schema.GetOffset(0x33EF5E761A4FEF89);
             return new SignatureOutflow_ContinueImpl(_Handle + _OnIntervalOffset!.Value);
         }
     }
-
 
 }

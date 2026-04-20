@@ -18,28 +18,33 @@ internal partial class CAnimationGraphVisualizerSphereImpl : CAnimationGraphVisu
 
     private static nint? _WsPositionOffset;
 
-    public ref Vector WsPosition {
-        get {
+    public ref Vector WsPosition
+    {
+        get
+        {
             _WsPositionOffset = _WsPositionOffset ?? Schema.GetOffset(0x85D725BDCA77AB88);
             return ref _Handle.AsRef<Vector>(_WsPositionOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x85D725BD5ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _ColorOffset;
 
-    public ref Color Color {
-        get {
+    public ref Color Color
+    {
+        get
+        {
             _ColorOffset = _ColorOffset ?? Schema.GetOffset(0x85D725BDD7D017D8);
             return ref _Handle.AsRef<Color>(_ColorOffset!.Value);
         }
     }
-
 
 }

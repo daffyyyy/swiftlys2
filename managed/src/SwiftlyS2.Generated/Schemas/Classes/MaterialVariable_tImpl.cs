@@ -18,32 +18,38 @@ internal partial class MaterialVariable_tImpl : SchemaClass, MaterialVariable_t
 
     private static nint? _StrVariableOffset;
 
-    public string StrVariable {
-        get {
+    public string StrVariable
+    {
+        get
+        {
             _StrVariableOffset = _StrVariableOffset ?? Schema.GetOffset(0xCACB71DBA52C3390);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrVariableOffset!.Value));
         }
-        set {
+        set
+        {
             _StrVariableOffset = _StrVariableOffset ?? Schema.GetOffset(0xCACB71DBA52C3390);
             Schema.SetCUtlString(_Handle, _StrVariableOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _VariableFieldOffset;
 
-    public ParticleAttributeIndex_t VariableField {
-        get {
+    public ParticleAttributeIndex_t VariableField
+    {
+        get
+        {
             _VariableFieldOffset = _VariableFieldOffset ?? Schema.GetOffset(0xCACB71DBF868E9B3);
             return new ParticleAttributeIndex_tImpl(_Handle + _VariableFieldOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xCACB71DBB731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
-
 
 }

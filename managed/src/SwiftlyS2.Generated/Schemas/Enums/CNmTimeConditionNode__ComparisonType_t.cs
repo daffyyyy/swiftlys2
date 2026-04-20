@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CNmTimeConditionNode__ComparisonType_t : byte
 {
- PercentageThroughState = 0,
-
- PercentageThroughSyncEvent = 1,
-
- ElapsedTime = 2,
+    PercentageThroughState = 0,
+    PercentageThroughSyncEvent = 1,
+    ElapsedTime = 2,
 }

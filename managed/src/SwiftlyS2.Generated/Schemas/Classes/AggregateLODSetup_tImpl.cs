@@ -18,28 +18,33 @@ internal partial class AggregateLODSetup_tImpl : SchemaClass, AggregateLODSetup_
 
     private static nint? _LODOriginOffset;
 
-    public ref Vector LODOrigin {
-        get {
+    public ref Vector LODOrigin
+    {
+        get
+        {
             _LODOriginOffset = _LODOriginOffset ?? Schema.GetOffset(0xA931690332EC7486);
             return ref _Handle.AsRef<Vector>(_LODOriginOffset!.Value);
         }
     }
     private static nint? _MaxObjectScaleOffset;
 
-    public ref float MaxObjectScale {
-        get {
+    public ref float MaxObjectScale
+    {
+        get
+        {
             _MaxObjectScaleOffset = _MaxObjectScaleOffset ?? Schema.GetOffset(0xA9316903D0DAF878);
             return ref _Handle.AsRef<float>(_MaxObjectScaleOffset!.Value);
         }
     }
     private static nint? _SwitchDistancesOffset;
 
-    public ref CUtlVector<float> SwitchDistances {
-        get {
+    public ref CUtlVector<float> SwitchDistances
+    {
+        get
+        {
             _SwitchDistancesOffset = _SwitchDistancesOffset ?? Schema.GetOffset(0xA9316903E49F3FC3);
             return ref _Handle.AsRef<CUtlVector<float>>(_SwitchDistancesOffset!.Value);
         }
     }
-
 
 }

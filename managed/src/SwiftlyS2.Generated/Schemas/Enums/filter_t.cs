@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum filter_t : uint
 {
- FILTER_AND = 0,
-
- FILTER_OR = 1,
+    FILTER_AND = 0,
+    FILTER_OR = 1,
 }

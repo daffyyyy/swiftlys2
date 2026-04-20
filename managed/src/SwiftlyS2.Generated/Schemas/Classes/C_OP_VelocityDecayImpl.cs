@@ -18,12 +18,13 @@ internal partial class C_OP_VelocityDecayImpl : CParticleFunctionOperatorImpl, C
 
     private static nint? _MinVelocityOffset;
 
-    public ref float MinVelocity {
-        get {
+    public ref float MinVelocity
+    {
+        get
+        {
             _MinVelocityOffset = _MinVelocityOffset ?? Schema.GetOffset(0xF59EE920AE8F0ADE);
             return ref _Handle.AsRef<float>(_MinVelocityOffset!.Value);
         }
     }
-
 
 }

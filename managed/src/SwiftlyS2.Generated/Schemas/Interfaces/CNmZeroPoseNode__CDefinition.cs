@@ -14,7 +14,4 @@ public partial interface CNmZeroPoseNode__CDefinition : CNmPoseNode__CDefinition
     static int ISchemaClass<CNmZeroPoseNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmZeroPoseNode__CDefinition>.ClassName => null;
 
-
-
-
 }

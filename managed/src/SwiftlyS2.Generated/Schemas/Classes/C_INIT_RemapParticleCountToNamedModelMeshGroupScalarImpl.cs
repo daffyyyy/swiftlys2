@@ -16,7 +16,4 @@ internal partial class C_INIT_RemapParticleCountToNamedModelMeshGroupScalarImpl 
 {
     public C_INIT_RemapParticleCountToNamedModelMeshGroupScalarImpl(nint handle) : base(handle) { }
 
-
-
-
 }

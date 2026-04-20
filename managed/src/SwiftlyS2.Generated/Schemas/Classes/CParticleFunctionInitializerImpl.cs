@@ -18,12 +18,13 @@ internal partial class CParticleFunctionInitializerImpl : CParticleFunctionImpl,
 
     private static nint? _AssociatedEmitterIndexOffset;
 
-    public ref int AssociatedEmitterIndex {
-        get {
+    public ref int AssociatedEmitterIndex
+    {
+        get
+        {
             _AssociatedEmitterIndexOffset = _AssociatedEmitterIndexOffset ?? Schema.GetOffset(0xA224E6D8D47B3DA5);
             return ref _Handle.AsRef<int>(_AssociatedEmitterIndexOffset!.Value);
         }
     }
-
 
 }

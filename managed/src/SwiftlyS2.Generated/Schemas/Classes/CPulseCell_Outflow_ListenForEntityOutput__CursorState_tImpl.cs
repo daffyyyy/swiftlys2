@@ -18,12 +18,13 @@ internal partial class CPulseCell_Outflow_ListenForEntityOutput__CursorState_tIm
 
     private static nint? _EntityOffset;
 
-    public ref CHandle<CBaseEntity> Entity {
-        get {
+    public ref CHandle<CBaseEntity> Entity
+    {
+        get
+        {
             _EntityOffset = _EntityOffset ?? Schema.GetOffset(0xC31517AD2F3BEB7A);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EntityOffset!.Value);
         }
     }
-
 
 }

@@ -18,53 +18,64 @@ internal partial class CastSphereSATParams_tImpl : SchemaClass, CastSphereSATPar
 
     private static nint? _RayStartOffset;
 
-    public ref Vector RayStart {
-        get {
+    public ref Vector RayStart
+    {
+        get
+        {
             _RayStartOffset = _RayStartOffset ?? Schema.GetOffset(0x6282EF48CB929F19);
             return ref _Handle.AsRef<Vector>(_RayStartOffset!.Value);
         }
     }
     private static nint? _RayDeltaOffset;
 
-    public ref Vector RayDelta {
-        get {
+    public ref Vector RayDelta
+    {
+        get
+        {
             _RayDeltaOffset = _RayDeltaOffset ?? Schema.GetOffset(0x6282EF4874156D5B);
             return ref _Handle.AsRef<Vector>(_RayDeltaOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x6282EF485ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _MaxFractionOffset;
 
-    public ref float MaxFraction {
-        get {
+    public ref float MaxFraction
+    {
+        get
+        {
             _MaxFractionOffset = _MaxFractionOffset ?? Schema.GetOffset(0x6282EF48BA58C801);
             return ref _Handle.AsRef<float>(_MaxFractionOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x6282EF48B731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
     private static nint? _HullOffset;
 
-    public RnHull_t? Hull {
-        get {
+    public RnHull_t? Hull
+    {
+        get
+        {
             _HullOffset = _HullOffset ?? Schema.GetOffset(0x6282EF48FAD20488);
             var ptr = _Handle.Read<nint>(_HullOffset!.Value);
             return ptr.IsValidPtr() ? new RnHull_tImpl(ptr) : null;
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CHandshakeAnimTagBaseImpl : CAnimTagBaseImpl, CHandshakeA
 
     private static nint? _IsDisableTagOffset;
 
-    public ref bool IsDisableTag {
-        get {
+    public ref bool IsDisableTag
+    {
+        get
+        {
             _IsDisableTagOffset = _IsDisableTagOffset ?? Schema.GetOffset(0x73566C0F04E21131);
             return ref _Handle.AsRef<bool>(_IsDisableTagOffset!.Value);
         }
     }
-
 
 }

@@ -18,60 +18,73 @@ internal partial class CSceneObjectDataImpl : SchemaClass, CSceneObjectData
 
     private static nint? _MinBoundsOffset;
 
-    public ref Vector MinBounds {
-        get {
+    public ref Vector MinBounds
+    {
+        get
+        {
             _MinBoundsOffset = _MinBoundsOffset ?? Schema.GetOffset(0x628AC6A9114799FE);
             return ref _Handle.AsRef<Vector>(_MinBoundsOffset!.Value);
         }
     }
     private static nint? _MaxBoundsOffset;
 
-    public ref Vector MaxBounds {
-        get {
+    public ref Vector MaxBounds
+    {
+        get
+        {
             _MaxBoundsOffset = _MaxBoundsOffset ?? Schema.GetOffset(0x628AC6A9C0B4CE60);
             return ref _Handle.AsRef<Vector>(_MaxBoundsOffset!.Value);
         }
     }
     private static nint? _DrawCallsOffset;
 
-    public ref CUtlLeanVector<CMaterialDrawDescriptor, int> DrawCalls {
-        get {
+    public ref CUtlLeanVector<CMaterialDrawDescriptor, int> DrawCalls
+    {
+        get
+        {
             _DrawCallsOffset = _DrawCallsOffset ?? Schema.GetOffset(0x628AC6A9CA953770);
             return ref _Handle.AsRef<CUtlLeanVector<CMaterialDrawDescriptor, int>>(_DrawCallsOffset!.Value);
         }
     }
     private static nint? _DrawBoundsOffset;
 
-    public ref CUtlLeanVector<AABB_t, int> DrawBounds {
-        get {
+    public ref CUtlLeanVector<AABB_t, int> DrawBounds
+    {
+        get
+        {
             _DrawBoundsOffset = _DrawBoundsOffset ?? Schema.GetOffset(0x628AC6A96CBBD6CE);
             return ref _Handle.AsRef<CUtlLeanVector<AABB_t, int>>(_DrawBoundsOffset!.Value);
         }
     }
     private static nint? _MeshletsOffset;
 
-    public ref CUtlLeanVector<CMeshletDescriptor, int> Meshlets {
-        get {
+    public ref CUtlLeanVector<CMeshletDescriptor, int> Meshlets
+    {
+        get
+        {
             _MeshletsOffset = _MeshletsOffset ?? Schema.GetOffset(0x628AC6A928865C36);
             return ref _Handle.AsRef<CUtlLeanVector<CMeshletDescriptor, int>>(_MeshletsOffset!.Value);
         }
     }
     private static nint? _RtProxyDrawCallsOffset;
 
-    public ref CUtlLeanVector<CSceneObjectData__RTProxyDrawDescriptor_t, int> RtProxyDrawCalls {
-        get {
+    public ref CUtlLeanVector<CSceneObjectData__RTProxyDrawDescriptor_t, int> RtProxyDrawCalls
+    {
+        get
+        {
             _RtProxyDrawCallsOffset = _RtProxyDrawCallsOffset ?? Schema.GetOffset(0x628AC6A9A12A5FC8);
             return ref _Handle.AsRef<CUtlLeanVector<CSceneObjectData__RTProxyDrawDescriptor_t, int>>(_RtProxyDrawCallsOffset!.Value);
         }
     }
     private static nint? _TintColorOffset;
 
-    public ref Vector4D TintColor {
-        get {
+    public ref Vector4D TintColor
+    {
+        get
+        {
             _TintColorOffset = _TintColorOffset ?? Schema.GetOffset(0x628AC6A950AFF21F);
             return ref _Handle.AsRef<Vector4D>(_TintColorOffset!.Value);
         }
     }
-
 
 }

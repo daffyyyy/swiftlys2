@@ -18,12 +18,13 @@ internal partial class PARTICLE_EHANDLE__Impl : SchemaClass, PARTICLE_EHANDLE__
 
     private static nint? _UnusedOffset;
 
-    public ref int Unused {
-        get {
+    public ref int Unused
+    {
+        get
+        {
             _UnusedOffset = _UnusedOffset ?? Schema.GetOffset(0x7E4CC5CF85CF281B);
             return ref _Handle.AsRef<int>(_UnusedOffset!.Value);
         }
     }
-
 
 }

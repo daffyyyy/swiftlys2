@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_MovementServices_Humanoid : CPlayer_MovementServices, ISchemaClass<CPlayer_MovementServices_Humanoid>
 {
     static CPlayer_MovementServices_Humanoid ISchemaClass<CPlayer_MovementServices_Humanoid>.From(nint handle) => new CPlayer_MovementServices_HumanoidImpl(handle);
-    static int ISchemaClass<CPlayer_MovementServices_Humanoid>.Size => 632;
+    static int ISchemaClass<CPlayer_MovementServices_Humanoid>.Size => 656;
     static string? ISchemaClass<CPlayer_MovementServices_Humanoid>.ClassName => null;
 
 

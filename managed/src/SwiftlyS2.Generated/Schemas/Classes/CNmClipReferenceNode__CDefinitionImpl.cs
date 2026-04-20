@@ -16,7 +16,4 @@ internal partial class CNmClipReferenceNode__CDefinitionImpl : CNmPoseNode__CDef
 {
     public CNmClipReferenceNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

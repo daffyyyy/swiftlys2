@@ -18,110 +18,168 @@ internal partial class CPlayer_MovementServicesImpl : CPlayerPawnComponentImpl, 
 
     private static nint? _ImpulseOffset;
 
-    public ref int Impulse {
-        get {
+    public ref int Impulse
+    {
+        get
+        {
             _ImpulseOffset = _ImpulseOffset ?? Schema.GetOffset(0xD5BDF2892107CA68);
             return ref _Handle.AsRef<int>(_ImpulseOffset!.Value);
         }
     }
     private static nint? _ButtonsOffset;
 
-    public CInButtonState Buttons {
-        get {
+    public CInButtonState Buttons
+    {
+        get
+        {
             _ButtonsOffset = _ButtonsOffset ?? Schema.GetOffset(0xD5BDF28998CCEF82);
             return new CInButtonStateImpl(_Handle + _ButtonsOffset!.Value);
         }
     }
     private static nint? _QueuedButtonDownMaskOffset;
 
-    public ref ulong QueuedButtonDownMask {
-        get {
+    public ref ulong QueuedButtonDownMask
+    {
+        get
+        {
             _QueuedButtonDownMaskOffset = _QueuedButtonDownMaskOffset ?? Schema.GetOffset(0xD5BDF28939CFB260);
             return ref _Handle.AsRef<ulong>(_QueuedButtonDownMaskOffset!.Value);
         }
     }
     private static nint? _QueuedButtonChangeMaskOffset;
 
-    public ref ulong QueuedButtonChangeMask {
-        get {
+    public ref ulong QueuedButtonChangeMask
+    {
+        get
+        {
             _QueuedButtonChangeMaskOffset = _QueuedButtonChangeMaskOffset ?? Schema.GetOffset(0xD5BDF289FC832F1C);
             return ref _Handle.AsRef<ulong>(_QueuedButtonChangeMaskOffset!.Value);
         }
     }
     private static nint? _ButtonDoublePressedOffset;
 
-    public ref ulong ButtonDoublePressed {
-        get {
+    public ref ulong ButtonDoublePressed
+    {
+        get
+        {
             _ButtonDoublePressedOffset = _ButtonDoublePressedOffset ?? Schema.GetOffset(0xD5BDF289E6C8CA6E);
             return ref _Handle.AsRef<ulong>(_ButtonDoublePressedOffset!.Value);
         }
     }
-    public ISchemaFixedArray<uint> ButtonPressedCmdNumber {
+    public ISchemaFixedArray<uint> ButtonPressedCmdNumber
+    {
         get => new SchemaFixedArray<uint>(_Handle, 0xD5BDF289A7854580, 64, 4, 4);
     }
     private static nint? _LastCommandNumberProcessedOffset;
 
-    public ref uint LastCommandNumberProcessed {
-        get {
+    public ref uint LastCommandNumberProcessed
+    {
+        get
+        {
             _LastCommandNumberProcessedOffset = _LastCommandNumberProcessedOffset ?? Schema.GetOffset(0xD5BDF2899927F73D);
             return ref _Handle.AsRef<uint>(_LastCommandNumberProcessedOffset!.Value);
         }
     }
     private static nint? _ToggleButtonDownMaskOffset;
 
-    public ref ulong ToggleButtonDownMask {
-        get {
+    public ref ulong ToggleButtonDownMask
+    {
+        get
+        {
             _ToggleButtonDownMaskOffset = _ToggleButtonDownMaskOffset ?? Schema.GetOffset(0xD5BDF28907E86F99);
             return ref _Handle.AsRef<ulong>(_ToggleButtonDownMaskOffset!.Value);
         }
     }
+    private static nint? _CmdForwardMoveOffset;
+
+    public ref float CmdForwardMove
+    {
+        get
+        {
+            _CmdForwardMoveOffset = _CmdForwardMoveOffset ?? Schema.GetOffset(0xD5BDF2893976C40F);
+            return ref _Handle.AsRef<float>(_CmdForwardMoveOffset!.Value);
+        }
+    }
+    private static nint? _CmdLeftMoveOffset;
+
+    public ref float CmdLeftMove
+    {
+        get
+        {
+            _CmdLeftMoveOffset = _CmdLeftMoveOffset ?? Schema.GetOffset(0xD5BDF289B20FCC65);
+            return ref _Handle.AsRef<float>(_CmdLeftMoveOffset!.Value);
+        }
+    }
+    private static nint? _CmdUpMoveOffset;
+
+    public ref float CmdUpMove
+    {
+        get
+        {
+            _CmdUpMoveOffset = _CmdUpMoveOffset ?? Schema.GetOffset(0xD5BDF289FD400A25);
+            return ref _Handle.AsRef<float>(_CmdUpMoveOffset!.Value);
+        }
+    }
     private static nint? _MaxspeedOffset;
 
-    public ref float Maxspeed {
-        get {
+    public ref float Maxspeed
+    {
+        get
+        {
             _MaxspeedOffset = _MaxspeedOffset ?? Schema.GetOffset(0xD5BDF289468F90F2);
             return ref _Handle.AsRef<float>(_MaxspeedOffset!.Value);
         }
     }
-    public ISchemaFixedArray<float> ForceSubtickMoveWhen {
+    public ISchemaFixedArray<float> ForceSubtickMoveWhen
+    {
         get => new SchemaFixedArray<float>(_Handle, 0xD5BDF28999115A07, 4, 4, 4);
     }
     private static nint? _ForwardMoveOffset;
 
-    public ref float ForwardMove {
-        get {
+    public ref float ForwardMove
+    {
+        get
+        {
             _ForwardMoveOffset = _ForwardMoveOffset ?? Schema.GetOffset(0xD5BDF289806C78A9);
             return ref _Handle.AsRef<float>(_ForwardMoveOffset!.Value);
         }
     }
     private static nint? _LeftMoveOffset;
 
-    public ref float LeftMove {
-        get {
+    public ref float LeftMove
+    {
+        get
+        {
             _LeftMoveOffset = _LeftMoveOffset ?? Schema.GetOffset(0xD5BDF289C4CF0D13);
             return ref _Handle.AsRef<float>(_LeftMoveOffset!.Value);
         }
     }
     private static nint? _UpMoveOffset;
 
-    public ref float UpMove {
-        get {
+    public ref float UpMove
+    {
+        get
+        {
             _UpMoveOffset = _UpMoveOffset ?? Schema.GetOffset(0xD5BDF289B1E2D2B7);
             return ref _Handle.AsRef<float>(_UpMoveOffset!.Value);
         }
     }
     private static nint? _LastMovementImpulsesOffset;
 
-    public ref Vector LastMovementImpulses {
-        get {
+    public ref Vector LastMovementImpulses
+    {
+        get
+        {
             _LastMovementImpulsesOffset = _LastMovementImpulsesOffset ?? Schema.GetOffset(0xD5BDF2890B87214C);
             return ref _Handle.AsRef<Vector>(_LastMovementImpulsesOffset!.Value);
         }
     }
     private static nint? _OldViewAnglesOffset;
 
-    public ref QAngle OldViewAngles {
-        get {
+    public ref QAngle OldViewAngles
+    {
+        get
+        {
             _OldViewAnglesOffset = _OldViewAnglesOffset ?? Schema.GetOffset(0xD5BDF28935A27A27);
             return ref _Handle.AsRef<QAngle>(_OldViewAnglesOffset!.Value);
         }

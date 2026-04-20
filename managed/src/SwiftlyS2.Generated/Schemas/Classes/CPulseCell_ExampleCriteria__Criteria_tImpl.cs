@@ -18,28 +18,33 @@ internal partial class CPulseCell_ExampleCriteria__Criteria_tImpl : SchemaClass,
 
     private static nint? _FloatValue1Offset;
 
-    public ref float FloatValue1 {
-        get {
+    public ref float FloatValue1
+    {
+        get
+        {
             _FloatValue1Offset = _FloatValue1Offset ?? Schema.GetOffset(0x9C86EC19138B644B);
             return ref _Handle.AsRef<float>(_FloatValue1Offset!.Value);
         }
     }
     private static nint? _FloatValue2Offset;
 
-    public ref float FloatValue2 {
-        get {
+    public ref float FloatValue2
+    {
+        get
+        {
             _FloatValue2Offset = _FloatValue2Offset ?? Schema.GetOffset(0x9C86EC19148B65DE);
             return ref _Handle.AsRef<float>(_FloatValue2Offset!.Value);
         }
     }
     private static nint? _MyBoolOffset;
 
-    public ref bool MyBool {
-        get {
+    public ref bool MyBool
+    {
+        get
+        {
             _MyBoolOffset = _MyBoolOffset ?? Schema.GetOffset(0x9C86EC19BAFBA8C7);
             return ref _Handle.AsRef<bool>(_MyBoolOffset!.Value);
         }
     }
-
 
 }

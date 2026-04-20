@@ -19,6 +19,8 @@ public partial interface CKeepUpright : CPointEntity, ISchemaClass<CKeepUpright>
 
     public ref Vector LocalTestAxis { get; }
 
+    public IPhysicsMotionController? Controller { get; }
+
     public string NameAttach { get; set; }
 
     public ref CHandle<CBaseEntity> AttachedObject { get; }

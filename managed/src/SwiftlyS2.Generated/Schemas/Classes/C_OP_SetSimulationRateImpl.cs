@@ -18,12 +18,13 @@ internal partial class C_OP_SetSimulationRateImpl : CParticleFunctionPreEmission
 
     private static nint? _SimulationScaleOffset;
 
-    public CParticleCollectionFloatInput SimulationScale {
-        get {
+    public CParticleCollectionFloatInput SimulationScale
+    {
+        get
+        {
             _SimulationScaleOffset = _SimulationScaleOffset ?? Schema.GetOffset(0x6C806DC2994DAEC6);
             return new CParticleCollectionFloatInputImpl(_Handle + _SimulationScaleOffset!.Value);
         }
     }
-
 
 }

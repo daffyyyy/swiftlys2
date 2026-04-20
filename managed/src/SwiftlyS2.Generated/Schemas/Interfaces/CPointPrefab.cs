@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointPrefab : CServerOnlyPointEntity, ISchemaClass<CPointPrefab>
 {
     static CPointPrefab ISchemaClass<CPointPrefab>.From(nint handle) => new CPointPrefabImpl(handle);
-    static int ISchemaClass<CPointPrefab>.Size => 1296;
+    static int ISchemaClass<CPointPrefab>.Size => 1328;
     static string? ISchemaClass<CPointPrefab>.ClassName => "point_prefab";
 
 
@@ -26,6 +26,8 @@ public partial interface CPointPrefab : CServerOnlyPointEntity, ISchemaClass<CPo
     public ref bool LoadDynamic { get; }
 
     public ref CHandle<CPointPrefab> AssociatedRelayEntity { get; }
+
+    public ref CUtlVector<CHandle<CBaseEntity>> ProceduralRelaySources { get; }
 
 
 }

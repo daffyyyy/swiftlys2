@@ -18,36 +18,43 @@ internal partial class C_OP_SetControlPointToCenterImpl : CParticleFunctionPreEm
 
     private static nint? _CP1Offset;
 
-    public ref int CP1 {
-        get {
+    public ref int CP1
+    {
+        get
+        {
             _CP1Offset = _CP1Offset ?? Schema.GetOffset(0xB2CEB7C2D4B1E579);
             return ref _Handle.AsRef<int>(_CP1Offset!.Value);
         }
     }
     private static nint? _CP1PosOffset;
 
-    public ref Vector CP1Pos {
-        get {
+    public ref Vector CP1Pos
+    {
+        get
+        {
             _CP1PosOffset = _CP1PosOffset ?? Schema.GetOffset(0xB2CEB7C2408288D9);
             return ref _Handle.AsRef<Vector>(_CP1PosOffset!.Value);
         }
     }
     private static nint? _UseAvgParticlePosOffset;
 
-    public ref bool UseAvgParticlePos {
-        get {
+    public ref bool UseAvgParticlePos
+    {
+        get
+        {
             _UseAvgParticlePosOffset = _UseAvgParticlePosOffset ?? Schema.GetOffset(0xB2CEB7C2399CEECC);
             return ref _Handle.AsRef<bool>(_UseAvgParticlePosOffset!.Value);
         }
     }
     private static nint? _SetParentOffset;
 
-    public ref ParticleParentSetMode_t SetParent {
-        get {
+    public ref ParticleParentSetMode_t SetParent
+    {
+        get
+        {
             _SetParentOffset = _SetParentOffset ?? Schema.GetOffset(0xB2CEB7C22D8246B7);
             return ref _Handle.AsRef<ParticleParentSetMode_t>(_SetParentOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface CParticleBindingRealPulse : CParticleCollectionBindingI
     static int ISchemaClass<CParticleBindingRealPulse>.Size => 312;
     static string? ISchemaClass<CParticleBindingRealPulse>.ClassName => null;
 
-
-
-
 }

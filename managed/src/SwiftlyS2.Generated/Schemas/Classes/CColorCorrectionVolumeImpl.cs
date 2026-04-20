@@ -18,68 +18,85 @@ internal partial class CColorCorrectionVolumeImpl : CBaseTriggerImpl, CColorCorr
 
     private static nint? _MaxWeightOffset;
 
-    public ref float MaxWeight {
-        get {
+    public ref float MaxWeight
+    {
+        get
+        {
             _MaxWeightOffset = _MaxWeightOffset ?? Schema.GetOffset(0x78A9E01BEE8A2F2D);
             return ref _Handle.AsRef<float>(_MaxWeightOffset!.Value);
         }
     }
     private static nint? _FadeDurationOffset;
 
-    public ref float FadeDuration {
-        get {
+    public ref float FadeDuration
+    {
+        get
+        {
             _FadeDurationOffset = _FadeDurationOffset ?? Schema.GetOffset(0x78A9E01B46550027);
             return ref _Handle.AsRef<float>(_FadeDurationOffset!.Value);
         }
     }
     private static nint? _WeightOffset;
 
-    public ref float Weight {
-        get {
+    public ref float Weight
+    {
+        get
+        {
             _WeightOffset = _WeightOffset ?? Schema.GetOffset(0x78A9E01BBF415739);
             return ref _Handle.AsRef<float>(_WeightOffset!.Value);
         }
     }
     private static nint? _LookupFilenameOffset;
 
-    public string LookupFilename {
-        get {
+    public string LookupFilename
+    {
+        get
+        {
             _LookupFilenameOffset = _LookupFilenameOffset ?? Schema.GetOffset(0x78A9E01B2611A2C6);
             return Schema.GetString(_Handle + _LookupFilenameOffset!.Value);
         }
-        set {
+        set
+        {
             _LookupFilenameOffset = _LookupFilenameOffset ?? Schema.GetOffset(0x78A9E01B2611A2C6);
             Schema.SetFixedString(_Handle, _LookupFilenameOffset!.Value, value, 512);
         }
-    } 
+    }
     private static nint? _LastEnterWeightOffset;
 
-    public ref float LastEnterWeight {
-        get {
+    public ref float LastEnterWeight
+    {
+        get
+        {
             _LastEnterWeightOffset = _LastEnterWeightOffset ?? Schema.GetOffset(0x78A9E01B2F53D64D);
             return ref _Handle.AsRef<float>(_LastEnterWeightOffset!.Value);
         }
     }
     private static nint? _LastEnterTimeOffset;
 
-    public GameTime_t LastEnterTime {
-        get {
+    public GameTime_t LastEnterTime
+    {
+        get
+        {
             _LastEnterTimeOffset = _LastEnterTimeOffset ?? Schema.GetOffset(0x78A9E01B01977F10);
             return new GameTime_tImpl(_Handle + _LastEnterTimeOffset!.Value);
         }
     }
     private static nint? _LastExitWeightOffset;
 
-    public ref float LastExitWeight {
-        get {
+    public ref float LastExitWeight
+    {
+        get
+        {
             _LastExitWeightOffset = _LastExitWeightOffset ?? Schema.GetOffset(0x78A9E01B59C9642D);
             return ref _Handle.AsRef<float>(_LastExitWeightOffset!.Value);
         }
     }
     private static nint? _LastExitTimeOffset;
 
-    public GameTime_t LastExitTime {
-        get {
+    public GameTime_t LastExitTime
+    {
+        get
+        {
             _LastExitTimeOffset = _LastExitTimeOffset ?? Schema.GetOffset(0x78A9E01B183C8DF0);
             return new GameTime_tImpl(_Handle + _LastExitTimeOffset!.Value);
         }

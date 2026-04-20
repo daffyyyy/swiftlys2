@@ -12,9 +12,6 @@ public partial interface CChoreoInfoTarget : CPointEntity, ISchemaClass<CChoreoI
 {
     static CChoreoInfoTarget ISchemaClass<CChoreoInfoTarget>.From(nint handle) => new CChoreoInfoTargetImpl(handle);
     static int ISchemaClass<CChoreoInfoTarget>.Size => 1192;
-    static string? ISchemaClass<CChoreoInfoTarget>.ClassName => null;
-
-
-
+    static string? ISchemaClass<CChoreoInfoTarget>.ClassName => "info_target_choreo";
 
 }

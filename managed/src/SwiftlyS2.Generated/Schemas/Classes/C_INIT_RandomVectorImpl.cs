@@ -18,36 +18,43 @@ internal partial class C_INIT_RandomVectorImpl : CParticleFunctionInitializerImp
 
     private static nint? _MinOffset;
 
-    public ref Vector Min {
-        get {
+    public ref Vector Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x9B672752B0765F37);
             return ref _Handle.AsRef<Vector>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref Vector Max {
-        get {
+    public ref Vector Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x9B672752BE89FCF9);
             return ref _Handle.AsRef<Vector>(_MaxOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x9B672752E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _RandomnessParametersOffset;
 
-    public CRandomNumberGeneratorParameters RandomnessParameters {
-        get {
+    public CRandomNumberGeneratorParameters RandomnessParameters
+    {
+        get
+        {
             _RandomnessParametersOffset = _RandomnessParametersOffset ?? Schema.GetOffset(0x9B6727527EDF50AD);
             return new CRandomNumberGeneratorParametersImpl(_Handle + _RandomnessParametersOffset!.Value);
         }
     }
-
 
 }

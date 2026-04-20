@@ -23,7 +23,7 @@ public partial interface CMathColorBlend : CLogicalEntity, ISchemaClass<CMathCol
 
     public ref Color OutColor2 { get; }
 
-    // CEntityOutputTemplate< Color, Color >
+    // CEntityOutputTemplate< Color >
     public SchemaUntypedField OutValue { get; }
 
 

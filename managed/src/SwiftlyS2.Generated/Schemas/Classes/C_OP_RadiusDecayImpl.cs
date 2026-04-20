@@ -18,12 +18,13 @@ internal partial class C_OP_RadiusDecayImpl : CParticleFunctionOperatorImpl, C_O
 
     private static nint? _MinRadiusOffset;
 
-    public ref float MinRadius {
-        get {
+    public ref float MinRadius
+    {
+        get
+        {
             _MinRadiusOffset = _MinRadiusOffset ?? Schema.GetOffset(0x119375431D07C7B7);
             return ref _Handle.AsRef<float>(_MinRadiusOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CFuncMoverAPIImpl : SchemaClass, CFuncMoverAPI
 {
     public CFuncMoverAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

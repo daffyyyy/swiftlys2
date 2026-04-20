@@ -16,41 +16,49 @@ internal partial class FeRodConstraint_tImpl : SchemaClass, FeRodConstraint_t
 {
     public FeRodConstraint_tImpl(nint handle) : base(handle) { }
 
-    public ISchemaFixedArray<ushort> Node {
+    public ISchemaFixedArray<ushort> Node
+    {
         get => new SchemaFixedArray<ushort>(_Handle, 0xC672146DCD6694B9, 2, 2, 2);
     }
     private static nint? _MaxDistOffset;
 
-    public ref float MaxDist {
-        get {
+    public ref float MaxDist
+    {
+        get
+        {
             _MaxDistOffset = _MaxDistOffset ?? Schema.GetOffset(0xC672146DC9FFDD57);
             return ref _Handle.AsRef<float>(_MaxDistOffset!.Value);
         }
     }
     private static nint? _MinDistOffset;
 
-    public ref float MinDist {
-        get {
+    public ref float MinDist
+    {
+        get
+        {
             _MinDistOffset = _MinDistOffset ?? Schema.GetOffset(0xC672146D2C1C02AD);
             return ref _Handle.AsRef<float>(_MinDistOffset!.Value);
         }
     }
     private static nint? _Weight0Offset;
 
-    public ref float Weight0 {
-        get {
+    public ref float Weight0
+    {
+        get
+        {
             _Weight0Offset = _Weight0Offset ?? Schema.GetOffset(0xC672146D65561D21);
             return ref _Handle.AsRef<float>(_Weight0Offset!.Value);
         }
     }
     private static nint? _RelaxationFactorOffset;
 
-    public ref float RelaxationFactor {
-        get {
+    public ref float RelaxationFactor
+    {
+        get
+        {
             _RelaxationFactorOffset = _RelaxationFactorOffset ?? Schema.GetOffset(0xC672146D357F3BFF);
             return ref _Handle.AsRef<float>(_RelaxationFactorOffset!.Value);
         }
     }
-
 
 }

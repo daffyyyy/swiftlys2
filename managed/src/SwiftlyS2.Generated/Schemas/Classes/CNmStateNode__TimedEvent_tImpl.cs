@@ -18,28 +18,33 @@ internal partial class CNmStateNode__TimedEvent_tImpl : SchemaClass, CNmStateNod
 
     private static nint? _IDOffset;
 
-    public ref CGlobalSymbol ID {
-        get {
+    public ref CGlobalSymbol ID
+    {
+        get
+        {
             _IDOffset = _IDOffset ?? Schema.GetOffset(0x256373A95066900);
             return ref _Handle.AsRef<CGlobalSymbol>(_IDOffset!.Value);
         }
     }
     private static nint? _TimeValueSecondsOffset;
 
-    public ref float TimeValueSeconds {
-        get {
+    public ref float TimeValueSeconds
+    {
+        get
+        {
             _TimeValueSecondsOffset = _TimeValueSecondsOffset ?? Schema.GetOffset(0x256373A3B175F1C);
             return ref _Handle.AsRef<float>(_TimeValueSecondsOffset!.Value);
         }
     }
     private static nint? _ComparisionOperatorOffset;
 
-    public ref CNmStateNode__TimedEvent_t__Comparison_t ComparisionOperator {
-        get {
+    public ref CNmStateNode__TimedEvent_t__Comparison_t ComparisionOperator
+    {
+        get
+        {
             _ComparisionOperatorOffset = _ComparisionOperatorOffset ?? Schema.GetOffset(0x256373A5C6D84A1);
             return ref _Handle.AsRef<CNmStateNode__TimedEvent_t__Comparison_t>(_ComparisionOperatorOffset!.Value);
         }
     }
-
 
 }

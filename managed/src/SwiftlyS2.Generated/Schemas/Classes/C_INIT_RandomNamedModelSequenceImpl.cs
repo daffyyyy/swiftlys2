@@ -16,7 +16,4 @@ internal partial class C_INIT_RandomNamedModelSequenceImpl : C_INIT_RandomNamedM
 {
     public C_INIT_RandomNamedModelSequenceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

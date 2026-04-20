@@ -14,7 +14,4 @@ public partial interface CPulseCell_Test_NoInflow : CPulseCell_BaseFlow, ISchema
     static int ISchemaClass<CPulseCell_Test_NoInflow>.Size => 72;
     static string? ISchemaClass<CPulseCell_Test_NoInflow>.ClassName => null;
 
-
-
-
 }

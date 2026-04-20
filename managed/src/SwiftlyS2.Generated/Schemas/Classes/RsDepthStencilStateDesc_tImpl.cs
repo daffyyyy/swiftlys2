@@ -18,36 +18,43 @@ internal partial class RsDepthStencilStateDesc_tImpl : SchemaClass, RsDepthStenc
 
     private static nint? _DepthTestEnableOffset;
 
-    public SchemaUntypedField DepthTestEnable {
-        get {
+    public SchemaUntypedField DepthTestEnable
+    {
+        get
+        {
             _DepthTestEnableOffset = _DepthTestEnableOffset ?? Schema.GetOffset(0x9026AFA806421799);
             return new SchemaUntypedField(_Handle + _DepthTestEnableOffset!.Value);
         }
     }
     private static nint? _DepthWriteEnableOffset;
 
-    public SchemaUntypedField DepthWriteEnable {
-        get {
+    public SchemaUntypedField DepthWriteEnable
+    {
+        get
+        {
             _DepthWriteEnableOffset = _DepthWriteEnableOffset ?? Schema.GetOffset(0x9026AFA88D8085FE);
             return new SchemaUntypedField(_Handle + _DepthWriteEnableOffset!.Value);
         }
     }
     private static nint? _DepthFuncOffset;
 
-    public ref RsComparison_t DepthFunc {
-        get {
+    public ref RsComparison_t DepthFunc
+    {
+        get
+        {
             _DepthFuncOffset = _DepthFuncOffset ?? Schema.GetOffset(0x9026AFA8B47FC61C);
             return ref _Handle.AsRef<RsComparison_t>(_DepthFuncOffset!.Value);
         }
     }
     private static nint? _StencilStateOffset;
 
-    public RsStencilStateDesc_t StencilState {
-        get {
+    public RsStencilStateDesc_t StencilState
+    {
+        get
+        {
             _StencilStateOffset = _StencilStateOffset ?? Schema.GetOffset(0x9026AFA828EA33C4);
             return new RsStencilStateDesc_tImpl(_Handle + _StencilStateOffset!.Value);
         }
     }
-
 
 }

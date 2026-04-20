@@ -11,21 +11,19 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_CreateSpiralSphere : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateSpiralSphere>
 {
     static C_INIT_CreateSpiralSphere ISchemaClass<C_INIT_CreateSpiralSphere>.From(nint handle) => new C_INIT_CreateSpiralSphereImpl(handle);
-    static int ISchemaClass<C_INIT_CreateSpiralSphere>.Size => 504;
+    static int ISchemaClass<C_INIT_CreateSpiralSphere>.Size => 2064;
     static string? ISchemaClass<C_INIT_CreateSpiralSphere>.ClassName => null;
 
 
-    public ref int ControlPointNumber { get; }
+    public CParticleTransformInput TransformInput { get; }
 
-    public ref int OverrideCP { get; }
+    public CPerParticleFloatInput Density { get; }
 
-    public ref int Density { get; }
+    public CPerParticleFloatInput InitialRadius { get; }
 
-    public ref float InitialRadius { get; }
+    public CPerParticleFloatInput InitialSpeedMin { get; }
 
-    public ref float InitialSpeedMin { get; }
-
-    public ref float InitialSpeedMax { get; }
+    public CPerParticleFloatInput InitialSpeedMax { get; }
 
     public ref bool UseParticleCount { get; }
 

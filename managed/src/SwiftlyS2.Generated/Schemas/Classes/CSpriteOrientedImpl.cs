@@ -16,7 +16,4 @@ internal partial class CSpriteOrientedImpl : CSpriteImpl, CSpriteOriented
 {
     public CSpriteOrientedImpl(nint handle) : base(handle) { }
 
-
-
-
 }

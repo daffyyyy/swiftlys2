@@ -14,7 +14,4 @@ public partial interface CEnvSoundscapeProxyAlias_snd_soundscape_proxy : CEnvSou
     static int ISchemaClass<CEnvSoundscapeProxyAlias_snd_soundscape_proxy>.Size => 1344;
     static string? ISchemaClass<CEnvSoundscapeProxyAlias_snd_soundscape_proxy>.ClassName => null;
 
-
-
-
 }

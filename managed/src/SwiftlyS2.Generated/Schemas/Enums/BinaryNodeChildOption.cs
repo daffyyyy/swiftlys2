@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum BinaryNodeChildOption : uint
 {
- Child1 = 0,
-
- Child2 = 1,
+    Child1 = 0,
+    Child2 = 1,
 }

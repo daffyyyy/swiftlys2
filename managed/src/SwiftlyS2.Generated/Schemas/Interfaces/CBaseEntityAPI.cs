@@ -14,7 +14,4 @@ public partial interface CBaseEntityAPI : ISchemaClass<CBaseEntityAPI>
     static int ISchemaClass<CBaseEntityAPI>.Size => 8;
     static string? ISchemaClass<CBaseEntityAPI>.ClassName => null;
 
-
-
-
 }

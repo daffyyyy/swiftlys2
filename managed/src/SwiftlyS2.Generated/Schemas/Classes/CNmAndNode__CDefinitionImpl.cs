@@ -18,12 +18,13 @@ internal partial class CNmAndNode__CDefinitionImpl : CNmBoolValueNode__CDefiniti
 
     private static nint? _ConditionNodeIndicesOffset;
 
-    public SchemaUntypedField ConditionNodeIndices {
-        get {
+    public SchemaUntypedField ConditionNodeIndices
+    {
+        get
+        {
             _ConditionNodeIndicesOffset = _ConditionNodeIndicesOffset ?? Schema.GetOffset(0xC46B12E04A144D0F);
             return new SchemaUntypedField(_Handle + _ConditionNodeIndicesOffset!.Value);
         }
     }
-
 
 }

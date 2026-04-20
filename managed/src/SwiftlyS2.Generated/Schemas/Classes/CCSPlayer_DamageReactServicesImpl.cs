@@ -16,7 +16,4 @@ internal partial class CCSPlayer_DamageReactServicesImpl : CPlayerPawnComponentI
 {
     public CCSPlayer_DamageReactServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

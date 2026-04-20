@@ -16,7 +16,4 @@ internal partial class CNmTargetValueNode__CDefinitionImpl : CNmValueNode__CDefi
 {
     public CNmTargetValueNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

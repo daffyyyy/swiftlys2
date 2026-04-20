@@ -16,7 +16,4 @@ internal partial class C_OP_WorldCollideConstraintImpl : CParticleFunctionConstr
 {
     public C_OP_WorldCollideConstraintImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class C_OP_RemapNamedModelMeshGroupEndCapImpl : C_OP_RemapNamed
 {
     public C_OP_RemapNamedModelMeshGroupEndCapImpl(nint handle) : base(handle) { }
 
-
-
-
 }

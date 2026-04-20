@@ -16,7 +16,4 @@ internal partial class CEditableMotionGraphImpl : CMotionGraphImpl, CEditableMot
 {
     public CEditableMotionGraphImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -12,7 +12,7 @@ public partial interface CTonemapController2 : CBaseEntity, ISchemaClass<CTonema
 {
     static CTonemapController2 ISchemaClass<CTonemapController2>.From(nint handle) => new CTonemapController2Impl(handle);
     static int ISchemaClass<CTonemapController2>.Size => 1216;
-    static string? ISchemaClass<CTonemapController2>.ClassName => "env_tonemap_controller2";
+    static string? ISchemaClass<CTonemapController2>.ClassName => "env_tonemap_controller";
 
 
     public ref float AutoExposureMin { get; }

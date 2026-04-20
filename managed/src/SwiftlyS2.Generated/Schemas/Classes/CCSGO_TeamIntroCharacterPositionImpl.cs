@@ -16,7 +16,4 @@ internal partial class CCSGO_TeamIntroCharacterPositionImpl : CCSGO_TeamPreviewC
 {
     public CCSGO_TeamIntroCharacterPositionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

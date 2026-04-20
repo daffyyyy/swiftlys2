@@ -16,7 +16,4 @@ internal partial class CTriggerGravityImpl : CBaseTriggerImpl, CTriggerGravity
 {
     public CTriggerGravityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

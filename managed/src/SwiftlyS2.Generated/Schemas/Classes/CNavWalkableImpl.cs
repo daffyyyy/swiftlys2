@@ -16,7 +16,4 @@ internal partial class CNavWalkableImpl : CPointEntityImpl, CNavWalkable
 {
     public CNavWalkableImpl(nint handle) : base(handle) { }
 
-
-
-
 }

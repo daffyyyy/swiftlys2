@@ -18,12 +18,13 @@ internal partial class CTriggerMultipleImpl : CBaseTriggerImpl, CTriggerMultiple
 
     private static nint? _OnTriggerOffset;
 
-    public ref CEntityIOOutput OnTrigger {
-        get {
+    public ref CEntityIOOutput OnTrigger
+    {
+        get
+        {
             _OnTriggerOffset = _OnTriggerOffset ?? Schema.GetOffset(0x327F607E81E0BFEC);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnTriggerOffset!.Value);
         }
     }
-
 
 }

@@ -11,12 +11,19 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScenePayloadVData : ISchemaClass<CScenePayloadVData>
 {
     static CScenePayloadVData ISchemaClass<CScenePayloadVData>.From(nint handle) => new CScenePayloadVDataImpl(handle);
-    static int ISchemaClass<CScenePayloadVData>.Size => 224;
+    static int ISchemaClass<CScenePayloadVData>.Size => 464;
     static string? ISchemaClass<CScenePayloadVData>.ClassName => null;
 
 
+    public ref ENPCBehaviorOverride_t NPCBehavior { get; }
+
+    // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIPulseGraphDef > >
+    public SchemaUntypedField PulseFile { get; }
+
     // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCChoreoSceneResource > >
     public SchemaUntypedField SceneFile { get; }
+
+    public ref InteractionPriority_t Priority { get; }
 
 
 }

@@ -18,72 +18,88 @@ internal partial class C_INIT_RtEnvCullImpl : CParticleFunctionInitializerImpl, 
 
     private static nint? _TestDirOffset;
 
-    public ref Vector TestDir {
-        get {
+    public ref Vector TestDir
+    {
+        get
+        {
             _TestDirOffset = _TestDirOffset ?? Schema.GetOffset(0xEA96DD4FC17166B4);
             return ref _Handle.AsRef<Vector>(_TestDirOffset!.Value);
         }
     }
     private static nint? _TestNormalOffset;
 
-    public ref Vector TestNormal {
-        get {
+    public ref Vector TestNormal
+    {
+        get
+        {
             _TestNormalOffset = _TestNormalOffset ?? Schema.GetOffset(0xEA96DD4FD4AC77F2);
             return ref _Handle.AsRef<Vector>(_TestNormalOffset!.Value);
         }
     }
     private static nint? _UseVelocityOffset;
 
-    public ref bool UseVelocity {
-        get {
+    public ref bool UseVelocity
+    {
+        get
+        {
             _UseVelocityOffset = _UseVelocityOffset ?? Schema.GetOffset(0xEA96DD4F5E806BAF);
             return ref _Handle.AsRef<bool>(_UseVelocityOffset!.Value);
         }
     }
     private static nint? _CullOnMissOffset;
 
-    public ref bool CullOnMiss {
-        get {
+    public ref bool CullOnMiss
+    {
+        get
+        {
             _CullOnMissOffset = _CullOnMissOffset ?? Schema.GetOffset(0xEA96DD4F5E118398);
             return ref _Handle.AsRef<bool>(_CullOnMissOffset!.Value);
         }
     }
     private static nint? _LifeAdjustOffset;
 
-    public ref bool LifeAdjust {
-        get {
+    public ref bool LifeAdjust
+    {
+        get
+        {
             _LifeAdjustOffset = _LifeAdjustOffset ?? Schema.GetOffset(0xEA96DD4FA38568F0);
             return ref _Handle.AsRef<bool>(_LifeAdjustOffset!.Value);
         }
     }
     private static nint? _RtEnvNameOffset;
 
-    public string RtEnvName {
-        get {
+    public string RtEnvName
+    {
+        get
+        {
             _RtEnvNameOffset = _RtEnvNameOffset ?? Schema.GetOffset(0xEA96DD4FC32A9775);
             return Schema.GetString(_Handle + _RtEnvNameOffset!.Value);
         }
-        set {
+        set
+        {
             _RtEnvNameOffset = _RtEnvNameOffset ?? Schema.GetOffset(0xEA96DD4FC32A9775);
             Schema.SetFixedString(_Handle, _RtEnvNameOffset!.Value, value, 128);
         }
-    } 
+    }
     private static nint? _RTEnvCPOffset;
 
-    public ref int RTEnvCP {
-        get {
+    public ref int RTEnvCP
+    {
+        get
+        {
             _RTEnvCPOffset = _RTEnvCPOffset ?? Schema.GetOffset(0xEA96DD4F01881731);
             return ref _Handle.AsRef<int>(_RTEnvCPOffset!.Value);
         }
     }
     private static nint? _ComponentOffset;
 
-    public ref int Component {
-        get {
+    public ref int Component
+    {
+        get
+        {
             _ComponentOffset = _ComponentOffset ?? Schema.GetOffset(0xEA96DD4FBFD0952C);
             return ref _Handle.AsRef<int>(_ComponentOffset!.Value);
         }
     }
-
 
 }

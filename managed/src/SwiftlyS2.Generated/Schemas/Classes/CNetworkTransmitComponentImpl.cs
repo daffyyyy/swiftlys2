@@ -18,12 +18,13 @@ internal partial class CNetworkTransmitComponentImpl : SchemaClass, CNetworkTran
 
     private static nint? _TransmitStateOwnedCounterOffset;
 
-    public ref byte TransmitStateOwnedCounter {
-        get {
+    public ref byte TransmitStateOwnedCounter
+    {
+        get
+        {
             _TransmitStateOwnedCounterOffset = _TransmitStateOwnedCounterOffset ?? Schema.GetOffset(0x2D6BD23F6BC30751);
             return ref _Handle.AsRef<byte>(_TransmitStateOwnedCounterOffset!.Value);
         }
     }
-
 
 }

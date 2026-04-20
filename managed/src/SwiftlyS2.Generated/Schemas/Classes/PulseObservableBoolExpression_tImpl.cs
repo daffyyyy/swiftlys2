@@ -18,28 +18,33 @@ internal partial class PulseObservableBoolExpression_tImpl : SchemaClass, PulseO
 
     private static nint? _EvaluateConnectionOffset;
 
-    public CPulse_OutflowConnection EvaluateConnection {
-        get {
+    public CPulse_OutflowConnection EvaluateConnection
+    {
+        get
+        {
             _EvaluateConnectionOffset = _EvaluateConnectionOffset ?? Schema.GetOffset(0x420AB396176904EE);
             return new CPulse_OutflowConnectionImpl(_Handle + _EvaluateConnectionOffset!.Value);
         }
     }
     private static nint? _DependentObservableVarsOffset;
 
-    public ref CUtlVector<PulseRuntimeVarIndex_t> DependentObservableVars {
-        get {
+    public ref CUtlVector<PulseRuntimeVarIndex_t> DependentObservableVars
+    {
+        get
+        {
             _DependentObservableVarsOffset = _DependentObservableVarsOffset ?? Schema.GetOffset(0x420AB396C3F55B8B);
             return ref _Handle.AsRef<CUtlVector<PulseRuntimeVarIndex_t>>(_DependentObservableVarsOffset!.Value);
         }
     }
     private static nint? _DependentObservableBlackboardReferencesOffset;
 
-    public ref CUtlVector<PulseRuntimeBlackboardReferenceIndex_t> DependentObservableBlackboardReferences {
-        get {
+    public ref CUtlVector<PulseRuntimeBlackboardReferenceIndex_t> DependentObservableBlackboardReferences
+    {
+        get
+        {
             _DependentObservableBlackboardReferencesOffset = _DependentObservableBlackboardReferencesOffset ?? Schema.GetOffset(0x420AB3961EE1483A);
             return ref _Handle.AsRef<CUtlVector<PulseRuntimeBlackboardReferenceIndex_t>>(_DependentObservableBlackboardReferencesOffset!.Value);
         }
     }
-
 
 }

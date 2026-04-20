@@ -14,7 +14,4 @@ public partial interface CCSObserver_ObserverServices : CPlayer_ObserverServices
     static int ISchemaClass<CCSObserver_ObserverServices>.Size => 128;
     static string? ISchemaClass<CCSObserver_ObserverServices>.ClassName => null;
 
-
-
-
 }

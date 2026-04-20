@@ -18,44 +18,53 @@ internal partial class CBtActionCombatPositioningImpl : CBtNodeImpl, CBtActionCo
 
     private static nint? _SensorInputKeyOffset;
 
-    public string SensorInputKey {
-        get {
+    public string SensorInputKey
+    {
+        get
+        {
             _SensorInputKeyOffset = _SensorInputKeyOffset ?? Schema.GetOffset(0x3FB29123D2B0D4C1);
             return Schema.GetCUtlString(_Handle.Read<nint>(_SensorInputKeyOffset!.Value));
         }
-        set {
+        set
+        {
             _SensorInputKeyOffset = _SensorInputKeyOffset ?? Schema.GetOffset(0x3FB29123D2B0D4C1);
             Schema.SetCUtlString(_Handle, _SensorInputKeyOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _IsAttackingKeyOffset;
 
-    public string IsAttackingKey {
-        get {
+    public string IsAttackingKey
+    {
+        get
+        {
             _IsAttackingKeyOffset = _IsAttackingKeyOffset ?? Schema.GetOffset(0x3FB29123BFC6462B);
             return Schema.GetCUtlString(_Handle.Read<nint>(_IsAttackingKeyOffset!.Value));
         }
-        set {
+        set
+        {
             _IsAttackingKeyOffset = _IsAttackingKeyOffset ?? Schema.GetOffset(0x3FB29123BFC6462B);
             Schema.SetCUtlString(_Handle, _IsAttackingKeyOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ActionTimerOffset;
 
-    public CountdownTimer ActionTimer {
-        get {
+    public CountdownTimer ActionTimer
+    {
+        get
+        {
             _ActionTimerOffset = _ActionTimerOffset ?? Schema.GetOffset(0x3FB291238777F414);
             return new CountdownTimerImpl(_Handle + _ActionTimerOffset!.Value);
         }
     }
     private static nint? _CrouchingOffset;
 
-    public ref bool Crouching {
-        get {
+    public ref bool Crouching
+    {
+        get
+        {
             _CrouchingOffset = _CrouchingOffset ?? Schema.GetOffset(0x3FB291232DA51BAD);
             return ref _Handle.AsRef<bool>(_CrouchingOffset!.Value);
         }
     }
-
 
 }

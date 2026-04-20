@@ -18,28 +18,33 @@ internal partial class CPointProximitySensorImpl : CPointEntityImpl, CPointProxi
 
     private static nint? _DisabledOffset;
 
-    public ref bool Disabled {
-        get {
+    public ref bool Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0x769A8B133A7C5965);
             return ref _Handle.AsRef<bool>(_DisabledOffset!.Value);
         }
     }
     private static nint? _TargetEntityOffset;
 
-    public ref CHandle<CBaseEntity> TargetEntity {
-        get {
+    public ref CHandle<CBaseEntity> TargetEntity
+    {
+        get
+        {
             _TargetEntityOffset = _TargetEntityOffset ?? Schema.GetOffset(0x769A8B1325D042A9);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_TargetEntityOffset!.Value);
         }
     }
     private static nint? _DistanceOffset;
 
-    public SchemaUntypedField Distance {
-        get {
+    public SchemaUntypedField Distance
+    {
+        get
+        {
             _DistanceOffset = _DistanceOffset ?? Schema.GetOffset(0x769A8B13978BC0E2);
             return new SchemaUntypedField(_Handle + _DistanceOffset!.Value);
         }
     }
-
 
 }

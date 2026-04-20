@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeProceduralTestResource_tImpl : SchemaC
 {
     public InfoForResourceTypeProceduralTestResource_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

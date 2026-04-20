@@ -18,52 +18,63 @@ internal partial class C_OP_EnableChildrenFromParentParticleCountImpl : CParticl
 
     private static nint? _ChildGroupIDOffset;
 
-    public ref int ChildGroupID {
-        get {
+    public ref int ChildGroupID
+    {
+        get
+        {
             _ChildGroupIDOffset = _ChildGroupIDOffset ?? Schema.GetOffset(0xDF13D5F2E3F3C965);
             return ref _Handle.AsRef<int>(_ChildGroupIDOffset!.Value);
         }
     }
     private static nint? _FirstChildOffset;
 
-    public ref int FirstChild {
-        get {
+    public ref int FirstChild
+    {
+        get
+        {
             _FirstChildOffset = _FirstChildOffset ?? Schema.GetOffset(0xDF13D5F22DF4A8BD);
             return ref _Handle.AsRef<int>(_FirstChildOffset!.Value);
         }
     }
     private static nint? _NumChildrenToEnableOffset;
 
-    public CParticleCollectionFloatInput NumChildrenToEnable {
-        get {
+    public CParticleCollectionFloatInput NumChildrenToEnable
+    {
+        get
+        {
             _NumChildrenToEnableOffset = _NumChildrenToEnableOffset ?? Schema.GetOffset(0xDF13D5F28039247A);
             return new CParticleCollectionFloatInputImpl(_Handle + _NumChildrenToEnableOffset!.Value);
         }
     }
     private static nint? _DisableChildrenOffset;
 
-    public ref bool DisableChildren {
-        get {
+    public ref bool DisableChildren
+    {
+        get
+        {
             _DisableChildrenOffset = _DisableChildrenOffset ?? Schema.GetOffset(0xDF13D5F2F13DBFCC);
             return ref _Handle.AsRef<bool>(_DisableChildrenOffset!.Value);
         }
     }
     private static nint? _PlayEndcapOnStopOffset;
 
-    public ref bool PlayEndcapOnStop {
-        get {
+    public ref bool PlayEndcapOnStop
+    {
+        get
+        {
             _PlayEndcapOnStopOffset = _PlayEndcapOnStopOffset ?? Schema.GetOffset(0xDF13D5F2CEC82FA1);
             return ref _Handle.AsRef<bool>(_PlayEndcapOnStopOffset!.Value);
         }
     }
     private static nint? _DestroyImmediatelyOffset;
 
-    public ref bool DestroyImmediately {
-        get {
+    public ref bool DestroyImmediately
+    {
+        get
+        {
             _DestroyImmediatelyOffset = _DestroyImmediatelyOffset ?? Schema.GetOffset(0xDF13D5F275F43101);
             return ref _Handle.AsRef<bool>(_DestroyImmediatelyOffset!.Value);
         }
     }
-
 
 }

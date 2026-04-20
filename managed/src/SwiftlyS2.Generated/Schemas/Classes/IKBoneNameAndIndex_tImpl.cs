@@ -18,16 +18,18 @@ internal partial class IKBoneNameAndIndex_tImpl : SchemaClass, IKBoneNameAndInde
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xEDEB678CAE8A266);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xEDEB678CAE8A266);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

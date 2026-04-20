@@ -16,7 +16,4 @@ internal partial class IParticleSystemDefinitionImpl : SchemaClass, IParticleSys
 {
     public IParticleSystemDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

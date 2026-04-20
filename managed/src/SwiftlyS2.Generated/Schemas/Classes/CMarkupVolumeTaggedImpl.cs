@@ -18,60 +18,73 @@ internal partial class CMarkupVolumeTaggedImpl : CMarkupVolumeImpl, CMarkupVolum
 
     private static nint? _GroupNamesOffset;
 
-    public ref CUtlVector<CGlobalSymbol> GroupNames {
-        get {
+    public ref CUtlVector<CGlobalSymbol> GroupNames
+    {
+        get
+        {
             _GroupNamesOffset = _GroupNamesOffset ?? Schema.GetOffset(0x4113340CB853197C);
             return ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(_GroupNamesOffset!.Value);
         }
     }
     private static nint? _TagsOffset;
 
-    public ref CUtlVector<CGlobalSymbol> Tags {
-        get {
+    public ref CUtlVector<CGlobalSymbol> Tags
+    {
+        get
+        {
             _TagsOffset = _TagsOffset ?? Schema.GetOffset(0x4113340C31C5D020);
             return ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(_TagsOffset!.Value);
         }
     }
     private static nint? _IsGroupOffset;
 
-    public ref bool IsGroup {
-        get {
+    public ref bool IsGroup
+    {
+        get
+        {
             _IsGroupOffset = _IsGroupOffset ?? Schema.GetOffset(0x4113340CB68D3FDC);
             return ref _Handle.AsRef<bool>(_IsGroupOffset!.Value);
         }
     }
     private static nint? _GroupByPrefabOffset;
 
-    public ref bool GroupByPrefab {
-        get {
+    public ref bool GroupByPrefab
+    {
+        get
+        {
             _GroupByPrefabOffset = _GroupByPrefabOffset ?? Schema.GetOffset(0x4113340CBCD6E7A7);
             return ref _Handle.AsRef<bool>(_GroupByPrefabOffset!.Value);
         }
     }
     private static nint? _GroupByVolumeOffset;
 
-    public ref bool GroupByVolume {
-        get {
+    public ref bool GroupByVolume
+    {
+        get
+        {
             _GroupByVolumeOffset = _GroupByVolumeOffset ?? Schema.GetOffset(0x4113340CFE19F503);
             return ref _Handle.AsRef<bool>(_GroupByVolumeOffset!.Value);
         }
     }
     private static nint? _GroupOtherGroupsOffset;
 
-    public ref bool GroupOtherGroups {
-        get {
+    public ref bool GroupOtherGroups
+    {
+        get
+        {
             _GroupOtherGroupsOffset = _GroupOtherGroupsOffset ?? Schema.GetOffset(0x4113340CE6C708E6);
             return ref _Handle.AsRef<bool>(_GroupOtherGroupsOffset!.Value);
         }
     }
     private static nint? _IsInGroupOffset;
 
-    public ref bool IsInGroup {
-        get {
+    public ref bool IsInGroup
+    {
+        get
+        {
             _IsInGroupOffset = _IsInGroupOffset ?? Schema.GetOffset(0x4113340C19D5C241);
             return ref _Handle.AsRef<bool>(_IsInGroupOffset!.Value);
         }
     }
-
 
 }

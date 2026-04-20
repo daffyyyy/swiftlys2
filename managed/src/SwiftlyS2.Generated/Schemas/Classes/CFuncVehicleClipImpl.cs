@@ -16,7 +16,4 @@ internal partial class CFuncVehicleClipImpl : CBaseModelEntityImpl, CFuncVehicle
 {
     public CFuncVehicleClipImpl(nint handle) : base(handle) { }
 
-
-
-
 }

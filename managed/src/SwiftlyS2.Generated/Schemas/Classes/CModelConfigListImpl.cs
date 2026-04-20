@@ -18,28 +18,33 @@ internal partial class CModelConfigListImpl : SchemaClass, CModelConfigList
 
     private static nint? _HideMaterialGroupInToolsOffset;
 
-    public ref bool HideMaterialGroupInTools {
-        get {
+    public ref bool HideMaterialGroupInTools
+    {
+        get
+        {
             _HideMaterialGroupInToolsOffset = _HideMaterialGroupInToolsOffset ?? Schema.GetOffset(0x5291D8D9214E9E53);
             return ref _Handle.AsRef<bool>(_HideMaterialGroupInToolsOffset!.Value);
         }
     }
     private static nint? _HideRenderColorInToolsOffset;
 
-    public ref bool HideRenderColorInTools {
-        get {
+    public ref bool HideRenderColorInTools
+    {
+        get
+        {
             _HideRenderColorInToolsOffset = _HideRenderColorInToolsOffset ?? Schema.GetOffset(0x5291D8D9C25B2716);
             return ref _Handle.AsRef<bool>(_HideRenderColorInToolsOffset!.Value);
         }
     }
     private static nint? _ConfigsOffset;
 
-    public ref CUtlVector<PointerTo<CModelConfig>> Configs {
-        get {
+    public ref CUtlVector<PointerTo<CModelConfig>> Configs
+    {
+        get
+        {
             _ConfigsOffset = _ConfigsOffset ?? Schema.GetOffset(0x5291D8D906111EDC);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CModelConfig>>>(_ConfigsOffset!.Value);
         }
     }
-
 
 }

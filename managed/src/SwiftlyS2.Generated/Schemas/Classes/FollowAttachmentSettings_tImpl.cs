@@ -18,44 +18,53 @@ internal partial class FollowAttachmentSettings_tImpl : SchemaClass, FollowAttac
 
     private static nint? _AttachmentOffset;
 
-    public CAnimAttachment Attachment {
-        get {
+    public CAnimAttachment Attachment
+    {
+        get
+        {
             _AttachmentOffset = _AttachmentOffset ?? Schema.GetOffset(0x94FFC64B2C5CA308);
             return new CAnimAttachmentImpl(_Handle + _AttachmentOffset!.Value);
         }
     }
     private static nint? _BoneIndexOffset;
 
-    public ref int BoneIndex {
-        get {
+    public ref int BoneIndex
+    {
+        get
+        {
             _BoneIndexOffset = _BoneIndexOffset ?? Schema.GetOffset(0x94FFC64B6AFA4155);
             return ref _Handle.AsRef<int>(_BoneIndexOffset!.Value);
         }
     }
     private static nint? _AttachmentHandleOffset;
 
-    public AttachmentHandle_t AttachmentHandle {
-        get {
+    public AttachmentHandle_t AttachmentHandle
+    {
+        get
+        {
             _AttachmentHandleOffset = _AttachmentHandleOffset ?? Schema.GetOffset(0x94FFC64BA203035E);
             return new AttachmentHandle_tImpl(_Handle + _AttachmentHandleOffset!.Value);
         }
     }
     private static nint? _MatchTranslationOffset;
 
-    public ref bool MatchTranslation {
-        get {
+    public ref bool MatchTranslation
+    {
+        get
+        {
             _MatchTranslationOffset = _MatchTranslationOffset ?? Schema.GetOffset(0x94FFC64B96FCC779);
             return ref _Handle.AsRef<bool>(_MatchTranslationOffset!.Value);
         }
     }
     private static nint? _MatchRotationOffset;
 
-    public ref bool MatchRotation {
-        get {
+    public ref bool MatchRotation
+    {
+        get
+        {
             _MatchRotationOffset = _MatchRotationOffset ?? Schema.GetOffset(0x94FFC64BA4FB561C);
             return ref _Handle.AsRef<bool>(_MatchRotationOffset!.Value);
         }
     }
-
 
 }

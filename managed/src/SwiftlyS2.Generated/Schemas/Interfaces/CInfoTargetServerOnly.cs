@@ -14,7 +14,4 @@ public partial interface CInfoTargetServerOnly : CServerOnlyPointEntity, ISchema
     static int ISchemaClass<CInfoTargetServerOnly>.Size => 1192;
     static string? ISchemaClass<CInfoTargetServerOnly>.ClassName => "info_target_server_only";
 
-
-
-
 }

@@ -18,20 +18,23 @@ internal partial class C_INIT_InheritVelocityImpl : CParticleFunctionInitializer
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x227ECF463F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _VelocityScaleOffset;
 
-    public ref float VelocityScale {
-        get {
+    public ref float VelocityScale
+    {
+        get
+        {
             _VelocityScaleOffset = _VelocityScaleOffset ?? Schema.GetOffset(0x227ECF46E161DDAA);
             return ref _Handle.AsRef<float>(_VelocityScaleOffset!.Value);
         }
     }
-
 
 }

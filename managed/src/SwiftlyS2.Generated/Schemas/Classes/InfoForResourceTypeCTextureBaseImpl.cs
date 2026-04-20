@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCTextureBaseImpl : SchemaClass, InfoFo
 {
     public InfoForResourceTypeCTextureBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

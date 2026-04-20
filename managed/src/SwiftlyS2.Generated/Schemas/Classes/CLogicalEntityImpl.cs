@@ -16,7 +16,4 @@ internal partial class CLogicalEntityImpl : CServerOnlyEntityImpl, CLogicalEntit
 {
     public CLogicalEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

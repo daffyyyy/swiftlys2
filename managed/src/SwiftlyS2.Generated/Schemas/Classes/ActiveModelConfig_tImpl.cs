@@ -18,36 +18,45 @@ internal partial class ActiveModelConfig_tImpl : SchemaClass, ActiveModelConfig_
 
     private static nint? _HandleOffset;
 
-    public ModelConfigHandle_t Handle {
-        get {
+    public ModelConfigHandle_t Handle
+    {
+        get
+        {
             _HandleOffset = _HandleOffset ?? Schema.GetOffset(0x554D81919D208453);
             return new ModelConfigHandle_tImpl(_Handle + _HandleOffset!.Value);
         }
     }
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x554D8191CAE8A266);
             return Schema.GetString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x554D8191CAE8A266);
             Schema.SetString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AssociatedEntitiesOffset;
 
-    public ref CUtlVector<CHandle<CBaseModelEntity>> AssociatedEntities {
-        get {
+    public ref CUtlVector<CHandle<CBaseModelEntity>> AssociatedEntities
+    {
+        get
+        {
             _AssociatedEntitiesOffset = _AssociatedEntitiesOffset ?? Schema.GetOffset(0x554D8191D6EB4F18);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBaseModelEntity>>>(_AssociatedEntitiesOffset!.Value);
         }
     }
     private static nint? _AssociatedEntityNamesOffset;
 
-    public ref CUtlVector<SchemaUntypedField> AssociatedEntityNames {
-        get {
+    public ref CUtlVector<SchemaUntypedField> AssociatedEntityNames
+    {
+        get
+        {
             _AssociatedEntityNamesOffset = _AssociatedEntityNamesOffset ?? Schema.GetOffset(0x554D8191EB3B241C);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_AssociatedEntityNamesOffset!.Value);
         }

@@ -16,7 +16,4 @@ internal partial class CCSObserver_CameraServicesImpl : CCSPlayerBase_CameraServ
 {
     public CCSObserver_CameraServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

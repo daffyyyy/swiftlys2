@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeIParticleSystemDefinitionImpl : Schema
 {
     public InfoForResourceTypeIParticleSystemDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

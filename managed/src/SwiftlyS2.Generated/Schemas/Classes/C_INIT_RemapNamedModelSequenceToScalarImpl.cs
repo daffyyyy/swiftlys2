@@ -16,7 +16,4 @@ internal partial class C_INIT_RemapNamedModelSequenceToScalarImpl : C_INIT_Remap
 {
     public C_INIT_RemapNamedModelSequenceToScalarImpl(nint handle) : base(handle) { }
 
-
-
-
 }

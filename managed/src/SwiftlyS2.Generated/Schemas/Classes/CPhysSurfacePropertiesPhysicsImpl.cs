@@ -18,52 +18,63 @@ internal partial class CPhysSurfacePropertiesPhysicsImpl : SchemaClass, CPhysSur
 
     private static nint? _FrictionOffset;
 
-    public ref float Friction {
-        get {
+    public ref float Friction
+    {
+        get
+        {
             _FrictionOffset = _FrictionOffset ?? Schema.GetOffset(0xF44ED88D5DBDE05B);
             return ref _Handle.AsRef<float>(_FrictionOffset!.Value);
         }
     }
     private static nint? _ElasticityOffset;
 
-    public ref float Elasticity {
-        get {
+    public ref float Elasticity
+    {
+        get
+        {
             _ElasticityOffset = _ElasticityOffset ?? Schema.GetOffset(0xF44ED88DEFAD1ED4);
             return ref _Handle.AsRef<float>(_ElasticityOffset!.Value);
         }
     }
     private static nint? _DensityOffset;
 
-    public ref float Density {
-        get {
+    public ref float Density
+    {
+        get
+        {
             _DensityOffset = _DensityOffset ?? Schema.GetOffset(0xF44ED88D870F96BB);
             return ref _Handle.AsRef<float>(_DensityOffset!.Value);
         }
     }
     private static nint? _ThicknessOffset;
 
-    public ref float Thickness {
-        get {
+    public ref float Thickness
+    {
+        get
+        {
             _ThicknessOffset = _ThicknessOffset ?? Schema.GetOffset(0xF44ED88D5B5FCC35);
             return ref _Handle.AsRef<float>(_ThicknessOffset!.Value);
         }
     }
     private static nint? _SoftContactFrequencyOffset;
 
-    public ref float SoftContactFrequency {
-        get {
+    public ref float SoftContactFrequency
+    {
+        get
+        {
             _SoftContactFrequencyOffset = _SoftContactFrequencyOffset ?? Schema.GetOffset(0xF44ED88D2103A65B);
             return ref _Handle.AsRef<float>(_SoftContactFrequencyOffset!.Value);
         }
     }
     private static nint? _SoftContactDampingRatioOffset;
 
-    public ref float SoftContactDampingRatio {
-        get {
+    public ref float SoftContactDampingRatio
+    {
+        get
+        {
             _SoftContactDampingRatioOffset = _SoftContactDampingRatioOffset ?? Schema.GetOffset(0xF44ED88D1FD70102);
             return ref _Handle.AsRef<float>(_SoftContactDampingRatioOffset!.Value);
         }
     }
-
 
 }

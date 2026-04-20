@@ -18,12 +18,13 @@ internal partial class CFootFallAnimTagImpl : CAnimTagBaseImpl, CFootFallAnimTag
 
     private static nint? _FootOffset;
 
-    public ref FootFallTagFoot_t Foot {
-        get {
+    public ref FootFallTagFoot_t Foot
+    {
+        get
+        {
             _FootOffset = _FootOffset ?? Schema.GetOffset(0xC142B61EEB2B8B39);
             return ref _Handle.AsRef<FootFallTagFoot_t>(_FootOffset!.Value);
         }
     }
-
 
 }

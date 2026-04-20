@@ -14,7 +14,4 @@ public partial interface CPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, ISch
     static int ISchemaClass<CPathAnimMotorUpdater>.Size => 40;
     static string? ISchemaClass<CPathAnimMotorUpdater>.ClassName => null;
 
-
-
-
 }

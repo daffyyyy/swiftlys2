@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmZeroPoseTask : CNmPoseTask, ISchemaClass<CNmZeroPoseTask>
 {
     static CNmZeroPoseTask ISchemaClass<CNmZeroPoseTask>.From(nint handle) => new CNmZeroPoseTaskImpl(handle);
-    static int ISchemaClass<CNmZeroPoseTask>.Size => 88;
+    static int ISchemaClass<CNmZeroPoseTask>.Size => 72;
     static string? ISchemaClass<CNmZeroPoseTask>.ClassName => null;
-
-
-
 
 }

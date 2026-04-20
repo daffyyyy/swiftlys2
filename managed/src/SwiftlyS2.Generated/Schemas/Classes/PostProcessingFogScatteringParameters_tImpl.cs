@@ -18,44 +18,53 @@ internal partial class PostProcessingFogScatteringParameters_tImpl : SchemaClass
 
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xAE3B2EF52E1F6E07);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xAE3B2EF555E6EFAD);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
     private static nint? _CubemapScaleOffset;
 
-    public ref float CubemapScale {
-        get {
+    public ref float CubemapScale
+    {
+        get
+        {
             _CubemapScaleOffset = _CubemapScaleOffset ?? Schema.GetOffset(0xAE3B2EF593A389D0);
             return ref _Handle.AsRef<float>(_CubemapScaleOffset!.Value);
         }
     }
     private static nint? _VolumetricScaleOffset;
 
-    public ref float VolumetricScale {
-        get {
+    public ref float VolumetricScale
+    {
+        get
+        {
             _VolumetricScaleOffset = _VolumetricScaleOffset ?? Schema.GetOffset(0xAE3B2EF515A15A21);
             return ref _Handle.AsRef<float>(_VolumetricScaleOffset!.Value);
         }
     }
     private static nint? _GradientScaleOffset;
 
-    public ref float GradientScale {
-        get {
+    public ref float GradientScale
+    {
+        get
+        {
             _GradientScaleOffset = _GradientScaleOffset ?? Schema.GetOffset(0xAE3B2EF58473F465);
             return ref _Handle.AsRef<float>(_GradientScaleOffset!.Value);
         }
     }
-
 
 }

@@ -18,36 +18,43 @@ internal partial class C_OP_SetControlPointToPlayerImpl : CParticleFunctionPreEm
 
     private static nint? _CP1Offset;
 
-    public ref int CP1 {
-        get {
+    public ref int CP1
+    {
+        get
+        {
             _CP1Offset = _CP1Offset ?? Schema.GetOffset(0xD877DC8ED4B1E579);
             return ref _Handle.AsRef<int>(_CP1Offset!.Value);
         }
     }
     private static nint? _CP1PosOffset;
 
-    public ref Vector CP1Pos {
-        get {
+    public ref Vector CP1Pos
+    {
+        get
+        {
             _CP1PosOffset = _CP1PosOffset ?? Schema.GetOffset(0xD877DC8E408288D9);
             return ref _Handle.AsRef<Vector>(_CP1PosOffset!.Value);
         }
     }
     private static nint? _OrientToEyesOffset;
 
-    public ref bool OrientToEyes {
-        get {
+    public ref bool OrientToEyes
+    {
+        get
+        {
             _OrientToEyesOffset = _OrientToEyesOffset ?? Schema.GetOffset(0xD877DC8E3270E4F3);
             return ref _Handle.AsRef<bool>(_OrientToEyesOffset!.Value);
         }
     }
     private static nint? _PositionOffset;
 
-    public ref ParticleEntityPos_t Position {
-        get {
+    public ref ParticleEntityPos_t Position
+    {
+        get
+        {
             _PositionOffset = _PositionOffset ?? Schema.GetOffset(0xD877DC8EBC4CDBD6);
             return ref _Handle.AsRef<ParticleEntityPos_t>(_PositionOffset!.Value);
         }
     }
-
 
 }

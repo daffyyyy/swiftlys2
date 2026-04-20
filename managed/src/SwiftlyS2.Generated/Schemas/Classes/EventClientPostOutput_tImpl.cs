@@ -18,44 +18,53 @@ internal partial class EventClientPostOutput_tImpl : SchemaClass, EventClientPos
 
     private static nint? _LoopStateOffset;
 
-    public EngineLoopState_t LoopState {
-        get {
+    public EngineLoopState_t LoopState
+    {
+        get
+        {
             _LoopStateOffset = _LoopStateOffset ?? Schema.GetOffset(0x98578A18F928A2EC);
             return new EngineLoopState_tImpl(_Handle + _LoopStateOffset!.Value);
         }
     }
     private static nint? _RenderTimeOffset;
 
-    public ref double RenderTime {
-        get {
+    public ref double RenderTime
+    {
+        get
+        {
             _RenderTimeOffset = _RenderTimeOffset ?? Schema.GetOffset(0x98578A183C2AE65A);
             return ref _Handle.AsRef<double>(_RenderTimeOffset!.Value);
         }
     }
     private static nint? _RenderFrameTimeOffset;
 
-    public ref float RenderFrameTime {
-        get {
+    public ref float RenderFrameTime
+    {
+        get
+        {
             _RenderFrameTimeOffset = _RenderFrameTimeOffset ?? Schema.GetOffset(0x98578A18F2FB2D81);
             return ref _Handle.AsRef<float>(_RenderFrameTimeOffset!.Value);
         }
     }
     private static nint? _RenderFrameTimeUnboundedOffset;
 
-    public ref float RenderFrameTimeUnbounded {
-        get {
+    public ref float RenderFrameTimeUnbounded
+    {
+        get
+        {
             _RenderFrameTimeUnboundedOffset = _RenderFrameTimeUnboundedOffset ?? Schema.GetOffset(0x98578A18735692FF);
             return ref _Handle.AsRef<float>(_RenderFrameTimeUnboundedOffset!.Value);
         }
     }
     private static nint? _RenderOnlyOffset;
 
-    public ref bool RenderOnly {
-        get {
+    public ref bool RenderOnly
+    {
+        get
+        {
             _RenderOnlyOffset = _RenderOnlyOffset ?? Schema.GetOffset(0x98578A18E274559F);
             return ref _Handle.AsRef<bool>(_RenderOnlyOffset!.Value);
         }
     }
-
 
 }

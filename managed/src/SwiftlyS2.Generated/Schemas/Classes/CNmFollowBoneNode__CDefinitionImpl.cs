@@ -18,36 +18,43 @@ internal partial class CNmFollowBoneNode__CDefinitionImpl : CNmPassthroughNode__
 
     private static nint? _BoneOffset;
 
-    public ref CGlobalSymbol Bone {
-        get {
+    public ref CGlobalSymbol Bone
+    {
+        get
+        {
             _BoneOffset = _BoneOffset ?? Schema.GetOffset(0x51BD725C8020F02F);
             return ref _Handle.AsRef<CGlobalSymbol>(_BoneOffset!.Value);
         }
     }
     private static nint? _FollowTargetBoneOffset;
 
-    public ref CGlobalSymbol FollowTargetBone {
-        get {
+    public ref CGlobalSymbol FollowTargetBone
+    {
+        get
+        {
             _FollowTargetBoneOffset = _FollowTargetBoneOffset ?? Schema.GetOffset(0x51BD725C38216D8B);
             return ref _Handle.AsRef<CGlobalSymbol>(_FollowTargetBoneOffset!.Value);
         }
     }
     private static nint? _EnabledNodeIdxOffset;
 
-    public ref short EnabledNodeIdx {
-        get {
+    public ref short EnabledNodeIdx
+    {
+        get
+        {
             _EnabledNodeIdxOffset = _EnabledNodeIdxOffset ?? Schema.GetOffset(0x51BD725CF7CDF5E9);
             return ref _Handle.AsRef<short>(_EnabledNodeIdxOffset!.Value);
         }
     }
     private static nint? _ModeOffset;
 
-    public ref NmFollowBoneMode_t Mode {
-        get {
+    public ref NmFollowBoneMode_t Mode
+    {
+        get
+        {
             _ModeOffset = _ModeOffset ?? Schema.GetOffset(0x51BD725C90FD5BB2);
             return ref _Handle.AsRef<NmFollowBoneMode_t>(_ModeOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CNmReferencePoseTaskImpl : CNmPoseTaskImpl, CNmReferenceP
 {
     public CNmReferencePoseTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

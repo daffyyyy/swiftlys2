@@ -18,20 +18,23 @@ internal partial class EntityKeyValueData_tImpl : SchemaClass, EntityKeyValueDat
 
     private static nint? _ConnectionsOffset;
 
-    public ref CUtlVector<EntityIOConnectionData_t> Connections {
-        get {
+    public ref CUtlVector<EntityIOConnectionData_t> Connections
+    {
+        get
+        {
             _ConnectionsOffset = _ConnectionsOffset ?? Schema.GetOffset(0x66FE4A4558F33FBE);
             return ref _Handle.AsRef<CUtlVector<EntityIOConnectionData_t>>(_ConnectionsOffset!.Value);
         }
     }
     private static nint? _KeyValuesDataOffset;
 
-    public ref CUtlBinaryBlock KeyValuesData {
-        get {
+    public ref CUtlBinaryBlock KeyValuesData
+    {
+        get
+        {
             _KeyValuesDataOffset = _KeyValuesDataOffset ?? Schema.GetOffset(0x66FE4A451BD58EB2);
             return ref _Handle.AsRef<CUtlBinaryBlock>(_KeyValuesDataOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CServerOnlyPointEntityImpl : CServerOnlyEntityImpl, CServ
 {
     public CServerOnlyPointEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

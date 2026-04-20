@@ -16,7 +16,4 @@ internal partial class CHandleDummyImpl : CBaseEntityImpl, CHandleDummy
 {
     public CHandleDummyImpl(nint handle) : base(handle) { }
 
-
-
-
 }

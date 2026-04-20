@@ -14,7 +14,4 @@ public partial interface IParticleCollection : ISchemaClass<IParticleCollection>
     static int ISchemaClass<IParticleCollection>.Size => 16;
     static string? ISchemaClass<IParticleCollection>.ClassName => null;
 
-
-
-
 }

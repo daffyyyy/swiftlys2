@@ -18,36 +18,43 @@ internal partial class CPropDoorRotatingBreakableImpl : CPropDoorRotatingImpl, C
 
     private static nint? _BreakableOffset;
 
-    public ref bool Breakable {
-        get {
+    public ref bool Breakable
+    {
+        get
+        {
             _BreakableOffset = _BreakableOffset ?? Schema.GetOffset(0xCB925ACA549B5310);
             return ref _Handle.AsRef<bool>(_BreakableOffset!.Value);
         }
     }
     private static nint? _IsAbleToCloseAreaPortalsOffset;
 
-    public ref bool IsAbleToCloseAreaPortals {
-        get {
+    public ref bool IsAbleToCloseAreaPortals
+    {
+        get
+        {
             _IsAbleToCloseAreaPortalsOffset = _IsAbleToCloseAreaPortalsOffset ?? Schema.GetOffset(0xCB925ACAAC381C84);
             return ref _Handle.AsRef<bool>(_IsAbleToCloseAreaPortalsOffset!.Value);
         }
     }
     private static nint? _CurrentDamageStateOffset;
 
-    public ref int CurrentDamageState {
-        get {
+    public ref int CurrentDamageState
+    {
+        get
+        {
             _CurrentDamageStateOffset = _CurrentDamageStateOffset ?? Schema.GetOffset(0xCB925ACA29591458);
             return ref _Handle.AsRef<int>(_CurrentDamageStateOffset!.Value);
         }
     }
     private static nint? _DamageStatesOffset;
 
-    public ref CUtlVector<SchemaUntypedField> DamageStates {
-        get {
+    public ref CUtlVector<SchemaUntypedField> DamageStates
+    {
+        get
+        {
             _DamageStatesOffset = _DamageStatesOffset ?? Schema.GetOffset(0xCB925ACA4FD16F52);
             return ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(_DamageStatesOffset!.Value);
         }
     }
-
 
 }

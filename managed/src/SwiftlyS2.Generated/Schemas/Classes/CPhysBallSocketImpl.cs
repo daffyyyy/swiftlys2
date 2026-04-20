@@ -18,52 +18,63 @@ internal partial class CPhysBallSocketImpl : CPhysConstraintImpl, CPhysBallSocke
 
     private static nint? _JointFrictionOffset;
 
-    public ref float JointFriction {
-        get {
+    public ref float JointFriction
+    {
+        get
+        {
             _JointFrictionOffset = _JointFrictionOffset ?? Schema.GetOffset(0xDE2408965CA9FD47);
             return ref _Handle.AsRef<float>(_JointFrictionOffset!.Value);
         }
     }
     private static nint? _EnableSwingLimitOffset;
 
-    public ref bool EnableSwingLimit {
-        get {
+    public ref bool EnableSwingLimit
+    {
+        get
+        {
             _EnableSwingLimitOffset = _EnableSwingLimitOffset ?? Schema.GetOffset(0xDE240896DADAC14B);
             return ref _Handle.AsRef<bool>(_EnableSwingLimitOffset!.Value);
         }
     }
     private static nint? _SwingLimitOffset;
 
-    public ref float SwingLimit {
-        get {
+    public ref float SwingLimit
+    {
+        get
+        {
             _SwingLimitOffset = _SwingLimitOffset ?? Schema.GetOffset(0xDE240896279A44C2);
             return ref _Handle.AsRef<float>(_SwingLimitOffset!.Value);
         }
     }
     private static nint? _EnableTwistLimitOffset;
 
-    public ref bool EnableTwistLimit {
-        get {
+    public ref bool EnableTwistLimit
+    {
+        get
+        {
             _EnableTwistLimitOffset = _EnableTwistLimitOffset ?? Schema.GetOffset(0xDE2408967DBEA570);
             return ref _Handle.AsRef<bool>(_EnableTwistLimitOffset!.Value);
         }
     }
     private static nint? _MinTwistAngleOffset;
 
-    public ref float MinTwistAngle {
-        get {
+    public ref float MinTwistAngle
+    {
+        get
+        {
             _MinTwistAngleOffset = _MinTwistAngleOffset ?? Schema.GetOffset(0xDE240896B6E6BB7F);
             return ref _Handle.AsRef<float>(_MinTwistAngleOffset!.Value);
         }
     }
     private static nint? _MaxTwistAngleOffset;
 
-    public ref float MaxTwistAngle {
-        get {
+    public ref float MaxTwistAngle
+    {
+        get
+        {
             _MaxTwistAngleOffset = _MaxTwistAngleOffset ?? Schema.GetOffset(0xDE24089690C63AD5);
             return ref _Handle.AsRef<float>(_MaxTwistAngleOffset!.Value);
         }
     }
-
 
 }

@@ -18,68 +18,83 @@ internal partial class CParticleTransformInputImpl : CParticleInputImpl, CPartic
 
     private static nint? _TypeOffset;
 
-    public ref ParticleTransformType_t Type {
-        get {
+    public ref ParticleTransformType_t Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x9DF3328C18853D59);
             return ref _Handle.AsRef<ParticleTransformType_t>(_TypeOffset!.Value);
         }
     }
     private static nint? _NamedValueOffset;
 
-    public SchemaUntypedField NamedValue {
-        get {
+    public SchemaUntypedField NamedValue
+    {
+        get
+        {
             _NamedValueOffset = _NamedValueOffset ?? Schema.GetOffset(0x9DF3328CE0618727);
             return new SchemaUntypedField(_Handle + _NamedValueOffset!.Value);
         }
     }
     private static nint? _FollowNamedValueOffset;
 
-    public ref bool FollowNamedValue {
-        get {
+    public ref bool FollowNamedValue
+    {
+        get
+        {
             _FollowNamedValueOffset = _FollowNamedValueOffset ?? Schema.GetOffset(0x9DF3328C0F6CBBBA);
             return ref _Handle.AsRef<bool>(_FollowNamedValueOffset!.Value);
         }
     }
     private static nint? _SupportsDisabledOffset;
 
-    public ref bool SupportsDisabled {
-        get {
+    public ref bool SupportsDisabled
+    {
+        get
+        {
             _SupportsDisabledOffset = _SupportsDisabledOffset ?? Schema.GetOffset(0x9DF3328CCCD6A201);
             return ref _Handle.AsRef<bool>(_SupportsDisabledOffset!.Value);
         }
     }
     private static nint? _UseOrientationOffset;
 
-    public ref bool UseOrientation {
-        get {
+    public ref bool UseOrientation
+    {
+        get
+        {
             _UseOrientationOffset = _UseOrientationOffset ?? Schema.GetOffset(0x9DF3328C8DAE39FE);
             return ref _Handle.AsRef<bool>(_UseOrientationOffset!.Value);
         }
     }
     private static nint? _ControlPointOffset;
 
-    public ref int ControlPoint {
-        get {
+    public ref int ControlPoint
+    {
+        get
+        {
             _ControlPointOffset = _ControlPointOffset ?? Schema.GetOffset(0x9DF3328C0D0DDF8C);
             return ref _Handle.AsRef<int>(_ControlPointOffset!.Value);
         }
     }
     private static nint? _ControlPointRangeMaxOffset;
 
-    public ref int ControlPointRangeMax {
-        get {
+    public ref int ControlPointRangeMax
+    {
+        get
+        {
             _ControlPointRangeMaxOffset = _ControlPointRangeMaxOffset ?? Schema.GetOffset(0x9DF3328CE07DB935);
             return ref _Handle.AsRef<int>(_ControlPointRangeMaxOffset!.Value);
         }
     }
     private static nint? _EndCPGrowthTimeOffset;
 
-    public ref float EndCPGrowthTime {
-        get {
+    public ref float EndCPGrowthTime
+    {
+        get
+        {
             _EndCPGrowthTimeOffset = _EndCPGrowthTimeOffset ?? Schema.GetOffset(0x9DF3328CC156B981);
             return ref _Handle.AsRef<float>(_EndCPGrowthTimeOffset!.Value);
         }
     }
-
 
 }

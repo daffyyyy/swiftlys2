@@ -16,7 +16,4 @@ internal partial class CSpriteAlias_env_glowImpl : CSpriteImpl, CSpriteAlias_env
 {
     public CSpriteAlias_env_glowImpl(nint handle) : base(handle) { }
 
-
-
-
 }

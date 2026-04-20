@@ -18,20 +18,23 @@ internal partial class RotatorHistoryEntry_tImpl : SchemaClass, RotatorHistoryEn
 
     private static nint? _InvChangeOffset;
 
-    public ref Quaternion InvChange {
-        get {
+    public ref Quaternion InvChange
+    {
+        get
+        {
             _InvChangeOffset = _InvChangeOffset ?? Schema.GetOffset(0xB27D5BA9A4E4D41B);
             return ref _Handle.AsRef<Quaternion>(_InvChangeOffset!.Value);
         }
     }
     private static nint? _TimeRotationStartOffset;
 
-    public GameTime_t TimeRotationStart {
-        get {
+    public GameTime_t TimeRotationStart
+    {
+        get
+        {
             _TimeRotationStartOffset = _TimeRotationStartOffset ?? Schema.GetOffset(0xB27D5BA9A2B2E208);
             return new GameTime_tImpl(_Handle + _TimeRotationStartOffset!.Value);
         }
     }
-
 
 }

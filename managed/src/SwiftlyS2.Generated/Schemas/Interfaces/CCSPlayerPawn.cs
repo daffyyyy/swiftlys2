@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlayerPawn>
 {
     static CCSPlayerPawn ISchemaClass<CCSPlayerPawn>.From(nint handle) => new CCSPlayerPawnImpl(handle);
-    static int ISchemaClass<CCSPlayerPawn>.Size => 7216;
+    static int ISchemaClass<CCSPlayerPawn>.Size => 5072;
     static string? ISchemaClass<CCSPlayerPawn>.ClassName => "player";
 
 
@@ -107,8 +107,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
 
     public ref QAngle DeathEyeAngles { get; }
 
-    public ref bool SkipOneHeadConstraintUpdate { get; }
-
     public ref bool LeftHanded { get; }
 
     public GameTime_t SwitchedHandednessTime { get; }
@@ -171,10 +169,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
 
     public ref float VelocityModifier { get; }
 
-    public ref float HitHeading { get; }
-
-    public ref int HitBodyPart { get; }
-
     public ref Vector TotalBulletForce { get; }
 
     public ref bool WaitForNoAttack { get; }
@@ -188,14 +182,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public CCSBot? Bot { get; }
 
     public ref bool BotAllowActive { get; }
-
-    public ref QAngle ThirdPersonHeading { get; }
-
-    public ref float SlopeDropOffset { get; }
-
-    public ref float SlopeDropHeight { get; }
-
-    public ref Vector HeadConstraintOffset { get; }
 
     public ref int LastPickupPriority { get; }
 
@@ -240,10 +226,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public ISchemaFixedArray<Vector> ThrowPositionHistory { get; }
 
     public ISchemaFixedArray<Vector> VelocityHistory { get; }
-
-    public ref CUtlVector<PredictedDamageTag_t> PredictedDamageTags { get; }
-
-    public ref int HighestAppliedDamageTagTick { get; }
 
     public ref bool CommittingSuicideOnTeamChange { get; }
 
@@ -309,21 +291,14 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public void ShotsFiredUpdated();
     public void FlinchStackUpdated();
     public void VelocityModifierUpdated();
-    public void HitHeadingUpdated();
-    public void HitBodyPartUpdated();
     public void WaitForNoAttackUpdated();
     public void KilledByHeadshotUpdated();
-    public void ThirdPersonHeadingUpdated();
-    public void SlopeDropOffsetUpdated();
-    public void SlopeDropHeightUpdated();
-    public void HeadConstraintOffsetUpdated();
     public void ArmorValueUpdated();
     public void CurrentEquipmentValueUpdated();
     public void RoundStartEquipmentValueUpdated();
     public void FreezetimeEndEquipmentValueUpdated();
     public void PlayerPatchEconIndicesUpdated();
     public void GunGameImmunityColorUpdated();
-    public void PredictedDamageTagsUpdated();
     public void ImmuneToGunGameDamageTimeUpdated();
     public void GunGameImmunityUpdated();
     public void MolotovDamageTimeUpdated();

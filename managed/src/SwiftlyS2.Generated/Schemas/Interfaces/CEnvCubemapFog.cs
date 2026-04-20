@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvCubemapFog : CBaseEntity, ISchemaClass<CEnvCubemapFog>
 {
     static CEnvCubemapFog ISchemaClass<CEnvCubemapFog>.From(nint handle) => new CEnvCubemapFogImpl(handle);
-    static int ISchemaClass<CEnvCubemapFog>.Size => 1272;
+    static int ISchemaClass<CEnvCubemapFog>.Size => 1448;
     static string? ISchemaClass<CEnvCubemapFog>.ClassName => "env_cubemap_fog";
 
 
@@ -45,6 +45,18 @@ public partial interface CEnvCubemapFog : CBaseEntity, ISchemaClass<CEnvCubemapF
 
     public string SkyEntity { get; set; }
 
+    public ref int HeightFogType { get; }
+
+    public ref int FogHeightBlendMode { get; }
+
+    public ref int FogHeightCoordinateSpace { get; }
+
+    public ref int DistanceFogType { get; }
+
+    public string DistanceFogCurveString { get; set; }
+
+    public string HeightFogCurveString { get; set; }
+
     public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogCubemapTexture { get; }
 
     public ref bool HasHeightFogEnd { get; }
@@ -66,6 +78,12 @@ public partial interface CEnvCubemapFog : CBaseEntity, ISchemaClass<CEnvCubemapF
     public void CubemapSourceTypeUpdated();
     public void SkyMaterialUpdated();
     public void SkyEntityUpdated();
+    public void HeightFogTypeUpdated();
+    public void FogHeightBlendModeUpdated();
+    public void FogHeightCoordinateSpaceUpdated();
+    public void DistanceFogTypeUpdated();
+    public void DistanceFogCurveStringUpdated();
+    public void HeightFogCurveStringUpdated();
     public void FogCubemapTextureUpdated();
     public void HasHeightFogEndUpdated();
 }

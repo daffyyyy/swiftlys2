@@ -16,7 +16,4 @@ internal partial class CEntityBlockerImpl : CBaseModelEntityImpl, CEntityBlocker
 {
     public CEntityBlockerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

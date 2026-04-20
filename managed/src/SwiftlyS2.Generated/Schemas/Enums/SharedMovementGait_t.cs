@@ -6,15 +6,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum SharedMovementGait_t : byte
 {
- eInvalid = byte.MaxValue,
-
- eSlow = 0,
-
- eMedium = 1,
-
- eFast = 2,
-
- eVeryFast = 3,
-
- eCount = 4,
+    eInvalid = byte.MaxValue,
+    eSlow = 0,
+    eMedium = 1,
+    eFast = 2,
+    eVeryFast = 3,
+    eCount = 4,
 }

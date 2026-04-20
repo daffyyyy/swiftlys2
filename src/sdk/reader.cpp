@@ -19,17 +19,8 @@
 #include "schema.h"
 #include "datamap.h"
 
+#include <set>
 #include <fmt/format.h>
-
-static bool IsFieldNetworked(SchemaClassFieldData_t& field)
-{
-    static auto networkEnabled = hash_32_fnv1a_const("MNetworkEnable");
-    for (int i = 0; i < field.m_nStaticMetadataCount; i++)
-        if (networkEnabled == hash_32_fnv1a_const(field.m_pStaticMetadata[i].m_pszName))
-            return true;
-
-    return false;
-}
 
 bool IsStandardLayoutClass(SchemaClassInfoData_t* classData) {
     {
@@ -275,7 +266,7 @@ void CollectDatamapFields(datamap_t* map, json& fields)
         if (
             !isFunction && !isInput && !isOutput
             && (fieldName == "" || externalName == "")
-        ) {
+            ) {
             continue;
         }
 
@@ -287,7 +278,7 @@ void CollectDatamapFields(datamap_t* map, json& fields)
             {"isInput", isInput},
             {"isOutput", isOutput},
             {"functionHash", function_hash},
-        });
+            });
     }
 }
 
@@ -379,7 +370,7 @@ void ReadClasses(CSchemaType_DeclaredClass* declClass, json& outJson)
         auto field = fields[i];
         uint64_t fieldHash = ((uint64_t)(class_hash) << 32 | hash_32_fnv1a_const(field.m_pszName));
 
-        offsets.insert({ fieldHash, { IsFieldNetworked(field), has_chainer, isStruct, (uint32_t)field.m_nSingleInheritanceOffset, chainer_offset } });
+        offsets.insert({ fieldHash, { has_chainer, isStruct, (uint32_t)field.m_nSingleInheritanceOffset, chainer_offset } });
 
         int size;
         uint8_t alignment;
@@ -389,7 +380,7 @@ void ReadClasses(CSchemaType_DeclaredClass* declClass, json& outJson)
         cls["fields"].push_back({
             {"name", field.m_pszName},
             {"name_hash", fieldHash},
-            {"networked", IsFieldNetworked(field)},
+            {"networked", false},
             {"offset", field.m_nSingleInheritanceOffset},
             {"size", size},
             {"alignment", alignment},

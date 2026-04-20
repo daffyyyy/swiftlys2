@@ -18,36 +18,43 @@ internal partial class C_OP_LerpScalarImpl : CParticleFunctionOperatorImpl, C_OP
 
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xB2C648D4E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _OutputOffset;
 
-    public CPerParticleFloatInput Output {
-        get {
+    public CPerParticleFloatInput Output
+    {
+        get
+        {
             _OutputOffset = _OutputOffset ?? Schema.GetOffset(0xB2C648D4368F96A2);
             return new CPerParticleFloatInputImpl(_Handle + _OutputOffset!.Value);
         }
     }
     private static nint? _StartTimeOffset;
 
-    public ref float StartTime {
-        get {
+    public ref float StartTime
+    {
+        get
+        {
             _StartTimeOffset = _StartTimeOffset ?? Schema.GetOffset(0xB2C648D467FE9DC4);
             return ref _Handle.AsRef<float>(_StartTimeOffset!.Value);
         }
     }
     private static nint? _EndTimeOffset;
 
-    public ref float EndTime {
-        get {
+    public ref float EndTime
+    {
+        get
+        {
             _EndTimeOffset = _EndTimeOffset ?? Schema.GetOffset(0xB2C648D42041DF9D);
             return ref _Handle.AsRef<float>(_EndTimeOffset!.Value);
         }
     }
-
 
 }

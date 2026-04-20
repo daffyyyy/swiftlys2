@@ -16,7 +16,4 @@ internal partial class CEntityComponentImpl : SchemaClass, CEntityComponent
 {
     public CEntityComponentImpl(nint handle) : base(handle) { }
 
-
-
-
 }

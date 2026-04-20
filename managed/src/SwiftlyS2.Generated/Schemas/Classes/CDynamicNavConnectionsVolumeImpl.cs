@@ -18,64 +18,78 @@ internal partial class CDynamicNavConnectionsVolumeImpl : CTriggerMultipleImpl, 
 
     private static nint? _ConnectionTargetOffset;
 
-    public string ConnectionTarget {
-        get {
+    public string ConnectionTarget
+    {
+        get
+        {
             _ConnectionTargetOffset = _ConnectionTargetOffset ?? Schema.GetOffset(0xA03D49DB1120FFE4);
             return Schema.GetString(_Handle.Read<nint>(_ConnectionTargetOffset!.Value));
         }
-        set {
+        set
+        {
             _ConnectionTargetOffset = _ConnectionTargetOffset ?? Schema.GetOffset(0xA03D49DB1120FFE4);
             Schema.SetString(_Handle, _ConnectionTargetOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ConnectionsOffset;
 
-    public ref CUtlVector<DynamicVolumeDef_t> Connections {
-        get {
+    public ref CUtlVector<DynamicVolumeDef_t> Connections
+    {
+        get
+        {
             _ConnectionsOffset = _ConnectionsOffset ?? Schema.GetOffset(0xA03D49DB11986B7E);
             return ref _Handle.AsRef<CUtlVector<DynamicVolumeDef_t>>(_ConnectionsOffset!.Value);
         }
     }
     private static nint? _TransitionTypeOffset;
 
-    public ref CGlobalSymbol TransitionType {
-        get {
+    public ref CGlobalSymbol TransitionType
+    {
+        get
+        {
             _TransitionTypeOffset = _TransitionTypeOffset ?? Schema.GetOffset(0xA03D49DB68D65FB9);
             return ref _Handle.AsRef<CGlobalSymbol>(_TransitionTypeOffset!.Value);
         }
     }
     private static nint? _ConnectionsEnabledOffset;
 
-    public ref bool ConnectionsEnabled {
-        get {
+    public ref bool ConnectionsEnabled
+    {
+        get
+        {
             _ConnectionsEnabledOffset = _ConnectionsEnabledOffset ?? Schema.GetOffset(0xA03D49DB4C10BC9B);
             return ref _Handle.AsRef<bool>(_ConnectionsEnabledOffset!.Value);
         }
     }
     private static nint? _TargetAreaSearchRadiusOffset;
 
-    public ref float TargetAreaSearchRadius {
-        get {
+    public ref float TargetAreaSearchRadius
+    {
+        get
+        {
             _TargetAreaSearchRadiusOffset = _TargetAreaSearchRadiusOffset ?? Schema.GetOffset(0xA03D49DBACD0EEE5);
             return ref _Handle.AsRef<float>(_TargetAreaSearchRadiusOffset!.Value);
         }
     }
     private static nint? _UpdateDistanceOffset;
 
-    public ref float UpdateDistance {
-        get {
+    public ref float UpdateDistance
+    {
+        get
+        {
             _UpdateDistanceOffset = _UpdateDistanceOffset ?? Schema.GetOffset(0xA03D49DB46AB2045);
             return ref _Handle.AsRef<float>(_UpdateDistanceOffset!.Value);
         }
     }
     private static nint? _MaxConnectionDistanceOffset;
 
-    public ref float MaxConnectionDistance {
-        get {
+    public ref float MaxConnectionDistance
+    {
+        get
+        {
             _MaxConnectionDistanceOffset = _MaxConnectionDistanceOffset ?? Schema.GetOffset(0xA03D49DB7590E3B8);
             return ref _Handle.AsRef<float>(_MaxConnectionDistanceOffset!.Value);
         }
     }
-
 
 }

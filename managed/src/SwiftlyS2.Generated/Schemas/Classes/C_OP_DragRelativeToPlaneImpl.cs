@@ -18,44 +18,53 @@ internal partial class C_OP_DragRelativeToPlaneImpl : CParticleFunctionOperatorI
 
     private static nint? _DragAtPlaneOffset;
 
-    public CParticleCollectionFloatInput DragAtPlane {
-        get {
+    public CParticleCollectionFloatInput DragAtPlane
+    {
+        get
+        {
             _DragAtPlaneOffset = _DragAtPlaneOffset ?? Schema.GetOffset(0x9D049848176259A2);
             return new CParticleCollectionFloatInputImpl(_Handle + _DragAtPlaneOffset!.Value);
         }
     }
     private static nint? _FalloffOffset;
 
-    public CParticleCollectionFloatInput Falloff {
-        get {
+    public CParticleCollectionFloatInput Falloff
+    {
+        get
+        {
             _FalloffOffset = _FalloffOffset ?? Schema.GetOffset(0x9D049848FA143DCB);
             return new CParticleCollectionFloatInputImpl(_Handle + _FalloffOffset!.Value);
         }
     }
     private static nint? _DirectionalOffset;
 
-    public ref bool Directional {
-        get {
+    public ref bool Directional
+    {
+        get
+        {
             _DirectionalOffset = _DirectionalOffset ?? Schema.GetOffset(0x9D0498484C2A43E7);
             return ref _Handle.AsRef<bool>(_DirectionalOffset!.Value);
         }
     }
     private static nint? _PlaneNormalOffset;
 
-    public CParticleCollectionVecInput PlaneNormal {
-        get {
+    public CParticleCollectionVecInput PlaneNormal
+    {
+        get
+        {
             _PlaneNormalOffset = _PlaneNormalOffset ?? Schema.GetOffset(0x9D04984821103682);
             return new CParticleCollectionVecInputImpl(_Handle + _PlaneNormalOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x9D0498483F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
-
 
 }

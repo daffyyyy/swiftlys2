@@ -16,7 +16,4 @@ internal partial class CInputStreamUpdateNodeImpl : CLeafUpdateNodeImpl, CInputS
 {
     public CInputStreamUpdateNodeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

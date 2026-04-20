@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PlayBackMode_t : uint
 {
- Random = 0,
-
- RandomNoRepeats = 1,
-
- RandomAvoidLast = 2,
-
- Sequential = 3,
-
- RandomWeights = 4,
+    Random = 0,
+    RandomNoRepeats = 1,
+    RandomAvoidLast = 2,
+    Sequential = 3,
+    RandomWeights = 4,
 }

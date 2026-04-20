@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum IkTargetType : uint
 {
- IkTarget_Attachment = 0,
-
- IkTarget_Bone = 1,
-
- IkTarget_Parameter_ModelSpace = 2,
-
- IkTarget_Parameter_WorldSpace = 3,
+    IkTarget_Attachment = 0,
+    IkTarget_Bone = 1,
+    IkTarget_Parameter_ModelSpace = 2,
+    IkTarget_Parameter_WorldSpace = 3,
 }

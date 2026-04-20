@@ -18,36 +18,43 @@ internal partial class FeTwistConstraint_tImpl : SchemaClass, FeTwistConstraint_
 
     private static nint? _NodeOrientOffset;
 
-    public ref ushort NodeOrient {
-        get {
+    public ref ushort NodeOrient
+    {
+        get
+        {
             _NodeOrientOffset = _NodeOrientOffset ?? Schema.GetOffset(0x4BD7707B59026ED8);
             return ref _Handle.AsRef<ushort>(_NodeOrientOffset!.Value);
         }
     }
     private static nint? _NodeEndOffset;
 
-    public ref ushort NodeEnd {
-        get {
+    public ref ushort NodeEnd
+    {
+        get
+        {
             _NodeEndOffset = _NodeEndOffset ?? Schema.GetOffset(0x4BD7707B8A00317E);
             return ref _Handle.AsRef<ushort>(_NodeEndOffset!.Value);
         }
     }
     private static nint? _TwistRelaxOffset;
 
-    public ref float TwistRelax {
-        get {
+    public ref float TwistRelax
+    {
+        get
+        {
             _TwistRelaxOffset = _TwistRelaxOffset ?? Schema.GetOffset(0x4BD7707B9E4510FC);
             return ref _Handle.AsRef<float>(_TwistRelaxOffset!.Value);
         }
     }
     private static nint? _SwingRelaxOffset;
 
-    public ref float SwingRelax {
-        get {
+    public ref float SwingRelax
+    {
+        get
+        {
             _SwingRelaxOffset = _SwingRelaxOffset ?? Schema.GetOffset(0x4BD7707BE4722697);
             return ref _Handle.AsRef<float>(_SwingRelaxOffset!.Value);
         }
     }
-
 
 }

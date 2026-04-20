@@ -16,7 +16,4 @@ internal partial class C_INIT_RandomRotationSpeedImpl : CGeneralRandomRotationIm
 {
     public C_INIT_RandomRotationSpeedImpl(nint handle) : base(handle) { }
 
-
-
-
 }

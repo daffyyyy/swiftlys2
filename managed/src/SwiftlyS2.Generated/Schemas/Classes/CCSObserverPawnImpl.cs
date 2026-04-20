@@ -16,7 +16,4 @@ internal partial class CCSObserverPawnImpl : CCSPlayerPawnBaseImpl, CCSObserverP
 {
     public CCSObserverPawnImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,24 +18,28 @@ internal partial class CSosGroupActionSoundeventCountSchemaImpl : CSosGroupActio
 
     private static nint? _ExcludeStoppedSoundsOffset;
 
-    public ref bool ExcludeStoppedSounds {
-        get {
+    public ref bool ExcludeStoppedSounds
+    {
+        get
+        {
             _ExcludeStoppedSoundsOffset = _ExcludeStoppedSoundsOffset ?? Schema.GetOffset(0x6A0D82691BDF6FB6);
             return ref _Handle.AsRef<bool>(_ExcludeStoppedSoundsOffset!.Value);
         }
     }
     private static nint? _StrCountKeyNameOffset;
 
-    public string StrCountKeyName {
-        get {
+    public string StrCountKeyName
+    {
+        get
+        {
             _StrCountKeyNameOffset = _StrCountKeyNameOffset ?? Schema.GetOffset(0x6A0D8269463A7AA5);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrCountKeyNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StrCountKeyNameOffset = _StrCountKeyNameOffset ?? Schema.GetOffset(0x6A0D8269463A7AA5);
             Schema.SetCUtlString(_Handle, _StrCountKeyNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

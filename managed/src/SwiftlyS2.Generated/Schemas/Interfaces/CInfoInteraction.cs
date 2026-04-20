@@ -11,15 +11,39 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoInteraction : CPointEntity, ISchemaClass<CInfoInteraction>
 {
     static CInfoInteraction ISchemaClass<CInfoInteraction>.From(nint handle) => new CInfoInteractionImpl(handle);
-    static int ISchemaClass<CInfoInteraction>.Size => 1272;
-    static string? ISchemaClass<CInfoInteraction>.ClassName => null;
+    static int ISchemaClass<CInfoInteraction>.Size => 1304;
+    static string? ISchemaClass<CInfoInteraction>.ClassName => "info_interaction";
 
 
-    public ISchemaStringFixedArray StrSlotEntityName { get; }
+    public SceneRequestHandle_t SceneRequest { get; }
 
-    public string StrInteractVData { get; set; }
+    public SceneOpportunityHandle_t SceneOpportunity { get; }
 
-    public ref float InteractRadius { get; }
+    public ref bool Enabled { get; }
+
+    public ref bool StartDisabled { get; }
+
+    public string StrSceneVDataName { get; set; }
+
+    public string StrPulseVDataName { get; set; }
+
+    public ref float Radius { get; }
+
+    public ref float OwnerFOV { get; }
+
+    public string StrLocalInterestReqTags { get; set; }
+
+    public string StrLocalInterestOptTags { get; set; }
+
+    public string StrLookTarget { get; set; }
+
+    public ref float Duration { get; }
+
+    public ref float Cooldown { get; }
+
+    public ref int RepeatCount { get; }
+
+    public ref bool DisableOnExit { get; }
 
 
 }

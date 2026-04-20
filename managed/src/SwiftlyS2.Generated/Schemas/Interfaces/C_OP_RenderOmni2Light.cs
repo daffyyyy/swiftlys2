@@ -11,11 +11,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderOmni2Light : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderOmni2Light>
 {
     static C_OP_RenderOmni2Light ISchemaClass<C_OP_RenderOmni2Light>.From(nint handle) => new C_OP_RenderOmni2LightImpl(handle);
-    static int ISchemaClass<C_OP_RenderOmni2Light>.Size => 5256;
+    static int ISchemaClass<C_OP_RenderOmni2Light>.Size => 5640;
     static string? ISchemaClass<C_OP_RenderOmni2Light>.ClassName => null;
 
 
     public ref ParticleOmni2LightTypeChoiceList_t LightType { get; }
+
+    public ref ushort MaxAllowed { get; }
 
     public CParticleCollectionVecInput ColorBlend { get; }
 
@@ -28,6 +30,10 @@ public partial interface C_OP_RenderOmni2Light : CParticleFunctionRenderer, ISch
     public CPerParticleFloatInput BrightnessCandelas { get; }
 
     public ref bool CastShadows { get; }
+
+    public ref bool DynamicBounce { get; }
+
+    public CParticleCollectionFloatInput BounceScale { get; }
 
     public ref bool Fog { get; }
 

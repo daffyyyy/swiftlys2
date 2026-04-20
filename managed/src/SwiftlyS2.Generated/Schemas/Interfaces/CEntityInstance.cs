@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityInstance : ISchemaClass<CEntityInstance>
 {
     static CEntityInstance ISchemaClass<CEntityInstance>.From(nint handle) => new CEntityInstanceImpl(handle);
-    static int ISchemaClass<CEntityInstance>.Size => 56;
+    static int ISchemaClass<CEntityInstance>.Size => 48;
     static string? ISchemaClass<CEntityInstance>.ClassName => "root";
 
 

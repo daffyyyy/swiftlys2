@@ -16,7 +16,4 @@ internal partial class C_INIT_RemapParticleCountToNamedModelSequenceScalarImpl :
 {
     public C_INIT_RemapParticleCountToNamedModelSequenceScalarImpl(nint handle) : base(handle) { }
 
-
-
-
 }

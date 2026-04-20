@@ -18,20 +18,23 @@ internal partial class FeAntiTunnelGroupBuild_tImpl : SchemaClass, FeAntiTunnelG
 
     private static nint? _VertexMapHashOffset;
 
-    public ref uint VertexMapHash {
-        get {
+    public ref uint VertexMapHash
+    {
+        get
+        {
             _VertexMapHashOffset = _VertexMapHashOffset ?? Schema.GetOffset(0x8189225C06BCA0A3);
             return ref _Handle.AsRef<uint>(_VertexMapHashOffset!.Value);
         }
     }
     private static nint? _CollisionMaskOffset;
 
-    public ref uint CollisionMask {
-        get {
+    public ref uint CollisionMask
+    {
+        get
+        {
             _CollisionMaskOffset = _CollisionMaskOffset ?? Schema.GetOffset(0x8189225C0CCF1BEF);
             return ref _Handle.AsRef<uint>(_CollisionMaskOffset!.Value);
         }
     }
-
 
 }

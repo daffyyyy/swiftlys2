@@ -16,7 +16,4 @@ internal partial class CPhysHingeAlias_phys_hinge_localImpl : CPhysHingeImpl, CP
 {
     public CPhysHingeAlias_phys_hinge_localImpl(nint handle) : base(handle) { }
 
-
-
-
 }

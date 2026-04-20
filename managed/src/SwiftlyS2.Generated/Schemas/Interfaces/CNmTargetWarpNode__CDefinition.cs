@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmTargetWarpNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmTargetWarpNode__CDefinition>
 {
     static CNmTargetWarpNode__CDefinition ISchemaClass<CNmTargetWarpNode__CDefinition>.From(nint handle) => new CNmTargetWarpNode__CDefinitionImpl(handle);
-    static int ISchemaClass<CNmTargetWarpNode__CDefinition>.Size => 48;
+    static int ISchemaClass<CNmTargetWarpNode__CDefinition>.Size => 56;
     static string? ISchemaClass<CNmTargetWarpNode__CDefinition>.ClassName => null;
 
 
@@ -21,7 +21,7 @@ public partial interface CNmTargetWarpNode__CDefinition : CNmPoseNode__CDefiniti
 
     public ref CNmRootMotionData__SamplingMode_t SamplingMode { get; }
 
-    public ref bool AllowTargetUpdate { get; }
+    public ref CNmTargetWarpNode__TargetUpdateRule_t TargetUpdateRule { get; }
 
     public ref bool AlignWithTargetAtLastWarpEvent { get; }
 
@@ -34,6 +34,8 @@ public partial interface CNmTargetWarpNode__CDefinition : CNmPoseNode__CDefiniti
     public ref float TargetUpdateDistanceThreshold { get; }
 
     public ref float TargetUpdateAngleThresholdRadians { get; }
+
+    public ref CGlobalSymbol AlignmentBoneID { get; }
 
 
 }

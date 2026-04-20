@@ -18,20 +18,23 @@ internal partial class CFlexRuleImpl : SchemaClass, CFlexRule
 
     private static nint? _FlexOffset;
 
-    public ref int Flex {
-        get {
+    public ref int Flex
+    {
+        get
+        {
             _FlexOffset = _FlexOffset ?? Schema.GetOffset(0xA92320A3D3DC2E86);
             return ref _Handle.AsRef<int>(_FlexOffset!.Value);
         }
     }
     private static nint? _FlexOpsOffset;
 
-    public ref CUtlVector<CFlexOp> FlexOps {
-        get {
+    public ref CUtlVector<CFlexOp> FlexOps
+    {
+        get
+        {
             _FlexOpsOffset = _FlexOpsOffset ?? Schema.GetOffset(0xA92320A3F3F4D8D2);
             return ref _Handle.AsRef<CUtlVector<CFlexOp>>(_FlexOpsOffset!.Value);
         }
     }
-
 
 }

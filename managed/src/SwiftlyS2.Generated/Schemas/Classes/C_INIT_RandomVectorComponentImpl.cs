@@ -18,36 +18,43 @@ internal partial class C_INIT_RandomVectorComponentImpl : CParticleFunctionIniti
 
     private static nint? _MinOffset;
 
-    public ref float Min {
-        get {
+    public ref float Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0xD6D670313B1A5649);
             return ref _Handle.AsRef<float>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref float Max {
-        get {
+    public ref float Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0xD6D670312D06B887);
             return ref _Handle.AsRef<float>(_MaxOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0xD6D67031E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
     private static nint? _ComponentOffset;
 
-    public ref int Component {
-        get {
+    public ref int Component
+    {
+        get
+        {
             _ComponentOffset = _ComponentOffset ?? Schema.GetOffset(0xD6D67031BFD0952C);
             return ref _Handle.AsRef<int>(_ComponentOffset!.Value);
         }
     }
-
 
 }

@@ -18,12 +18,13 @@ internal partial class CNmConstVectorNode__CDefinitionImpl : CNmVectorValueNode_
 
     private static nint? _ValueOffset;
 
-    public ref Vector Value {
-        get {
+    public ref Vector Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0x78163C736B99AEEA);
             return ref _Handle.AsRef<Vector>(_ValueOffset!.Value);
         }
     }
-
 
 }

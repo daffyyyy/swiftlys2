@@ -6,15 +6,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmGraphEventTypeCondition_t : byte
 {
- Entry = 0,
-
- FullyInState = 1,
-
- Exit = 2,
-
- Timed = 3,
-
- Generic = 4,
-
- Any = 5,
+    Entry = 0,
+    FullyInState = 1,
+    Exit = 2,
+    Timed = 3,
+    Generic = 4,
+    Any = 5,
 }

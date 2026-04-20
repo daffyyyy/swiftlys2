@@ -18,20 +18,23 @@ internal partial class CNmFloatClampNode__CDefinitionImpl : CNmFloatValueNode__C
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x77C3AAE295E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _ClampRangeOffset;
 
-    public SchemaUntypedField ClampRange {
-        get {
+    public SchemaUntypedField ClampRange
+    {
+        get
+        {
             _ClampRangeOffset = _ClampRangeOffset ?? Schema.GetOffset(0x77C3AAE2FED5C4A1);
             return new SchemaUntypedField(_Handle + _ClampRangeOffset!.Value);
         }
     }
-
 
 }

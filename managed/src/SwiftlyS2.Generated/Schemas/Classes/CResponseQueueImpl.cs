@@ -18,12 +18,13 @@ internal partial class CResponseQueueImpl : SchemaClass, CResponseQueue
 
     private static nint? _ExpresserTargetsOffset;
 
-    public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets {
-        get {
+    public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets
+    {
+        get
+        {
             _ExpresserTargetsOffset = _ExpresserTargetsOffset ?? Schema.GetOffset(0xBA9C485870CCA05A);
             return ref _Handle.AsRef<CUtlVector<PointerTo<CAI_Expresser>>>(_ExpresserTargetsOffset!.Value);
         }
     }
-
 
 }

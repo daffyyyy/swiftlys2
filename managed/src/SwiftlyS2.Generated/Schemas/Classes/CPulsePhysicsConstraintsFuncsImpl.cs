@@ -16,7 +16,4 @@ internal partial class CPulsePhysicsConstraintsFuncsImpl : SchemaClass, CPulsePh
 {
     public CPulsePhysicsConstraintsFuncsImpl(nint handle) : base(handle) { }
 
-
-
-
 }

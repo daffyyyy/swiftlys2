@@ -18,48 +18,60 @@ internal partial class CRagdollPropAttachedImpl : CRagdollPropImpl, CRagdollProp
 
     private static nint? _BoneIndexAttachedOffset;
 
-    public ref uint BoneIndexAttached {
-        get {
+    public ref uint BoneIndexAttached
+    {
+        get
+        {
             _BoneIndexAttachedOffset = _BoneIndexAttachedOffset ?? Schema.GetOffset(0x4601EA84AECB2AA5);
             return ref _Handle.AsRef<uint>(_BoneIndexAttachedOffset!.Value);
         }
     }
     private static nint? _RagdollAttachedObjectIndexOffset;
 
-    public ref uint RagdollAttachedObjectIndex {
-        get {
+    public ref uint RagdollAttachedObjectIndex
+    {
+        get
+        {
             _RagdollAttachedObjectIndexOffset = _RagdollAttachedObjectIndexOffset ?? Schema.GetOffset(0x4601EA84D09DB439);
             return ref _Handle.AsRef<uint>(_RagdollAttachedObjectIndexOffset!.Value);
         }
     }
     private static nint? _AttachmentPointBoneSpaceOffset;
 
-    public ref Vector AttachmentPointBoneSpace {
-        get {
+    public ref Vector AttachmentPointBoneSpace
+    {
+        get
+        {
             _AttachmentPointBoneSpaceOffset = _AttachmentPointBoneSpaceOffset ?? Schema.GetOffset(0x4601EA849ABB7B0E);
             return ref _Handle.AsRef<Vector>(_AttachmentPointBoneSpaceOffset!.Value);
         }
     }
     private static nint? _AttachmentPointRagdollSpaceOffset;
 
-    public ref Vector AttachmentPointRagdollSpace {
-        get {
+    public ref Vector AttachmentPointRagdollSpace
+    {
+        get
+        {
             _AttachmentPointRagdollSpaceOffset = _AttachmentPointRagdollSpaceOffset ?? Schema.GetOffset(0x4601EA84AD8AE911);
             return ref _Handle.AsRef<Vector>(_AttachmentPointRagdollSpaceOffset!.Value);
         }
     }
     private static nint? _ShouldDetachOffset;
 
-    public ref bool ShouldDetach {
-        get {
+    public ref bool ShouldDetach
+    {
+        get
+        {
             _ShouldDetachOffset = _ShouldDetachOffset ?? Schema.GetOffset(0x4601EA84ABADEB5D);
             return ref _Handle.AsRef<bool>(_ShouldDetachOffset!.Value);
         }
     }
     private static nint? _ShouldDeleteAttachedActivationRecordOffset;
 
-    public ref bool ShouldDeleteAttachedActivationRecord {
-        get {
+    public ref bool ShouldDeleteAttachedActivationRecord
+    {
+        get
+        {
             _ShouldDeleteAttachedActivationRecordOffset = _ShouldDeleteAttachedActivationRecordOffset ?? Schema.GetOffset(0x4601EA84BCB3F894);
             return ref _Handle.AsRef<bool>(_ShouldDeleteAttachedActivationRecordOffset!.Value);
         }

@@ -14,7 +14,4 @@ public partial interface CPulseServerFuncs_Sounds : ISchemaClass<CPulseServerFun
     static int ISchemaClass<CPulseServerFuncs_Sounds>.Size => 1;
     static string? ISchemaClass<CPulseServerFuncs_Sounds>.ClassName => null;
 
-
-
-
 }

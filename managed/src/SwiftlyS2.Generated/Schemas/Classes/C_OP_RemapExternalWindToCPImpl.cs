@@ -18,44 +18,53 @@ internal partial class C_OP_RemapExternalWindToCPImpl : CParticleFunctionPreEmis
 
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x19366DF9EB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _CPOutputOffset;
 
-    public ref int CPOutput {
-        get {
+    public ref int CPOutput
+    {
+        get
+        {
             _CPOutputOffset = _CPOutputOffset ?? Schema.GetOffset(0x19366DF92077C953);
             return ref _Handle.AsRef<int>(_CPOutputOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public CParticleCollectionVecInput Scale {
-        get {
+    public CParticleCollectionVecInput Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x19366DF95F596B51);
             return new CParticleCollectionVecInputImpl(_Handle + _ScaleOffset!.Value);
         }
     }
     private static nint? _SetMagnitudeOffset;
 
-    public ref bool SetMagnitude {
-        get {
+    public ref bool SetMagnitude
+    {
+        get
+        {
             _SetMagnitudeOffset = _SetMagnitudeOffset ?? Schema.GetOffset(0x19366DF9B87FB05F);
             return ref _Handle.AsRef<bool>(_SetMagnitudeOffset!.Value);
         }
     }
     private static nint? _OutVectorFieldOffset;
 
-    public ref int OutVectorField {
-        get {
+    public ref int OutVectorField
+    {
+        get
+        {
             _OutVectorFieldOffset = _OutVectorFieldOffset ?? Schema.GetOffset(0x19366DF9F9041E74);
             return ref _Handle.AsRef<int>(_OutVectorFieldOffset!.Value);
         }
     }
-
 
 }

@@ -18,43 +18,52 @@ internal partial class FeModelSelfCollisionLayer_tImpl : SchemaClass, FeModelSel
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x49A18705CAE8A266);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x49A18705CAE8A266);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NodesOffset;
 
-    public ref CUtlVector<ushort> Nodes {
-        get {
+    public ref CUtlVector<ushort> Nodes
+    {
+        get
+        {
             _NodesOffset = _NodesOffset ?? Schema.GetOffset(0x49A18705EBA045DA);
             return ref _Handle.AsRef<CUtlVector<ushort>>(_NodesOffset!.Value);
         }
     }
     private static nint? _ParentReactionOffset;
 
-    public ref float ParentReaction {
-        get {
+    public ref float ParentReaction
+    {
+        get
+        {
             _ParentReactionOffset = _ParentReactionOffset ?? Schema.GetOffset(0x49A187054431941C);
             return ref _Handle.AsRef<float>(_ParentReactionOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0x49A18705CE6E9C28);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
-    public ISchemaFixedArray<uint> EndIdx {
+    public ISchemaFixedArray<uint> EndIdx
+    {
         get => new SchemaFixedArray<uint>(_Handle, 0x49A18705A8AEBFA9, 4, 4, 4);
     }
-
 
 }

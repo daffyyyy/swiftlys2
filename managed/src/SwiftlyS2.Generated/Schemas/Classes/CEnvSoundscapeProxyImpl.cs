@@ -18,16 +18,18 @@ internal partial class CEnvSoundscapeProxyImpl : CEnvSoundscapeImpl, CEnvSoundsc
 
     private static nint? _MainSoundscapeNameOffset;
 
-    public string MainSoundscapeName {
-        get {
+    public string MainSoundscapeName
+    {
+        get
+        {
             _MainSoundscapeNameOffset = _MainSoundscapeNameOffset ?? Schema.GetOffset(0x58127BA672404420);
             return Schema.GetString(_Handle.Read<nint>(_MainSoundscapeNameOffset!.Value));
         }
-        set {
+        set
+        {
             _MainSoundscapeNameOffset = _MainSoundscapeNameOffset ?? Schema.GetOffset(0x58127BA672404420);
             Schema.SetString(_Handle, _MainSoundscapeNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

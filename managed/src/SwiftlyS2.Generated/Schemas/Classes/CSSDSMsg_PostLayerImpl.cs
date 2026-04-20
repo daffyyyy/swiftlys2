@@ -16,7 +16,4 @@ internal partial class CSSDSMsg_PostLayerImpl : CSSDSMsg_LayerBaseImpl, CSSDSMsg
 {
     public CSSDSMsg_PostLayerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class FakeEntityDerivedA_tAPIImpl : SchemaClass, FakeEntityDeri
 {
     public FakeEntityDerivedA_tAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

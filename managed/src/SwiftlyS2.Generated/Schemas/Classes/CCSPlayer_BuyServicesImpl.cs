@@ -18,8 +18,10 @@ internal partial class CCSPlayer_BuyServicesImpl : CPlayerPawnComponentImpl, CCS
 
     private static nint? _SellbackPurchaseEntriesOffset;
 
-    public ref CUtlVector<SellbackPurchaseEntry_t> SellbackPurchaseEntries {
-        get {
+    public ref CUtlVector<SellbackPurchaseEntry_t> SellbackPurchaseEntries
+    {
+        get
+        {
             _SellbackPurchaseEntriesOffset = _SellbackPurchaseEntriesOffset ?? Schema.GetOffset(0xF0C2C12231D8CF7F);
             return ref _Handle.AsRef<CUtlVector<SellbackPurchaseEntry_t>>(_SellbackPurchaseEntriesOffset!.Value);
         }

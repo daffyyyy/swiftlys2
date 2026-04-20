@@ -16,7 +16,4 @@ internal partial class CServerOnlyModelEntityImpl : CBaseModelEntityImpl, CServe
 {
     public CServerOnlyModelEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

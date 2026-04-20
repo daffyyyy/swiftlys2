@@ -14,7 +14,4 @@ public partial interface CServerOnlyPointEntity : CServerOnlyEntity, ISchemaClas
     static int ISchemaClass<CServerOnlyPointEntity>.Size => 1192;
     static string? ISchemaClass<CServerOnlyPointEntity>.ClassName => null;
 
-
-
-
 }

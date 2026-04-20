@@ -18,92 +18,113 @@ internal partial class C_OP_ExternalWindForceImpl : CParticleFunctionForceImpl, 
 
     private static nint? _SamplePositionOffset;
 
-    public CPerParticleVecInput SamplePosition {
-        get {
+    public CPerParticleVecInput SamplePosition
+    {
+        get
+        {
             _SamplePositionOffset = _SamplePositionOffset ?? Schema.GetOffset(0xFE6646FBC3F6C534);
             return new CPerParticleVecInputImpl(_Handle + _SamplePositionOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public CPerParticleVecInput Scale {
-        get {
+    public CPerParticleVecInput Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0xFE6646FB5F596B51);
             return new CPerParticleVecInputImpl(_Handle + _ScaleOffset!.Value);
         }
     }
     private static nint? _SampleWindOffset;
 
-    public ref bool SampleWind {
-        get {
+    public ref bool SampleWind
+    {
+        get
+        {
             _SampleWindOffset = _SampleWindOffset ?? Schema.GetOffset(0xFE6646FB3C2A72D1);
             return ref _Handle.AsRef<bool>(_SampleWindOffset!.Value);
         }
     }
     private static nint? _SampleWaterOffset;
 
-    public ref bool SampleWater {
-        get {
+    public ref bool SampleWater
+    {
+        get
+        {
             _SampleWaterOffset = _SampleWaterOffset ?? Schema.GetOffset(0xFE6646FB97B80806);
             return ref _Handle.AsRef<bool>(_SampleWaterOffset!.Value);
         }
     }
     private static nint? _DampenNearWaterPlaneOffset;
 
-    public ref bool DampenNearWaterPlane {
-        get {
+    public ref bool DampenNearWaterPlane
+    {
+        get
+        {
             _DampenNearWaterPlaneOffset = _DampenNearWaterPlaneOffset ?? Schema.GetOffset(0xFE6646FB974DA031);
             return ref _Handle.AsRef<bool>(_DampenNearWaterPlaneOffset!.Value);
         }
     }
     private static nint? _SampleGravityOffset;
 
-    public ref bool SampleGravity {
-        get {
+    public ref bool SampleGravity
+    {
+        get
+        {
             _SampleGravityOffset = _SampleGravityOffset ?? Schema.GetOffset(0xFE6646FB805373EF);
             return ref _Handle.AsRef<bool>(_SampleGravityOffset!.Value);
         }
     }
     private static nint? _GravityForceOffset;
 
-    public CPerParticleVecInput GravityForce {
-        get {
+    public CPerParticleVecInput GravityForce
+    {
+        get
+        {
             _GravityForceOffset = _GravityForceOffset ?? Schema.GetOffset(0xFE6646FB2E2EF2C4);
             return new CPerParticleVecInputImpl(_Handle + _GravityForceOffset!.Value);
         }
     }
     private static nint? _UseBasicMovementGravityOffset;
 
-    public ref bool UseBasicMovementGravity {
-        get {
+    public ref bool UseBasicMovementGravity
+    {
+        get
+        {
             _UseBasicMovementGravityOffset = _UseBasicMovementGravityOffset ?? Schema.GetOffset(0xFE6646FBC84E3D7B);
             return ref _Handle.AsRef<bool>(_UseBasicMovementGravityOffset!.Value);
         }
     }
     private static nint? _LocalGravityScaleOffset;
 
-    public CPerParticleFloatInput LocalGravityScale {
-        get {
+    public CPerParticleFloatInput LocalGravityScale
+    {
+        get
+        {
             _LocalGravityScaleOffset = _LocalGravityScaleOffset ?? Schema.GetOffset(0xFE6646FBD7EB148E);
             return new CPerParticleFloatInputImpl(_Handle + _LocalGravityScaleOffset!.Value);
         }
     }
     private static nint? _LocalBuoyancyScaleOffset;
 
-    public CPerParticleFloatInput LocalBuoyancyScale {
-        get {
+    public CPerParticleFloatInput LocalBuoyancyScale
+    {
+        get
+        {
             _LocalBuoyancyScaleOffset = _LocalBuoyancyScaleOffset ?? Schema.GetOffset(0xFE6646FBC6A6171E);
             return new CPerParticleFloatInputImpl(_Handle + _LocalBuoyancyScaleOffset!.Value);
         }
     }
     private static nint? _BuoyancyForceOffset;
 
-    public CPerParticleVecInput BuoyancyForce {
-        get {
+    public CPerParticleVecInput BuoyancyForce
+    {
+        get
+        {
             _BuoyancyForceOffset = _BuoyancyForceOffset ?? Schema.GetOffset(0xFE6646FBCA7F361E);
             return new CPerParticleVecInputImpl(_Handle + _BuoyancyForceOffset!.Value);
         }
     }
-
 
 }

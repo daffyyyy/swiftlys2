@@ -18,40 +18,48 @@ internal partial class CGameMoneyImpl : CRulePointEntityImpl, CGameMoney
 
     private static nint? _OnMoneySpentOffset;
 
-    public ref CEntityIOOutput OnMoneySpent {
-        get {
+    public ref CEntityIOOutput OnMoneySpent
+    {
+        get
+        {
             _OnMoneySpentOffset = _OnMoneySpentOffset ?? Schema.GetOffset(0xED17C684B6CD990C);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnMoneySpentOffset!.Value);
         }
     }
     private static nint? _OnMoneySpentFailOffset;
 
-    public ref CEntityIOOutput OnMoneySpentFail {
-        get {
+    public ref CEntityIOOutput OnMoneySpentFail
+    {
+        get
+        {
             _OnMoneySpentFailOffset = _OnMoneySpentFailOffset ?? Schema.GetOffset(0xED17C684DB165FC0);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnMoneySpentFailOffset!.Value);
         }
     }
     private static nint? _MoneyOffset;
 
-    public ref int Money {
-        get {
+    public ref int Money
+    {
+        get
+        {
             _MoneyOffset = _MoneyOffset ?? Schema.GetOffset(0xED17C6845BE25D03);
             return ref _Handle.AsRef<int>(_MoneyOffset!.Value);
         }
     }
     private static nint? _StrAwardTextOffset;
 
-    public string StrAwardText {
-        get {
+    public string StrAwardText
+    {
+        get
+        {
             _StrAwardTextOffset = _StrAwardTextOffset ?? Schema.GetOffset(0xED17C684B48AB662);
             return Schema.GetCUtlString(_Handle.Read<nint>(_StrAwardTextOffset!.Value));
         }
-        set {
+        set
+        {
             _StrAwardTextOffset = _StrAwardTextOffset ?? Schema.GetOffset(0xED17C684B48AB662);
             Schema.SetCUtlString(_Handle, _StrAwardTextOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

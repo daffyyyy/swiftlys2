@@ -14,7 +14,4 @@ public partial interface IChoreoServices : ISchemaClass<IChoreoServices>
     static int ISchemaClass<IChoreoServices>.Size => 8;
     static string? ISchemaClass<IChoreoServices>.ClassName => null;
 
-
-
-
 }

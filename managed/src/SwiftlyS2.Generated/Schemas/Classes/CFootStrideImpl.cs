@@ -18,20 +18,23 @@ internal partial class CFootStrideImpl : SchemaClass, CFootStride
 
     private static nint? _DefinitionOffset;
 
-    public CFootCycleDefinition Definition {
-        get {
+    public CFootCycleDefinition Definition
+    {
+        get
+        {
             _DefinitionOffset = _DefinitionOffset ?? Schema.GetOffset(0x6093B6FA95E6F40);
             return new CFootCycleDefinitionImpl(_Handle + _DefinitionOffset!.Value);
         }
     }
     private static nint? _TrajectoriesOffset;
 
-    public CFootTrajectories Trajectories {
-        get {
+    public CFootTrajectories Trajectories
+    {
+        get
+        {
             _TrajectoriesOffset = _TrajectoriesOffset ?? Schema.GetOffset(0x6093B6F7964C78C);
             return new CFootTrajectoriesImpl(_Handle + _TrajectoriesOffset!.Value);
         }
     }
-
 
 }

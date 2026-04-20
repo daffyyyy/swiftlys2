@@ -16,7 +16,4 @@ internal partial class CInfoLandmarkImpl : CPointEntityImpl, CInfoLandmark
 {
     public CInfoLandmarkImpl(nint handle) : base(handle) { }
 
-
-
-
 }

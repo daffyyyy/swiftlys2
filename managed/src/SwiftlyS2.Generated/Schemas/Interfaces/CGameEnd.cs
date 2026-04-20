@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGameEnd : CRulePointEntity, ISchemaClass<CGameEnd>
 {
     static CGameEnd ISchemaClass<CGameEnd>.From(nint handle) => new CGameEndImpl(handle);
-    static int ISchemaClass<CGameEnd>.Size => 1856;
+    static int ISchemaClass<CGameEnd>.Size => 1912;
     static string? ISchemaClass<CGameEnd>.ClassName => "game_end";
-
-
-
 
 }

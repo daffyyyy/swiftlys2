@@ -18,12 +18,13 @@ internal partial class CPhysicsBodyGameMarkupDataImpl : SchemaClass, CPhysicsBod
 
     private static nint? _PhysicsBodyMarkupByBoneNameOffset;
 
-    public SchemaUntypedField PhysicsBodyMarkupByBoneName {
-        get {
+    public SchemaUntypedField PhysicsBodyMarkupByBoneName
+    {
+        get
+        {
             _PhysicsBodyMarkupByBoneNameOffset = _PhysicsBodyMarkupByBoneNameOffset ?? Schema.GetOffset(0x29262AE188A1FE22);
             return new SchemaUntypedField(_Handle + _PhysicsBodyMarkupByBoneNameOffset!.Value);
         }
     }
-
 
 }

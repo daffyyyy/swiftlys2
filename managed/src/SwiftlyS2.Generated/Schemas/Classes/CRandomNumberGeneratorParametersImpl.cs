@@ -18,20 +18,23 @@ internal partial class CRandomNumberGeneratorParametersImpl : SchemaClass, CRand
 
     private static nint? _DistributeEvenlyOffset;
 
-    public ref bool DistributeEvenly {
-        get {
+    public ref bool DistributeEvenly
+    {
+        get
+        {
             _DistributeEvenlyOffset = _DistributeEvenlyOffset ?? Schema.GetOffset(0x60FDB8F9BED90721);
             return ref _Handle.AsRef<bool>(_DistributeEvenlyOffset!.Value);
         }
     }
     private static nint? _SeedOffset;
 
-    public ref int Seed {
-        get {
+    public ref int Seed
+    {
+        get
+        {
             _SeedOffset = _SeedOffset ?? Schema.GetOffset(0x60FDB8F99A113550);
             return ref _Handle.AsRef<int>(_SeedOffset!.Value);
         }
     }
-
 
 }

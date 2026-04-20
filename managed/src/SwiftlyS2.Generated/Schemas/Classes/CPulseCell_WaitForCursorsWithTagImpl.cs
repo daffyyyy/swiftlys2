@@ -18,20 +18,23 @@ internal partial class CPulseCell_WaitForCursorsWithTagImpl : CPulseCell_WaitFor
 
     private static nint? _TagSelfWhenCompleteOffset;
 
-    public ref bool TagSelfWhenComplete {
-        get {
+    public ref bool TagSelfWhenComplete
+    {
+        get
+        {
             _TagSelfWhenCompleteOffset = _TagSelfWhenCompleteOffset ?? Schema.GetOffset(0x550BA6FDA17E8F0E);
             return ref _Handle.AsRef<bool>(_TagSelfWhenCompleteOffset!.Value);
         }
     }
     private static nint? _DesiredKillPriorityOffset;
 
-    public ref PulseCursorCancelPriority_t DesiredKillPriority {
-        get {
+    public ref PulseCursorCancelPriority_t DesiredKillPriority
+    {
+        get
+        {
             _DesiredKillPriorityOffset = _DesiredKillPriorityOffset ?? Schema.GetOffset(0x550BA6FD341BA991);
             return ref _Handle.AsRef<PulseCursorCancelPriority_t>(_DesiredKillPriorityOffset!.Value);
         }
     }
-
 
 }

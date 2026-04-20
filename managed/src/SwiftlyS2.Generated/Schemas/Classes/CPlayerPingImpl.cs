@@ -18,48 +18,59 @@ internal partial class CPlayerPingImpl : CBaseEntityImpl, CPlayerPing
 
     private static nint? _PlayerOffset;
 
-    public ref CHandle<CCSPlayerPawn> Player {
-        get {
+    public ref CHandle<CCSPlayerPawn> Player
+    {
+        get
+        {
             _PlayerOffset = _PlayerOffset ?? Schema.GetOffset(0x5943E25F68856C16);
             return ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(_PlayerOffset!.Value);
         }
     }
     private static nint? _PingedEntityOffset;
 
-    public ref CHandle<CBaseEntity> PingedEntity {
-        get {
+    public ref CHandle<CBaseEntity> PingedEntity
+    {
+        get
+        {
             _PingedEntityOffset = _PingedEntityOffset ?? Schema.GetOffset(0x5943E25F35D9D429);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_PingedEntityOffset!.Value);
         }
     }
     private static nint? _TypeOffset;
 
-    public ref int Type {
-        get {
+    public ref int Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x5943E25FC932D7CC);
             return ref _Handle.AsRef<int>(_TypeOffset!.Value);
         }
     }
     private static nint? _UrgentOffset;
 
-    public ref bool Urgent {
-        get {
+    public ref bool Urgent
+    {
+        get
+        {
             _UrgentOffset = _UrgentOffset ?? Schema.GetOffset(0x5943E25F4F5EE9D0);
             return ref _Handle.AsRef<bool>(_UrgentOffset!.Value);
         }
     }
     private static nint? _PlaceNameOffset;
 
-    public string PlaceName {
-        get {
+    public string PlaceName
+    {
+        get
+        {
             _PlaceNameOffset = _PlaceNameOffset ?? Schema.GetOffset(0x5943E25F6039F660);
             return Schema.GetString(_Handle + _PlaceNameOffset!.Value);
         }
-        set {
+        set
+        {
             _PlaceNameOffset = _PlaceNameOffset ?? Schema.GetOffset(0x5943E25F6039F660);
             Schema.SetFixedString(_Handle, _PlaceNameOffset!.Value, value, 18);
         }
-    } 
+    }
 
     public void PlayerUpdated() => Schema.Update(_Handle, 0x5943E25F68856C16);
     public void PingedEntityUpdated() => Schema.Update(_Handle, 0x5943E25F35D9D429);

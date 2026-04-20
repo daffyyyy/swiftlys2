@@ -18,44 +18,53 @@ internal partial class C_OP_LerpToInitialPositionImpl : CParticleFunctionOperato
 
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x56175BC3F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _InterpolationOffset;
 
-    public CPerParticleFloatInput Interpolation {
-        get {
+    public CPerParticleFloatInput Interpolation
+    {
+        get
+        {
             _InterpolationOffset = _InterpolationOffset ?? Schema.GetOffset(0x56175BCCF55B987);
             return new CPerParticleFloatInputImpl(_Handle + _InterpolationOffset!.Value);
         }
     }
     private static nint? _CacheFieldOffset;
 
-    public ParticleAttributeIndex_t CacheField {
-        get {
+    public ParticleAttributeIndex_t CacheField
+    {
+        get
+        {
             _CacheFieldOffset = _CacheFieldOffset ?? Schema.GetOffset(0x56175BCB3696EEB);
             return new ParticleAttributeIndex_tImpl(_Handle + _CacheFieldOffset!.Value);
         }
     }
     private static nint? _ScaleOffset;
 
-    public CParticleCollectionFloatInput Scale {
-        get {
+    public CParticleCollectionFloatInput Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x56175BCB731A42F);
             return new CParticleCollectionFloatInputImpl(_Handle + _ScaleOffset!.Value);
         }
     }
     private static nint? _Scale1Offset;
 
-    public CParticleCollectionVecInput Scale1 {
-        get {
+    public CParticleCollectionVecInput Scale1
+    {
+        get
+        {
             _Scale1Offset = _Scale1Offset ?? Schema.GetOffset(0x56175BC5F596B51);
             return new CParticleCollectionVecInputImpl(_Handle + _Scale1Offset!.Value);
         }
     }
-
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmTargetWarpEvent : CNmEvent, ISchemaClass<CNmTargetWarpEvent>
 {
     static CNmTargetWarpEvent ISchemaClass<CNmTargetWarpEvent>.From(nint handle) => new CNmTargetWarpEventImpl(handle);
-    static int ISchemaClass<CNmTargetWarpEvent>.Size => 40;
+    static int ISchemaClass<CNmTargetWarpEvent>.Size => 32;
     static string? ISchemaClass<CNmTargetWarpEvent>.ClassName => null;
 
 

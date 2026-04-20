@@ -6,17 +6,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PlayerConnectedState : uint
 {
- PlayerNeverConnected = uint.MaxValue,
-
- PlayerConnected = 0,
-
- PlayerConnecting = 1,
-
- PlayerReconnecting = 2,
-
- PlayerDisconnecting = 3,
-
- PlayerDisconnected = 4,
-
- PlayerReserved = 5,
+    NeverConnected = uint.MaxValue,
+    Connected = 0,
+    Connecting = 1,
+    Reconnecting = 2,
+    Disconnecting = 3,
+    Disconnected = 4,
+    Reserved = 5,
 }

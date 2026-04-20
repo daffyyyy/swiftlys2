@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCVMixListResourceImpl : SchemaClass, I
 {
     public InfoForResourceTypeCVMixListResourceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

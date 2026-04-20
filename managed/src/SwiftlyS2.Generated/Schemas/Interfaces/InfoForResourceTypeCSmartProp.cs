@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCSmartProp : ISchemaClass<InfoForRes
     static int ISchemaClass<InfoForResourceTypeCSmartProp>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCSmartProp>.ClassName => null;
 
-
-
-
 }

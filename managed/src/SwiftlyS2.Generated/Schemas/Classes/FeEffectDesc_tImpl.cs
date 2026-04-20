@@ -18,40 +18,48 @@ internal partial class FeEffectDesc_tImpl : SchemaClass, FeEffectDesc_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x3462F54326980769);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x3462F54326980769);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NameHashOffset;
 
-    public ref uint NameHash {
-        get {
+    public ref uint NameHash
+    {
+        get
+        {
             _NameHashOffset = _NameHashOffset ?? Schema.GetOffset(0x3462F543BA4B2BDE);
             return ref _Handle.AsRef<uint>(_NameHashOffset!.Value);
         }
     }
     private static nint? _TypeOffset;
 
-    public ref int Type {
-        get {
+    public ref int Type
+    {
+        get
+        {
             _TypeOffset = _TypeOffset ?? Schema.GetOffset(0x3462F543EEF036F9);
             return ref _Handle.AsRef<int>(_TypeOffset!.Value);
         }
     }
     private static nint? _ParamsOffset;
 
-    public SchemaUntypedField Params {
-        get {
+    public SchemaUntypedField Params
+    {
+        get
+        {
             _ParamsOffset = _ParamsOffset ?? Schema.GetOffset(0x3462F543900020D3);
             return new SchemaUntypedField(_Handle + _ParamsOffset!.Value);
         }
     }
-
 
 }

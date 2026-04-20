@@ -18,60 +18,75 @@ internal partial class CSoundEventPathCornerEntityImpl : CSoundEventEntityImpl, 
 
     private static nint? _PathCornerOffset;
 
-    public string PathCorner {
-        get {
+    public string PathCorner
+    {
+        get
+        {
             _PathCornerOffset = _PathCornerOffset ?? Schema.GetOffset(0x9EED262E0243CF47);
             return Schema.GetString(_Handle.Read<nint>(_PathCornerOffset!.Value));
         }
-        set {
+        set
+        {
             _PathCornerOffset = _PathCornerOffset ?? Schema.GetOffset(0x9EED262E0243CF47);
             Schema.SetString(_Handle, _PathCornerOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _CountMaxOffset;
 
-    public ref int CountMax {
-        get {
+    public ref int CountMax
+    {
+        get
+        {
             _CountMaxOffset = _CountMaxOffset ?? Schema.GetOffset(0x9EED262E6A1AD493);
             return ref _Handle.AsRef<int>(_CountMaxOffset!.Value);
         }
     }
     private static nint? _DistanceMaxOffset;
 
-    public ref float DistanceMax {
-        get {
+    public ref float DistanceMax
+    {
+        get
+        {
             _DistanceMaxOffset = _DistanceMaxOffset ?? Schema.GetOffset(0x9EED262EFDEBADA6);
             return ref _Handle.AsRef<float>(_DistanceMaxOffset!.Value);
         }
     }
     private static nint? _DistMaxSqrOffset;
 
-    public ref float DistMaxSqr {
-        get {
+    public ref float DistMaxSqr
+    {
+        get
+        {
             _DistMaxSqrOffset = _DistMaxSqrOffset ?? Schema.GetOffset(0x9EED262E993EE3BF);
             return ref _Handle.AsRef<float>(_DistMaxSqrOffset!.Value);
         }
     }
     private static nint? _DotProductMaxOffset;
 
-    public ref float DotProductMax {
-        get {
+    public ref float DotProductMax
+    {
+        get
+        {
             _DotProductMaxOffset = _DotProductMaxOffset ?? Schema.GetOffset(0x9EED262EF9DEDD1D);
             return ref _Handle.AsRef<float>(_DotProductMaxOffset!.Value);
         }
     }
     private static nint? _PlayingOffset;
 
-    public ref bool Playing {
-        get {
+    public ref bool Playing
+    {
+        get
+        {
             _PlayingOffset = _PlayingOffset ?? Schema.GetOffset(0x9EED262E4B594215);
             return ref _Handle.AsRef<bool>(_PlayingOffset!.Value);
         }
     }
     private static nint? _CornerPairsNetworkedOffset;
 
-    public ref CUtlVector<SoundeventPathCornerPairNetworked_t> CornerPairsNetworked {
-        get {
+    public ref CUtlVector<SoundeventPathCornerPairNetworked_t> CornerPairsNetworked
+    {
+        get
+        {
             _CornerPairsNetworkedOffset = _CornerPairsNetworkedOffset ?? Schema.GetOffset(0x9EED262E4C7A9B2C);
             return ref _Handle.AsRef<CUtlVector<SoundeventPathCornerPairNetworked_t>>(_CornerPairsNetworkedOffset!.Value);
         }

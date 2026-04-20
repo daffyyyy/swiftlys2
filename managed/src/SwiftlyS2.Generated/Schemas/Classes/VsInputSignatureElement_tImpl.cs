@@ -18,48 +18,58 @@ internal partial class VsInputSignatureElement_tImpl : SchemaClass, VsInputSigna
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xFD3BBE5B5B47C92C);
             return Schema.GetString(_Handle + _NameOffset!.Value);
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xFD3BBE5B5B47C92C);
             Schema.SetFixedString(_Handle, _NameOffset!.Value, value, 64);
         }
-    } 
+    }
     private static nint? _SemanticOffset;
 
-    public string Semantic {
-        get {
+    public string Semantic
+    {
+        get
+        {
             _SemanticOffset = _SemanticOffset ?? Schema.GetOffset(0xFD3BBE5B14684E6F);
             return Schema.GetString(_Handle + _SemanticOffset!.Value);
         }
-        set {
+        set
+        {
             _SemanticOffset = _SemanticOffset ?? Schema.GetOffset(0xFD3BBE5B14684E6F);
             Schema.SetFixedString(_Handle, _SemanticOffset!.Value, value, 64);
         }
-    } 
+    }
     private static nint? _D3DSemanticNameOffset;
 
-    public string D3DSemanticName {
-        get {
+    public string D3DSemanticName
+    {
+        get
+        {
             _D3DSemanticNameOffset = _D3DSemanticNameOffset ?? Schema.GetOffset(0xFD3BBE5B66524995);
             return Schema.GetString(_Handle + _D3DSemanticNameOffset!.Value);
         }
-        set {
+        set
+        {
             _D3DSemanticNameOffset = _D3DSemanticNameOffset ?? Schema.GetOffset(0xFD3BBE5B66524995);
             Schema.SetFixedString(_Handle, _D3DSemanticNameOffset!.Value, value, 64);
         }
-    } 
+    }
     private static nint? _D3DSemanticIndexOffset;
 
-    public ref int D3DSemanticIndex {
-        get {
+    public ref int D3DSemanticIndex
+    {
+        get
+        {
             _D3DSemanticIndexOffset = _D3DSemanticIndexOffset ?? Schema.GetOffset(0xFD3BBE5B67F2BA80);
             return ref _Handle.AsRef<int>(_D3DSemanticIndexOffset!.Value);
         }
     }
-
 
 }

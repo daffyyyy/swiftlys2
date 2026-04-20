@@ -18,12 +18,13 @@ internal partial class RnCapsuleDesc_tImpl : RnShapeDesc_tImpl, RnCapsuleDesc_t
 
     private static nint? _CapsuleOffset;
 
-    public RnCapsule_t Capsule {
-        get {
+    public RnCapsule_t Capsule
+    {
+        get
+        {
             _CapsuleOffset = _CapsuleOffset ?? Schema.GetOffset(0x842345E29A32484C);
             return new RnCapsule_tImpl(_Handle + _CapsuleOffset!.Value);
         }
     }
-
 
 }

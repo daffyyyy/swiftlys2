@@ -16,7 +16,4 @@ internal partial class C_INIT_RandomNamedModelBodyPartImpl : C_INIT_RandomNamedM
 {
     public C_INIT_RandomNamedModelBodyPartImpl(nint handle) : base(handle) { }
 
-
-
-
 }

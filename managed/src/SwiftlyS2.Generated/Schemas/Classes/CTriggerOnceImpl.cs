@@ -16,7 +16,4 @@ internal partial class CTriggerOnceImpl : CTriggerMultipleImpl, CTriggerOnce
 {
     public CTriggerOnceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -14,7 +14,4 @@ public partial interface CInfoInstructorHintHostageRescueZone : CPointEntity, IS
     static int ISchemaClass<CInfoInstructorHintHostageRescueZone>.Size => 1192;
     static string? ISchemaClass<CInfoInstructorHintHostageRescueZone>.ClassName => "info_hostage_rescue_zone_hint";
 
-
-
-
 }

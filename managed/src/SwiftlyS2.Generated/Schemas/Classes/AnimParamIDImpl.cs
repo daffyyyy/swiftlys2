@@ -18,12 +18,13 @@ internal partial class AnimParamIDImpl : SchemaClass, AnimParamID
 
     private static nint? _IdOffset;
 
-    public ref uint Id {
-        get {
+    public ref uint Id
+    {
+        get
+        {
             _IdOffset = _IdOffset ?? Schema.GetOffset(0xFD66F334B4B6E980);
             return ref _Handle.AsRef<uint>(_IdOffset!.Value);
         }
     }
-
 
 }

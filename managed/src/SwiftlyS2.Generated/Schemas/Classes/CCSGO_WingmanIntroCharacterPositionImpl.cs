@@ -16,7 +16,4 @@ internal partial class CCSGO_WingmanIntroCharacterPositionImpl : CCSGO_TeamIntro
 {
     public CCSGO_WingmanIntroCharacterPositionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

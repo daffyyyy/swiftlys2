@@ -18,24 +18,28 @@ internal partial class CAnimGraphModelBindingImpl : SchemaClass, CAnimGraphModel
 
     private static nint? _ModelNameOffset;
 
-    public string ModelName {
-        get {
+    public string ModelName
+    {
+        get
+        {
             _ModelNameOffset = _ModelNameOffset ?? Schema.GetOffset(0xC0F296335D35B6E1);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ModelNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ModelNameOffset = _ModelNameOffset ?? Schema.GetOffset(0xC0F296335D35B6E1);
             Schema.SetCUtlString(_Handle, _ModelNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _SharedDataOffset;
 
-    public SchemaUntypedField SharedData {
-        get {
+    public SchemaUntypedField SharedData
+    {
+        get
+        {
             _SharedDataOffset = _SharedDataOffset ?? Schema.GetOffset(0xC0F29633D0085FE6);
             return new SchemaUntypedField(_Handle + _SharedDataOffset!.Value);
         }
     }
-
 
 }

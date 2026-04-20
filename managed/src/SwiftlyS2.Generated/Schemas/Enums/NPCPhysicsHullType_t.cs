@@ -6,13 +6,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NPCPhysicsHullType_t : uint
 {
- eInvalid = 0,
-
- eGroundCapsule = 1,
-
- eCenteredCapsule = 2,
-
- eGenericCapsule = 3,
-
- eGroundBox = 4,
+    eInvalid = 0,
+    eGroundCapsule = 1,
+    eCenteredCapsule = 2,
+    eGenericCapsule = 3,
+    eGroundBox = 4,
 }

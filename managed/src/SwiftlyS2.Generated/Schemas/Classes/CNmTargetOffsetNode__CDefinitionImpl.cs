@@ -18,36 +18,43 @@ internal partial class CNmTargetOffsetNode__CDefinitionImpl : CNmTargetValueNode
 
     private static nint? _InputValueNodeIdxOffset;
 
-    public ref short InputValueNodeIdx {
-        get {
+    public ref short InputValueNodeIdx
+    {
+        get
+        {
             _InputValueNodeIdxOffset = _InputValueNodeIdxOffset ?? Schema.GetOffset(0x33F484EF95E89F27);
             return ref _Handle.AsRef<short>(_InputValueNodeIdxOffset!.Value);
         }
     }
     private static nint? _IsBoneSpaceOffsetOffset;
 
-    public ref bool IsBoneSpaceOffset {
-        get {
+    public ref bool IsBoneSpaceOffset
+    {
+        get
+        {
             _IsBoneSpaceOffsetOffset = _IsBoneSpaceOffsetOffset ?? Schema.GetOffset(0x33F484EF7B33F588);
             return ref _Handle.AsRef<bool>(_IsBoneSpaceOffsetOffset!.Value);
         }
     }
     private static nint? _RotationOffsetOffset;
 
-    public ref Quaternion RotationOffset {
-        get {
+    public ref Quaternion RotationOffset
+    {
+        get
+        {
             _RotationOffsetOffset = _RotationOffsetOffset ?? Schema.GetOffset(0x33F484EFD70314A4);
             return ref _Handle.AsRef<Quaternion>(_RotationOffsetOffset!.Value);
         }
     }
     private static nint? _TranslationOffsetOffset;
 
-    public ref Vector TranslationOffset {
-        get {
+    public ref Vector TranslationOffset
+    {
+        get
+        {
             _TranslationOffsetOffset = _TranslationOffsetOffset ?? Schema.GetOffset(0x33F484EF1ABA9777);
             return ref _Handle.AsRef<Vector>(_TranslationOffsetOffset!.Value);
         }
     }
-
 
 }

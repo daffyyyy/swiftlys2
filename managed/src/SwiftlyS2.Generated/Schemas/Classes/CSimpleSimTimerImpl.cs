@@ -18,20 +18,23 @@ internal partial class CSimpleSimTimerImpl : SchemaClass, CSimpleSimTimer
 
     private static nint? _NextOffset;
 
-    public GameTime_t Next {
-        get {
+    public GameTime_t Next
+    {
+        get
+        {
             _NextOffset = _NextOffset ?? Schema.GetOffset(0x4169D31C3BE2574E);
             return new GameTime_tImpl(_Handle + _NextOffset!.Value);
         }
     }
     private static nint? _WorldGroupIdOffset;
 
-    public ref uint WorldGroupId {
-        get {
+    public ref uint WorldGroupId
+    {
+        get
+        {
             _WorldGroupIdOffset = _WorldGroupIdOffset ?? Schema.GetOffset(0x4169D31C7414B193);
             return ref _Handle.AsRef<uint>(_WorldGroupIdOffset!.Value);
         }
     }
-
 
 }

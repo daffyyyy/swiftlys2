@@ -18,28 +18,33 @@ internal partial class EventSimulate_tImpl : SchemaClass, EventSimulate_t
 
     private static nint? _LoopStateOffset;
 
-    public EngineLoopState_t LoopState {
-        get {
+    public EngineLoopState_t LoopState
+    {
+        get
+        {
             _LoopStateOffset = _LoopStateOffset ?? Schema.GetOffset(0x39B7BD6EF928A2EC);
             return new EngineLoopState_tImpl(_Handle + _LoopStateOffset!.Value);
         }
     }
     private static nint? _FirstTickOffset;
 
-    public ref bool FirstTick {
-        get {
+    public ref bool FirstTick
+    {
+        get
+        {
             _FirstTickOffset = _FirstTickOffset ?? Schema.GetOffset(0x39B7BD6EC8198F38);
             return ref _Handle.AsRef<bool>(_FirstTickOffset!.Value);
         }
     }
     private static nint? _LastTickOffset;
 
-    public ref bool LastTick {
-        get {
+    public ref bool LastTick
+    {
+        get
+        {
             _LastTickOffset = _LastTickOffset ?? Schema.GetOffset(0x39B7BD6E1704CC30);
             return ref _Handle.AsRef<bool>(_LastTickOffset!.Value);
         }
     }
-
 
 }

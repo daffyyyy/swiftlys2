@@ -16,7 +16,4 @@ internal partial class CPointTeleportAPIImpl : SchemaClass, CPointTeleportAPI
 {
     public CPointTeleportAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

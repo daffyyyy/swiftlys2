@@ -16,7 +16,4 @@ internal partial class CPathAnimMotorUpdaterImpl : CPathAnimMotorUpdaterBaseImpl
 {
     public CPathAnimMotorUpdaterImpl(nint handle) : base(handle) { }
 
-
-
-
 }

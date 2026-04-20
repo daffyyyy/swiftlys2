@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCDotaItemDefinitionResourceImpl : Sche
 {
     public InfoForResourceTypeCDotaItemDefinitionResourceImpl(nint handle) : base(handle) { }
 
-
-
-
 }

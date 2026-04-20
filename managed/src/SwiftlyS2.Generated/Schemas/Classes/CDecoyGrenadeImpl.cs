@@ -16,7 +16,4 @@ internal partial class CDecoyGrenadeImpl : CBaseCSGrenadeImpl, CDecoyGrenade
 {
     public CDecoyGrenadeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

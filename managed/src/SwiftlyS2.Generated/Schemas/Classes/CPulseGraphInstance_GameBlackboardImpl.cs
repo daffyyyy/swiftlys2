@@ -16,7 +16,4 @@ internal partial class CPulseGraphInstance_GameBlackboardImpl : CPulseGraphInsta
 {
     public CPulseGraphInstance_GameBlackboardImpl(nint handle) : base(handle) { }
 
-
-
-
 }

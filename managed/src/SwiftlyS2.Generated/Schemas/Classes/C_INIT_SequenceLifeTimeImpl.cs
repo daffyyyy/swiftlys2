@@ -18,12 +18,13 @@ internal partial class C_INIT_SequenceLifeTimeImpl : CParticleFunctionInitialize
 
     private static nint? _FramerateOffset;
 
-    public ref float Framerate {
-        get {
+    public ref float Framerate
+    {
+        get
+        {
             _FramerateOffset = _FramerateOffset ?? Schema.GetOffset(0xC4BD3FF8F4EAA666);
             return ref _Handle.AsRef<float>(_FramerateOffset!.Value);
         }
     }
-
 
 }

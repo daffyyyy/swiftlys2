@@ -18,76 +18,93 @@ internal partial class CFootAdjustmentUpdateNodeImpl : CUnaryUpdateNodeImpl, CFo
 
     private static nint? _ClipsOffset;
 
-    public ref CUtlVector<HSequence> Clips {
-        get {
+    public ref CUtlVector<HSequence> Clips
+    {
+        get
+        {
             _ClipsOffset = _ClipsOffset ?? Schema.GetOffset(0x667ADE248CB21A38);
             return ref _Handle.AsRef<CUtlVector<HSequence>>(_ClipsOffset!.Value);
         }
     }
     private static nint? _BasePoseCacheHandleOffset;
 
-    public CPoseHandle BasePoseCacheHandle {
-        get {
+    public CPoseHandle BasePoseCacheHandle
+    {
+        get
+        {
             _BasePoseCacheHandleOffset = _BasePoseCacheHandleOffset ?? Schema.GetOffset(0x667ADE240690C505);
             return new CPoseHandleImpl(_Handle + _BasePoseCacheHandleOffset!.Value);
         }
     }
     private static nint? _FacingTargetOffset;
 
-    public CAnimParamHandle FacingTarget {
-        get {
+    public CAnimParamHandle FacingTarget
+    {
+        get
+        {
             _FacingTargetOffset = _FacingTargetOffset ?? Schema.GetOffset(0x667ADE24ED73C452);
             return new CAnimParamHandleImpl(_Handle + _FacingTargetOffset!.Value);
         }
     }
     private static nint? _TurnTimeMinOffset;
 
-    public ref float TurnTimeMin {
-        get {
+    public ref float TurnTimeMin
+    {
+        get
+        {
             _TurnTimeMinOffset = _TurnTimeMinOffset ?? Schema.GetOffset(0x667ADE247BF2813F);
             return ref _Handle.AsRef<float>(_TurnTimeMinOffset!.Value);
         }
     }
     private static nint? _TurnTimeMaxOffset;
 
-    public ref float TurnTimeMax {
-        get {
+    public ref float TurnTimeMax
+    {
+        get
+        {
             _TurnTimeMaxOffset = _TurnTimeMaxOffset ?? Schema.GetOffset(0x667ADE2489DF0F91);
             return ref _Handle.AsRef<float>(_TurnTimeMaxOffset!.Value);
         }
     }
     private static nint? _StepHeightMaxOffset;
 
-    public ref float StepHeightMax {
-        get {
+    public ref float StepHeightMax
+    {
+        get
+        {
             _StepHeightMaxOffset = _StepHeightMaxOffset ?? Schema.GetOffset(0x667ADE24C48F8DDC);
             return ref _Handle.AsRef<float>(_StepHeightMaxOffset!.Value);
         }
     }
     private static nint? _StepHeightMaxAngleOffset;
 
-    public ref float StepHeightMaxAngle {
-        get {
+    public ref float StepHeightMaxAngle
+    {
+        get
+        {
             _StepHeightMaxAngleOffset = _StepHeightMaxAngleOffset ?? Schema.GetOffset(0x667ADE24E36AE247);
             return ref _Handle.AsRef<float>(_StepHeightMaxAngleOffset!.Value);
         }
     }
     private static nint? _ResetChildOffset;
 
-    public ref bool ResetChild {
-        get {
+    public ref bool ResetChild
+    {
+        get
+        {
             _ResetChildOffset = _ResetChildOffset ?? Schema.GetOffset(0x667ADE2465CC88B6);
             return ref _Handle.AsRef<bool>(_ResetChildOffset!.Value);
         }
     }
     private static nint? _AnimationDrivenOffset;
 
-    public ref bool AnimationDriven {
-        get {
+    public ref bool AnimationDriven
+    {
+        get
+        {
             _AnimationDrivenOffset = _AnimationDrivenOffset ?? Schema.GetOffset(0x667ADE24B5FFC0F3);
             return ref _Handle.AsRef<bool>(_AnimationDrivenOffset!.Value);
         }
     }
-
 
 }

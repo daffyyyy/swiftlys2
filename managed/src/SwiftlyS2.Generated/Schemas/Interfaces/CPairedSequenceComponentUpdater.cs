@@ -14,7 +14,4 @@ public partial interface CPairedSequenceComponentUpdater : CAnimComponentUpdater
     static int ISchemaClass<CPairedSequenceComponentUpdater>.Size => 56;
     static string? ISchemaClass<CPairedSequenceComponentUpdater>.ClassName => null;
 
-
-
-
 }

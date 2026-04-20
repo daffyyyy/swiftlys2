@@ -16,7 +16,4 @@ internal partial class CVMixSteamAudioPathingProcessorDescImpl : CVMixBaseProces
 {
     public CVMixSteamAudioPathingProcessorDescImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CTaskStatusAnimTagImpl : CAnimTagBaseImpl, CTaskStatusAni
 {
     public CTaskStatusAnimTagImpl(nint handle) : base(handle) { }
 
-
-
-
 }

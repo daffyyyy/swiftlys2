@@ -16,7 +16,4 @@ internal partial class CRotButtonImpl : CBaseButtonImpl, CRotButton
 {
     public CRotButtonImpl(nint handle) : base(handle) { }
 
-
-
-
 }

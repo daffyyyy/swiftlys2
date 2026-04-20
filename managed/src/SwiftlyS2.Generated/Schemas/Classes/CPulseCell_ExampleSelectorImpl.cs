@@ -18,12 +18,13 @@ internal partial class CPulseCell_ExampleSelectorImpl : CPulseCell_BaseFlowImpl,
 
     private static nint? _OutflowListOffset;
 
-    public PulseSelectorOutflowList_t OutflowList {
-        get {
+    public PulseSelectorOutflowList_t OutflowList
+    {
+        get
+        {
             _OutflowListOffset = _OutflowListOffset ?? Schema.GetOffset(0x97417F8B1461E743);
             return new PulseSelectorOutflowList_tImpl(_Handle + _OutflowListOffset!.Value);
         }
     }
-
 
 }

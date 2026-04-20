@@ -16,7 +16,4 @@ internal partial class CWarpSectionAnimTagBaseImpl : CAnimTagBaseImpl, CWarpSect
 {
     public CWarpSectionAnimTagBaseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

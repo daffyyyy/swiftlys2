@@ -16,7 +16,4 @@ internal partial class CPerParticleVecInputImpl : CParticleVecInputImpl, CPerPar
 {
     public CPerParticleVecInputImpl(nint handle) : base(handle) { }
 
-
-
-
 }

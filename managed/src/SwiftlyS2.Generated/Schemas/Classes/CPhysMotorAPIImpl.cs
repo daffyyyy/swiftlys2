@@ -16,7 +16,4 @@ internal partial class CPhysMotorAPIImpl : SchemaClass, CPhysMotorAPI
 {
     public CPhysMotorAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,60 +18,73 @@ internal partial class C_OP_ForceBasedOnDistanceToPlaneImpl : CParticleFunctionF
 
     private static nint? _MinDistOffset;
 
-    public ref float MinDist {
-        get {
+    public ref float MinDist
+    {
+        get
+        {
             _MinDistOffset = _MinDistOffset ?? Schema.GetOffset(0x41A5EAC25219494D);
             return ref _Handle.AsRef<float>(_MinDistOffset!.Value);
         }
     }
     private static nint? _ForceAtMinDistOffset;
 
-    public ref Vector ForceAtMinDist {
-        get {
+    public ref Vector ForceAtMinDist
+    {
+        get
+        {
             _ForceAtMinDistOffset = _ForceAtMinDistOffset ?? Schema.GetOffset(0x41A5EAC23BD9C5EB);
             return ref _Handle.AsRef<Vector>(_ForceAtMinDistOffset!.Value);
         }
     }
     private static nint? _MaxDistOffset;
 
-    public ref float MaxDist {
-        get {
+    public ref float MaxDist
+    {
+        get
+        {
             _MaxDistOffset = _MaxDistOffset ?? Schema.GetOffset(0x41A5EAC2EFFD23F7);
             return ref _Handle.AsRef<float>(_MaxDistOffset!.Value);
         }
     }
     private static nint? _ForceAtMaxDistOffset;
 
-    public ref Vector ForceAtMaxDist {
-        get {
+    public ref Vector ForceAtMaxDist
+    {
+        get
+        {
             _ForceAtMaxDistOffset = _ForceAtMaxDistOffset ?? Schema.GetOffset(0x41A5EAC24119AAF9);
             return ref _Handle.AsRef<Vector>(_ForceAtMaxDistOffset!.Value);
         }
     }
     private static nint? _PlaneNormalOffset;
 
-    public ref Vector PlaneNormal {
-        get {
+    public ref Vector PlaneNormal
+    {
+        get
+        {
             _PlaneNormalOffset = _PlaneNormalOffset ?? Schema.GetOffset(0x41A5EAC221103682);
             return ref _Handle.AsRef<Vector>(_PlaneNormalOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x41A5EAC23F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
     private static nint? _ExponentOffset;
 
-    public ref float Exponent {
-        get {
+    public ref float Exponent
+    {
+        get
+        {
             _ExponentOffset = _ExponentOffset ?? Schema.GetOffset(0x41A5EAC220A7BCBC);
             return ref _Handle.AsRef<float>(_ExponentOffset!.Value);
         }
     }
-
 
 }

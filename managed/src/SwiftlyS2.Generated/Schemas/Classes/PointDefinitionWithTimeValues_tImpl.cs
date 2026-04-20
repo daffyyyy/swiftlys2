@@ -18,12 +18,13 @@ internal partial class PointDefinitionWithTimeValues_tImpl : PointDefinition_tIm
 
     private static nint? _TimeDurationOffset;
 
-    public ref float TimeDuration {
-        get {
+    public ref float TimeDuration
+    {
+        get
+        {
             _TimeDurationOffset = _TimeDurationOffset ?? Schema.GetOffset(0xF2BE4F108B84C052);
             return ref _Handle.AsRef<float>(_TimeDurationOffset!.Value);
         }
     }
-
 
 }

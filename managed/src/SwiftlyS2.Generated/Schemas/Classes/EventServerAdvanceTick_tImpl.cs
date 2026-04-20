@@ -16,7 +16,4 @@ internal partial class EventServerAdvanceTick_tImpl : EventAdvanceTick_tImpl, Ev
 {
     public EventServerAdvanceTick_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

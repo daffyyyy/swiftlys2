@@ -18,8 +18,10 @@ internal partial class CEnvWindImpl : CBaseEntityImpl, CEnvWind
 
     private static nint? _EnvWindSharedOffset;
 
-    public CEnvWindShared EnvWindShared {
-        get {
+    public CEnvWindShared EnvWindShared
+    {
+        get
+        {
             _EnvWindSharedOffset = _EnvWindSharedOffset ?? Schema.GetOffset(0x39465FB775DDCB0F);
             return new CEnvWindSharedImpl(_Handle + _EnvWindSharedOffset!.Value);
         }

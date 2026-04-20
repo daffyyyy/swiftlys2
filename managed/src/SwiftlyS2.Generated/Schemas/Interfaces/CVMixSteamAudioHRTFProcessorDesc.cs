@@ -14,7 +14,4 @@ public partial interface CVMixSteamAudioHRTFProcessorDesc : CVMixBaseProcessorDe
     static int ISchemaClass<CVMixSteamAudioHRTFProcessorDesc>.Size => 32;
     static string? ISchemaClass<CVMixSteamAudioHRTFProcessorDesc>.ClassName => null;
 
-
-
-
 }

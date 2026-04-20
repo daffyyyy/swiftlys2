@@ -18,16 +18,18 @@ internal partial class CSoundStackSaveImpl : CLogicalEntityImpl, CSoundStackSave
 
     private static nint? _StackNameOffset;
 
-    public string StackName {
-        get {
+    public string StackName
+    {
+        get
+        {
             _StackNameOffset = _StackNameOffset ?? Schema.GetOffset(0xF9E7A22E3B3E9CD4);
             return Schema.GetString(_Handle.Read<nint>(_StackNameOffset!.Value));
         }
-        set {
+        set
+        {
             _StackNameOffset = _StackNameOffset ?? Schema.GetOffset(0xF9E7A22E3B3E9CD4);
             Schema.SetString(_Handle, _StackNameOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

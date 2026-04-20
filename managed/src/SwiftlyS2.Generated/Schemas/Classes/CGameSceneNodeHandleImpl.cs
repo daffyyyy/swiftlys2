@@ -18,16 +18,20 @@ internal partial class CGameSceneNodeHandleImpl : SchemaClass, CGameSceneNodeHan
 
     private static nint? _OwnerOffset;
 
-    public ref CHandle<CEntityInstance> Owner {
-        get {
+    public ref CHandle<CEntityInstance> Owner
+    {
+        get
+        {
             _OwnerOffset = _OwnerOffset ?? Schema.GetOffset(0x9A961FAF6D89572);
             return ref _Handle.AsRef<CHandle<CEntityInstance>>(_OwnerOffset!.Value);
         }
     }
     private static nint? _NameOffset;
 
-    public ref CUtlStringToken Name {
-        get {
+    public ref CUtlStringToken Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0x9A961FA4D8F5786);
             return ref _Handle.AsRef<CUtlStringToken>(_NameOffset!.Value);
         }

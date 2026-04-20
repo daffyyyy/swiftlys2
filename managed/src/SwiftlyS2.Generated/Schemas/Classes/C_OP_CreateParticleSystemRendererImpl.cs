@@ -18,48 +18,58 @@ internal partial class C_OP_CreateParticleSystemRendererImpl : CParticleFunction
 
     private static nint? _EffectOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> Effect {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> Effect
+    {
+        get
+        {
             _EffectOffset = _EffectOffset ?? Schema.GetOffset(0xB86C827DC5CEB052);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(_EffectOffset!.Value);
         }
     }
     private static nint? _EventTypeOffset;
 
-    public ref EventTypeSelection_t EventType {
-        get {
+    public ref EventTypeSelection_t EventType
+    {
+        get
+        {
             _EventTypeOffset = _EventTypeOffset ?? Schema.GetOffset(0xB86C827DE1F9AA93);
             return ref _Handle.AsRef<EventTypeSelection_t>(_EventTypeOffset!.Value);
         }
     }
     private static nint? _CPsOffset;
 
-    public ref CUtlLeanVector<CPAssignment_t, int> CPs {
-        get {
+    public ref CUtlLeanVector<CPAssignment_t, int> CPs
+    {
+        get
+        {
             _CPsOffset = _CPsOffset ?? Schema.GetOffset(0xB86C827DE280356F);
             return ref _Handle.AsRef<CUtlLeanVector<CPAssignment_t, int>>(_CPsOffset!.Value);
         }
     }
     private static nint? _ParticleConfigOffset;
 
-    public string ParticleConfig {
-        get {
+    public string ParticleConfig
+    {
+        get
+        {
             _ParticleConfigOffset = _ParticleConfigOffset ?? Schema.GetOffset(0xB86C827D467A5C4C);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ParticleConfigOffset!.Value));
         }
-        set {
+        set
+        {
             _ParticleConfigOffset = _ParticleConfigOffset ?? Schema.GetOffset(0xB86C827D467A5C4C);
             Schema.SetCUtlString(_Handle, _ParticleConfigOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AggregationPosOffset;
 
-    public CPerParticleVecInput AggregationPos {
-        get {
+    public CPerParticleVecInput AggregationPos
+    {
+        get
+        {
             _AggregationPosOffset = _AggregationPosOffset ?? Schema.GetOffset(0xB86C827D49456289);
             return new CPerParticleVecInputImpl(_Handle + _AggregationPosOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeIMaterial2Impl : SchemaClass, InfoForR
 {
     public InfoForResourceTypeIMaterial2Impl(nint handle) : base(handle) { }
 
-
-
-
 }

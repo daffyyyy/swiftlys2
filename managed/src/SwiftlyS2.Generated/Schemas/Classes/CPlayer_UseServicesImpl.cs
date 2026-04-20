@@ -16,7 +16,4 @@ internal partial class CPlayer_UseServicesImpl : CPlayerPawnComponentImpl, CPlay
 {
     public CPlayer_UseServicesImpl(nint handle) : base(handle) { }
 
-
-
-
 }

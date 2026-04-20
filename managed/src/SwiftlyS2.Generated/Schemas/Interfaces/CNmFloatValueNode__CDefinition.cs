@@ -14,7 +14,4 @@ public partial interface CNmFloatValueNode__CDefinition : CNmValueNode__CDefinit
     static int ISchemaClass<CNmFloatValueNode__CDefinition>.Size => 16;
     static string? ISchemaClass<CNmFloatValueNode__CDefinition>.ClassName => null;
 
-
-
-
 }

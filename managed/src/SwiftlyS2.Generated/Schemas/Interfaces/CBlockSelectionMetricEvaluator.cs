@@ -14,7 +14,4 @@ public partial interface CBlockSelectionMetricEvaluator : CMotionMetricEvaluator
     static int ISchemaClass<CBlockSelectionMetricEvaluator>.Size => 80;
     static string? ISchemaClass<CBlockSelectionMetricEvaluator>.ClassName => null;
 
-
-
-
 }

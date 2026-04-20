@@ -16,7 +16,4 @@ internal partial class CPulseFuncs_GameParticleManagerImpl : SchemaClass, CPulse
 {
     public CPulseFuncs_GameParticleManagerImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -6,7 +6,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum SosActionSetParamSortType_t : uint
 {
- SOS_SETPARAM_SORTTYPE_HIGHEST = 0,
-
- SOS_SETPARAM_SORTTYPE_LOWEST = 1,
+    SOS_SETPARAM_SORTTYPE_HIGHEST = 0,
+    SOS_SETPARAM_SORTTYPE_LOWEST = 1,
 }

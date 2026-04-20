@@ -18,36 +18,43 @@ internal partial class CTransitionUpdateDataImpl : SchemaClass, CTransitionUpdat
 
     private static nint? _SrcStateIndexOffset;
 
-    public ref byte SrcStateIndex {
-        get {
+    public ref byte SrcStateIndex
+    {
+        get
+        {
             _SrcStateIndexOffset = _SrcStateIndexOffset ?? Schema.GetOffset(0xF3F18D08D2AF559E);
             return ref _Handle.AsRef<byte>(_SrcStateIndexOffset!.Value);
         }
     }
     private static nint? _DestStateIndexOffset;
 
-    public ref byte DestStateIndex {
-        get {
+    public ref byte DestStateIndex
+    {
+        get
+        {
             _DestStateIndexOffset = _DestStateIndexOffset ?? Schema.GetOffset(0xF3F18D0876246C8A);
             return ref _Handle.AsRef<byte>(_DestStateIndexOffset!.Value);
         }
     }
     private static nint? _HandshakeMaskToDisableFirstOffset;
 
-    public SchemaUntypedField HandshakeMaskToDisableFirst {
-        get {
+    public SchemaUntypedField HandshakeMaskToDisableFirst
+    {
+        get
+        {
             _HandshakeMaskToDisableFirstOffset = _HandshakeMaskToDisableFirstOffset ?? Schema.GetOffset(0xF3F18D08E58422C5);
             return new SchemaUntypedField(_Handle + _HandshakeMaskToDisableFirstOffset!.Value);
         }
     }
     private static nint? _DisabledOffset;
 
-    public SchemaUntypedField Disabled {
-        get {
+    public SchemaUntypedField Disabled
+    {
+        get
+        {
             _DisabledOffset = _DisabledOffset ?? Schema.GetOffset(0xF3F18D083A7C5965);
             return new SchemaUntypedField(_Handle + _DisabledOffset!.Value);
         }
     }
-
 
 }

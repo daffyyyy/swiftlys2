@@ -18,56 +18,68 @@ internal partial class CSSDSMsg_LayerBaseImpl : SchemaClass, CSSDSMsg_LayerBase
 
     private static nint? _ViewIdOffset;
 
-    public SceneViewId_t ViewId {
-        get {
+    public SceneViewId_t ViewId
+    {
+        get
+        {
             _ViewIdOffset = _ViewIdOffset ?? Schema.GetOffset(0x9F18C5E5E976CB25);
             return new SceneViewId_tImpl(_Handle + _ViewIdOffset!.Value);
         }
     }
     private static nint? _ViewNameOffset;
 
-    public string ViewName {
-        get {
+    public string ViewName
+    {
+        get
+        {
             _ViewNameOffset = _ViewNameOffset ?? Schema.GetOffset(0x9F18C5E5BA5BBDBB);
             return Schema.GetCUtlString(_Handle.Read<nint>(_ViewNameOffset!.Value));
         }
-        set {
+        set
+        {
             _ViewNameOffset = _ViewNameOffset ?? Schema.GetOffset(0x9F18C5E5BA5BBDBB);
             Schema.SetCUtlString(_Handle, _ViewNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _LayerIdOffset;
 
-    public ref ulong LayerId {
-        get {
+    public ref ulong LayerId
+    {
+        get
+        {
             _LayerIdOffset = _LayerIdOffset ?? Schema.GetOffset(0x9F18C5E531A19D87);
             return ref _Handle.AsRef<ulong>(_LayerIdOffset!.Value);
         }
     }
     private static nint? _LayerNameOffset;
 
-    public string LayerName {
-        get {
+    public string LayerName
+    {
+        get
+        {
             _LayerNameOffset = _LayerNameOffset ?? Schema.GetOffset(0x9F18C5E55A7163B5);
             return Schema.GetCUtlString(_Handle.Read<nint>(_LayerNameOffset!.Value));
         }
-        set {
+        set
+        {
             _LayerNameOffset = _LayerNameOffset ?? Schema.GetOffset(0x9F18C5E55A7163B5);
             Schema.SetCUtlString(_Handle, _LayerNameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DisplayTextOffset;
 
-    public string DisplayText {
-        get {
+    public string DisplayText
+    {
+        get
+        {
             _DisplayTextOffset = _DisplayTextOffset ?? Schema.GetOffset(0x9F18C5E5F59D71EE);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DisplayTextOffset!.Value));
         }
-        set {
+        set
+        {
             _DisplayTextOffset = _DisplayTextOffset ?? Schema.GetOffset(0x9F18C5E5F59D71EE);
             Schema.SetCUtlString(_Handle, _DisplayTextOffset!.Value, value);
         }
-    } 
-
+    }
 
 }

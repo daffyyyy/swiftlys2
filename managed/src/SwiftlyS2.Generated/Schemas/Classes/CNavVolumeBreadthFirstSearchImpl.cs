@@ -18,20 +18,23 @@ internal partial class CNavVolumeBreadthFirstSearchImpl : CNavVolumeCalculatedVe
 
     private static nint? _StartPosOffset;
 
-    public ref Vector StartPos {
-        get {
+    public ref Vector StartPos
+    {
+        get
+        {
             _StartPosOffset = _StartPosOffset ?? Schema.GetOffset(0x7C16FC090FE14C1B);
             return ref _Handle.AsRef<Vector>(_StartPosOffset!.Value);
         }
     }
     private static nint? _SearchDistOffset;
 
-    public ref float SearchDist {
-        get {
+    public ref float SearchDist
+    {
+        get
+        {
             _SearchDistOffset = _SearchDistOffset ?? Schema.GetOffset(0x7C16FC098227285F);
             return ref _Handle.AsRef<float>(_SearchDistOffset!.Value);
         }
     }
-
 
 }

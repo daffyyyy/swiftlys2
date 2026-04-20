@@ -18,77 +18,94 @@ internal partial class EntComponentInfo_tImpl : SchemaClass, EntComponentInfo_t
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xDEAD526A5B47C92C);
             return Schema.GetString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xDEAD526A5B47C92C);
             Schema.SetString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _CPPClassnameOffset;
 
-    public string CPPClassname {
-        get {
+    public string CPPClassname
+    {
+        get
+        {
             _CPPClassnameOffset = _CPPClassnameOffset ?? Schema.GetOffset(0xDEAD526A65BE3EC7);
             return Schema.GetString(_Handle.Read<nint>(_CPPClassnameOffset!.Value));
         }
-        set {
+        set
+        {
             _CPPClassnameOffset = _CPPClassnameOffset ?? Schema.GetOffset(0xDEAD526A65BE3EC7);
             Schema.SetString(_Handle, _CPPClassnameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NetworkDataReferencedDescriptionOffset;
 
-    public string NetworkDataReferencedDescription {
-        get {
+    public string NetworkDataReferencedDescription
+    {
+        get
+        {
             _NetworkDataReferencedDescriptionOffset = _NetworkDataReferencedDescriptionOffset ?? Schema.GetOffset(0xDEAD526AB84E3342);
             return Schema.GetString(_Handle.Read<nint>(_NetworkDataReferencedDescriptionOffset!.Value));
         }
-        set {
+        set
+        {
             _NetworkDataReferencedDescriptionOffset = _NetworkDataReferencedDescriptionOffset ?? Schema.GetOffset(0xDEAD526AB84E3342);
             Schema.SetString(_Handle, _NetworkDataReferencedDescriptionOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NetworkDataReferencedPtrPropDescriptionOffset;
 
-    public string NetworkDataReferencedPtrPropDescription {
-        get {
+    public string NetworkDataReferencedPtrPropDescription
+    {
+        get
+        {
             _NetworkDataReferencedPtrPropDescriptionOffset = _NetworkDataReferencedPtrPropDescriptionOffset ?? Schema.GetOffset(0xDEAD526AFDC5489F);
             return Schema.GetString(_Handle.Read<nint>(_NetworkDataReferencedPtrPropDescriptionOffset!.Value));
         }
-        set {
+        set
+        {
             _NetworkDataReferencedPtrPropDescriptionOffset = _NetworkDataReferencedPtrPropDescriptionOffset ?? Schema.GetOffset(0xDEAD526AFDC5489F);
             Schema.SetString(_Handle, _NetworkDataReferencedPtrPropDescriptionOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _RuntimeIndexOffset;
 
-    public ref int RuntimeIndex {
-        get {
+    public ref int RuntimeIndex
+    {
+        get
+        {
             _RuntimeIndexOffset = _RuntimeIndexOffset ?? Schema.GetOffset(0xDEAD526AB53184BD);
             return ref _Handle.AsRef<int>(_RuntimeIndexOffset!.Value);
         }
     }
     private static nint? _FlagsOffset;
 
-    public ref uint Flags {
-        get {
+    public ref uint Flags
+    {
+        get
+        {
             _FlagsOffset = _FlagsOffset ?? Schema.GetOffset(0xDEAD526ACE6E9C28);
             return ref _Handle.AsRef<uint>(_FlagsOffset!.Value);
         }
     }
     private static nint? _BaseClassComponentHelperOffset;
 
-    public CEntityComponentHelper? BaseClassComponentHelper {
-        get {
+    public CEntityComponentHelper? BaseClassComponentHelper
+    {
+        get
+        {
             _BaseClassComponentHelperOffset = _BaseClassComponentHelperOffset ?? Schema.GetOffset(0xDEAD526A9799DD51);
             var ptr = _Handle.Read<nint>(_BaseClassComponentHelperOffset!.Value);
             return ptr.IsValidPtr() ? new CEntityComponentHelperImpl(ptr) : null;
         }
     }
-
 
 }

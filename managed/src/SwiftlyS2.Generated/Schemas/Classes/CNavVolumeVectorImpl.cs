@@ -18,12 +18,13 @@ internal partial class CNavVolumeVectorImpl : CNavVolumeImpl, CNavVolumeVector
 
     private static nint? _HasBeenPreFilteredOffset;
 
-    public ref bool HasBeenPreFiltered {
-        get {
+    public ref bool HasBeenPreFiltered
+    {
+        get
+        {
             _HasBeenPreFilteredOffset = _HasBeenPreFilteredOffset ?? Schema.GetOffset(0x29D8C0A2454B59CD);
             return ref _Handle.AsRef<bool>(_HasBeenPreFilteredOffset!.Value);
         }
     }
-
 
 }

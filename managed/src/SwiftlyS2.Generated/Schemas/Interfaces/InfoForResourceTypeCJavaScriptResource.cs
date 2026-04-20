@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCJavaScriptResource : ISchemaClass<I
     static int ISchemaClass<InfoForResourceTypeCJavaScriptResource>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCJavaScriptResource>.ClassName => null;
 
-
-
-
 }

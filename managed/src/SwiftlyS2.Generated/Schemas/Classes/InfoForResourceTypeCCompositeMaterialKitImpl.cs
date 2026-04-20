@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCCompositeMaterialKitImpl : SchemaClas
 {
     public InfoForResourceTypeCCompositeMaterialKitImpl(nint handle) : base(handle) { }
 
-
-
-
 }

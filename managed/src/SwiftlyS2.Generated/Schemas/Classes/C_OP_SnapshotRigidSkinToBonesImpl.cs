@@ -18,28 +18,33 @@ internal partial class C_OP_SnapshotRigidSkinToBonesImpl : CParticleFunctionOper
 
     private static nint? _TransformNormalsOffset;
 
-    public ref bool TransformNormals {
-        get {
+    public ref bool TransformNormals
+    {
+        get
+        {
             _TransformNormalsOffset = _TransformNormalsOffset ?? Schema.GetOffset(0x208C05EB3C6BFD75);
             return ref _Handle.AsRef<bool>(_TransformNormalsOffset!.Value);
         }
     }
     private static nint? _TransformRadiiOffset;
 
-    public ref bool TransformRadii {
-        get {
+    public ref bool TransformRadii
+    {
+        get
+        {
             _TransformRadiiOffset = _TransformRadiiOffset ?? Schema.GetOffset(0x208C05EB8183F664);
             return ref _Handle.AsRef<bool>(_TransformRadiiOffset!.Value);
         }
     }
     private static nint? _ControlPointNumberOffset;
 
-    public ref int ControlPointNumber {
-        get {
+    public ref int ControlPointNumber
+    {
+        get
+        {
             _ControlPointNumberOffset = _ControlPointNumberOffset ?? Schema.GetOffset(0x208C05EB3F31A6BD);
             return ref _Handle.AsRef<int>(_ControlPointNumberOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CNmGraphVariationUserDataImpl : SchemaClass, CNmGraphVari
 {
     public CNmGraphVariationUserDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

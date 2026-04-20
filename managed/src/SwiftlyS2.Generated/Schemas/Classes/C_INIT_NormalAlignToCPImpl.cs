@@ -18,20 +18,23 @@ internal partial class C_INIT_NormalAlignToCPImpl : CParticleFunctionInitializer
 
     private static nint? _TransformInputOffset;
 
-    public CParticleTransformInput TransformInput {
-        get {
+    public CParticleTransformInput TransformInput
+    {
+        get
+        {
             _TransformInputOffset = _TransformInputOffset ?? Schema.GetOffset(0xFA0441643A9ED669);
             return new CParticleTransformInputImpl(_Handle + _TransformInputOffset!.Value);
         }
     }
     private static nint? _ControlPointAxisOffset;
 
-    public ref ParticleControlPointAxis_t ControlPointAxis {
-        get {
+    public ref ParticleControlPointAxis_t ControlPointAxis
+    {
+        get
+        {
             _ControlPointAxisOffset = _ControlPointAxisOffset ?? Schema.GetOffset(0xFA04416471763CFD);
             return ref _Handle.AsRef<ParticleControlPointAxis_t>(_ControlPointAxisOffset!.Value);
         }
     }
-
 
 }

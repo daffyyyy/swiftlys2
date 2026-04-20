@@ -18,28 +18,33 @@ internal partial class C_OP_ParentVorticesImpl : CParticleFunctionForceImpl, C_O
 
     private static nint? _ForceScaleOffset;
 
-    public ref float ForceScale {
-        get {
+    public ref float ForceScale
+    {
+        get
+        {
             _ForceScaleOffset = _ForceScaleOffset ?? Schema.GetOffset(0xBB2B6F884817F390);
             return ref _Handle.AsRef<float>(_ForceScaleOffset!.Value);
         }
     }
     private static nint? _TwistAxisOffset;
 
-    public ref Vector TwistAxis {
-        get {
+    public ref Vector TwistAxis
+    {
+        get
+        {
             _TwistAxisOffset = _TwistAxisOffset ?? Schema.GetOffset(0xBB2B6F8808970741);
             return ref _Handle.AsRef<Vector>(_TwistAxisOffset!.Value);
         }
     }
     private static nint? _FlipBasedOnYawOffset;
 
-    public ref bool FlipBasedOnYaw {
-        get {
+    public ref bool FlipBasedOnYaw
+    {
+        get
+        {
             _FlipBasedOnYawOffset = _FlipBasedOnYawOffset ?? Schema.GetOffset(0xBB2B6F88BCFD5843);
             return ref _Handle.AsRef<bool>(_FlipBasedOnYawOffset!.Value);
         }
     }
-
 
 }

@@ -18,72 +18,90 @@ internal partial class CCSPlayerModernJumpImpl : SchemaClass, CCSPlayerModernJum
 
     private static nint? _LastActualJumpPressTickOffset;
 
-    public GameTick_t LastActualJumpPressTick {
-        get {
+    public GameTick_t LastActualJumpPressTick
+    {
+        get
+        {
             _LastActualJumpPressTickOffset = _LastActualJumpPressTickOffset ?? Schema.GetOffset(0x8CD8CF82BF93929F);
             return new GameTick_tImpl(_Handle + _LastActualJumpPressTickOffset!.Value);
         }
     }
     private static nint? _LastActualJumpPressFracOffset;
 
-    public ref float LastActualJumpPressFrac {
-        get {
+    public ref float LastActualJumpPressFrac
+    {
+        get
+        {
             _LastActualJumpPressFracOffset = _LastActualJumpPressFracOffset ?? Schema.GetOffset(0x8CD8CF82EFA846D4);
             return ref _Handle.AsRef<float>(_LastActualJumpPressFracOffset!.Value);
         }
     }
     private static nint? _LastUsableJumpPressTickOffset;
 
-    public GameTick_t LastUsableJumpPressTick {
-        get {
+    public GameTick_t LastUsableJumpPressTick
+    {
+        get
+        {
             _LastUsableJumpPressTickOffset = _LastUsableJumpPressTickOffset ?? Schema.GetOffset(0x8CD8CF8276B8735D);
             return new GameTick_tImpl(_Handle + _LastUsableJumpPressTickOffset!.Value);
         }
     }
     private static nint? _LastUsableJumpPressFracOffset;
 
-    public ref float LastUsableJumpPressFrac {
-        get {
+    public ref float LastUsableJumpPressFrac
+    {
+        get
+        {
             _LastUsableJumpPressFracOffset = _LastUsableJumpPressFracOffset ?? Schema.GetOffset(0x8CD8CF8285D28572);
             return ref _Handle.AsRef<float>(_LastUsableJumpPressFracOffset!.Value);
         }
     }
     private static nint? _LastLandedTickOffset;
 
-    public GameTick_t LastLandedTick {
-        get {
+    public GameTick_t LastLandedTick
+    {
+        get
+        {
             _LastLandedTickOffset = _LastLandedTickOffset ?? Schema.GetOffset(0x8CD8CF82680C80AC);
             return new GameTick_tImpl(_Handle + _LastLandedTickOffset!.Value);
         }
     }
     private static nint? _LastLandedFracOffset;
 
-    public ref float LastLandedFrac {
-        get {
+    public ref float LastLandedFrac
+    {
+        get
+        {
             _LastLandedFracOffset = _LastLandedFracOffset ?? Schema.GetOffset(0x8CD8CF8276080263);
             return ref _Handle.AsRef<float>(_LastLandedFracOffset!.Value);
         }
     }
     private static nint? _LastLandedVelocityXOffset;
 
-    public ref float LastLandedVelocityX {
-        get {
+    public ref float LastLandedVelocityX
+    {
+        get
+        {
             _LastLandedVelocityXOffset = _LastLandedVelocityXOffset ?? Schema.GetOffset(0x8CD8CF82B72D3B94);
             return ref _Handle.AsRef<float>(_LastLandedVelocityXOffset!.Value);
         }
     }
     private static nint? _LastLandedVelocityYOffset;
 
-    public ref float LastLandedVelocityY {
-        get {
+    public ref float LastLandedVelocityY
+    {
+        get
+        {
             _LastLandedVelocityYOffset = _LastLandedVelocityYOffset ?? Schema.GetOffset(0x8CD8CF82B82D3D27);
             return ref _Handle.AsRef<float>(_LastLandedVelocityYOffset!.Value);
         }
     }
     private static nint? _LastLandedVelocityZOffset;
 
-    public ref float LastLandedVelocityZ {
-        get {
+    public ref float LastLandedVelocityZ
+    {
+        get
+        {
             _LastLandedVelocityZOffset = _LastLandedVelocityZOffset ?? Schema.GetOffset(0x8CD8CF82B92D3EBA);
             return ref _Handle.AsRef<float>(_LastLandedVelocityZOffset!.Value);
         }

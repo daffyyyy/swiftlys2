@@ -14,7 +14,4 @@ public partial interface CPulseCell_Val_TestDomainFindEntityByName : CPulseCell_
     static int ISchemaClass<CPulseCell_Val_TestDomainFindEntityByName>.Size => 72;
     static string? ISchemaClass<CPulseCell_Val_TestDomainFindEntityByName>.ClassName => null;
 
-
-
-
 }

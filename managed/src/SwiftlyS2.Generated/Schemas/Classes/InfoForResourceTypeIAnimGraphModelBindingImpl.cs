@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeIAnimGraphModelBindingImpl : SchemaCla
 {
     public InfoForResourceTypeIAnimGraphModelBindingImpl(nint handle) : base(handle) { }
 
-
-
-
 }

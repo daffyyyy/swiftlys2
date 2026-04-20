@@ -11,8 +11,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathMoverEntitySpawner : CLogicalEntity, ISchemaClass<CPathMoverEntitySpawner>
 {
     static CPathMoverEntitySpawner ISchemaClass<CPathMoverEntitySpawner>.From(nint handle) => new CPathMoverEntitySpawnerImpl(handle);
-    static int ISchemaClass<CPathMoverEntitySpawner>.Size => 1288;
-    static string? ISchemaClass<CPathMoverEntitySpawner>.ClassName => null;
+    static int ISchemaClass<CPathMoverEntitySpawner>.Size => 1376;
+    static string? ISchemaClass<CPathMoverEntitySpawner>.ClassName => "path_mover_entity_spawner";
 
 
     public ISchemaStringFixedArray SpawnTemplates { get; }
@@ -25,14 +25,24 @@ public partial interface CPathMoverEntitySpawner : CLogicalEntity, ISchemaClass<
 
     public ref float SpawnFrequencyDistToNearestMover { get; }
 
-    // CUtlHashtable< CHandle< CFuncMover >, CPathMoverEntitySpawn >
+    // CUtlHashtable< CHandle< CFuncMover >, PathMoverEntitySpawn >
     public SchemaUntypedField MapSpawnedMoverTemplates { get; }
 
     public ref int MaxActive { get; }
 
+    public ref int SpawnNum { get; }
+
     public GameTime_t LastSpawnTime { get; }
 
     public ref bool Enabled { get; }
+
+    public ref bool DestroyMoverOnArrivedAtEnd { get; }
+
+    public ref CUtlVector<CHandle<CFuncMover>> QueuedRemovals { get; }
+
+    public ref CEntityIOOutput OnTemplateSpawned { get; }
+
+    public ref CEntityIOOutput OnTemplateGroupSpawned { get; }
 
 
 }

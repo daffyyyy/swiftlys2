@@ -18,36 +18,43 @@ internal partial class CFloatAnimParameterImpl : CConcreteAnimParameterImpl, CFl
 
     private static nint? _DefaultValueOffset;
 
-    public ref float DefaultValue {
-        get {
+    public ref float DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x6CE7934089D370B3);
             return ref _Handle.AsRef<float>(_DefaultValueOffset!.Value);
         }
     }
     private static nint? _MinValueOffset;
 
-    public ref float MinValue {
-        get {
+    public ref float MinValue
+    {
+        get
+        {
             _MinValueOffset = _MinValueOffset ?? Schema.GetOffset(0x6CE79340AD86BD50);
             return ref _Handle.AsRef<float>(_MinValueOffset!.Value);
         }
     }
     private static nint? _MaxValueOffset;
 
-    public ref float MaxValue {
-        get {
+    public ref float MaxValue
+    {
+        get
+        {
             _MaxValueOffset = _MaxValueOffset ?? Schema.GetOffset(0x6CE79340DB7358B2);
             return ref _Handle.AsRef<float>(_MaxValueOffset!.Value);
         }
     }
     private static nint? _InterpolateOffset;
 
-    public ref bool Interpolate {
-        get {
+    public ref bool Interpolate
+    {
+        get
+        {
             _InterpolateOffset = _InterpolateOffset ?? Schema.GetOffset(0x6CE79340F6607650);
             return ref _Handle.AsRef<bool>(_InterpolateOffset!.Value);
         }
     }
-
 
 }

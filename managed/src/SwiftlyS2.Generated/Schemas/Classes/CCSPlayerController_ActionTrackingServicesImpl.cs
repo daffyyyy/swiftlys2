@@ -18,40 +18,50 @@ internal partial class CCSPlayerController_ActionTrackingServicesImpl : CPlayerC
 
     private static nint? _PerRoundStatsOffset;
 
-    public ref CUtlVector<CSPerRoundStats_t> PerRoundStats {
-        get {
+    public ref CUtlVector<CSPerRoundStats_t> PerRoundStats
+    {
+        get
+        {
             _PerRoundStatsOffset = _PerRoundStatsOffset ?? Schema.GetOffset(0x96DF63C17C8AAE9F);
             return ref _Handle.AsRef<CUtlVector<CSPerRoundStats_t>>(_PerRoundStatsOffset!.Value);
         }
     }
     private static nint? _MatchStatsOffset;
 
-    public CSMatchStats_t MatchStats {
-        get {
+    public CSMatchStats_t MatchStats
+    {
+        get
+        {
             _MatchStatsOffset = _MatchStatsOffset ?? Schema.GetOffset(0x96DF63C11729A24D);
             return new CSMatchStats_tImpl(_Handle + _MatchStatsOffset!.Value);
         }
     }
     private static nint? _NumRoundKillsOffset;
 
-    public ref int NumRoundKills {
-        get {
+    public ref int NumRoundKills
+    {
+        get
+        {
             _NumRoundKillsOffset = _NumRoundKillsOffset ?? Schema.GetOffset(0x96DF63C1C6B90825);
             return ref _Handle.AsRef<int>(_NumRoundKillsOffset!.Value);
         }
     }
     private static nint? _NumRoundKillsHeadshotsOffset;
 
-    public ref int NumRoundKillsHeadshots {
-        get {
+    public ref int NumRoundKillsHeadshots
+    {
+        get
+        {
             _NumRoundKillsHeadshotsOffset = _NumRoundKillsHeadshotsOffset ?? Schema.GetOffset(0x96DF63C196C53F70);
             return ref _Handle.AsRef<int>(_NumRoundKillsHeadshotsOffset!.Value);
         }
     }
     private static nint? _TotalRoundDamageDealtOffset;
 
-    public ref float TotalRoundDamageDealt {
-        get {
+    public ref float TotalRoundDamageDealt
+    {
+        get
+        {
             _TotalRoundDamageDealtOffset = _TotalRoundDamageDealtOffset ?? Schema.GetOffset(0x96DF63C19CF13FA6);
             return ref _Handle.AsRef<float>(_TotalRoundDamageDealtOffset!.Value);
         }

@@ -18,20 +18,23 @@ internal partial class CAimConstraintImpl : CBaseConstraintImpl, CAimConstraint
 
     private static nint? _AimOffsetOffset;
 
-    public ref Quaternion AimOffset {
-        get {
+    public ref Quaternion AimOffset
+    {
+        get
+        {
             _AimOffsetOffset = _AimOffsetOffset ?? Schema.GetOffset(0x6C67AB6C43737FEA);
             return ref _Handle.AsRef<Quaternion>(_AimOffsetOffset!.Value);
         }
     }
     private static nint? _UpTypeOffset;
 
-    public ref uint UpType {
-        get {
+    public ref uint UpType
+    {
+        get
+        {
             _UpTypeOffset = _UpTypeOffset ?? Schema.GetOffset(0x6C67AB6C038EA2BC);
             return ref _Handle.AsRef<uint>(_UpTypeOffset!.Value);
         }
     }
-
 
 }

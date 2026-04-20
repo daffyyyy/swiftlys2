@@ -18,36 +18,43 @@ internal partial class CEnvTiltImpl : CPointEntityImpl, CEnvTilt
 
     private static nint? _DurationOffset;
 
-    public ref float Duration {
-        get {
+    public ref float Duration
+    {
+        get
+        {
             _DurationOffset = _DurationOffset ?? Schema.GetOffset(0xF90425169879A98D);
             return ref _Handle.AsRef<float>(_DurationOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0xF90425167C5B0533);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _TiltTimeOffset;
 
-    public ref float TiltTime {
-        get {
+    public ref float TiltTime
+    {
+        get
+        {
             _TiltTimeOffset = _TiltTimeOffset ?? Schema.GetOffset(0xF9042516B3956BFF);
             return ref _Handle.AsRef<float>(_TiltTimeOffset!.Value);
         }
     }
     private static nint? _StopTimeOffset;
 
-    public GameTime_t StopTime {
-        get {
+    public GameTime_t StopTime
+    {
+        get
+        {
             _StopTimeOffset = _StopTimeOffset ?? Schema.GetOffset(0xF90425166BFFEDC4);
             return new GameTime_tImpl(_Handle + _StopTimeOffset!.Value);
         }
     }
-
 
 }

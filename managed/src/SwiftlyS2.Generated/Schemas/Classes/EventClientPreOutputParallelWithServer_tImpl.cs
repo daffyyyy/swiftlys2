@@ -16,7 +16,4 @@ internal partial class EventClientPreOutputParallelWithServer_tImpl : EventClien
 {
     public EventClientPreOutputParallelWithServer_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

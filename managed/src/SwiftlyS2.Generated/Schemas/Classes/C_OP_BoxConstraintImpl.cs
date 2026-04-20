@@ -18,44 +18,53 @@ internal partial class C_OP_BoxConstraintImpl : CParticleFunctionConstraintImpl,
 
     private static nint? _MinOffset;
 
-    public CParticleCollectionVecInput Min {
-        get {
+    public CParticleCollectionVecInput Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x111EED71B0765F37);
             return new CParticleCollectionVecInputImpl(_Handle + _MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public CParticleCollectionVecInput Max {
-        get {
+    public CParticleCollectionVecInput Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x111EED71BE89FCF9);
             return new CParticleCollectionVecInputImpl(_Handle + _MaxOffset!.Value);
         }
     }
     private static nint? _CPOffset;
 
-    public ref int CP {
-        get {
+    public ref int CP
+    {
+        get
+        {
             _CPOffset = _CPOffset ?? Schema.GetOffset(0x111EED71EB661472);
             return ref _Handle.AsRef<int>(_CPOffset!.Value);
         }
     }
     private static nint? _LocalSpaceOffset;
 
-    public ref bool LocalSpace {
-        get {
+    public ref bool LocalSpace
+    {
+        get
+        {
             _LocalSpaceOffset = _LocalSpaceOffset ?? Schema.GetOffset(0x111EED7162418E6E);
             return ref _Handle.AsRef<bool>(_LocalSpaceOffset!.Value);
         }
     }
     private static nint? _AccountForRadiusOffset;
 
-    public ref bool AccountForRadius {
-        get {
+    public ref bool AccountForRadius
+    {
+        get
+        {
             _AccountForRadiusOffset = _AccountForRadiusOffset ?? Schema.GetOffset(0x111EED71E4DE9E21);
             return ref _Handle.AsRef<bool>(_AccountForRadiusOffset!.Value);
         }
     }
-
 
 }

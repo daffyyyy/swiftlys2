@@ -18,28 +18,33 @@ internal partial class PointDefinition_tImpl : SchemaClass, PointDefinition_t
 
     private static nint? _ControlPointOffset;
 
-    public ref int ControlPoint {
-        get {
+    public ref int ControlPoint
+    {
+        get
+        {
             _ControlPointOffset = _ControlPointOffset ?? Schema.GetOffset(0x731F83DF0D0DDF8C);
             return ref _Handle.AsRef<int>(_ControlPointOffset!.Value);
         }
     }
     private static nint? _LocalCoordsOffset;
 
-    public ref bool LocalCoords {
-        get {
+    public ref bool LocalCoords
+    {
+        get
+        {
             _LocalCoordsOffset = _LocalCoordsOffset ?? Schema.GetOffset(0x731F83DF30E716DE);
             return ref _Handle.AsRef<bool>(_LocalCoordsOffset!.Value);
         }
     }
     private static nint? _OffsetOffset;
 
-    public ref Vector Offset {
-        get {
+    public ref Vector Offset
+    {
+        get
+        {
             _OffsetOffset = _OffsetOffset ?? Schema.GetOffset(0x731F83DFFE159136);
             return ref _Handle.AsRef<Vector>(_OffsetOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class C_INIT_RandomNamedModelMeshGroupImpl : C_INIT_RandomNamed
 {
     public C_INIT_RandomNamedModelMeshGroupImpl(nint handle) : base(handle) { }
 
-
-
-
 }

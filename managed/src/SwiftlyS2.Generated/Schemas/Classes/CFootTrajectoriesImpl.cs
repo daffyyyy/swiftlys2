@@ -18,12 +18,13 @@ internal partial class CFootTrajectoriesImpl : SchemaClass, CFootTrajectories
 
     private static nint? _TrajectoriesOffset;
 
-    public ref CUtlVector<CFootTrajectory> Trajectories {
-        get {
+    public ref CUtlVector<CFootTrajectory> Trajectories
+    {
+        get
+        {
             _TrajectoriesOffset = _TrajectoriesOffset ?? Schema.GetOffset(0x5D019D277964C78C);
             return ref _Handle.AsRef<CUtlVector<CFootTrajectory>>(_TrajectoriesOffset!.Value);
         }
     }
-
 
 }

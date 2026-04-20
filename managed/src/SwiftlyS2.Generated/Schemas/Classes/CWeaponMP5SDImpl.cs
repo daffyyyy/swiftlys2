@@ -16,7 +16,4 @@ internal partial class CWeaponMP5SDImpl : CCSWeaponBaseGunImpl, CWeaponMP5SD
 {
     public CWeaponMP5SDImpl(nint handle) : base(handle) { }
 
-
-
-
 }

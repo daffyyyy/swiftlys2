@@ -18,12 +18,13 @@ internal partial class C_OP_DecayClampCountImpl : CParticleFunctionOperatorImpl,
 
     private static nint? _CountOffset;
 
-    public CParticleCollectionFloatInput Count {
-        get {
+    public CParticleCollectionFloatInput Count
+    {
+        get
+        {
             _CountOffset = _CountOffset ?? Schema.GetOffset(0xBBD38E0B7D31AC08);
             return new CParticleCollectionFloatInputImpl(_Handle + _CountOffset!.Value);
         }
     }
-
 
 }

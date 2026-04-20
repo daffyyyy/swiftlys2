@@ -16,7 +16,4 @@ internal partial class CCSWeaponBaseShotgunImpl : CCSWeaponBaseImpl, CCSWeaponBa
 {
     public CCSWeaponBaseShotgunImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -16,7 +16,4 @@ internal partial class CWeaponNegevImpl : CCSWeaponBaseGunImpl, CWeaponNegev
 {
     public CWeaponNegevImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,12 +18,13 @@ internal partial class EventPostDataUpdate_tImpl : SchemaClass, EventPostDataUpd
 
     private static nint? _CountOffset;
 
-    public ref int Count {
-        get {
+    public ref int Count
+    {
+        get
+        {
             _CountOffset = _CountOffset ?? Schema.GetOffset(0x109BBB5B7D31AC08);
             return ref _Handle.AsRef<int>(_CountOffset!.Value);
         }
     }
-
 
 }

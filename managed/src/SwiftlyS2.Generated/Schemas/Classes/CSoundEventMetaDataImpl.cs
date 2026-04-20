@@ -18,12 +18,13 @@ internal partial class CSoundEventMetaDataImpl : SchemaClass, CSoundEventMetaDat
 
     private static nint? _SoundEventVMixOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCVMixListResource> SoundEventVMix {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCVMixListResource> SoundEventVMix
+    {
+        get
+        {
             _SoundEventVMixOffset = _SoundEventVMixOffset ?? Schema.GetOffset(0xE03E2D8ED7B83398);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVMixListResource>>(_SoundEventVMixOffset!.Value);
         }
     }
-
 
 }

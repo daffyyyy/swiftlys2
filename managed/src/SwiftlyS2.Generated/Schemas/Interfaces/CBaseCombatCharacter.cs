@@ -8,10 +8,10 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCombatCharacter>
+public partial interface CBaseCombatCharacter : CBaseAnimGraph, ISchemaClass<CBaseCombatCharacter>
 {
     static CBaseCombatCharacter ISchemaClass<CBaseCombatCharacter>.From(nint handle) => new CBaseCombatCharacterImpl(handle);
-    static int ISchemaClass<CBaseCombatCharacter>.Size => 2928;
+    static int ISchemaClass<CBaseCombatCharacter>.Size => 2560;
     static string? ISchemaClass<CBaseCombatCharacter>.ClassName => null;
 
 

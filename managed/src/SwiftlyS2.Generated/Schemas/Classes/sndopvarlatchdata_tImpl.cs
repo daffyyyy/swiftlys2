@@ -18,56 +18,68 @@ internal partial class sndopvarlatchdata_tImpl : SchemaClass, sndopvarlatchdata_
 
     private static nint? _StackOffset;
 
-    public string Stack {
-        get {
+    public string Stack
+    {
+        get
+        {
             _StackOffset = _StackOffset ?? Schema.GetOffset(0x8347C0D511ACB037);
             return Schema.GetString(_Handle.Read<nint>(_StackOffset!.Value));
         }
-        set {
+        set
+        {
             _StackOffset = _StackOffset ?? Schema.GetOffset(0x8347C0D511ACB037);
             Schema.SetString(_Handle, _StackOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OperatorOffset;
 
-    public string Operator {
-        get {
+    public string Operator
+    {
+        get
+        {
             _OperatorOffset = _OperatorOffset ?? Schema.GetOffset(0x8347C0D55D107B55);
             return Schema.GetString(_Handle.Read<nint>(_OperatorOffset!.Value));
         }
-        set {
+        set
+        {
             _OperatorOffset = _OperatorOffset ?? Schema.GetOffset(0x8347C0D55D107B55);
             Schema.SetString(_Handle, _OperatorOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OpvarOffset;
 
-    public string Opvar {
-        get {
+    public string Opvar
+    {
+        get
+        {
             _OpvarOffset = _OpvarOffset ?? Schema.GetOffset(0x8347C0D508A9F41F);
             return Schema.GetString(_Handle.Read<nint>(_OpvarOffset!.Value));
         }
-        set {
+        set
+        {
             _OpvarOffset = _OpvarOffset ?? Schema.GetOffset(0x8347C0D508A9F41F);
             Schema.SetString(_Handle, _OpvarOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ValOffset;
 
-    public ref float Val {
-        get {
+    public ref float Val
+    {
+        get
+        {
             _ValOffset = _ValOffset ?? Schema.GetOffset(0x8347C0D5E31D0C86);
             return ref _Handle.AsRef<float>(_ValOffset!.Value);
         }
     }
     private static nint? _PosOffset;
 
-    public ref Vector Pos {
-        get {
+    public ref Vector Pos
+    {
+        get
+        {
             _PosOffset = _PosOffset ?? Schema.GetOffset(0x8347C0D5DE9CFC5D);
             return ref _Handle.AsRef<Vector>(_PosOffset!.Value);
         }
     }
-
 
 }

@@ -18,44 +18,53 @@ internal partial class CAnimBoneDifferenceImpl : SchemaClass, CAnimBoneDifferenc
 
     private static nint? _NameOffset;
 
-    public ref CBufferString Name {
-        get {
+    public ref CBufferString Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xCC65F41E4D8F5786);
             return ref _Handle.AsRef<CBufferString>(_NameOffset!.Value);
         }
     }
     private static nint? _ParentOffset;
 
-    public ref CBufferString Parent {
-        get {
+    public ref CBufferString Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0xCC65F41E2FF7A69D);
             return ref _Handle.AsRef<CBufferString>(_ParentOffset!.Value);
         }
     }
     private static nint? _PosErrorOffset;
 
-    public ref Vector PosError {
-        get {
+    public ref Vector PosError
+    {
+        get
+        {
             _PosErrorOffset = _PosErrorOffset ?? Schema.GetOffset(0xCC65F41E48F0F4CD);
             return ref _Handle.AsRef<Vector>(_PosErrorOffset!.Value);
         }
     }
     private static nint? _HasRotationOffset;
 
-    public ref bool HasRotation {
-        get {
+    public ref bool HasRotation
+    {
+        get
+        {
             _HasRotationOffset = _HasRotationOffset ?? Schema.GetOffset(0xCC65F41E84FE2D9D);
             return ref _Handle.AsRef<bool>(_HasRotationOffset!.Value);
         }
     }
     private static nint? _HasMovementOffset;
 
-    public ref bool HasMovement {
-        get {
+    public ref bool HasMovement
+    {
+        get
+        {
             _HasMovementOffset = _HasMovementOffset ?? Schema.GetOffset(0xCC65F41E07AC967A);
             return ref _Handle.AsRef<bool>(_HasMovementOffset!.Value);
         }
     }
-
 
 }

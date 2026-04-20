@@ -16,7 +16,4 @@ internal partial class CLightOrthoEntityImpl : CLightEntityImpl, CLightOrthoEnti
 {
     public CLightOrthoEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

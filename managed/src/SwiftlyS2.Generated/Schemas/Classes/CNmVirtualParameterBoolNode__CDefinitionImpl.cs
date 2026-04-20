@@ -18,12 +18,13 @@ internal partial class CNmVirtualParameterBoolNode__CDefinitionImpl : CNmBoolVal
 
     private static nint? _ChildNodeIdxOffset;
 
-    public ref short ChildNodeIdx {
-        get {
+    public ref short ChildNodeIdx
+    {
+        get
+        {
             _ChildNodeIdxOffset = _ChildNodeIdxOffset ?? Schema.GetOffset(0xA28816AF5C29A73C);
             return ref _Handle.AsRef<short>(_ChildNodeIdxOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface CStringAnimTag : CAnimTagBase, ISchemaClass<CStringAnim
     static int ISchemaClass<CStringAnimTag>.Size => 80;
     static string? ISchemaClass<CStringAnimTag>.ClassName => null;
 
-
-
-
 }

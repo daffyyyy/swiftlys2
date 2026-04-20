@@ -18,148 +18,183 @@ internal partial class CTriggerLerpObjectImpl : CBaseTriggerImpl, CTriggerLerpOb
 
     private static nint? _LerpTargetOffset;
 
-    public string LerpTarget {
-        get {
+    public string LerpTarget
+    {
+        get
+        {
             _LerpTargetOffset = _LerpTargetOffset ?? Schema.GetOffset(0x42FE8EA4853F2479);
             return Schema.GetString(_Handle.Read<nint>(_LerpTargetOffset!.Value));
         }
-        set {
+        set
+        {
             _LerpTargetOffset = _LerpTargetOffset ?? Schema.GetOffset(0x42FE8EA4853F2479);
             Schema.SetString(_Handle, _LerpTargetOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _LerpTarget1Offset;
 
-    public ref CHandle<CBaseEntity> LerpTarget1 {
-        get {
+    public ref CHandle<CBaseEntity> LerpTarget1
+    {
+        get
+        {
             _LerpTarget1Offset = _LerpTarget1Offset ?? Schema.GetOffset(0x42FE8EA4BAB18AEF);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_LerpTarget1Offset!.Value);
         }
     }
     private static nint? _LerpTargetAttachmentOffset;
 
-    public string LerpTargetAttachment {
-        get {
+    public string LerpTargetAttachment
+    {
+        get
+        {
             _LerpTargetAttachmentOffset = _LerpTargetAttachmentOffset ?? Schema.GetOffset(0x42FE8EA4C1E312BC);
             return Schema.GetString(_Handle.Read<nint>(_LerpTargetAttachmentOffset!.Value));
         }
-        set {
+        set
+        {
             _LerpTargetAttachmentOffset = _LerpTargetAttachmentOffset ?? Schema.GetOffset(0x42FE8EA4C1E312BC);
             Schema.SetString(_Handle, _LerpTargetAttachmentOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _LerpTargetAttachment2Offset;
 
-    public AttachmentHandle_t LerpTargetAttachment2 {
-        get {
+    public AttachmentHandle_t LerpTargetAttachment2
+    {
+        get
+        {
             _LerpTargetAttachment2Offset = _LerpTargetAttachment2Offset ?? Schema.GetOffset(0x42FE8EA4FC3162AA);
             return new AttachmentHandle_tImpl(_Handle + _LerpTargetAttachment2Offset!.Value);
         }
     }
     private static nint? _LerpDurationOffset;
 
-    public ref float LerpDuration {
-        get {
+    public ref float LerpDuration
+    {
+        get
+        {
             _LerpDurationOffset = _LerpDurationOffset ?? Schema.GetOffset(0x42FE8EA4B5F8D70A);
             return ref _Handle.AsRef<float>(_LerpDurationOffset!.Value);
         }
     }
     private static nint? _AttachedEntityWasParentedOffset;
 
-    public ref bool AttachedEntityWasParented {
-        get {
+    public ref bool AttachedEntityWasParented
+    {
+        get
+        {
             _AttachedEntityWasParentedOffset = _AttachedEntityWasParentedOffset ?? Schema.GetOffset(0x42FE8EA4C001B69A);
             return ref _Handle.AsRef<bool>(_AttachedEntityWasParentedOffset!.Value);
         }
     }
     private static nint? _LerpRestoreMoveTypeOffset;
 
-    public ref bool LerpRestoreMoveType {
-        get {
+    public ref bool LerpRestoreMoveType
+    {
+        get
+        {
             _LerpRestoreMoveTypeOffset = _LerpRestoreMoveTypeOffset ?? Schema.GetOffset(0x42FE8EA4C501C93F);
             return ref _Handle.AsRef<bool>(_LerpRestoreMoveTypeOffset!.Value);
         }
     }
     private static nint? _SingleLerpObjectOffset;
 
-    public ref bool SingleLerpObject {
-        get {
+    public ref bool SingleLerpObject
+    {
+        get
+        {
             _SingleLerpObjectOffset = _SingleLerpObjectOffset ?? Schema.GetOffset(0x42FE8EA4EC72477B);
             return ref _Handle.AsRef<bool>(_SingleLerpObjectOffset!.Value);
         }
     }
     private static nint? _LerpingObjectsOffset;
 
-    public ref CUtlVector<lerpdata_t> LerpingObjects {
-        get {
+    public ref CUtlVector<lerpdata_t> LerpingObjects
+    {
+        get
+        {
             _LerpingObjectsOffset = _LerpingObjectsOffset ?? Schema.GetOffset(0x42FE8EA40128714C);
             return ref _Handle.AsRef<CUtlVector<lerpdata_t>>(_LerpingObjectsOffset!.Value);
         }
     }
     private static nint? _LerpEffectOffset;
 
-    public string LerpEffect {
-        get {
+    public string LerpEffect
+    {
+        get
+        {
             _LerpEffectOffset = _LerpEffectOffset ?? Schema.GetOffset(0x42FE8EA4EEECF881);
             return Schema.GetString(_Handle.Read<nint>(_LerpEffectOffset!.Value));
         }
-        set {
+        set
+        {
             _LerpEffectOffset = _LerpEffectOffset ?? Schema.GetOffset(0x42FE8EA4EEECF881);
             Schema.SetString(_Handle, _LerpEffectOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _LerpSoundOffset;
 
-    public string LerpSound {
-        get {
+    public string LerpSound
+    {
+        get
+        {
             _LerpSoundOffset = _LerpSoundOffset ?? Schema.GetOffset(0x42FE8EA46CA9EE5F);
             return Schema.GetString(_Handle.Read<nint>(_LerpSoundOffset!.Value));
         }
-        set {
+        set
+        {
             _LerpSoundOffset = _LerpSoundOffset ?? Schema.GetOffset(0x42FE8EA46CA9EE5F);
             Schema.SetString(_Handle, _LerpSoundOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _AttachTouchingObjectOffset;
 
-    public ref bool AttachTouchingObject {
-        get {
+    public ref bool AttachTouchingObject
+    {
+        get
+        {
             _AttachTouchingObjectOffset = _AttachTouchingObjectOffset ?? Schema.GetOffset(0x42FE8EA4569C11D2);
             return ref _Handle.AsRef<bool>(_AttachTouchingObjectOffset!.Value);
         }
     }
     private static nint? _EntityToWaitForDisconnectOffset;
 
-    public ref CHandle<CBaseEntity> EntityToWaitForDisconnect {
-        get {
+    public ref CHandle<CBaseEntity> EntityToWaitForDisconnect
+    {
+        get
+        {
             _EntityToWaitForDisconnectOffset = _EntityToWaitForDisconnectOffset ?? Schema.GetOffset(0x42FE8EA4E8928591);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_EntityToWaitForDisconnectOffset!.Value);
         }
     }
     private static nint? _OnLerpStartedOffset;
 
-    public ref CEntityIOOutput OnLerpStarted {
-        get {
+    public ref CEntityIOOutput OnLerpStarted
+    {
+        get
+        {
             _OnLerpStartedOffset = _OnLerpStartedOffset ?? Schema.GetOffset(0x42FE8EA4AE5EB5AA);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnLerpStartedOffset!.Value);
         }
     }
     private static nint? _OnLerpFinishedOffset;
 
-    public ref CEntityIOOutput OnLerpFinished {
-        get {
+    public ref CEntityIOOutput OnLerpFinished
+    {
+        get
+        {
             _OnLerpFinishedOffset = _OnLerpFinishedOffset ?? Schema.GetOffset(0x42FE8EA4FBCC57F7);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnLerpFinishedOffset!.Value);
         }
     }
     private static nint? _OnDetachedOffset;
 
-    public ref CEntityIOOutput OnDetached {
-        get {
+    public ref CEntityIOOutput OnDetached
+    {
+        get
+        {
             _OnDetachedOffset = _OnDetachedOffset ?? Schema.GetOffset(0x42FE8EA465BAE906);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnDetachedOffset!.Value);
         }
     }
-
 
 }

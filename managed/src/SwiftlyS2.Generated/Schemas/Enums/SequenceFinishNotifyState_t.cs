@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum SequenceFinishNotifyState_t : byte
 {
- eDoNotNotify = 0,
-
- eNotifyWhenFinished = 1,
-
- eNotifyTriggered = 2,
+    eDoNotNotify = 0,
+    eNotifyWhenFinished = 1,
+    eNotifyTriggered = 2,
 }

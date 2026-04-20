@@ -18,28 +18,33 @@ internal partial class CFlashbangProjectileImpl : CBaseCSGrenadeProjectileImpl, 
 
     private static nint? _TimeToDetonateOffset;
 
-    public ref float TimeToDetonate {
-        get {
+    public ref float TimeToDetonate
+    {
+        get
+        {
             _TimeToDetonateOffset = _TimeToDetonateOffset ?? Schema.GetOffset(0x9F4F2EA190E2E597);
             return ref _Handle.AsRef<float>(_TimeToDetonateOffset!.Value);
         }
     }
     private static nint? _NumOpponentsHitOffset;
 
-    public ref byte NumOpponentsHit {
-        get {
+    public ref byte NumOpponentsHit
+    {
+        get
+        {
             _NumOpponentsHitOffset = _NumOpponentsHitOffset ?? Schema.GetOffset(0x9F4F2EA1CA7913A4);
             return ref _Handle.AsRef<byte>(_NumOpponentsHitOffset!.Value);
         }
     }
     private static nint? _NumTeammatesHitOffset;
 
-    public ref byte NumTeammatesHit {
-        get {
+    public ref byte NumTeammatesHit
+    {
+        get
+        {
             _NumTeammatesHitOffset = _NumTeammatesHitOffset ?? Schema.GetOffset(0x9F4F2EA1BC5B8F41);
             return ref _Handle.AsRef<byte>(_NumTeammatesHitOffset!.Value);
         }
     }
-
 
 }

@@ -18,76 +18,93 @@ internal partial class CPhysFixedImpl : CPhysConstraintImpl, CPhysFixed
 
     private static nint? _LinearFrequencyOffset;
 
-    public ref float LinearFrequency {
-        get {
+    public ref float LinearFrequency
+    {
+        get
+        {
             _LinearFrequencyOffset = _LinearFrequencyOffset ?? Schema.GetOffset(0x8E8A38382FE6B034);
             return ref _Handle.AsRef<float>(_LinearFrequencyOffset!.Value);
         }
     }
     private static nint? _LinearDampingRatioOffset;
 
-    public ref float LinearDampingRatio {
-        get {
+    public ref float LinearDampingRatio
+    {
+        get
+        {
             _LinearDampingRatioOffset = _LinearDampingRatioOffset ?? Schema.GetOffset(0x8E8A383882438FAF);
             return ref _Handle.AsRef<float>(_LinearDampingRatioOffset!.Value);
         }
     }
     private static nint? _AngularFrequencyOffset;
 
-    public ref float AngularFrequency {
-        get {
+    public ref float AngularFrequency
+    {
+        get
+        {
             _AngularFrequencyOffset = _AngularFrequencyOffset ?? Schema.GetOffset(0x8E8A383836D56C7B);
             return ref _Handle.AsRef<float>(_AngularFrequencyOffset!.Value);
         }
     }
     private static nint? _AngularDampingRatioOffset;
 
-    public ref float AngularDampingRatio {
-        get {
+    public ref float AngularDampingRatio
+    {
+        get
+        {
             _AngularDampingRatioOffset = _AngularDampingRatioOffset ?? Schema.GetOffset(0x8E8A3838689E74E2);
             return ref _Handle.AsRef<float>(_AngularDampingRatioOffset!.Value);
         }
     }
     private static nint? _EnableLinearConstraintOffset;
 
-    public ref bool EnableLinearConstraint {
-        get {
+    public ref bool EnableLinearConstraint
+    {
+        get
+        {
             _EnableLinearConstraintOffset = _EnableLinearConstraintOffset ?? Schema.GetOffset(0x8E8A383868F4518C);
             return ref _Handle.AsRef<bool>(_EnableLinearConstraintOffset!.Value);
         }
     }
     private static nint? _EnableAngularConstraintOffset;
 
-    public ref bool EnableAngularConstraint {
-        get {
+    public ref bool EnableAngularConstraint
+    {
+        get
+        {
             _EnableAngularConstraintOffset = _EnableAngularConstraintOffset ?? Schema.GetOffset(0x8E8A3838F98A5C8B);
             return ref _Handle.AsRef<bool>(_EnableAngularConstraintOffset!.Value);
         }
     }
     private static nint? _BoneName1Offset;
 
-    public string BoneName1 {
-        get {
+    public string BoneName1
+    {
+        get
+        {
             _BoneName1Offset = _BoneName1Offset ?? Schema.GetOffset(0x8E8A3838EA2A0C6A);
             return Schema.GetString(_Handle.Read<nint>(_BoneName1Offset!.Value));
         }
-        set {
+        set
+        {
             _BoneName1Offset = _BoneName1Offset ?? Schema.GetOffset(0x8E8A3838EA2A0C6A);
             Schema.SetString(_Handle, _BoneName1Offset!.Value, value);
         }
-    } 
+    }
     private static nint? _BoneName2Offset;
 
-    public string BoneName2 {
-        get {
+    public string BoneName2
+    {
+        get
+        {
             _BoneName2Offset = _BoneName2Offset ?? Schema.GetOffset(0x8E8A3838E92A0AD7);
             return Schema.GetString(_Handle.Read<nint>(_BoneName2Offset!.Value));
         }
-        set {
+        set
+        {
             _BoneName2Offset = _BoneName2Offset ?? Schema.GetOffset(0x8E8A3838E92A0AD7);
             Schema.SetString(_Handle, _BoneName2Offset!.Value, value);
         }
-    } 
-
+    }
 
 }

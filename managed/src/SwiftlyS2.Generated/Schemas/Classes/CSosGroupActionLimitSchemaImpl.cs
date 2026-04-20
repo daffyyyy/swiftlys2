@@ -18,44 +18,53 @@ internal partial class CSosGroupActionLimitSchemaImpl : CSosGroupActionSchemaImp
 
     private static nint? _MaxCountOffset;
 
-    public ref int MaxCount {
-        get {
+    public ref int MaxCount
+    {
+        get
+        {
             _MaxCountOffset = _MaxCountOffset ?? Schema.GetOffset(0xE06D795E64BED864);
             return ref _Handle.AsRef<int>(_MaxCountOffset!.Value);
         }
     }
     private static nint? _StopTypeOffset;
 
-    public ref SosActionStopType_t StopType {
-        get {
+    public ref SosActionStopType_t StopType
+    {
+        get
+        {
             _StopTypeOffset = _StopTypeOffset ?? Schema.GetOffset(0xE06D795E13397259);
             return ref _Handle.AsRef<SosActionStopType_t>(_StopTypeOffset!.Value);
         }
     }
     private static nint? _SortTypeOffset;
 
-    public ref SosActionLimitSortType_t SortType {
-        get {
+    public ref SosActionLimitSortType_t SortType
+    {
+        get
+        {
             _SortTypeOffset = _SortTypeOffset ?? Schema.GetOffset(0xE06D795E2E0E44B5);
             return ref _Handle.AsRef<SosActionLimitSortType_t>(_SortTypeOffset!.Value);
         }
     }
     private static nint? _StopImmediateOffset;
 
-    public ref bool StopImmediate {
-        get {
+    public ref bool StopImmediate
+    {
+        get
+        {
             _StopImmediateOffset = _StopImmediateOffset ?? Schema.GetOffset(0xE06D795E358D6B9A);
             return ref _Handle.AsRef<bool>(_StopImmediateOffset!.Value);
         }
     }
     private static nint? _CountStoppedOffset;
 
-    public ref bool CountStopped {
-        get {
+    public ref bool CountStopped
+    {
+        get
+        {
             _CountStoppedOffset = _CountStoppedOffset ?? Schema.GetOffset(0xE06D795EF40B23D5);
             return ref _Handle.AsRef<bool>(_CountStoppedOffset!.Value);
         }
     }
-
 
 }

@@ -18,20 +18,23 @@ internal partial class CTiltTwistConstraintImpl : CBaseConstraintImpl, CTiltTwis
 
     private static nint? _TargetAxisOffset;
 
-    public ref int TargetAxis {
-        get {
+    public ref int TargetAxis
+    {
+        get
+        {
             _TargetAxisOffset = _TargetAxisOffset ?? Schema.GetOffset(0x4A56E4D341CC84D5);
             return ref _Handle.AsRef<int>(_TargetAxisOffset!.Value);
         }
     }
     private static nint? _SlaveAxisOffset;
 
-    public ref int SlaveAxis {
-        get {
+    public ref int SlaveAxis
+    {
+        get
+        {
             _SlaveAxisOffset = _SlaveAxisOffset ?? Schema.GetOffset(0x4A56E4D3CA99CDBD);
             return ref _Handle.AsRef<int>(_SlaveAxisOffset!.Value);
         }
     }
-
 
 }

@@ -18,28 +18,33 @@ internal partial class CMoodVDataImpl : SchemaClass, CMoodVData
 
     private static nint? _ModelNameOffset;
 
-    public SchemaUntypedField ModelName {
-        get {
+    public SchemaUntypedField ModelName
+    {
+        get
+        {
             _ModelNameOffset = _ModelNameOffset ?? Schema.GetOffset(0x3C9F4201002A227C);
             return new SchemaUntypedField(_Handle + _ModelNameOffset!.Value);
         }
     }
     private static nint? _MoodTypeOffset;
 
-    public ref MoodType_t MoodType {
-        get {
+    public ref MoodType_t MoodType
+    {
+        get
+        {
             _MoodTypeOffset = _MoodTypeOffset ?? Schema.GetOffset(0x3C9F42019039BEAA);
             return ref _Handle.AsRef<MoodType_t>(_MoodTypeOffset!.Value);
         }
     }
     private static nint? _AnimationLayersOffset;
 
-    public ref CUtlVector<MoodAnimationLayer_t> AnimationLayers {
-        get {
+    public ref CUtlVector<MoodAnimationLayer_t> AnimationLayers
+    {
+        get
+        {
             _AnimationLayersOffset = _AnimationLayersOffset ?? Schema.GetOffset(0x3C9F420179729D37);
             return ref _Handle.AsRef<CUtlVector<MoodAnimationLayer_t>>(_AnimationLayersOffset!.Value);
         }
     }
-
 
 }

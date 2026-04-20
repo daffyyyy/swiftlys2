@@ -14,7 +14,4 @@ public partial interface CEntitySubclassVDataBase : ISchemaClass<CEntitySubclass
     static int ISchemaClass<CEntitySubclassVDataBase>.Size => 40;
     static string? ISchemaClass<CEntitySubclassVDataBase>.ClassName => null;
 
-
-
-
 }

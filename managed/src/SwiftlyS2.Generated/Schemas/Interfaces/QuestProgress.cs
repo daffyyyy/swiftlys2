@@ -14,7 +14,4 @@ public partial interface QuestProgress : ISchemaClass<QuestProgress>
     static int ISchemaClass<QuestProgress>.Size => 1;
     static string? ISchemaClass<QuestProgress>.ClassName => null;
 
-
-
-
 }

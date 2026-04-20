@@ -16,7 +16,4 @@ internal partial class CCommentaryViewPositionImpl : CSpriteImpl, CCommentaryVie
 {
     public CCommentaryViewPositionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

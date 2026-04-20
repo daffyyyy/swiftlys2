@@ -18,60 +18,73 @@ internal partial class C_OP_SetControlPointFieldToScalarExpressionImpl : CPartic
 
     private static nint? _ExpressionOffset;
 
-    public ref ScalarExpressionType_t Expression {
-        get {
+    public ref ScalarExpressionType_t Expression
+    {
+        get
+        {
             _ExpressionOffset = _ExpressionOffset ?? Schema.GetOffset(0x6A8A3411160B2427);
             return ref _Handle.AsRef<ScalarExpressionType_t>(_ExpressionOffset!.Value);
         }
     }
     private static nint? _Input1Offset;
 
-    public CParticleCollectionFloatInput Input1 {
-        get {
+    public CParticleCollectionFloatInput Input1
+    {
+        get
+        {
             _Input1Offset = _Input1Offset ?? Schema.GetOffset(0x6A8A3411E9DA2E24);
             return new CParticleCollectionFloatInputImpl(_Handle + _Input1Offset!.Value);
         }
     }
     private static nint? _Input2Offset;
 
-    public CParticleCollectionFloatInput Input2 {
-        get {
+    public CParticleCollectionFloatInput Input2
+    {
+        get
+        {
             _Input2Offset = _Input2Offset ?? Schema.GetOffset(0x6A8A3411ECDA32DD);
             return new CParticleCollectionFloatInputImpl(_Handle + _Input2Offset!.Value);
         }
     }
     private static nint? _OutputRemapOffset;
 
-    public CParticleRemapFloatInput OutputRemap {
-        get {
+    public CParticleRemapFloatInput OutputRemap
+    {
+        get
+        {
             _OutputRemapOffset = _OutputRemapOffset ?? Schema.GetOffset(0x6A8A34111239396F);
             return new CParticleRemapFloatInputImpl(_Handle + _OutputRemapOffset!.Value);
         }
     }
     private static nint? _OutputCPOffset;
 
-    public ref int OutputCP {
-        get {
+    public ref int OutputCP
+    {
+        get
+        {
             _OutputCPOffset = _OutputCPOffset ?? Schema.GetOffset(0x6A8A341150DF5703);
             return ref _Handle.AsRef<int>(_OutputCPOffset!.Value);
         }
     }
     private static nint? _OutVectorFieldOffset;
 
-    public ref int OutVectorField {
-        get {
+    public ref int OutVectorField
+    {
+        get
+        {
             _OutVectorFieldOffset = _OutVectorFieldOffset ?? Schema.GetOffset(0x6A8A3411F9041E74);
             return ref _Handle.AsRef<int>(_OutVectorFieldOffset!.Value);
         }
     }
     private static nint? _InterpolationOffset;
 
-    public CParticleCollectionFloatInput Interpolation {
-        get {
+    public CParticleCollectionFloatInput Interpolation
+    {
+        get
+        {
             _InterpolationOffset = _InterpolationOffset ?? Schema.GetOffset(0x6A8A3411CF55B987);
             return new CParticleCollectionFloatInputImpl(_Handle + _InterpolationOffset!.Value);
         }
     }
-
 
 }

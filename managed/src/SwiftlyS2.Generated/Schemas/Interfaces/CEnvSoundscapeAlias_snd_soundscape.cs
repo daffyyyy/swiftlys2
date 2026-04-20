@@ -14,7 +14,4 @@ public partial interface CEnvSoundscapeAlias_snd_soundscape : CEnvSoundscape, IS
     static int ISchemaClass<CEnvSoundscapeAlias_snd_soundscape>.Size => 1336;
     static string? ISchemaClass<CEnvSoundscapeAlias_snd_soundscape>.ClassName => null;
 
-
-
-
 }

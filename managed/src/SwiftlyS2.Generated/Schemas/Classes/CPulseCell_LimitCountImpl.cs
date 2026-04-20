@@ -18,12 +18,13 @@ internal partial class CPulseCell_LimitCountImpl : CPulseCell_BaseRequirementImp
 
     private static nint? _LimitCountOffset;
 
-    public ref int LimitCount {
-        get {
+    public ref int LimitCount
+    {
+        get
+        {
             _LimitCountOffset = _LimitCountOffset ?? Schema.GetOffset(0x879D9892603807FF);
             return ref _Handle.AsRef<int>(_LimitCountOffset!.Value);
         }
     }
-
 
 }

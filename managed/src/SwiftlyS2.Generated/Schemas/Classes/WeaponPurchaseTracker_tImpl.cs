@@ -18,8 +18,10 @@ internal partial class WeaponPurchaseTracker_tImpl : SchemaClass, WeaponPurchase
 
     private static nint? _WeaponPurchasesOffset;
 
-    public ref CUtlVector<WeaponPurchaseCount_t> WeaponPurchases {
-        get {
+    public ref CUtlVector<WeaponPurchaseCount_t> WeaponPurchases
+    {
+        get
+        {
             _WeaponPurchasesOffset = _WeaponPurchasesOffset ?? Schema.GetOffset(0xD558F475988247C7);
             return ref _Handle.AsRef<CUtlVector<WeaponPurchaseCount_t>>(_WeaponPurchasesOffset!.Value);
         }

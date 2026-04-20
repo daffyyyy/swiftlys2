@@ -18,52 +18,63 @@ internal partial class CAimMatrixUpdateNodeImpl : CUnaryUpdateNodeImpl, CAimMatr
 
     private static nint? _OpFixedSettingsOffset;
 
-    public AimMatrixOpFixedSettings_t OpFixedSettings {
-        get {
+    public AimMatrixOpFixedSettings_t OpFixedSettings
+    {
+        get
+        {
             _OpFixedSettingsOffset = _OpFixedSettingsOffset ?? Schema.GetOffset(0xB3687A53E533AB09);
             return new AimMatrixOpFixedSettings_tImpl(_Handle + _OpFixedSettingsOffset!.Value);
         }
     }
     private static nint? _TargetOffset;
 
-    public ref AnimVectorSource Target {
-        get {
+    public ref AnimVectorSource Target
+    {
+        get
+        {
             _TargetOffset = _TargetOffset ?? Schema.GetOffset(0xB3687A53FA08A9E8);
             return ref _Handle.AsRef<AnimVectorSource>(_TargetOffset!.Value);
         }
     }
     private static nint? _ParamIndexOffset;
 
-    public CAnimParamHandle ParamIndex {
-        get {
+    public CAnimParamHandle ParamIndex
+    {
+        get
+        {
             _ParamIndexOffset = _ParamIndexOffset ?? Schema.GetOffset(0xB3687A5361990A86);
             return new CAnimParamHandleImpl(_Handle + _ParamIndexOffset!.Value);
         }
     }
     private static nint? _SequenceOffset;
 
-    public HSequence Sequence {
-        get {
+    public HSequence Sequence
+    {
+        get
+        {
             _SequenceOffset = _SequenceOffset ?? Schema.GetOffset(0xB3687A53E0A0598E);
             return new HSequenceImpl(_Handle + _SequenceOffset!.Value);
         }
     }
     private static nint? _ResetChildOffset;
 
-    public ref bool ResetChild {
-        get {
+    public ref bool ResetChild
+    {
+        get
+        {
             _ResetChildOffset = _ResetChildOffset ?? Schema.GetOffset(0xB3687A5365CC88B6);
             return ref _Handle.AsRef<bool>(_ResetChildOffset!.Value);
         }
     }
     private static nint? _LockWhenWaningOffset;
 
-    public ref bool LockWhenWaning {
-        get {
+    public ref bool LockWhenWaning
+    {
+        get
+        {
             _LockWhenWaningOffset = _LockWhenWaningOffset ?? Schema.GetOffset(0xB3687A53EED48004);
             return ref _Handle.AsRef<bool>(_LockWhenWaningOffset!.Value);
         }
     }
-
 
 }

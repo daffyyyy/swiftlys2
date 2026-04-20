@@ -18,36 +18,43 @@ internal partial class EventAdvanceTick_tImpl : EventSimulate_tImpl, EventAdvanc
 
     private static nint? _CurrentTickOffset;
 
-    public ref int CurrentTick {
-        get {
+    public ref int CurrentTick
+    {
+        get
+        {
             _CurrentTickOffset = _CurrentTickOffset ?? Schema.GetOffset(0xB79597D53C23687B);
             return ref _Handle.AsRef<int>(_CurrentTickOffset!.Value);
         }
     }
     private static nint? _CurrentTickThisFrameOffset;
 
-    public ref int CurrentTickThisFrame {
-        get {
+    public ref int CurrentTickThisFrame
+    {
+        get
+        {
             _CurrentTickThisFrameOffset = _CurrentTickThisFrameOffset ?? Schema.GetOffset(0xB79597D509CE99F8);
             return ref _Handle.AsRef<int>(_CurrentTickThisFrameOffset!.Value);
         }
     }
     private static nint? _TotalTicksThisFrameOffset;
 
-    public ref int TotalTicksThisFrame {
-        get {
+    public ref int TotalTicksThisFrame
+    {
+        get
+        {
             _TotalTicksThisFrameOffset = _TotalTicksThisFrameOffset ?? Schema.GetOffset(0xB79597D524EA7826);
             return ref _Handle.AsRef<int>(_TotalTicksThisFrameOffset!.Value);
         }
     }
     private static nint? _TotalTicksOffset;
 
-    public ref int TotalTicks {
-        get {
+    public ref int TotalTicks
+    {
+        get
+        {
             _TotalTicksOffset = _TotalTicksOffset ?? Schema.GetOffset(0xB79597D545397B31);
             return ref _Handle.AsRef<int>(_TotalTicksOffset!.Value);
         }
     }
-
 
 }

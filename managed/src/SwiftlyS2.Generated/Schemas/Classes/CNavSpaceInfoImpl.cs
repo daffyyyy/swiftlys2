@@ -16,7 +16,4 @@ internal partial class CNavSpaceInfoImpl : CPointEntityImpl, CNavSpaceInfo
 {
     public CNavSpaceInfoImpl(nint handle) : base(handle) { }
 
-
-
-
 }

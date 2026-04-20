@@ -18,12 +18,13 @@ internal partial class CPulseCell_LimitCount__InstanceState_tImpl : SchemaClass,
 
     private static nint? _CurrentCountOffset;
 
-    public ref int CurrentCount {
-        get {
+    public ref int CurrentCount
+    {
+        get
+        {
             _CurrentCountOffset = _CurrentCountOffset ?? Schema.GetOffset(0x8CD3F919BE40B2AD);
             return ref _Handle.AsRef<int>(_CurrentCountOffset!.Value);
         }
     }
-
 
 }

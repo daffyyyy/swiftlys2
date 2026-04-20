@@ -14,7 +14,4 @@ public partial interface CCSObserver_UseServices : CPlayer_UseServices, ISchemaC
     static int ISchemaClass<CCSObserver_UseServices>.Size => 72;
     static string? ISchemaClass<CCSObserver_UseServices>.ClassName => null;
 
-
-
-
 }

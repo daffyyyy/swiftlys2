@@ -16,7 +16,4 @@ internal partial class CTouchExpansionComponentImpl : CEntityComponentImpl, CTou
 {
     public CTouchExpansionComponentImpl(nint handle) : base(handle) { }
 
-
-
-
 }

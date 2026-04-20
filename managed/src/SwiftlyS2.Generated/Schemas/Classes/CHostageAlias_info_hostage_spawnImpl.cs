@@ -16,7 +16,4 @@ internal partial class CHostageAlias_info_hostage_spawnImpl : CHostageImpl, CHos
 {
     public CHostageAlias_info_hostage_spawnImpl(nint handle) : base(handle) { }
 
-
-
-
 }

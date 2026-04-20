@@ -18,44 +18,53 @@ internal partial class CVoiceContainerLoopTriggerImpl : CVoiceContainerBaseImpl,
 
     private static nint? _SoundOffset;
 
-    public CSoundContainerReference Sound {
-        get {
+    public CSoundContainerReference Sound
+    {
+        get
+        {
             _SoundOffset = _SoundOffset ?? Schema.GetOffset(0x1A1BEAF4E1C4FB4);
             return new CSoundContainerReferenceImpl(_Handle + _SoundOffset!.Value);
         }
     }
     private static nint? _RetriggerTimeMinOffset;
 
-    public ref float RetriggerTimeMin {
-        get {
+    public ref float RetriggerTimeMin
+    {
+        get
+        {
             _RetriggerTimeMinOffset = _RetriggerTimeMinOffset ?? Schema.GetOffset(0x1A1BEAFE6138381);
             return ref _Handle.AsRef<float>(_RetriggerTimeMinOffset!.Value);
         }
     }
     private static nint? _RetriggerTimeMaxOffset;
 
-    public ref float RetriggerTimeMax {
-        get {
+    public ref float RetriggerTimeMax
+    {
+        get
+        {
             _RetriggerTimeMaxOffset = _RetriggerTimeMaxOffset ?? Schema.GetOffset(0x1A1BEAFD828882F);
             return ref _Handle.AsRef<float>(_RetriggerTimeMaxOffset!.Value);
         }
     }
     private static nint? _FadeTimeOffset;
 
-    public ref float FadeTime {
-        get {
+    public ref float FadeTime
+    {
+        get
+        {
             _FadeTimeOffset = _FadeTimeOffset ?? Schema.GetOffset(0x1A1BEAF00BEDB08);
             return ref _Handle.AsRef<float>(_FadeTimeOffset!.Value);
         }
     }
     private static nint? _CrossFadeOffset;
 
-    public ref bool CrossFade {
-        get {
+    public ref bool CrossFade
+    {
+        get
+        {
             _CrossFadeOffset = _CrossFadeOffset ?? Schema.GetOffset(0x1A1BEAF64BEC665);
             return ref _Handle.AsRef<bool>(_CrossFadeOffset!.Value);
         }
     }
-
 
 }

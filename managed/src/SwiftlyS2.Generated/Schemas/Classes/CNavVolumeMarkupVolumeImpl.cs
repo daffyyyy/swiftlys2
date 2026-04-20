@@ -16,7 +16,4 @@ internal partial class CNavVolumeMarkupVolumeImpl : CNavVolumeImpl, CNavVolumeMa
 {
     public CNavVolumeMarkupVolumeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

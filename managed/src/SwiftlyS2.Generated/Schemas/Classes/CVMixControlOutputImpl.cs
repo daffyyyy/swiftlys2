@@ -18,12 +18,13 @@ internal partial class CVMixControlOutputImpl : CVMixInputBaseImpl, CVMixControl
 
     private static nint? _DefaultValueOffset;
 
-    public ref float DefaultValue {
-        get {
+    public ref float DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0xE8E5B0DA700AB429);
             return ref _Handle.AsRef<float>(_DefaultValueOffset!.Value);
         }
     }
-
 
 }

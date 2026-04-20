@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCModelImpl : SchemaClass, InfoForResou
 {
     public InfoForResourceTypeCModelImpl(nint handle) : base(handle) { }
 
-
-
-
 }

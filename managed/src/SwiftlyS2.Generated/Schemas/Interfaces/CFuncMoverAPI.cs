@@ -14,7 +14,4 @@ public partial interface CFuncMoverAPI : ISchemaClass<CFuncMoverAPI>
     static int ISchemaClass<CFuncMoverAPI>.Size => 8;
     static string? ISchemaClass<CFuncMoverAPI>.ClassName => null;
 
-
-
-
 }

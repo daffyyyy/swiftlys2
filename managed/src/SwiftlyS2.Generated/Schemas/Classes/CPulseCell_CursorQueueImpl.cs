@@ -18,12 +18,13 @@ internal partial class CPulseCell_CursorQueueImpl : CPulseCell_WaitForCursorsWit
 
     private static nint? _CursorsAllowedToRunParallelOffset;
 
-    public ref int CursorsAllowedToRunParallel {
-        get {
+    public ref int CursorsAllowedToRunParallel
+    {
+        get
+        {
             _CursorsAllowedToRunParallelOffset = _CursorsAllowedToRunParallelOffset ?? Schema.GetOffset(0xDAB7EC55AC04AAF9);
             return ref _Handle.AsRef<int>(_CursorsAllowedToRunParallelOffset!.Value);
         }
     }
-
 
 }

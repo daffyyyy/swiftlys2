@@ -16,7 +16,4 @@ internal partial class CWeaponBizonImpl : CCSWeaponBaseGunImpl, CWeaponBizon
 {
     public CWeaponBizonImpl(nint handle) : base(handle) { }
 
-
-
-
 }

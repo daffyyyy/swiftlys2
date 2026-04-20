@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEvent : ISchemaClass<CNmEvent>
 {
     static CNmEvent ISchemaClass<CNmEvent>.From(nint handle) => new CNmEventImpl(handle);
-    static int ISchemaClass<CNmEvent>.Size => 32;
+    static int ISchemaClass<CNmEvent>.Size => 24;
     static string? ISchemaClass<CNmEvent>.ClassName => null;
 
 
@@ -20,8 +20,6 @@ public partial interface CNmEvent : ISchemaClass<CNmEvent>
     public NmPercent_t Duration { get; }
 
     public ref CGlobalSymbol SyncID { get; }
-
-    public ref bool ClientOnly { get; }
 
 
 }

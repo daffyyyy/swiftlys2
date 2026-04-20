@@ -18,20 +18,23 @@ internal partial class CBodyGroupAnimTagImpl : CAnimTagBaseImpl, CBodyGroupAnimT
 
     private static nint? _PriorityOffset;
 
-    public ref int Priority {
-        get {
+    public ref int Priority
+    {
+        get
+        {
             _PriorityOffset = _PriorityOffset ?? Schema.GetOffset(0x4FBB343CE7EFB335);
             return ref _Handle.AsRef<int>(_PriorityOffset!.Value);
         }
     }
     private static nint? _BodyGroupSettingsOffset;
 
-    public ref CUtlVector<CBodyGroupSetting> BodyGroupSettings {
-        get {
+    public ref CUtlVector<CBodyGroupSetting> BodyGroupSettings
+    {
+        get
+        {
             _BodyGroupSettingsOffset = _BodyGroupSettingsOffset ?? Schema.GetOffset(0x4FBB343C3BE7BAE1);
             return ref _Handle.AsRef<CUtlVector<CBodyGroupSetting>>(_BodyGroupSettingsOffset!.Value);
         }
     }
-
 
 }

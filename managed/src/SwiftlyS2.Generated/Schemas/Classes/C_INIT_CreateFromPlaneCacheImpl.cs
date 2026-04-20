@@ -18,28 +18,33 @@ internal partial class C_INIT_CreateFromPlaneCacheImpl : CParticleFunctionInitia
 
     private static nint? _OffsetMinOffset;
 
-    public ref Vector OffsetMin {
-        get {
+    public ref Vector OffsetMin
+    {
+        get
+        {
             _OffsetMinOffset = _OffsetMinOffset ?? Schema.GetOffset(0x349002765EE9C8FE);
             return ref _Handle.AsRef<Vector>(_OffsetMinOffset!.Value);
         }
     }
     private static nint? _OffsetMaxOffset;
 
-    public ref Vector OffsetMax {
-        get {
+    public ref Vector OffsetMax
+    {
+        get
+        {
             _OffsetMaxOffset = _OffsetMaxOffset ?? Schema.GetOffset(0x3490027670D65D9C);
             return ref _Handle.AsRef<Vector>(_OffsetMaxOffset!.Value);
         }
     }
     private static nint? _UseNormalOffset;
 
-    public ref bool UseNormal {
-        get {
+    public ref bool UseNormal
+    {
+        get
+        {
             _UseNormalOffset = _UseNormalOffset ?? Schema.GetOffset(0x349002769FA2D197);
             return ref _Handle.AsRef<bool>(_UseNormalOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCVSoundEventScriptList : ISchemaClas
     static int ISchemaClass<InfoForResourceTypeCVSoundEventScriptList>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCVSoundEventScriptList>.ClassName => null;
 
-
-
-
 }

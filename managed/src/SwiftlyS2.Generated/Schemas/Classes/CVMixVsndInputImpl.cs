@@ -18,24 +18,28 @@ internal partial class CVMixVsndInputImpl : CVMixInputBaseImpl, CVMixVsndInput
 
     private static nint? _DefaultValueOffset;
 
-    public string DefaultValue {
-        get {
+    public string DefaultValue
+    {
+        get
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x2ED16435BBE0341F);
             return Schema.GetCUtlString(_Handle.Read<nint>(_DefaultValueOffset!.Value));
         }
-        set {
+        set
+        {
             _DefaultValueOffset = _DefaultValueOffset ?? Schema.GetOffset(0x2ED16435BBE0341F);
             Schema.SetCUtlString(_Handle, _DefaultValueOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ProcessorOffset;
 
-    public ref int Processor {
-        get {
+    public ref int Processor
+    {
+        get
+        {
             _ProcessorOffset = _ProcessorOffset ?? Schema.GetOffset(0x2ED1643512BAA203);
             return ref _Handle.AsRef<int>(_ProcessorOffset!.Value);
         }
     }
-
 
 }

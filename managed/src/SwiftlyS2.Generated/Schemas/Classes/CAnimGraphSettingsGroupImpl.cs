@@ -16,7 +16,4 @@ internal partial class CAnimGraphSettingsGroupImpl : SchemaClass, CAnimGraphSett
 {
     public CAnimGraphSettingsGroupImpl(nint handle) : base(handle) { }
 
-
-
-
 }

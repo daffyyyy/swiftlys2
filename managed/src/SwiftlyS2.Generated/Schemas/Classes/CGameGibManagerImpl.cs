@@ -18,36 +18,43 @@ internal partial class CGameGibManagerImpl : CBaseEntityImpl, CGameGibManager
 
     private static nint? _AllowNewGibsOffset;
 
-    public ref bool AllowNewGibs {
-        get {
+    public ref bool AllowNewGibs
+    {
+        get
+        {
             _AllowNewGibsOffset = _AllowNewGibsOffset ?? Schema.GetOffset(0x1068CB09FD80F507);
             return ref _Handle.AsRef<bool>(_AllowNewGibsOffset!.Value);
         }
     }
     private static nint? _CurrentMaxPiecesOffset;
 
-    public ref int CurrentMaxPieces {
-        get {
+    public ref int CurrentMaxPieces
+    {
+        get
+        {
             _CurrentMaxPiecesOffset = _CurrentMaxPiecesOffset ?? Schema.GetOffset(0x1068CB0999B0D602);
             return ref _Handle.AsRef<int>(_CurrentMaxPiecesOffset!.Value);
         }
     }
     private static nint? _MaxPiecesOffset;
 
-    public ref int MaxPieces {
-        get {
+    public ref int MaxPieces
+    {
+        get
+        {
             _MaxPiecesOffset = _MaxPiecesOffset ?? Schema.GetOffset(0x1068CB092DDFB63D);
             return ref _Handle.AsRef<int>(_MaxPiecesOffset!.Value);
         }
     }
     private static nint? _LastFrameOffset;
 
-    public ref int LastFrame {
-        get {
+    public ref int LastFrame
+    {
+        get
+        {
             _LastFrameOffset = _LastFrameOffset ?? Schema.GetOffset(0x1068CB09F0B58C21);
             return ref _Handle.AsRef<int>(_LastFrameOffset!.Value);
         }
     }
-
 
 }

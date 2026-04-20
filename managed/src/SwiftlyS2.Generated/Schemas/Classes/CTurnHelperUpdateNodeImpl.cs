@@ -18,52 +18,63 @@ internal partial class CTurnHelperUpdateNodeImpl : CUnaryUpdateNodeImpl, CTurnHe
 
     private static nint? _FacingTargetOffset;
 
-    public ref AnimValueSource FacingTarget {
-        get {
+    public ref AnimValueSource FacingTarget
+    {
+        get
+        {
             _FacingTargetOffset = _FacingTargetOffset ?? Schema.GetOffset(0xDEC0FADCED73C452);
             return ref _Handle.AsRef<AnimValueSource>(_FacingTargetOffset!.Value);
         }
     }
     private static nint? _TurnStartTimeOffsetOffset;
 
-    public ref float TurnStartTimeOffset {
-        get {
+    public ref float TurnStartTimeOffset
+    {
+        get
+        {
             _TurnStartTimeOffsetOffset = _TurnStartTimeOffsetOffset ?? Schema.GetOffset(0xDEC0FADC9A7910D0);
             return ref _Handle.AsRef<float>(_TurnStartTimeOffsetOffset!.Value);
         }
     }
     private static nint? _TurnDurationOffset;
 
-    public ref float TurnDuration {
-        get {
+    public ref float TurnDuration
+    {
+        get
+        {
             _TurnDurationOffset = _TurnDurationOffset ?? Schema.GetOffset(0xDEC0FADC879BD946);
             return ref _Handle.AsRef<float>(_TurnDurationOffset!.Value);
         }
     }
     private static nint? _MatchChildDurationOffset;
 
-    public ref bool MatchChildDuration {
-        get {
+    public ref bool MatchChildDuration
+    {
+        get
+        {
             _MatchChildDurationOffset = _MatchChildDurationOffset ?? Schema.GetOffset(0xDEC0FADC6B6788BC);
             return ref _Handle.AsRef<bool>(_MatchChildDurationOffset!.Value);
         }
     }
     private static nint? _ManualTurnOffsetOffset;
 
-    public ref float ManualTurnOffset {
-        get {
+    public ref float ManualTurnOffset
+    {
+        get
+        {
             _ManualTurnOffsetOffset = _ManualTurnOffsetOffset ?? Schema.GetOffset(0xDEC0FADC61F53BBB);
             return ref _Handle.AsRef<float>(_ManualTurnOffsetOffset!.Value);
         }
     }
     private static nint? _UseManualTurnOffsetOffset;
 
-    public ref bool UseManualTurnOffset {
-        get {
+    public ref bool UseManualTurnOffset
+    {
+        get
+        {
             _UseManualTurnOffsetOffset = _UseManualTurnOffsetOffset ?? Schema.GetOffset(0xDEC0FADC9290C2BE);
             return ref _Handle.AsRef<bool>(_UseManualTurnOffsetOffset!.Value);
         }
     }
-
 
 }

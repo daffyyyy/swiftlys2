@@ -32,9 +32,24 @@ public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity
 
     public ref float LastNetworkChange { get; }
 
+    // BASEPTR
+    public SchemaUntypedField Think { get; }
+
     public ref CUtlVector<ResponseContext_t> ResponseContexts { get; }
 
     public string ResponseContext { get; set; }
+
+    // ENTITYFUNCPTR
+    public SchemaUntypedField PfnTouch { get; }
+
+    // USEPTR
+    public SchemaUntypedField PfnUse { get; }
+
+    // ENTITYFUNCPTR
+    public SchemaUntypedField PfnBlocked { get; }
+
+    // BASEPTR
+    public SchemaUntypedField PfnMoveDone { get; }
 
     public ref int Health { get; }
 
@@ -53,6 +68,8 @@ public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity
     public ref MoveCollide_t MoveCollide { get; }
 
     public ref MoveType_t MoveType { get; }
+
+    public ref MoveType_t PreviouslySetMoveType { get; }
 
     public ref MoveType_t ActualMoveType { get; }
 

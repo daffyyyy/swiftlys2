@@ -16,7 +16,4 @@ internal partial class CNmCachedPoseWriteTaskImpl : CNmPoseTaskImpl, CNmCachedPo
 {
     public CNmCachedPoseWriteTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

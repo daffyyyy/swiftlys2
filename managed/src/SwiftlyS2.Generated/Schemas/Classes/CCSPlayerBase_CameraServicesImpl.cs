@@ -18,56 +18,70 @@ internal partial class CCSPlayerBase_CameraServicesImpl : CPlayer_CameraServices
 
     private static nint? _FOVOffset;
 
-    public ref uint FOV {
-        get {
+    public ref uint FOV
+    {
+        get
+        {
             _FOVOffset = _FOVOffset ?? Schema.GetOffset(0x5B25D9023C965687);
             return ref _Handle.AsRef<uint>(_FOVOffset!.Value);
         }
     }
     private static nint? _FOVStartOffset;
 
-    public ref uint FOVStart {
-        get {
+    public ref uint FOVStart
+    {
+        get
+        {
             _FOVStartOffset = _FOVStartOffset ?? Schema.GetOffset(0x5B25D902612A684D);
             return ref _Handle.AsRef<uint>(_FOVStartOffset!.Value);
         }
     }
     private static nint? _FOVTimeOffset;
 
-    public GameTime_t FOVTime {
-        get {
+    public GameTime_t FOVTime
+    {
+        get
+        {
             _FOVTimeOffset = _FOVTimeOffset ?? Schema.GetOffset(0x5B25D9024B291C67);
             return new GameTime_tImpl(_Handle + _FOVTimeOffset!.Value);
         }
     }
     private static nint? _FOVRateOffset;
 
-    public ref float FOVRate {
-        get {
+    public ref float FOVRate
+    {
+        get
+        {
             _FOVRateOffset = _FOVRateOffset ?? Schema.GetOffset(0x5B25D902A334F8AC);
             return ref _Handle.AsRef<float>(_FOVRateOffset!.Value);
         }
     }
     private static nint? _ZoomOwnerOffset;
 
-    public ref CHandle<CBaseEntity> ZoomOwner {
-        get {
+    public ref CHandle<CBaseEntity> ZoomOwner
+    {
+        get
+        {
             _ZoomOwnerOffset = _ZoomOwnerOffset ?? Schema.GetOffset(0x5B25D902CA6018CF);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_ZoomOwnerOffset!.Value);
         }
     }
     private static nint? _TriggerFogListOffset;
 
-    public ref CUtlVector<CHandle<CBaseEntity>> TriggerFogList {
-        get {
+    public ref CUtlVector<CHandle<CBaseEntity>> TriggerFogList
+    {
+        get
+        {
             _TriggerFogListOffset = _TriggerFogListOffset ?? Schema.GetOffset(0x5B25D902AAF6ED5B);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(_TriggerFogListOffset!.Value);
         }
     }
     private static nint? _LastFogTriggerOffset;
 
-    public ref CHandle<CBaseEntity> LastFogTrigger {
-        get {
+    public ref CHandle<CBaseEntity> LastFogTrigger
+    {
+        get
+        {
             _LastFogTriggerOffset = _LastFogTriggerOffset ?? Schema.GetOffset(0x5B25D90218A86E0F);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_LastFogTriggerOffset!.Value);
         }

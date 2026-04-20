@@ -16,7 +16,4 @@ internal partial class CModelPointEntityImpl : CBaseModelEntityImpl, CModelPoint
 {
     public CModelPointEntityImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,32 +18,38 @@ internal partial class CAttributeManager__cached_attribute_float_tImpl : SchemaC
 
     private static nint? _InOffset;
 
-    public ref float In {
-        get {
+    public ref float In
+    {
+        get
+        {
             _InOffset = _InOffset ?? Schema.GetOffset(0xE3C5A1BAD526F734);
             return ref _Handle.AsRef<float>(_InOffset!.Value);
         }
     }
     private static nint? _AttribHookOffset;
 
-    public string AttribHook {
-        get {
+    public string AttribHook
+    {
+        get
+        {
             _AttribHookOffset = _AttribHookOffset ?? Schema.GetOffset(0xE3C5A1BACD388D67);
             return Schema.GetString(_Handle.Read<nint>(_AttribHookOffset!.Value));
         }
-        set {
+        set
+        {
             _AttribHookOffset = _AttribHookOffset ?? Schema.GetOffset(0xE3C5A1BACD388D67);
             Schema.SetString(_Handle, _AttribHookOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _OutOffset;
 
-    public ref float Out {
-        get {
+    public ref float Out
+    {
+        get
+        {
             _OutOffset = _OutOffset ?? Schema.GetOffset(0xE3C5A1BA546B7BE1);
             return ref _Handle.AsRef<float>(_OutOffset!.Value);
         }
     }
-
 
 }

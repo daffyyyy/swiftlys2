@@ -18,20 +18,23 @@ internal partial class CEnvBeverageImpl : CBaseEntityImpl, CEnvBeverage
 
     private static nint? _CanInDispenserOffset;
 
-    public ref bool CanInDispenser {
-        get {
+    public ref bool CanInDispenser
+    {
+        get
+        {
             _CanInDispenserOffset = _CanInDispenserOffset ?? Schema.GetOffset(0x205E38FCDFB6F3B5);
             return ref _Handle.AsRef<bool>(_CanInDispenserOffset!.Value);
         }
     }
     private static nint? _BeverageTypeOffset;
 
-    public ref int BeverageType {
-        get {
+    public ref int BeverageType
+    {
+        get
+        {
             _BeverageTypeOffset = _BeverageTypeOffset ?? Schema.GetOffset(0x205E38FC694E74C8);
             return ref _Handle.AsRef<int>(_BeverageTypeOffset!.Value);
         }
     }
-
 
 }

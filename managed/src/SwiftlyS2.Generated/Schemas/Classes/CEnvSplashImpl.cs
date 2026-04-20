@@ -18,12 +18,13 @@ internal partial class CEnvSplashImpl : CPointEntityImpl, CEnvSplash
 
     private static nint? _ScaleOffset;
 
-    public ref float Scale {
-        get {
+    public ref float Scale
+    {
+        get
+        {
             _ScaleOffset = _ScaleOffset ?? Schema.GetOffset(0x7DD98956B731A42F);
             return ref _Handle.AsRef<float>(_ScaleOffset!.Value);
         }
     }
-
 
 }

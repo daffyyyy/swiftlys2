@@ -18,20 +18,23 @@ internal partial class C_OP_SetCPtoVectorImpl : CParticleFunctionOperatorImpl, C
 
     private static nint? _CPInputOffset;
 
-    public ref int CPInput {
-        get {
+    public ref int CPInput
+    {
+        get
+        {
             _CPInputOffset = _CPInputOffset ?? Schema.GetOffset(0x799E4536FB805736);
             return ref _Handle.AsRef<int>(_CPInputOffset!.Value);
         }
     }
     private static nint? _FieldOutputOffset;
 
-    public ParticleAttributeIndex_t FieldOutput {
-        get {
+    public ParticleAttributeIndex_t FieldOutput
+    {
+        get
+        {
             _FieldOutputOffset = _FieldOutputOffset ?? Schema.GetOffset(0x799E4536E5729606);
             return new ParticleAttributeIndex_tImpl(_Handle + _FieldOutputOffset!.Value);
         }
     }
-
 
 }

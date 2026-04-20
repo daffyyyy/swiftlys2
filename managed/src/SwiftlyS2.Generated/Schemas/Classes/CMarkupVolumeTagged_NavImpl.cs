@@ -18,12 +18,13 @@ internal partial class CMarkupVolumeTagged_NavImpl : CMarkupVolumeTaggedImpl, CM
 
     private static nint? _ScopesOffset;
 
-    public ref NavScopeFlags_t Scopes {
-        get {
+    public ref NavScopeFlags_t Scopes
+    {
+        get
+        {
             _ScopesOffset = _ScopesOffset ?? Schema.GetOffset(0x3E97D28E9E6C8A44);
             return ref _Handle.AsRef<NavScopeFlags_t>(_ScopesOffset!.Value);
         }
     }
-
 
 }

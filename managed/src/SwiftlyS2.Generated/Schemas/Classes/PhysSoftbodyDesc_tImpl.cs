@@ -18,52 +18,63 @@ internal partial class PhysSoftbodyDesc_tImpl : SchemaClass, PhysSoftbodyDesc_t
 
     private static nint? _ParticleBoneHashOffset;
 
-    public ref CUtlVector<uint> ParticleBoneHash {
-        get {
+    public ref CUtlVector<uint> ParticleBoneHash
+    {
+        get
+        {
             _ParticleBoneHashOffset = _ParticleBoneHashOffset ?? Schema.GetOffset(0xD390C8BBCC44F471);
             return ref _Handle.AsRef<CUtlVector<uint>>(_ParticleBoneHashOffset!.Value);
         }
     }
     private static nint? _ParticlesOffset;
 
-    public ref CUtlVector<RnSoftbodyParticle_t> Particles {
-        get {
+    public ref CUtlVector<RnSoftbodyParticle_t> Particles
+    {
+        get
+        {
             _ParticlesOffset = _ParticlesOffset ?? Schema.GetOffset(0xD390C8BB6C0747A4);
             return ref _Handle.AsRef<CUtlVector<RnSoftbodyParticle_t>>(_ParticlesOffset!.Value);
         }
     }
     private static nint? _SpringsOffset;
 
-    public ref CUtlVector<RnSoftbodySpring_t> Springs {
-        get {
+    public ref CUtlVector<RnSoftbodySpring_t> Springs
+    {
+        get
+        {
             _SpringsOffset = _SpringsOffset ?? Schema.GetOffset(0xD390C8BB1AB5EB4D);
             return ref _Handle.AsRef<CUtlVector<RnSoftbodySpring_t>>(_SpringsOffset!.Value);
         }
     }
     private static nint? _CapsulesOffset;
 
-    public ref CUtlVector<RnSoftbodyCapsule_t> Capsules {
-        get {
+    public ref CUtlVector<RnSoftbodyCapsule_t> Capsules
+    {
+        get
+        {
             _CapsulesOffset = _CapsulesOffset ?? Schema.GetOffset(0xD390C8BBFC27BB2D);
             return ref _Handle.AsRef<CUtlVector<RnSoftbodyCapsule_t>>(_CapsulesOffset!.Value);
         }
     }
     private static nint? _InitPoseOffset;
 
-    public ref CUtlVector<CTransform> InitPose {
-        get {
+    public ref CUtlVector<CTransform> InitPose
+    {
+        get
+        {
             _InitPoseOffset = _InitPoseOffset ?? Schema.GetOffset(0xD390C8BB5E468732);
             return ref _Handle.AsRef<CUtlVector<CTransform>>(_InitPoseOffset!.Value);
         }
     }
     private static nint? _ParticleBoneNameOffset;
 
-    public ref CUtlVector<CUtlString> ParticleBoneName {
-        get {
+    public ref CUtlVector<CUtlString> ParticleBoneName
+    {
+        get
+        {
             _ParticleBoneNameOffset = _ParticleBoneNameOffset ?? Schema.GetOffset(0xD390C8BB8D321086);
             return ref _Handle.AsRef<CUtlVector<CUtlString>>(_ParticleBoneNameOffset!.Value);
         }
     }
-
 
 }

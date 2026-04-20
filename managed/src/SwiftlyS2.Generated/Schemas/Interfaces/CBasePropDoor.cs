@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePropDoor : CDynamicProp, ISchemaClass<CBasePropDoor>
 {
     static CBasePropDoor ISchemaClass<CBasePropDoor>.From(nint handle) => new CBasePropDoorImpl(handle);
-    static int ISchemaClass<CBasePropDoor>.Size => 3664;
+    static int ISchemaClass<CBasePropDoor>.Size => 3456;
     static string? ISchemaClass<CBasePropDoor>.ClassName => null;
 
 

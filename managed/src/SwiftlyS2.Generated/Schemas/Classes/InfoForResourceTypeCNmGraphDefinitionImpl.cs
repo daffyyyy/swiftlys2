@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCNmGraphDefinitionImpl : SchemaClass, 
 {
     public InfoForResourceTypeCNmGraphDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

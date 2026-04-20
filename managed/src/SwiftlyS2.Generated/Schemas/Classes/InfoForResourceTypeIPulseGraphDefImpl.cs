@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeIPulseGraphDefImpl : SchemaClass, Info
 {
     public InfoForResourceTypeIPulseGraphDefImpl(nint handle) : base(handle) { }
 
-
-
-
 }

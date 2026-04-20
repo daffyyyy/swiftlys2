@@ -14,7 +14,4 @@ public partial interface CParentConstraint : CBaseConstraint, ISchemaClass<CPare
     static int ISchemaClass<CParentConstraint>.Size => 96;
     static string? ISchemaClass<CParentConstraint>.ClassName => null;
 
-
-
-
 }

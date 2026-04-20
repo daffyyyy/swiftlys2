@@ -65,7 +65,6 @@ public:
 
 struct SchemaField
 {
-    bool m_bNetworked;
     bool m_bChainer;
     bool m_bIsStruct;
     uint32_t m_uOffset;

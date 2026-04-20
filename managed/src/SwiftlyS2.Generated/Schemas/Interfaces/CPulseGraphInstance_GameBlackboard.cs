@@ -11,10 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseGraphInstance_GameBlackboard : CPulseGraphInstance_ServerEntity, ISchemaClass<CPulseGraphInstance_GameBlackboard>
 {
     static CPulseGraphInstance_GameBlackboard ISchemaClass<CPulseGraphInstance_GameBlackboard>.From(nint handle) => new CPulseGraphInstance_GameBlackboardImpl(handle);
-    static int ISchemaClass<CPulseGraphInstance_GameBlackboard>.Size => 456;
+    static int ISchemaClass<CPulseGraphInstance_GameBlackboard>.Size => 480;
     static string? ISchemaClass<CPulseGraphInstance_GameBlackboard>.ClassName => null;
-
-
-
 
 }

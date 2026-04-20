@@ -16,7 +16,4 @@ internal partial class CVMixSteamAudioHRTFProcessorDescImpl : CVMixBaseProcessor
 {
     public CVMixSteamAudioHRTFProcessorDescImpl(nint handle) : base(handle) { }
 
-
-
-
 }

@@ -18,20 +18,23 @@ internal partial class CTriggerDetectBulletFireImpl : CBaseTriggerImpl, CTrigger
 
     private static nint? _PlayerFireOnlyOffset;
 
-    public ref bool PlayerFireOnly {
-        get {
+    public ref bool PlayerFireOnly
+    {
+        get
+        {
             _PlayerFireOnlyOffset = _PlayerFireOnlyOffset ?? Schema.GetOffset(0x93930A3D56D51CFE);
             return ref _Handle.AsRef<bool>(_PlayerFireOnlyOffset!.Value);
         }
     }
     private static nint? _OnDetectedBulletFireOffset;
 
-    public ref CEntityIOOutput OnDetectedBulletFire {
-        get {
+    public ref CEntityIOOutput OnDetectedBulletFire
+    {
+        get
+        {
             _OnDetectedBulletFireOffset = _OnDetectedBulletFireOffset ?? Schema.GetOffset(0x93930A3D11D6C936);
             return ref _Handle.AsRef<CEntityIOOutput>(_OnDetectedBulletFireOffset!.Value);
         }
     }
-
 
 }

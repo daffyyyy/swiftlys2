@@ -16,7 +16,4 @@ internal partial class CNmSpeedScaleNode__CDefinitionImpl : CNmSpeedScaleBaseNod
 {
     public CNmSpeedScaleNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

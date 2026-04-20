@@ -16,7 +16,4 @@ internal partial class CPulseCell_Value_RandomIntImpl : CPulseCell_BaseValueImpl
 {
     public CPulseCell_Value_RandomIntImpl(nint handle) : base(handle) { }
 
-
-
-
 }

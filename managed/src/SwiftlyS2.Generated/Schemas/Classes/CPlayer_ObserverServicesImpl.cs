@@ -18,32 +18,40 @@ internal partial class CPlayer_ObserverServicesImpl : CPlayerPawnComponentImpl, 
 
     private static nint? _ObserverModeOffset;
 
-    public ref byte ObserverMode {
-        get {
+    public ref byte ObserverMode
+    {
+        get
+        {
             _ObserverModeOffset = _ObserverModeOffset ?? Schema.GetOffset(0x1611315ADAB57B35);
             return ref _Handle.AsRef<byte>(_ObserverModeOffset!.Value);
         }
     }
     private static nint? _ObserverTargetOffset;
 
-    public ref CHandle<CBaseEntity> ObserverTarget {
-        get {
+    public ref CHandle<CBaseEntity> ObserverTarget
+    {
+        get
+        {
             _ObserverTargetOffset = _ObserverTargetOffset ?? Schema.GetOffset(0x1611315A24779C4C);
             return ref _Handle.AsRef<CHandle<CBaseEntity>>(_ObserverTargetOffset!.Value);
         }
     }
     private static nint? _ObserverLastModeOffset;
 
-    public ref ObserverMode_t ObserverLastMode {
-        get {
+    public ref ObserverMode_t ObserverLastMode
+    {
+        get
+        {
             _ObserverLastModeOffset = _ObserverLastModeOffset ?? Schema.GetOffset(0x1611315A555EDA49);
             return ref _Handle.AsRef<ObserverMode_t>(_ObserverLastModeOffset!.Value);
         }
     }
     private static nint? _ForcedObserverModeOffset;
 
-    public ref bool ForcedObserverMode {
-        get {
+    public ref bool ForcedObserverMode
+    {
+        get
+        {
             _ForcedObserverModeOffset = _ForcedObserverModeOffset ?? Schema.GetOffset(0x1611315A276632E1);
             return ref _Handle.AsRef<bool>(_ForcedObserverModeOffset!.Value);
         }

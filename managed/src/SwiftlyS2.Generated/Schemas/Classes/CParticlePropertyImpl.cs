@@ -16,7 +16,4 @@ internal partial class CParticlePropertyImpl : SchemaClass, CParticleProperty
 {
     public CParticlePropertyImpl(nint handle) : base(handle) { }
 
-
-
-
 }

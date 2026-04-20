@@ -18,12 +18,13 @@ internal partial class CPulseCell_Inflow_GraphHookImpl : CPulseCell_Inflow_BaseE
 
     private static nint? _HookNameOffset;
 
-    public SchemaUntypedField HookName {
-        get {
+    public SchemaUntypedField HookName
+    {
+        get
+        {
             _HookNameOffset = _HookNameOffset ?? Schema.GetOffset(0xEA4B2E6FA19F4D11);
             return new SchemaUntypedField(_Handle + _HookNameOffset!.Value);
         }
     }
-
 
 }

@@ -14,7 +14,4 @@ public partial interface InfoForResourceTypeCEntityLump : ISchemaClass<InfoForRe
     static int ISchemaClass<InfoForResourceTypeCEntityLump>.Size => 1;
     static string? ISchemaClass<InfoForResourceTypeCEntityLump>.ClassName => null;
 
-
-
-
 }

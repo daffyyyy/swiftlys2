@@ -16,7 +16,4 @@ internal partial class CNmBoneMaskValueNode__CDefinitionImpl : CNmValueNode__CDe
 {
     public CNmBoneMaskValueNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

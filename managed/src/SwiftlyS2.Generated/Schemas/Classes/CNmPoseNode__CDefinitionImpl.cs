@@ -16,7 +16,4 @@ internal partial class CNmPoseNode__CDefinitionImpl : CNmGraphNode__CDefinitionI
 {
     public CNmPoseNode__CDefinitionImpl(nint handle) : base(handle) { }
 
-
-
-
 }

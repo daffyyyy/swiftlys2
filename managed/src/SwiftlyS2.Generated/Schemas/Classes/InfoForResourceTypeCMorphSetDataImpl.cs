@@ -16,7 +16,4 @@ internal partial class InfoForResourceTypeCMorphSetDataImpl : SchemaClass, InfoF
 {
     public InfoForResourceTypeCMorphSetDataImpl(nint handle) : base(handle) { }
 
-
-
-
 }

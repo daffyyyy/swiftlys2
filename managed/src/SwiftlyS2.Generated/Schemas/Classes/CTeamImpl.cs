@@ -18,40 +18,49 @@ internal partial class CTeamImpl : CBaseEntityImpl, CTeam
 
     private static nint? _PlayerControllersOffset;
 
-    public ref CUtlVector<CHandle<CBasePlayerController>> PlayerControllers {
-        get {
+    public ref CUtlVector<CHandle<CBasePlayerController>> PlayerControllers
+    {
+        get
+        {
             _PlayerControllersOffset = _PlayerControllersOffset ?? Schema.GetOffset(0xAF5A77E38933E302);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBasePlayerController>>>(_PlayerControllersOffset!.Value);
         }
     }
     private static nint? _PlayersOffset;
 
-    public ref CUtlVector<CHandle<CBasePlayerPawn>> Players {
-        get {
+    public ref CUtlVector<CHandle<CBasePlayerPawn>> Players
+    {
+        get
+        {
             _PlayersOffset = _PlayersOffset ?? Schema.GetOffset(0xAF5A77E307285116);
             return ref _Handle.AsRef<CUtlVector<CHandle<CBasePlayerPawn>>>(_PlayersOffset!.Value);
         }
     }
     private static nint? _ScoreOffset;
 
-    public ref int Score {
-        get {
+    public ref int Score
+    {
+        get
+        {
             _ScoreOffset = _ScoreOffset ?? Schema.GetOffset(0xAF5A77E339E7DEAE);
             return ref _Handle.AsRef<int>(_ScoreOffset!.Value);
         }
     }
     private static nint? _TeamnameOffset;
 
-    public string Teamname {
-        get {
+    public string Teamname
+    {
+        get
+        {
             _TeamnameOffset = _TeamnameOffset ?? Schema.GetOffset(0xAF5A77E3AA34880A);
             return Schema.GetString(_Handle + _TeamnameOffset!.Value);
         }
-        set {
+        set
+        {
             _TeamnameOffset = _TeamnameOffset ?? Schema.GetOffset(0xAF5A77E3AA34880A);
             Schema.SetFixedString(_Handle, _TeamnameOffset!.Value, value, 129);
         }
-    } 
+    }
 
     public void PlayerControllersUpdated() => Schema.Update(_Handle, 0xAF5A77E38933E302);
     public void PlayersUpdated() => Schema.Update(_Handle, 0xAF5A77E307285116);

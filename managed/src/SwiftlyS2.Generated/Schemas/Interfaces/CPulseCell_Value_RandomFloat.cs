@@ -14,7 +14,4 @@ public partial interface CPulseCell_Value_RandomFloat : CPulseCell_BaseValue, IS
     static int ISchemaClass<CPulseCell_Value_RandomFloat>.Size => 72;
     static string? ISchemaClass<CPulseCell_Value_RandomFloat>.ClassName => null;
 
-
-
-
 }

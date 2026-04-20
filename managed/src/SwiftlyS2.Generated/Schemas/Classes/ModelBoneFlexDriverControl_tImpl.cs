@@ -18,48 +18,58 @@ internal partial class ModelBoneFlexDriverControl_tImpl : SchemaClass, ModelBone
 
     private static nint? _BoneComponentOffset;
 
-    public ref ModelBoneFlexComponent_t BoneComponent {
-        get {
+    public ref ModelBoneFlexComponent_t BoneComponent
+    {
+        get
+        {
             _BoneComponentOffset = _BoneComponentOffset ?? Schema.GetOffset(0x7DDCB3413C2E9E9E);
             return ref _Handle.AsRef<ModelBoneFlexComponent_t>(_BoneComponentOffset!.Value);
         }
     }
     private static nint? _FlexControllerOffset;
 
-    public string FlexController {
-        get {
+    public string FlexController
+    {
+        get
+        {
             _FlexControllerOffset = _FlexControllerOffset ?? Schema.GetOffset(0x7DDCB341EDF88AAA);
             return Schema.GetCUtlString(_Handle.Read<nint>(_FlexControllerOffset!.Value));
         }
-        set {
+        set
+        {
             _FlexControllerOffset = _FlexControllerOffset ?? Schema.GetOffset(0x7DDCB341EDF88AAA);
             Schema.SetCUtlString(_Handle, _FlexControllerOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _FlexControllerTokenOffset;
 
-    public ref uint FlexControllerToken {
-        get {
+    public ref uint FlexControllerToken
+    {
+        get
+        {
             _FlexControllerTokenOffset = _FlexControllerTokenOffset ?? Schema.GetOffset(0x7DDCB341996814FF);
             return ref _Handle.AsRef<uint>(_FlexControllerTokenOffset!.Value);
         }
     }
     private static nint? _MinOffset;
 
-    public ref float Min {
-        get {
+    public ref float Min
+    {
+        get
+        {
             _MinOffset = _MinOffset ?? Schema.GetOffset(0x7DDCB3413B1A5649);
             return ref _Handle.AsRef<float>(_MinOffset!.Value);
         }
     }
     private static nint? _MaxOffset;
 
-    public ref float Max {
-        get {
+    public ref float Max
+    {
+        get
+        {
             _MaxOffset = _MaxOffset ?? Schema.GetOffset(0x7DDCB3412D06B887);
             return ref _Handle.AsRef<float>(_MaxOffset!.Value);
         }
     }
-
 
 }

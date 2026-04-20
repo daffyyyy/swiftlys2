@@ -14,7 +14,4 @@ public partial interface CSimpleStopwatch : CStopwatchBase, ISchemaClass<CSimple
     static int ISchemaClass<CSimpleStopwatch>.Size => 12;
     static string? ISchemaClass<CSimpleStopwatch>.ClassName => null;
 
-
-
-
 }

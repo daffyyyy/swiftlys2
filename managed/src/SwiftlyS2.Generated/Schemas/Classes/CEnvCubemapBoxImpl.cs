@@ -16,7 +16,4 @@ internal partial class CEnvCubemapBoxImpl : CEnvCubemapImpl, CEnvCubemapBox
 {
     public CEnvCubemapBoxImpl(nint handle) : base(handle) { }
 
-
-
-
 }

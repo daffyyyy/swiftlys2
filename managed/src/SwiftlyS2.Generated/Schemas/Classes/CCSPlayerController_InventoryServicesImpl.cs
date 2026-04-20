@@ -18,70 +18,88 @@ internal partial class CCSPlayerController_InventoryServicesImpl : CPlayerContro
 
     private static nint? _MusicIDOffset;
 
-    public ref ushort MusicID {
-        get {
+    public ref ushort MusicID
+    {
+        get
+        {
             _MusicIDOffset = _MusicIDOffset ?? Schema.GetOffset(0xC1D0078289F71A5C);
             return ref _Handle.AsRef<ushort>(_MusicIDOffset!.Value);
         }
     }
-    public ISchemaFixedArray<MedalRank_t> Rank {
+    public ISchemaFixedArray<MedalRank_t> Rank
+    {
         get => new SchemaFixedArray<MedalRank_t>(_Handle, 0xC1D007826A7861C7, 6, 4, 4);
     }
     private static nint? _PersonaDataPublicLevelOffset;
 
-    public ref int PersonaDataPublicLevel {
-        get {
+    public ref int PersonaDataPublicLevel
+    {
+        get
+        {
             _PersonaDataPublicLevelOffset = _PersonaDataPublicLevelOffset ?? Schema.GetOffset(0xC1D00782BE2880D0);
             return ref _Handle.AsRef<int>(_PersonaDataPublicLevelOffset!.Value);
         }
     }
     private static nint? _PersonaDataPublicCommendsLeaderOffset;
 
-    public ref int PersonaDataPublicCommendsLeader {
-        get {
+    public ref int PersonaDataPublicCommendsLeader
+    {
+        get
+        {
             _PersonaDataPublicCommendsLeaderOffset = _PersonaDataPublicCommendsLeaderOffset ?? Schema.GetOffset(0xC1D00782671B0B25);
             return ref _Handle.AsRef<int>(_PersonaDataPublicCommendsLeaderOffset!.Value);
         }
     }
     private static nint? _PersonaDataPublicCommendsTeacherOffset;
 
-    public ref int PersonaDataPublicCommendsTeacher {
-        get {
+    public ref int PersonaDataPublicCommendsTeacher
+    {
+        get
+        {
             _PersonaDataPublicCommendsTeacherOffset = _PersonaDataPublicCommendsTeacherOffset ?? Schema.GetOffset(0xC1D00782610CA282);
             return ref _Handle.AsRef<int>(_PersonaDataPublicCommendsTeacherOffset!.Value);
         }
     }
     private static nint? _PersonaDataPublicCommendsFriendlyOffset;
 
-    public ref int PersonaDataPublicCommendsFriendly {
-        get {
+    public ref int PersonaDataPublicCommendsFriendly
+    {
+        get
+        {
             _PersonaDataPublicCommendsFriendlyOffset = _PersonaDataPublicCommendsFriendlyOffset ?? Schema.GetOffset(0xC1D00782B3DA495B);
             return ref _Handle.AsRef<int>(_PersonaDataPublicCommendsFriendlyOffset!.Value);
         }
     }
     private static nint? _PersonaDataXpTrailLevelOffset;
 
-    public ref int PersonaDataXpTrailLevel {
-        get {
+    public ref int PersonaDataXpTrailLevel
+    {
+        get
+        {
             _PersonaDataXpTrailLevelOffset = _PersonaDataXpTrailLevelOffset ?? Schema.GetOffset(0xC1D0078228192B7D);
             return ref _Handle.AsRef<int>(_PersonaDataXpTrailLevelOffset!.Value);
         }
     }
-    public ISchemaFixedArray<uint> EquippedPlayerSprayIDs {
+    public ISchemaFixedArray<uint> EquippedPlayerSprayIDs
+    {
         get => new SchemaFixedArray<uint>(_Handle, 0xC1D00782CE970C93, 1, 4, 4);
     }
     private static nint? _CurrentLoadoutHashOffset;
 
-    public ref ulong CurrentLoadoutHash {
-        get {
+    public ref ulong CurrentLoadoutHash
+    {
+        get
+        {
             _CurrentLoadoutHashOffset = _CurrentLoadoutHashOffset ?? Schema.GetOffset(0xC1D007824F832E99);
             return ref _Handle.AsRef<ulong>(_CurrentLoadoutHashOffset!.Value);
         }
     }
     private static nint? _ServerAuthoritativeWeaponSlotsOffset;
 
-    public ref CUtlVector<ServerAuthoritativeWeaponSlot_t> ServerAuthoritativeWeaponSlots {
-        get {
+    public ref CUtlVector<ServerAuthoritativeWeaponSlot_t> ServerAuthoritativeWeaponSlots
+    {
+        get
+        {
             _ServerAuthoritativeWeaponSlotsOffset = _ServerAuthoritativeWeaponSlotsOffset ?? Schema.GetOffset(0xC1D007826EED2FF6);
             return ref _Handle.AsRef<CUtlVector<ServerAuthoritativeWeaponSlot_t>>(_ServerAuthoritativeWeaponSlotsOffset!.Value);
         }

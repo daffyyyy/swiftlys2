@@ -18,12 +18,13 @@ internal partial class CNmConstIDNode__CDefinitionImpl : CNmIDValueNode__CDefini
 
     private static nint? _ValueOffset;
 
-    public ref CGlobalSymbol Value {
-        get {
+    public ref CGlobalSymbol Value
+    {
+        get
+        {
             _ValueOffset = _ValueOffset ?? Schema.GetOffset(0xF68AB5F96B99AEEA);
             return ref _Handle.AsRef<CGlobalSymbol>(_ValueOffset!.Value);
         }
     }
-
 
 }

@@ -16,7 +16,4 @@ internal partial class CEnvSoundscapeAlias_snd_soundscapeImpl : CEnvSoundscapeIm
 {
     public CEnvSoundscapeAlias_snd_soundscapeImpl(nint handle) : base(handle) { }
 
-
-
-
 }

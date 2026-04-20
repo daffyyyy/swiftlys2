@@ -18,36 +18,43 @@ internal partial class C_OP_TimeVaryingForceImpl : CParticleFunctionForceImpl, C
 
     private static nint? _StartLerpTimeOffset;
 
-    public ref float StartLerpTime {
-        get {
+    public ref float StartLerpTime
+    {
+        get
+        {
             _StartLerpTimeOffset = _StartLerpTimeOffset ?? Schema.GetOffset(0xAC89FC47C1D0DC21);
             return ref _Handle.AsRef<float>(_StartLerpTimeOffset!.Value);
         }
     }
     private static nint? _StartingForceOffset;
 
-    public ref Vector StartingForce {
-        get {
+    public ref Vector StartingForce
+    {
+        get
+        {
             _StartingForceOffset = _StartingForceOffset ?? Schema.GetOffset(0xAC89FC478FA47818);
             return ref _Handle.AsRef<Vector>(_StartingForceOffset!.Value);
         }
     }
     private static nint? _EndLerpTimeOffset;
 
-    public ref float EndLerpTime {
-        get {
+    public ref float EndLerpTime
+    {
+        get
+        {
             _EndLerpTimeOffset = _EndLerpTimeOffset ?? Schema.GetOffset(0xAC89FC47AA182894);
             return ref _Handle.AsRef<float>(_EndLerpTimeOffset!.Value);
         }
     }
     private static nint? _EndingForceOffset;
 
-    public ref Vector EndingForce {
-        get {
+    public ref Vector EndingForce
+    {
+        get
+        {
             _EndingForceOffset = _EndingForceOffset ?? Schema.GetOffset(0xAC89FC47CEB5307D);
             return ref _Handle.AsRef<Vector>(_EndingForceOffset!.Value);
         }
     }
-
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCS2ChickenGraphController : CAnimGraphControllerBase, ISchemaClass<CCS2ChickenGraphController>
 {
     static CCS2ChickenGraphController ISchemaClass<CCS2ChickenGraphController>.From(nint handle) => new CCS2ChickenGraphControllerImpl(handle);
-    static int ISchemaClass<CCS2ChickenGraphController>.Size => 352;
+    static int ISchemaClass<CCS2ChickenGraphController>.Size => 344;
     static string? ISchemaClass<CCS2ChickenGraphController>.ClassName => null;
 
 

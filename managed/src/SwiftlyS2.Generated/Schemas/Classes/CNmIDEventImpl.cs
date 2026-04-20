@@ -18,20 +18,23 @@ internal partial class CNmIDEventImpl : CNmEventImpl, CNmIDEvent
 
     private static nint? _IDOffset;
 
-    public ref CGlobalSymbol ID {
-        get {
+    public ref CGlobalSymbol ID
+    {
+        get
+        {
             _IDOffset = _IDOffset ?? Schema.GetOffset(0x31E463E295066900);
             return ref _Handle.AsRef<CGlobalSymbol>(_IDOffset!.Value);
         }
     }
     private static nint? _SecondaryIDOffset;
 
-    public ref CGlobalSymbol SecondaryID {
-        get {
+    public ref CGlobalSymbol SecondaryID
+    {
+        get
+        {
             _SecondaryIDOffset = _SecondaryIDOffset ?? Schema.GetOffset(0x31E463E29B39DB84);
             return ref _Handle.AsRef<CGlobalSymbol>(_SecondaryIDOffset!.Value);
         }
     }
-
 
 }

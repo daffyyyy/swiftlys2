@@ -16,7 +16,4 @@ internal partial class CPointPulseImpl : CBaseEntityImpl, CPointPulse
 {
     public CPointPulseImpl(nint handle) : base(handle) { }
 
-
-
-
 }

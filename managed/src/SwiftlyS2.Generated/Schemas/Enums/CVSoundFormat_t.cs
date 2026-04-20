@@ -6,11 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CVSoundFormat_t : byte
 {
- PCM16 = 0,
-
- PCM8 = 1,
-
- MP3 = 2,
-
- ADPCM = 3,
+    PCM16 = 0,
+    PCM8 = 1,
+    MP3 = 2,
+    ADPCM = 3,
 }

@@ -16,7 +16,4 @@ internal partial class CFloatExponentialMovingAverageImpl : SchemaClass, CFloatE
 {
     public CFloatExponentialMovingAverageImpl(nint handle) : base(handle) { }
 
-
-
-
 }

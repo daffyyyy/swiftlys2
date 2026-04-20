@@ -18,115 +18,142 @@ internal partial class SceneObject_tImpl : SchemaClass, SceneObject_t
 
     private static nint? _ObjectIDOffset;
 
-    public ref uint ObjectID {
-        get {
+    public ref uint ObjectID
+    {
+        get
+        {
             _ObjectIDOffset = _ObjectIDOffset ?? Schema.GetOffset(0xD71D99937D1B0793);
             return ref _Handle.AsRef<uint>(_ObjectIDOffset!.Value);
         }
     }
-    public ISchemaFixedArray<Vector4D> Transform {
+    public ISchemaFixedArray<Vector4D> Transform
+    {
         get => new SchemaFixedArray<Vector4D>(_Handle, 0xD71D9993EAAE256F, 3, 16, 4);
     }
     private static nint? _FadeStartDistanceOffset;
 
-    public ref float FadeStartDistance {
-        get {
+    public ref float FadeStartDistance
+    {
+        get
+        {
             _FadeStartDistanceOffset = _FadeStartDistanceOffset ?? Schema.GetOffset(0xD71D99931AE7B71C);
             return ref _Handle.AsRef<float>(_FadeStartDistanceOffset!.Value);
         }
     }
     private static nint? _FadeEndDistanceOffset;
 
-    public ref float FadeEndDistance {
-        get {
+    public ref float FadeEndDistance
+    {
+        get
+        {
             _FadeEndDistanceOffset = _FadeEndDistanceOffset ?? Schema.GetOffset(0xD71D999328802B3D);
             return ref _Handle.AsRef<float>(_FadeEndDistanceOffset!.Value);
         }
     }
     private static nint? _TintColorOffset;
 
-    public ref Vector4D TintColor {
-        get {
+    public ref Vector4D TintColor
+    {
+        get
+        {
             _TintColorOffset = _TintColorOffset ?? Schema.GetOffset(0xD71D999350AFF21F);
             return ref _Handle.AsRef<Vector4D>(_TintColorOffset!.Value);
         }
     }
     private static nint? _SkinOffset;
 
-    public string Skin {
-        get {
+    public string Skin
+    {
+        get
+        {
             _SkinOffset = _SkinOffset ?? Schema.GetOffset(0xD71D9993F1469658);
             return Schema.GetCUtlString(_Handle.Read<nint>(_SkinOffset!.Value));
         }
-        set {
+        set
+        {
             _SkinOffset = _SkinOffset ?? Schema.GetOffset(0xD71D9993F1469658);
             Schema.SetCUtlString(_Handle, _SkinOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _ObjectTypeFlagsOffset;
 
-    public ref ObjectTypeFlags_t ObjectTypeFlags {
-        get {
+    public ref ObjectTypeFlags_t ObjectTypeFlags
+    {
+        get
+        {
             _ObjectTypeFlagsOffset = _ObjectTypeFlagsOffset ?? Schema.GetOffset(0xD71D9993D9506A69);
             return ref _Handle.AsRef<ObjectTypeFlags_t>(_ObjectTypeFlagsOffset!.Value);
         }
     }
     private static nint? _LightingOriginOffset;
 
-    public ref Vector LightingOrigin {
-        get {
+    public ref Vector LightingOrigin
+    {
+        get
+        {
             _LightingOriginOffset = _LightingOriginOffset ?? Schema.GetOffset(0xD71D9993384A57CF);
             return ref _Handle.AsRef<Vector>(_LightingOriginOffset!.Value);
         }
     }
     private static nint? _OverlayRenderOrderOffset;
 
-    public ref short OverlayRenderOrder {
-        get {
+    public ref short OverlayRenderOrder
+    {
+        get
+        {
             _OverlayRenderOrderOffset = _OverlayRenderOrderOffset ?? Schema.GetOffset(0xD71D99935F955EED);
             return ref _Handle.AsRef<short>(_OverlayRenderOrderOffset!.Value);
         }
     }
     private static nint? _LODOverrideOffset;
 
-    public ref short LODOverride {
-        get {
+    public ref short LODOverride
+    {
+        get
+        {
             _LODOverrideOffset = _LODOverrideOffset ?? Schema.GetOffset(0xD71D999301DBC0FC);
             return ref _Handle.AsRef<short>(_LODOverrideOffset!.Value);
         }
     }
     private static nint? _CubeMapPrecomputedHandshakeOffset;
 
-    public ref int CubeMapPrecomputedHandshake {
-        get {
+    public ref int CubeMapPrecomputedHandshake
+    {
+        get
+        {
             _CubeMapPrecomputedHandshakeOffset = _CubeMapPrecomputedHandshakeOffset ?? Schema.GetOffset(0xD71D99939B8535E1);
             return ref _Handle.AsRef<int>(_CubeMapPrecomputedHandshakeOffset!.Value);
         }
     }
     private static nint? _LightProbeVolumePrecomputedHandshakeOffset;
 
-    public ref int LightProbeVolumePrecomputedHandshake {
-        get {
+    public ref int LightProbeVolumePrecomputedHandshake
+    {
+        get
+        {
             _LightProbeVolumePrecomputedHandshakeOffset = _LightProbeVolumePrecomputedHandshakeOffset ?? Schema.GetOffset(0xD71D9993C6233022);
             return ref _Handle.AsRef<int>(_LightProbeVolumePrecomputedHandshakeOffset!.Value);
         }
     }
     private static nint? _RenderableModelOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel
+    {
+        get
+        {
             _RenderableModelOffset = _RenderableModelOffset ?? Schema.GetOffset(0xD71D99932AEEFA82);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(_RenderableModelOffset!.Value);
         }
     }
     private static nint? _RenderableOffset;
 
-    public ref CStrongHandle<InfoForResourceTypeCRenderMesh> Renderable {
-        get {
+    public ref CStrongHandle<InfoForResourceTypeCRenderMesh> Renderable
+    {
+        get
+        {
             _RenderableOffset = _RenderableOffset ?? Schema.GetOffset(0xD71D9993972EF84D);
             return ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCRenderMesh>>(_RenderableOffset!.Value);
         }
     }
-
 
 }

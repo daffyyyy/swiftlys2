@@ -18,32 +18,38 @@ internal partial class ParticleControlPointConfiguration_tImpl : SchemaClass, Pa
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xC54E49C74D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xC54E49C74D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _DriversOffset;
 
-    public ref CUtlVector<ParticleControlPointDriver_t> Drivers {
-        get {
+    public ref CUtlVector<ParticleControlPointDriver_t> Drivers
+    {
+        get
+        {
             _DriversOffset = _DriversOffset ?? Schema.GetOffset(0xC54E49C7C63563E4);
             return ref _Handle.AsRef<CUtlVector<ParticleControlPointDriver_t>>(_DriversOffset!.Value);
         }
     }
     private static nint? _PreviewStateOffset;
 
-    public ParticlePreviewState_t PreviewState {
-        get {
+    public ParticlePreviewState_t PreviewState
+    {
+        get
+        {
             _PreviewStateOffset = _PreviewStateOffset ?? Schema.GetOffset(0xC54E49C79E440558);
             return new ParticlePreviewState_tImpl(_Handle + _PreviewStateOffset!.Value);
         }
     }
-
 
 }

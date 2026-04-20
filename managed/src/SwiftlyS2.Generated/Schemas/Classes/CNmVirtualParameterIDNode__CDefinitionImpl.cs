@@ -18,12 +18,13 @@ internal partial class CNmVirtualParameterIDNode__CDefinitionImpl : CNmIDValueNo
 
     private static nint? _ChildNodeIdxOffset;
 
-    public ref short ChildNodeIdx {
-        get {
+    public ref short ChildNodeIdx
+    {
+        get
+        {
             _ChildNodeIdxOffset = _ChildNodeIdxOffset ?? Schema.GetOffset(0xE010C6705C29A73C);
             return ref _Handle.AsRef<short>(_ChildNodeIdxOffset!.Value);
         }
     }
-
 
 }

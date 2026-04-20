@@ -18,12 +18,13 @@ internal partial class CNmIsExternalPoseSetNode__CDefinitionImpl : CNmBoolValueN
 
     private static nint? _ExternalPoseNodeIdxOffset;
 
-    public ref short ExternalPoseNodeIdx {
-        get {
+    public ref short ExternalPoseNodeIdx
+    {
+        get
+        {
             _ExternalPoseNodeIdxOffset = _ExternalPoseNodeIdxOffset ?? Schema.GetOffset(0xB81951058EE54182);
             return ref _Handle.AsRef<short>(_ExternalPoseNodeIdxOffset!.Value);
         }
     }
-
 
 }

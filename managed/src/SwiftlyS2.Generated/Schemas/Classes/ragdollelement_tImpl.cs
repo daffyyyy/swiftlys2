@@ -18,36 +18,43 @@ internal partial class ragdollelement_tImpl : SchemaClass, ragdollelement_t
 
     private static nint? _OriginParentSpaceOffset;
 
-    public ref Vector OriginParentSpace {
-        get {
+    public ref Vector OriginParentSpace
+    {
+        get
+        {
             _OriginParentSpaceOffset = _OriginParentSpaceOffset ?? Schema.GetOffset(0x6DFDA0AB476AA8AB);
             return ref _Handle.AsRef<Vector>(_OriginParentSpaceOffset!.Value);
         }
     }
     private static nint? _ParentIndexOffset;
 
-    public ref int ParentIndex {
-        get {
+    public ref int ParentIndex
+    {
+        get
+        {
             _ParentIndexOffset = _ParentIndexOffset ?? Schema.GetOffset(0x6DFDA0ABFE49C863);
             return ref _Handle.AsRef<int>(_ParentIndexOffset!.Value);
         }
     }
     private static nint? _RadiusOffset;
 
-    public ref float Radius {
-        get {
+    public ref float Radius
+    {
+        get
+        {
             _RadiusOffset = _RadiusOffset ?? Schema.GetOffset(0x6DFDA0AB5ACFC08D);
             return ref _Handle.AsRef<float>(_RadiusOffset!.Value);
         }
     }
     private static nint? _HeightOffset;
 
-    public ref int Height {
-        get {
+    public ref int Height
+    {
+        get
+        {
             _HeightOffset = _HeightOffset ?? Schema.GetOffset(0x6DFDA0ABCAB61C56);
             return ref _Handle.AsRef<int>(_HeightOffset!.Value);
         }
     }
-
 
 }

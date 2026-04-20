@@ -16,7 +16,4 @@ internal partial class EventServerBeginSimulate_tImpl : EventSimulate_tImpl, Eve
 {
     public EventServerBeginSimulate_tImpl(nint handle) : base(handle) { }
 
-
-
-
 }

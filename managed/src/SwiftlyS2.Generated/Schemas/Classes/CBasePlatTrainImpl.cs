@@ -18,52 +18,63 @@ internal partial class CBasePlatTrainImpl : CBaseToggleImpl, CBasePlatTrain
 
     private static nint? _NoiseMovingOffset;
 
-    public string NoiseMoving {
-        get {
+    public string NoiseMoving
+    {
+        get
+        {
             _NoiseMovingOffset = _NoiseMovingOffset ?? Schema.GetOffset(0x78773ABC415AB84B);
             return Schema.GetString(_Handle.Read<nint>(_NoiseMovingOffset!.Value));
         }
-        set {
+        set
+        {
             _NoiseMovingOffset = _NoiseMovingOffset ?? Schema.GetOffset(0x78773ABC415AB84B);
             Schema.SetString(_Handle, _NoiseMovingOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _NoiseArrivedOffset;
 
-    public string NoiseArrived {
-        get {
+    public string NoiseArrived
+    {
+        get
+        {
             _NoiseArrivedOffset = _NoiseArrivedOffset ?? Schema.GetOffset(0x78773ABCD2CDE47A);
             return Schema.GetString(_Handle.Read<nint>(_NoiseArrivedOffset!.Value));
         }
-        set {
+        set
+        {
             _NoiseArrivedOffset = _NoiseArrivedOffset ?? Schema.GetOffset(0x78773ABCD2CDE47A);
             Schema.SetString(_Handle, _NoiseArrivedOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _VolumeOffset;
 
-    public ref float Volume {
-        get {
+    public ref float Volume
+    {
+        get
+        {
             _VolumeOffset = _VolumeOffset ?? Schema.GetOffset(0x78773ABCE3962F2F);
             return ref _Handle.AsRef<float>(_VolumeOffset!.Value);
         }
     }
     private static nint? _TWidthOffset;
 
-    public ref float TWidth {
-        get {
+    public ref float TWidth
+    {
+        get
+        {
             _TWidthOffset = _TWidthOffset ?? Schema.GetOffset(0x78773ABCADF5A64B);
             return ref _Handle.AsRef<float>(_TWidthOffset!.Value);
         }
     }
     private static nint? _TLengthOffset;
 
-    public ref float TLength {
-        get {
+    public ref float TLength
+    {
+        get
+        {
             _TLengthOffset = _TLengthOffset ?? Schema.GetOffset(0x78773ABCA72CEC99);
             return ref _Handle.AsRef<float>(_TLengthOffset!.Value);
         }
     }
-
 
 }

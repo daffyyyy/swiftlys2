@@ -18,44 +18,53 @@ internal partial class CNmParameterizedSelectorNode__CDefinitionImpl : CNmPoseNo
 
     private static nint? _OptionNodeIndicesOffset;
 
-    public SchemaUntypedField OptionNodeIndices {
-        get {
+    public SchemaUntypedField OptionNodeIndices
+    {
+        get
+        {
             _OptionNodeIndicesOffset = _OptionNodeIndicesOffset ?? Schema.GetOffset(0xE1B260B3DA97B15D);
             return new SchemaUntypedField(_Handle + _OptionNodeIndicesOffset!.Value);
         }
     }
     private static nint? _OptionWeightsOffset;
 
-    public SchemaUntypedField OptionWeights {
-        get {
+    public SchemaUntypedField OptionWeights
+    {
+        get
+        {
             _OptionWeightsOffset = _OptionWeightsOffset ?? Schema.GetOffset(0xE1B260B331D94DB5);
             return new SchemaUntypedField(_Handle + _OptionWeightsOffset!.Value);
         }
     }
     private static nint? _ParameterNodeIdxOffset;
 
-    public ref short ParameterNodeIdx {
-        get {
+    public ref short ParameterNodeIdx
+    {
+        get
+        {
             _ParameterNodeIdxOffset = _ParameterNodeIdxOffset ?? Schema.GetOffset(0xE1B260B366C6F2AB);
             return ref _Handle.AsRef<short>(_ParameterNodeIdxOffset!.Value);
         }
     }
     private static nint? _IgnoreInvalidOptionsOffset;
 
-    public ref bool IgnoreInvalidOptions {
-        get {
+    public ref bool IgnoreInvalidOptions
+    {
+        get
+        {
             _IgnoreInvalidOptionsOffset = _IgnoreInvalidOptionsOffset ?? Schema.GetOffset(0xE1B260B3507C679C);
             return ref _Handle.AsRef<bool>(_IgnoreInvalidOptionsOffset!.Value);
         }
     }
     private static nint? _HasWeightsSetOffset;
 
-    public ref bool HasWeightsSet {
-        get {
+    public ref bool HasWeightsSet
+    {
+        get
+        {
             _HasWeightsSetOffset = _HasWeightsSetOffset ?? Schema.GetOffset(0xE1B260B3EA6127CC);
             return ref _Handle.AsRef<bool>(_HasWeightsSetOffset!.Value);
         }
     }
-
 
 }

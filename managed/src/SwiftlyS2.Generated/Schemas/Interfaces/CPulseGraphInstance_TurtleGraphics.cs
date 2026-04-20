@@ -14,7 +14,4 @@ public partial interface CPulseGraphInstance_TurtleGraphics : CBasePulseGraphIns
     static int ISchemaClass<CPulseGraphInstance_TurtleGraphics>.Size => 320;
     static string? ISchemaClass<CPulseGraphInstance_TurtleGraphics>.ClassName => null;
 
-
-
-
 }

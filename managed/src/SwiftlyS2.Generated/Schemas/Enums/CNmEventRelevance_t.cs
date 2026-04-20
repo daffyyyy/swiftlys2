@@ -6,9 +6,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum CNmEventRelevance_t : uint
 {
- ClientOnly = 0,
-
- ServerOnly = 1,
-
- ClientAndServer = 2,
+    ClientOnly = 0,
+    ServerOnly = 1,
+    ClientAndServer = 2,
 }

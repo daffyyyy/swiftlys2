@@ -18,12 +18,13 @@ internal partial class CVMixDynamics3BandProcessorDescImpl : CVMixBaseProcessorD
 
     private static nint? _DescOffset;
 
-    public VMixDynamics3BandDesc_t Desc {
-        get {
+    public VMixDynamics3BandDesc_t Desc
+    {
+        get
+        {
             _DescOffset = _DescOffset ?? Schema.GetOffset(0xA8D5869B27917BC0);
             return new VMixDynamics3BandDesc_tImpl(_Handle + _DescOffset!.Value);
         }
     }
-
 
 }

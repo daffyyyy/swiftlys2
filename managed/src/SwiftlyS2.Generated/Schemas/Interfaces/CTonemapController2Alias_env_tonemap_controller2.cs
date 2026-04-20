@@ -14,7 +14,4 @@ public partial interface CTonemapController2Alias_env_tonemap_controller2 : CTon
     static int ISchemaClass<CTonemapController2Alias_env_tonemap_controller2>.Size => 1216;
     static string? ISchemaClass<CTonemapController2Alias_env_tonemap_controller2>.ClassName => null;
 
-
-
-
 }

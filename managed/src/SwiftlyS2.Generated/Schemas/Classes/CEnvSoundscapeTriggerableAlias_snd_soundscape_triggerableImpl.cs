@@ -16,7 +16,4 @@ internal partial class CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable
 {
     public CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerableImpl(nint handle) : base(handle) { }
 
-
-
-
 }

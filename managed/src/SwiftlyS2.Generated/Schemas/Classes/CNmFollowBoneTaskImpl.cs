@@ -16,7 +16,4 @@ internal partial class CNmFollowBoneTaskImpl : CNmPoseTaskImpl, CNmFollowBoneTas
 {
     public CNmFollowBoneTaskImpl(nint handle) : base(handle) { }
 
-
-
-
 }

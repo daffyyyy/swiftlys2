@@ -18,32 +18,38 @@ internal partial class CVMixGraphDescDataImpl : SchemaClass, CVMixGraphDescData
 
     private static nint? _NameOffset;
 
-    public string Name {
-        get {
+    public string Name
+    {
+        get
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xD2F767C34D8F5786);
             return Schema.GetCUtlString(_Handle.Read<nint>(_NameOffset!.Value));
         }
-        set {
+        set
+        {
             _NameOffset = _NameOffset ?? Schema.GetOffset(0xD2F767C34D8F5786);
             Schema.SetCUtlString(_Handle, _NameOffset!.Value, value);
         }
-    } 
+    }
     private static nint? _GraphOutputChannelsOffset;
 
-    public ref int GraphOutputChannels {
-        get {
+    public ref int GraphOutputChannels
+    {
+        get
+        {
             _GraphOutputChannelsOffset = _GraphOutputChannelsOffset ?? Schema.GetOffset(0xD2F767C36476037E);
             return ref _Handle.AsRef<int>(_GraphOutputChannelsOffset!.Value);
         }
     }
     private static nint? _IsMainGraphOffset;
 
-    public ref bool IsMainGraph {
-        get {
+    public ref bool IsMainGraph
+    {
+        get
+        {
             _IsMainGraphOffset = _IsMainGraphOffset ?? Schema.GetOffset(0xD2F767C313899EBC);
             return ref _Handle.AsRef<bool>(_IsMainGraphOffset!.Value);
         }
     }
-
 
 }

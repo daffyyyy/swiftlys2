@@ -15,6 +15,8 @@ public partial interface CGenericConstraint : CPhysConstraint, ISchemaClass<CGen
     static string? ISchemaClass<CGenericConstraint>.ClassName => "phys_genericconstraint";
 
 
+    public ref bool PlaceAnchorsAtConstraintTransform { get; }
+
     public ref JointMotion_t LinearMotionX { get; }
 
     public ref JointMotion_t LinearMotionY { get; }

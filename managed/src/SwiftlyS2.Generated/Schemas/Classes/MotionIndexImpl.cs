@@ -18,20 +18,23 @@ internal partial class MotionIndexImpl : SchemaClass, MotionIndex
 
     private static nint? _GroupOffset;
 
-    public ref ushort Group {
-        get {
+    public ref ushort Group
+    {
+        get
+        {
             _GroupOffset = _GroupOffset ?? Schema.GetOffset(0x5914302D0CD16308);
             return ref _Handle.AsRef<ushort>(_GroupOffset!.Value);
         }
     }
     private static nint? _MotionOffset;
 
-    public ref ushort Motion {
-        get {
+    public ref ushort Motion
+    {
+        get
+        {
             _MotionOffset = _MotionOffset ?? Schema.GetOffset(0x5914302DBB2E0DCB);
             return ref _Handle.AsRef<ushort>(_MotionOffset!.Value);
         }
     }
-
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIDEvent : CNmEvent, ISchemaClass<CNmIDEvent>
 {
     static CNmIDEvent ISchemaClass<CNmIDEvent>.From(nint handle) => new CNmIDEventImpl(handle);
-    static int ISchemaClass<CNmIDEvent>.Size => 48;
+    static int ISchemaClass<CNmIDEvent>.Size => 40;
     static string? ISchemaClass<CNmIDEvent>.ClassName => null;
 
 

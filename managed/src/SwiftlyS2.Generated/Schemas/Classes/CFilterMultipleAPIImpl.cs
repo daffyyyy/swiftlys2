@@ -16,7 +16,4 @@ internal partial class CFilterMultipleAPIImpl : SchemaClass, CFilterMultipleAPI
 {
     public CFilterMultipleAPIImpl(nint handle) : base(handle) { }
 
-
-
-
 }

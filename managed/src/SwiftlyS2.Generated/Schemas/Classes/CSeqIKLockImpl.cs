@@ -18,36 +18,43 @@ internal partial class CSeqIKLockImpl : SchemaClass, CSeqIKLock
 
     private static nint? _PosWeightOffset;
 
-    public ref float PosWeight {
-        get {
+    public ref float PosWeight
+    {
+        get
+        {
             _PosWeightOffset = _PosWeightOffset ?? Schema.GetOffset(0x9813F59E9CC6C04B);
             return ref _Handle.AsRef<float>(_PosWeightOffset!.Value);
         }
     }
     private static nint? _AngleWeightOffset;
 
-    public ref float AngleWeight {
-        get {
+    public ref float AngleWeight
+    {
+        get
+        {
             _AngleWeightOffset = _AngleWeightOffset ?? Schema.GetOffset(0x9813F59E51DFB6EE);
             return ref _Handle.AsRef<float>(_AngleWeightOffset!.Value);
         }
     }
     private static nint? _LocalBoneOffset;
 
-    public ref short LocalBone {
-        get {
+    public ref short LocalBone
+    {
+        get
+        {
             _LocalBoneOffset = _LocalBoneOffset ?? Schema.GetOffset(0x9813F59EC2F7B8CA);
             return ref _Handle.AsRef<short>(_LocalBoneOffset!.Value);
         }
     }
     private static nint? _BonesOrientedAlongPositiveXOffset;
 
-    public ref bool BonesOrientedAlongPositiveX {
-        get {
+    public ref bool BonesOrientedAlongPositiveX
+    {
+        get
+        {
             _BonesOrientedAlongPositiveXOffset = _BonesOrientedAlongPositiveXOffset ?? Schema.GetOffset(0x9813F59ED3FDAB3A);
             return ref _Handle.AsRef<bool>(_BonesOrientedAlongPositiveXOffset!.Value);
         }
     }
-
 
 }

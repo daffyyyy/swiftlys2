@@ -18,20 +18,23 @@ internal partial class FeDynKinLink_tImpl : SchemaClass, FeDynKinLink_t
 
     private static nint? _ParentOffset;
 
-    public ref ushort Parent {
-        get {
+    public ref ushort Parent
+    {
+        get
+        {
             _ParentOffset = _ParentOffset ?? Schema.GetOffset(0xA0FBF6C40AABB9D1);
             return ref _Handle.AsRef<ushort>(_ParentOffset!.Value);
         }
     }
     private static nint? _ChildOffset;
 
-    public ref ushort Child {
-        get {
+    public ref ushort Child
+    {
+        get
+        {
             _ChildOffset = _ChildOffset ?? Schema.GetOffset(0xA0FBF6C4FE653481);
             return ref _Handle.AsRef<ushort>(_ChildOffset!.Value);
         }
     }
-
 
 }

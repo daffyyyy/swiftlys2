@@ -18,72 +18,90 @@ internal partial class CEnvWindVolumeImpl : CBaseEntityImpl, CEnvWindVolume
 
     private static nint? _ActiveOffset;
 
-    public ref bool Active {
-        get {
+    public ref bool Active
+    {
+        get
+        {
             _ActiveOffset = _ActiveOffset ?? Schema.GetOffset(0xCD7AC5418334208F);
             return ref _Handle.AsRef<bool>(_ActiveOffset!.Value);
         }
     }
     private static nint? _BoxMinsOffset;
 
-    public ref Vector BoxMins {
-        get {
+    public ref Vector BoxMins
+    {
+        get
+        {
             _BoxMinsOffset = _BoxMinsOffset ?? Schema.GetOffset(0xCD7AC541D8201373);
             return ref _Handle.AsRef<Vector>(_BoxMinsOffset!.Value);
         }
     }
     private static nint? _BoxMaxsOffset;
 
-    public ref Vector BoxMaxs {
-        get {
+    public ref Vector BoxMaxs
+    {
+        get
+        {
             _BoxMaxsOffset = _BoxMaxsOffset ?? Schema.GetOffset(0xCD7AC541817A3B31);
             return ref _Handle.AsRef<Vector>(_BoxMaxsOffset!.Value);
         }
     }
     private static nint? _StartDisabledOffset;
 
-    public ref bool StartDisabled {
-        get {
+    public ref bool StartDisabled
+    {
+        get
+        {
             _StartDisabledOffset = _StartDisabledOffset ?? Schema.GetOffset(0xCD7AC54161ED0C4F);
             return ref _Handle.AsRef<bool>(_StartDisabledOffset!.Value);
         }
     }
     private static nint? _ShapeOffset;
 
-    public ref int Shape {
-        get {
+    public ref int Shape
+    {
+        get
+        {
             _ShapeOffset = _ShapeOffset ?? Schema.GetOffset(0xCD7AC54121208A02);
             return ref _Handle.AsRef<int>(_ShapeOffset!.Value);
         }
     }
     private static nint? _WindSpeedMultiplierOffset;
 
-    public ref float WindSpeedMultiplier {
-        get {
+    public ref float WindSpeedMultiplier
+    {
+        get
+        {
             _WindSpeedMultiplierOffset = _WindSpeedMultiplierOffset ?? Schema.GetOffset(0xCD7AC541A22A3F81);
             return ref _Handle.AsRef<float>(_WindSpeedMultiplierOffset!.Value);
         }
     }
     private static nint? _WindTurbulenceMultiplierOffset;
 
-    public ref float WindTurbulenceMultiplier {
-        get {
+    public ref float WindTurbulenceMultiplier
+    {
+        get
+        {
             _WindTurbulenceMultiplierOffset = _WindTurbulenceMultiplierOffset ?? Schema.GetOffset(0xCD7AC54120DA30CD);
             return ref _Handle.AsRef<float>(_WindTurbulenceMultiplierOffset!.Value);
         }
     }
     private static nint? _WindSpeedVariationMultiplierOffset;
 
-    public ref float WindSpeedVariationMultiplier {
-        get {
+    public ref float WindSpeedVariationMultiplier
+    {
+        get
+        {
             _WindSpeedVariationMultiplierOffset = _WindSpeedVariationMultiplierOffset ?? Schema.GetOffset(0xCD7AC5416B9AC20C);
             return ref _Handle.AsRef<float>(_WindSpeedVariationMultiplierOffset!.Value);
         }
     }
     private static nint? _WindDirectionVariationMultiplierOffset;
 
-    public ref float WindDirectionVariationMultiplier {
-        get {
+    public ref float WindDirectionVariationMultiplier
+    {
+        get
+        {
             _WindDirectionVariationMultiplierOffset = _WindDirectionVariationMultiplierOffset ?? Schema.GetOffset(0xCD7AC5417F3AB3AA);
             return ref _Handle.AsRef<float>(_WindDirectionVariationMultiplierOffset!.Value);
         }
