@@ -61,7 +61,7 @@ public unsafe struct CTakeDamageInfo
 
     public CTakeDamageInfo()
     {
-        Vector vec3_origin = Vector.Zero;
+        var vec3_origin = Vector.Zero;
 
         fixed (CTakeDamageInfo* info = &this)
         {
@@ -71,7 +71,7 @@ public unsafe struct CTakeDamageInfo
 
     public CTakeDamageInfo( CBaseEntity inflictor, CBaseEntity attacker, CBaseEntity ability, float flDamage, DamageTypes_t bitsDamageType )
     {
-        Vector vec3_origin = Vector.Zero;
+        var vec3_origin = Vector.Zero;
 
         fixed (CTakeDamageInfo* info = &this)
         {
@@ -81,7 +81,7 @@ public unsafe struct CTakeDamageInfo
 
     public CTakeDamageInfo( float flDamage, DamageTypes_t bitsDamageType, CBaseEntity? inflictor = null, CBaseEntity? attacker = null, CBaseEntity? ability = null )
     {
-        Vector vec3_origin = Vector.Zero;
+        var vec3_origin = Vector.Zero;
 
         fixed (CTakeDamageInfo* info = &this)
         {
@@ -92,18 +92,23 @@ public unsafe struct CTakeDamageInfo
     public HitGroup_t ActualHitGroup => Trace->HitBox->m_nGroupId;
 }
 
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 48)]
+[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 80)]
 public unsafe struct CTakeDamageResult
 {
     public CTakeDamageInfo* OriginatingInfo;
+    public CUtlLeanVector<DestructiblePartDamageRequest_t, int> DestructibleHitGroupRequests;
     public int HealthLost;
     public int HealthBefore;
-    public int DamageDealt;
+    public float DamageDealt;
     public float PreModifiedDamage;
     public int TotalledHealthLost;
-    public int TotalledDamageDealt;
+    public float TotalledDamageDealt;
     public float TotalledPreModifiedDamage;
+    public float NewDamageAccumulatorValue;
+    public TakeDamageFlags_t DamageFlags;
     public byte WasDamageSuppressed;
     public byte SuppressFlinch;
     public HitGroup_t OverrideFlinchHitGroup;
+
+    private fixed byte _padding[8];
 }
