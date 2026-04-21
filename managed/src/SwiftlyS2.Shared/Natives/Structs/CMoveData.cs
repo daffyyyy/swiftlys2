@@ -5,32 +5,25 @@ using System.Runtime.InteropServices;
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential)]
-public unsafe struct CMoveData
+public struct CMoveData
 {
     public CMoveDataBase Base; // class CMoveData : public CMoveDataBase
 
     public Vector OutWishVel;
     public QAngle OldAngles;
+    public Vector2D WalkWishedVelocity;
 
-    /// <summary>
-    /// World space input vector. Used to compare against the movement services' previous rotation for ground movement stuff.
-    /// </summary>
-    public Vector InputRotated;
+    public Vector Acceleration;
 
-    /// <summary>
-    /// Continuous acceleration in units per second squared (u/s²).
-    /// </summary>
     public Vector ContinuousAcceleration;
-
-    /// <summary>
-    /// Immediate delta in u/s. Air acceleration bypasses per second acceleration,
-    /// applies up to half of its impulse to the velocity and the rest goes straight into this.
-    /// </summary>
-    public Vector FrameVelocityDelta;
 
     public float MaxSpeed;
     public float ClientMaxSpeed;
     public float FrictionDecel;
+    private unsafe fixed byte _padding[3 * 4];
+
+    [MarshalAs(UnmanagedType.U1)]
     public bool InAir;
+    [MarshalAs(UnmanagedType.U1)]
     public bool GameCodeMovedPlayer; // true if usercmd cmd number == (m_nGameCodeHasMovedPlayerAfterCommand + 1)
 }

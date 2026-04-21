@@ -7,7 +7,7 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential)]
-public unsafe struct CMoveDataBase
+public struct CMoveDataBase
 {
     private byte _bitfield0; // Bitfield members
 

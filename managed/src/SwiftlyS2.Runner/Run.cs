@@ -1,43 +1,14 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Semver;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2;
-
-[StructLayout(LayoutKind.Sequential)]
-internal struct CGcBanInformation_t
-{
-    public uint Reason;
-    public double Unknown;
-    public double Expiration;
-    public uint AccountId;
-}
-
-[StructLayout(LayoutKind.Explicit, Pack = 8, Size = 0x48)]
-internal unsafe struct TraceFilters
-{
-    [FieldOffset(0x0)]
-    private nint* _pVTable;
-
-    [FieldOffset(0x8)]
-    public RnQueryShapeAttr_t QueryShapeAttributes;
-
-    [FieldOffset(0x3A)]
-    [MarshalAs(UnmanagedType.U1)]
-    private bool _IterateEntities_Linux;
-
-    [FieldOffset(0x40)]
-    [MarshalAs(UnmanagedType.U1)]
-    public bool IterateEntities;
-
-}
 
 internal class Program
 {
     public static void Main()
     {
-        PrintPadding<TraceFilters>();
+        PrintPadding<CMoveData>();
     }
 
     public static void PrintPadding<T>()
@@ -46,7 +17,7 @@ internal class Program
                                          BindingFlags.Public |
                                          BindingFlags.NonPublic);
 
-        Array.Sort(fields, ( a, b ) =>
+        Array.Sort(fields, (a, b) =>
             Marshal.OffsetOf<T>(a.Name).ToInt32()
             .CompareTo(Marshal.OffsetOf<T>(b.Name).ToInt32()));
 
@@ -70,7 +41,7 @@ internal class Program
             Console.WriteLine($"Padding: {current} - {total - 1}");
     }
 
-    private static int GetFieldSize( Type type )
+    private static int GetFieldSize(Type type)
     {
         if (type.IsPointer)
             return IntPtr.Size;
