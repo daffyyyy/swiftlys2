@@ -27,5 +27,5 @@ public enum DamageTypes_t : uint
     DMG_DROWNRECOVER = 131072,
     DMG_ACID = 262144,
     DMG_LASTGENERICFLAG = 262144,
-    DMG_HEADSHOT = 524290,
+    DMG_HEADSHOT = 524288,
 }
