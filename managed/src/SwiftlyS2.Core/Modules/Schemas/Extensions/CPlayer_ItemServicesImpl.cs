@@ -41,7 +41,7 @@ internal partial class CPlayer_ItemServicesImpl
     public void GiveItem( string itemDesignerName )
     {
         NativeBinding.ThrowIfNonMainThread();
-        GameFunctions.CCSPlayer_ItemServices_GiveNamedItem(Address, itemDesignerName);
+        _ = GameFunctions.CCSPlayer_ItemServices_GiveNamedItem(Address, itemDesignerName);
     }
 
     public Task GiveItemAsync( string itemDesignerName )

@@ -86,8 +86,8 @@
         "linux": 26
     },
     "CCSPlayer_WeaponServices::SelectWeapon": {
-        "windows": 26,
-        "linux": 27
+        "windows": 27,
+        "linux": 28
     },
     "CPlayer_MovementServices::RunCommand": {
         "windows": 22,
