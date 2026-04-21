@@ -45,21 +45,8 @@ void CEntityListener::OnEntityParentChanged(CEntityInstance* pEntity, CEntityIns
         reinterpret_cast<void(*)(void*, void*)>(g_pOnEntityParentChangedCallback)(pEntity, pNewParent);
 }
 
-void EntityAllowHammerID(CEntityInstance* pEntity)
-{
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    Plat_WriteMemory((*(void***)pEntity)[gamedata->GetOffsets()->Fetch("GetHammerUniqueID")], (uint8_t*)"\xB0\x01", 2);
-}
-
-bool bDone = false;
-
 void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
 {
-    if (!bDone) {
-        bDone = true;
-        EntityAllowHammerID(pEntity);
-    }
-
     g_entitySet.insert(pEntity);
 
     if (g_pOnEntityCreatedCallback)

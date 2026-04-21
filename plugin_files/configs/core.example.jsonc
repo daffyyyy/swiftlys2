@@ -47,7 +47,9 @@
         },
         "ItemsPerPage": 5
     },
-    "PatchesToPerform": [],
+    "PatchesToPerform": [
+        "SetSchemaHammerUniqueId"
+    ],
     "SteamAuth": {
         "AvailableModes": [
             "flexible",
