@@ -30,10 +30,13 @@
 using json = nlohmann::json;
 
 std::map<uint64_t, std::function<void(const std::string&)>> g_ConsoleListeners;
-std::map<std::string, pcre2_code*> g_Filters;
+std::map<uint64_t, pcre2_code*> g_Filters;
 
 bool g_bEnabled = false;
-std::map<std::string, uint64_t> g_FilteredMessages;
+uint64_t g_filterIds = 1;
+
+std::map<uint64_t, std::string> g_FilterNames;
+std::map<uint64_t, uint64_t> g_FilteredMessages;
 
 IFunctionHook* g_CLoggingSystem_LogDirect_Hook = nullptr;
 
@@ -109,8 +112,10 @@ void CConsoleOutput::ReloadFilterConfiguration()
             continue;
         }
 
-        g_Filters.insert({ key, re });
-        g_FilteredMessages.insert({ key, 0 });
+        g_Filters.insert({ g_filterIds, re });
+        g_FilterNames.insert({ g_filterIds, key });
+        g_FilteredMessages.insert({ g_filterIds, 0 });
+        g_filterIds++;
     }
 }
 
@@ -138,7 +143,7 @@ bool CConsoleOutput::NeedsFiltering(const std::string& text)
 
         if (pcre2_match(re, str, len, 0, 0, match_data, nullptr) > 0)
         {
-            const std::string& key = it->first;
+            uint64_t key = it->first;
             g_FilteredMessages[key]++;
             pcre2_match_data_free(match_data);
             return true;
@@ -154,7 +159,7 @@ std::string CConsoleOutput::GetCounterText()
 {
     std::string out;
     for (const auto& [msg, count] : g_FilteredMessages)
-        out += "- " + msg + " -> " + std::to_string(count) + "\n";
+        out += "- " + g_FilterNames[msg] + " -> " + std::to_string(count) + "\n";
 
     return out;
 }
