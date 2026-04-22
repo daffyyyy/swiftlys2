@@ -20,4 +20,6 @@ internal class CMsgOpenCrateImpl : TypedProtobuf<CMsgOpenCrate>, CMsgOpenCrate
     { get => Accessor.GetBool("for_rental"); set => Accessor.SetBool("for_rental", value); }
     public uint PointsRemaining
     { get => Accessor.GetUInt32("points_remaining"); set => Accessor.SetUInt32("points_remaining", value); }
+    public uint VolatileLimit
+    { get => Accessor.GetUInt32("volatile_limit"); set => Accessor.SetUInt32("volatile_limit", value); }
 }

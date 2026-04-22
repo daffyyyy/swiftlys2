@@ -49,4 +49,6 @@ public interface CUserMsg_ParticleManager : ITypedProtobuf<CUserMsg_ParticleMana
     public CUserMsg_ParticleManager_UpdateFan UpdateFan { get; }
     public CUserMsg_ParticleManager_SetParticleClusterGrowth SetParticleClusterGrowth { get; }
     public CUserMsg_ParticleManager_RemoveFan RemoveFan { get; }
+    public CUserMsg_ParticleManager_CreateSmokeGrid CreateSmokeGrid { get; }
+    public CUserMsg_ParticleManager_SetOverrideTexture SetOverrideTexture { get; }
 }

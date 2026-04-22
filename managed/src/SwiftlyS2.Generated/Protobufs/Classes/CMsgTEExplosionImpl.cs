@@ -28,6 +28,8 @@ internal class CMsgTEExplosionImpl : NetMessage<CMsgTEExplosion>, CMsgTEExplosio
     { get => Accessor.GetString("sound_name"); set => Accessor.SetString("sound_name", value); }
     public uint ExplosionType
     { get => Accessor.GetUInt32("explosion_type"); set => Accessor.SetUInt32("explosion_type", value); }
+    public uint ExplosionTypeName
+    { get => Accessor.GetUInt32("explosion_type_name"); set => Accessor.SetUInt32("explosion_type_name", value); }
     public bool CreateDebris
     { get => Accessor.GetBool("create_debris"); set => Accessor.SetBool("create_debris", value); }
     public Vector DebrisOrigin

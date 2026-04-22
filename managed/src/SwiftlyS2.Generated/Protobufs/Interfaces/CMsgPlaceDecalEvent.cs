@@ -25,4 +25,5 @@ public interface CMsgPlaceDecalEvent : ITypedProtobuf<CMsgPlaceDecalEvent>, INet
     public uint Entityhandle { get; set; }
     public ulong MaterialId { get; set; }
     public uint SequenceName { get; set; }
+    public Vector PositionObjectspace { get; set; }
 }

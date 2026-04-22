@@ -14,8 +14,4 @@ internal class CCSPredictionEvent_AddAimPunchImpl : TypedProtobuf<CCSPredictionE
 
     public QAngle PunchAngle
     { get => Accessor.GetQAngle("punch_angle"); set => Accessor.SetQAngle("punch_angle", value); }
-    public uint WhenTick
-    { get => Accessor.GetUInt32("when_tick"); set => Accessor.SetUInt32("when_tick", value); }
-    public float WhenTickFrac
-    { get => Accessor.GetFloat("when_tick_frac"); set => Accessor.SetFloat("when_tick_frac", value); }
 }

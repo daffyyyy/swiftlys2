@@ -89,7 +89,6 @@ public enum ECsgoGCMsg
     k_EMsgGCCStrike15_v2_ClientPerfReport = 9202,
     k_EMsgGCCStrike15_v2_GetEventFavorites_Response = 9203,
     k_EMsgGCCStrike15_v2_ClientRequestSouvenir = 9204,
-    k_EMsgGCCStrike15_v2_ClientReportValidation = 9205,
     k_EMsgGCCStrike15_v2_GC2ClientRefuseSecureMode = 9206,
     k_EMsgGCCStrike15_v2_GC2ClientRequestValidation = 9207,
     k_EMsgGCCStrike15_v2_ClientRedeemMissionReward = 9209,

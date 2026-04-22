@@ -9,6 +9,4 @@ public interface CCSPredictionEvent_AddAimPunch : ITypedProtobuf<CCSPredictionEv
     static CCSPredictionEvent_AddAimPunch ITypedProtobuf<CCSPredictionEvent_AddAimPunch>.Wrap(nint handle, bool isManuallyAllocated) => new CCSPredictionEvent_AddAimPunchImpl(handle, isManuallyAllocated);
 
     public QAngle PunchAngle { get; set; }
-    public uint WhenTick { get; set; }
-    public float WhenTickFrac { get; set; }
 }

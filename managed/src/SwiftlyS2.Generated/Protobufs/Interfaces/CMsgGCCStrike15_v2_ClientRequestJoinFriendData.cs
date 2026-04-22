@@ -14,4 +14,5 @@ public interface CMsgGCCStrike15_v2_ClientRequestJoinFriendData : ITypedProtobuf
     public uint JoinIpp { get; set; }
     public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve Res { get; }
     public string Errormsg { get; set; }
+    public bool IsLocalServer { get; set; }
 }

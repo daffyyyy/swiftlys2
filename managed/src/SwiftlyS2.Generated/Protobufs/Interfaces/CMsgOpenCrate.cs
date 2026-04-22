@@ -12,4 +12,5 @@ public interface CMsgOpenCrate : ITypedProtobuf<CMsgOpenCrate>
     public ulong SubjectItemId { get; set; }
     public bool ForRental { get; set; }
     public uint PointsRemaining { get; set; }
+    public uint VolatileLimit { get; set; }
 }

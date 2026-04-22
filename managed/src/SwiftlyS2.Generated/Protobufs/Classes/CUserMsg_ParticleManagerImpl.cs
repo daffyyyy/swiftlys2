@@ -94,4 +94,8 @@ internal class CUserMsg_ParticleManagerImpl : TypedProtobuf<CUserMsg_ParticleMan
     { get => new CUserMsg_ParticleManager_SetParticleClusterGrowthImpl(NativeNetMessages.GetNestedMessage(Address, "set_particle_cluster_growth"), false); }
     public CUserMsg_ParticleManager_RemoveFan RemoveFan
     { get => new CUserMsg_ParticleManager_RemoveFanImpl(NativeNetMessages.GetNestedMessage(Address, "remove_fan"), false); }
+    public CUserMsg_ParticleManager_CreateSmokeGrid CreateSmokeGrid
+    { get => new CUserMsg_ParticleManager_CreateSmokeGridImpl(NativeNetMessages.GetNestedMessage(Address, "create_smoke_grid"), false); }
+    public CUserMsg_ParticleManager_SetOverrideTexture SetOverrideTexture
+    { get => new CUserMsg_ParticleManager_SetOverrideTextureImpl(NativeNetMessages.GetNestedMessage(Address, "set_override_texture"), false); }
 }

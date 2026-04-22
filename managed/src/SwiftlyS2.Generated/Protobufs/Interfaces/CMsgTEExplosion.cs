@@ -20,6 +20,7 @@ public interface CMsgTEExplosion : ITypedProtobuf<CMsgTEExplosion>, INetMessage<
     public bool AffectRagdolls { get; set; }
     public string SoundName { get; set; }
     public uint ExplosionType { get; set; }
+    public uint ExplosionTypeName { get; set; }
     public bool CreateDebris { get; set; }
     public Vector DebrisOrigin { get; set; }
     public uint DebrisSurfaceprop { get; set; }

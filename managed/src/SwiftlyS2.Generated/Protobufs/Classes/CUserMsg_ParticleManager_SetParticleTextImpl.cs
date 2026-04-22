@@ -14,4 +14,6 @@ internal class CUserMsg_ParticleManager_SetParticleTextImpl : TypedProtobuf<CUse
 
     public string Text
     { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }
+    public bool Localize
+    { get => Accessor.GetBool("localize"); set => Accessor.SetBool("localize", value); }
 }

@@ -24,4 +24,6 @@ internal class CMsgGCCStrike15_v2_ClientRequestJoinFriendDataImpl : TypedProtobu
     { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(Address, "res"), false); }
     public string Errormsg
     { get => Accessor.GetString("errormsg"); set => Accessor.SetString("errormsg", value); }
+    public bool IsLocalServer
+    { get => Accessor.GetBool("is_local_server"); set => Accessor.SetBool("is_local_server", value); }
 }
