@@ -499,7 +499,6 @@ void CPlayer::Think()
     auto pawn = GetPawn();
 
     static auto sdkschema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
-    // static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
 
     if (pawn)
     {
@@ -513,17 +512,22 @@ void CPlayer::Think()
                 uint64_t& newButtons = states[0];
                 if (newButtons != m_uPressedButtons)
                 {
-                    for (int i = 0; i < 64; i++)
+                    if (g_pOnClientKeyStateChangedCallback)
                     {
-                        if ((m_uPressedButtons & (1ULL << i)) == 0 && (newButtons & (1ULL << i)) != 0)
+                        for (int i = 0; i < 64; i++)
                         {
-                            if (g_pOnClientKeyStateChangedCallback)
+                            uint64_t mask = (1ULL << i);
+                            uint64_t oldState = m_uPressedButtons & mask;
+                            uint64_t newState = newButtons & mask;
+
+                            if (oldState == 0 && newState != 0)
+                            {
                                 reinterpret_cast<void (*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, true);
-                        }
-                        else if ((m_uPressedButtons & (1ULL << i)) != 0 && (newButtons & (1ULL << i)) == 0)
-                        {
-                            if (g_pOnClientKeyStateChangedCallback)
+                            }
+                            else if (oldState != 0 && newState == 0)
+                            {
                                 reinterpret_cast<void (*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, false);
+                            }
                         }
                     }
 
@@ -531,13 +535,6 @@ void CPlayer::Think()
                 }
             }
         }
-
-        // auto& observerServices = *(void**)sdkschema->GetPropPtr(pawn, 14568842447348147577); // CBasePlayerPawn::m_pObserverServices
-        // if (observerServices)
-        // {
-        //     CHandle<CEntityInstance>& observerTarget = *(CHandle<CEntityInstance>*)sdkschema->GetPropPtr(observerServices, 1590106406667131980); // CPlayer_ObserverServices::m_hObserverTarget
-        //     vgui->CheckRenderForPlayer(this, observerTarget);
-        // }
     }
 }
 

@@ -23,7 +23,6 @@
 #include <engine/convars/convars.h>
 #include <engine/entities/entitysystem.h>
 #include <engine/gameevents/gameevents.h>
-#include <engine/vgui/vgui.h>
 #include <engine/voicemanager/voicemanager.h>
 
 #include <memory/allocator/allocator.h>
@@ -66,7 +65,6 @@ CDatabaseManager g_DatabaseManager;
 CTranslations g_Translations;
 CServerCommands g_ServerCommands;
 CNetMessages g_NetMessages;
-CVGUI g_VGUI;
 CConsoleOutput g_ConsoleOutput;
 
 static const std::map<std::string, void*> g_Interfaces = {
@@ -88,7 +86,6 @@ static const std::map<std::string, void*> g_Interfaces = {
     {TRANSLATIONS_INTERFACE_VERSION, &g_Translations},
     {SERVERCOMMANDS_INTERFACE_VERSION, &g_ServerCommands},
     {NETMESSAGES_INTERFACE_VERSION, &g_NetMessages},
-    {VGUI_INTERFACE_VERSION, &g_VGUI},
     {CONSOLEOUTPUT_INTERFACE_VERSION, &g_ConsoleOutput},
 };
 

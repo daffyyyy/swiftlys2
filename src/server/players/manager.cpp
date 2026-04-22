@@ -266,7 +266,6 @@ void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last)
     reinterpret_cast<decltype(&OnGameFramePlayerHook)>(g_pOnGameFramePlayerHook->GetOriginal())(_this, simulate, first, last);
 
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-    static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
 
     if (g_pOnGameTickCallback)
         reinterpret_cast<void (*)(bool, bool, bool)>(g_pOnGameTickCallback)(simulate, first, last);
@@ -276,9 +275,6 @@ void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last)
         auto player = playermanager->GetPlayer(i);
         if (player) player->Think();
     }
-
-    // Disabled due to not being used
-    // vgui->Update();
 }
 
 extern void* g_pOnClientConnectCallback;
@@ -288,7 +284,6 @@ bool ClientConnectHook(void* _this, CPlayerSlot slot, const char* pszName, uint6
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
     auto player = playermanager->RegisterPlayer(playerid);
-    // player->Initialize(playerid);
     if (!player)
     {
         return false;
@@ -379,12 +374,8 @@ void CPlayerManager::UnregisterPlayer(int playerid)
     if (g_Players[playerid] == nullptr)
         return;
 
-    static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
-
     auto player = g_Players[playerid];
     g_Players[playerid] = nullptr;
-
-    // vgui->UnregisterForPlayer(player);
 
     player->Shutdown();
     delete player;
@@ -430,14 +421,14 @@ extern bool bypassPostEventAbstractHook;
 
 void CPlayerManager::SendMsg(MessageType type, const std::string& message, int duration)
 {
-    if(type == MessageType::CenterHTML)
+    if (type == MessageType::CenterHTML)
     {
         for (int i = 0; i < g_SwiftlyCore.GetMaxGameClients(); i++)
         {
             IPlayer* player = GetPlayer(i);
             if (player) player->SendMsg(type, message, duration);
         }
-    } 
+    }
     else {
         auto msg = RemoveHtmlTags(message);
         if (type == MessageType::Console)

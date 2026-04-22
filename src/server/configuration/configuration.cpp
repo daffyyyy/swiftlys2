@@ -500,9 +500,6 @@ bool Configuration::Load()
 
         RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.ItemsPerPage", 5);
 
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "VGUI.TextBackground.PaddingX", 0.1);
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "VGUI.TextBackground.PaddingY", 0.1);
-
         RegisterConfiguration(wasEdited, config_json, "core", "core", "SteamAuth.Mode", "flexible");
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "SteamAuth.AvailableModes", { "flexible", "strict" }, true, " ");
 

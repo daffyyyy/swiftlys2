@@ -57,12 +57,5 @@
         ],
         "Mode": "flexible"
     },
-    "UsePlayerLanguage": true,
-    "VGUI": {
-        "TextBackground": {
-            "PaddingX": 0.1,
-            "PaddingY": 0.1,
-            "TextSize": 35
-        }
-    }
+    "UsePlayerLanguage": true
 }
