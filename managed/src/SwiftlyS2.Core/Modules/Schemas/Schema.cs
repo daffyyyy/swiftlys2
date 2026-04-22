@@ -52,9 +52,18 @@ internal static class Schema
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static nint GetOffset( ulong hash )
     {
-        return isFollowingServerGuidelines && dangerousFields.Contains(hash)
-            ? throw new InvalidOperationException($"Cannot get or set 0x{hash:X16} while \"FollowCS2ServerGuidelines\" is enabled.\n\tTo use this operation, disable the option in core.jsonc.")
-            : NativeSchema.GetOffset(hash);
+        if (isFollowingServerGuidelines && dangerousFields.Contains(hash))
+        {
+            throw new InvalidOperationException($"Cannot get or set 0x{hash:X16} while \"FollowCS2ServerGuidelines\" is enabled.\n\tTo use this operation, disable the option in core.jsonc.");
+        }
+
+        var fieldOffset = NativeSchema.GetOffset(hash);
+        if (fieldOffset == -1)
+        {
+            throw new InvalidOperationException($"Field with hash 0x{hash:X16} ({hash}) not found in schema.");
+        }
+
+        return fieldOffset;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

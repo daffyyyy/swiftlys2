@@ -325,7 +325,7 @@ int32_t CSDKSchema::GetOffset(const char* sClassName, const char* sMemberName)
 int32_t CSDKSchema::GetOffset(uint64_t uHash)
 {
     auto it = offsets.find(uHash);
-    if (it == offsets.end()) return 0;
+    if (it == offsets.end()) return -1;
     else return it->second.m_uOffset;
 }
 
