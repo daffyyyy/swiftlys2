@@ -200,6 +200,14 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
                 logger->Warning("Patching", fmt::format("Couldn't find patch: {}\n", patch));
             }
         }
+
+        if (gamedata->GetPatches()->Exists("SetSchemaHammerUniqueId")) {
+            gamedata->GetPatches()->Apply("SetSchemaHammerUniqueId");
+            logger->Info("Patching", "Applied patch: SetSchemaHammerUniqueId\n");
+        }
+        else {
+            logger->Warning("Patching", "Couldn't find patch: SetSchemaHammerUniqueId\n");
+        }
     }
 
     auto consoleoutput = g_ifaceService.FetchInterface<IConsoleOutput>(CONSOLEOUTPUT_INTERFACE_VERSION);
