@@ -162,12 +162,13 @@ void GameDataPatches::Apply(const std::string& name)
     if (!m_mOriginalBytes.contains(name)) {
         m_mOriginalBytes.insert({ name, {} });
         uint8_t* originalBytes = (uint8_t*)signaturePtr;
-        for (int i = 0; i < patchBytes.size(); i++)
+        for (int i = 0; i < length; i++) {
             m_mOriginalBytes[name].push_back(originalBytes[i]);
+        }
     }
 
-    Plat_WriteMemory(signaturePtr, patchBytes.data(), patchBytes.size());
-    logger->Info("GameData", fmt::format("Applied patch '{}' (signature='{}', bytes={:02}).\n", name, signature, patchBytes.size()));
+    Plat_WriteMemory(signaturePtr, patchBytes.data(), length);
+    logger->Info("GameData", fmt::format("Applied patch '{}' (signature='{}', bytes_count={:02}).\n", name, signature, length));
 }
 
 void GameDataPatches::Revert(const std::string& name)
@@ -195,5 +196,5 @@ void GameDataPatches::Revert(const std::string& name)
     Plat_WriteMemory(signaturePtr, m_mOriginalBytes[name].data(), m_mOriginalBytes[name].size());
 
     m_mOriginalBytes[name].clear();
-    logger->Info("GameData", fmt::format("Reverted patch '{}' (signature='{}', bytes={:02}).\n", name, m_mPatches[name].second, m_mOriginalBytes[name].size()));
+    logger->Info("GameData", fmt::format("Reverted patch '{}' (signature='{}', bytes_count={:02}).\n", name, m_mPatches[name].second, m_mOriginalBytes[name].size()));
 }
