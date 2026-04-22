@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlayerPawn>
 {
     static CCSPlayerPawn ISchemaClass<CCSPlayerPawn>.From(nint handle) => new CCSPlayerPawnImpl(handle);
-    static int ISchemaClass<CCSPlayerPawn>.Size => 5072;
+    static int ISchemaClass<CCSPlayerPawn>.Size => 5024;
     static string? ISchemaClass<CCSPlayerPawn>.ClassName => "player";
 
 
@@ -22,6 +22,8 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public CCSPlayer_BuyServices? BuyServices { get; }
 
     public CCSPlayer_ActionTrackingServices? ActionTrackingServices { get; }
+
+    public CCSPlayer_AimPunchServices? AimPunchServices { get; }
 
     public CCSPlayer_RadioServices? RadioServices { get; }
 
@@ -64,16 +66,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public GameTime_t HealthShotBoostExpirationTime { get; }
 
     public ref float LandingTimeSeconds { get; }
-
-    public ref QAngle AimPunchAngle { get; }
-
-    public ref QAngle AimPunchAngleVel { get; }
-
-    public GameTick_t AimPunchTickBase { get; }
-
-    public ref float AimPunchTickFraction { get; }
-
-    public ref CUtlVector<QAngle> AimPunchCache { get; }
 
     public ref bool IsBuyMenuOpen { get; }
 
@@ -243,6 +235,7 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public void HostageServicesUpdated();
     public void BuyServicesUpdated();
     public void ActionTrackingServicesUpdated();
+    public void AimPunchServicesUpdated();
     public void HasFemaleVoiceUpdated();
     public void LastPlaceNameUpdated();
     public void InBuyZoneUpdated();
@@ -255,10 +248,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
     public void RetakesMVPBoostItemUpdated();
     public void RetakesMVPBoostExtraUtilityUpdated();
     public void HealthShotBoostExpirationTimeUpdated();
-    public void AimPunchAngleUpdated();
-    public void AimPunchAngleVelUpdated();
-    public void AimPunchTickBaseUpdated();
-    public void AimPunchTickFractionUpdated();
     public void IsBuyMenuOpenUpdated();
     public void TimeOfLastInjuryUpdated();
     public void NextSprayDecalTimeUpdated();

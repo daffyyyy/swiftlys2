@@ -31,7 +31,7 @@ public partial interface CNmTwoBoneIKTask : CNmPoseTask, ISchemaClass<CNmTwoBone
 
     public ref bool IsRunningFromDeserializedData { get; }
 
-    public ref float ReferencePoseTwistWeight { get; }
+    public ref float ChainRotationWeight { get; }
 
     public ref CGlobalSymbol DebugEffectorBoneID { get; }
 

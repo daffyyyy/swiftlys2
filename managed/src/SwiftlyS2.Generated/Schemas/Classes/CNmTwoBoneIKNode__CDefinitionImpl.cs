@@ -76,14 +76,14 @@ internal partial class CNmTwoBoneIKNode__CDefinitionImpl : CNmPassthroughNode__C
             return ref _Handle.AsRef<bool>(_IsTargetInWorldSpaceOffset!.Value);
         }
     }
-    private static nint? _ReferencePoseTwistWeightOffset;
+    private static nint? _ChainRotationWeightOffset;
 
-    public ref float ReferencePoseTwistWeight
+    public ref float ChainRotationWeight
     {
         get
         {
-            _ReferencePoseTwistWeightOffset = _ReferencePoseTwistWeightOffset ?? Schema.GetOffset(0x4D36C61F07335404);
-            return ref _Handle.AsRef<float>(_ReferencePoseTwistWeightOffset!.Value);
+            _ChainRotationWeightOffset = _ChainRotationWeightOffset ?? Schema.GetOffset(0x4D36C61F2BCFB44A);
+            return ref _Handle.AsRef<float>(_ChainRotationWeightOffset!.Value);
         }
     }
 

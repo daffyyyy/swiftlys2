@@ -266,6 +266,26 @@ internal partial class CCSWeaponBaseVDataImpl : CBasePlayerWeaponVDataImpl, CCSW
             return new CFiringModeFloatImpl(_Handle + _CycleTimeOffset!.Value);
         }
     }
+    private static nint? _CycleTimeWhenInBurstModeOffset;
+
+    public ref float CycleTimeWhenInBurstMode
+    {
+        get
+        {
+            _CycleTimeWhenInBurstModeOffset = _CycleTimeWhenInBurstModeOffset ?? Schema.GetOffset(0x62FB7705003EA9C2);
+            return ref _Handle.AsRef<float>(_CycleTimeWhenInBurstModeOffset!.Value);
+        }
+    }
+    private static nint? _TimeBetweenBurstShotsOffset;
+
+    public ref float TimeBetweenBurstShots
+    {
+        get
+        {
+            _TimeBetweenBurstShotsOffset = _TimeBetweenBurstShotsOffset ?? Schema.GetOffset(0x62FB7705387848ED);
+            return ref _Handle.AsRef<float>(_TimeBetweenBurstShotsOffset!.Value);
+        }
+    }
     private static nint? _MaxSpeedOffset;
 
     public CFiringModeFloat MaxSpeed

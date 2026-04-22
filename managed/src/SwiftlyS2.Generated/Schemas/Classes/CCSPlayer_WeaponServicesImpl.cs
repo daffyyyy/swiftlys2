@@ -26,26 +26,6 @@ internal partial class CCSPlayer_WeaponServicesImpl : CPlayer_WeaponServicesImpl
             return new GameTime_tImpl(_Handle + _NextAttackOffset!.Value);
         }
     }
-    private static nint? _IsLookingAtWeaponOffset;
-
-    public ref bool IsLookingAtWeapon
-    {
-        get
-        {
-            _IsLookingAtWeaponOffset = _IsLookingAtWeaponOffset ?? Schema.GetOffset(0x13067CB223393CBF);
-            return ref _Handle.AsRef<bool>(_IsLookingAtWeaponOffset!.Value);
-        }
-    }
-    private static nint? _IsHoldingLookAtWeaponOffset;
-
-    public ref bool IsHoldingLookAtWeapon
-    {
-        get
-        {
-            _IsHoldingLookAtWeaponOffset = _IsHoldingLookAtWeaponOffset ?? Schema.GetOffset(0x13067CB2AF0F7486);
-            return ref _Handle.AsRef<bool>(_IsHoldingLookAtWeaponOffset!.Value);
-        }
-    }
     private static nint? _SavedWeaponOffset;
 
     public ref CHandle<CBasePlayerWeapon> SavedWeapon
@@ -168,8 +148,6 @@ internal partial class CCSPlayer_WeaponServicesImpl : CPlayer_WeaponServicesImpl
     }
 
     public void NextAttackUpdated() => Schema.Update(_Handle, 0x13067CB23DFDCDEA);
-    public void IsLookingAtWeaponUpdated() => Schema.Update(_Handle, 0x13067CB223393CBF);
-    public void IsHoldingLookAtWeaponUpdated() => Schema.Update(_Handle, 0x13067CB2AF0F7486);
     public void NetworkAnimTimingUpdated() => Schema.Update(_Handle, 0x13067CB253AFB9FA);
     public void BlockInspectUntilNextGraphUpdateUpdated() => Schema.Update(_Handle, 0x13067CB2029ABB28);
 }

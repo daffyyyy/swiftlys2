@@ -60,6 +60,17 @@ internal partial class CCSPlayerPawnImpl : CCSPlayerPawnBaseImpl, CCSPlayerPawn
             return ptr.IsValidPtr() ? new CCSPlayer_ActionTrackingServicesImpl(ptr) : null;
         }
     }
+    private static nint? _AimPunchServicesOffset;
+
+    public CCSPlayer_AimPunchServices? AimPunchServices
+    {
+        get
+        {
+            _AimPunchServicesOffset = _AimPunchServicesOffset ?? Schema.GetOffset(0xC7614AAB268624B4);
+            var ptr = _Handle.Read<nint>(_AimPunchServicesOffset!.Value);
+            return ptr.IsValidPtr() ? new CCSPlayer_AimPunchServicesImpl(ptr) : null;
+        }
+    }
     private static nint? _RadioServicesOffset;
 
     public CCSPlayer_RadioServices? RadioServices
@@ -280,56 +291,6 @@ internal partial class CCSPlayerPawnImpl : CCSPlayerPawnBaseImpl, CCSPlayerPawn
         {
             _LandingTimeSecondsOffset = _LandingTimeSecondsOffset ?? Schema.GetOffset(0xC7614AAB7D39AEE4);
             return ref _Handle.AsRef<float>(_LandingTimeSecondsOffset!.Value);
-        }
-    }
-    private static nint? _AimPunchAngleOffset;
-
-    public ref QAngle AimPunchAngle
-    {
-        get
-        {
-            _AimPunchAngleOffset = _AimPunchAngleOffset ?? Schema.GetOffset(0xC7614AAB1E948CB9);
-            return ref _Handle.AsRef<QAngle>(_AimPunchAngleOffset!.Value);
-        }
-    }
-    private static nint? _AimPunchAngleVelOffset;
-
-    public ref QAngle AimPunchAngleVel
-    {
-        get
-        {
-            _AimPunchAngleVelOffset = _AimPunchAngleVelOffset ?? Schema.GetOffset(0xC7614AABB30DE0EC);
-            return ref _Handle.AsRef<QAngle>(_AimPunchAngleVelOffset!.Value);
-        }
-    }
-    private static nint? _AimPunchTickBaseOffset;
-
-    public GameTick_t AimPunchTickBase
-    {
-        get
-        {
-            _AimPunchTickBaseOffset = _AimPunchTickBaseOffset ?? Schema.GetOffset(0xC7614AABB9C874A2);
-            return new GameTick_tImpl(_Handle + _AimPunchTickBaseOffset!.Value);
-        }
-    }
-    private static nint? _AimPunchTickFractionOffset;
-
-    public ref float AimPunchTickFraction
-    {
-        get
-        {
-            _AimPunchTickFractionOffset = _AimPunchTickFractionOffset ?? Schema.GetOffset(0xC7614AAB90BE3E69);
-            return ref _Handle.AsRef<float>(_AimPunchTickFractionOffset!.Value);
-        }
-    }
-    private static nint? _AimPunchCacheOffset;
-
-    public ref CUtlVector<QAngle> AimPunchCache
-    {
-        get
-        {
-            _AimPunchCacheOffset = _AimPunchCacheOffset ?? Schema.GetOffset(0xC7614AAB824312D8);
-            return ref _Handle.AsRef<CUtlVector<QAngle>>(_AimPunchCacheOffset!.Value);
         }
     }
     private static nint? _IsBuyMenuOpenOffset;
@@ -1139,6 +1100,7 @@ internal partial class CCSPlayerPawnImpl : CCSPlayerPawnBaseImpl, CCSPlayerPawn
     public void HostageServicesUpdated() => Schema.Update(_Handle, 0xC7614AAB63EBD1D8);
     public void BuyServicesUpdated() => Schema.Update(_Handle, 0xC7614AAB807A410D);
     public void ActionTrackingServicesUpdated() => Schema.Update(_Handle, 0xC7614AABB8174144);
+    public void AimPunchServicesUpdated() => Schema.Update(_Handle, 0xC7614AAB268624B4);
     public void HasFemaleVoiceUpdated() => Schema.Update(_Handle, 0xC7614AAB7E7752FF);
     public void LastPlaceNameUpdated() => Schema.Update(_Handle, 0xC7614AAB4C28E3A0);
     public void InBuyZoneUpdated() => Schema.Update(_Handle, 0xC7614AAB3AC1BD10);
@@ -1151,10 +1113,6 @@ internal partial class CCSPlayerPawnImpl : CCSPlayerPawnBaseImpl, CCSPlayerPawn
     public void RetakesMVPBoostItemUpdated() => Schema.Update(_Handle, 0xC7614AABEC8D220C);
     public void RetakesMVPBoostExtraUtilityUpdated() => Schema.Update(_Handle, 0xC7614AABADA37062);
     public void HealthShotBoostExpirationTimeUpdated() => Schema.Update(_Handle, 0xC7614AABEC487ACC);
-    public void AimPunchAngleUpdated() => Schema.Update(_Handle, 0xC7614AAB1E948CB9);
-    public void AimPunchAngleVelUpdated() => Schema.Update(_Handle, 0xC7614AABB30DE0EC);
-    public void AimPunchTickBaseUpdated() => Schema.Update(_Handle, 0xC7614AABB9C874A2);
-    public void AimPunchTickFractionUpdated() => Schema.Update(_Handle, 0xC7614AAB90BE3E69);
     public void IsBuyMenuOpenUpdated() => Schema.Update(_Handle, 0xC7614AABFBCDD8EC);
     public void TimeOfLastInjuryUpdated() => Schema.Update(_Handle, 0xC7614AABD7B4663C);
     public void NextSprayDecalTimeUpdated() => Schema.Update(_Handle, 0xC7614AAB53790011);

@@ -479,6 +479,7 @@ internal static class ClassConvertor
             "env_tonemap_controller2" => new CTonemapController2Impl(address),
             "info_hostage_spawn" => new CHostageImpl(address),
             "item_defuser" => new CItemDefuserImpl(address),
+            "prop_door_rotating" => new CPropDoorRotatingImpl(address),
             _ => new CEntityInstanceImpl(address),
         };
     }

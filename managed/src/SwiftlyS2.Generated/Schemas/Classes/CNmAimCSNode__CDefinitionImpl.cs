@@ -56,14 +56,14 @@ internal partial class CNmAimCSNode__CDefinitionImpl : CNmPassthroughNode__CDefi
             return ref _Handle.AsRef<short>(_WeaponTypeNodeIdxOffset!.Value);
         }
     }
-    private static nint? _IsWeaponActionActiveNodeIdxOffset;
+    private static nint? _WeaponActionNodeIdxOffset;
 
-    public ref short IsWeaponActionActiveNodeIdx
+    public ref short WeaponActionNodeIdx
     {
         get
         {
-            _IsWeaponActionActiveNodeIdxOffset = _IsWeaponActionActiveNodeIdxOffset ?? Schema.GetOffset(0xE1CD14C25E2B07E4);
-            return ref _Handle.AsRef<short>(_IsWeaponActionActiveNodeIdxOffset!.Value);
+            _WeaponActionNodeIdxOffset = _WeaponActionNodeIdxOffset ?? Schema.GetOffset(0xE1CD14C21E89B1E6);
+            return ref _Handle.AsRef<short>(_WeaponActionNodeIdxOffset!.Value);
         }
     }
     private static nint? _WeaponDropNodeIdxOffset;
@@ -76,14 +76,14 @@ internal partial class CNmAimCSNode__CDefinitionImpl : CNmPassthroughNode__CDefi
             return ref _Handle.AsRef<short>(_WeaponDropNodeIdxOffset!.Value);
         }
     }
-    private static nint? _DisableHandIKNodeIdxOffset;
+    private static nint? _IsDefusingNodeIdxOffset;
 
-    public ref short DisableHandIKNodeIdx
+    public ref short IsDefusingNodeIdx
     {
         get
         {
-            _DisableHandIKNodeIdxOffset = _DisableHandIKNodeIdxOffset ?? Schema.GetOffset(0xE1CD14C2FA68B861);
-            return ref _Handle.AsRef<short>(_DisableHandIKNodeIdxOffset!.Value);
+            _IsDefusingNodeIdxOffset = _IsDefusingNodeIdxOffset ?? Schema.GetOffset(0xE1CD14C22EF39CB7);
+            return ref _Handle.AsRef<short>(_IsDefusingNodeIdxOffset!.Value);
         }
     }
     private static nint? _CrouchWeightNodeIdxOffset;
@@ -114,6 +114,16 @@ internal partial class CNmAimCSNode__CDefinitionImpl : CNmPassthroughNode__CDefi
         {
             _ActionBlendTimeSecondsOffset = _ActionBlendTimeSecondsOffset ?? Schema.GetOffset(0xE1CD14C2E3226BAE);
             return ref _Handle.AsRef<float>(_ActionBlendTimeSecondsOffset!.Value);
+        }
+    }
+    private static nint? _PlantingBlendTimeSecondsOffset;
+
+    public ref float PlantingBlendTimeSeconds
+    {
+        get
+        {
+            _PlantingBlendTimeSecondsOffset = _PlantingBlendTimeSecondsOffset ?? Schema.GetOffset(0xE1CD14C27FD19463);
+            return ref _Handle.AsRef<float>(_PlantingBlendTimeSecondsOffset!.Value);
         }
     }
 

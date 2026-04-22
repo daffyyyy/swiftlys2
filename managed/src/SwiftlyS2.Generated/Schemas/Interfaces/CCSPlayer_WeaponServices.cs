@@ -11,15 +11,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_WeaponServices : CPlayer_WeaponServices, ISchemaClass<CCSPlayer_WeaponServices>
 {
     static CCSPlayer_WeaponServices ISchemaClass<CCSPlayer_WeaponServices>.From(nint handle) => new CCSPlayer_WeaponServicesImpl(handle);
-    static int ISchemaClass<CCSPlayer_WeaponServices>.Size => 6280;
+    static int ISchemaClass<CCSPlayer_WeaponServices>.Size => 6272;
     static string? ISchemaClass<CCSPlayer_WeaponServices>.ClassName => null;
 
 
     public GameTime_t NextAttack { get; }
-
-    public ref bool IsLookingAtWeapon { get; }
-
-    public ref bool IsHoldingLookAtWeapon { get; }
 
     public ref CHandle<CBasePlayerWeapon> SavedWeapon { get; }
 
@@ -46,8 +42,6 @@ public partial interface CCSPlayer_WeaponServices : CPlayer_WeaponServices, ISch
     public ref bool BlockInspectUntilNextGraphUpdate { get; }
 
     public void NextAttackUpdated();
-    public void IsLookingAtWeaponUpdated();
-    public void IsHoldingLookAtWeaponUpdated();
     public void NetworkAnimTimingUpdated();
     public void BlockInspectUntilNextGraphUpdateUpdated();
 }

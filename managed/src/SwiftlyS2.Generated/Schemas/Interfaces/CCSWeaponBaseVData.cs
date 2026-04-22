@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSWeaponBaseVData : CBasePlayerWeaponVData, ISchemaClass<CCSWeaponBaseVData>
 {
     static CCSWeaponBaseVData ISchemaClass<CCSWeaponBaseVData>.From(nint handle) => new CCSWeaponBaseVDataImpl(handle);
-    static int ISchemaClass<CCSWeaponBaseVData>.Size => 2208;
+    static int ISchemaClass<CCSWeaponBaseVData>.Size => 2216;
     static string? ISchemaClass<CCSWeaponBaseVData>.ClassName => null;
 
 
@@ -66,6 +66,10 @@ public partial interface CCSWeaponBaseVData : CBasePlayerWeaponVData, ISchemaCla
     public ref bool ReloadsSingleShells { get; }
 
     public CFiringModeFloat CycleTime { get; }
+
+    public ref float CycleTimeWhenInBurstMode { get; }
+
+    public ref float TimeBetweenBurstShots { get; }
 
     public CFiringModeFloat MaxSpeed { get; }
 

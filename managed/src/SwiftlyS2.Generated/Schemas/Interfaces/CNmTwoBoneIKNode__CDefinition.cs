@@ -27,7 +27,7 @@ public partial interface CNmTwoBoneIKNode__CDefinition : CNmPassthroughNode__CDe
 
     public ref bool IsTargetInWorldSpace { get; }
 
-    public ref float ReferencePoseTwistWeight { get; }
+    public ref float ChainRotationWeight { get; }
 
 
 }

@@ -11,15 +11,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCS2PawnGraphController : CCS2WeaponGraphController, ISchemaClass<CCS2PawnGraphController>
 {
     static CCS2PawnGraphController ISchemaClass<CCS2PawnGraphController>.From(nint handle) => new CCS2PawnGraphControllerImpl(handle);
-    static int ISchemaClass<CCS2PawnGraphController>.Size => 2232;
+    static int ISchemaClass<CCS2PawnGraphController>.Size => 2112;
     static string? ISchemaClass<CCS2PawnGraphController>.ClassName => null;
 
-
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField IsDead { get; }
-
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField IsCT { get; }
 
     // CAnimGraph2ParamOptionalRef< bool >
     public SchemaUntypedField IsDefusing { get; }
@@ -41,15 +35,6 @@ public partial interface CCS2PawnGraphController : CCS2WeaponGraphController, IS
 
     // CAnimGraph2ParamOptionalRef< float32 >
     public SchemaUntypedField PreviousMoveSpeedHorizontal { get; }
-
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField MoveSpeedVertical { get; }
-
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField MoveDirectionAngle { get; }
-
-    // CAnimGraph2ParamOptionalRef< Vector >
-    public SchemaUntypedField MoveDirection { get; }
 
     // CAnimGraph2ParamOptionalRef< float32 >
     public SchemaUntypedField CrouchAmount { get; }

@@ -526,6 +526,16 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
             return new GameTime_tImpl(_Handle + _GtLastTimeInAirOffset!.Value);
         }
     }
+    private static nint? _HasEverProcessedCommandOffset;
+
+    public ref bool HasEverProcessedCommand
+    {
+        get
+        {
+            _HasEverProcessedCommandOffset = _HasEverProcessedCommandOffset ?? Schema.GetOffset(0xD20D9A037B4A289E);
+            return ref _Handle.AsRef<bool>(_HasEverProcessedCommandOffset!.Value);
+        }
+    }
 
     public void LadderSurfacePropIndexUpdated() => Schema.Update(_Handle, 0xD20D9A03149CA20B);
     public void DuckedUpdated() => Schema.Update(_Handle, 0xD20D9A0314A05A59);
@@ -554,4 +564,5 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
     public void WasSurfingUpdated() => Schema.Update(_Handle, 0xD20D9A03C30201EE);
     public void GtLastTimeOnStaticWorldGroundUpdated() => Schema.Update(_Handle, 0xD20D9A03ED4E834B);
     public void GtLastTimeInAirUpdated() => Schema.Update(_Handle, 0xD20D9A03AE6AF69C);
+    public void HasEverProcessedCommandUpdated() => Schema.Update(_Handle, 0xD20D9A037B4A289E);
 }

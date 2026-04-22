@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, ISchemaClass<CCSPlayer_MovementServices>
 {
     static CCSPlayer_MovementServices ISchemaClass<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
-    static int ISchemaClass<CCSPlayer_MovementServices>.Size => 4032;
+    static int ISchemaClass<CCSPlayer_MovementServices>.Size => 4048;
     static string? ISchemaClass<CCSPlayer_MovementServices>.ClassName => null;
 
 
@@ -117,6 +117,8 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
 
     public GameTime_t GtLastTimeInAir { get; }
 
+    public ref bool HasEverProcessedCommand { get; }
+
     public void LadderSurfacePropIndexUpdated();
     public void DuckedUpdated();
     public void DuckAmountUpdated();
@@ -144,4 +146,5 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
     public void WasSurfingUpdated();
     public void GtLastTimeOnStaticWorldGroundUpdated();
     public void GtLastTimeInAirUpdated();
+    public void HasEverProcessedCommandUpdated();
 }

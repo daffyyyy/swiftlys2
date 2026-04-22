@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefinition, ISchemaClass<CNmAimCSNode__CDefinition>
 {
     static CNmAimCSNode__CDefinition ISchemaClass<CNmAimCSNode__CDefinition>.From(nint handle) => new CNmAimCSNode__CDefinitionImpl(handle);
-    static int ISchemaClass<CNmAimCSNode__CDefinition>.Size => 48;
+    static int ISchemaClass<CNmAimCSNode__CDefinition>.Size => 56;
     static string? ISchemaClass<CNmAimCSNode__CDefinition>.ClassName => null;
 
 
@@ -23,17 +23,19 @@ public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefini
 
     public ref short WeaponTypeNodeIdx { get; }
 
-    public ref short IsWeaponActionActiveNodeIdx { get; }
+    public ref short WeaponActionNodeIdx { get; }
 
     public ref short WeaponDropNodeIdx { get; }
 
-    public ref short DisableHandIKNodeIdx { get; }
+    public ref short IsDefusingNodeIdx { get; }
 
     public ref short CrouchWeightNodeIdx { get; }
 
     public ref float HandIKBlendInTimeSeconds { get; }
 
     public ref float ActionBlendTimeSeconds { get; }
+
+    public ref float PlantingBlendTimeSeconds { get; }
 
 
 }

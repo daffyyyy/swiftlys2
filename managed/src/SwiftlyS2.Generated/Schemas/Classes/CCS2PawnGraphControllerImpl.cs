@@ -16,26 +16,6 @@ internal partial class CCS2PawnGraphControllerImpl : CCS2WeaponGraphControllerIm
 {
     public CCS2PawnGraphControllerImpl(nint handle) : base(handle) { }
 
-    private static nint? _IsDeadOffset;
-
-    public SchemaUntypedField IsDead
-    {
-        get
-        {
-            _IsDeadOffset = _IsDeadOffset ?? Schema.GetOffset(0x716A0F88A7C73DB7);
-            return new SchemaUntypedField(_Handle + _IsDeadOffset!.Value);
-        }
-    }
-    private static nint? _IsCTOffset;
-
-    public SchemaUntypedField IsCT
-    {
-        get
-        {
-            _IsCTOffset = _IsCTOffset ?? Schema.GetOffset(0x716A0F884D7EBE62);
-            return new SchemaUntypedField(_Handle + _IsCTOffset!.Value);
-        }
-    }
     private static nint? _IsDefusingOffset;
 
     public SchemaUntypedField IsDefusing
@@ -104,36 +84,6 @@ internal partial class CCS2PawnGraphControllerImpl : CCS2WeaponGraphControllerIm
         {
             _PreviousMoveSpeedHorizontalOffset = _PreviousMoveSpeedHorizontalOffset ?? Schema.GetOffset(0x716A0F882894FBA6);
             return new SchemaUntypedField(_Handle + _PreviousMoveSpeedHorizontalOffset!.Value);
-        }
-    }
-    private static nint? _MoveSpeedVerticalOffset;
-
-    public SchemaUntypedField MoveSpeedVertical
-    {
-        get
-        {
-            _MoveSpeedVerticalOffset = _MoveSpeedVerticalOffset ?? Schema.GetOffset(0x716A0F886267305F);
-            return new SchemaUntypedField(_Handle + _MoveSpeedVerticalOffset!.Value);
-        }
-    }
-    private static nint? _MoveDirectionAngleOffset;
-
-    public SchemaUntypedField MoveDirectionAngle
-    {
-        get
-        {
-            _MoveDirectionAngleOffset = _MoveDirectionAngleOffset ?? Schema.GetOffset(0x716A0F8893D91D4A);
-            return new SchemaUntypedField(_Handle + _MoveDirectionAngleOffset!.Value);
-        }
-    }
-    private static nint? _MoveDirectionOffset;
-
-    public SchemaUntypedField MoveDirection
-    {
-        get
-        {
-            _MoveDirectionOffset = _MoveDirectionOffset ?? Schema.GetOffset(0x716A0F88622E5F59);
-            return new SchemaUntypedField(_Handle + _MoveDirectionOffset!.Value);
         }
     }
     private static nint? _CrouchAmountOffset;

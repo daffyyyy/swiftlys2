@@ -19,7 +19,7 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
 
     public ExternalAnimGraphHandle_t NextExternalGraphHandle { get; }
 
-    public ref CUtlVector<CGlobalSymbol> SecondarySkeletonNames { get; }
+    public ref CUtlVector<CGlobalSymbol> SecondarySkeletonSlotIDs { get; }
 
     public ref CUtlVector<CHandle<CBaseAnimGraph>> SecondarySkeletons { get; }
 
@@ -53,11 +53,11 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
 
     public ref CStrongHandle<InfoForResourceTypeCNmGraphDefinition> GraphDefinitionAG2 { get; }
 
-    public ref CUtlVector<AnimGraph2SerializedPoseRecipe_t> SerializePoseRecipeAG2Slots { get; }
+    public ref CUtlVector<AnimGraph2SerializedPoseRecipeSlot_t> SerializePoseRecipeAG2Slots { get; }
 
     public ref CUtlVector<byte> SerializePoseRecipeAG2Dynamic { get; }
 
-    public ref ushort SerializePoseRecipeAG2ActiveSlot { get; }
+    public ref uint SerializePoseRecipeAG2ActiveSlot { get; }
 
     public ref int SerializePoseRecipeVersionAG2 { get; }
 
@@ -78,6 +78,7 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
     public ref CUtlVector<ExternalAnimGraph_t> ExternalGraphs { get; }
 
     public void AnimationAlgorithmUpdated();
+    public void SecondarySkeletonSlotIDsUpdated();
     public void SecondarySkeletonsUpdated();
     public void SecondarySkeletonMasterCountUpdated();
     public void SequenceUpdated();

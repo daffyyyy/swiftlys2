@@ -12,7 +12,7 @@ public partial interface CPropDoorRotating : CBasePropDoor, ISchemaClass<CPropDo
 {
     static CPropDoorRotating ISchemaClass<CPropDoorRotating>.From(nint handle) => new CPropDoorRotatingImpl(handle);
     static int ISchemaClass<CPropDoorRotating>.Size => 3616;
-    static string? ISchemaClass<CPropDoorRotating>.ClassName => null;
+    static string? ISchemaClass<CPropDoorRotating>.ClassName => "prop_door_rotating";
 
 
     public ref Vector Axis { get; }

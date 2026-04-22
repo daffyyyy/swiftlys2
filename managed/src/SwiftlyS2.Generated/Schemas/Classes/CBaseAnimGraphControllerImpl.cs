@@ -36,14 +36,14 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
             return new ExternalAnimGraphHandle_tImpl(_Handle + _NextExternalGraphHandleOffset!.Value);
         }
     }
-    private static nint? _SecondarySkeletonNamesOffset;
+    private static nint? _SecondarySkeletonSlotIDsOffset;
 
-    public ref CUtlVector<CGlobalSymbol> SecondarySkeletonNames
+    public ref CUtlVector<CGlobalSymbol> SecondarySkeletonSlotIDs
     {
         get
         {
-            _SecondarySkeletonNamesOffset = _SecondarySkeletonNamesOffset ?? Schema.GetOffset(0xFA1FB81E42B8BAD6);
-            return ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(_SecondarySkeletonNamesOffset!.Value);
+            _SecondarySkeletonSlotIDsOffset = _SecondarySkeletonSlotIDsOffset ?? Schema.GetOffset(0xFA1FB81E62810C10);
+            return ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(_SecondarySkeletonSlotIDsOffset!.Value);
         }
     }
     private static nint? _SecondarySkeletonsOffset;
@@ -208,12 +208,12 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
     }
     private static nint? _SerializePoseRecipeAG2SlotsOffset;
 
-    public ref CUtlVector<AnimGraph2SerializedPoseRecipe_t> SerializePoseRecipeAG2Slots
+    public ref CUtlVector<AnimGraph2SerializedPoseRecipeSlot_t> SerializePoseRecipeAG2Slots
     {
         get
         {
             _SerializePoseRecipeAG2SlotsOffset = _SerializePoseRecipeAG2SlotsOffset ?? Schema.GetOffset(0xFA1FB81ED2D78F11);
-            return ref _Handle.AsRef<CUtlVector<AnimGraph2SerializedPoseRecipe_t>>(_SerializePoseRecipeAG2SlotsOffset!.Value);
+            return ref _Handle.AsRef<CUtlVector<AnimGraph2SerializedPoseRecipeSlot_t>>(_SerializePoseRecipeAG2SlotsOffset!.Value);
         }
     }
     private static nint? _SerializePoseRecipeAG2DynamicOffset;
@@ -228,12 +228,12 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
     }
     private static nint? _SerializePoseRecipeAG2ActiveSlotOffset;
 
-    public ref ushort SerializePoseRecipeAG2ActiveSlot
+    public ref uint SerializePoseRecipeAG2ActiveSlot
     {
         get
         {
             _SerializePoseRecipeAG2ActiveSlotOffset = _SerializePoseRecipeAG2ActiveSlotOffset ?? Schema.GetOffset(0xFA1FB81E4788E56E);
-            return ref _Handle.AsRef<ushort>(_SerializePoseRecipeAG2ActiveSlotOffset!.Value);
+            return ref _Handle.AsRef<uint>(_SerializePoseRecipeAG2ActiveSlotOffset!.Value);
         }
     }
     private static nint? _SerializePoseRecipeVersionAG2Offset;
@@ -329,6 +329,7 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
     }
 
     public void AnimationAlgorithmUpdated() => Schema.Update(_Handle, 0xFA1FB81E9E954FFE);
+    public void SecondarySkeletonSlotIDsUpdated() => Schema.Update(_Handle, 0xFA1FB81E62810C10);
     public void SecondarySkeletonsUpdated() => Schema.Update(_Handle, 0xFA1FB81E1648EB2B);
     public void SecondarySkeletonMasterCountUpdated() => Schema.Update(_Handle, 0xFA1FB81E33016DEB);
     public void SequenceUpdated() => Schema.Update(_Handle, 0xFA1FB81EE0A0598E);

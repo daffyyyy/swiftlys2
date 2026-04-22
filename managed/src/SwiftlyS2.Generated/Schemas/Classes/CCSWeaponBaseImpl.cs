@@ -256,6 +256,16 @@ internal partial class CCSWeaponBaseImpl : CBasePlayerWeaponImpl, CCSWeaponBase
             return ref _Handle.AsRef<bool>(_InReloadOffset!.Value);
         }
     }
+    private static nint? _DeployTickOffset;
+
+    public GameTick_t DeployTick
+    {
+        get
+        {
+            _DeployTickOffset = _DeployTickOffset ?? Schema.GetOffset(0x8102BA51FB490B1F);
+            return new GameTick_tImpl(_Handle + _DeployTickOffset!.Value);
+        }
+    }
     private static nint? _DroppedAtTimeOffset;
 
     public GameTime_t DroppedAtTime
@@ -540,6 +550,7 @@ internal partial class CCSWeaponBaseImpl : CBasePlayerWeaponImpl, CCSWeaponBase
     public void PostponeFireReadyTicksUpdated() => Schema.Update(_Handle, 0x8102BA51EF9494E8);
     public void PostponeFireReadyFracUpdated() => Schema.Update(_Handle, 0x8102BA51DC2054DC);
     public void InReloadUpdated() => Schema.Update(_Handle, 0x8102BA51184F0553);
+    public void DeployTickUpdated() => Schema.Update(_Handle, 0x8102BA51FB490B1F);
     public void DroppedAtTimeUpdated() => Schema.Update(_Handle, 0x8102BA51C3A8936F);
     public void IsHauledBackUpdated() => Schema.Update(_Handle, 0x8102BA51D8C240B9);
     public void SilencerOnUpdated() => Schema.Update(_Handle, 0x8102BA5168D3A353);

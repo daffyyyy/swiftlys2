@@ -96,14 +96,14 @@ internal partial class CNmTwoBoneIKTaskImpl : CNmPoseTaskImpl, CNmTwoBoneIKTask
             return ref _Handle.AsRef<bool>(_IsRunningFromDeserializedDataOffset!.Value);
         }
     }
-    private static nint? _ReferencePoseTwistWeightOffset;
+    private static nint? _ChainRotationWeightOffset;
 
-    public ref float ReferencePoseTwistWeight
+    public ref float ChainRotationWeight
     {
         get
         {
-            _ReferencePoseTwistWeightOffset = _ReferencePoseTwistWeightOffset ?? Schema.GetOffset(0xE29DE6F807335404);
-            return ref _Handle.AsRef<float>(_ReferencePoseTwistWeightOffset!.Value);
+            _ChainRotationWeightOffset = _ChainRotationWeightOffset ?? Schema.GetOffset(0xE29DE6F82BCFB44A);
+            return ref _Handle.AsRef<float>(_ChainRotationWeightOffset!.Value);
         }
     }
     private static nint? _DebugEffectorBoneIDOffset;
