@@ -6,8 +6,7 @@ internal static class ClassConvertor
 {
     public static CEntityInstance ConvertEntityByDesignerName( nint address, string designerName )
     {
-        return designerName switch
-        {
+        return designerName switch {
             "func_nav_avoidance_obstacle" => new CFuncNavObstructionImpl(address),
             "script_nav_blocker" => new CScriptNavBlockerImpl(address),
             "wearable_item" => new CEconWearableImpl(address),
@@ -58,7 +57,6 @@ internal static class ClassConvertor
             "func_proprrespawnzone" => new CFuncPropRespawnZoneImpl(address),
             "prop_dynamic_ornament" => new COrnamentPropImpl(address),
             "point_enable_motion_fixup" => new CEnableMotionFixupImpl(address),
-            "prop_door_rotating" => new CPropDoorRotatingBreakableImpl(address),
             "point_teleport" => new CPointTeleportImpl(address),
             "point_hurt" => new CPointHurtImpl(address),
             "point_velocitysensor" => new CPointVelocitySensorImpl(address),
