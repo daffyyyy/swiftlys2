@@ -4,8 +4,12 @@ using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
-public interface CUserMsg_CustomGameEvent : ITypedProtobuf<CUserMsg_CustomGameEvent>
+public interface CUserMsg_CustomGameEvent : ITypedProtobuf<CUserMsg_CustomGameEvent>, INetMessage<CUserMsg_CustomGameEvent>, IDisposable
 {
+    static int INetMessage<CUserMsg_CustomGameEvent>.MessageId => 148;
+
+    static string INetMessage<CUserMsg_CustomGameEvent>.MessageName => "CUserMsg_CustomGameEvent";
+
     static CUserMsg_CustomGameEvent ITypedProtobuf<CUserMsg_CustomGameEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_CustomGameEventImpl(handle, isManuallyAllocated);
 
     public string EventName { get; set; }

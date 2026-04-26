@@ -4,8 +4,12 @@ using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
-public interface CCSUsrMsg_VoteFailed : ITypedProtobuf<CCSUsrMsg_VoteFailed>
+public interface CCSUsrMsg_VoteFailed : ITypedProtobuf<CCSUsrMsg_VoteFailed>, INetMessage<CCSUsrMsg_VoteFailed>, IDisposable
 {
+    static int INetMessage<CCSUsrMsg_VoteFailed>.MessageId => 348;
+
+    static string INetMessage<CCSUsrMsg_VoteFailed>.MessageName => "CCSUsrMsg_VoteFailed";
+
     static CCSUsrMsg_VoteFailed ITypedProtobuf<CCSUsrMsg_VoteFailed>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_VoteFailedImpl(handle, isManuallyAllocated);
 
     public int Team { get; set; }

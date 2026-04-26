@@ -4,8 +4,12 @@ using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
-public interface CUserMsg_ParticleManager : ITypedProtobuf<CUserMsg_ParticleManager>
+public interface CUserMsg_ParticleManager : ITypedProtobuf<CUserMsg_ParticleManager>, INetMessage<CUserMsg_ParticleManager>, IDisposable
 {
+    static int INetMessage<CUserMsg_ParticleManager>.MessageId => 145;
+
+    static string INetMessage<CUserMsg_ParticleManager>.MessageName => "CUserMsg_ParticleManager";
+
     static CUserMsg_ParticleManager ITypedProtobuf<CUserMsg_ParticleManager>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManagerImpl(handle, isManuallyAllocated);
 
     public PARTICLE_MESSAGE Type { get; set; }

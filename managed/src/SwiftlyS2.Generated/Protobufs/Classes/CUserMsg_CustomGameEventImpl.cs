@@ -6,9 +6,9 @@ using SwiftlyS2.Shared.ProtobufDefinitions;
 
 namespace SwiftlyS2.Core.ProtobufDefinitions;
 
-internal class CUserMsg_CustomGameEventImpl : TypedProtobuf<CUserMsg_CustomGameEvent>, CUserMsg_CustomGameEvent
+internal class CUserMsg_CustomGameEventImpl : NetMessage<CUserMsg_CustomGameEvent>, CUserMsg_CustomGameEvent
 {
-    public CUserMsg_CustomGameEventImpl(nint handle, bool isManuallyAllocated) : base(handle)
+    public CUserMsg_CustomGameEventImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
     {
     }
 

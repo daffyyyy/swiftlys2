@@ -6,9 +6,9 @@ using SwiftlyS2.Shared.ProtobufDefinitions;
 
 namespace SwiftlyS2.Core.ProtobufDefinitions;
 
-internal class CUserMsg_HudErrorImpl : TypedProtobuf<CUserMsg_HudError>, CUserMsg_HudError
+internal class CUserMsg_HudErrorImpl : NetMessage<CUserMsg_HudError>, CUserMsg_HudError
 {
-    public CUserMsg_HudErrorImpl(nint handle, bool isManuallyAllocated) : base(handle)
+    public CUserMsg_HudErrorImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
     {
     }
 

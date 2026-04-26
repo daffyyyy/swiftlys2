@@ -6,9 +6,9 @@ using SwiftlyS2.Shared.ProtobufDefinitions;
 
 namespace SwiftlyS2.Core.ProtobufDefinitions;
 
-internal class CUserMsg_ParticleManagerImpl : TypedProtobuf<CUserMsg_ParticleManager>, CUserMsg_ParticleManager
+internal class CUserMsg_ParticleManagerImpl : NetMessage<CUserMsg_ParticleManager>, CUserMsg_ParticleManager
 {
-    public CUserMsg_ParticleManagerImpl(nint handle, bool isManuallyAllocated) : base(handle)
+    public CUserMsg_ParticleManagerImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
     {
     }
 
