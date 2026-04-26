@@ -12,6 +12,7 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Core.Translations;
 using SwiftlyS2.Shared.SteamAPI;
+using SwiftlyS2.Shared.Misc;
 
 namespace SwiftlyS2.Core;
 
@@ -64,6 +65,13 @@ internal static class Bootstrap
         EventPublisher.Register();
         GameFunctions.Initialize();
         FileLogger.Initialize(logPath);
+
+        var redirector = new ConsoleRedirector();
+        Console.SetOut(redirector);
+        Console.SetError(redirector);
+        AnsiConsole.Console = AnsiConsole.Create(new AnsiConsoleSettings {
+            Out = new AnsiConsoleOutput(redirector)
+        });
 
         AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Color.LightSteelBlue1));
 

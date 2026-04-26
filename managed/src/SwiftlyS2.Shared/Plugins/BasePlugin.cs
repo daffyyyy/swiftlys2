@@ -9,8 +9,6 @@ public abstract class BasePlugin : IPlugin
     public BasePlugin( ISwiftlyCore core )
     {
         Core = core;
-        Console.SetOut(new ConsoleRedirector());
-        Console.SetError(new ConsoleRedirector());
     }
 
     public virtual void ConfigureSharedInterface( IInterfaceManager interfaceManager ) { }
