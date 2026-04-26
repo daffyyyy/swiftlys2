@@ -3,7 +3,7 @@ using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2.Shared.Misc;
 
-class ConsoleRedirector : TextWriter
+internal class ConsoleRedirector : TextWriter
 {
     private readonly TextWriter originalOut;
     private readonly Lock lockObject = new();

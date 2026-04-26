@@ -89,7 +89,7 @@ public unsafe struct CTakeDamageInfo
         }
     }
 
-    public HitGroup_t ActualHitGroup => Trace->HitBox->m_nGroupId;
+    public HitGroup_t ActualHitGroup => Trace != null && Trace->HitBox != null ? Trace->HitBox->m_nGroupId : HitGroup_t.HITGROUP_INVALID;
 }
 
 [StructLayout(LayoutKind.Sequential, Pack = 8, Size = 80)]
