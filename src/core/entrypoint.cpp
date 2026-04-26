@@ -78,6 +78,7 @@ extern ICvar* g_pCVar;
 
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
+
     g_mainThreadId = std::this_thread::get_id();
 
     m_iKind = kind;

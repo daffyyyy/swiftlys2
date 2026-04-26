@@ -29,6 +29,9 @@ extern "C" FILE* __cdecl __iob_func(void)
 }
 
 void SetupConsoleColors() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);  
+
     auto hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
     if (hOut == INVALID_HANDLE_VALUE) return;
