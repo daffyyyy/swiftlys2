@@ -53,9 +53,17 @@ internal class EventPlayerHurtImpl : GameEvent<EventPlayerHurt>, EventPlayerHurt
     public byte Health
     { get => (byte)Accessor.GetInt32("health"); set => Accessor.SetInt32("health", value); }
 
+    // remaining health points
+    public int ActualHealth
+    { get => Accessor.GetInt32("health"); set => Accessor.SetInt32("health", value); }
+
     // remaining armor points
     public byte Armor
     { get => (byte)Accessor.GetInt32("armor"); set => Accessor.SetInt32("armor", value); }
+
+    // remaining armor points
+    public int ActualArmor
+    { get => Accessor.GetInt32("armor"); set => Accessor.SetInt32("armor", value); }
 
     // weapon name attacker used, if not the world
     public string Weapon
@@ -65,11 +73,23 @@ internal class EventPlayerHurtImpl : GameEvent<EventPlayerHurt>, EventPlayerHurt
     public short DmgHealth
     { get => (short)Accessor.GetInt32("dmg_health"); set => Accessor.SetInt32("dmg_health", value); }
 
+    // damage done to health
+    public int ActualDmgHealth
+    { get => Accessor.GetInt32("dmg_health"); set => Accessor.SetInt32("dmg_health", value); }
+
     // damage done to armor
     public byte DmgArmor
     { get => (byte)Accessor.GetInt32("dmg_armor"); set => Accessor.SetInt32("dmg_armor", value); }
 
+    // damage done to armor
+    public int ActualDmgArmor
+    { get => Accessor.GetInt32("dmg_armor"); set => Accessor.SetInt32("dmg_armor", value); }
+
     // hitgroup that was damaged
     public byte HitGroup
     { get => (byte)Accessor.GetInt32("hitgroup"); set => Accessor.SetInt32("hitgroup", value); }
+
+    // hitgroup that was damaged
+    public HitGroup_t ActualHitGroup
+    { get => (HitGroup_t)Accessor.GetInt32("hitgroup"); set => Accessor.SetInt32("hitgroup", (int)value); }
 }

@@ -1177,6 +1177,18 @@ public class TestPlugin : BasePlugin
         Console.WriteLine($"{player.Controller!.PlayerName} broke a prop!");
         return HookResult.Continue;
     }
+    
+    [GameEventHandler(HookMode.Post)]
+    public HookResult OnPlayerHurtPost(EventPlayerHurt @event)
+    {
+        if (@event.UserIdPlayer is not { IsValid: true }) return HookResult.Continue;
+        var pawnHealth = @event.UserIdPlayer.PlayerPawn!.Health;
+        var eventHealth = @event.Health;
+        Core.PlayerManager.SendChat($"OnPlayerHurt>> pawnHealth[{pawnHealth}], eventHealth[{eventHealth}], ActualHealth[{@event.ActualHealth}], ActualHitGroup[{@event.ActualHitGroup}]");
+        @event.ActualHitGroup = HitGroup_t.HITGROUP_HEAD;
+        Core.PlayerManager.SendChat($"OnPlayerHurt>> newActualHitGroup[{@event.ActualHitGroup}]");
+        return HookResult.Continue;
+    }
 
     [Command("rmt")]
     public void RefactoredMenuTestCommand( ICommandContext context )

@@ -200,22 +200,52 @@ public interface EventPlayerDeath : IGameEvent<EventPlayerDeath>
     /// damage done to health
     /// <br/>
     /// type: short
+    /// <br/>
+    /// See <see cref="ActualDmgHealth"/>.
     /// </summary>
+    [Obsolete("The declared type may not match the actual value. Use ActualDmgHealth instead.")]
     short DmgHealth { get; set; }
+
+    /// <summary>
+    /// damage done to health
+    /// <br/>
+    /// type: int
+    /// </summary>
+    int ActualDmgHealth { get; set; }
 
     /// <summary>
     /// damage done to armor
     /// <br/>
     /// type: byte
+    /// <br/>
+    /// See <see cref="ActualDmgArmor"/>.
     /// </summary>
+    [Obsolete("The declared type may not match the actual value. Use ActualDmgArmor instead.")]
     byte DmgArmor { get; set; }
+
+    /// <summary>
+    /// damage done to armor
+    /// <br/>
+    /// type: int
+    /// </summary>
+    int ActualDmgArmor { get; set; }
 
     /// <summary>
     /// hitgroup that was damaged
     /// <br/>
     /// type: byte
+    /// <br/>
+    /// See <see cref="ActualHitGroup"/>.
     /// </summary>
+    [Obsolete("The declared type may not match the actual value. Use ActualHitGroup instead.")]
     byte HitGroup { get; set; }
+
+    /// <summary>
+    /// hitgroup that was damaged
+    /// <br/>
+    /// type: HitGroup_t
+    /// </summary>
+    HitGroup_t ActualHitGroup { get; set; }
 
     /// <summary>
     /// attacker was in midair
