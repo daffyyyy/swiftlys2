@@ -250,14 +250,14 @@ jobs:
       run: |
         mkdir -p ./linux-runtimes
         cd ./linux-runtimes
-        wget https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.0/dotnet-runtime-10.0.0-linux-x64.tar.gz
+        wget https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.7/dotnet-runtime-10.0.7-linux-x64.tar.gz
         mkdir -p content
-        tar -xzf dotnet-runtime-10.0.0-linux-x64.tar.gz -C content
+        tar -xzf dotnet-runtime-10.0.7-linux-x64.tar.gz -C content
         cd ..
         mkdir -p ./windows-runtimes
         cd ./windows-runtimes
-        wget https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.0/dotnet-runtime-10.0.0-win-x64.zip
-        unzip dotnet-runtime-10.0.0-win-x64.zip -d content
+        wget https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.7/dotnet-runtime-10.0.7-win-x64.zip
+        unzip dotnet-runtime-10.0.7-win-x64.zip -d content
         cd ..
       
     - name: Create package
