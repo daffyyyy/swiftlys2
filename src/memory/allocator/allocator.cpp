@@ -36,6 +36,8 @@ void* MemoryAllocator::Alloc(uint64_t size)
 
 void MemoryAllocator::Free(void* ptr)
 {
+    if (ptr == nullptr) return;
+
     QueueLockGuard lock(m_mtxLock);
     auto it = allocations.find(ptr);
     if (it != allocations.end())
@@ -48,6 +50,7 @@ void MemoryAllocator::Free(void* ptr)
 
 void* MemoryAllocator::Resize(void* ptr, uint64_t newSize)
 {
+    if (ptr == nullptr) return Alloc(newSize);
     QueueLockGuard lock(m_mtxLock);
     auto it = allocations.find(ptr);
     if (it != allocations.end())
@@ -67,6 +70,8 @@ void* MemoryAllocator::Resize(void* ptr, uint64_t newSize)
 
 uint64_t MemoryAllocator::GetSize(void* ptr)
 {
+    if (ptr == nullptr) return 0;
+
     auto it = allocations.find(ptr);
     if (it != allocations.end())
     {
@@ -82,16 +87,19 @@ uint64_t MemoryAllocator::GetTotalAllocated()
 
 bool MemoryAllocator::IsPointerValid(void* ptr)
 {
+    if (ptr == nullptr) return false;
     return allocations.contains(ptr);
 }
 
 void MemoryAllocator::Copy(void* dest, void* src, uint64_t size)
 {
+    if (dest == nullptr || src == nullptr) return;
     memcpy(dest, src, size);
 }
 
 void MemoryAllocator::Move(void* dest, void* src, uint64_t size)
 {
+    if (dest == nullptr || src == nullptr) return;
     memmove(dest, src, size);
 }
 
@@ -105,6 +113,7 @@ MemoryAllocator::~MemoryAllocator()
     QueueLockGuard lock(m_mtxLock);
     for (const auto& [ptr, size] : allocations)
     {
+        if (ptr == nullptr) continue; // not sure how it would be possible but just in case
         free(ptr);
     }
     allocations.clear();
