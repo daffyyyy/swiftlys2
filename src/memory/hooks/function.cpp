@@ -24,14 +24,14 @@ void FunctionHook::Enable()
 {
     if (IsEnabled()) return;
 
-    m_oHook.enable();
+    auto result = m_oHook.enable(); // due to nodiscard
 }
 
 void FunctionHook::Disable()
 {
     if (!IsEnabled()) return;
 
-    m_oHook.disable();
+    auto result = m_oHook.disable(); // due to nodiscard
 }
 
 void* FunctionHook::GetOriginal()

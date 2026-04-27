@@ -283,8 +283,8 @@ jobs:
         cp -r linux-runtimes/content/ ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
         cp -r windows-runtimes/content/ ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
 
-        cp linux-runtimes/content/host/fxr/10.0.0/libhostfxr.so ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/linuxsteamrt64/libhostfxr.so
-        cp windows-runtimes/content/host/fxr/10.0.0/hostfxr.dll ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/win64/hostfxr.dll
+        cp linux-runtimes/content/host/fxr/10.0.7/libhostfxr.so ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/linuxsteamrt64/libhostfxr.so
+        cp windows-runtimes/content/host/fxr/10.0.7/hostfxr.dll ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/win64/hostfxr.dll
 
         mkdir -p ${{ env.LINUX_FOLDER }}/addons/
         mkdir -p ${{ env.WINDOWS_FOLDER }}/addons/

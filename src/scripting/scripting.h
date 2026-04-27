@@ -34,5 +34,4 @@ extern int g_NativeFunctionCount;
 
 #endif 
 
-#define DEFINE_NATIVE(name, func) \
-    static int dummy_##func = (g_NativeFunctions[g_NativeFunctionCount++] = {name, (void*)func}, 0)
+#define DEFINE_NATIVE(name, func) static int dummy_##func = (g_NativeFunctions[g_NativeFunctionCount++] = {name, (void*)func}, 0)

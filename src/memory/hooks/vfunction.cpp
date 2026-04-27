@@ -46,14 +46,14 @@ void VFunctionHook::Enable()
 {
     if (IsEnabled()) return;
 
-    m_oHook.enable();
+    auto res = m_oHook.enable(); // due to nodiscard
 }
 
 void VFunctionHook::Disable()
 {
     if (!IsEnabled()) return;
 
-    m_oHook.disable();
+    auto res = m_oHook.disable(); // due to nodiscard
 }
 
 void* VFunctionHook::GetOriginal()
