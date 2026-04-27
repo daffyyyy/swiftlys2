@@ -23,6 +23,11 @@ public interface IPlayerManagerService
     public int PlayerCap { get; }
 
     /// <summary>
+    /// Gets the maximum number of players allowed by the server configuration.
+    /// </summary>
+    public int MaxPlayers { get; }
+
+    /// <summary>
     /// Broadcasts a message to players using different display methods based on the message type.
     /// 
     /// Thread unsafe, use async variant instead for non-main thread context.

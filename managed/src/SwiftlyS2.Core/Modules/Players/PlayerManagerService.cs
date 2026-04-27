@@ -4,6 +4,7 @@ using SwiftlyS2.Core.Scheduler;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Shared.SteamAPI;
 using SwiftlyS2.Shared.Translation;
 
@@ -13,13 +14,15 @@ internal class PlayerManagerService : IPlayerManagerService
 {
     private readonly ITranslationService _translationService;
     private readonly IEntitySystemService _entitySystemService;
+    private readonly IEngineService _engineService;
     public static ConcurrentDictionary<int, IPlayer> PlayerObjects { get; } = new();
     public static ConcurrentDictionary<ulong, IPlayer> SessionIdToPlayerObjects { get; } = new();
 
-    public PlayerManagerService( ITranslationService translationService, IEntitySystemService entitySystemService )
+    public PlayerManagerService( ITranslationService translationService, IEntitySystemService entitySystemService, IEngineService engineService )
     {
         _translationService = translationService;
         _entitySystemService = entitySystemService;
+        _engineService = engineService;
     }
 
     public static void RegisterPlayerObject( int playerid )
@@ -44,6 +47,8 @@ internal class PlayerManagerService : IPlayerManagerService
     public int PlayerCount => NativePlayerManager.GetPlayerCount();
 
     public int PlayerCap => NativePlayerManager.GetPlayerCap();
+
+    public int MaxPlayers => _engineService.GlobalVars.MaxClients;
 
     public void ClearAllBlockedTransmitEntities()
     {
