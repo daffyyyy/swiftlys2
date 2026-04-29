@@ -24,9 +24,11 @@
 
 void* MemoryAllocator::Alloc(uint64_t size)
 {
+    if (size == 0) return nullptr;
+
     QueueLockGuard lock(m_mtxLock);
     void* ptr = malloc(size);
-    if (ptr)
+    if (ptr != nullptr)
     {
         allocations[ptr] = size;
         totalAllocated += size;
@@ -72,6 +74,7 @@ uint64_t MemoryAllocator::GetSize(void* ptr)
 {
     if (ptr == nullptr) return 0;
 
+    QueueLockGuard lock(m_mtxLock);
     auto it = allocations.find(ptr);
     if (it != allocations.end())
     {
@@ -82,12 +85,14 @@ uint64_t MemoryAllocator::GetSize(void* ptr)
 
 uint64_t MemoryAllocator::GetTotalAllocated()
 {
+    QueueLockGuard lock(m_mtxLock);
     return totalAllocated;
 }
 
 bool MemoryAllocator::IsPointerValid(void* ptr)
 {
     if (ptr == nullptr) return false;
+    QueueLockGuard lock(m_mtxLock);
     return allocations.contains(ptr);
 }
 
@@ -105,6 +110,7 @@ void MemoryAllocator::Move(void* dest, void* src, uint64_t size)
 
 std::map<void*, uint64_t> MemoryAllocator::GetAllocations()
 {
+    QueueLockGuard lock(m_mtxLock);
     return allocations;
 }
 
