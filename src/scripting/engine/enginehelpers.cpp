@@ -20,6 +20,7 @@
 #include <api/shared/files.h>
 #include <api/shared/string.h>
 #include <api/shared/plat.h>
+#include <api/utils/mutex.h>
 
 #include <core/entrypoint.h>
 #include <scripting/scripting.h>
@@ -199,9 +200,11 @@ char* Bridge_EngineHelpers_GetIP(int* size)
 }
 
 extern std::string workshop_map;
+extern QueueMutex g_qmMapLoadQueue;
 
 char* Bridge_EngineHelpers_GetWorkshopId(int* size)
 {
+    QueueLockGuard lock(g_qmMapLoadQueue);
     return Bridge_EngineHelpers_CopyString(workshop_map, size);
 }
 
@@ -213,6 +216,7 @@ void Bridge_EngineHelpers_DispatchParticleEffect(const char* particleName, uint 
     *(uint64_t*)(a.GetRecipients().Base()) = filtermask;
     reinterpret_cast<void(*)(const char*, uint, void*, byte, CUtlSymbolLarge, bool, int, CRecipientFilter, byte)>(func)(particleName, attachmentType, entity, attachmentPoint, CUtlSymbolLarge(attachmentName), resetAllParticlesOnEntity, splitScreenSlot, a, 0);
 }
+
 DEFINE_NATIVE("EngineHelpers.GetIP", Bridge_EngineHelpers_GetIP);
 DEFINE_NATIVE("EngineHelpers.IsMapValid", Bridge_EngineHelpers_IsMapValid);
 DEFINE_NATIVE("EngineHelpers.ExecuteCommand", Bridge_EngineHelpers_ExecuteCommand);

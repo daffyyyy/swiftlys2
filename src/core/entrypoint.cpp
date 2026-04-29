@@ -38,6 +38,7 @@
 #include <api/shared/files.h>
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
+#include <api/utils/mutex.h>
 
 #include <public/icvar.h>
 #include <public/tier1/KeyValues.h>
@@ -397,10 +398,12 @@ void GameServerSteamAPIDeactivatedHook(void* _this)
 }
 
 std::string workshop_map = "";
+QueueMutex g_qmMapLoadQueue;
 std::string current_map = "";
 
 bool LoopInitHook(void* _this, KeyValues* pKeyValues, void* pRegistry)
 {
+    QueueLockGuard lock(g_qmMapLoadQueue);
     if (current_map != "")
     {
         g_SwiftlyCore.OnMapUnload();
