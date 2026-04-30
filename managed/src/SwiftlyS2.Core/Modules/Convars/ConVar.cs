@@ -347,7 +347,7 @@ internal class ConVar<T> : ConVar, IConVar<T>
     {
         unsafe
         {
-            return Type != EConVarType.EConVarType_String ? Unsafe.Read<T>((void*)ValuePtr) : (T)(object)ValuePtr.AsRef<CUtlString>().Value;
+            return Type != EConVarType.EConVarType_String ? Unsafe.Read<T>((void*)ValuePtr) : (T)(object)ValueAsString;
         }
     }
 
