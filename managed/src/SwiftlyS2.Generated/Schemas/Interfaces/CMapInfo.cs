@@ -33,6 +33,8 @@ public partial interface CMapInfo : CPointEntity, ISchemaClass<CMapInfo>
 
     public ref bool RainTraceToSkyEnabled { get; }
 
+    public ref bool GPUCullSkybox { get; }
+
     public ref float EnvRainStrength { get; }
 
     public ref float EnvPuddleRippleStrength { get; }

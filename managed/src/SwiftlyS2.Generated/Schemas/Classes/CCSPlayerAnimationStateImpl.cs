@@ -96,16 +96,6 @@ internal partial class CCSPlayerAnimationStateImpl : SchemaClass, CCSPlayerAnima
             return new GameTick_tImpl(_Handle + _StaticAimTimerStartTickOffset!.Value);
         }
     }
-    private static nint? _StutterStepStartTickOffset;
-
-    public GameTick_t StutterStepStartTick
-    {
-        get
-        {
-            _StutterStepStartTickOffset = _StutterStepStartTickOffset ?? Schema.GetOffset(0x61E9023EE1566B65);
-            return new GameTick_tImpl(_Handle + _StutterStepStartTickOffset!.Value);
-        }
-    }
     private static nint? _PlantAndTurnStartTickOffset;
 
     public GameTick_t PlantAndTurnStartTick
@@ -114,16 +104,6 @@ internal partial class CCSPlayerAnimationStateImpl : SchemaClass, CCSPlayerAnima
         {
             _PlantAndTurnStartTickOffset = _PlantAndTurnStartTickOffset ?? Schema.GetOffset(0x61E9023E9CE2D259);
             return new GameTick_tImpl(_Handle + _PlantAndTurnStartTickOffset!.Value);
-        }
-    }
-    private static nint? _IsStutterStepOffset;
-
-    public ref bool IsStutterStep
-    {
-        get
-        {
-            _IsStutterStepOffset = _IsStutterStepOffset ?? Schema.GetOffset(0x61E9023E62C8FFF4);
-            return ref _Handle.AsRef<bool>(_IsStutterStepOffset!.Value);
         }
     }
     private static nint? _TurnOnSpotAngleOffset;

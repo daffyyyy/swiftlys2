@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerAnimationState : ISchemaClass<CCSPlayerAnimationState>
 {
     static CCSPlayerAnimationState ISchemaClass<CCSPlayerAnimationState>.From(nint handle) => new CCSPlayerAnimationStateImpl(handle);
-    static int ISchemaClass<CCSPlayerAnimationState>.Size => 240;
+    static int ISchemaClass<CCSPlayerAnimationState>.Size => 224;
     static string? ISchemaClass<CCSPlayerAnimationState>.ClassName => null;
 
 
@@ -31,11 +31,7 @@ public partial interface CCSPlayerAnimationState : ISchemaClass<CCSPlayerAnimati
 
     public GameTick_t StaticAimTimerStartTick { get; }
 
-    public GameTick_t StutterStepStartTick { get; }
-
     public GameTick_t PlantAndTurnStartTick { get; }
-
-    public ref bool IsStutterStep { get; }
 
     public ref float TurnOnSpotAngle { get; }
 

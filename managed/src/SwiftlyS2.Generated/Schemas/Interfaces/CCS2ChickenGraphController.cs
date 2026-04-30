@@ -15,29 +15,22 @@ public partial interface CCS2ChickenGraphController : CAnimGraphControllerBase, 
     static string? ISchemaClass<CCS2ChickenGraphController>.ClassName => null;
 
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField Action { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol Action { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField ActionSubtype { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol ActionSubtype { get; }
 
     // CAnimGraph2ParamAutoResetOptionalRef
     public SchemaUntypedField ActionReset { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField IdleVariation { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat IdleVariation { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField RunVariation { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat RunVariation { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField PanicVariation { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat PanicVariation { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField SquatVariation { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat SquatVariation { get; }
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField InWater { get; }
+    public ref CAnimGraph2ParamOptionalRefBool InWater { get; }
 
     public ref bool HasActionCompletedEvent { get; }
 

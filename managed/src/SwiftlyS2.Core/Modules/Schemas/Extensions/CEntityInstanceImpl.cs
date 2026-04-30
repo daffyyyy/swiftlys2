@@ -4,6 +4,7 @@ using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Core.EntitySystem;
+using SwiftlyS2.Shared.Convars;
 
 namespace SwiftlyS2.Core.SchemaDefinitions;
 

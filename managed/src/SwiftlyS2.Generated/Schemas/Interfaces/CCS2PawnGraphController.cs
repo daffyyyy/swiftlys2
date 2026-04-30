@@ -11,66 +11,45 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCS2PawnGraphController : CCS2WeaponGraphController, ISchemaClass<CCS2PawnGraphController>
 {
     static CCS2PawnGraphController ISchemaClass<CCS2PawnGraphController>.From(nint handle) => new CCS2PawnGraphControllerImpl(handle);
-    static int ISchemaClass<CCS2PawnGraphController>.Size => 2112;
+    static int ISchemaClass<CCS2PawnGraphController>.Size => 2088;
     static string? ISchemaClass<CCS2PawnGraphController>.ClassName => null;
 
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField IsDefusing { get; }
+    public ref CAnimGraph2ParamOptionalRefBool IsDefusing { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField MoveType { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol MoveType { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField MoveDirectionID { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol MoveDirectionID { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField MoveSpeedX { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat MoveSpeedX { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField MoveSpeedY { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat MoveSpeedY { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField MoveSpeedHorizontal { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat MoveSpeedHorizontal { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField PreviousMoveSpeedHorizontal { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat PreviousMoveSpeedHorizontal { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField CrouchAmount { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat CrouchAmount { get; }
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField IsWalking { get; }
+    public ref CAnimGraph2ParamOptionalRefBool IsWalking { get; }
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField IsStutterStep { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat WeaponDropAmount { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField WeaponDropAmount { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol GroundAction { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField GroundAction { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol GroundActionDirectionID { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField GroundActionDirectionID { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat GroundTurnAngleOrVelocity { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField GroundTurnAngleOrVelocity { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat LadderCycle { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField LadderCycle { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat LadderYaw { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField LadderYaw { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat LadderYawBackwards { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField LadderYawBackwards { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol AirAction { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField AirAction { get; }
-
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField AirHeightAboveGround { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat AirHeightAboveGround { get; }
 
     // CAnimGraph2ParamOptionalRef< CNmTarget >
     public SchemaUntypedField LeftFootTarget { get; }
@@ -78,29 +57,21 @@ public partial interface CCS2PawnGraphController : CCS2WeaponGraphController, IS
     // CAnimGraph2ParamOptionalRef< CNmTarget >
     public SchemaUntypedField RightFootTarget { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField FlashedAmount { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat FlashedAmount { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField AimPitchAngle { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat AimPitchAngle { get; }
 
-    // CAnimGraph2ParamOptionalRef< float32 >
-    public SchemaUntypedField AimYawAngle { get; }
+    public ref CAnimGraph2ParamOptionalRefFloat AimYawAngle { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField FlinchHead { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol FlinchHead { get; }
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField FlinchHeadRestart { get; }
+    public ref CAnimGraph2ParamOptionalRefBool FlinchHeadRestart { get; }
 
-    // CAnimGraph2ParamOptionalRef< CGlobalSymbol >
-    public SchemaUntypedField FlinchBody { get; }
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol FlinchBody { get; }
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField FlinchBodyRestart { get; }
+    public ref CAnimGraph2ParamOptionalRefBool FlinchBodyRestart { get; }
 
-    // CAnimGraph2ParamOptionalRef< bool >
-    public SchemaUntypedField FlinchIsOnFire { get; }
+    public ref CAnimGraph2ParamOptionalRefBool FlinchIsOnFire { get; }
 
 
 }

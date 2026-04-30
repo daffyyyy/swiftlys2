@@ -145,6 +145,8 @@ public class TestPlugin : BasePlugin
 {
     private IConVar<bool>? _autobunnyhopping;
 
+    private delegate nint ReflectPawnStateType(nint a1, nint a2);
+
     public TestPlugin( ISwiftlyCore core ) : base(core)
     {
         _autobunnyhopping = Core.ConVar.Find<bool>("sv_autobunnyhopping");
@@ -169,8 +171,28 @@ public class TestPlugin : BasePlugin
     [Command("be")]
     public void Test2Command( ICommandContext context )
     {
-        var entity = context.Sender!.RequiredPawn;
-        entity.TakeDamage(100, DamageTypes_t.DMG_GENERIC);
+
+        var addr = Core.Memory.GetAddressBySignature("server", "48 89 5C 24 ? 56 57 41 56 48 83 EC ? 48 8D 05 ? ? ? ? 48 C7 44 24");
+        var func = Core.Memory.GetUnmanagedFunctionByAddress<ReflectPawnStateType>(addr!.Value);
+        func.AddHook(next =>
+        {
+            return (a1, a2) =>
+            {
+            //    var ret = next()(a1, a2); 
+               var controller = Helper.AsSchema<CCS2PawnGraphController>(a1);
+               
+            //    controller.FlinchIsOnFire.Value = true;
+               controller.Action.Value = "action_crouch";
+               controller.AirHeightAboveGround.Value = 1f;
+            //    controller.Char = "action_celebrate";
+            //    controller.MoveSpeedY.Value = 0.1f;
+                // controller.IsWalking.Value = false;
+                // controller.AimPitchAngle.Value = 90f;
+                // controller.AimYawAngle.Value = 180 * MathF.Sin(Core.Engine.GlobalVars.TickCount);
+                // Console.WriteLine(ret+"\n");
+                return 0;
+            };
+        });
     }
 
     [Command("CommandAliasTest")]

@@ -18,202 +18,202 @@ internal partial class CCS2WeaponGraphControllerImpl : CAnimGraphControllerBaseI
 
     private static nint? _ActionOffset;
 
-    public SchemaUntypedField Action
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol Action
     {
         get
         {
             _ActionOffset = _ActionOffset ?? Schema.GetOffset(0x8553337E7918619F);
-            return new SchemaUntypedField(_Handle + _ActionOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_ActionOffset!.Value);
         }
     }
     private static nint? _ActionResetOffset;
 
-    public SchemaUntypedField ActionReset
+    public ref CAnimGraph2ParamOptionalRefBool ActionReset
     {
         get
         {
             _ActionResetOffset = _ActionResetOffset ?? Schema.GetOffset(0x8553337E580F422E);
-            return new SchemaUntypedField(_Handle + _ActionResetOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefBool>(_ActionResetOffset!.Value);
         }
     }
     private static nint? _WeaponActionSpeedScaleOffset;
 
-    public SchemaUntypedField WeaponActionSpeedScale
+    public ref CAnimGraph2ParamOptionalRefFloat WeaponActionSpeedScale
     {
         get
         {
             _WeaponActionSpeedScaleOffset = _WeaponActionSpeedScaleOffset ?? Schema.GetOffset(0x8553337EC667EC52);
-            return new SchemaUntypedField(_Handle + _WeaponActionSpeedScaleOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_WeaponActionSpeedScaleOffset!.Value);
         }
     }
     private static nint? _WeaponCategoryOffset;
 
-    public SchemaUntypedField WeaponCategory
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol WeaponCategory
     {
         get
         {
             _WeaponCategoryOffset = _WeaponCategoryOffset ?? Schema.GetOffset(0x8553337EE2B7A95D);
-            return new SchemaUntypedField(_Handle + _WeaponCategoryOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_WeaponCategoryOffset!.Value);
         }
     }
     private static nint? _WeaponTypeOffset;
 
-    public SchemaUntypedField WeaponType
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol WeaponType
     {
         get
         {
             _WeaponTypeOffset = _WeaponTypeOffset ?? Schema.GetOffset(0x8553337E0C0E3309);
-            return new SchemaUntypedField(_Handle + _WeaponTypeOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_WeaponTypeOffset!.Value);
         }
     }
     private static nint? _WeaponExtraInfoOffset;
 
-    public SchemaUntypedField WeaponExtraInfo
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol WeaponExtraInfo
     {
         get
         {
             _WeaponExtraInfoOffset = _WeaponExtraInfoOffset ?? Schema.GetOffset(0x8553337EF4004D3D);
-            return new SchemaUntypedField(_Handle + _WeaponExtraInfoOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_WeaponExtraInfoOffset!.Value);
         }
     }
     private static nint? _WeaponAmmoOffset;
 
-    public SchemaUntypedField WeaponAmmo
+    public ref CAnimGraph2ParamOptionalRefFloat WeaponAmmo
     {
         get
         {
             _WeaponAmmoOffset = _WeaponAmmoOffset ?? Schema.GetOffset(0x8553337ED1A06C75);
-            return new SchemaUntypedField(_Handle + _WeaponAmmoOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_WeaponAmmoOffset!.Value);
         }
     }
     private static nint? _WeaponAmmoMaxOffset;
 
-    public SchemaUntypedField WeaponAmmoMax
+    public ref CAnimGraph2ParamOptionalRefFloat WeaponAmmoMax
     {
         get
         {
             _WeaponAmmoMaxOffset = _WeaponAmmoMaxOffset ?? Schema.GetOffset(0x8553337EEE4C1969);
-            return new SchemaUntypedField(_Handle + _WeaponAmmoMaxOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_WeaponAmmoMaxOffset!.Value);
         }
     }
     private static nint? _WeaponAmmoReserveOffset;
 
-    public SchemaUntypedField WeaponAmmoReserve
+    public ref CAnimGraph2ParamOptionalRefFloat WeaponAmmoReserve
     {
         get
         {
             _WeaponAmmoReserveOffset = _WeaponAmmoReserveOffset ?? Schema.GetOffset(0x8553337E000AC7BB);
-            return new SchemaUntypedField(_Handle + _WeaponAmmoReserveOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_WeaponAmmoReserveOffset!.Value);
         }
     }
     private static nint? _WeaponIsSilencedOffset;
 
-    public SchemaUntypedField WeaponIsSilenced
+    public ref CAnimGraph2ParamOptionalRefBool WeaponIsSilenced
     {
         get
         {
             _WeaponIsSilencedOffset = _WeaponIsSilencedOffset ?? Schema.GetOffset(0x8553337EBF4E259C);
-            return new SchemaUntypedField(_Handle + _WeaponIsSilencedOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefBool>(_WeaponIsSilencedOffset!.Value);
         }
     }
     private static nint? _WeaponIronsightAmountOffset;
 
-    public SchemaUntypedField WeaponIronsightAmount
+    public ref CAnimGraph2ParamOptionalRefFloat WeaponIronsightAmount
     {
         get
         {
             _WeaponIronsightAmountOffset = _WeaponIronsightAmountOffset ?? Schema.GetOffset(0x8553337E4239F6F6);
-            return new SchemaUntypedField(_Handle + _WeaponIronsightAmountOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_WeaponIronsightAmountOffset!.Value);
         }
     }
     private static nint? _IsUsingLegacyModelOffset;
 
-    public SchemaUntypedField IsUsingLegacyModel
+    public ref CAnimGraph2ParamOptionalRefBool IsUsingLegacyModel
     {
         get
         {
             _IsUsingLegacyModelOffset = _IsUsingLegacyModelOffset ?? Schema.GetOffset(0x8553337EBA564E5D);
-            return new SchemaUntypedField(_Handle + _IsUsingLegacyModelOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefBool>(_IsUsingLegacyModelOffset!.Value);
         }
     }
     private static nint? _IdleVariationOffset;
 
-    public SchemaUntypedField IdleVariation
+    public ref CAnimGraph2ParamOptionalRefFloat IdleVariation
     {
         get
         {
             _IdleVariationOffset = _IdleVariationOffset ?? Schema.GetOffset(0x8553337ECF0EF118);
-            return new SchemaUntypedField(_Handle + _IdleVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_IdleVariationOffset!.Value);
         }
     }
     private static nint? _DeployVariationOffset;
 
-    public SchemaUntypedField DeployVariation
+    public ref CAnimGraph2ParamOptionalRefFloat DeployVariation
     {
         get
         {
             _DeployVariationOffset = _DeployVariationOffset ?? Schema.GetOffset(0x8553337E95BD68D7);
-            return new SchemaUntypedField(_Handle + _DeployVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_DeployVariationOffset!.Value);
         }
     }
     private static nint? _AttackTypeOffset;
 
-    public SchemaUntypedField AttackType
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol AttackType
     {
         get
         {
             _AttackTypeOffset = _AttackTypeOffset ?? Schema.GetOffset(0x8553337E0CCFAC15);
-            return new SchemaUntypedField(_Handle + _AttackTypeOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_AttackTypeOffset!.Value);
         }
     }
     private static nint? _AttackThrowStrengthOffset;
 
-    public SchemaUntypedField AttackThrowStrength
+    public ref CAnimGraph2ParamOptionalRefFloat AttackThrowStrength
     {
         get
         {
             _AttackThrowStrengthOffset = _AttackThrowStrengthOffset ?? Schema.GetOffset(0x8553337EB4387222);
-            return new SchemaUntypedField(_Handle + _AttackThrowStrengthOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_AttackThrowStrengthOffset!.Value);
         }
     }
     private static nint? _AttackVariationOffset;
 
-    public SchemaUntypedField AttackVariation
+    public ref CAnimGraph2ParamOptionalRefFloat AttackVariation
     {
         get
         {
             _AttackVariationOffset = _AttackVariationOffset ?? Schema.GetOffset(0x8553337E70A63014);
-            return new SchemaUntypedField(_Handle + _AttackVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_AttackVariationOffset!.Value);
         }
     }
     private static nint? _InspectVariationOffset;
 
-    public SchemaUntypedField InspectVariation
+    public ref CAnimGraph2ParamOptionalRefFloat InspectVariation
     {
         get
         {
             _InspectVariationOffset = _InspectVariationOffset ?? Schema.GetOffset(0x8553337EBDFCECA4);
-            return new SchemaUntypedField(_Handle + _InspectVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_InspectVariationOffset!.Value);
         }
     }
     private static nint? _InspectExtraInfoOffset;
 
-    public SchemaUntypedField InspectExtraInfo
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol InspectExtraInfo
     {
         get
         {
             _InspectExtraInfoOffset = _InspectExtraInfoOffset ?? Schema.GetOffset(0x8553337EF50D283F);
-            return new SchemaUntypedField(_Handle + _InspectExtraInfoOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_InspectExtraInfoOffset!.Value);
         }
     }
     private static nint? _ReloadStageOffset;
 
-    public SchemaUntypedField ReloadStage
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol ReloadStage
     {
         get
         {
             _ReloadStageOffset = _ReloadStageOffset ?? Schema.GetOffset(0x8553337E7F8E072A);
-            return new SchemaUntypedField(_Handle + _ReloadStageOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_ReloadStageOffset!.Value);
         }
     }
 

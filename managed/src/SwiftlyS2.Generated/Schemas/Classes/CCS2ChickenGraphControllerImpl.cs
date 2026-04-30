@@ -18,22 +18,22 @@ internal partial class CCS2ChickenGraphControllerImpl : CAnimGraphControllerBase
 
     private static nint? _ActionOffset;
 
-    public SchemaUntypedField Action
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol Action
     {
         get
         {
             _ActionOffset = _ActionOffset ?? Schema.GetOffset(0xC887F1577918619F);
-            return new SchemaUntypedField(_Handle + _ActionOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_ActionOffset!.Value);
         }
     }
     private static nint? _ActionSubtypeOffset;
 
-    public SchemaUntypedField ActionSubtype
+    public ref CAnimGraph2ParamOptionalRefCGlobalSymbol ActionSubtype
     {
         get
         {
             _ActionSubtypeOffset = _ActionSubtypeOffset ?? Schema.GetOffset(0xC887F157FC94FE0B);
-            return new SchemaUntypedField(_Handle + _ActionSubtypeOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefCGlobalSymbol>(_ActionSubtypeOffset!.Value);
         }
     }
     private static nint? _ActionResetOffset;
@@ -48,52 +48,52 @@ internal partial class CCS2ChickenGraphControllerImpl : CAnimGraphControllerBase
     }
     private static nint? _IdleVariationOffset;
 
-    public SchemaUntypedField IdleVariation
+    public ref CAnimGraph2ParamOptionalRefFloat IdleVariation
     {
         get
         {
             _IdleVariationOffset = _IdleVariationOffset ?? Schema.GetOffset(0xC887F157CF0EF118);
-            return new SchemaUntypedField(_Handle + _IdleVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_IdleVariationOffset!.Value);
         }
     }
     private static nint? _RunVariationOffset;
 
-    public SchemaUntypedField RunVariation
+    public ref CAnimGraph2ParamOptionalRefFloat RunVariation
     {
         get
         {
             _RunVariationOffset = _RunVariationOffset ?? Schema.GetOffset(0xC887F1575E32595B);
-            return new SchemaUntypedField(_Handle + _RunVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_RunVariationOffset!.Value);
         }
     }
     private static nint? _PanicVariationOffset;
 
-    public SchemaUntypedField PanicVariation
+    public ref CAnimGraph2ParamOptionalRefFloat PanicVariation
     {
         get
         {
             _PanicVariationOffset = _PanicVariationOffset ?? Schema.GetOffset(0xC887F157802F1EA1);
-            return new SchemaUntypedField(_Handle + _PanicVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_PanicVariationOffset!.Value);
         }
     }
     private static nint? _SquatVariationOffset;
 
-    public SchemaUntypedField SquatVariation
+    public ref CAnimGraph2ParamOptionalRefFloat SquatVariation
     {
         get
         {
             _SquatVariationOffset = _SquatVariationOffset ?? Schema.GetOffset(0xC887F15791127162);
-            return new SchemaUntypedField(_Handle + _SquatVariationOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefFloat>(_SquatVariationOffset!.Value);
         }
     }
     private static nint? _InWaterOffset;
 
-    public SchemaUntypedField InWater
+    public ref CAnimGraph2ParamOptionalRefBool InWater
     {
         get
         {
             _InWaterOffset = _InWaterOffset ?? Schema.GetOffset(0xC887F157E47F9BA9);
-            return new SchemaUntypedField(_Handle + _InWaterOffset!.Value);
+            return ref _Handle.AsRef<CAnimGraph2ParamOptionalRefBool>(_InWaterOffset!.Value);
         }
     }
     private static nint? _HasActionCompletedEventOffset;

@@ -106,6 +106,16 @@ internal partial class CMapInfoImpl : CPointEntityImpl, CMapInfo
             return ref _Handle.AsRef<bool>(_RainTraceToSkyEnabledOffset!.Value);
         }
     }
+    private static nint? _GPUCullSkyboxOffset;
+
+    public ref bool GPUCullSkybox
+    {
+        get
+        {
+            _GPUCullSkyboxOffset = _GPUCullSkyboxOffset ?? Schema.GetOffset(0x64779D00A0765733);
+            return ref _Handle.AsRef<bool>(_GPUCullSkyboxOffset!.Value);
+        }
+    }
     private static nint? _EnvRainStrengthOffset;
 
     public ref float EnvRainStrength
