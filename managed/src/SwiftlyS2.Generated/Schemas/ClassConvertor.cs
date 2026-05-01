@@ -58,7 +58,6 @@ internal static class ClassConvertor
             "func_proprrespawnzone" => new CFuncPropRespawnZoneImpl(address),
             "prop_dynamic_ornament" => new COrnamentPropImpl(address),
             "point_enable_motion_fixup" => new CEnableMotionFixupImpl(address),
-            "prop_door_rotating" => new CPropDoorRotatingBreakableImpl(address),
             "point_teleport" => new CPointTeleportImpl(address),
             "point_hurt" => new CPointHurtImpl(address),
             "point_velocitysensor" => new CPointVelocitySensorImpl(address),
@@ -479,6 +478,7 @@ internal static class ClassConvertor
             "env_tonemap_controller2" => new CTonemapController2Impl(address),
             "info_hostage_spawn" => new CHostageImpl(address),
             "item_defuser" => new CItemDefuserImpl(address),
+            "prop_door_rotating" => new CPropDoorRotatingImpl(address),
             _ => new CEntityInstanceImpl(address),
         };
     }

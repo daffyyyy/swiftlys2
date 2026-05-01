@@ -26,6 +26,36 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
             return new CCSPlayerAnimationStateImpl(_Handle + _AnimationStateOffset!.Value);
         }
     }
+    private static nint? _UsingGroundTopologyOffsetOffset;
+
+    public ref bool UsingGroundTopologyOffset
+    {
+        get
+        {
+            _UsingGroundTopologyOffsetOffset = _UsingGroundTopologyOffsetOffset ?? Schema.GetOffset(0xD20D9A03F0083882);
+            return ref _Handle.AsRef<bool>(_UsingGroundTopologyOffsetOffset!.Value);
+        }
+    }
+    private static nint? _AltitudeAtLastUsingGroundTopologyOffsetTransitionOffset;
+
+    public ref float AltitudeAtLastUsingGroundTopologyOffsetTransition
+    {
+        get
+        {
+            _AltitudeAtLastUsingGroundTopologyOffsetTransitionOffset = _AltitudeAtLastUsingGroundTopologyOffsetTransitionOffset ?? Schema.GetOffset(0xD20D9A03A10FA1EA);
+            return ref _Handle.AsRef<float>(_AltitudeAtLastUsingGroundTopologyOffsetTransitionOffset!.Value);
+        }
+    }
+    private static nint? _UsingGroundTopologyOffsetTransitionSmoothingOffset;
+
+    public ref float UsingGroundTopologyOffsetTransitionSmoothing
+    {
+        get
+        {
+            _UsingGroundTopologyOffsetTransitionSmoothingOffset = _UsingGroundTopologyOffsetTransitionSmoothingOffset ?? Schema.GetOffset(0xD20D9A03F5D9BC1B);
+            return ref _Handle.AsRef<float>(_UsingGroundTopologyOffsetTransitionSmoothingOffset!.Value);
+        }
+    }
     private static nint? _LadderNormalOffset;
 
     public ref Vector LadderNormal
@@ -506,26 +536,6 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
             return ref _Handle.AsRef<Vector2D>(_WalkWishVelOffset!.Value);
         }
     }
-    private static nint? _GtLastTimeOnStaticWorldGroundOffset;
-
-    public GameTime_t GtLastTimeOnStaticWorldGround
-    {
-        get
-        {
-            _GtLastTimeOnStaticWorldGroundOffset = _GtLastTimeOnStaticWorldGroundOffset ?? Schema.GetOffset(0xD20D9A03ED4E834B);
-            return new GameTime_tImpl(_Handle + _GtLastTimeOnStaticWorldGroundOffset!.Value);
-        }
-    }
-    private static nint? _GtLastTimeInAirOffset;
-
-    public GameTime_t GtLastTimeInAir
-    {
-        get
-        {
-            _GtLastTimeInAirOffset = _GtLastTimeInAirOffset ?? Schema.GetOffset(0xD20D9A03AE6AF69C);
-            return new GameTime_tImpl(_Handle + _GtLastTimeInAirOffset!.Value);
-        }
-    }
     private static nint? _HasEverProcessedCommandOffset;
 
     public ref bool HasEverProcessedCommand
@@ -537,6 +547,9 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
         }
     }
 
+    public void UsingGroundTopologyOffsetUpdated() => Schema.Update(_Handle, 0xD20D9A03F0083882);
+    public void AltitudeAtLastUsingGroundTopologyOffsetTransitionUpdated() => Schema.Update(_Handle, 0xD20D9A03A10FA1EA);
+    public void UsingGroundTopologyOffsetTransitionSmoothingUpdated() => Schema.Update(_Handle, 0xD20D9A03F5D9BC1B);
     public void LadderSurfacePropIndexUpdated() => Schema.Update(_Handle, 0xD20D9A03149CA20B);
     public void DuckedUpdated() => Schema.Update(_Handle, 0xD20D9A0314A05A59);
     public void DuckAmountUpdated() => Schema.Update(_Handle, 0xD20D9A03E4F7740E);
@@ -562,7 +575,5 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
     public void LastJumpVelocityZUpdated() => Schema.Update(_Handle, 0xD20D9A031736B002);
     public void JumpApexPendingUpdated() => Schema.Update(_Handle, 0xD20D9A03B2669F50);
     public void WasSurfingUpdated() => Schema.Update(_Handle, 0xD20D9A03C30201EE);
-    public void GtLastTimeOnStaticWorldGroundUpdated() => Schema.Update(_Handle, 0xD20D9A03ED4E834B);
-    public void GtLastTimeInAirUpdated() => Schema.Update(_Handle, 0xD20D9A03AE6AF69C);
     public void HasEverProcessedCommandUpdated() => Schema.Update(_Handle, 0xD20D9A037B4A289E);
 }

@@ -11,11 +11,17 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, ISchemaClass<CCSPlayer_MovementServices>
 {
     static CCSPlayer_MovementServices ISchemaClass<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
-    static int ISchemaClass<CCSPlayer_MovementServices>.Size => 4032;
+    static int ISchemaClass<CCSPlayer_MovementServices>.Size => 4080;
     static string? ISchemaClass<CCSPlayer_MovementServices>.ClassName => null;
 
 
     public CCSPlayerAnimationState AnimationState { get; }
+
+    public ref bool UsingGroundTopologyOffset { get; }
+
+    public ref float AltitudeAtLastUsingGroundTopologyOffsetTransition { get; }
+
+    public ref float UsingGroundTopologyOffsetTransitionSmoothing { get; }
 
     public ref Vector LadderNormal { get; }
 
@@ -113,12 +119,11 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
 
     public ref Vector2D WalkWishVel { get; }
 
-    public GameTime_t GtLastTimeOnStaticWorldGround { get; }
-
-    public GameTime_t GtLastTimeInAir { get; }
-
     public ref bool HasEverProcessedCommand { get; }
 
+    public void UsingGroundTopologyOffsetUpdated();
+    public void AltitudeAtLastUsingGroundTopologyOffsetTransitionUpdated();
+    public void UsingGroundTopologyOffsetTransitionSmoothingUpdated();
     public void LadderSurfacePropIndexUpdated();
     public void DuckedUpdated();
     public void DuckAmountUpdated();
@@ -144,7 +149,5 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
     public void LastJumpVelocityZUpdated();
     public void JumpApexPendingUpdated();
     public void WasSurfingUpdated();
-    public void GtLastTimeOnStaticWorldGroundUpdated();
-    public void GtLastTimeInAirUpdated();
     public void HasEverProcessedCommandUpdated();
 }

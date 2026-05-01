@@ -159,6 +159,28 @@ public class TestPlugin : BasePlugin
         };
 
         // throw new InvalidOperationException("TestPlugin constructor exception");
+
+        var addr = Core.Memory.GetAddressBySignature("server", "48 89 5C 24 ? 56 57 41 56 48 83 EC ? 48 8D 05 ? ? ? ? 48 C7 44 24");
+        var func = Core.Memory.GetUnmanagedFunctionByAddress<ReflectPawnStateType>(addr!.Value);
+        _ = func.AddHook(next =>
+        {
+            return (a1, a2) =>
+            {
+               var ret = next()(a1, a2); 
+               var controller = Helper.AsSchema<CCS2PawnGraphController>(a1);
+               
+            //    controller.FlinchIsOnFire.Value = true;
+            //    controller.Action.Value = "action_crouch";
+            //    controller.AirHeightAboveGround.Value = 1f;
+            //    controller.Char = "action_celebrate";
+            //    controller.MoveSpeedY.Value = 0.1f;
+                // controller.IsWalking.Value = false;
+                // controller.AimPitchAngle.Value = 90f;
+                controller.CrouchAmount.Value = 1 * MathF.Sin(Core.Engine.GlobalVars.TickCount);
+                // Console.WriteLine(ret+"\n");
+                return ret;
+            };
+        });
     }
 
     [Command("selfmute")]
@@ -171,28 +193,15 @@ public class TestPlugin : BasePlugin
     [Command("be")]
     public void Test2Command( ICommandContext context )
     {
-
-        var addr = Core.Memory.GetAddressBySignature("server", "48 89 5C 24 ? 56 57 41 56 48 83 EC ? 48 8D 05 ? ? ? ? 48 C7 44 24");
-        var func = Core.Memory.GetUnmanagedFunctionByAddress<ReflectPawnStateType>(addr!.Value);
-        func.AddHook(next =>
+        var controller = context.Sender!.Pawn.GraphControllerManager.Controllers[0].Value.As<CCS2PawnGraphController>();
+        unsafe
         {
-            return (a1, a2) =>
+            fixed(void* ptr = &controller.Action)
             {
-            //    var ret = next()(a1, a2); 
-               var controller = Helper.AsSchema<CCS2PawnGraphController>(a1);
-               
-            //    controller.FlinchIsOnFire.Value = true;
-               controller.Action.Value = "action_crouch";
-               controller.AirHeightAboveGround.Value = 1f;
-            //    controller.Char = "action_celebrate";
-            //    controller.MoveSpeedY.Value = 0.1f;
-                // controller.IsWalking.Value = false;
-                // controller.AimPitchAngle.Value = 90f;
-                // controller.AimYawAngle.Value = 180 * MathF.Sin(Core.Engine.GlobalVars.TickCount);
-                // Console.WriteLine(ret+"\n");
-                return 0;
-            };
-        });
+                Console.WriteLine("PTR: "+(nint)ptr);
+            }
+        }
+        
     }
 
     [Command("CommandAliasTest")]
