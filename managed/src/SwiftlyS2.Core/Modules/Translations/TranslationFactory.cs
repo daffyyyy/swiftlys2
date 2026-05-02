@@ -42,7 +42,7 @@ internal class TranslationFactory
         }
 
         return resource.Resources.Count == 0
-            ? throw new Exception("No translation files found.")
+            ? throw new Exception("No translation files found. There needs to be at least an English translation file. If you don't want to use translations, delete the resources/translations folder.")
             : !resource.Resources.ContainsKey(Language.English)
             ? throw new Exception("English primary translation file not found.")
             : resource;
