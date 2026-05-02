@@ -393,11 +393,11 @@ internal static class SchedulerManager
             return Task.CompletedTask;
         }
 
-        return NextWorldUpdateAsync(action);
+        return NextTickAsync(action);
     }
 
     public static Task<T> QueueOrNow<T>( Func<T> task )
     {
-        return NativeBinding.IsMainThread ? Task.FromResult(task()) : NextWorldUpdateAsync(task);
+        return NativeBinding.IsMainThread ? Task.FromResult(task()) : NextTickAsync(task);
     }
 }
