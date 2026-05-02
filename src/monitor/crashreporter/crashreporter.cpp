@@ -129,7 +129,7 @@ void CrashReporter::EnableDotnetCrashTracer(int level)
         return;
     }
 
-    SetTracerLevel(level);
+    SetTracerLevel(g_SwiftlyCore.GetCorePath(), level);
 
     setEnvVar("CORECLR_ENABLE_PROFILING", "1");
     setEnvVar("CORECLR_PROFILER", "{a2648b53-a560-486c-9e56-c3922a330182}");

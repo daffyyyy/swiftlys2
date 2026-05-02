@@ -31,7 +31,7 @@ bool setEnvVar(const std::string& key, const std::string& value) {
     return false;
 }
 
-void SetTracerLevel(int level)
+void SetTracerLevel(const std::string& corePath, int level)
 {
     void* lib = load_library(WIN_LINUX(StringWide("sw2tracer.dll").c_str(), (Files::GeneratePath(corePath + "bin/linuxsteamrt64/libsw2tracer.so")).c_str()));
     if (!lib)
