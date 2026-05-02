@@ -145,7 +145,7 @@ public class TestPlugin : BasePlugin
 {
     private IConVar<bool>? _autobunnyhopping;
 
-    private delegate nint ReflectPawnStateType(nint a1, nint a2);
+    private delegate nint ReflectPawnStateType( nint a1, nint a2 );
 
     public TestPlugin( ISwiftlyCore core ) : base(core)
     {
@@ -164,16 +164,16 @@ public class TestPlugin : BasePlugin
         var func = Core.Memory.GetUnmanagedFunctionByAddress<ReflectPawnStateType>(addr!.Value);
         _ = func.AddHook(next =>
         {
-            return (a1, a2) =>
+            return ( a1, a2 ) =>
             {
-               var ret = next()(a1, a2); 
-               var controller = Helper.AsSchema<CCS2PawnGraphController>(a1);
-               
-            //    controller.FlinchIsOnFire.Value = true;
-            //    controller.Action.Value = "action_crouch";
-            //    controller.AirHeightAboveGround.Value = 1f;
-            //    controller.Char = "action_celebrate";
-            //    controller.MoveSpeedY.Value = 0.1f;
+                var ret = next()(a1, a2);
+                var controller = Helper.AsSchema<CCS2PawnGraphController>(a1);
+
+                //    controller.FlinchIsOnFire.Value = true;
+                //    controller.Action.Value = "action_crouch";
+                //    controller.AirHeightAboveGround.Value = 1f;
+                //    controller.Char = "action_celebrate";
+                //    controller.MoveSpeedY.Value = 0.1f;
                 // controller.IsWalking.Value = false;
                 // controller.AimPitchAngle.Value = 90f;
                 controller.CrouchAmount.Value = 1 * MathF.Sin(Core.Engine.GlobalVars.TickCount);
@@ -196,12 +196,12 @@ public class TestPlugin : BasePlugin
         var controller = context.Sender!.Pawn.GraphControllerManager.Controllers[0].Value.As<CCS2PawnGraphController>();
         unsafe
         {
-            fixed(void* ptr = &controller.Action)
+            fixed (void* ptr = &controller.Action)
             {
-                Console.WriteLine("PTR: "+(nint)ptr);
+                Console.WriteLine("PTR: " + (nint)ptr);
             }
         }
-        
+
     }
 
     [Command("CommandAliasTest")]
@@ -616,17 +616,7 @@ public class TestPlugin : BasePlugin
     public void TestCommand1( ICommandContext context )
     {
         var player = context.Sender!;
-        for (var i = 0; i < 10000; i++)
-        {
-            _ = Task.Run(async () =>
-            {
-                await Task.Delay(100);
-                Core.Scheduler.NextTick(() =>
-                {
-                    player.PlayerPawn!.SetModel("characters/models/tm_jumpsuit/tm_jumpsuit_varianta.vmdl");
-                });
-            });
-        }
+        player.PlayerPawn!.SetModel("agents/models/ctm_fbi/ctm_fbi_varianta.vmdl");
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
@@ -1208,9 +1198,9 @@ public class TestPlugin : BasePlugin
         Console.WriteLine($"{player.Controller!.PlayerName} broke a prop!");
         return HookResult.Continue;
     }
-    
+
     [GameEventHandler(HookMode.Post)]
-    public HookResult OnPlayerHurtPost(EventPlayerHurt @event)
+    public HookResult OnPlayerHurtPost( EventPlayerHurt @event )
     {
         if (@event.UserIdPlayer is not { IsValid: true }) return HookResult.Continue;
         var pawnHealth = @event.UserIdPlayer.PlayerPawn!.Health;
