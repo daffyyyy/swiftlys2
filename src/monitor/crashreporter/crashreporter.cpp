@@ -129,6 +129,8 @@ void CrashReporter::EnableDotnetCrashTracer(int level)
         return;
     }
 
+    SetTracerLevel(level);
+
     setEnvVar("CORECLR_ENABLE_PROFILING", "1");
     setEnvVar("CORECLR_PROFILER", "{a2648b53-a560-486c-9e56-c3922a330182}");
     auto tracerPath = Files::GeneratePath(g_SwiftlyCore.GetCorePath() + WIN_LINUX("bin\\win64\\sw2tracer.dll", "bin/linuxsteamrt64/libsw2tracer.so"));

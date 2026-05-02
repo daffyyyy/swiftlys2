@@ -2,6 +2,7 @@
 #define _src_monitor_crashreporter_tracer_h
 
 typedef void (*Sw2TracerDumpFunc)(const char* path);
+typedef void (*Sw2TracerSetTracerLevel)(int level);
 
 #include <iostream>
 #include <string>
@@ -28,6 +29,28 @@ bool setEnvVar(const std::string& key, const std::string& value) {
     }
 #endif
     return false;
+}
+
+void SetTracerLevel(int level)
+{
+    void* lib = load_library(WIN_LINUX(StringWide("sw2tracer.dll").c_str(), (Files::GeneratePath(corePath + "bin/linuxsteamrt64/libsw2tracer.so")).c_str()));
+    if (!lib)
+    {
+        auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+        logger->Error("Crash Reporter", "Failed to load sw2tracer library\n");
+        return;
+    }
+
+    Sw2TracerSetTracerLevel setTraceLevelFunc = (Sw2TracerSetTracerLevel)get_export(lib, "SW2TracerSetTracerLevel");
+    if (setTraceLevelFunc)
+    {
+        setTraceLevelFunc(level);
+    }
+    else
+    {
+        auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+        logger->Error("Crash Reporter", "Failed to get SW2TracerSetTracerLevel function\n");
+    }
 }
 
 void TracerDump(const std::string& corePath, const char* path)
