@@ -12,11 +12,12 @@ namespace SwiftlyS2.Core.EntitySystem;
 
 internal class EntitySystemService : IEntitySystemService, IDisposable
 {
+    private CCSGameRulesProxy? cachedGameRulesProxy;
+    private CCSGameRules? cachedGameRules;
     private readonly IEventSubscriber eventSubscriber;
 
     private readonly ConcurrentDictionary<Guid, EventDelegates.OnEntityFireOutputHookEvent> outputHooks = new();
     private readonly ConcurrentDictionary<Guid, EventDelegates.OnEntityIdentityAcceptInputHook> inputHooks = new();
-    private CCSGameRulesImpl cachedGameRules = new(0);
     private volatile bool disposed;
 
     public EntitySystemService( IEventSubscriber eventSubscriber )
@@ -65,8 +66,28 @@ internal class EntitySystemService : IEntitySystemService, IDisposable
     public CCSGameRules? GetGameRules()
     {
         ThrowIfEntitySystemInvalid();
-        cachedGameRules.DangerousSetHandle(NativeEntitySystem.GetGameRules());
-        return cachedGameRules;
+        if (cachedGameRules != null)
+        {
+            if (cachedGameRulesProxy != null && cachedGameRulesProxy.IsValidEntity)
+            {
+                return cachedGameRules;
+            } else
+            {
+                cachedGameRules = null;
+                cachedGameRulesProxy = null;
+                return null;
+            }
+        } else
+        {
+            var proxies = GetAllEntitiesByClass<CCSGameRulesProxy>();
+            if (proxies.Count() > 0)
+            {
+                cachedGameRulesProxy = proxies.First();
+                cachedGameRules = cachedGameRulesProxy.GameRules;
+                return cachedGameRules;
+            }
+        }
+        return null;
     }
 
     public IEnumerable<CEntityInstance> GetAllEntities()

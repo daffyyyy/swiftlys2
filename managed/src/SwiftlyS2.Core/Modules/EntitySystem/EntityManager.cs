@@ -18,7 +18,8 @@ internal static class EntityManager
 
         _Dummy.DangerousSetHandle(entityPtr);
         var index = _Dummy.Index;
-        var entity = ClassConvertor.ConvertEntityByDesignerName(entityPtr, _Dummy.DesignerName);
+        var designerName = _Dummy.DesignerName;
+        var entity = ClassConvertor.ConvertEntityByDesignerName(entityPtr, designerName);
         lock (_lock)
         {
             try
