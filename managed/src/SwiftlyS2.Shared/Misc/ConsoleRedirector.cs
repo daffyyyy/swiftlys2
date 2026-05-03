@@ -28,8 +28,26 @@ internal class ConsoleRedirector : TextWriter
             try
             {
                 isRedirecting = true;
-                string v = value ?? "(null)";
-                NativeEngineHelpers.SendMessageToConsole(v + (v.EndsWith("\n") ? "" : "\n"));
+                var v = value ?? "(null)";
+                if (!v.EndsWith('\n'))
+                {
+                    v += "\n";
+                }
+
+                if (v.Length > 2048) // maximum console output length per message
+                {
+                    var offset = 0;
+                    while (offset < v.Length)
+                    {
+                        var length = Math.Min(2048, v.Length - offset);
+                        NativeEngineHelpers.SendMessageToConsole(v.Substring(offset, length));
+                        offset += length;
+                    }
+                }
+                else
+                {
+                    NativeEngineHelpers.SendMessageToConsole(v);
+                }
             }
             finally
             {
