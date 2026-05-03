@@ -79,10 +79,9 @@ internal class EntitySystemService : IEntitySystemService, IDisposable
             }
         } else
         {
-            var proxies = GetAllEntitiesByClass<CCSGameRulesProxy>();
-            if (proxies.Count() > 0)
+            if (GetAllEntitiesByClass<CCSGameRulesProxy>().FirstOrDefault() is CCSGameRulesProxy proxy)
             {
-                cachedGameRulesProxy = proxies.First();
+                cachedGameRulesProxy = proxy;
                 cachedGameRules = cachedGameRulesProxy.GameRules;
                 return cachedGameRules;
             }
