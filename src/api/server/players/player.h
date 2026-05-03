@@ -69,6 +69,7 @@ public:
     virtual void ChangeAuthorizationState(bool bAuthorized) = 0;
 
     virtual std::string& GetLanguage() = 0;
+    virtual void SetLanguage(const std::string& language) = 0;
 
     /** Player SDK Classes **/
     virtual void* GetController() = 0;

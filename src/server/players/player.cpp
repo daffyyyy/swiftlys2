@@ -337,7 +337,19 @@ void CPlayer::ChangeAuthorizationState(bool bAuthorized)
 
 std::string& CPlayer::GetLanguage()
 {
-    return m_sLanguage;
+    if (m_bLanguageRetrieved) {
+        return m_sLanguage;
+    }
+    else {
+        static auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
+        return std::get<std::string>(configuration->GetValue("core.Language"));
+    }
+}
+
+void CPlayer::SetLanguage(const std::string& language)
+{
+    m_sLanguage = language;
+    m_bLanguageRetrieved = true;
 }
 
 void* CPlayer::GetController()

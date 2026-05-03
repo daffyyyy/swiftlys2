@@ -48,6 +48,7 @@ public:
     virtual void ChangeAuthorizationState(bool bAuthorized) override;
 
     virtual std::string& GetLanguage() override;
+    virtual void SetLanguage(const std::string& language) override;
 
     virtual void* GetController() override;
     virtual void* GetPawn() override;
@@ -93,6 +94,7 @@ private:
     uint64_t m_uUnauthorizedSteamID = 0;
 
     std::string m_sLanguage = "en";
+    bool m_bLanguageRetrieved = false;
 
     uint64_t centerMessageEndTime = 0;
     std::string centerMessageText = "";

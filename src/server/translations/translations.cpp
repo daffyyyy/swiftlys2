@@ -75,9 +75,6 @@ void CTranslations::Initialize()
         if (!player) return;
 
         auto it = l_mLanguages.find(cvar_value);
-        if (it != l_mLanguages.end())
-            player->GetLanguage() = it->second;
-        else
-            player->GetLanguage() = std::get<std::string>(configuration->GetValue("core.Language"));
+        player->SetLanguage(it != l_mLanguages.end() ? it->second : std::get<std::string>(configuration->GetValue("core.Language")));
         });
 }
