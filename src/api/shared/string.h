@@ -59,7 +59,7 @@ std::string ClearTerminalColors(std::string str);
 std::string GetTerminalStringColor(std::string plugin_name);
 std::vector<std::string> TokenizeCommand(std::string cmd);
 std::string RemoveHtmlTags(std::string input);
-
+std::string replace_case_insensitive(std::string str, const std::string from, const std::string to);
 std::string& trim(std::string& s, const char* t = " \t\n\r\f\v");
 
 void PrintTextTable(LogType type, std::string category, TextTable table);

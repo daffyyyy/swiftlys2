@@ -131,20 +131,20 @@ std::map<std::string, std::string> colors = {
 
 std::string ProcessColor(std::string str, int team)
 {
-    str = replace(str, "[teamcolor]", team == 3 ? "[lightblue]" : (team == 2 ? "[yellow]" : "[lightpurple]"));
+    str = replace_case_insensitive(str, "[teamcolor]", team == 3 ? "[lightblue]" : (team == 2 ? "[yellow]" : "[lightpurple]"));
     for (auto it = colors.begin(); it != colors.end(); ++it)
     {
-        str = replace(str, it->first, it->second);
+        str = replace_case_insensitive(str, it->first, it->second);
     }
     return str;
 }
 
 std::string ClearColors(std::string str)
 {
-    str = replace(str, "[teamcolor]", "");
+    str = replace_case_insensitive(str, "[teamcolor]", "");
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
-        str = replace(str, it->first, "");
+        str = replace_case_insensitive(str, it->first, "");
     }
     return str;
 }
@@ -153,7 +153,7 @@ std::string TerminalProcessColor(std::string str)
 {
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
-        str = replace(str, it->first, it->second);
+        str = replace_case_insensitive(str, it->first, it->second);
     }
     return str;
 }
@@ -162,7 +162,7 @@ std::string ClearTerminalColors(std::string str)
 {
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
-        str = replace(str, it->first, "");
+        str = replace_case_insensitive(str, it->first, "");
     }
     return str;
 }
@@ -182,6 +182,24 @@ std::string replace(std::string str, const std::string from, const std::string t
     while ((start_pos = str.find(from, start_pos)) != std::string::npos)
     {
         str.replace(start_pos, from.length(), to);
+        start_pos += to.length();
+    }
+    return str;
+}
+
+std::string replace_case_insensitive(std::string str, const std::string from, const std::string to)
+{
+    if (from.empty())
+        return str;
+
+    std::string from_lower = str_tolower(from);
+    std::string str_lower = str_tolower(str);
+    size_t start_pos = 0;
+
+    while ((start_pos = str_lower.find(from_lower, start_pos)) != std::string::npos)
+    {
+        str.replace(start_pos, from.length(), to);
+        str_lower.replace(start_pos, from.length(), to);
         start_pos += to.length();
     }
     return str;
