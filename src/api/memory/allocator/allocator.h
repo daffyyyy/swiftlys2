@@ -38,8 +38,6 @@ public:
 
     virtual void Copy(void* dest, void* src, uint64_t size) = 0;
     virtual void Move(void* dest, void* src, uint64_t size) = 0;
-
-    virtual std::map<void*, uint64_t> GetAllocations() = 0;
 };
 
 #endif

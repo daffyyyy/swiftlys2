@@ -24,104 +24,44 @@
 
 void* MemoryAllocator::Alloc(uint64_t size)
 {
-    if (size == 0) return nullptr;
-
-    QueueLockGuard lock(m_mtxLock);
-    void* ptr = malloc(size);
-    if (ptr != nullptr)
-    {
-        allocations[ptr] = size;
-        totalAllocated += size;
-    }
-    return ptr;
+    return malloc(size);
 }
 
 void MemoryAllocator::Free(void* ptr)
 {
-    if (ptr == nullptr) return;
-
-    QueueLockGuard lock(m_mtxLock);
-    auto it = allocations.find(ptr);
-    if (it != allocations.end())
-    {
-        totalAllocated -= it->second;
-        allocations.erase(it);
-        free(ptr);
-    }
+    free(ptr);
 }
 
 void* MemoryAllocator::Resize(void* ptr, uint64_t newSize)
 {
-    if (ptr == nullptr) return Alloc(newSize);
-    QueueLockGuard lock(m_mtxLock);
-    auto it = allocations.find(ptr);
-    if (it != allocations.end())
-    {
-        uint64_t oldSize = it->second;
-        void* newPtr = realloc(ptr, newSize);
-        if (newPtr)
-        {
-            allocations.erase(it);
-            allocations[newPtr] = newSize;
-            totalAllocated = totalAllocated - oldSize + newSize;
-            return newPtr;
-        }
-    }
-    return nullptr;
+    return realloc(ptr, newSize);
 }
 
 uint64_t MemoryAllocator::GetSize(void* ptr)
 {
-    if (ptr == nullptr) return 0;
-
-    QueueLockGuard lock(m_mtxLock);
-    auto it = allocations.find(ptr);
-    if (it != allocations.end())
-    {
-        return it->second;
-    }
-    return 0;
+    return _msize(ptr);
 }
 
 uint64_t MemoryAllocator::GetTotalAllocated()
 {
-    QueueLockGuard lock(m_mtxLock);
     return totalAllocated;
 }
 
 bool MemoryAllocator::IsPointerValid(void* ptr)
 {
-    if (ptr == nullptr) return false;
-    QueueLockGuard lock(m_mtxLock);
-    return allocations.contains(ptr);
+    return true;
 }
 
 void MemoryAllocator::Copy(void* dest, void* src, uint64_t size)
 {
-    if (dest == nullptr || src == nullptr) return;
     memcpy(dest, src, size);
 }
 
 void MemoryAllocator::Move(void* dest, void* src, uint64_t size)
 {
-    if (dest == nullptr || src == nullptr) return;
     memmove(dest, src, size);
-}
-
-std::map<void*, uint64_t> MemoryAllocator::GetAllocations()
-{
-    QueueLockGuard lock(m_mtxLock);
-    return allocations;
 }
 
 MemoryAllocator::~MemoryAllocator()
 {
-    QueueLockGuard lock(m_mtxLock);
-    for (const auto& [ptr, size] : allocations)
-    {
-        if (ptr == nullptr) continue; // not sure how it would be possible but just in case
-        free(ptr);
-    }
-    allocations.clear();
-    totalAllocated = 0;
 }

@@ -40,8 +40,6 @@ public:
     virtual void Copy(void* dest, void* src, uint64_t size) override;
     virtual void Move(void* dest, void* src, uint64_t size) override;
 
-    virtual std::map<void*, uint64_t> GetAllocations() override;
-
     ~MemoryAllocator();
 private:
     std::map<void*, uint64_t> allocations;
