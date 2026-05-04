@@ -187,7 +187,7 @@ internal class PlayerManagerService : IPlayerManagerService
             }
             else if (target.StartsWith('#'))
             {
-                if (int.TryParse(target[1..], out var id) && targetPlayer.PlayerID == id)
+                if (int.TryParse(target[1..], out var id) && (targetPlayer.PlayerID == id || targetPlayer.UserID == id))
                 {
                     allPlayers = allPlayers.Append(targetPlayer);
                 }
