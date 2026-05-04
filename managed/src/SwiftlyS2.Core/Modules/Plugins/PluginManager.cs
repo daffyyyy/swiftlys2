@@ -618,13 +618,7 @@ internal class PluginManager : IPluginManager
                     _logger.LogWarning("Failed to reload plugin: {Name}", directoryName);
                 }
             }
-            catch (Exception ex)
-            {
-                if (GlobalExceptionHandler.Handle(ref ex))
-                {
-                    AnsiConsole.WriteException(ex);
-                }
-            }
+            catch (Exception) { }
         }, cts.Token);
     }
 
