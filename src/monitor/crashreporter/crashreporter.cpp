@@ -947,7 +947,7 @@ inline void ReportCrashIncident(const std::string& crashDir, void* exceptionInfo
             crashReport["memory"]["availablePhysical"] = si.freeram * si.mem_unit;
             crashReport["memory"]["totalVirtual"] = (si.totalram + si.totalswap) * si.mem_unit;
             crashReport["memory"]["availableVirtual"] = (si.freeram + si.freeswap) * si.mem_unit;
-            crashReport["memory"]["memoryLoad"] = static_cast<uint32_t>((1.0 - static_cast<double>(si.freeram) / si.totalram) * 100);
+            crashReport["memory"]["memoryLoad"] = static_cast<uint32_t>((1.0 - (static_cast<double>(si.freeram) / si.totalram)) * 100);
         }
 #endif
 
