@@ -24,8 +24,7 @@ char* Bridge_ServerHelpers_GetServerLanguage(int* size)
     static auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
     static auto memory = g_ifaceService.FetchInterface<IMemoryAllocator>(MEMORYALLOCATOR_INTERFACE_VERSION);
 
-    static std::string s;
-    s = std::get<std::string>(configuration->GetValue("core.Language"));
+    std::string s = std::get<std::string>(configuration->GetValue("core.Language"));
 
     int sz = s.size();
     *size = sz;

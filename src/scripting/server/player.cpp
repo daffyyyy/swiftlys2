@@ -154,8 +154,7 @@ char* Bridge_Player_GetIPAddress(int* size, int playerid)
     if (!player)
         return Bridge_Player_CopyString("", size);
 
-    static std::string s;
-    s = player->GetIPAddress();
+    std::string s = player->GetIPAddress();
 
     int outSize = s.size();
     *size = outSize;
@@ -304,8 +303,7 @@ char* Bridge_Player_GetLanguage(int* size, int playerid)
     if (!player)
         return Bridge_Player_CopyString("", size);
 
-    static std::string s;
-    s = player->GetLanguage();
+    std::string s = player->GetLanguage();
 
     int sz = s.size();
     *size = sz;

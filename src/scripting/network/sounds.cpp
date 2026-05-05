@@ -56,8 +56,7 @@ void Bridge_Sounds_SetName(void* event, const char* name)
 
 char* Bridge_Sounds_GetName(int* size, void* event)
 {
-    static std::string s;
-    s = ((ISoundEvent*)event)->GetName();
+    std::string s = ((ISoundEvent*)event)->GetName();
 
     return Bridge_Sounds_CopyString(s, size);
 }

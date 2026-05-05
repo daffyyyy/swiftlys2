@@ -115,37 +115,32 @@ void* Bridge_EngineHelpers_GetTraceManager()
 
 char* Bridge_EngineHelpers_GetCSGODirectoryPath(int* size)
 {
-    static std::string s;
-    s = fmt::format("{}{}csgo", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"));
+    std::string s = fmt::format("{}{}csgo", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"));
     return Bridge_EngineHelpers_CopyString(s, size);
 }
 
 char* Bridge_EngineHelpers_GetGameDirectoryPath(int* size)
 {
-    static std::string s;
-    s = Plat_GetGameDirectory();
+    std::string s = Plat_GetGameDirectory();
     return Bridge_EngineHelpers_CopyString(s, size);
 }
 
 char* Bridge_EngineHelpers_GetCurrentGame(int* size)
 {
-    static std::string s;
-    s = g_SwiftlyCore.GetCurrentGame();
-
+    std::string s = g_SwiftlyCore.GetCurrentGame();
     return Bridge_EngineHelpers_CopyString(s, size);
 }
 
 char* Bridge_EngineHelpers_GetNativeVersion(int* size)
 {
-    static std::string s;
-    s = g_SwiftlyCore.GetVersion();
+    std::string s = g_SwiftlyCore.GetVersion();
 
     return Bridge_EngineHelpers_CopyString(s, size);
 }
 
 char* Bridge_EngineHelpers_GetMenuSettings(int* size)
 {
-    static std::string s;
+    std::string s;
 
     auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
     try {

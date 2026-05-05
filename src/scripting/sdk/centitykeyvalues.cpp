@@ -84,8 +84,7 @@ double Bridge_CEntityKeyValues_GetDouble(void* keyvalues, const char* keyName)
 
 char* Bridge_CEntityKeyValues_GetString(int* size, void* keyvalues, const char* keyName)
 {
-    static std::string s;
-    s = ((CEntityKeyValues*)keyvalues)->GetString(keyName);
+    std::string s = ((CEntityKeyValues*)keyvalues)->GetString(keyName);
     return Bridge_CEntityKeyValues_CopyString(s, size);
 }
 

@@ -521,8 +521,7 @@ char* Bridge_NetMessages_GetString(int* size, void* pmsg, const char* fieldName)
     GETCHECK_FIELD(Bridge_NetMessages_CopyString("", size));
     CHECK_FIELD_NOT_REPEATED(Bridge_NetMessages_CopyString("", size));
 
-    static std::string s;
-    s = msg->GetReflection()->GetString(*msg, field);
+    std::string s = msg->GetReflection()->GetString(*msg, field);
     return Bridge_NetMessages_CopyString(s, size);
 }
 
@@ -533,8 +532,7 @@ char* Bridge_NetMessages_GetRepeatedString(int* size, void* pmsg, const char* fi
     CHECK_FIELD_REPEATED(Bridge_NetMessages_CopyString("", size));
     CHECK_REPEATED_ELEMENT(index, Bridge_NetMessages_CopyString("", size));
 
-    static std::string s;
-    s = msg->GetReflection()->GetRepeatedString(*msg, field, index);
+    std::string s = msg->GetReflection()->GetRepeatedString(*msg, field, index);
     return Bridge_NetMessages_CopyString(s, size);
 }
 
@@ -831,8 +829,7 @@ int Bridge_NetMessages_GetBytes(uint8_t* out, void* pmsg, const char* fieldName)
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
 
-    static std::string s;
-    s = msg->GetReflection()->GetString(*msg, field);
+    std::string s = msg->GetReflection()->GetString(*msg, field);
     if (out != nullptr)
     {
         std::memcpy(out, s.data(), s.size());
@@ -848,8 +845,7 @@ int Bridge_NetMessages_GetRepeatedBytes(uint8_t* out, void* pmsg, const char* fi
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
 
-    static std::string s;
-    s = msg->GetReflection()->GetRepeatedString(*msg, field, index);
+    std::string s = msg->GetReflection()->GetRepeatedString(*msg, field, index);
     if (out != nullptr)
     {
         std::memcpy(out, s.data(), s.size());
