@@ -356,8 +356,24 @@ internal class CoreCommandService
 
     private void PluginCommand( ICommandContext context )
     {
-        void ShowPluginList()
+        void ShowPluginList( int page )
         {
+            const int pageSize = 20;
+
+            if (page < 1) page = 1;
+
+            var allPlugins = pluginManager.GetPlugins().ToList();
+            var totalPages = (int)Math.Ceiling(allPlugins.Count / (double)pageSize);
+            if (totalPages == 0) totalPages = 1;
+
+            if (page > totalPages)
+            {
+                logger.LogWarning("Page {Page} out of range. Total pages: {Total}", page, totalPages);
+                return;
+            }
+
+            var pagePlugins = allPlugins.Skip((page - 1) * pageSize).Take(pageSize);
+
             var table = new Table()
                 .AddColumn("Status")
                 .AddColumn("PluginId (ver.)")
@@ -365,7 +381,7 @@ internal class CoreCommandService
                 .AddColumn("Website")
                 .AddColumn("Location");
 
-            foreach (var plugin in pluginManager.GetPlugins())
+            foreach (var plugin in pagePlugins)
             {
                 var pluginId = Markup.Escape(plugin.Metadata?.Id ?? "<Unknown>");
                 var version = Markup.Escape(plugin.Metadata?.Version is { } v ? $" {v}" : string.Empty);
@@ -379,6 +395,7 @@ internal class CoreCommandService
                     Markup.Escape(plugin.PluginDirectory is { } dir ? Path.Join("(swRoot)", Path.GetRelativePath(rootDirService.GetRoot(), dir)) : string.Empty));
             }
 
+            logger.LogInformation("Plugins (page {Page}/{Total}, {Count} total):", page, totalPages, allPlugins.Count);
             AnsiConsole.Write(table);
 
             var loadErrors = pluginManager.GetPluginLoadErrors();
@@ -440,7 +457,8 @@ internal class CoreCommandService
         switch (args[1].Trim().ToLower())
         {
             case "list":
-                ShowPluginList();
+                var listPage = args.Length >= 3 && int.TryParse(args[2], out var parsedListPage) ? parsedListPage : 1;
+                ShowPluginList(listPage);
                 break;
             case "load":
                 if (ValidatePluginId(args, "load", "<dllName>"))
@@ -502,6 +520,20 @@ internal class CoreCommandService
 
     private void CommandsCommand( ICommandContext context )
     {
+        const int pageSize = 20;
+
+        var args = context.Args;
+        var page = 1;
+
+        if (args.Length >= 2 && int.TryParse(args[1], out var parsedPage))
+        {
+            page = parsedPage;
+        }
+
+        if (page < 1)
+        {
+            page = 1;
+        }
 
         var commandsByPlugin = core.Command.GetAllCommandsByPlugin();
 
@@ -511,39 +543,44 @@ internal class CoreCommandService
             return;
         }
 
+        var allRows = commandsByPlugin
+            .OrderBy(x => x.Key)
+            .SelectMany(pluginEntry => pluginEntry.Value
+                .OrderBy(x => x.CommandName)
+                .Select((cmd, idx) => (
+                    Plugin: idx == 0 ? pluginEntry.Key : string.Empty,
+                    cmd.CommandName,
+                    cmd.HelpText,
+                    cmd.Permission)))
+            .ToList();
+
+        var totalPages = (int)Math.Ceiling(allRows.Count / (double)pageSize);
+        if (totalPages == 0) totalPages = 1;
+
+        if (page > totalPages)
+        {
+            logger.LogWarning("Page {Page} out of range. Total pages: {Total}", page, totalPages);
+            return;
+        }
+
+        var pageRows = allRows.Skip((page - 1) * pageSize).Take(pageSize);
+
         var table = new Table()
             .AddColumn("Plugin")
             .AddColumn("Command Name")
             .AddColumn("Help Text")
             .AddColumn("Permission");
 
-        foreach (var pluginEntry in commandsByPlugin.OrderBy(x => x.Key))
+        foreach (var (plugin, commandName, helpText, permission) in pageRows)
         {
-            var pluginName = pluginEntry.Key;
-            var isFirstRow = true;
-
-            foreach (var command in pluginEntry.Value.OrderBy(x => x.CommandName))
-            {
-                if (isFirstRow)
-                {
-                    _ = table.AddRow(
-                        pluginName,
-                        command.CommandName,
-                        Markup.Escape(command.HelpText),
-                        string.IsNullOrWhiteSpace(command.Permission) ? "(none)" : command.Permission);
-                    isFirstRow = false;
-                }
-                else
-                {
-                    _ = table.AddRow(
-                        string.Empty,
-                        command.CommandName,
-                        Markup.Escape(command.HelpText),
-                        string.IsNullOrWhiteSpace(command.Permission) ? "(none)" : command.Permission);
-                }
-            }
+            _ = table.AddRow(
+                plugin,
+                commandName,
+                Markup.Escape(helpText),
+                string.IsNullOrWhiteSpace(permission) ? "(none)" : permission);
         }
 
+        logger.LogInformation("Commands (page {Page}/{Total}, {Count} total):", page, totalPages, allRows.Count);
         AnsiConsole.Write(table);
     }
 }
