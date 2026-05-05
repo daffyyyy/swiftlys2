@@ -9,19 +9,16 @@ using SwiftlyS2.Shared.Database;
 
 namespace SwiftlyS2.Core.Database;
 
-internal class DatabaseService : IDatabaseService
+internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseService, IDisposable
 {
-    private readonly ILogger<DatabaseService> logger;
+    private const int MaxPoolSize = 10;
+
     private readonly ConcurrentDictionary<string, Func<IDbConnection>> connectionFactories = new();
+    private readonly ConcurrentDictionary<string, ConcurrentBag<IDbConnection>> connectionPools = new();
+    private bool disposed;
 
     static DatabaseService()
     {
-    }
-
-    public DatabaseService( ILogger<DatabaseService> logger )
-    {
-        this.logger = logger;
-        this.connectionFactories.Clear();
     }
 
     private string ResolveConnectionName( string connectionName )
@@ -140,6 +137,115 @@ internal class DatabaseService : IDatabaseService
 
     public IDbConnection GetConnection( string connectionName )
     {
-        return GetOrCreateConnectionFactory(connectionName)();
+        var resolvedName = ResolveConnectionName(connectionName);
+        var pool = connectionPools.GetOrAdd(resolvedName, _ => []);
+
+        while (pool.TryTake(out var conn))
+        {
+            if (IsConnectionAlive(conn))
+            {
+                return new PooledConnection(conn, () => ReturnConnection(resolvedName, conn));
+            }
+
+            DisposeConnection(conn);
+        }
+
+        var factory = GetOrCreateConnectionFactory(resolvedName);
+        var fresh = factory();
+        fresh.Open();
+        return new PooledConnection(fresh, () => ReturnConnection(resolvedName, fresh));
+    }
+
+    private void ReturnConnection( string resolvedName, IDbConnection conn )
+    {
+        if (disposed)
+        {
+            DisposeConnection(conn);
+            return;
+        }
+
+        var pool = connectionPools.GetOrAdd(resolvedName, _ => []);
+
+        if (pool.Count >= MaxPoolSize || !IsConnectionAlive(conn))
+        {
+            DisposeConnection(conn);
+            return;
+        }
+
+        pool.Add(conn);
+    }
+
+    private static bool IsConnectionAlive( IDbConnection conn )
+    {
+        if (conn.State == ConnectionState.Broken)
+        {
+            return false;
+        }
+
+        if (conn.State == ConnectionState.Closed)
+        {
+            try
+            {
+                conn.Open();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        return conn.State == ConnectionState.Open;
+    }
+
+    private static void DisposeConnection( IDbConnection conn )
+    {
+        try { conn.Dispose(); } catch { }
+    }
+
+    public void Dispose()
+    {
+        if (disposed) return;
+        disposed = true;
+
+        foreach (var pool in connectionPools.Values)
+        {
+            while (pool.TryTake(out var conn))
+            {
+                DisposeConnection(conn);
+            }
+        }
+
+        connectionPools.Clear();
+    }
+
+    private sealed class PooledConnection( IDbConnection inner, Action returnToPool ) : IDbConnection
+    {
+        private bool returned;
+
+#pragma warning disable CS8769
+        string IDbConnection.ConnectionString {
+            get => inner.ConnectionString!;
+            set => inner.ConnectionString = value;
+        }
+#pragma warning restore CS8769
+
+        public int ConnectionTimeout => inner.ConnectionTimeout;
+        public string Database => inner.Database;
+        public ConnectionState State => inner.State;
+
+        public IDbTransaction BeginTransaction() => inner.BeginTransaction();
+        public IDbTransaction BeginTransaction( IsolationLevel il ) => inner.BeginTransaction(il);
+        public void ChangeDatabase( string databaseName ) => inner.ChangeDatabase(databaseName);
+        public void Close() => inner.Close();
+        public IDbCommand CreateCommand() => inner.CreateCommand();
+        public void Open() => inner.Open();
+
+        public void Dispose()
+        {
+            if (returned) return;
+            returned = true;
+            returnToPool();
+        }
     }
 }
