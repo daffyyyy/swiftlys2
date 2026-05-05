@@ -11,7 +11,7 @@ namespace SwiftlyS2.Core.Database;
 
 internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseService, IDisposable
 {
-    private const int MaxPoolSize = 10;
+    private const int MaxPoolSize = 5;
 
     private readonly ConcurrentDictionary<string, Func<IDbConnection>> connectionFactories = new();
     private readonly ConcurrentDictionary<string, List<IDbConnection>> connectionPools = new();
@@ -28,20 +28,35 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
         return NativeDatabase.ConnectionExists(connectionName) ? connectionName : NativeDatabase.GetDefaultConnectionName();
     }
 
-    private Func<IDbConnection> GetOrCreateConnectionFactory( string connectionName )
+    private static string BuildPoolKey( string driver, string host, ushort port, string database, string user, string pass, uint timeout )
+    {
+        return $"{driver}|{host}|{port}|{database}|{user}|{pass}|{timeout}";
+    }
+
+    private (string PoolKey, Func<IDbConnection> Factory) GetOrCreateConnectionFactory( string connectionName )
     {
         var resolvedName = ResolveConnectionName(connectionName);
 
-        if (connectionFactories.TryGetValue(resolvedName, out var cached))
-        {
-            return cached;
-        }
-
         try
         {
-            var factory = CreateConnectionFactory(resolvedName);
-            _ = connectionFactories.TryAdd(resolvedName, factory);
-            return factory;
+            var driver = NativeDatabase.GetConnectionDriver(resolvedName);
+            var host = NativeDatabase.GetConnectionHost(resolvedName);
+            var database = NativeDatabase.GetConnectionDatabase(resolvedName);
+            var user = NativeDatabase.GetConnectionUser(resolvedName);
+            var pass = NativeDatabase.GetConnectionPass(resolvedName);
+            var timeout = NativeDatabase.GetConnectionTimeout(resolvedName);
+            var port = NativeDatabase.GetConnectionPort(resolvedName);
+
+            var poolKey = BuildPoolKey(driver, host, port, database, user, pass, timeout);
+
+            if (connectionFactories.TryGetValue(poolKey, out var cached))
+            {
+                return (poolKey, cached);
+            }
+
+            var factory = CreateConnectionFactory(driver, host, port, database, user, pass, timeout);
+            _ = connectionFactories.TryAdd(poolKey, factory);
+            return (poolKey, factory);
         }
         catch (Exception e)
         {
@@ -55,16 +70,8 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
         }
     }
 
-    private static Func<IDbConnection> CreateConnectionFactory( string connectionName )
+    private static Func<IDbConnection> CreateConnectionFactory( string driver, string host, ushort port, string database, string user, string pass, uint timeout )
     {
-        var driver = NativeDatabase.GetConnectionDriver(connectionName);
-        var host = NativeDatabase.GetConnectionHost(connectionName);
-        var database = NativeDatabase.GetConnectionDatabase(connectionName);
-        var user = NativeDatabase.GetConnectionUser(connectionName);
-        var pass = NativeDatabase.GetConnectionPass(connectionName);
-        var timeout = NativeDatabase.GetConnectionTimeout(connectionName);
-        var port = NativeDatabase.GetConnectionPort(connectionName);
-
         return driver switch {
             "sqlite" => CreateSqliteFactory(database),
             "mysql" => CreateMySqlFactory(host, port, database, user, pass, timeout),
@@ -139,8 +146,8 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
 
     public IDbConnection GetConnection( string connectionName )
     {
-        var resolvedName = ResolveConnectionName(connectionName);
-        var pool = connectionPools.GetOrAdd(resolvedName, _ => []);
+        var (poolKey, factory) = GetOrCreateConnectionFactory(connectionName);
+        var pool = connectionPools.GetOrAdd(poolKey, _ => []);
 
         lock (poolLock)
         {
@@ -155,14 +162,13 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
 
             if (pool.Count < MaxPoolSize)
             {
-                var factory = GetOrCreateConnectionFactory(resolvedName);
                 var fresh = factory();
                 fresh.Open();
                 pool.Add(fresh);
                 return fresh;
             }
 
-            var idx = roundRobinIndex.AddOrUpdate(resolvedName, 0, ( _, prev ) => (prev + 1) % pool.Count);
+            var idx = roundRobinIndex.AddOrUpdate(poolKey, 0, ( _, prev ) => (prev + 1) % pool.Count);
             return pool[idx % pool.Count];
         }
     }
