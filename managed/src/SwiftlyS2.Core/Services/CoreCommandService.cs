@@ -183,7 +183,7 @@ internal class CoreCommandService
         if (!context.IsSentByPlayer)
         {
             _ = table
-                .AddRow("cmds", "List all plugin commands")
+                .AddRow("cmds [page]", "List all plugin commands (paginated, 20 per page)")
                 .AddRow("confilter", "Console Filter Menu")
                 .AddRow("plugins", "Plugin Management Menu")
                 .AddRow("gc", "Show garbage collection information on managed")
@@ -416,7 +416,7 @@ internal class CoreCommandService
             var table = new Table()
                 .AddColumn("Command")
                 .AddColumn("Description")
-                .AddRow("list", "List all plugins")
+                .AddRow("list [page]", "List all plugins (paginated, 20 per page)")
                 .AddRow("load", "Load a plugin")
                 .AddRow("unload", "Unload a plugin")
                 .AddRow("reload", "Reload a plugin");
