@@ -181,24 +181,6 @@ internal class DatabaseService : IDatabaseService
 
     private static bool IsConnectionAlive( IDbConnection conn )
     {
-        if (conn.State == ConnectionState.Broken)
-        {
-            return false;
-        }
-
-        if (conn.State == ConnectionState.Closed)
-        {
-            try
-            {
-                conn.Open();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         return conn.State == ConnectionState.Open;
     }
 
