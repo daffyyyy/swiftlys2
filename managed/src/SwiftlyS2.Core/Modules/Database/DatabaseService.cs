@@ -9,17 +9,24 @@ using SwiftlyS2.Shared.Database;
 
 namespace SwiftlyS2.Core.Database;
 
-internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseService, IDisposable
+internal class DatabaseService : IDatabaseService
 {
     private const int MaxPoolSize = 5;
 
+    private readonly ILogger<DatabaseService> logger;
+    private readonly ConcurrentDictionary<string, Func<IDbConnection>> connectionFactories = new();
     private readonly ConcurrentDictionary<string, List<IDbConnection>> connectionPools = new();
     private readonly ConcurrentDictionary<string, int> roundRobinIndex = new();
     private readonly Lock poolLock = new();
-    private bool disposed;
 
     static DatabaseService()
     {
+    }
+
+    public DatabaseService( ILogger<DatabaseService> logger )
+    {
+        this.logger = logger;
+        this.connectionFactories.Clear();
     }
 
     private string ResolveConnectionName( string connectionName )
@@ -32,7 +39,7 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
         return $"{driver}|{host}|{port}|{database}|{user}|{pass}|{timeout}";
     }
 
-    private (string PoolKey, Func<IDbConnection> Factory) GetOrCreateConnectionFactory( string connectionName )
+    private (string, Func<IDbConnection>) GetOrCreateConnectionFactory( string connectionName )
     {
         var resolvedName = ResolveConnectionName(connectionName);
 
@@ -47,7 +54,7 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
             var port = NativeDatabase.GetConnectionPort(resolvedName);
 
             var poolKey = BuildPoolKey(driver, host, port, database, user, pass, timeout);
-            var factory = CreateConnectionFactory(resolvedName, driver);
+            var factory = CreateConnectionFactory(resolvedName);
             return (poolKey, factory);
         }
         catch (Exception e)
@@ -62,76 +69,66 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
         }
     }
 
-    private static Func<IDbConnection> CreateConnectionFactory( string resolvedName, string driver )
+    private static Func<IDbConnection> CreateConnectionFactory( string connectionName )
     {
+        var driver = NativeDatabase.GetConnectionDriver(connectionName);
+        var host = NativeDatabase.GetConnectionHost(connectionName);
+        var database = NativeDatabase.GetConnectionDatabase(connectionName);
+        var user = NativeDatabase.GetConnectionUser(connectionName);
+        var pass = NativeDatabase.GetConnectionPass(connectionName);
+        var timeout = NativeDatabase.GetConnectionTimeout(connectionName);
+        var port = NativeDatabase.GetConnectionPort(connectionName);
+
         return driver switch {
-            "sqlite" => CreateSqliteFactory(resolvedName),
-            "mysql" => CreateMySqlFactory(resolvedName),
-            "postgresql" => CreatePostgresFactory(resolvedName),
+            "sqlite" => CreateSqliteFactory(database),
+            "mysql" => CreateMySqlFactory(host, port, database, user, pass, timeout),
+            "postgresql" => CreatePostgresFactory(host, port, database, user, pass, timeout),
             _ => throw new NotSupportedException($"Unsupported database driver: {driver}")
         };
     }
 
-    private static Func<IDbConnection> CreateSqliteFactory( string resolvedName )
+    private static Func<IDbConnection> CreateSqliteFactory( string database )
     {
-        return () => {
-            var database = NativeDatabase.GetConnectionDatabase(resolvedName);
-            return new SQLiteConnection($"Data Source={database}");
-        };
+        var connStr = $"Data Source={database}";
+        return () => new SQLiteConnection(connStr);
     }
 
-    private static Func<IDbConnection> CreateMySqlFactory( string resolvedName )
+    private static Func<IDbConnection> CreateMySqlFactory( string host, ushort port, string database, string user, string pass, uint timeout )
     {
-        return () => {
-            var host = NativeDatabase.GetConnectionHost(resolvedName);
-            var port = NativeDatabase.GetConnectionPort(resolvedName);
-            var database = NativeDatabase.GetConnectionDatabase(resolvedName);
-            var user = NativeDatabase.GetConnectionUser(resolvedName);
-            var pass = NativeDatabase.GetConnectionPass(resolvedName);
-            var timeout = NativeDatabase.GetConnectionTimeout(resolvedName);
-
-            var builder = new MySqlConnectionStringBuilder {
-                Server = host,
-                Port = port > 0 ? port : 3306u,
-                Database = database,
-                UserID = user,
-                Password = pass
-            };
-
-            if (timeout > 0)
-            {
-                builder.ConnectionTimeout = timeout;
-            }
-
-            return new MySqlConnection(builder.ConnectionString);
+        var builder = new MySqlConnectionStringBuilder {
+            Server = host,
+            Port = port > 0 ? port : 3306u,
+            Database = database,
+            UserID = user,
+            Password = pass
         };
+
+        if (timeout > 0)
+        {
+            builder.ConnectionTimeout = timeout;
+        }
+
+        var connStr = builder.ConnectionString;
+        return () => new MySqlConnection(connStr);
     }
 
-    private static Func<IDbConnection> CreatePostgresFactory( string resolvedName )
+    private static Func<IDbConnection> CreatePostgresFactory( string host, ushort port, string database, string user, string pass, uint timeout )
     {
-        return () => {
-            var host = NativeDatabase.GetConnectionHost(resolvedName);
-            var port = NativeDatabase.GetConnectionPort(resolvedName);
-            var database = NativeDatabase.GetConnectionDatabase(resolvedName);
-            var user = NativeDatabase.GetConnectionUser(resolvedName);
-            var pass = NativeDatabase.GetConnectionPass(resolvedName);
-            var timeout = NativeDatabase.GetConnectionTimeout(resolvedName);
-
-            var builder = new NpgsqlConnectionStringBuilder {
-                Host = host,
-                Port = port > 0 ? port : 5432,
-                Database = database,
-                Username = user,
-                Password = pass
-            };
-
-            if (timeout > 0)
-            {
-                builder.Timeout = (int)timeout;
-            }
-
-            return new NpgsqlConnection(builder.ConnectionString);
+        var builder = new NpgsqlConnectionStringBuilder {
+            Host = host,
+            Port = port > 0 ? port : 5432,
+            Database = database,
+            Username = user,
+            Password = pass
         };
+
+        if (timeout > 0)
+        {
+            builder.Timeout = (int)timeout;
+        }
+
+        var connStr = builder.ConnectionString;
+        return () => new NpgsqlConnection(connStr);
     }
 
     public string GetConnectionString( string connectionName )
@@ -173,7 +170,6 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
             if (pool.Count < MaxPoolSize)
             {
                 var fresh = factory();
-                fresh.Open();
                 pool.Add(fresh);
                 return fresh;
             }
@@ -209,25 +205,5 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
     private static void DisposeConnection( IDbConnection conn )
     {
         try { conn.Dispose(); } catch { }
-    }
-
-    public void Dispose()
-    {
-        if (disposed) return;
-        disposed = true;
-
-        lock (poolLock)
-        {
-            foreach (var pool in connectionPools.Values)
-            {
-                foreach (var conn in pool)
-                {
-                    DisposeConnection(conn);
-                }
-                pool.Clear();
-            }
-
-            connectionPools.Clear();
-        }
     }
 }

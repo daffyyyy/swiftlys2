@@ -183,7 +183,7 @@ internal class CoreCommandService
         if (!context.IsSentByPlayer)
         {
             _ = table
-                .AddRow("cmds [page]", "List all plugin commands (paginated, 20 per page)")
+                .AddRow(Markup.Escape("cmds [page]"), "List all plugin commands (paginated, 20 per page)")
                 .AddRow("confilter", "Console Filter Menu")
                 .AddRow("plugins", "Plugin Management Menu")
                 .AddRow("gc", "Show garbage collection information on managed")
@@ -547,7 +547,7 @@ internal class CoreCommandService
             .OrderBy(x => x.Key)
             .SelectMany(pluginEntry => pluginEntry.Value
                 .OrderBy(x => x.CommandName)
-                .Select((cmd, idx) => (
+                .Select(( cmd, idx ) => (
                     Plugin: idx == 0 ? pluginEntry.Key : string.Empty,
                     cmd.CommandName,
                     cmd.HelpText,
