@@ -14,7 +14,9 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
     private const int MaxPoolSize = 10;
 
     private readonly ConcurrentDictionary<string, Func<IDbConnection>> connectionFactories = new();
-    private readonly ConcurrentDictionary<string, ConcurrentBag<IDbConnection>> connectionPools = new();
+    private readonly ConcurrentDictionary<string, List<IDbConnection>> connectionPools = new();
+    private readonly ConcurrentDictionary<string, int> roundRobinIndex = new();
+    private readonly object poolLock = new();
     private bool disposed;
 
     static DatabaseService()
@@ -140,39 +142,29 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
         var resolvedName = ResolveConnectionName(connectionName);
         var pool = connectionPools.GetOrAdd(resolvedName, _ => []);
 
-        while (pool.TryTake(out var conn))
+        lock (poolLock)
         {
-            if (IsConnectionAlive(conn))
+            for (var i = pool.Count - 1; i >= 0; i--)
             {
-                return new PooledConnection(conn, () => ReturnConnection(resolvedName, conn));
+                if (!IsConnectionAlive(pool[i]))
+                {
+                    DisposeConnection(pool[i]);
+                    pool.RemoveAt(i);
+                }
             }
 
-            DisposeConnection(conn);
+            if (pool.Count < MaxPoolSize)
+            {
+                var factory = GetOrCreateConnectionFactory(resolvedName);
+                var fresh = factory();
+                fresh.Open();
+                pool.Add(fresh);
+                return fresh;
+            }
+
+            var idx = roundRobinIndex.AddOrUpdate(resolvedName, 0, ( _, prev ) => (prev + 1) % pool.Count);
+            return pool[idx % pool.Count];
         }
-
-        var factory = GetOrCreateConnectionFactory(resolvedName);
-        var fresh = factory();
-        fresh.Open();
-        return new PooledConnection(fresh, () => ReturnConnection(resolvedName, fresh));
-    }
-
-    private void ReturnConnection( string resolvedName, IDbConnection conn )
-    {
-        if (disposed)
-        {
-            DisposeConnection(conn);
-            return;
-        }
-
-        var pool = connectionPools.GetOrAdd(resolvedName, _ => []);
-
-        if (pool.Count >= MaxPoolSize || !IsConnectionAlive(conn))
-        {
-            DisposeConnection(conn);
-            return;
-        }
-
-        pool.Add(conn);
     }
 
     private static bool IsConnectionAlive( IDbConnection conn )
@@ -208,44 +200,18 @@ internal class DatabaseService( ILogger<DatabaseService> logger ) : IDatabaseSer
         if (disposed) return;
         disposed = true;
 
-        foreach (var pool in connectionPools.Values)
+        lock (poolLock)
         {
-            while (pool.TryTake(out var conn))
+            foreach (var pool in connectionPools.Values)
             {
-                DisposeConnection(conn);
+                foreach (var conn in pool)
+                {
+                    DisposeConnection(conn);
+                }
+                pool.Clear();
             }
-        }
 
-        connectionPools.Clear();
-    }
-
-    private sealed class PooledConnection( IDbConnection inner, Action returnToPool ) : IDbConnection
-    {
-        private bool returned;
-
-#pragma warning disable CS8769
-        string IDbConnection.ConnectionString {
-            get => inner.ConnectionString!;
-            set => inner.ConnectionString = value;
-        }
-#pragma warning restore CS8769
-
-        public int ConnectionTimeout => inner.ConnectionTimeout;
-        public string Database => inner.Database;
-        public ConnectionState State => inner.State;
-
-        public IDbTransaction BeginTransaction() => inner.BeginTransaction();
-        public IDbTransaction BeginTransaction( IsolationLevel il ) => inner.BeginTransaction(il);
-        public void ChangeDatabase( string databaseName ) => inner.ChangeDatabase(databaseName);
-        public void Close() => inner.Close();
-        public IDbCommand CreateCommand() => inner.CreateCommand();
-        public void Open() => inner.Open();
-
-        public void Dispose()
-        {
-            if (returned) return;
-            returned = true;
-            returnToPool();
+            connectionPools.Clear();
         }
     }
 }
