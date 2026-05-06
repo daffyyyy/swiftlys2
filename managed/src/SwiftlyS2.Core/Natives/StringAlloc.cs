@@ -15,7 +15,7 @@ internal static class StringAlloc
         var totalByteCount = Encoding.UTF8.GetByteCount(str) + 1;
         var stringBuffer = arrayPool.Rent(totalByteCount);
 
-        _ = Utf8.FromUtf16(str, stringBuffer, out _, out var bytesWritten);
+        _ = Encoding.UTF8.GetBytes(str.AsSpan(), stringBuffer.AsSpan());
         stringBuffer[totalByteCount - 1] = 0;
 
         unsafe
@@ -34,7 +34,7 @@ internal static class StringAlloc
         var totalByteCount = Encoding.UTF8.GetByteCount(str) + 1;
         var stringBuffer = arrayPool.Rent(totalByteCount);
 
-        _ = Utf8.FromUtf16(str, stringBuffer, out _, out var bytesWritten);
+        _ = Encoding.UTF8.GetBytes(str.AsSpan(), stringBuffer.AsSpan());
         stringBuffer[totalByteCount - 1] = 0;
 
         unsafe

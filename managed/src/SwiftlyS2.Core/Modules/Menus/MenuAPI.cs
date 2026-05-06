@@ -6,6 +6,7 @@ using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Core.Menus.OptionsBase;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Core.Translations;
+using Spectre.Console;
 
 namespace SwiftlyS2.Core.Menus;
 
@@ -287,8 +288,13 @@ internal sealed class MenuAPI : IMenuAPI, IDisposable
 
                 // core.Profiler.StopRecording(category);
             }
-            catch
-            { }
+            catch(Exception ex)
+            {
+                if (GlobalExceptionHandler.Handle(ref ex))
+                {
+                    AnsiConsole.WriteException(ex);
+                }
+            }
         }
 
         try
@@ -315,7 +321,13 @@ internal sealed class MenuAPI : IMenuAPI, IDisposable
                 ProcessPlayerMenu(player, desiredIndex, selectedIndex, maxOptions, maxVisibleItems, halfVisible);
             }
         }
-        catch { }
+        catch (Exception ex)
+        {
+            if (GlobalExceptionHandler.Handle(ref ex))
+            {
+                AnsiConsole.WriteException(ex);
+            }
+        }
     }
 
     private void ProcessPlayerMenu( IPlayer player, int desiredIndex, int selectedIndex, int maxOptions, int maxVisibleItems, int halfVisible )
@@ -560,8 +572,12 @@ internal sealed class MenuAPI : IMenuAPI, IDisposable
                         {
                             break;
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            if (GlobalExceptionHandler.Handle(ref ex))
+                            {
+                                AnsiConsole.WriteException(ex);
+                            }
                         }
                     }
                 }, token);

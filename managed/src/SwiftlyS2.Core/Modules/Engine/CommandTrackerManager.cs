@@ -130,7 +130,20 @@ internal sealed class CommandTrackerManager : IDisposable
                 output = output.Append(line);
             }
 
-            _ = Task.Run(() => command.Callback.Invoke(output.ToString()));
+            _ = Task.Run(() =>
+            {
+                try
+                {
+                    command.Callback.Invoke(output.ToString());
+                } catch (Exception ex)
+                {
+                    if (!GlobalExceptionHandler.Handle(ref ex))
+                    {
+                        return;
+                    }
+                    AnsiConsole.WriteException(ex);
+                }
+            });
         }
     }
 

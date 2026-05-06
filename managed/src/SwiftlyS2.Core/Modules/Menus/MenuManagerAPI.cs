@@ -7,6 +7,7 @@ using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Sounds;
 using SwiftlyS2.Shared.Players;
+using Spectre.Console;
 
 namespace SwiftlyS2.Core.Menus;
 
@@ -207,7 +208,19 @@ internal sealed class MenuManagerAPI : IMenuManagerAPI
                         currentMenu.InvokeOptionSelected(player, option);
                     }
 
-                    _ = Task.Run(async () => await option.OnClickAsync(player));
+                    _ = Task.Run(async () =>
+                    {
+                        try
+                        {
+                            await option.OnClickAsync(player);
+                        } catch (Exception ex)
+                        {
+                            if (GlobalExceptionHandler.Handle(ref ex))
+                            {
+                                AnsiConsole.WriteException(ex);
+                            }
+                        }
+                    });
 
                     if (menu.Configuration.PlaySound && option.PlaySound)
                     {
@@ -238,7 +251,7 @@ internal sealed class MenuManagerAPI : IMenuManagerAPI
                     {
                         if (GlobalExceptionHandler.Handle(ref ex))
                         {
-                            Spectre.Console.AnsiConsole.WriteException(ex);
+                            AnsiConsole.WriteException(ex);
                         }
                     }
                     break;
@@ -328,7 +341,7 @@ internal sealed class MenuManagerAPI : IMenuManagerAPI
                 }
                 else if (claimInfo.ClaimsUse && optionBase != null)
                 {
-                    optionBase.OnClaimedUse(player);
+                    optionBase.OnClaimedUse(player);   
 
                     if (menu.Configuration.PlaySound && option!.PlaySound)
                     {
@@ -344,7 +357,19 @@ internal sealed class MenuManagerAPI : IMenuManagerAPI
                         currentMenu.InvokeOptionSelected(player, option);
                     }
 
-                    _ = Task.Run(async () => await option.OnClickAsync(player));
+                    _ = Task.Run(async () =>
+                    {
+                        try
+                        {
+                            await option.OnClickAsync(player);
+                        } catch (Exception ex)
+                        {
+                            if (GlobalExceptionHandler.Handle(ref ex))
+                            {
+                                AnsiConsole.WriteException(ex);
+                            }
+                        }
+                    });
 
                     if (menu.Configuration.PlaySound && option.PlaySound)
                     {
@@ -375,7 +400,7 @@ internal sealed class MenuManagerAPI : IMenuManagerAPI
                     {
                         if (GlobalExceptionHandler.Handle(ref ex))
                         {
-                            Spectre.Console.AnsiConsole.WriteException(ex);
+                            AnsiConsole.WriteException(ex);
                         }
                     }
                     break;
@@ -425,7 +450,7 @@ internal sealed class MenuManagerAPI : IMenuManagerAPI
 
                 if (overlap != 0)
                 {
-                    Spectre.Console.AnsiConsole.WriteException(
+                    AnsiConsole.WriteException(
                         new InvalidOperationException(
                             $"Key binding conflict detected in menu '{configuration.Title}': '{binding1.Key}' and '{binding2.Key}' share overlapping keys: {overlap}"
                         )
