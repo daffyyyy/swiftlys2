@@ -6,11 +6,13 @@ internal class Localizer : ILocalizer
 {
     private Dictionary<string, string> _Resource { get; init; }
     private Dictionary<string, string> _DefaultResource { get; init; }
+    private Language _Language { get; init; }
 
-    public Localizer( Dictionary<string, string> resource, Dictionary<string, string> defaultResource )
+    public Localizer( Language language, Dictionary<string, string> resource, Dictionary<string, string> defaultResource )
     {
         _Resource = resource;
         _DefaultResource = defaultResource;
+        _Language = language;
     }
 
     public string this[string key] => Get(key);
@@ -23,6 +25,6 @@ internal class Localizer : ILocalizer
         ? value
         : _DefaultResource.TryGetValue(key, out var defaultValue)
         ? defaultValue
-        : throw new Exception($"Translation key {key} not found.");
+        : $"{_Language.Value}.{key}";
     }
 }

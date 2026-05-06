@@ -55,7 +55,7 @@ internal class TranslationFactory
         var defaultResource = resource.Resources[Language.English];
 
         return !resource.Resources.TryGetValue(language, out var value)
-            ? new Localizer(defaultResource, defaultResource)
-            : new Localizer(value, defaultResource);
+            ? new Localizer(language, defaultResource, defaultResource)
+            : new Localizer(language, value, defaultResource);
     }
 }
