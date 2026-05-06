@@ -416,7 +416,7 @@ internal class CoreCommandService
             var table = new Table()
                 .AddColumn("Command")
                 .AddColumn("Description")
-                .AddRow("list [page]", "List all plugins (paginated, 20 per page)")
+                .AddRow(Markup.Escape("list [page]"), "List all plugins (paginated, 20 per page)")
                 .AddRow("load", "Load a plugin")
                 .AddRow("unload", "Unload a plugin")
                 .AddRow("reload", "Reload a plugin");

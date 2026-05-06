@@ -39,7 +39,8 @@ public:
         m_Recipients.ClearAll();
 
         for (int i = 0; i < ABSOLUTE_PLAYER_LIMIT; i++)
-            AddRecipient(i);
+            if (engine->IsClientFullyAuthenticated(i))
+                AddRecipient(i);
     }
 
     void RemoveAllPlayers(void)

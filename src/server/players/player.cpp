@@ -148,19 +148,7 @@ extern bool bypassPostEventAbstractHook;
 
 void CPlayer::SendMsg(MessageType type, const std::string& message, int duration = 5000)
 {
-    auto controller = GetController();
-    if (!controller)
-        return;
-
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
-    if (!schema)
-        return;
-
-    auto isHLTVPtr = (bool*)(schema->GetPropPtr(controller, 0x3979FF6E5DC66E6B));
-    if (!isHLTVPtr)
-        return;
-
-    if (IsFakeClient() && !*isHLTVPtr)
+    if (IsFakeClient())
         return;
 
     if (type == MessageType::CenterHTML)
@@ -191,6 +179,10 @@ void CPlayer::SendMsg(MessageType type, const std::string& message, int duration
                 bool startsWithColor = (msg.at(0) == '[');
                 auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
                 if (!schema)
+                    return;
+
+                auto controller = GetController();
+                if (!controller)
                     return;
 
                 msg = ProcessColor(message, *(int*)(schema->GetPropPtr(controller, CBaseEntity_m_iTeamNum)));
