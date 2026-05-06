@@ -16,7 +16,7 @@ internal class ConsoleRedirector : TextWriter
 
     public override Encoding Encoding => originalOut.Encoding;
 
-    public override void WriteLine( string? value )
+    public override void WriteLine(string? value)
     {
         lock (lockObject)
         {
@@ -34,7 +34,7 @@ internal class ConsoleRedirector : TextWriter
                     v += "\n";
                 }
 
-                if (v.Length > 2048) // maximum console output length per message
+                if (v.Length >= 2048) // maximum console output length per message
                 {
                     var offset = 0;
                     while (offset < v.Length)
@@ -56,7 +56,7 @@ internal class ConsoleRedirector : TextWriter
         }
     }
 
-    public override void Write( string? value )
+    public override void Write(string? value)
     {
         lock (lockObject)
         {

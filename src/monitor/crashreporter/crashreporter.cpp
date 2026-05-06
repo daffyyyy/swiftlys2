@@ -129,8 +129,6 @@ void CrashReporter::EnableDotnetCrashTracer(int level)
         return;
     }
 
-    SetTracerLevel(g_SwiftlyCore.GetCorePath(), level);
-
     setEnvVar("CORECLR_ENABLE_PROFILING", "1");
     setEnvVar("CORECLR_PROFILER", "{a2648b53-a560-486c-9e56-c3922a330182}");
     auto tracerPath = Files::GeneratePath(g_SwiftlyCore.GetCorePath() + WIN_LINUX("bin\\win64\\sw2tracer.dll", "bin/linuxsteamrt64/libsw2tracer.so"));
@@ -970,7 +968,7 @@ inline void ReportCrashIncident(const std::string& crashDir, void* exceptionInfo
             write(STDOUT_FILENO, "\n", 1);
 #endif
         }
-    }
+        }
     catch (const std::exception& e)
     {
 #ifdef _WIN32
@@ -995,7 +993,7 @@ inline void ReportCrashIncident(const std::string& crashDir, void* exceptionInfo
         write(STDOUT_FILENO, msg, strlen(msg));
 #endif
     }
-}
+    }
 
 #ifdef _WIN32
 static PVOID g_vehHandle = nullptr;
