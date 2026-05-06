@@ -16,7 +16,7 @@ internal class ConsoleRedirector : TextWriter
 
     public override Encoding Encoding => originalOut.Encoding;
 
-    public override void WriteLine(string? value)
+    public override void WriteLine( string? value )
     {
         lock (lockObject)
         {
@@ -34,14 +34,13 @@ internal class ConsoleRedirector : TextWriter
                     v += "\n";
                 }
 
-                if (v.Length >= 2048) // maximum console output length per message
+                if (v.Length >= 512) // maximum console output length per message
                 {
-                    var offset = 0;
-                    while (offset < v.Length)
+                    var chunks = v.Chunk(512);
+                    foreach (var chunk in chunks)
                     {
-                        var length = Math.Min(2048, v.Length - offset);
-                        NativeEngineHelpers.SendMessageToConsole(v.Substring(offset, length));
-                        offset += length;
+                        var chunkStr = new string(chunk);
+                        NativeEngineHelpers.SendMessageToConsole(chunkStr);
                     }
                 }
                 else
@@ -56,7 +55,7 @@ internal class ConsoleRedirector : TextWriter
         }
     }
 
-    public override void Write(string? value)
+    public override void Write( string? value )
     {
         lock (lockObject)
         {
@@ -68,7 +67,21 @@ internal class ConsoleRedirector : TextWriter
             try
             {
                 isRedirecting = true;
-                NativeEngineHelpers.SendMessageToConsole(value ?? "(null)");
+
+                var v = value ?? "(null)";
+                if (v.Length >= 512) // maximum console output length per message
+                {
+                    var chunks = v.Chunk(512);
+                    foreach (var chunk in chunks)
+                    {
+                        var chunkStr = new string(chunk);
+                        NativeEngineHelpers.SendMessageToConsole(chunkStr);
+                    }
+                }
+                else
+                {
+                    NativeEngineHelpers.SendMessageToConsole(v);
+                }
             }
             finally
             {

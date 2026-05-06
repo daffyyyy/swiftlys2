@@ -398,6 +398,11 @@ internal class CoreCommandService
             logger.LogInformation("Plugins (page {Page}/{Total}, {Count} total):", page, totalPages, allPlugins.Count);
             AnsiConsole.Write(table);
 
+            if (page < totalPages)
+            {
+                logger.LogInformation("Use 'sw plugins list {Next}' to see the next page.", page + 1);
+            }
+
             var loadErrors = pluginManager.GetPluginLoadErrors();
             if (loadErrors.Count > 0)
             {
@@ -582,5 +587,10 @@ internal class CoreCommandService
 
         logger.LogInformation("Commands (page {Page}/{Total}, {Count} total):", page, totalPages, allRows.Count);
         AnsiConsole.Write(table);
+
+        if (page < totalPages)
+        {
+            logger.LogInformation("Use 'sw cmds {Next}' to see the next page.", page + 1);
+        }
     }
 }
