@@ -317,7 +317,9 @@ internal sealed class MenuAPI : IMenuAPI, IDisposable
 
             for (var i = 0; i < playerStates.Count(); i++)
             {
-                var (player, desiredIndex, selectedIndex) = playerStates.ElementAt(i);
+                var (player, desiredIndex, selectedIndex) = playerStates.ElementAtOrDefault(i);
+                if (player == null) continue;
+
                 ProcessPlayerMenu(player, desiredIndex, selectedIndex, maxOptions, maxVisibleItems, halfVisible);
             }
         }
