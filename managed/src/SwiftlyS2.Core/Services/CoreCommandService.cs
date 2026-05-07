@@ -378,7 +378,6 @@ internal class CoreCommandService
                 .AddColumn("Status")
                 .AddColumn("PluginId (ver.)")
                 .AddColumn("Author")
-                .AddColumn("Website")
                 .AddColumn("Location");
 
             foreach (var plugin in pagePlugins)
@@ -391,7 +390,6 @@ internal class CoreCommandService
                     statusText,
                     $"{pluginId}{version}",
                     Markup.Escape(plugin.Metadata?.Author ?? "Anonymous"),
-                    Markup.Escape(plugin.Metadata?.Website ?? string.Empty),
                     Markup.Escape(plugin.PluginDirectory is { } dir ? Path.Join("(swRoot)", Path.GetRelativePath(rootDirService.GetRoot(), dir)) : string.Empty));
             }
 
