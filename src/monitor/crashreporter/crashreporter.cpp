@@ -23,6 +23,7 @@
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
 #include <api/shared/texttable.h>
+#include <api/server/configuration/configuration.h>
 
 #include <public/eiface.h>
 
@@ -998,6 +999,22 @@ inline void ReportCrashIncident(const std::string& crashDir, void* exceptionInfo
 #ifdef _WIN32
 static PVOID g_vehHandle = nullptr;
 
+static bool IsWindowsFullDumpEnabled()
+{
+    auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
+    if (!configuration || !configuration->IsLoaded() || !configuration->HasKey("core.WindowsFullDump"))
+    {
+        return false;
+    }
+
+    if (bool* enabled = std::get_if<bool>(&configuration->GetValue("core.WindowsFullDump")))
+    {
+        return *enabled;
+    }
+
+    return false;
+}
+
 static void BreakpadDumpCallback(PEXCEPTION_POINTERS exceptionInfo)
 {
     if (g_dumpWritten)
@@ -1028,14 +1045,19 @@ static void BreakpadDumpCallback(PEXCEPTION_POINTERS exceptionInfo)
     mei.ExceptionPointers = exceptionInfo;
     mei.ClientPointers = FALSE;
 
-    MINIDUMP_TYPE type = static_cast<MINIDUMP_TYPE>(
+    DWORD dumpFlags =
         MiniDumpWithDataSegs
         | MiniDumpNormal
         | MiniDumpWithHandleData
         | MiniDumpWithThreadInfo
         | MiniDumpWithUnloadedModules
-        | MiniDumpWithFullMemoryInfo
-        );
+        | MiniDumpWithFullMemoryInfo;
+    if (IsWindowsFullDumpEnabled())
+    {
+        dumpFlags |= MiniDumpWithFullMemory;
+    }
+
+    MINIDUMP_TYPE type = static_cast<MINIDUMP_TYPE>(dumpFlags);
     BOOL result = MiniDumpWriteDump(GetCurrentProcess(), static_cast<DWORD>(pid), hFile, type, &mei, nullptr, nullptr);
     CloseHandle(hFile);
 

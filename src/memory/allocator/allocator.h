@@ -42,12 +42,7 @@ public:
 
     ~MemoryAllocator();
 private:
-    std::map<void*, uint64_t> allocations;
     uint64_t totalAllocated = 0;
-
-    QueueMutex m_mtxLock;
-
-    bool m_bCompact = false;
 };
 
 #endif

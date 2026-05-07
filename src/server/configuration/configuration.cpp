@@ -504,6 +504,7 @@ bool Configuration::Load()
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "SteamAuth.AvailableModes", { "flexible", "strict" }, true, " ");
 
         RegisterConfiguration(wasEdited, config_json, "core", "core", "DotnetCrashTracerLevel", 0);
+        RegisterConfiguration(wasEdited, config_json, "core", "core", "WindowsFullDump", false);
 
         if (wasEdited) {
             WriteJSONFile(g_SwiftlyCore.GetCorePath() + "configs/core.jsonc", config_json);

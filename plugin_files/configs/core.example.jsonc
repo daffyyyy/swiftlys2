@@ -13,6 +13,7 @@
     "ManualLoadPlugins": false,
     "PluginLoadOrder": [],
     "DotnetCrashTracerLevel": 0,
+    "WindowsFullDump": false,
     "Menu": {
         "AvailableInputModes": [
             "button",
