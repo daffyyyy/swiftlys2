@@ -154,10 +154,6 @@ internal static class NativeEngineHelpers
 
     public unsafe static string GetWorkshopId()
     {
-        if (!NativeBinding.IsMainThread)
-        {
-            throw new InvalidOperationException("This method can only be called from the main thread.");
-        }
         var length = 0;
         var returnedPtr = _GetWorkshopId(&length);
         var outString = StringAlloc.CreateCSharpString((nint)returnedPtr, length);
