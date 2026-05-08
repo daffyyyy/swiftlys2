@@ -53,21 +53,18 @@ internal static class EntityManager
 
     public static CEntityInstance? GetEntityByAddress( nint address )
     {
+        if (address == 0) return null;
+
         lock (_lock)
         {
-            try
-            {
-                return !_PtrToIndex.TryGetValue(address, out var value) ? null : _Entities[value];
-            }
-            catch
-            {
-                return null;
-            }
+            return !_PtrToIndex.TryGetValue(address, out var value) ? null : _Entities[value];
         }
     }
 
     public static void OnEntityDeleted( nint entityPtr )
     {
+        if (entityPtr == 0) return;
+
         lock (_lock)
         {
             try
@@ -103,16 +100,11 @@ internal static class EntityManager
 
     public static bool IsAddressValid( nint address )
     {
+        if (address == 0) return false;
+
         lock (_lock)
         {
-            try
-            {
-                return _PtrToIndex.ContainsKey(address);
-            }
-            catch
-            {
-                return false;
-            }
+            return _PtrToIndex.ContainsKey(address);
         }
     }
 
