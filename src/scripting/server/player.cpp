@@ -156,14 +156,7 @@ char* Bridge_Player_GetIPAddress(int* size, int playerid)
 
     std::string s = player->GetIPAddress();
 
-    int outSize = s.size();
-    *size = outSize;
-    char* out = (char*)memory->Alloc(outSize + 1);
-
-    memory->Copy(out, (void*)s.c_str(), outSize);
-    out[outSize] = '\0';
-
-    return out;
+    return Bridge_Player_CopyString(s, size);
 }
 
 void Bridge_Player_Kick(int playerid, const char* reason, int gamereason)
@@ -254,8 +247,11 @@ void Bridge_Player_ChangeTeam(int playerid, int newteam)
     if (!player)
         return;
 
+    auto controller = player->GetController();
+    if (!controller) return;
+
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CCSPlayerController::ChangeTeam"), player->GetController(), newteam);
+    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CCSPlayerController::ChangeTeam"), controller, newteam);
 }
 
 void Bridge_Player_SwitchTeam(int playerid, int newteam)
@@ -265,11 +261,14 @@ void Bridge_Player_SwitchTeam(int playerid, int newteam)
     if (!player)
         return;
 
+    auto controller = player->GetController();
+    if (!controller) return;
+
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     if (newteam == 0 || newteam == 1)
-        CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CCSPlayerController::ChangeTeam"), player->GetController(), newteam);
+        CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CCSPlayerController::ChangeTeam"), controller, newteam);
     else
-        reinterpret_cast<void (*)(void*, int)>(gamedata->GetSignatures()->Fetch("CCSPlayerController::SwitchTeam"))(player->GetController(), newteam);
+        reinterpret_cast<void (*)(void*, int)>(gamedata->GetSignatures()->Fetch("CCSPlayerController::SwitchTeam"))(controller, newteam);
 }
 
 void Bridge_Player_TakeDamage(int playerid, void* dmginfo)
@@ -279,8 +278,11 @@ void Bridge_Player_TakeDamage(int playerid, void* dmginfo)
     if (!player)
         return;
 
+    auto pawn = player->GetPawn();
+    if (!pawn) return;
+
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    reinterpret_cast<int64_t(*)(void*, void*, void*)>(gamedata->GetSignatures()->Fetch("CBaseEntity::TakeDamage"))(player->GetPawn(), dmginfo, 0);
+    reinterpret_cast<int64_t(*)(void*, void*, void*)>(gamedata->GetSignatures()->Fetch("CBaseEntity::TakeDamage"))(pawn, dmginfo, 0);
 }
 
 void Bridge_Player_Teleport(int playerid, Vector pos, QAngle angle, Vector vel)
@@ -290,8 +292,11 @@ void Bridge_Player_Teleport(int playerid, Vector pos, QAngle angle, Vector vel)
     if (!player)
         return;
 
+    auto pawn = player->GetPawn();
+    if (!pawn) return;
+
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CBaseEntity::Teleport"), player->GetPawn(), &pos, &angle, &vel);
+    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CBaseEntity::Teleport"), pawn, &pos, &angle, &vel);
 }
 
 char* Bridge_Player_GetLanguage(int* size, int playerid)
@@ -304,14 +309,7 @@ char* Bridge_Player_GetLanguage(int* size, int playerid)
         return Bridge_Player_CopyString("", size);
 
     std::string s = player->GetLanguage();
-
-    int sz = s.size();
-    *size = sz;
-    char* out = (char*)memory->Alloc(sz + 1);
-    memory->Copy(out, (void*)s.c_str(), sz);
-    out[sz] = '\0';
-
-    return out;
+    return Bridge_Player_CopyString(s, size);
 }
 
 void Bridge_Player_SetCenterMenuRender(int playerid, const char* text)
@@ -405,15 +403,7 @@ char* Bridge_Player_GetClientConvarValue(int* size, int playerid, const char* co
 
     static auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
     auto value = engine->GetClientConVarValue(CPlayerSlot(playerid), convarName);
-
-    int sz = strlen(value);
-    *size = sz;
-
-    char* out = (char*)memory->Alloc(sz + 1);
-    memory->Copy(out, (void*)value, sz);
-    out[sz] = '\0';
-
-    return out;
+    return Bridge_Player_CopyString(value, size);
 }
 
 CServerSideClient* GetServerSideClient(int playerid);
