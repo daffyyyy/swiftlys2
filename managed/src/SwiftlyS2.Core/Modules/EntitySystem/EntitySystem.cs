@@ -66,25 +66,18 @@ internal class EntitySystemService : IEntitySystemService, IDisposable
     public CCSGameRules? GetGameRules()
     {
         ThrowIfEntitySystemInvalid();
-        if (cachedGameRules != null)
+        if (cachedGameRules != null && cachedGameRulesProxy != null && cachedGameRulesProxy.IsValidEntity)
         {
-            if (cachedGameRulesProxy != null && cachedGameRulesProxy.IsValidEntity)
-            {
-                return cachedGameRules;
-            } else
-            {
-                cachedGameRules = null;
-                cachedGameRulesProxy = null;
-                return null;
-            }
-        } else
+            return cachedGameRules;
+        }
+        cachedGameRules = null;
+        cachedGameRulesProxy = null;
+            
+        if (GetAllEntitiesByClass<CCSGameRulesProxy>().FirstOrDefault() is CCSGameRulesProxy proxy)
         {
-            if (GetAllEntitiesByClass<CCSGameRulesProxy>().FirstOrDefault() is CCSGameRulesProxy proxy)
-            {
-                cachedGameRulesProxy = proxy;
-                cachedGameRules = cachedGameRulesProxy.GameRules;
-                return cachedGameRules;
-            }
+            cachedGameRulesProxy = proxy;
+            cachedGameRules = cachedGameRulesProxy.GameRules;
+            return cachedGameRules;
         }
         return null;
     }
