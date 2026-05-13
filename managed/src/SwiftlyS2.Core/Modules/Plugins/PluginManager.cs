@@ -32,6 +32,7 @@ internal class PluginManager : IPluginManager
     private readonly ConcurrentDictionary<string, DateTime> _fileLastChange;
     private readonly ConcurrentDictionary<string, CancellationTokenSource> _fileReloadTokens;
     private readonly ConcurrentDictionary<string, string> _pluginLoadErrors;
+    private readonly ConcurrentDictionary<string, Assembly> _exportAssemblies;
     private readonly FileSystemWatcher? _fileWatcher;
 
     public PluginManager(
@@ -50,6 +51,7 @@ internal class PluginManager : IPluginManager
         _fileLastChange = new ConcurrentDictionary<string, DateTime>();
         _fileReloadTokens = new ConcurrentDictionary<string, CancellationTokenSource>();
         _pluginLoadErrors = new ConcurrentDictionary<string, string>();
+        _exportAssemblies = new ConcurrentDictionary<string, Assembly>(StringComparer.OrdinalIgnoreCase);
 
         if (NativeServerHelpers.UseAutoHotReload())
         {
@@ -95,9 +97,27 @@ internal class PluginManager : IPluginManager
         {
             var assemblyName = new AssemblyName(e.Name).Name ?? string.Empty;
 
-            return assemblyName.Equals("SwiftlyS2.CS2", StringComparison.OrdinalIgnoreCase)
-                ? Assembly.GetExecutingAssembly()
-                : AppDomain.CurrentDomain.GetAssemblies()
+            if (assemblyName.Equals("SwiftlyS2.CS2", StringComparison.OrdinalIgnoreCase))
+            {
+                return Assembly.GetExecutingAssembly();
+            }
+
+            try
+            {
+                var cached = _exportAssemblies
+                    .First(kvp =>
+                    {
+                        return assemblyName.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase);
+                    });
+
+                if (cached.Value != null)
+                {
+                    return cached.Value;
+                }
+            }
+            catch { }
+
+            return AppDomain.CurrentDomain.GetAssemblies()
                 .FirstOrDefault(a => assemblyName.Equals(a.GetName().Name, StringComparison.OrdinalIgnoreCase));
         };
     }
@@ -385,7 +405,7 @@ internal class PluginManager : IPluginManager
             _ = _plugins.Remove(context);
             return true;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             if (!silent) _logger.LogWarning(ex, "Failed to unload plugin: {Id}", id);
             context.Status = PluginStatus.Indeterminate;
@@ -469,6 +489,7 @@ internal class PluginManager : IPluginManager
         try
         {
             var assembly = Assembly.LoadFrom(exportFile);
+            _exportAssemblies[assembly.GetName().Name ?? exportFile] = assembly;
             var exports = assembly.GetTypes();
             _logger.LogDebug("Loaded {Count} types from {Path}", exports.Length, Path.GetFileName(exportFile));
             _sharedTypes.AddRange(exports);
