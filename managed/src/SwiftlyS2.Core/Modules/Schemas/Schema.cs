@@ -69,6 +69,11 @@ internal static class Schema
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void Update( nint handle, ulong hash )
     {
+        if (handle == 0)
+        {
+            throw new InvalidOperationException("Schema instance cannot be null.");
+        }
+
         if (isFollowingServerGuidelines && dangerousFields.Contains(hash))
         {
             throw new InvalidOperationException($"Cannot get or set 0x{hash:X16} while \"FollowCS2ServerGuidelines\" is enabled.\n\tTo use this operation, disable the option in core.jsonc.");
