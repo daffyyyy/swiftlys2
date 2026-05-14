@@ -102,20 +102,10 @@ internal class PluginManager : IPluginManager
                 return Assembly.GetExecutingAssembly();
             }
 
-            try
+            if (_exportAssemblies.TryGetValue(assemblyName.ToLower(), out var exportAssembly))
             {
-                var cached = _exportAssemblies
-                    .First(kvp =>
-                    {
-                        return assemblyName.Equals(kvp.Key, StringComparison.OrdinalIgnoreCase);
-                    });
-
-                if (cached.Value != null)
-                {
-                    return cached.Value;
-                }
+                return exportAssembly;
             }
-            catch { }
 
             return AppDomain.CurrentDomain.GetAssemblies()
                 .FirstOrDefault(a => assemblyName.Equals(a.GetName().Name, StringComparison.OrdinalIgnoreCase));
@@ -489,7 +479,8 @@ internal class PluginManager : IPluginManager
         try
         {
             var assembly = Assembly.LoadFrom(exportFile);
-            _exportAssemblies[assembly.GetName().Name ?? exportFile] = assembly;
+            var name = assembly.GetName().Name ?? Path.GetFileName(exportFile);
+            _exportAssemblies[name.ToLower()] = assembly;
             var exports = assembly.GetTypes();
             _logger.LogDebug("Loaded {Count} types from {Path}", exports.Length, Path.GetFileName(exportFile));
             _sharedTypes.AddRange(exports);
