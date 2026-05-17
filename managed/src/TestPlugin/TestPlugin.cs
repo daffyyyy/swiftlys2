@@ -145,15 +145,15 @@ public class TestPlugin : BasePlugin
 {
     private IConVar<bool>? _autobunnyhopping;
 
-    private delegate nint ReflectPawnStateType( nint a1, nint a2 );
+    private delegate nint ReflectPawnStateType(nint a1, nint a2);
 
-    public TestPlugin( ISwiftlyCore core ) : base(core)
+    public TestPlugin(ISwiftlyCore core) : base(core)
     {
         _autobunnyhopping = Core.ConVar.Find<bool>("sv_autobunnyhopping");
         Console.WriteLine("[TestPlugin] TestPlugin constructed successfully!");
         // Console.WriteLine($"sizeof(bool): {sizeof(bool)}");
         // Console.WriteLine($"Marshal.SizeOf<bool>: {Marshal.SizeOf<bool>()}");
-        Core.Event.OnWeaponServicesCanUseHook += ( @event ) =>
+        Core.Event.OnWeaponServicesCanUseHook += (@event) =>
         {
             // Console.WriteLine($"WeaponServicesCanUse: {@event.Weapon.WeaponBaseVData.AttackMovespeedFactor} {@event.OriginalResult}");
         };
@@ -184,14 +184,14 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("selfmute")]
-    public void SelfMuteCommand( ICommandContext context )
+    public void SelfMuteCommand(ICommandContext context)
     {
         var player = context.Sender!;
         player.VoiceFlags = VoiceFlagValue.Muted;
     }
 
     [Command("be")]
-    public void Test2Command( ICommandContext context )
+    public void Test2Command(ICommandContext context)
     {
         var controller = context.Sender!.Pawn.GraphControllerManager.Controllers[0].Value.As<CCS2PawnGraphController>();
         unsafe
@@ -206,7 +206,7 @@ public class TestPlugin : BasePlugin
 
     [Command("CommandAliasTest")]
     [CommandAlias("cat", true)]
-    public void CommandAliasTest( ICommandContext context )
+    public void CommandAliasTest(ICommandContext context)
     {
         foreach (var player in Core.PlayerManager.GetAllPlayers())
         {
@@ -219,7 +219,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("dbtest")]
-    public void DatabaseTestCommand( ICommandContext context )
+    public void DatabaseTestCommand(ICommandContext context)
     {
         var connectionName = context.Args.Length > 0 ? context.Args[0] : "default";
         var connectionInfo = Core.Database.GetConnectionInfo(connectionName);
@@ -245,7 +245,7 @@ public class TestPlugin : BasePlugin
     }
 
     [GameEventHandler(HookMode.Pre)]
-    public HookResult OnPlayerSpawn( EventPlayerSpawn @event )
+    public HookResult OnPlayerSpawn(EventPlayerSpawn @event)
     {
         if (!@event.UserIdPlayer.IsValid)
         {
@@ -275,7 +275,7 @@ public class TestPlugin : BasePlugin
             {
                 var optionText = $"Menu # {x + 1} - Option # {j + 1}";
                 var button = new ButtonMenuOption(optionText) { TextStyle = MenuOptionTextStyle.ScrollLeftLoop, MaxWidth = 16f };
-                button.Click += ( sender, args ) =>
+                button.Click += (sender, args) =>
                 {
                     args.Player.SendChat($"Clicked: {optionText}");
                     return ValueTask.CompletedTask;
@@ -290,7 +290,7 @@ public class TestPlugin : BasePlugin
     // public unsafe delegate void SetPendingHostStateRequestDelegate( nint hostStateManager, CHostStateRequest* pRequest );
     // private IUnmanagedFunction<SetPendingHostStateRequestDelegate>? _SetPendingHostStateRequestDelegate;
 
-    public override void Load( bool hotReload )
+    public override void Load(bool hotReload)
     {
         // _SetPendingHostStateRequestDelegate = Core.Memory.GetUnmanagedFunctionByAddress<SetPendingHostStateRequestDelegate>(
         //     Core.Memory.GetAddressBySignature(
@@ -379,11 +379,17 @@ public class TestPlugin : BasePlugin
         //     @event.LocToken = "test";
         //     return HookResult.Continue;
         // });
+        //
+        Core.Command.HookClientChat((playerId, text, teamOnly) =>
+        {
+            Console.WriteLine($"[TestPlugin] ClientChat: {playerId} said '{text}' (teamOnly: {teamOnly})");
+            return HookResult.CancelOriginal;
+        });
 
         _ = Core.Configuration
             .InitializeJsonWithModel<PluginConfig>("test.jsonc", "Main")
             .InitializeTomlWithModel<PluginConfig>("test.toml", "Main")
-            .Configure(( builder ) =>
+            .Configure((builder) =>
             {
                 _ = builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
                 _ = builder.AddTomlFile("test.toml", optional: true, reloadOnChange: true);
@@ -474,7 +480,7 @@ public class TestPlugin : BasePlugin
         //   Console.WriteLine("TestPlugin OnClientPutInServer " + @event.PlayerId);
         // };
 
-        Core.Event.OnClientDisconnected += ( @event ) =>
+        Core.Event.OnClientDisconnected += (@event) =>
         {
             Console.WriteLine("TestPlugin OnClientDisconnected " + @event.PlayerId);
         };
@@ -540,12 +546,12 @@ public class TestPlugin : BasePlugin
         //     return HookResult.Continue;
         // });
 
-        _ = Core.EntitySystem.HookEntityInput<CCSPlayerPawn>("SetBodygroup", ( @event ) =>
+        _ = Core.EntitySystem.HookEntityInput<CCSPlayerPawn>("SetBodygroup", (@event) =>
         {
             Console.WriteLine($"EntityInput -> Identity: {@event.Identity.DesignerName} InputName: {@event.InputName}, Activator: {@event.Activator?.As<CBaseEntity>()?.DesignerName}, Caller: {@event.Caller?.As<CBaseEntity>()?.DesignerName}");
         });
 
-        _ = Core.EntitySystem.HookEntityOutput<CPropDoorRotating>("OnFullyOpen", ( @event ) =>
+        _ = Core.EntitySystem.HookEntityOutput<CPropDoorRotating>("OnFullyOpen", (@event) =>
         {
             Console.WriteLine($"EntityOutput -> EntityIO: {@event.EntityIO.Desc.Name} OutputName: {@event.OutputName}, Activator: {@event.Activator?.As<CBaseEntity>()?.DesignerName}, Caller: {@event.Caller?.As<CBaseEntity>()?.DesignerName}");
         });
@@ -555,14 +561,14 @@ public class TestPlugin : BasePlugin
     // private readonly CEntityInstance? entity;
 
     [Command("gd")]
-    public void TestCommandGD( ICommandContext ctx )
+    public void TestCommandGD(ICommandContext ctx)
     {
         var player = ctx.Sender;
         ctx.Reply($"Ground distance: {player!.RequiredPawn.GroundDistance}");
     }
 
     [Command("hh")]
-    public unsafe void TestCommandHH( ICommandContext context )
+    public unsafe void TestCommandHH(ICommandContext context)
     {
         var player = context.Sender!;
 
@@ -577,7 +583,7 @@ public class TestPlugin : BasePlugin
             .InteractWith(MaskTrace.Player | MaskTrace.Solid)
             .InteractAs(MaskTrace.Solid)
             .WithCollisionGroup(CollisionGroup.Player)
-            .WithShouldHitEntity(( entity ) =>
+            .WithShouldHitEntity((entity) =>
             {
                 Console.WriteLine($"ShouldHitEntity: {entity.DesignerName}");
                 return true;
@@ -590,7 +596,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("tt")]
-    public void TestCommand( ICommandContext context )
+    public void TestCommand(ICommandContext context)
     {
         // token2?.Cancel();
         // kv = new();
@@ -613,27 +619,27 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("w")]
-    public void TestCommand1( ICommandContext context )
+    public void TestCommand1(ICommandContext context)
     {
         var player = context.Sender!;
         player.PlayerPawn!.SetModel("agents/models/ctm_fbi/ctm_fbi_varianta.vmdl");
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate nint DispatchSpawnDelegate( nint pEntity, nint pKV );
+    private delegate nint DispatchSpawnDelegate(nint pEntity, nint pKV);
 
     // private int order = 0;
 
     // private readonly IUnmanagedFunction<DispatchSpawnDelegate>? _dispatchspawn;
 
     [Command("h0")]
-    public void TestCommand0( ICommandContext _ )
+    public void TestCommand0(ICommandContext _)
     {
         var targetAddress = Core.Memory.GetAddressBySignature(Library.Server, "E8 ? ? ? ? 48 8B 46 ? 48 85 DB");
         if (targetAddress.HasValue)
         {
             var unmanagedMemory = Core.Memory.GetUnmanagedMemoryByAddress(targetAddress.Value);
-            var hookId = unmanagedMemory.AddHook(( ref MidHookContext context ) =>
+            var hookId = unmanagedMemory.AddHook((ref MidHookContext context) =>
             {
                 Console.WriteLine($"Mid-hook triggered at 0x{targetAddress.Value:X}");
                 Console.WriteLine($"RAX: 0x{context.RAX:X}, RCX: 0x{context.RCX:X}, RDX: 0x{context.RDX:X}");
@@ -642,7 +648,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("h1")]
-    public void TestCommand2( ICommandContext context )
+    public void TestCommand2(ICommandContext context)
     {
         Console.WriteLine(Environment.CurrentManagedThreadId);
         Console.WriteLine("\n");
@@ -673,7 +679,7 @@ public class TestPlugin : BasePlugin
     // private Guid _hookId = Guid.Empty;
 
     [Command("bad")]
-    public void TestCommandBad( ICommandContext _ )
+    public void TestCommandBad(ICommandContext _)
     {
         try
         {
@@ -704,7 +710,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("h2")]
-    public void TestCommand3( ICommandContext _ )
+    public void TestCommand3(ICommandContext _)
     {
         var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
         ent.DispatchSpawn();
@@ -713,7 +719,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("tt3")]
-    public void TestCommand33( ICommandContext context )
+    public void TestCommand33(ICommandContext context)
     {
         var ent = Core.EntitySystem.CreateEntity<CPhysicsPropOverride>();
         Console.WriteLine($"addr: {ent.Address:X}");
@@ -725,50 +731,50 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("tt4")]
-    public void TestCommand4( ICommandContext context )
+    public void TestCommand4(ICommandContext context)
     {
         Console.WriteLine(Core.Permission.PlayerHasPermission(7656, context.Args[0]));
     }
 
     [Command("tt5")]
-    public void TestCommand5( ICommandContext _ )
+    public void TestCommand5(ICommandContext _)
     {
         Console.WriteLine("TestPlugin TestCommand5");
     }
 
     [Command("tt6", permission: "tt6")]
-    public void TestCommand6( ICommandContext _ )
+    public void TestCommand6(ICommandContext _)
     {
         Console.WriteLine("TestPlugin TestCommand6");
     }
 
     [Command("tt99")]
-    public void TestCommand99( ICommandContext context )
+    public void TestCommand99(ICommandContext context)
     {
         Console.WriteLine(context.Sender!.SteamID);
         Console.WriteLine(context.Sender!.UnauthorizedSteamID);
     }
 
     [Command("tt7")]
-    public void TestCommand7( ICommandContext _ )
+    public void TestCommand7(ICommandContext _)
     {
-        Core.Engine.ExecuteCommandWithBuffer("@ping", ( buffer ) => { Console.WriteLine($"pong: {buffer}"); });
+        Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) => { Console.WriteLine($"pong: {buffer}"); });
     }
 
     [Command("tround")]
-    public void TestRoundCommand( ICommandContext context )
+    public void TestRoundCommand(ICommandContext context)
     {
         Core.EntitySystem.GetGameRules()!.TerminateRound(RoundEndReason.BombDefused, 10.0f);
     }
 
     [Command("intermission")]
-    public void TestIntermissionCommand( ICommandContext context )
+    public void TestIntermissionCommand(ICommandContext context)
     {
         Core.EntitySystem.GetGameRules()!.GoToIntermission();
     }
 
     [Command("tt8")]
-    public unsafe void TestCommand8( ICommandContext context )
+    public unsafe void TestCommand8(ICommandContext context)
     {
         Core.EntitySystem.GetAllEntitiesByDesignerName<CBuyZone>("func_buyzone").ToList().ForEach(zone =>
         {
@@ -811,13 +817,14 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("ttbbox")]
-    public void TestTraceBBox( ICommandContext context )
+    public void TestTraceBBox(ICommandContext context)
     {
         var player = context.Sender;
         var pawn = player?.Pawn;
         var start = (Vector)pawn?.AbsOrigin!;
         var end = (Vector)pawn?.AbsOrigin!;
-        var bbox = new BBox_t() {
+        var bbox = new BBox_t()
+        {
             Mins = new Vector(-16.0f, -16.0f, 0.0f),
             Maxs = new Vector(16.0f, 16.0f, 72.0f)
         };
@@ -834,7 +841,7 @@ public class TestPlugin : BasePlugin
             bbox,
             TraceParams.Builder()
                 .WithIterateEntities(true)
-                .WithShouldHitEntity(( entity ) =>
+                .WithShouldHitEntity((entity) =>
                 {
                     Console.WriteLine($"ShouldHitEntity: {entity.DesignerName}");
                     return true;
@@ -847,20 +854,20 @@ public class TestPlugin : BasePlugin
 
 
     [GameEventHandler(HookMode.Pre)]
-    public HookResult HandleRoundStart( EventRoundStart @event )
+    public HookResult HandleRoundStart(EventRoundStart @event)
     {
         Core.Logger.LogInformation("EventRoundStart fired");
         return HookResult.Continue;
     }
 
     [EventListener<EventDelegates.OnClientVoice>]
-    public void OnClientVoice( IOnClientVoiceEvent @event )
+    public void OnClientVoice(IOnClientVoiceEvent @event)
     {
         Console.WriteLine($"OnClientVoice: {@event.PlayerId}");
     }
 
     [ServerNetMessageInternalHandler]
-    public HookResult TestSignonMessage( CNETMsg_SignonState msg, int playerid )
+    public HookResult TestSignonMessage(CNETMsg_SignonState msg, int playerid)
     {
         Console.WriteLine("HELLO MA MEN\n");
         Console.WriteLine(msg.SignonState.ToString(), playerid);
@@ -868,20 +875,20 @@ public class TestPlugin : BasePlugin
     }
 
     [ServerNetMessageHandler]
-    public HookResult TestServerNetMessageHandler( CCSUsrMsg_SendPlayerItemDrops _ )
+    public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerItemDrops _)
     {
         Console.WriteLine("FIRED");
         return HookResult.Continue;
     }
 
     [Command("dw")]
-    public void DropWeaponTest( ICommandContext context )
+    public void DropWeaponTest(ICommandContext context)
     {
         Console.WriteLine(Core.Localizer["test"]);
     }
 
     [Command("stats")]
-    public void StatsCommand( ICommandContext context )
+    public void StatsCommand(ICommandContext context)
     {
         var player = context.Sender!;
         var name = player.Name;
@@ -890,7 +897,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("rnm")]
-    public void RnmCommand( ICommandContext context )
+    public void RnmCommand(ICommandContext context)
     {
         var player = context.Sender!;
         var name = player.Name;
@@ -899,7 +906,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("kurotest", registerRaw: true)]
-    public void Command_kurotest( ICommandContext context )
+    public void Command_kurotest(ICommandContext context)
     {
         foreach (var client in Core.PlayerManager.GetAllPlayers())
         {
@@ -917,9 +924,9 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("testmsg")]
-    public void TestMsgCommand( ICommandContext _ )
+    public void TestMsgCommand(ICommandContext _)
     {
-        Core.PlayerManager.SendMessage(MessageType.Chat, ( player, localizer ) =>
+        Core.PlayerManager.SendMessage(MessageType.Chat, (player, localizer) =>
         {
             Console.WriteLine(player.PlayerID);
             Console.WriteLine(localizer.ToString());
@@ -928,20 +935,20 @@ public class TestPlugin : BasePlugin
         });
     }
 
-    public void AuthResponse( GCMessageAvailable_t param )
+    public void AuthResponse(GCMessageAvailable_t param)
     {
         Console.WriteLine($"AuthResponse {param.m_nMessageSize}");
     }
 
     [EventListener<EventDelegates.OnWeaponServicesDropWeaponHook>]
-    public void OnWeaponServicesDropWeapon( IOnWeaponServicesDropWeaponHook @event )
+    public void OnWeaponServicesDropWeapon(IOnWeaponServicesDropWeaponHook @event)
     {
         Console.WriteLine($"OnWeaponServicesDropWeapon: {@event.WeaponServices.Address:X}, {(@event.Weapon != null ? @event.Weapon.DesignerName : "no weapon")}, {@event.SwappingWeapon}");
         @event.Result = HookResult.Stop;
     }
 
     [Command("getip")]
-    public void GetIpCommand( ICommandContext context )
+    public void GetIpCommand(ICommandContext context)
     {
         context.Reply(SteamGameServer.GetPublicIP().ToString());
         foreach (var player in Core.PlayerManager.GetAllPlayers())
@@ -1006,7 +1013,7 @@ public class TestPlugin : BasePlugin
     // }
 
     [Command("ed")]
-    public void EmitGrenadeCommand( ICommandContext context )
+    public void EmitGrenadeCommand(ICommandContext context)
     {
         var smoke = CSmokeGrenadeProjectile.EmitGrenade(new(0, 0, 0), new(0, 0, 0), new(0, 0, 0), Team.CT, null);
         smoke.Despawn();
@@ -1014,7 +1021,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("hbw")]
-    public void HideBotWeapon( ICommandContext context )
+    public void HideBotWeapon(ICommandContext context)
     {
         Core.PlayerManager.GetAlive()
             .Where(player => player.PlayerID != context.Sender!.PlayerID && player.IsValid && player.IsFakeClient)
@@ -1023,7 +1030,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("sihb")]
-    public void ShowIfHideBot( ICommandContext context )
+    public void ShowIfHideBot(ICommandContext context)
     {
         Core.PlayerManager.GetAlive()
             .Where(player => player.PlayerID != context.Sender!.PlayerID && player.IsValid && player.IsFakeClient)
@@ -1032,7 +1039,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("hb")]
-    public void HideBot( ICommandContext context )
+    public void HideBot(ICommandContext context)
     {
         Core.PlayerManager.GetAlive()
             .Where(player => player.PlayerID != context.Sender!.PlayerID && player.IsValid && player.IsFakeClient)
@@ -1046,7 +1053,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("ss")]
-    public void SwapScoresCommand( ICommandContext _ )
+    public void SwapScoresCommand(ICommandContext _)
     {
         Core.PlayerManager.SendChat($"Before: {Core.Game.MatchData}");
         Core.Game.SwapTeamScores();
@@ -1054,7 +1061,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("sizecheck")]
-    public void SizeCheckCommand( ICommandContext _ )
+    public void SizeCheckCommand(ICommandContext _)
     {
         unsafe
         {
@@ -1071,10 +1078,10 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("tm")]
-    public void TestMenuCommand( ICommandContext _ )
+    public void TestMenuCommand(ICommandContext _)
     {
         var buyButton = new ButtonMenuOption("Purchase") { CloseAfterClick = true };
-        buyButton.Click += async ( sender, args ) =>
+        buyButton.Click += async (sender, args) =>
         {
             await Task.Delay(1000);
 
@@ -1129,18 +1136,18 @@ public class TestPlugin : BasePlugin
             }))
             .Build();
 
-        mainMenu.OptionHovered += ( sender, args ) =>
+        mainMenu.OptionHovered += (sender, args) =>
         {
             Console.WriteLine($"{args.Options?[0].Text} hovered for player: {args.Player?.Controller.PlayerName}");
         };
 
-        mainMenu.OptionSelected += ( sender, args ) =>
+        mainMenu.OptionSelected += (sender, args) =>
         {
             Console.WriteLine($"{(sender as IMenuAPI)?.Configuration.Title} selected for player: {args.Player?.Controller.PlayerName}");
         };
 
         Core.MenusAPI.OpenMenu(mainMenu,
-            ( player, menu ) =>
+            (player, menu) =>
             {
                 Console.WriteLine($"{menu.Configuration.Title} closed for player: {player.Controller.PlayerName}");
             });
@@ -1162,13 +1169,13 @@ public class TestPlugin : BasePlugin
     private string? boundText = null;
 
     [Command("cbt")]
-    public void ChangeBoundText( ICommandContext _ )
+    public void ChangeBoundText(ICommandContext _)
     {
         boundText = Guid.NewGuid().ToString();
     }
 
     [Command("abutt")]
-    public void AddButtonTestMenu( ICommandContext context )
+    public void AddButtonTestMenu(ICommandContext context)
     {
         var player = context.Sender!;
         var menu = Core.MenusAPI
@@ -1179,20 +1186,20 @@ public class TestPlugin : BasePlugin
             .AddOption(new ButtonMenuOption("Button 1") { CloseAfterClick = true })
             .AddOption(new ButtonMenuOption("Button 2") { CloseAfterClick = true })
             .AddOption(new ButtonMenuOption("Button 3") { CloseAfterClick = true })
-            .AddExtraButton(KeyBind.Ctrl, "Ctrl Button", ( p, m ) =>
+            .AddExtraButton(KeyBind.Ctrl, "Ctrl Button", (p, m) =>
             {
                 p.SendChat("Ctrl Button Clicked");
             })
             .Build();
 
-        Core.MenusAPI.OpenMenuForPlayer(player, menu, ( p, m ) =>
+        Core.MenusAPI.OpenMenuForPlayer(player, menu, (p, m) =>
         {
             Console.WriteLine($"{m.Configuration.Title} closed for player: {p.Controller.PlayerName}");
         });
     }
 
     [GameEventHandler(HookMode.Pre)]
-    public HookResult PlayerHurtEventHandler( EventBreakProp @event )
+    public HookResult PlayerHurtEventHandler(EventBreakProp @event)
     {
         var player = @event.UserIdPlayer;
         Console.WriteLine($"{player.Controller!.PlayerName} broke a prop!");
@@ -1200,7 +1207,7 @@ public class TestPlugin : BasePlugin
     }
 
     [GameEventHandler(HookMode.Post)]
-    public HookResult OnPlayerHurtPost( EventPlayerHurt @event )
+    public HookResult OnPlayerHurtPost(EventPlayerHurt @event)
     {
         if (@event.UserIdPlayer is not { IsValid: true }) return HookResult.Continue;
         var pawnHealth = @event.UserIdPlayer.PlayerPawn!.Health;
@@ -1212,16 +1219,16 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("rmt")]
-    public void RefactoredMenuTestCommand( ICommandContext context )
+    public void RefactoredMenuTestCommand(ICommandContext context)
     {
         var mtoggle = new ToggleMenuOption("12");
-        mtoggle.ValueChanged += ( sender, args ) =>
+        mtoggle.ValueChanged += (sender, args) =>
         {
             args.Player.SendChat($"OldValue: {args.OldValue}({args.OldValue.GetType().Name}), NewValue: {args.NewValue}({args.NewValue.GetType().Name})");
         };
 
         var mtext = new TextMenuOption("123456789") { Enabled = true, BindingText = () => boundText };
-        mtext.Click += ( sender, args ) =>
+        mtext.Click += (sender, args) =>
         {
             boundText = null;
             if (sender is MenuOptionBase option)
@@ -1232,7 +1239,7 @@ public class TestPlugin : BasePlugin
         };
 
         var mbutton = new ButtonMenuOption(HtmlGradient.GenerateGradientText("Swiftlys2 向这广袤世界致以温柔问候", "#FFE4E1", "#FFC0CB", "#FF69B4")) { TextStyle = MenuOptionTextStyle.ScrollLeftLoop/*, CloseAfterClick = true*/ };
-        mbutton.Click += ( sender, args ) =>
+        mbutton.Click += (sender, args) =>
         {
             Core.Scheduler.NextTick(() => args.Player.SendMessage(MessageType.Chat, "Swiftlys2 向这广袤世界致以温柔问候"));
 
@@ -1282,7 +1289,8 @@ public class TestPlugin : BasePlugin
             }))
             .AddOption(new SelectorMenuOption<string>([
                 "1234567", "一二三四五六七", "いちにさんよん", "One Two Three", "Один Два Три", "하나 둘 셋", "αβγδεζη"
-            ]) { TextStyle = MenuOptionTextStyle.TruncateBothEnds })
+            ])
+            { TextStyle = MenuOptionTextStyle.TruncateBothEnds })
             .AddOption(new TextMenuOption() { Text = "12345678", TextStyle = MenuOptionTextStyle.ScrollLeftLoop })
             .AddOption(mtext)
             .AddOption(new TextMenuOption("1234567890") { Visible = false })
@@ -1315,6 +1323,26 @@ public class TestPlugin : BasePlugin
         // menu.DefaultComment = "No specific comment";
         Core.MenusAPI.OpenMenu(menu);
         // Core.MenusAPI.OpenMenuForPlayer(player, menu);
+    }
+
+    [Command("menutest")]
+    public void MenuTestCommand(ICommandContext context)
+    {
+        var player = context.Sender!;
+        var menu = Core.MenusAPI
+            .CreateBuilder()
+            .Design.SetMenuTitle("Test Menu")
+            .AddOption(new InputMenuOption("123456", 16, (val) =>
+            {
+                Console.WriteLine($"Input received: {val}");
+                return true;
+            }))
+            .Build();
+
+        Core.MenusAPI.OpenMenuForPlayer(player, menu, (p, m) =>
+        {
+            Console.WriteLine($"{m.Configuration.Title} closed for player: {p.Controller.PlayerName}");
+        });
     }
 
     // [Command("mt")]
@@ -1448,7 +1476,7 @@ public class TestPlugin : BasePlugin
     // }
 
     [Command("mru")]
-    public void MenuResourceUsageCommand( ICommandContext context )
+    public void MenuResourceUsageCommand(ICommandContext context)
     {
         var menus = new List<IMenuAPI>();
 
@@ -1462,7 +1490,7 @@ public class TestPlugin : BasePlugin
             {
                 var optionText = $"Menu # {i + 1} - Option # {j + 1}";
                 var button = new ButtonMenuOption(optionText) { TextStyle = MenuOptionTextStyle.ScrollLeftLoop, MaxWidth = 16f };
-                button.Click += ( sender, args ) =>
+                button.Click += (sender, args) =>
                 {
                     args.Player.SendChat($"Clicked: {optionText}");
                     return ValueTask.CompletedTask;
@@ -1487,7 +1515,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("tb2m")]
-    public void TeleportBotToMeCommand( ICommandContext context )
+    public void TeleportBotToMeCommand(ICommandContext context)
     {
         var player = context.Sender!;
         Core.PlayerManager.GetAllPlayers()
@@ -1498,7 +1526,7 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("los")]
-    public void LineOfSightCommand( ICommandContext context )
+    public void LineOfSightCommand(ICommandContext context)
     {
         var player = context.Sender!;
         Core.PlayerManager.GetAlive()
@@ -1509,7 +1537,7 @@ public class TestPlugin : BasePlugin
 
     [Command("cmt")]
     [CommandAlias("cmat")]
-    public void CommandTestCommand( ICommandContext context )
+    public void CommandTestCommand(ICommandContext context)
     {
         for (var i = 0; i < 1024; i++)
         {
@@ -1518,7 +1546,7 @@ public class TestPlugin : BasePlugin
     }
 
     [EventListener<EventDelegates.OnMovementServicesRunCommandHook>]
-    public void OnMovementServicesRunCommandHook( IOnMovementServicesRunCommandHookEvent @event )
+    public void OnMovementServicesRunCommandHook(IOnMovementServicesRunCommandHookEvent @event)
     {
         var movementServices = @event.MovementServices;
         var pawn = movementServices?.Pawn;
@@ -1543,14 +1571,14 @@ public class TestPlugin : BasePlugin
     }
 
     [Command("ecwb")]
-    public void ECWBCommand( ICommandContext _ )
+    public void ECWBCommand(ICommandContext _)
     {
-        Core.Engine.ExecuteCommandWithBuffer("cs2f_use_old_push 1", ( buffer ) => Core.Logger.LogWarning($"cs2f_use_old_push:\n{buffer}"));
-        Core.Scheduler.NextTick(() => Core.Engine.ExecuteCommandWithBuffer("map_showbombradius", ( buffer ) => Core.Logger.LogWarning($"map_showbombradius:\n{buffer}")));
+        Core.Engine.ExecuteCommandWithBuffer("cs2f_use_old_push 1", (buffer) => Core.Logger.LogWarning($"cs2f_use_old_push:\n{buffer}"));
+        Core.Scheduler.NextTick(() => Core.Engine.ExecuteCommandWithBuffer("map_showbombradius", (buffer) => Core.Logger.LogWarning($"map_showbombradius:\n{buffer}")));
     }
 
     [Command("ex1")]
-    public void DeepExceptionCommand( ICommandContext _ )
+    public void DeepExceptionCommand(ICommandContext _)
     {
         [MethodImpl(MethodImplOptions.NoInlining)]
         void ThrowLevel1()
