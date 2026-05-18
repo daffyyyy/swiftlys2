@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.EntitySystem;
-using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.Natives;
@@ -16,7 +16,7 @@ public struct CHandle<T>( uint raw ) : ICHandle where T : class, ISchemaClass<T>
     public uint Raw { get; set; } = raw;
     public readonly uint EntityIndex => Raw & 0x7FFF;
     public readonly uint SerialNumber => (Raw >> 15) & 0x1FFFF;
-    public readonly bool IsValid => NativeEntitySystem.EntityHandleIsValid(Raw);
+    public readonly bool IsValid => EntityManager.GetEntityByIndex(EntityIndex) != null;
 
     public T? Value {
         readonly get {
@@ -24,12 +24,16 @@ public struct CHandle<T>( uint raw ) : ICHandle where T : class, ISchemaClass<T>
             {
                 if (!IsValid) return null;
 
-                var entityHandleGet = NativeEntitySystem.EntityHandleGet(Raw);
-                return EntityManager.GetEntityByAddress(entityHandleGet) is T entity ? entity : T.From(entityHandleGet);
+                var ent = EntityManager.GetEntityByIndex(EntityIndex);
+                if (ent == null) return null;
+
+                return ent is T entity ? entity : T.From(ent.Address);
             }
         }
         set {
-            Raw = value == null ? 0xFFFFFFFF : NativeEntitySystem.GetEntityHandleFromEntity(value.Address);
+            if (value == null) Raw = 0xFFFFFFFF;
+            else if (value is not CEntityInstance ent) throw new InvalidOperationException($"Value must be of type {typeof(T).Name} which implements CEntityInstance.");
+            else Raw = ent.Entity == null ? 0xFFFFFFFF : ent.Entity.EntityHandle.Raw;
         }
     }
 
