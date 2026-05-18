@@ -715,7 +715,7 @@ public class TestPlugin : BasePlugin
         var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
         ent.DispatchSpawn();
 
-        var handle = new CHandlePackedEntity<CPointWorldText> {
+        var handle = new CHandle<CPointWorldText> {
             Value = ent
         };
 

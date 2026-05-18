@@ -16,7 +16,14 @@ public struct CHandle<T>( uint raw ) : ICHandle where T : class, ISchemaClass<T>
     public uint Raw { get; set; } = raw;
     public readonly uint EntityIndex => Raw & 0x7FFF;
     public readonly uint SerialNumber => (Raw >> 15) & 0x1FFFF;
-    public readonly bool IsValid => EntityManager.GetEntityByIndex(EntityIndex) != null;
+    public readonly bool IsValid {
+        get {
+            if (Raw == 0xFFFFFFFF) return false;
+            var ent = EntityManager.GetEntityByIndex(EntityIndex);
+            if (ent == null || ent.Entity == null) return false;
+            return ent.Entity.EntityHandle.Raw == Raw;
+        }
+    }
 
     public T? Value {
         readonly get {
@@ -38,6 +45,27 @@ public struct CHandle<T>( uint raw ) : ICHandle where T : class, ISchemaClass<T>
     }
 
     public static CHandle<T> Invalid => new(0xFFFFFFFF);
+
+    public static CHandle<T> FromPacked( int packed_handle )
+    {
+        if (packed_handle == 0xFFFFFF) return new();
+
+        var index = (uint)(packed_handle & 0x3FFF);
+        var serial = (packed_handle >> 14) & 0x3FF;
+
+        var ent = EntityManager.GetEntityByIndex(index);
+        if (ent == null || ent.Entity == null) return new();
+
+        var entHandle = ent.Entity.EntityHandle;
+        if ((entHandle.SerialNumber & 0x3FF) != serial) return new();
+
+        return new CHandle<T> { Raw = entHandle.Raw };
+    }
+
+    public readonly int ToPackedInt()
+    {
+        return !IsValid ? 0xFFFFFF : (int)EntityIndex | ((int)(SerialNumber & 0x3FF) << 14);
+    }
 
     public static bool operator ==( CHandle<T> left, CHandle<T> right ) => left.Equals(right);
     public static bool operator !=( CHandle<T> left, CHandle<T> right ) => !left.Equals(right);
