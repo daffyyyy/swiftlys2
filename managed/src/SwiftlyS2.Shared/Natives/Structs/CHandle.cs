@@ -46,7 +46,7 @@ public struct CHandle<T>( uint raw ) : ICHandle where T : class, ISchemaClass<T>
 
     public static CHandle<T> Invalid => new(0xFFFFFFFF);
 
-    public static CHandle<T> FromPacked( int packed_handle )
+    public static CHandle<T> FromPackedInt( int packed_handle )
     {
         if (packed_handle == 0xFFFFFF) return new();
 
