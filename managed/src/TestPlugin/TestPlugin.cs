@@ -30,6 +30,7 @@ using SwiftlyS2.Core.Menus.OptionsBase;
 using System.Diagnostics;
 using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.Trace;
+using SwiftlyS2.Shared.GameHooks;
 
 namespace TestPlugin;
 
@@ -143,44 +144,22 @@ public class InProcessConfig : ManualConfig
 [PluginMetadata(Id = "sw2.testplugin", Version = "1.0.0", MinimumAPIVersion = "1.1.6")]
 public class TestPlugin : BasePlugin
 {
-    private IConVar<bool>? _autobunnyhopping;
 
     private delegate nint ReflectPawnStateType( nint a1, nint a2 );
 
     public TestPlugin( ISwiftlyCore core ) : base(core)
     {
-        _autobunnyhopping = Core.ConVar.Find<bool>("sv_autobunnyhopping");
         Console.WriteLine("[TestPlugin] TestPlugin constructed successfully!");
-        // Console.WriteLine($"sizeof(bool): {sizeof(bool)}");
-        // Console.WriteLine($"Marshal.SizeOf<bool>: {Marshal.SizeOf<bool>()}");
-        Core.Event.OnWeaponServicesCanUseHook += ( @event ) =>
+
+        core.GameHooks.Movement.PlayerMove.Pre += ( ref @event ) =>
         {
-            // Console.WriteLine($"WeaponServicesCanUse: {@event.Weapon.WeaponBaseVData.AttackMovespeedFactor} {@event.OriginalResult}");
+            @event.Params.MoveData.MaxSpeed = 2000f;
         };
 
-        // throw new InvalidOperationException("TestPlugin constructor exception");
-
-        // var addr = Core.Memory.GetAddressBySignature("server", "48 89 5C 24 ? 56 57 41 56 48 83 EC ? 48 8D 05 ? ? ? ? 48 C7 44 24");
-        // var func = Core.Memory.GetUnmanagedFunctionByAddress<ReflectPawnStateType>(addr!.Value);
-        // _ = func.AddHook(next =>
-        // {
-        //     return ( a1, a2 ) =>
-        //     {
-        //         var ret = next()(a1, a2);
-        //         var controller = Helper.AsSchema<CCS2PawnGraphController>(a1);
-
-        //         //    controller.FlinchIsOnFire.Value = true;
-        //         //    controller.Action.Value = "action_crouch";
-        //         //    controller.AirHeightAboveGround.Value = 1f;
-        //         //    controller.Char = "action_celebrate";
-        //         //    controller.MoveSpeedY.Value = 0.1f;
-        //         // controller.IsWalking.Value = false;
-        //         // controller.AimPitchAngle.Value = 90f;
-        //         controller.CrouchAmount.Value = 1 * MathF.Sin(Core.Engine.GlobalVars.TickCount);
-        //         // Console.WriteLine(ret+"\n");
-        //         return ret;
-        //     };
-        // });
+        core.GameHooks.Movement.GroundAccelerate.Pre += ( ref @event ) =>
+        {
+            @event.Params.Acceleration = 69f;
+        };
     }
 
     [Command("selfmute")]
@@ -188,6 +167,7 @@ public class TestPlugin : BasePlugin
     {
         var player = context.Sender!;
         player.VoiceFlags = VoiceFlagValue.Muted;
+
     }
 
     [Command("be")]
@@ -500,13 +480,14 @@ public class TestPlugin : BasePlugin
         //     }
         // };
 
-        // Core.Event.OnClientProcessUsercmds += (@event) => {
-        //   foreach(var usercmd in @event.Usercmds) {
-        //     usercmd.Base.ButtonsPb.Buttonstate1 &= 1UL << (int)GameButtons.Ctrl;
-        //     usercmd.Base.ButtonsPb.Buttonstate2 &= 1UL << (int)GameButtons.Ctrl;
-        //     usercmd.Base.ButtonsPb.Buttonstate3 &= 1UL << (int)GameButtons.Ctrl;
-        //   }
+        // Core.GameHooks.Controller.ProcessUsercmds.Pre += ( ref @event ) =>
+        // {
+        //     foreach (var usercmd in @event.Usercmds)
+        //     {
+        //         Console.WriteLine($"Player: {@event.Player.Name}, Buttons: {usercmd.Base.ButtonsPb.Buttonstate1}");
+        //     }
         // };
+        //
 
         // Core.NetMessage.HookClientMessage<CCLCMsg_Move>((msg, id) => {
         //   Console.WriteLine("TestPlugin OnClientMove ");
@@ -1552,30 +1533,6 @@ public class TestPlugin : BasePlugin
         }
     }
 
-    [EventListener<EventDelegates.OnMovementServicesRunCommandHook>]
-    public void OnMovementServicesRunCommandHook( IOnMovementServicesRunCommandHookEvent @event )
-    {
-        var movementServices = @event.MovementServices;
-        var pawn = movementServices?.Pawn;
-        var player = pawn?.ToPlayer();
-
-        if (player == null || !player.IsValid)
-        {
-            return;
-        }
-
-        if (!player.IsAlive)
-        {
-            return;
-        }
-
-        if (pawn!.MoveType == MoveType_t.MOVETYPE_NOCLIP || pawn.ActualMoveType == MoveType_t.MOVETYPE_NOCLIP)
-        {
-            return;
-        }
-
-        _autobunnyhopping!.Value = !_autobunnyhopping.Value;
-    }
 
     [Command("ecwb")]
     public void ECWBCommand( ICommandContext _ )
