@@ -7,30 +7,39 @@ internal sealed class OnJumpLegacyMovementHook : IOnJumpLegacyMovementHook
     internal event OnOnJumpLegacyMovementPreDelegate? _Pre;
     internal event OnOnJumpLegacyMovementPostDelegate? _Post;
 
-    public event OnOnJumpLegacyMovementPreDelegate Pre {
-        add {
+    public event OnOnJumpLegacyMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.OnJumpLegacy);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.OnJumpLegacy);
         }
     }
 
-    public event OnOnJumpLegacyMovementPostDelegate Post {
-        add {
+    public event OnOnJumpLegacyMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.OnJumpLegacy);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.OnJumpLegacy);
         }
     }
 
-    public void InvokePre( ref OnJumpLegacyMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref OnJumpLegacyMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref OnJumpLegacyMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref OnJumpLegacyMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

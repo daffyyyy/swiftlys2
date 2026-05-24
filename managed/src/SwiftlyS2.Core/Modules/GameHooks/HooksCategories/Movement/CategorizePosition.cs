@@ -7,30 +7,39 @@ internal sealed class CategorizePositionMovementHook : ICategorizePositionMoveme
     internal event OnCategorizePositionMovementPreDelegate? _Pre;
     internal event OnCategorizePositionMovementPostDelegate? _Post;
 
-    public event OnCategorizePositionMovementPreDelegate Pre {
-        add {
+    public event OnCategorizePositionMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.CategorizePosition);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.CategorizePosition);
         }
     }
 
-    public event OnCategorizePositionMovementPostDelegate Post {
-        add {
+    public event OnCategorizePositionMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.CategorizePosition);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.CategorizePosition);
         }
     }
 
-    public void InvokePre( ref CategorizePositionMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref CategorizePositionMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref CategorizePositionMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref CategorizePositionMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

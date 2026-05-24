@@ -7,30 +7,39 @@ internal sealed class PostThinkPawnHook : IPostThinkPawnHook
     internal event OnPostThinkPawnPreDelegate? _Pre;
     internal event OnPostThinkPawnPostDelegate? _Post;
 
-    public event OnPostThinkPawnPreDelegate Pre {
-        add {
+    public event OnPostThinkPawnPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.PostThink);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.PostThink);
         }
     }
 
-    public event OnPostThinkPawnPostDelegate Post {
-        add {
+    public event OnPostThinkPawnPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.PostThink);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.PostThink);
         }
     }
 
-    public void InvokePre( ref PostThinkPawnPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref PostThinkPawnPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref PostThinkPawnPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref PostThinkPawnPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

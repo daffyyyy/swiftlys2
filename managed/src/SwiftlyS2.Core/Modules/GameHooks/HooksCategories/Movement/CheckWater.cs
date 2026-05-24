@@ -7,30 +7,39 @@ internal sealed class CheckWaterMovementHook : ICheckWaterMovementHook
     internal event OnCheckWaterMovementPreDelegate? _Pre;
     internal event OnCheckWaterMovementPostDelegate? _Post;
 
-    public event OnCheckWaterMovementPreDelegate Pre {
-        add {
+    public event OnCheckWaterMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.CheckWater);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.CheckWater);
         }
     }
 
-    public event OnCheckWaterMovementPostDelegate Post {
-        add {
+    public event OnCheckWaterMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.CheckWater);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.CheckWater);
         }
     }
 
-    public void InvokePre( ref CheckWaterMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref CheckWaterMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref CheckWaterMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref CheckWaterMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

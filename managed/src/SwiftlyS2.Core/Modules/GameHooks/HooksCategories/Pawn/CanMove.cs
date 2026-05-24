@@ -7,30 +7,39 @@ internal sealed class CanMovePawnHook : ICanMovePawnHook
     internal event OnCanMovePawnPreDelegate? _Pre;
     internal event OnCanMovePawnPostDelegate? _Post;
 
-    public event OnCanMovePawnPreDelegate Pre {
-        add {
+    public event OnCanMovePawnPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.CanMove);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.CanMove);
         }
     }
 
-    public event OnCanMovePawnPostDelegate Post {
-        add {
+    public event OnCanMovePawnPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.CanMove);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.CanMove);
         }
     }
 
-    public void InvokePre( ref CanMovePawnPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref CanMovePawnPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref CanMovePawnPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref CanMovePawnPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

@@ -7,30 +7,39 @@ internal sealed class PlayerMoveMovementHook : IPlayerMoveMovementHook
     internal event OnPlayerMoveMovementPreDelegate? _Pre;
     internal event OnPlayerMoveMovementPostDelegate? _Post;
 
-    public event OnPlayerMoveMovementPreDelegate Pre {
-        add {
+    public event OnPlayerMoveMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.PlayerMove);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.PlayerMove);
         }
     }
 
-    public event OnPlayerMoveMovementPostDelegate Post {
-        add {
+    public event OnPlayerMoveMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.PlayerMove);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.PlayerMove);
         }
     }
 
-    public void InvokePre( ref PlayerMoveMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref PlayerMoveMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref PlayerMoveMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref PlayerMoveMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

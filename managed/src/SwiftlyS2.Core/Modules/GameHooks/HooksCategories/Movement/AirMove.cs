@@ -7,30 +7,39 @@ internal sealed class AirMoveMovementHook : IAirMoveMovementHook
     internal event OnAirMoveMovementPreDelegate? _Pre;
     internal event OnAirMoveMovementPostDelegate? _Post;
 
-    public event OnAirMoveMovementPreDelegate Pre {
-        add {
+    public event OnAirMoveMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.AirMove);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.AirMove);
         }
     }
 
-    public event OnAirMoveMovementPostDelegate Post {
-        add {
+    public event OnAirMoveMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.AirMove);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.AirMove);
         }
     }
 
-    public void InvokePre( ref AirMoveMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref AirMoveMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref AirMoveMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref AirMoveMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

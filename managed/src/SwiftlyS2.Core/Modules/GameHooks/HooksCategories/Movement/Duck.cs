@@ -7,30 +7,39 @@ internal sealed class DuckMovementHook : IDuckMovementHook
     internal event OnDuckMovementPreDelegate? _Pre;
     internal event OnDuckMovementPostDelegate? _Post;
 
-    public event OnDuckMovementPreDelegate Pre {
-        add {
+    public event OnDuckMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.Duck);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.Duck);
         }
     }
 
-    public event OnDuckMovementPostDelegate Post {
-        add {
+    public event OnDuckMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.Duck);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.Duck);
         }
     }
 
-    public void InvokePre( ref DuckMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref DuckMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref DuckMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref DuckMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

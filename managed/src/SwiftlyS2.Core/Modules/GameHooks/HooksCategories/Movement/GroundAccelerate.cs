@@ -7,30 +7,39 @@ internal sealed class GroundAccelerateMovementHook : IGroundAccelerateMovementHo
     internal event OnGroundAccelerateMovementPreDelegate? _Pre;
     internal event OnGroundAccelerateMovementPostDelegate? _Post;
 
-    public event OnGroundAccelerateMovementPreDelegate Pre {
-        add {
+    public event OnGroundAccelerateMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.GroundAccelerate);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.GroundAccelerate);
         }
     }
 
-    public event OnGroundAccelerateMovementPostDelegate Post {
-        add {
+    public event OnGroundAccelerateMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.GroundAccelerate);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.GroundAccelerate);
         }
     }
 
-    public void InvokePre( ref GroundAccelerateMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref GroundAccelerateMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref GroundAccelerateMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref GroundAccelerateMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {

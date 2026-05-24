@@ -7,30 +7,39 @@ internal sealed class CheckJumpButtonModernMovementHook : ICheckJumpButtonModern
     internal event OnCheckJumpButtonModernMovementPreDelegate? _Pre;
     internal event OnCheckJumpButtonModernMovementPostDelegate? _Post;
 
-    public event OnCheckJumpButtonModernMovementPreDelegate Pre {
-        add {
+    public event OnCheckJumpButtonModernMovementPreDelegate Pre
+    {
+        add
+        {
             if (_Pre == null) GameHooksPublisher.AddHookListener(HookListener.CheckJumpButtonModern);
             _Pre += value;
         }
-        remove {
+        remove
+        {
             _Pre -= value;
             if (_Pre == null) GameHooksPublisher.RemoveHookListener(HookListener.CheckJumpButtonModern);
         }
     }
 
-    public event OnCheckJumpButtonModernMovementPostDelegate Post {
-        add {
+    public event OnCheckJumpButtonModernMovementPostDelegate Post
+    {
+        add
+        {
             if (_Post == null) GameHooksPublisher.AddHookListener(HookListener.CheckJumpButtonModern);
             _Post += value;
         }
-        remove {
+        remove
+        {
             _Post -= value;
             if (_Post == null) GameHooksPublisher.RemoveHookListener(HookListener.CheckJumpButtonModern);
         }
     }
 
-    public void InvokePre( ref CheckJumpButtonModernMovementPreContext ctx ) => _Pre?.Invoke(ref ctx);
-    public void InvokePost( ref CheckJumpButtonModernMovementPostContext ctx ) => _Post?.Invoke(ref ctx);
+    public void InvokePre(ref CheckJumpButtonModernMovementPreContext ctx) => _Pre?.Invoke(ref ctx);
+    public void InvokePost(ref CheckJumpButtonModernMovementPostContext ctx) => _Post?.Invoke(ref ctx);
+
+    public bool HasPreListeners => _Pre != null;
+    public bool HasPostListeners => _Post != null;
 
     public void UnregisterListeners()
     {
