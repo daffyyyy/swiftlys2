@@ -241,6 +241,8 @@ void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last)
         auto player = playermanager->GetPlayer(i);
         if (player) player->Think();
     }
+
+    g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION)->OnTick();
 }
 
 extern void* g_pOnClientConnectCallback;

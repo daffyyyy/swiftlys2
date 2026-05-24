@@ -21,9 +21,9 @@
 #include <api/interfaces/manager.h>
 #include <s2binlib/s2binlib.h>
 
-void VFunctionHook::SetHookFunction(const std::string& interface, int index, void* callback)
+void VFunctionHook::SetHookFunction(const std::string& iface_name, int index, void* callback)
 {
-    static auto iface = g_ifaceService.FetchInterface<void>(interface.c_str());
+    static auto iface = g_ifaceService.FetchInterface<void>(iface_name.c_str());
     if (!iface) return;
 
     void* trampoline_addr = nullptr;

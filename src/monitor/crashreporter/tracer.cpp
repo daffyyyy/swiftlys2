@@ -16,26 +16,35 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_memory_hooks_vfunction_h
-#define src_memory_hooks_vfunction_h
+#include "tracer.h"
 
-#include <api/memory/hooks/vfunction.h>
-#include <safetyhook/safetyhook.hpp>
+#include <api/shared/files.h>
+#include <api/shared/plat.h>
 
-class VFunctionHook : public IVFunctionHook
-{
-public:
-    virtual void SetHookFunction(const std::string& iface_name, int index, void* callback) override;
-    virtual void SetHookFunction(void* instance, int index, void* callback, bool is_vtable) override;
+#include <core/managed/host/strconv.h>
 
-    virtual void Enable() override;
-    virtual void Disable() override;
-
-    virtual void* GetOriginal() override;
-    virtual bool IsEnabled() override;
-private:
-    SafetyHookInline m_oHook;
-    void* m_pOriginal = nullptr;
-};
-
+bool setEnvVar(const std::string& key, const std::string& value) {
+#ifdef _WIN32
+    if (_putenv_s(key.c_str(), value.c_str()) == 0) {
+        return true;
+    }
+#else
+    if (setenv(key.c_str(), value.c_str(), 1) == 0) {
+        return true;
+    }
 #endif
+    return false;
+}
+
+void TracerDump(const std::string& corePath, const char* path)
+{
+
+    void* lib = load_library(WIN_LINUX(StringWide("sw2tracer.dll").c_str(), (Files::GeneratePath(corePath + "bin/linuxsteamrt64/libsw2tracer.so")).c_str()));
+    if (!lib) return;
+
+    Sw2TracerDumpFunc dumpFunc = (Sw2TracerDumpFunc)get_export(lib, "SW2TracerDump");
+    if (dumpFunc)
+    {
+        dumpFunc(path);
+    }
+}

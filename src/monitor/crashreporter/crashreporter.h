@@ -19,7 +19,25 @@
 #ifndef src_monitor_crashreporter_crashreporter_h
 #define src_monitor_crashreporter_crashreporter_h
 
+#include "config.h"
+
 #include <api/monitor/crashreporter/crashreporter.h>
+
+#include <google_breakpad/processor/process_state.h>
+#include <google_breakpad/processor/source_line_resolver_interface.h>
+#include <google_breakpad/processor/call_stack.h>
+
+#if defined _LINUX
+#include <client/linux/handler/exception_handler.h>
+#include <common/linux/linux_libc_support.h>
+#include <third_party/lss/linux_syscall_support.h>
+#include <common/linux/http_upload.h>
+
+#include <dirent.h>
+#include <unistd.h>
+#else
+#include <client/windows/handler/exception_handler.h>
+#endif
 
 class CrashReporter : public ICrashReporter
 {
@@ -32,6 +50,19 @@ public:
     virtual void EnableDotnetCrashTracer(int level) override;
     virtual int GetDotnetCrashTracerLevel() override;
     virtual void ReportPreventionIncident(std::string category, std::string reason) override;
+    virtual void OnTick() override;
 };
+
+extern void InitCrashReporterWindows();
+extern void InitCrashReporterLinux();
+extern void ShutdownCrashReporterWindows();
+
+extern void CrashReporterOnTickLinux();
+
+std::string FormatProcessState(const google_breakpad::ProcessState& process_state, google_breakpad::SourceLineResolverInterface* resolver);
+
+extern void ConsoleLogger_FlushForCrash();
+
+extern google_breakpad::ExceptionHandler* exceptionHandler;
 
 #endif

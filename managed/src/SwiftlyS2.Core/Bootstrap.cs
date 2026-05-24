@@ -20,9 +20,9 @@ internal static class Bootstrap
 {
     // how tf i forgot services can be collected hahahahahahahhaahhahaa FUCK
     private static IHost? sw2Host;
-    private unsafe delegate void SetStackTraceCallbackDelegate( delegate* unmanaged< byte*, int, int > callback );
+    private unsafe delegate void SetStackTraceCallbackDelegate(delegate* unmanaged<byte*, int, int> callback);
 
-    private static IntPtr SteamAPIDLLResolver( string libraryName, Assembly assembly, DllImportSearchPath? searchPath )
+    private static IntPtr SteamAPIDLLResolver(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
     {
         if (libraryName == "steam_api" || libraryName == "sdkencryptedappticket")
         {
@@ -40,16 +40,16 @@ internal static class Bootstrap
         return IntPtr.Zero;
     }
 
-    public static void Start( IntPtr nativeTable, int nativeTableSize, string basePath, string logPath)
+    public static void Start(IntPtr nativeTable, int nativeTableSize, string basePath, string logPath)
     {
-        
-        AppDomain.CurrentDomain.UnhandledException += ( sender, e ) =>
+
+        AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
         {
             Console.WriteLine("CRITICAL: Unhandled exception. Aborting.");
             Console.WriteLine((e.ExceptionObject as Exception)?.ToString());
         };
 
-        TaskScheduler.UnobservedTaskException += ( sender, e ) =>
+        TaskScheduler.UnobservedTaskException += (sender, e) =>
         {
             Console.WriteLine("CRITICAL: Unobserved task exception. Aborting.");
             Console.WriteLine(e.Exception.ToString());
@@ -69,7 +69,8 @@ internal static class Bootstrap
         var redirector = new ConsoleRedirector();
         Console.SetOut(redirector);
         Console.SetError(redirector);
-        AnsiConsole.Console = AnsiConsole.Create(new AnsiConsoleSettings {
+        AnsiConsole.Console = AnsiConsole.Create(new AnsiConsoleSettings
+        {
             Out = new AnsiConsoleOutput(redirector)
         });
 
@@ -80,22 +81,22 @@ internal static class Bootstrap
             {
                 options.SuppressStatusMessages = true;
             })
-            .ConfigureServices(( context, services ) =>
+            .ConfigureServices((context, services) =>
             {
                 _ = services.AddHostedService<StartupService>();
             })
-            .ConfigureLogging(( context, logging ) =>
+            .ConfigureLogging((context, logging) =>
             {
                 _ = logging.ClearProviders();
                 _ = logging.AddProvider(new SwiftlyLoggerProvider("SwiftlyS2"));
             })
-            .ConfigureAppConfiguration(( context, config ) =>
+            .ConfigureAppConfiguration((context, config) =>
             {
                 _ = config.SetBasePath(Path.Combine(Environment.GetEnvironmentVariable("SWIFTLY_MANAGED_ROOT")!, "configs"));
                 _ = config.AddJsonFile("permissions.jsonc", optional: false, reloadOnChange: true);
                 _ = config.AddJsonFile("command_overrides.jsonc", optional: true, reloadOnChange: true);
             })
-            .ConfigureServices(( context, services ) =>
+            .ConfigureServices((context, services) =>
             {
                 _ = services
                     .AddProfileService()

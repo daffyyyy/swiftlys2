@@ -30,6 +30,7 @@ public:
     virtual void ReportPreventionIncident(std::string category, std::string reason) = 0;
     virtual void EnableDotnetCrashTracer(int level) = 0;
     virtual int GetDotnetCrashTracerLevel() = 0;
+    virtual void OnTick() = 0;
 };
 
 #endif

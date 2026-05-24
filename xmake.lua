@@ -1,7 +1,6 @@
 set_project("swiftlys2")
 set_version("1.0.0")
 
-add_requires("fmt", {configs = {header_only = true}})
 add_requires("pcre2")
 
 set_languages("cxx23")
@@ -52,6 +51,9 @@ target("swiftlys2")
 
         "src/core/managed/host",
         "src/core/managed/libs/dotnet",
+        "src/monitor/crashreporter",
+
+        "vendor/fmt/include",
 
         sdk_path,
         sdk_path.."/thirdparty/protobuf-3.21.8/src",
@@ -195,6 +197,15 @@ target("swiftlys2")
             "JSON_HAS_CPP_11",
             "LUA_USE_WINDOWS",
         })
+
+        add_files({
+            breakpad_path.."/client/windows/crash_generation/client_info.cc",
+            breakpad_path.."/client/windows/crash_generation/crash_generation_client.cc",
+            breakpad_path.."/client/windows/crash_generation/crash_generation_server.cc",
+            breakpad_path.."/client/windows/crash_generation/minidump_generator.cc",
+            breakpad_path.."/client/windows/handler/exception_handler.cc",
+            breakpad_path.."/common/windows/guid_string.cc",
+        }, { cxxflags = {"-g0", "/DUNICODE", "/D_UNICODE"} })
     else
         add_defines({
             "_LINUX",
@@ -239,7 +250,6 @@ target("swiftlys2")
         })
 
         add_files({
-            breakpad_path.."/client/minidump_file_writer.cc",
             breakpad_path.."/client/linux/crash_generation/crash_generation_client.cc",
             breakpad_path.."/client/linux/crash_generation/crash_generation_server.cc",
             breakpad_path.."/client/linux/dump_writer_common/thread_info.cc",
@@ -253,9 +263,6 @@ target("swiftlys2")
             breakpad_path.."/client/linux/minidump_writer/linux_ptrace_dumper.cc",
             breakpad_path.."/client/linux/minidump_writer/minidump_writer.cc",
             breakpad_path.."/client/linux/minidump_writer/pe_file.cc",
-            breakpad_path.."/common/convert_UTF.cc",
-            breakpad_path.."/common/md5.cc",
-            breakpad_path.."/common/string_conversion.cc",
             breakpad_path.."/common/linux/elf_core_dump.cc",
             breakpad_path.."/common/linux/elfutils.cc",
             breakpad_path.."/common/linux/file_id.cc",
@@ -264,8 +271,11 @@ target("swiftlys2")
             breakpad_path.."/common/linux/memory_mapped_file.cc",
             breakpad_path.."/common/linux/safe_readlink.cc",
             breakpad_path.."/common/linux/breakpad_getcontext.S",
+            breakpad_path.."/client/minidump_file_writer.cc",
         }, { cxxflags = "-g0" })
     end
+
+
 
     add_defines({
         "GITHUB_SHA=\""..GITHUB_SHA.."\"",
@@ -273,6 +283,7 @@ target("swiftlys2")
         "ASMJIT_STATIC",
         "HAVE_STRUCT_TIMESPEC",
         "BUILDING_CORE",
+        "HAVE_CONFIG_H",
     })
 
     --[[ -------------------------------- Libraries Section -------------------------------- ]]
@@ -327,7 +338,67 @@ target("swiftlys2")
 
     add_files({
         "vendor/safetyhook/safetyhook.cpp",
-        "vendor/safetyhook/Zydis.c"
+        "vendor/safetyhook/Zydis.c",
+        "vendor/fmt/src/format.cc",
+        "vendor/fmt/src/os.cc",
+        breakpad_path.."/common/convert_UTF.cc",
+        breakpad_path.."/common/md5.cc",
+        breakpad_path.."/common/string_conversion.cc",
+        breakpad_path.."/processor/basic_code_modules.cc",
+        breakpad_path.."/processor/basic_source_line_resolver.cc",
+        breakpad_path.."/processor/call_stack.cc",
+        breakpad_path.."/processor/cfi_frame_info.cc",
+        breakpad_path.."/processor/convert_old_arm64_context.cc",
+        breakpad_path.."/processor/disassembler_x86.cc",
+        breakpad_path.."/processor/dump_context.cc",
+        breakpad_path.."/processor/dump_object.cc",
+        breakpad_path.."/processor/exploitability.cc",
+        breakpad_path.."/processor/exploitability_linux.cc",
+        breakpad_path.."/processor/exploitability_win.cc",
+        breakpad_path.."/processor/fast_source_line_resolver.cc",
+        breakpad_path.."/processor/logging.cc",
+        breakpad_path.."/processor/microdump.cc",
+        breakpad_path.."/processor/microdump_processor.cc",
+        breakpad_path.."/processor/minidump.cc",
+        breakpad_path.."/processor/minidump_processor.cc",
+        breakpad_path.."/processor/module_comparer.cc",
+        breakpad_path.."/processor/module_serializer.cc",
+        breakpad_path.."/processor/pathname_stripper.cc",
+        breakpad_path.."/processor/process_state.cc",
+        breakpad_path.."/processor/proc_maps_linux.cc",
+        breakpad_path.."/processor/simple_symbol_supplier.cc",
+        breakpad_path.."/processor/source_line_resolver_base.cc",
+        breakpad_path.."/processor/stack_frame_cpu.cc",
+        breakpad_path.."/processor/stack_frame_symbolizer.cc",
+        breakpad_path.."/processor/stackwalk_common.cc",
+        breakpad_path.."/processor/stackwalker.cc",
+        breakpad_path.."/processor/stackwalker_amd64.cc",
+        breakpad_path.."/processor/stackwalker_arm.cc",
+        breakpad_path.."/processor/stackwalker_arm64.cc",
+        breakpad_path.."/processor/stackwalker_address_list.cc",
+        breakpad_path.."/processor/stackwalker_mips.cc",
+        breakpad_path.."/processor/stackwalker_ppc.cc",
+        breakpad_path.."/processor/stackwalker_ppc64.cc",
+        breakpad_path.."/processor/stackwalker_riscv.cc",
+        breakpad_path.."/processor/stackwalker_riscv64.cc",
+        breakpad_path.."/processor/stackwalker_sparc.cc",
+        breakpad_path.."/processor/stackwalker_x86.cc",
+        breakpad_path.."/processor/symbolic_constants_win.cc",
+        breakpad_path.."/processor/tokenize.cc",
+        breakpad_path.."/third_party/libdisasm/ia32_implicit.c",
+		breakpad_path.."/third_party/libdisasm/ia32_insn.c",
+		breakpad_path.."/third_party/libdisasm/ia32_invariant.c",
+		breakpad_path.."/third_party/libdisasm/ia32_modrm.c",
+		breakpad_path.."/third_party/libdisasm/ia32_opcode_tables.c",
+		breakpad_path.."/third_party/libdisasm/ia32_operand.c",
+		breakpad_path.."/third_party/libdisasm/ia32_reg.c",
+		breakpad_path.."/third_party/libdisasm/ia32_settings.c",
+		breakpad_path.."/third_party/libdisasm/x86_disasm.c",
+		breakpad_path.."/third_party/libdisasm/x86_format.c",
+		breakpad_path.."/third_party/libdisasm/x86_imm.c",
+		breakpad_path.."/third_party/libdisasm/x86_insn.c",
+		breakpad_path.."/third_party/libdisasm/x86_misc.c",
+		breakpad_path.."/third_party/libdisasm/x86_operand_list.c",
     }, { cxxflags = "-g0" })
 
     --[[ -------------------------------- Protobuf Section -------------------------------- ]]

@@ -155,8 +155,14 @@ bool Files::IsDirectory(std::string path)
 
 bool Files::CreateDir(std::string path)
 {
-    path = Files::GeneratePath(path);
-    return std::filesystem::create_directory(path);
+    try {
+        path = Files::GeneratePath(path);
+        return std::filesystem::create_directory(path);
+    }
+    catch (std::exception& e) {
+        printf("%s\n", e.what());
+        return false;
+    }
 }
 
 std::vector<std::string> Files::FetchFileNames(std::string path)

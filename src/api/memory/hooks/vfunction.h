@@ -25,7 +25,7 @@
 class IVFunctionHook
 {
 public:
-    virtual void SetHookFunction(const std::string& interface, int index, void* callback) = 0;
+    virtual void SetHookFunction(const std::string& iface_name, int index, void* callback) = 0;
     virtual void SetHookFunction(void* instance, int index, void* callback, bool is_vtable) = 0;
 
     virtual void Enable() = 0;
