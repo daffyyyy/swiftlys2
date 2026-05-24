@@ -1,4 +1,7 @@
 using System.Runtime.InteropServices;
+using IntPtr = System.IntPtr;
+
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
 namespace SwiftlyS2.Shared.SteamAPI;
@@ -12,7 +15,7 @@ public partial class SteamIdParser
 	private static readonly Regex SteamId3Regex = MyRegex2();
 	private static readonly Regex SteamIdOnlineRegex = MyRegex3();
 
-	public static ulong? ParseToSteamId64( string input )
+	public static ulong? ParseToSteamId64(string input)
 	{
 		if (string.IsNullOrWhiteSpace(input))
 			return null;
@@ -34,7 +37,7 @@ public partial class SteamIdParser
 		return null;
 	}
 
-	private static bool TryParseSteamId64( string input, out ulong steamId64 )
+	private static bool TryParseSteamId64(string input, out ulong steamId64)
 	{
 		steamId64 = 0;
 
@@ -44,7 +47,7 @@ public partial class SteamIdParser
 		return ulong.TryParse(input, out steamId64) && steamId64 >= STEAM_ID_BASE;
 	}
 
-	private static bool TryParseSteamId( string input, out ulong steamId64 )
+	private static bool TryParseSteamId(string input, out ulong steamId64)
 	{
 		steamId64 = 0;
 
@@ -65,7 +68,7 @@ public partial class SteamIdParser
 		return true;
 	}
 
-	public static bool TryParseSteamIdOnline( string input, out ulong steamId64 )
+	public static bool TryParseSteamIdOnline(string input, out ulong steamId64)
 	{
 		steamId64 = 0;
 
@@ -86,7 +89,7 @@ public partial class SteamIdParser
 		return true;
 	}
 
-	private static bool TryParseSteamId3( string input, out ulong steamId64 )
+	private static bool TryParseSteamId3(string input, out ulong steamId64)
 	{
 		steamId64 = 0;
 
@@ -101,12 +104,12 @@ public partial class SteamIdParser
 		return true;
 	}
 
-	public static bool IsValidSteamId64( ulong steamId64 )
+	public static bool IsValidSteamId64(ulong steamId64)
 	{
 		return steamId64 >= STEAM_ID_BASE;
 	}
 
-	public static string ToSteamId( ulong steamId64 )
+	public static string ToSteamId(ulong steamId64)
 	{
 		if (!IsValidSteamId64(steamId64))
 			return null;
@@ -118,7 +121,7 @@ public partial class SteamIdParser
 		return $"STEAM_0:{y}:{z}";
 	}
 
-	public static string ToSteamId3( ulong steamId64 )
+	public static string ToSteamId3(ulong steamId64)
 	{
 		if (!IsValidSteamId64(steamId64))
 			return null;
@@ -127,7 +130,7 @@ public partial class SteamIdParser
 		return $"[U:1:{accountId}]";
 	}
 
-	public static string ToSteamIdOnline( ulong steamId64 )
+	public static string ToSteamIdOnline(ulong steamId64)
 	{
 		if (!IsValidSteamId64(steamId64))
 			return null;
@@ -163,13 +166,13 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 	public static readonly CSteamID NonSteamGS = new(new AccountID_t(2), 0, EUniverse.k_EUniverseInvalid, EAccountType.k_EAccountTypeInvalid);
 	public ulong m_SteamID;
 
-	public CSteamID( AccountID_t unAccountID, EUniverse eUniverse, EAccountType eAccountType )
+	public CSteamID(AccountID_t unAccountID, EUniverse eUniverse, EAccountType eAccountType)
 	{
 		m_SteamID = 0;
 		Set(unAccountID, eUniverse, eAccountType);
 	}
 
-	public CSteamID( AccountID_t unAccountID, uint unAccountInstance, EUniverse eUniverse, EAccountType eAccountType )
+	public CSteamID(AccountID_t unAccountID, uint unAccountInstance, EUniverse eUniverse, EAccountType eAccountType)
 	{
 		m_SteamID = 0;
 #if _SERVER && Assert
@@ -178,17 +181,17 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		InstancedSet(unAccountID, unAccountInstance, eUniverse, eAccountType);
 	}
 
-	public CSteamID( ulong ulSteamID )
+	public CSteamID(ulong ulSteamID)
 	{
 		m_SteamID = ulSteamID;
 	}
 
-	public CSteamID( string sSteamID )
+	public CSteamID(string sSteamID)
 	{
 		m_SteamID = SteamIdParser.ParseToSteamId64(sSteamID) ?? 0;
 	}
 
-	public void Set( AccountID_t unAccountID, EUniverse eUniverse, EAccountType eAccountType )
+	public void Set(AccountID_t unAccountID, EUniverse eUniverse, EAccountType eAccountType)
 	{
 		SetAccountID(unAccountID);
 		SetEUniverse(eUniverse);
@@ -204,7 +207,7 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		}
 	}
 
-	public void InstancedSet( AccountID_t unAccountID, uint unInstance, EUniverse eUniverse, EAccountType eAccountType )
+	public void InstancedSet(AccountID_t unAccountID, uint unInstance, EUniverse eUniverse, EAccountType eAccountType)
 	{
 		SetAccountID(unAccountID);
 		SetEUniverse(eUniverse);
@@ -217,7 +220,7 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		m_SteamID = 0;
 	}
 
-	public void CreateBlankAnonLogon( EUniverse eUniverse )
+	public void CreateBlankAnonLogon(EUniverse eUniverse)
 	{
 		SetAccountID(new AccountID_t(0));
 		SetEUniverse(eUniverse);
@@ -225,7 +228,7 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		SetAccountInstance(0);
 	}
 
-	public void CreateBlankAnonUserLogon( EUniverse eUniverse )
+	public void CreateBlankAnonUserLogon(EUniverse eUniverse)
 	{
 		SetAccountID(new AccountID_t(0));
 		SetEUniverse(eUniverse);
@@ -334,23 +337,23 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		return GetEAccountType() == EAccountType.k_EAccountTypeConsoleUser;
 	}
 
-	public void SetAccountID( AccountID_t other )
+	public void SetAccountID(AccountID_t other)
 	{
 		m_SteamID = (m_SteamID & ~(0xFFFFFFFFul << (ushort)0)) | (((ulong)(other) & 0xFFFFFFFFul) << (ushort)0);
 	}
 
-	public void SetAccountInstance( uint other )
+	public void SetAccountInstance(uint other)
 	{
 		m_SteamID = (m_SteamID & ~(0xFFFFFul << (ushort)32)) | (((ulong)(other) & 0xFFFFFul) << (ushort)32);
 	}
 
 	// This is a non standard/custom function not found in C++ Steamworks
-	public void SetEAccountType( EAccountType other )
+	public void SetEAccountType(EAccountType other)
 	{
 		m_SteamID = (m_SteamID & ~(0xFul << (ushort)52)) | (((ulong)(other) & 0xFul) << (ushort)52);
 	}
 
-	public void SetEUniverse( EUniverse other )
+	public void SetEUniverse(EUniverse other)
 	{
 		m_SteamID = (m_SteamID & ~(0xFFul << (ushort)56)) | (((ulong)(other) & 0xFFul) << (ushort)56);
 	}
@@ -436,7 +439,7 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		return m_SteamID.ToString();
 	}
 
-	public override bool Equals( object other )
+	public override bool Equals(object other)
 	{
 		return other is CSteamID && this == (CSteamID)other;
 	}
@@ -446,31 +449,31 @@ public struct CSteamID : IEquatable<CSteamID>, IComparable<CSteamID>
 		return m_SteamID.GetHashCode();
 	}
 
-	public static bool operator ==( CSteamID x, CSteamID y )
+	public static bool operator ==(CSteamID x, CSteamID y)
 	{
 		return x.m_SteamID == y.m_SteamID;
 	}
 
-	public static bool operator !=( CSteamID x, CSteamID y )
+	public static bool operator !=(CSteamID x, CSteamID y)
 	{
 		return !(x == y);
 	}
 
-	public static explicit operator CSteamID( ulong value )
+	public static explicit operator CSteamID(ulong value)
 	{
 		return new CSteamID(value);
 	}
-	public static explicit operator ulong( CSteamID that )
+	public static explicit operator ulong(CSteamID that)
 	{
 		return that.m_SteamID;
 	}
 
-	public bool Equals( CSteamID other )
+	public bool Equals(CSteamID other)
 	{
 		return m_SteamID == other.m_SteamID;
 	}
 
-	public int CompareTo( CSteamID other )
+	public int CompareTo(CSteamID other)
 	{
 		return m_SteamID.CompareTo(other.m_SteamID);
 	}

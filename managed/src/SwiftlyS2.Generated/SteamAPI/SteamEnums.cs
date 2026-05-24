@@ -1,7 +1,4 @@
-using System.Runtime.InteropServices;
-using IntPtr = System.IntPtr;
-
-using Flags = System.FlagsAttribute;
+﻿using Flags = System.FlagsAttribute;
 
 namespace SwiftlyS2.Shared.SteamAPI {
 	//-----------------------------------------------------------------------------
@@ -3099,5 +3096,4 @@ namespace SwiftlyS2.Shared.SteamAPI {
 	}
 
 }
-
 

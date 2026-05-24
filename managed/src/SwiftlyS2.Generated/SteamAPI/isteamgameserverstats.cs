@@ -1,5 +1,4 @@
-using System.Runtime.InteropServices;
-using IntPtr = System.IntPtr;
+﻿using System.Runtime.InteropServices;
 
 namespace SwiftlyS2.Shared.SteamAPI {
 	public static class SteamGameServerStats {
@@ -93,5 +92,4 @@ namespace SwiftlyS2.Shared.SteamAPI {
 		}
 	}
 }
-
 

@@ -1,6 +1,5 @@
-#define STEAMNETWORKINGSOCKETS_ENABLE_SDR
+﻿#define STEAMNETWORKINGSOCKETS_ENABLE_SDR
 using System.Runtime.InteropServices;
-using IntPtr = System.IntPtr;
 
 namespace SwiftlyS2.Shared.SteamAPI {
 	public static class SteamGameServerNetworkingUtils {
@@ -427,5 +426,4 @@ namespace SwiftlyS2.Shared.SteamAPI {
 		}
 	}
 }
-
 

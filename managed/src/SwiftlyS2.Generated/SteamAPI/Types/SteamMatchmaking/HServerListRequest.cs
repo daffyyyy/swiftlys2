@@ -42,6 +42,10 @@ namespace SwiftlyS2.Shared.SteamAPI {
 		public bool Equals(HServerListRequest other) {
 			return m_HServerListRequest == other.m_HServerListRequest;
 		}
+
+		public int CompareTo(HServerListRequest other) {
+			return m_HServerListRequest.CompareTo(other.m_HServerListRequest);
+		}
 	}
 }
 

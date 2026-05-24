@@ -1,5 +1,4 @@
-using System.Runtime.InteropServices;
-using IntPtr = System.IntPtr;
+﻿using System.Runtime.InteropServices;
 
 namespace SwiftlyS2.Shared.SteamAPI {
 	// callbacks
@@ -2936,5 +2935,4 @@ namespace SwiftlyS2.Shared.SteamAPI {
 	}
 
 }
-
 
