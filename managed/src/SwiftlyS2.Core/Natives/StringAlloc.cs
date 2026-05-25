@@ -1,14 +1,12 @@
 using System.Buffers;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Text.Unicode;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class StringAlloc
 {
     private static readonly ArrayPool<byte> arrayPool = ArrayPool<byte>.Shared;
-    public unsafe delegate void CStringAction( byte* cstr );
 
     public static void CreateCString( string str, Action<nint> action )
     {

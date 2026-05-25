@@ -25,7 +25,7 @@ internal class CoreHookService : IDisposable
     private readonly ILogger<CoreHookService> logger;
     private static readonly bool IsWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
-    public CoreHookService(ILogger<CoreHookService> logger, ISwiftlyCore core)
+    public CoreHookService( ILogger<CoreHookService> logger, ISwiftlyCore core )
     {
         this.logger = logger;
         this.core = core;
@@ -69,14 +69,14 @@ internal class CoreHookService : IDisposable
 
         So we model it as a fixed 5-parameter function for interop purposes
     */
-    private delegate nint ExecuteCommand(nint a1, int a2, uint a3, nint a4, nint a5);
-    private delegate nint ICvarFindConCommandWindows(nint pICvar, nint pRet, nint pConCommandName, int unk1);
-    private delegate nint ICvarFindConCommandLinux(nint pICvar, nint pConCommandName, int unk1);
-    private delegate nint CBaseEntityTouchTemplate(nint pBaseEntity, nint pOtherEntity);
-    private delegate void SteamServerAPIActivated(nint pServer);
-    private delegate void CEntityIdentityAcceptInput(nint pEntityIdentity, nint inputName, nint activator, nint caller, nint variant, int outputId, nint unk1, nint unk2);
-    private delegate void CEntityIOOutputFireOutputInternal(nint pEntityIO, nint pActivator, nint pCaller, nint pVariant, float flDelay, nint unk1, nint unk2);
-    private delegate void DispatchDatamapFunction(nint a1, nint pDatamapFunc, nint a3, uint a4, nint a5, double a6 /* unknown */ );
+    private delegate nint ExecuteCommand( nint a1, int a2, uint a3, nint a4, nint a5 );
+    private delegate nint ICvarFindConCommandWindows( nint pICvar, nint pRet, nint pConCommandName, int unk1 );
+    private delegate nint ICvarFindConCommandLinux( nint pICvar, nint pConCommandName, int unk1 );
+    private delegate nint CBaseEntityTouchTemplate( nint pBaseEntity, nint pOtherEntity );
+    private delegate void SteamServerAPIActivated( nint pServer );
+    private delegate void CEntityIdentityAcceptInput( nint pEntityIdentity, nint inputName, nint activator, nint caller, nint variant, int outputId, nint unk1, nint unk2 );
+    private delegate void CEntityIOOutputFireOutputInternal( nint pEntityIO, nint pActivator, nint pCaller, nint pVariant, float flDelay, nint unk1, nint unk2 );
+    private delegate void DispatchDatamapFunction( nint a1, nint pDatamapFunc, nint a3, uint a4, nint a5, double a6 /* unknown */ );
 
     private IUnmanagedFunction<ExecuteCommand>? executeCommand;
     private Guid executeCommandGuid;
@@ -107,7 +107,7 @@ internal class CoreHookService : IDisposable
         entityIdentityAcceptInput = core.Memory.GetUnmanagedFunctionByAddress<CEntityIdentityAcceptInput>(address);
         entityIdentityAcceptInputGuid = entityIdentityAcceptInput.AddHook(next =>
         {
-            return (pEntityIdentity, pInputName, pActivator, pCaller, pVariant, outputId, unk1, unk2) =>
+            return ( pEntityIdentity, pInputName, pActivator, pCaller, pVariant, outputId, unk1, unk2 ) =>
             {
                 unsafe
                 {
@@ -121,8 +121,7 @@ internal class CoreHookService : IDisposable
                     var activator = pActivator != nint.Zero ? EntityManager.GetEntityByAddress(pActivator) : null;
                     var caller = pCaller != nint.Zero ? EntityManager.GetEntityByAddress(pCaller) : null;
 
-                    var @event = new OnEntityIdentityAcceptInputHookEvent
-                    {
+                    var @event = new OnEntityIdentityAcceptInputHookEvent {
                         Identity = entityIdentity,
                         EntityInstance = EntityManager.GetEntityByIndex(entityIdentity.EntityInstance.Index)!,
                         DesignerName = entityIdentity.DesignerName,
@@ -162,7 +161,7 @@ internal class CoreHookService : IDisposable
         entityIOOutputFireOutputInternal = core.Memory.GetUnmanagedFunctionByAddress<CEntityIOOutputFireOutputInternal>(address);
         entityIOOutputFireOutputInternalGuid = entityIOOutputFireOutputInternal.AddHook(next =>
         {
-            return (pEntityIO, pActivator, pCaller, pVariant, flDelay, unk1, unk2) =>
+            return ( pEntityIO, pActivator, pCaller, pVariant, flDelay, unk1, unk2 ) =>
             {
                 var entityIO = pEntityIO.AsRef<CEntityIOOutput>();
 
@@ -172,8 +171,7 @@ internal class CoreHookService : IDisposable
 
                 var variant = pVariant.AsRef<CVariant<CVariantDefaultAllocator>>();
 
-                var @event = new OnEntityFireOutputHookEvent
-                {
+                var @event = new OnEntityFireOutputHookEvent {
                     _entityIO = (CEntityIOOutput*)pEntityIO,
                     _variant = (CVariant<CVariantDefaultAllocator>*)pVariant,
                     DesignerName = caller?.DesignerName ?? string.Empty,
@@ -210,9 +208,9 @@ internal class CoreHookService : IDisposable
         logger.LogInformation("Hooking Cmd_ExecuteCommand at {Address:X}", address);
 
         executeCommand = core.Memory.GetUnmanagedFunctionByAddress<ExecuteCommand>(address);
-        executeCommandGuid = executeCommand.AddHook((next) =>
+        executeCommandGuid = executeCommand.AddHook(( next ) =>
         {
-            return (a1, a2, a3, a4, a5) =>
+            return ( a1, a2, a3, a4, a5 ) =>
             {
                 unsafe
                 {
@@ -246,10 +244,11 @@ internal class CoreHookService : IDisposable
         executeCommand = null;
     }
 
-    internal void WeaponDropPre(ref WeaponDropPreContext @event)
+    internal void WeaponDropPre( ref WeaponDropPreContext @event )
     {
-        var @e = new OnWeaponServicesDropWeaponHook
-        {
+        if (!EventPublisher.ListensToWeaponDrop) return;
+
+        var @e = new OnWeaponServicesDropWeaponHook {
             WeaponServices = @event.Params.Player.PlayerPawn!.WeaponServices!,
             Weapon = @event.Params.Weapon,
             SwappingWeapon = @event.Params.SwappingWeapon,
@@ -276,9 +275,9 @@ internal class CoreHookService : IDisposable
         {
             findConCommandWindows = core.Memory.GetUnmanagedFunctionByVTable<ICvarFindConCommandWindows>(core.Memory.GetVTableAddress(Library.Tier0, "CCvar")!.Value, offset);
             logger.LogInformation("Hooking ICvar::FindConCommand at {Address:X}", findConCommandWindows.Address);
-            findConCommandGuid = findConCommandWindows.AddHook((next) =>
+            findConCommandGuid = findConCommandWindows.AddHook(( next ) =>
             {
-                return (pICvar, pRet, pConCommandName, unk1) =>
+                return ( pICvar, pRet, pConCommandName, unk1 ) =>
                 {
                     var commandName = Marshal.PtrToStringAnsi(pConCommandName)!;
                     if (commandName.StartsWith("ecwb", StringComparison.OrdinalIgnoreCase))
@@ -302,9 +301,9 @@ internal class CoreHookService : IDisposable
         {
             findConCommandLinux = core.Memory.GetUnmanagedFunctionByVTable<ICvarFindConCommandLinux>(core.Memory.GetVTableAddress(Library.Tier0, "CCvar")!.Value, offset);
             logger.LogInformation("Hooking ICvar::FindConCommand at {Address:X}", findConCommandLinux.Address);
-            findConCommandGuid = findConCommandLinux.AddHook((next) =>
+            findConCommandGuid = findConCommandLinux.AddHook(( next ) =>
             {
-                return (pICvar, pConCommandName, unk1) =>
+                return ( pICvar, pConCommandName, unk1 ) =>
                 {
                     var commandName = Marshal.PtrToStringUTF8(pConCommandName)!;
                     if (commandName.StartsWith("ecwb", StringComparison.OrdinalIgnoreCase))
@@ -342,10 +341,11 @@ internal class CoreHookService : IDisposable
         }
     }
 
-    internal void CanAcquireEventPost(ref CanAcquireItemPostContext @event)
+    internal void CanAcquireEventPost( ref CanAcquireItemPostContext @event )
     {
-        var @e = new OnItemServicesCanAcquireHookEvent
-        {
+        if (!EventPublisher.ListensToCanAcquire) return;
+
+        var @e = new OnItemServicesCanAcquireHookEvent {
             ItemServices = @event.Params.Player.PlayerPawn!.ItemServices!,
             EconItemView = @event.Params.EconItemView,
             WeaponVData = @event.Params.WeaponVData,
@@ -367,10 +367,11 @@ internal class CoreHookService : IDisposable
         core.GameHooks.Items.CanAcquire.Post -= CanAcquireEventPost;
     }
 
-    internal void CanUseEventPost(ref CanUseWeaponPostContext @event)
+    internal void CanUseEventPost( ref CanUseWeaponPostContext @event )
     {
-        var @e = new OnWeaponServicesCanUseHookEvent
-        {
+        if (!EventPublisher.ListensToCanUseWeapon) return;
+
+        var @e = new OnWeaponServicesCanUseHookEvent {
             WeaponServices = @event.Params.Player.PlayerPawn!.WeaponServices!,
             Weapon = @event.Params.Weapon,
             OriginalResult = @event.Return
@@ -404,12 +405,11 @@ internal class CoreHookService : IDisposable
 
         entityStartTouchGuid = entityStartTouch.AddHook(next =>
         {
-            return (pBaseEntity, pOtherEntity) =>
+            return ( pBaseEntity, pOtherEntity ) =>
             {
                 var entity = EntityManager.GetEntityByAddress(pBaseEntity) as CBaseEntity;
                 var otherEntity = EntityManager.GetEntityByAddress(pOtherEntity) as CBaseEntity;
-                using var @event = new OnEntityStartTouchEvent
-                {
+                using var @event = new OnEntityStartTouchEvent {
                     Entity = entity ?? core.Memory.ToSchemaClass<CBaseEntity>(pBaseEntity),
                     OtherEntity = otherEntity ?? core.Memory.ToSchemaClass<CBaseEntity>(pOtherEntity)
                 };
@@ -420,12 +420,11 @@ internal class CoreHookService : IDisposable
 
         entityTouchGuid = entityTouch.AddHook(next =>
         {
-            return (pBaseEntity, pOtherEntity) =>
+            return ( pBaseEntity, pOtherEntity ) =>
             {
                 var entity = EntityManager.GetEntityByAddress(pBaseEntity) as CBaseEntity;
                 var otherEntity = EntityManager.GetEntityByAddress(pOtherEntity) as CBaseEntity;
-                using var @event = new OnEntityTouchEvent
-                {
+                using var @event = new OnEntityTouchEvent {
                     Entity = entity ?? core.Memory.ToSchemaClass<CBaseEntity>(pBaseEntity),
                     OtherEntity = otherEntity ?? core.Memory.ToSchemaClass<CBaseEntity>(pOtherEntity)
                 };
@@ -436,12 +435,11 @@ internal class CoreHookService : IDisposable
 
         entityEndTouchGuid = entityEndTouch.AddHook(next =>
         {
-            return (pBaseEntity, pOtherEntity) =>
+            return ( pBaseEntity, pOtherEntity ) =>
             {
                 var entity = EntityManager.GetEntityByAddress(pBaseEntity) as CBaseEntity;
                 var otherEntity = EntityManager.GetEntityByAddress(pOtherEntity) as CBaseEntity;
-                using var @event = new OnEntityEndTouchEvent
-                {
+                using var @event = new OnEntityEndTouchEvent {
                     Entity = entity ?? core.Memory.ToSchemaClass<CBaseEntity>(pBaseEntity),
                     OtherEntity = otherEntity ?? core.Memory.ToSchemaClass<CBaseEntity>(pOtherEntity)
                 };
@@ -477,7 +475,7 @@ internal class CoreHookService : IDisposable
         logger.LogInformation("Hooking IServerGameDLL::GameServerSteamAPIActivated at {Address:X}", steamServerAPIActivated.Address);
         steamServerAPIActivatedGuid = steamServerAPIActivated.AddHook(next =>
         {
-            return (pServer) =>
+            return ( pServer ) =>
             {
                 if (!CSteamGameServerAPIContext.Init())
                 {
@@ -498,10 +496,11 @@ internal class CoreHookService : IDisposable
         steamServerAPIActivated = null;
     }
 
-    internal void MovementServicesRunCommandHookPre(ref RunCommandMovementPreContext @event)
+    internal void MovementServicesRunCommandHookPre( ref RunCommandMovementPreContext @event )
     {
-        using var @ev = new OnMovementServicesRunCommandHookEvent
-        {
+        if (!EventPublisher.ListensToRunCommand) return;
+
+        using var @ev = new OnMovementServicesRunCommandHookEvent {
             MovementServices = @event.Params.Player.PlayerPawn!.MovementServices!,
             ButtonState = @event.Params.UserCmd.ButtonState,
             UserCmdPB = @event.Params.UserCmd.CSGOUserCmd
@@ -519,10 +518,11 @@ internal class CoreHookService : IDisposable
         core.GameHooks.Movement.RunCommand.Pre -= MovementServicesRunCommandHookPre;
     }
 
-    internal void CCSPlayerPostPostThinkPre(ref PostThinkPawnPreContext @event)
+    internal void CCSPlayerPostPostThinkPre( ref PostThinkPawnPreContext @event )
     {
-        using var @ev = new OnPlayerPawnPostThinkHookEvent
-        {
+        if (!EventPublisher.ListensToPostThink) return;
+
+        using var @ev = new OnPlayerPawnPostThinkHookEvent {
             PlayerPawn = @event.Params.Player.PlayerPawn!
         };
         EventPublisher.InvokeOnPlayerPawnPostThinkHook(@ev);
@@ -544,7 +544,7 @@ internal class CoreHookService : IDisposable
         dispatchDatamapFunction = core.Memory.GetUnmanagedFunctionByAddress<DispatchDatamapFunction>(address);
         dispatchDatamapFunctionGuid = dispatchDatamapFunction.AddHook(next =>
         {
-            return (a1, pDatamapFunc, a3, a4, a5, a6) =>
+            return ( a1, pDatamapFunc, a3, a4, a5, a6 ) =>
             {
                 try
                 {
@@ -571,16 +571,17 @@ internal class CoreHookService : IDisposable
         dispatchDatamapFunction = null;
     }
 
-    internal void OnClientProcessUsercmds(ref ProcessUsercmdsPreContext @event)
+    internal void OnClientProcessUsercmds( ref ProcessUsercmdsPreContext @event )
     {
+        if (!EventPublisher.ListensToProcessUsercmds) return;
+
         var v = new List<CSGOUserCmdPB>(@event.Params.Usercmds.Count);
         foreach (var usercmd in @event.Params.Usercmds)
         {
             v.Add(usercmd.CSGOUserCmd);
         }
 
-        var @ev = new OnClientProcessUsercmdsEvent
-        {
+        var @ev = new OnClientProcessUsercmdsEvent {
             PlayerId = @event.Params.Player.PlayerID,
             Paused = @event.Params.Paused,
             Margin = @event.Params.Margin,

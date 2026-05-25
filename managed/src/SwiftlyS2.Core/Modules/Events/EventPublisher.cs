@@ -583,6 +583,16 @@ internal static class EventPublisher
         }
     }
 
+    public static bool ListensToProcessUsercmds {
+        get {
+            for (var i = 0; i < subscribers.Count; i++)
+            {
+                if (subscribers[i].ListensToProcessUsercmds) return true;
+            }
+            return false;
+        }
+    }
+
     public static void OnClientProcessUsercmds( ref OnClientProcessUsercmdsEvent @event )
     {
         if (subscribers.Count == 0)
@@ -824,6 +834,16 @@ internal static class EventPublisher
         }
     }
 
+    public static bool ListensToCanAcquire {
+        get {
+            for (var i = 0; i < subscribers.Count; i++)
+            {
+                if (subscribers[i].ListensToCanAcquire) return true;
+            }
+            return false;
+        }
+    }
+
     public static void InvokeOnCanAcquireHook( OnItemServicesCanAcquireHookEvent @event )
     {
         if (subscribers.Count == 0)
@@ -849,6 +869,16 @@ internal static class EventPublisher
                 return;
             }
             AnsiConsole.WriteException(e);
+        }
+    }
+
+    public static bool ListensToCanUseWeapon {
+        get {
+            for (var i = 0; i < subscribers.Count; i++)
+            {
+                if (subscribers[i].ListensToCanUseWeapon) return true;
+            }
+            return false;
         }
     }
 
@@ -926,6 +956,16 @@ internal static class EventPublisher
         }
     }
 
+    public static bool ListensToRunCommand {
+        get {
+            for (var i = 0; i < subscribers.Count; i++)
+            {
+                if (subscribers[i].ListensToRunCommand) return true;
+            }
+            return false;
+        }
+    }
+
     public static void InvokeOnMovementServicesRunCommandHook( OnMovementServicesRunCommandHookEvent @event )
     {
         if (subscribers.Count == 0)
@@ -947,6 +987,16 @@ internal static class EventPublisher
                 return;
             }
             AnsiConsole.WriteException(e);
+        }
+    }
+
+    public static bool ListensToPostThink {
+        get {
+            for (var i = 0; i < subscribers.Count; i++)
+            {
+                if (subscribers[i].ListensToPostThink) return true;
+            }
+            return false;
         }
     }
 
@@ -995,6 +1045,16 @@ internal static class EventPublisher
                 return;
             }
             AnsiConsole.WriteException(e);
+        }
+    }
+
+    public static bool ListensToWeaponDrop {
+        get {
+            for (var i = 0; i < subscribers.Count; i++)
+            {
+                if (subscribers[i].ListensToWeaponDrop) return true;
+            }
+            return false;
         }
     }
 

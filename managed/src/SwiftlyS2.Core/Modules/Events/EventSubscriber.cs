@@ -439,6 +439,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable
         }
     }
 
+    public bool ListensToProcessUsercmds => OnClientProcessUsercmds != null;
+
     public void InvokeOnClientProcessUsercmds( ref OnClientProcessUsercmdsEvent @event )
     {
         if (OnClientProcessUsercmds == null)
@@ -607,6 +609,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable
         }
     }
 
+    public bool ListensToCanAcquire => OnItemServicesCanAcquireHook != null;
+
     public void InvokeOnItemServicesCanAcquireHook( ref OnItemServicesCanAcquireHookEvent @event )
     {
         if (OnItemServicesCanAcquireHook == null)
@@ -630,6 +634,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable
             profiler.StopRecording("Event::OnItemServicesCanAcquireHook");
         }
     }
+
+    public bool ListensToCanUseWeapon => OnWeaponServicesCanUseHook != null;
 
     public void InvokeOnWeaponServicesCanUseHook( ref OnWeaponServicesCanUseHookEvent @event )
     {
@@ -775,6 +781,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable
         }
     }
 
+    public bool ListensToRunCommand => OnMovementServicesRunCommandHook != null;
+
     public void InvokeOnMovementServicesRunCommandHook( ref OnMovementServicesRunCommandHookEvent @event )
     {
         if (OnMovementServicesRunCommandHook == null)
@@ -798,6 +806,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable
             profiler.StopRecording("Event::OnMovementServicesRunCommandHook");
         }
     }
+
+    public bool ListensToPostThink => OnPlayerPawnPostThink != null;
 
     public void InvokeOnPlayerPawnPostThinkHook( ref OnPlayerPawnPostThinkHookEvent @event )
     {
@@ -846,6 +856,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable
             profiler.StopRecording("Event::OnEntityIdentityAcceptInput");
         }
     }
+
+    public bool ListensToWeaponDrop => OnWeaponServicesDropWeaponHook != null;
 
     public void InvokeOnWeaponServicesDropWeaponHook( ref OnWeaponServicesDropWeaponHook @event )
     {
