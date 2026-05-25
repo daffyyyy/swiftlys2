@@ -18,6 +18,10 @@
 
 #include "player.h"
 
+#ifdef _MSC_VER
+#include <intrin.h>
+#endif
+
 #include <api/sdk/recipientfilter.h>
 #include <api/shared/string.h>
 
@@ -524,7 +528,12 @@ void CPlayer::Think()
     uint64_t changed = newButtons ^ m_uPressedButtons;
     while (changed)
     {
+#ifdef _MSC_VER
+        unsigned long i;
+        _BitScanForward64(&i, changed);
+#else
         int i = __builtin_ctzll(changed);
+#endif
         uint64_t mask = (1ULL << i);
         bool pressed = (newButtons & mask) != 0;
 
