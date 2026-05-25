@@ -560,6 +560,7 @@ internal static class EventPublisher
     [UnmanagedCallersOnly]
     public static void OnMapUnload( nint mapNamePtr )
     {
+        EntitySystemService.cachedGameRulesProxy = null;
         if (subscribers.Count == 0)
         {
             return;
