@@ -19,6 +19,7 @@
 #include "crashreporter.h"
 #include <fmt/format.h>
 #include <nlohmann/json.hpp>
+#include <core/entrypoint.h>
 
 #include <google_breakpad/processor/stack_frame.h>
 #include <google_breakpad/processor/stack_frame_cpu.h>
@@ -31,6 +32,9 @@ void PrintThread(nlohmann::json& thread_entry, google_breakpad::CallStack* stack
 std::string FormatProcessState(const google_breakpad::ProcessState& process_state, google_breakpad::SourceLineResolverInterface* resolver)
 {
     nlohmann::json out;
+
+    nlohmann::json& native = out["native"];
+    native["version"] = g_SwiftlyCore.GetVersion();
 
     nlohmann::json& machine = out["machine"];
 
