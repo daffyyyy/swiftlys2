@@ -469,10 +469,15 @@ typedef IGameEventListener2* (*GetLegacyGameEventListener)(CPlayerSlot slot);
 
 void CPlayer::Think()
 {
-    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata    = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto sdkschema   = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     static auto pListenerSig = gamedata->GetSignatures()->Fetch("LegacyGameEventListener");
-    if (pListenerSig)
+
+    bool hasCenterMenu    = !centerMenuText.empty();
+    bool hasCenterMessage = (centerMessageEndTime >= GetTime());
+
+    if (pListenerSig && (hasCenterMenu || hasCenterMessage))
     {
         auto listener = reinterpret_cast<GetLegacyGameEventListener>(pListenerSig)(m_iPlayerId);
         if (listener)
@@ -482,73 +487,53 @@ void CPlayer::Think()
 
             if (centerMessageEvent)
             {
-                if (centerMenuText != "")
-                {
-                    centerMessageEvent->SetString("loc_token", centerMenuText.c_str());
-                    centerMessageEvent->SetInt("duration", 1);
-                    centerMessageEvent->SetInt("userid", m_iPlayerId);
-
-                    listener->FireGameEvent(centerMessageEvent);
-                }
-                else
-                {
-                    if (centerMessageEndTime >= GetTime())
-                    {
-                        centerMessageEvent->SetString("loc_token", centerMessageText.c_str());
-                        centerMessageEvent->SetInt("duration", 1);
-                        centerMessageEvent->SetInt("userid", m_iPlayerId);
-
-                        listener->FireGameEvent(centerMessageEvent);
-                    }
-                    else
-                    {
-                        centerMessageEndTime = 0;
-                    }
-                }
+                const char* token = hasCenterMenu ? centerMenuText.c_str() : centerMessageText.c_str();
+                centerMessageEvent->SetString("loc_token", token);
+                centerMessageEvent->SetInt("duration", 1);
+                centerMessageEvent->SetInt("userid", m_iPlayerId);
+                listener->FireGameEvent(centerMessageEvent);
             }
         }
     }
+    else if (!hasCenterMessage)
+    {
+        centerMessageEndTime = 0;
+    }
+
+    if (!g_pOnClientKeyStateChangedCallback)
+        return;
 
     auto pawn = GetPawn();
+    if (!pawn)
+        return;
 
-    static auto sdkschema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    auto& movementServices = *(void**)sdkschema->GetPropPtr(pawn, CBasePlayerPawn_m_pMovementServices);
+    if (!movementServices)
+        return;
 
-    if (pawn)
+    void* buttons = sdkschema->GetPropPtr(movementServices, CPlayer_MovementServices_m_nButtons);
+    if (!buttons)
+        return;
+
+    uint64_t* states     = (uint64_t*)sdkschema->GetPropPtr(buttons, CInButtonState_m_pButtonStates);
+    uint64_t  newButtons = states[0];
+
+    if (newButtons == m_uPressedButtons)
+        return;
+
+    uint64_t changed = newButtons ^ m_uPressedButtons;
+    while (changed)
     {
-        auto& movementServices = *(void**)sdkschema->GetPropPtr(pawn, CBasePlayerPawn_m_pMovementServices);
-        if (movementServices)
-        {
-            void* buttons = sdkschema->GetPropPtr(movementServices, CPlayer_MovementServices_m_nButtons);
-            if (buttons)
-            {
-                uint64_t* states = (uint64_t*)sdkschema->GetPropPtr(buttons, CInButtonState_m_pButtonStates);
-                uint64_t& newButtons = states[0];
-                if (newButtons != m_uPressedButtons)
-                {
-                    if (g_pOnClientKeyStateChangedCallback)
-                    {
-                        for (int i = 0; i < 64; i++)
-                        {
-                            uint64_t mask = (1ULL << i);
-                            uint64_t oldState = m_uPressedButtons & mask;
-                            uint64_t newState = newButtons & mask;
+        int i = __builtin_ctzll(changed);
+        uint64_t mask = (1ULL << i);
+        bool pressed = (newButtons & mask) != 0;
 
-                            if (oldState == 0 && newState != 0)
-                            {
-                                reinterpret_cast<void (*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, true);
-                            }
-                            else if (oldState != 0 && newState == 0)
-                            {
-                                reinterpret_cast<void (*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, false);
-                            }
-                        }
-                    }
+        reinterpret_cast<void (*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, pressed);
 
-                    m_uPressedButtons = newButtons;
-                }
-            }
-        }
+        changed &= ~mask;  
     }
+
+    m_uPressedButtons = newButtons;
 }
 
 void CPlayer::RenderMenuCenterText(const std::string& text)
