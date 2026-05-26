@@ -20,8 +20,10 @@ internal static partial class GameHooksPublisher
         {
             return ( pawn ) =>
             {
-                _dummyPawn.DangerousSetHandle(pawn);
-                var player = _dummyPawn.ToPlayer();
+                var dummy = _pawnPool.Rent();
+                dummy.DangerousSetHandle(pawn);
+                var player = dummy.ToPlayer();
+                _pawnPool.Return(dummy);
                 if (player == null) return next()(pawn);
 
                 var preCtx = new CanMovePawnPreContext { Params = new CanMovePawnParams { Player = player } };

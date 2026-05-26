@@ -20,8 +20,10 @@ internal static partial class GameHooksPublisher
         {
             return ( controller ) =>
             {
-                _dummyController.DangerousSetHandle(controller);
-                var player = _dummyController.ToPlayer();
+                var dummy = _controllerPool.Rent();
+                dummy.DangerousSetHandle(controller);
+                var player = dummy.ToPlayer();
+                _controllerPool.Return(dummy);
                 if (player == null) { next()(controller); return; }
 
                 var preCtx = new SimulateUserCommandsPreContext { Params = new SimulateUserCommandsParams { Player = player } };

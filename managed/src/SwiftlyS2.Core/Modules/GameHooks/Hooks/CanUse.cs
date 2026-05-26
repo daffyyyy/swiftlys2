@@ -23,8 +23,10 @@ internal static partial class GameHooksPublisher
         {
             return ( pWeaponServices, pBasePlayerWeapon ) =>
             {
-                _dummyPawnComponent.DangerousSetHandle(pWeaponServices);
-                var player = _dummyPawnComponent.ToPlayer();
+                var dummy = _pawnComponentPool.Rent();
+                dummy.DangerousSetHandle(pWeaponServices);
+                var player = dummy.ToPlayer();
+                _pawnComponentPool.Return(dummy);
                 if (player == null) return next()(pWeaponServices, pBasePlayerWeapon);
 
                 var basePlayerWeapon = EntityManager.GetEntityByAddress(pBasePlayerWeapon) as CCSWeaponBase ?? _core.Memory.ToSchemaClass<CCSWeaponBase>(pBasePlayerWeapon);

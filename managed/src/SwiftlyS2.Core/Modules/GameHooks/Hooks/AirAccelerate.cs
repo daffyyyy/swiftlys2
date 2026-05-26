@@ -21,8 +21,10 @@ internal static partial class GameHooksPublisher
         {
             return ( movementServices, moveData, wishDirection, wishSpeed, acceleration ) =>
             {
-                _dummyPawnComponent.DangerousSetHandle(movementServices);
-                var player = _dummyPawnComponent.ToPlayer();
+                var dummy = _pawnComponentPool.Rent();
+                dummy.DangerousSetHandle(movementServices);
+                var player = dummy.ToPlayer();
+                _pawnComponentPool.Return(dummy);
                 if (player == null) { next()(movementServices, moveData, wishDirection, wishSpeed, acceleration); return; }
 
                 var preCtx = new AirAccelerateMovementPreContext {

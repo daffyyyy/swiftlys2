@@ -25,8 +25,10 @@ internal static partial class GameHooksPublisher
             {
                 return ( weaponServices, playerWeapon, swapping ) =>
                 {
-                    _dummyPawnComponent.DangerousSetHandle(weaponServices);
-                    var player = _dummyPawnComponent.ToPlayer();
+                    var dummy = _pawnComponentPool.Rent();
+                    dummy.DangerousSetHandle(weaponServices);
+                    var player = dummy.ToPlayer();
+                    _pawnComponentPool.Return(dummy);
                     if (player == null) return next()(weaponServices, playerWeapon, swapping);
 
                     var basePlayerWeapon = playerWeapon != nint.Zero ? EntityManager.GetEntityByAddress(playerWeapon) as CBasePlayerWeapon ?? _core.Memory.ToSchemaClass<CBasePlayerWeapon>(playerWeapon) : null;
@@ -59,8 +61,10 @@ internal static partial class GameHooksPublisher
             {
                 return ( weaponServices, playerWeapon, swapping ) =>
                 {
-                    _dummyPawnComponent.DangerousSetHandle(weaponServices);
-                    var player = _dummyPawnComponent.ToPlayer();
+                    var dummy = _pawnComponentPool.Rent();
+                    dummy.DangerousSetHandle(weaponServices);
+                    var player = dummy.ToPlayer();
+                    _pawnComponentPool.Return(dummy);
                     if (player == null) return next()(weaponServices, playerWeapon, swapping);
 
                     var basePlayerWeapon = playerWeapon != nint.Zero ? EntityManager.GetEntityByAddress(playerWeapon) as CBasePlayerWeapon ?? _core.Memory.ToSchemaClass<CBasePlayerWeapon>(playerWeapon) : null;
