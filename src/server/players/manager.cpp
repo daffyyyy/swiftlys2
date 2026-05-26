@@ -366,16 +366,12 @@ bool CPlayerManager::IsPlayerOnline(int playerid)
     return g_Players[playerid] != nullptr;
 }
 
-
 int CPlayerManager::GetPlayerCount()
 {
-    auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
     int count = 0;
-
     for (int i = 0; i < GetPlayerCap(); i++)
-        if (engine->GetClientSteamID(i))
+        if (g_Players[i] != nullptr)
             ++count;
-
     return count;
 }
 
