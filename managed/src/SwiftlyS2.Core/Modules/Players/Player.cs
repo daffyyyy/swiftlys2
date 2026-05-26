@@ -28,6 +28,7 @@ internal class Player : IPlayer, IDisposable
 
     private bool _disposed = false;
     private ServerSideClient _serverSideClient = new();
+    private CCSPlayerControllerImpl? _cachedController;
 
     public int PlayerID => Slot;
     public ulong SessionId { get; }
@@ -47,14 +48,44 @@ internal class Player : IPlayer, IDisposable
 
     public ulong UnauthorizedSteamID { get { ThrowIfDisposed(); return NativePlayer.GetUnauthorizedSteamID(Slot); } }
 
-    public CCSPlayerController Controller { get { ThrowIfDisposed(); var controllerPtr = NativePlayer.GetController(Slot); return EntityManager.GetEntityByAddress(controllerPtr) as CCSPlayerControllerImpl ?? new CCSPlayerControllerImpl(controllerPtr); } }
+    public CCSPlayerController Controller
+    {
+        get
+        {
+            ThrowIfDisposed();
+            if (_cachedController is { IsValid: true })
+                return _cachedController;
+            var controllerPtr = NativePlayer.GetController(Slot);
+            _cachedController = EntityManager.GetEntityByAddress(controllerPtr) as CCSPlayerControllerImpl
+                ?? new CCSPlayerControllerImpl(controllerPtr);
+            return _cachedController;
+        }
+    }
     public CCSPlayerController RequiredController => Controller is { IsValid: true } controller ? controller : throw new InvalidOperationException("Controller is not valid");
 
-    public CBasePlayerPawn? Pawn => Controller is { IsValid: true } ? (Controller.Pawn is { IsValid: true } pawn ? pawn.Value : null) : null;
+    public CBasePlayerPawn? Pawn
+    {
+        get
+        {
+            var ctrl = Controller;
+            return ctrl is { IsValid: true }
+                ? (ctrl.Pawn is { IsValid: true } pawn ? pawn.Value : null)
+                : null;
+        }
+    }
 
     public CBasePlayerPawn RequiredPawn => Pawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("Pawn is not valid");
 
-    public CCSPlayerPawn? PlayerPawn => Controller is { IsValid: true } ? (Controller.PlayerPawn is { IsValid: true } pawn ? pawn.Value : null) : null;
+    public CCSPlayerPawn? PlayerPawn
+    {
+        get
+        {
+            var ctrl = Controller;
+            return ctrl is { IsValid: true }
+                ? (ctrl.PlayerPawn is { IsValid: true } pawn ? pawn.Value : null)
+                : null;
+        }
+    }
 
     public CCSPlayerPawn RequiredPlayerPawn => PlayerPawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("PlayerPawn is not valid");
 
@@ -63,10 +94,16 @@ internal class Player : IPlayer, IDisposable
     public string IPAddress { get { ThrowIfDisposed(); return NativePlayer.GetIPAddress(Slot); } }
 
     public VoiceFlagValue VoiceFlags { get { ThrowIfDisposed(); return (VoiceFlagValue)NativeVoiceManager.GetClientVoiceFlags(Slot); } set { ThrowIfDisposed(); NativeVoiceManager.SetClientVoiceFlags(Slot, (int)value); } }
-    public bool IsValid =>
-        !_disposed &&
-        Controller is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.Connected } &&
-        Pawn is { IsValid: true };
+    public bool IsValid
+    {
+        get
+        {
+            if (_disposed) return false;
+            var ctrl = Controller;
+            return ctrl is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.Connected }
+                && ctrl.Pawn is { IsValid: true };
+        }
+    }
 
     public bool IsAlive => IsValid && Pawn!.LifeState == (byte)LifeState_t.LIFE_ALIVE;
 
@@ -330,6 +367,7 @@ internal class Player : IPlayer, IDisposable
     public void Dispose()
     {
         _disposed = true;
+        _cachedController = null;
     }
 
     public void ThrowIfDisposed()

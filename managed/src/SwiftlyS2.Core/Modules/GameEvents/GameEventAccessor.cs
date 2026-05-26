@@ -145,7 +145,8 @@ internal class GameEventAccessor : NativeHandle, IGameEventAccessor, IDisposable
         CheckIsValid();
 
         var playerid = GetInt32(key);
-        return PlayerManagerService.PlayerObjects.TryGetValue(playerid, out var player) ? player : null;
+        var slots = PlayerManagerService.PlayerObjects;
+        return (uint)playerid < (uint)slots.Length ? slots[playerid] : null;
     }
 
     public void SetPtr( string key, nint value )

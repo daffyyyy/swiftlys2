@@ -102,13 +102,12 @@ internal class GameEventService : IGameEventService, IDisposable
     {
         var handle = NativeGameEvents.CreateEvent(T.GetName());
 
-        var playerIds = PlayerManagerService.PlayerObjects.Keys;
-        foreach (var playerId in playerIds)
+        var slots = PlayerManagerService.PlayerObjects;
+        for (var playerId = 0; playerId < slots.Length; playerId++)
         {
+            if (slots[playerId] == null) continue;
             if (NativeGameEvents.IsPlayerListeningToEventName(playerId, T.GetName()))
-            {
                 NativeGameEvents.FireEventToClient(handle, playerId);
-            }
         }
 
         NativeGameEvents.FreeEvent(handle);
@@ -120,13 +119,12 @@ internal class GameEventService : IGameEventService, IDisposable
         var eventObj = T.Create(handle);
         configureEvent(eventObj);
         eventObj.Dispose();
-        var playerIds = PlayerManagerService.PlayerObjects.Keys;
-        foreach (var playerId in playerIds)
+        var slots = PlayerManagerService.PlayerObjects;
+        for (var playerId = 0; playerId < slots.Length; playerId++)
         {
+            if (slots[playerId] == null) continue;
             if (NativeGameEvents.IsPlayerListeningToEventName(playerId, T.GetName()))
-            {
                 NativeGameEvents.FireEventToClient(handle, playerId);
-            }
         }
 
         NativeGameEvents.FreeEvent(handle);

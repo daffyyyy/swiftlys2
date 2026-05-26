@@ -15,7 +15,8 @@ internal class PlayerManagerService : IPlayerManagerService
     private readonly ITranslationService _translationService;
     private readonly IEntitySystemService _entitySystemService;
     private readonly IEngineService _engineService;
-    public static ConcurrentDictionary<int, IPlayer> PlayerObjects { get; } = new();
+    private const int MaxPlayerSlots = 65;
+    public static IPlayer?[] PlayerObjects { get; } = new IPlayer?[MaxPlayerSlots];
     public static ConcurrentDictionary<ulong, IPlayer> SessionIdToPlayerObjects { get; } = new();
 
     public PlayerManagerService( ITranslationService translationService, IEntitySystemService entitySystemService, IEngineService engineService )
@@ -29,18 +30,19 @@ internal class PlayerManagerService : IPlayerManagerService
     {
         UnregisterPlayerObject(playerid);
         var player = new Player(playerid);
-        _ = PlayerObjects.TryAdd(playerid, player);
+        PlayerObjects[playerid] = player;
         _ = SessionIdToPlayerObjects.TryAdd(player.SessionId, player);
     }
 
     public static void UnregisterPlayerObject( int playerid )
     {
-        if (PlayerObjects.TryGetValue(playerid, out var player))
+        var player = (uint)playerid < MaxPlayerSlots ? PlayerObjects[playerid] : null;
+        if (player != null)
         {
             var p = (Player)player;
-            _ = SessionIdToPlayerObjects.TryRemove(p.SessionId, out var _);
+            _ = SessionIdToPlayerObjects.TryRemove(p.SessionId, out _);
             p.Dispose();
-            _ = PlayerObjects.TryRemove(playerid, out var _);
+            PlayerObjects[playerid] = null;
         }
     }
 
@@ -57,7 +59,7 @@ internal class PlayerManagerService : IPlayerManagerService
 
     public IPlayer? GetPlayer( int playerid )
     {
-        return PlayerObjects.TryGetValue(playerid, out var player) ? player : null;
+        return (uint)playerid < MaxPlayerSlots ? PlayerObjects[playerid] : null;
     }
 
     public IPlayer? GetPlayerFromController( CBasePlayerController controller )
@@ -72,7 +74,7 @@ internal class PlayerManagerService : IPlayerManagerService
 
     public bool IsPlayerOnline( int playerid )
     {
-        return PlayerObjects.ContainsKey(playerid);
+        return (uint)playerid < MaxPlayerSlots && PlayerObjects[playerid] != null;
     }
 
     public void SendMessage( MessageType kind, string message )
@@ -90,25 +92,21 @@ internal class PlayerManagerService : IPlayerManagerService
         NativePlayerManager.ShouldBlockTransmitEntity(entityid, shouldBlockTransmit);
     }
 
-    public IEnumerable<IPlayer> GetAllPlayers()
-    {
-        return PlayerObjects.Values;
-    }
+    public IEnumerable<IPlayer> GetAllPlayers() =>
+        PlayerObjects.Where(static p => p != null)!;
 
-    public IEnumerable<IPlayer> GetAllValidPlayers()
-    {
-        return GetAllPlayers().Where(p => p.IsValid);
-    }
+    public IEnumerable<IPlayer> GetAllValidPlayers() =>
+        PlayerObjects.Where(static p => p?.IsValid == true)!;
 
     public IEnumerable<IPlayer> FindTargettedPlayers( IPlayer player, string target, TargetSearchMode searchMode,
         StringComparison nameComparison = StringComparison.OrdinalIgnoreCase )
     {
-        IEnumerable<IPlayer> allPlayers = [];
+        List<IPlayer> allPlayers = [];
 
         var players = GetAllValidPlayers();
         foreach (var targetPlayer in players)
         {
-            if (searchMode.HasFlag(TargetSearchMode.NoMultipleTargets) && allPlayers.Any())
+            if (searchMode.HasFlag(TargetSearchMode.NoMultipleTargets) && allPlayers.Count > 0)
                 break;
 
             if (searchMode.HasFlag(TargetSearchMode.NoBots) && targetPlayer.IsFakeClient)
@@ -134,31 +132,31 @@ internal class PlayerManagerService : IPlayerManagerService
 
             if (target == "@all")
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@me" && targetPlayer.PlayerID == player.PlayerID)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@!me" && targetPlayer.PlayerID != player.PlayerID)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if ((target == "@bots" || target == "@!human") && targetPlayer.IsFakeClient)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if ((target == "@!bots" || target == "@human") && !targetPlayer.IsFakeClient)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@alive" && targetPlayer.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@dead" && targetPlayer.Pawn?.LifeState == (byte)LifeState_t.LIFE_DEAD)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@aim")
             {
@@ -169,84 +167,70 @@ internal class PlayerManagerService : IPlayerManagerService
                     var entIndex = pickerEntity.OriginalController.Value?.Entity?.EntityHandle.EntityIndex;
                     if (entIndex.HasValue)
                     {
-                        allPlayers = allPlayers.Append(GetPlayer((int)entIndex.Value - 1)!);
+                        allPlayers.Add(GetPlayer((int)entIndex.Value - 1)!);
                     }
                 }
             }
             else if (target == "@ct" && targetPlayer.Pawn?.TeamNum == (int)Team.CT)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@t" && targetPlayer.Pawn?.TeamNum == (int)Team.T)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target == "@spec" && targetPlayer.Pawn?.TeamNum == (int)Team.Spectator)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (target.StartsWith('#'))
             {
                 if (int.TryParse(target[1..], out var id) && (targetPlayer.PlayerID == id || targetPlayer.UserID == id))
                 {
-                    allPlayers = allPlayers.Append(targetPlayer);
+                    allPlayers.Add(targetPlayer);
                 }
             }
             else if (targetPlayer.Controller.PlayerName.Contains(target, nameComparison))
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
             else if (new CSteamID(target) is var steamId && steamId.IsValid() &&
                      steamId.GetSteamID64() == targetPlayer.SteamID)
             {
-                allPlayers = allPlayers.Append(targetPlayer);
+                allPlayers.Add(targetPlayer);
             }
         }
 
         return allPlayers;
     }
 
-    public IEnumerable<IPlayer> GetBots()
-    {
-        return GetAllPlayers().Where(p => p.IsValid && p.IsFakeClient);
-    }
+    public IEnumerable<IPlayer> GetBots() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid && p.IsFakeClient)!;
 
-    public IEnumerable<IPlayer> GetAlive()
-    {
-        return GetAllPlayers().Where(p => p.IsValid && p.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE);
-    }
+    public IEnumerable<IPlayer> GetAlive() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid && p.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE)!;
 
-    public IEnumerable<IPlayer> GetCT()
-    {
-        return GetAllPlayers().Where(p => p.IsValid && p.Pawn?.TeamNum == (int)Team.CT);
-    }
+    public IEnumerable<IPlayer> GetCT() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid && p.Pawn?.TeamNum == (int)Team.CT)!;
 
-    public IEnumerable<IPlayer> GetT()
-    {
-        return GetAllPlayers().Where(p => p.IsValid && p.Pawn?.TeamNum == (int)Team.T);
-    }
+    public IEnumerable<IPlayer> GetT() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid && p.Pawn?.TeamNum == (int)Team.T)!;
 
-    public IEnumerable<IPlayer> GetSpectators()
-    {
-        return GetAllPlayers().Where(p => p.IsValid && p.Pawn?.TeamNum == (int)Team.Spectator);
-    }
+    public IEnumerable<IPlayer> GetSpectators() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid && p.Pawn?.TeamNum == (int)Team.Spectator)!;
 
-    public IEnumerable<IPlayer> GetInTeam( Team team )
-    {
-        return GetAllPlayers().Where(p => p.IsValid && p.Pawn?.TeamNum == (int)team);
-    }
+    public IEnumerable<IPlayer> GetInTeam( Team team ) =>
+        PlayerObjects.Where(p => p != null && p.IsValid && p.Pawn?.TeamNum == (int)team)!;
 
-    public IEnumerable<IPlayer> GetTAlive()
-    {
-        return GetAllPlayers().Where(p =>
-            p.IsValid && p.Pawn?.TeamNum == (int)Team.T && p.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE);
-    }
+    public IEnumerable<IPlayer> GetTAlive() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid
+            && p.Pawn?.TeamNum == (int)Team.T
+            && p.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE)!;
 
-    public IEnumerable<IPlayer> GetCTAlive()
-    {
-        return GetAllPlayers().Where(p =>
-            p.IsValid && p.Pawn?.TeamNum == (int)Team.CT && p.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE);
-    }
+    public IEnumerable<IPlayer> GetCTAlive() =>
+        PlayerObjects.Where(static p => p != null && p.IsValid
+            && p.Pawn?.TeamNum == (int)Team.CT
+            && p.Pawn?.LifeState == (byte)LifeState_t.LIFE_ALIVE)!;
 
     public void SendMessage( MessageType kind, string message, int htmlDuration = 5000 )
     {
@@ -360,19 +344,19 @@ internal class PlayerManagerService : IPlayerManagerService
 
     public IPlayer? GetPlayerFromSteamId( ulong steamId, bool allowUnauthorized = true )
     {
-        return PlayerObjects.Values.FirstOrDefault(p =>
+        foreach (var p in PlayerObjects)
         {
+            if (p == null) continue;
             if (allowUnauthorized)
             {
-                if (p.SteamID == steamId) return true;
-                if (p.UnauthorizedSteamID == steamId) return true;
+                if (p.SteamID == steamId || p.UnauthorizedSteamID == steamId) return p;
             }
             else
             {
-                if (p.SteamID == steamId && p.IsAuthorized) return true;
+                if (p.SteamID == steamId && p.IsAuthorized) return p;
             }
-            return false;
-        });
+        }
+        return null;
     }
 
     public bool IsSessionIdValid( ulong sessionId )

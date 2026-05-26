@@ -69,7 +69,7 @@ internal static class SchedulerManager
     {
         lock (_lock)
         {
-            nextWorldUpdateActions = _nextWorldUpdateTasks.ToList();
+            nextWorldUpdateActions.AddRange(_nextWorldUpdateTasks);
             _nextWorldUpdateTasks.Clear();
         }
 
@@ -132,7 +132,7 @@ internal static class SchedulerManager
             _currentTick++;
 
             // Drain next-tick tasks
-            nextTickActions = _nextTickTasks.ToList();
+            nextTickActions.AddRange(_nextTickTasks);
             _nextTickTasks.Clear();
 
             // Pop all due timers from the heap

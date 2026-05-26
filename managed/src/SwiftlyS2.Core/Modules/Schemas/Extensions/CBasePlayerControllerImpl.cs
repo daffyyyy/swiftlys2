@@ -16,7 +16,10 @@ internal partial class CBasePlayerControllerImpl : CBasePlayerController
     public IPlayer? ToPlayer()
     {
         if (!IsValid) return null;
-        if (!PlayerManagerService.PlayerObjects.TryGetValue((int)(Index - 1), out var player)) return null;
+        var slots = PlayerManagerService.PlayerObjects;
+        var idx = (int)(Index - 1);
+        var player = (uint)idx < (uint)slots.Length ? slots[idx] : null;
+        if (player == null) return null;
 
         return player is { IsValid: true } ? player : null;
     }
