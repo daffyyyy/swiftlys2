@@ -358,13 +358,18 @@ IPlayer* CPlayerManager::GetPlayer(int playerid)
     return player && *(void***)player ? player : nullptr;
 }
 
+
 bool CPlayerManager::IsPlayerOnline(int playerid)
 {
     if (playerid < 0 || playerid >= g_SwiftlyCore.GetMaxGameClients())
         return false;
 
-    static auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
-    return (engine->GetClientSteamID(playerid) != nullptr);
+    // Temp to test with bots
+    auto player = g_Players[playerid];
+    return player && *(void***)player;
+    
+    // static auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
+    // return (engine->GetClientSteamID(playerid) != nullptr);
 }
 
 int CPlayerManager::GetPlayerCount()
