@@ -116,7 +116,6 @@ void ConsoleLogger::Initialize()
     m_listenerId       = consoleoutput->AddConsoleListener([this](const std::string& message) {
         std::lock_guard<std::mutex> lock(m_mutex);
         m_queue.push(fmt::format("[{}] {}", GetTimestampString(), message));
-        m_cv.notify_one();
     });
 }
 

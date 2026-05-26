@@ -10,7 +10,6 @@ namespace SwiftlyS2.Core.GameHooks;
 internal static partial class GameHooksPublisher
 {
     private delegate nint CCSPlayerItemsServicesCanAcquire( nint pItemServices, nint pEconItemView, int acquireMethod, nint unk1 );
-    private static CPlayerPawnComponentImpl _dummyPawnComponent = new(0);
 
     internal static Guid HookCanAcquire()
     {
@@ -25,8 +24,10 @@ internal static partial class GameHooksPublisher
         {
             return ( pItemServices, pEconItemView, acquireMethod, unk1 ) =>
             {
-                _dummyPawnComponent.DangerousSetHandle(pItemServices);
-                var player = _dummyPawnComponent.ToPlayer();
+                var dummy = _pawnComponentPool.Rent();
+                dummy.DangerousSetHandle(pItemServices);
+                var player = dummy.ToPlayer();
+                _pawnComponentPool.Return(dummy);
                 if (player == null) return next()(pItemServices, pEconItemView, acquireMethod, unk1);
 
                 Schema.isFollowingServerGuidelines = false;

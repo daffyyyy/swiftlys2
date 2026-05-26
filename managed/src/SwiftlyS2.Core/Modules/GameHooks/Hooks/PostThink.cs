@@ -7,7 +7,6 @@ namespace SwiftlyS2.Core.GameHooks;
 internal static partial class GameHooksPublisher
 {
     private delegate nint CCSPlayerPawnPostThink( nint pawn );
-    private static CCSPlayerPawnImpl _dummyPawn = new(0);
 
     internal static Guid HookPostThink()
     {
@@ -22,8 +21,10 @@ internal static partial class GameHooksPublisher
         {
             return ( pawn ) =>
             {
-                _dummyPawn.DangerousSetHandle(pawn);
-                var player = _dummyPawn.ToPlayer();
+                var dummy = _pawnPool.Rent();
+                dummy.DangerousSetHandle(pawn);
+                var player = dummy.ToPlayer();
+                _pawnPool.Return(dummy);
                 if (player == null) return next()(pawn);
 
                 var preCtx = new PostThinkPawnPreContext { Params = new PostThinkPawnParams { Player = player } };

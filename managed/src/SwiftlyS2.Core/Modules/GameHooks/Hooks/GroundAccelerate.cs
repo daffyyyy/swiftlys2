@@ -24,8 +24,10 @@ internal static partial class GameHooksPublisher
             {
                 return ( movementServices, moveData, frameTime, wishDirection, wishSpeed, acceleration ) =>
                 {
-                    _dummyPawnComponent.DangerousSetHandle(movementServices);
-                    var player = _dummyPawnComponent.ToPlayer();
+                    var dummy = _pawnComponentPool.Rent();
+                    dummy.DangerousSetHandle(movementServices);
+                    var player = dummy.ToPlayer();
+                    _pawnComponentPool.Return(dummy);
                     if (player == null) { next()(movementServices, moveData, frameTime, wishDirection, wishSpeed, acceleration); return; }
 
                     var preCtx = new GroundAccelerateMovementPreContext {
@@ -58,8 +60,10 @@ internal static partial class GameHooksPublisher
             {
                 return ( movementServices, moveData, wishDirection, frameTime, wishSpeed, acceleration ) =>
                 {
-                    _dummyPawnComponent.DangerousSetHandle(movementServices);
-                    var player = _dummyPawnComponent.ToPlayer();
+                    var dummy = _pawnComponentPool.Rent();
+                    dummy.DangerousSetHandle(movementServices);
+                    var player = dummy.ToPlayer();
+                    _pawnComponentPool.Return(dummy);
                     if (player == null) { next()(movementServices, moveData, wishDirection, frameTime, wishSpeed, acceleration); return; }
 
                     var preCtx = new GroundAccelerateMovementPreContext {

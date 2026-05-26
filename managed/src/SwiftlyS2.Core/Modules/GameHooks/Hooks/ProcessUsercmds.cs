@@ -7,7 +7,6 @@ namespace SwiftlyS2.Core.GameHooks;
 internal static partial class GameHooksPublisher
 {
     private delegate nint CCSPlayerControllerProcessUsercmds( nint controller, nint userCmds, int numCmds, byte paused, float margin );
-    private static CCSPlayerControllerImpl _dummyController = new(0);
     private static readonly int CUserCmdPlatformPadding = IsWindows ? 0x8 : 0x0;
 
     internal static Guid HookProcessUsercmds()
@@ -23,8 +22,10 @@ internal static partial class GameHooksPublisher
         {
             return ( controller, userCmds, numCmds, paused, margin ) =>
             {
-                _dummyController.DangerousSetHandle(controller);
-                var player = _dummyController.ToPlayer();
+                var dummy = _controllerPool.Rent();
+                dummy.DangerousSetHandle(controller);
+                var player = dummy.ToPlayer();
+                _controllerPool.Return(dummy);
                 if (player == null) return next()(controller, userCmds, numCmds, paused, margin);
 
                 var cmdsList = new List<IUserCmd>(numCmds);

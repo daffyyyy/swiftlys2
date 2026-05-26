@@ -20,12 +20,14 @@ internal static partial class GameHooksPublisher
         {
             return ( ccsPlayerLegacyJump, moveData ) =>
             {
+                var dummy = _pawnComponentPool.Rent();
                 unsafe
                 {
                     var movementServices = *(nint*)(ccsPlayerLegacyJump + 8);
-                    _dummyPawnComponent.DangerousSetHandle(movementServices);
+                    dummy.DangerousSetHandle(movementServices);
                 }
-                var player = _dummyPawnComponent.ToPlayer();
+                var player = dummy.ToPlayer();
+                _pawnComponentPool.Return(dummy);
                 if (player == null) { next()(ccsPlayerLegacyJump, moveData); return; }
 
                 var preCtx = new OnJumpLegacyMovementPreContext {
