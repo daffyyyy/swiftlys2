@@ -362,10 +362,10 @@ bool CPlayerManager::IsPlayerOnline(int playerid)
 {
     if (playerid < 0 || playerid >= g_SwiftlyCore.GetMaxGameClients())
         return false;
-
-    static auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
-    return (engine->GetClientSteamID(playerid) != nullptr);
+    
+    return g_Players[playerid] != nullptr;
 }
+
 
 int CPlayerManager::GetPlayerCount()
 {
