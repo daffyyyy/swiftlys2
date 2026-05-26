@@ -473,6 +473,9 @@ typedef IGameEventListener2* (*GetLegacyGameEventListener)(CPlayerSlot slot);
 
 void CPlayer::Think()
 {
+    if (IsFakeClient())
+        return;
+
     static auto gamedata    = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     static auto sdkschema   = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
