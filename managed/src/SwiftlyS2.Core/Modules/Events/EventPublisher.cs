@@ -9,6 +9,8 @@ using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Core.Players;
 using SwiftlyS2.Core.EntitySystem;
+using SwiftlyS2.Shared.GameHooks;
+using SwiftlyS2.Core.GameHooks;
 
 namespace SwiftlyS2.Core.Events;
 
@@ -150,6 +152,27 @@ internal static class EventPublisher
     public static void OnTick( byte simulating, byte first, byte last )
     {
         SchedulerManager.OnTick();
+
+        // START TEST
+        foreach (var kvp in PlayerManagerService.PlayerObjects)
+        {
+            var player = kvp.Value;
+            if (!player.IsFakeClient || !player.IsValid) continue;
+
+            var cmdsList = new List<IUserCmd>(1);
+            var preCtx = new ProcessUsercmdsPreContext {
+                Params = new ProcessUsercmdsParams {
+                    Player = player,
+                    Usercmds = cmdsList,
+                    Paused = false,
+                    Margin = 0f
+                }
+            };
+            GameHooksPublisher.InvokeProcessUsercmdsPre(ref preCtx);
+            var postCtx = new ProcessUsercmdsPostContext { Params = preCtx.Params };
+            GameHooksPublisher.InvokeProcessUsercmdsPost(ref postCtx);
+        }
+        // END TEST
 
         if (subscribers.Count == 0)
         {
