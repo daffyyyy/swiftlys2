@@ -1,3 +1,4 @@
+using SwiftlyS2.Core.Events;
 using SwiftlyS2.Shared.GameHooks;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.Misc;
@@ -21,6 +22,9 @@ internal static partial class GameHooksPublisher
         {
             return ( pMovementServices, pUserCmd ) =>
             {
+                if (!EventPublisher.ListensToRunCommand)
+                    return next()(pMovementServices, pUserCmd);
+
                 var dummy = _pawnComponentPool.Rent();
                 dummy.DangerousSetHandle(pMovementServices);
                 var player = dummy.ToPlayer();

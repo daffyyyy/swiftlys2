@@ -1,3 +1,4 @@
+using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.GameHooks;
 using SwiftlyS2.Shared.Misc;
@@ -21,6 +22,9 @@ internal static partial class GameHooksPublisher
         {
             return ( pawn ) =>
             {
+                if (!EventPublisher.ListensToPostThink)
+                    return next()(pawn);
+
                 var dummy = _pawnPool.Rent();
                 dummy.DangerousSetHandle(pawn);
                 var player = dummy.ToPlayer();
